@@ -1,0 +1,80 @@
+Pedro vive en Madrid.	pedro|vivir_en|madrid
+Ana trabaja en una escuela.	ana|trabajar_en|escuela
+Luis no come carne.	~luis|comer|carne
+Marta escribió una novela.	marta|escribir|novela
+Sara es la profesora de Pablo.	sara|profesora_de|pablo
+Juan canta en un coro.	juan|cantar_en|coro
+Luisa tiene un perro.	luisa|tener|perro
+Mi hermana estudia medicina.	hermana|estudiar|medicina
+El profesor explicó la lección.	profesor|explicar|leccion
+Carlos compró un coche.	carlos|comprar|coche
+Elena lee un libro.	elena|leer|libro
+Mateo no conoce a Irene.	~mateo|conocer|irene
+Rosa es la madre de Hugo.	rosa|madre_de|hugo
+Diego es el padre de Nuria.	diego|padre_de|nuria
+Andrés vive en Valencia.	andres|vivir_en|valencia
+La niña come una manzana.	nina|comer|manzana
+El perro muerde al cartero.	perro|morder|cartero
+Alba trabaja con Sergio.	alba|trabajar_con|sergio
+Laura habla con su madre.	laura|hablar_con|madre
+Raúl llegó a Sevilla.	raul|llegar_a|sevilla
+Clara escribe una carta.	clara|escribir|carta
+Óscar canta una canción.	oscar|cantar|cancion
+Julia no vive en Bilbao.	~julia|vivir_en|bilbao
+Iván es el hermano de Marina.	ivan|hermano_de|marina
+El médico visitó a la paciente.	medico|visitar|paciente
+Lucía pinta un cuadro.	lucia|pintar|cuadro
+Pablo estudia en la universidad.	pablo|estudiar_en|universidad
+La profesora corrigió el examen.	profesora|corregir|examen
+Irene tiene una hermana.	irene|tener|hermana
+Hugo abrió la puerta.	hugo|abrir|puerta
+Nuria cocina en su casa.	nuria|cocinar_en|casa
+Sergio ve una película.	sergio|ver|pelicula
+Marina es la hija de Rosa.	marina|hija_de|rosa
+El abuelo cuenta una historia.	abuelo|contar|historia
+Carmen no tiene coche.	~carmen|tener|coche
+Ana ama a Luis.	ana|amar|luis
+Elena trabaja para una empresa.	elena|trabajar_para|empresa
+Mateo compra pan en el mercado.	mateo|comprar|pan;mateo|comprar_en|mercado
+Alba lee el periódico en el parque.	alba|leer|periodico;alba|leer_en|parque
+Un gato es un animal.	gato|es|animal
+Diego no es el padre de Luis.	~diego|padre_de|luis
+La vecina vende flores.	vecina|vender|flores
+Clara canta en el coro de la iglesia.	clara|cantar_en|coro
+Luis compró flores para Ana.	luis|comprar|flores;luis|comprar_para|ana
+Rosa abrió la ventana.	rosa|abrir|ventana
+Los niños juegan en el jardín.	ninos|jugar_en|jardin
+Mi madre prepara la cena.	madre|preparar|cena
+Sara conoce a Pablo.	sara|conocer|pablo
+Juan no escribe cartas.	~juan|escribir|cartas
+El profesor vive en Granada.	profesor|vivir_en|granada
+Marta pinta un retrato de Ana.	marta|pintar|retrato
+Andrés es un médico.	andres|es|medico
+Laura trabaja con Elena en Madrid.	laura|trabajar_con|elena;laura|trabajar_en|madrid
+Lucía vendió su casa.	lucia|vender|casa
+Pedro llamó a Marta.	pedro|llamar|marta
+El cartero entrega las cartas.	cartero|entregar|cartas
+Hugo no estudia matemáticas.	~hugo|estudiar|matematicas
+Irene vive con su abuela.	irene|vivir_con|abuela
+Nuria visita a su tío.	nuria|visitar|tio
+Carlos es el jefe de Alba.	carlos|jefe_de|alba
+Mi hermana trabaja en un hospital.	hermana|trabajar_en|hospital
+Diego compró un coche nuevo.	diego|comprar|coche
+Elena no vive en Barcelona.	~elena|vivir_en|barcelona
+El niño rompió la ventana.	nino|romper|ventana
+Sofía canta una canción.	sofia|cantar|cancion
+Raúl es el padre de Clara.	raul|padre_de|clara
+La maestra enseña matemáticas.	maestra|ensenar|matematicas
+Javier no conoce a Lucía.	~javier|conocer|lucia
+El gato come pescado.	gato|comer|pescado
+Marina vive en Valencia.	marina|vivir_en|valencia
+Tomás abrió la puerta.	tomas|abrir|puerta
+Carmen es una abogada.	carmen|es|abogada
+El abuelo cuenta historias.	abuelo|contar|historias
+Paula ayuda a su madre.	paula|ayudar|madre
+Óscar nunca bebe café.	~oscar|beber|cafe
+Isabel es la hermana de Daniel.	isabel|hermana_de|daniel
+El médico examina al paciente.	medico|examinar|paciente
+Rosa lee un libro.	rosa|leer|libro
+Álvaro vive en Sevilla con su tía.	alvaro|vivir_en|sevilla;alvaro|vivir_con|tia
+Los vecinos ven la televisión.	vecinos|ver|television

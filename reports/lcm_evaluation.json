@@ -1,0 +1,149 @@
+{
+  "device": "mps",
+  "neural_generalization": {
+    "n_test": 1706,
+    "n_candidates": 13869,
+    "exact_match_top1": 1.0,
+    "role_accuracy": {
+      "subject": 1.0,
+      "predicate": 1.0,
+      "object": 1.0
+    },
+    "per_variant": {
+      "base": {
+        "exact": 1.0,
+        "n": 350
+      },
+      "swapped": {
+        "exact": 1.0,
+        "n": 72
+      },
+      "distractor": {
+        "exact": 1.0,
+        "n": 78
+      },
+      "insufficient": {
+        "exact": 1.0,
+        "n": 90
+      },
+      "order_variants": {
+        "exact": 1.0,
+        "n": 93
+      },
+      "chain3": {
+        "exact": 1.0,
+        "n": 200
+      },
+      "chain3_distractor": {
+        "exact": 1.0,
+        "n": 112
+      },
+      "chain4": {
+        "exact": 1.0,
+        "n": 150
+      },
+      "unseen_predicate": {
+        "exact": 1.0,
+        "n": 120
+      },
+      "nojoin": {
+        "exact": 1.0,
+        "n": 91
+      },
+      "NUEVA_base": {
+        "exact": 1.0,
+        "n": 60
+      },
+      "NUEVA_swapped": {
+        "exact": 1.0,
+        "n": 20
+      },
+      "NUEVA_nojoin": {
+        "exact": 1.0,
+        "n": 35
+      },
+      "NUEVA_norule": {
+        "exact": 1.0,
+        "n": 35
+      },
+      "contradiction": {
+        "exact": 1.0,
+        "n": 100
+      },
+      "cycle": {
+        "exact": 1.0,
+        "n": 100
+      }
+    },
+    "per_predicate": {
+      "MAYOR_QUE": {
+        "exact": 1.0,
+        "n": 860
+      },
+      "SIN_CONCLUSION": {
+        "exact": 1.0,
+        "n": 251
+      },
+      "MENOR_QUE": {
+        "exact": 1.0,
+        "n": 48
+      },
+      "SUPERIOR_A": {
+        "exact": 1.0,
+        "n": 45
+      },
+      "POSTERIOR_A": {
+        "exact": 1.0,
+        "n": 60
+      },
+      "ANTERIOR_A": {
+        "exact": 1.0,
+        "n": 60
+      },
+      "TIENE_RASGO": {
+        "exact": 1.0,
+        "n": 80
+      },
+      "CONTRADICE": {
+        "exact": 1.0,
+        "n": 200
+      },
+      "CAE_HACIA": {
+        "exact": 1.0,
+        "n": 36
+      },
+      "CAMBIA_A": {
+        "exact": 1.0,
+        "n": 18
+      },
+      "ES": {
+        "exact": 1.0,
+        "n": 48
+      }
+    },
+    "mean_cosine_similarity": 0.9999993443489075,
+    "p10_cosine_similarity": 0.9999977350234985,
+    "baselines": {
+      "cos_mean_train_target": 0.6329686045646667,
+      "cos_copy_last_premise": 0.7441427707672119,
+      "exact_chance": 7.210325185665874e-05
+    },
+    "checkpoint_epoch": 26,
+    "checkpoint_val_loss": 6.871420596625511e-07,
+    "interpretation": "Usa exact_match_top1 y per_predicate; el coseno solo es una metrica auxiliar."
+  },
+  "symbolic_reference_tests": {
+    "passed": 8,
+    "total": 8,
+    "cases": {
+      "transitivity_unseen_entities": true,
+      "gravity_unseen_entity": true,
+      "finite_implies_countable": true,
+      "bijection_implies_countably_infinite": true,
+      "explicit_no_bijection_implies_uncountable": true,
+      "infinite_alone_not_uncountable": true,
+      "melting_requires_fusible_evidence": true,
+      "heat_alone_does_not_imply_melting": true
+    }
+  }
+}

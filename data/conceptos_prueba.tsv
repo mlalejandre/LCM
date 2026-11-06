@@ -1,0 +1,29 @@
+# TEST DE CONCEPTOS NUEVOS desde lenguaje natural (Fase 3, paso 1), escrito antes de medir. Criterio fijado antes: >= 75 %.
+# Definiciones ("X es un Y"), jerarquias con deduccion (A es B, B es C => A es C), acciones como concepto ("Cocinar es una accion") y propiedades con numeral.
+H: Un triángulo es una figura.
+H: Un cuadrado es una figura.
+H: Un perro es un animal.
+P: ¿Qué es un triángulo?	figura
+P: ¿Es un cuadrado una figura?	SI
+P: ¿Es un perro una figura?	NOSE
+P: ¿Qué es un perro?	animal
+
+H: Un triángulo es un polígono.
+H: Un polígono es una figura.
+P: ¿Es un triángulo una figura?	SI
+P: ¿Qué es un triángulo?	poligono
+P: ¿Es una figura un triángulo?	NOSE
+
+H: Cocinar es una acción.
+H: Correr es una acción.
+H: Un círculo es una figura.
+P: ¿Qué es cocinar?	accion
+P: ¿Es correr una acción?	SI
+P: ¿Es cocinar una figura?	NOSE
+P: ¿Qué es un círculo?	figura
+
+H: Un triángulo tiene tres lados.
+H: Un cuadrado tiene cuatro lados.
+P: ¿Qué tiene un triángulo?	tres
+P: ¿Tiene un cuadrado cuatro lados?	SI
+P: ¿Tiene un triángulo cuatro lados?	NOSE

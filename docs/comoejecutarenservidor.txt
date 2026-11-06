@@ -1,0 +1,28 @@
+A partir de este momento, ya no tienes que abrir la terminal ni escribir comandos SSH:
+
+Atajo rápido para entrenar en la 4090:
+
+    En tu Mac pulsa: Cmd + Shift + B
+
+    VS Code abrirá un panel inferior, se conectará en milisegundos a la 4090 y verás la barra de tqdm corriendo en directo.
+
+Acceder al menú de tareas:
+
+    Pulsa Cmd + Shift + P > escribe Run Task (o en el menú superior: Terminal > Ejecutar tarea...).
+
+    Te saldrá una lista desplegable con las opciones que definimos:
+
+    🚀 Entrenar en RTX 4090
+
+    ⚡ Entrenar en RTX 3090
+
+    💬 Chat interactivo (en RTX 4090)
+
+    📊 Ver estado GPUs (nvidia-smi)
+
+
+Para detenerlo:
+
+Simplemente pulsa el icono de la papelera o la X de la terminal integrada en VS Code, o pulsa Ctrl + C sobre ella.
+
+Modificas tus archivos .py en VS Code, pulsas Cmd + Shift + B y tu RTX 4090 se pone a computar al instante sobre el código de tu Mac.

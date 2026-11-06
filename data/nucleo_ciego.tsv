@@ -1,0 +1,45 @@
+# TEST CIEGO DEL NUCLEO (bloque C). Escrito antes de medir, con palabras distintas. Criterio fijado antes: >= 60 %.
+HOY: 2026-11-06
+SEMILLA: si
+U: ¿Qué es el verde?	color
+U: ¿Es un rectángulo un polígono?	sí
+U: ¿Cuántos lados tiene un cuadrado?	cuatro
+U: ¿De qué color es el cielo?	azul
+
+U: ¿Qué es un pez?	animal
+U: ¿Es una rosa una flor?	sí
+U: ¿Es una rosa una planta?	sí
+U: ¿Qué es el sábado?	día
+U: ¿Qué es el verano?	estación
+
+U: ¿Es una mano parte del cuerpo?	sí
+U: ¿Qué es el miedo?	emoción
+U: ¿Es dormir una necesidad?	sí
+U: ¿Cuál es lo contrario de subir?	bajar
+U: ¿Cuál es lo contrario de día?	noche
+
+U: ¿Qué es una mesa?	mueble
+U: ¿Qué es el pan?	alimento
+U: ¿Para qué sirve un cuchillo?	cortar
+
+U: Juan es padre de Rosa.
+U: Rosa es madre de Sara.
+U: ¿Es Juan abuelo de Sara?	sí
+U: ¿Es Sara nieta de Juan?	sí
+
+U: Luis es hermano de Clara.
+U: ¿Es Clara hermana de Luis?	sí
+
+U: Sara regala una flor a Marta.
+U: ¿Tiene Marta una flor?	sí
+
+U: Lucía entrega la carta a Pablo.
+U: ¿Tiene Pablo la carta?	sí
+
+U: Luis enciende la luz.
+U: ¿Está encendida la luz?	sí
+U: Luis apaga la luz.
+U: ¿Está apagada la luz?	sí
+
+U: Marta vuelve a Bilbao.
+U: ¿Dónde está Marta?	bilbao

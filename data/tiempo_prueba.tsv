@@ -1,0 +1,25 @@
+# TEST DE EXPRESIONES TEMPORALES (Fase 3, paso 2), escrito antes de medir. Criterio fijado antes: >= 75 %.
+# Adverbios (ayer), dias, anios, estaciones; preguntas "cuando", si/no con tiempo, "quien ... ayer"; controles: sin tiempo guardado -> "no lo se".
+H: Pedro compró pan ayer.
+H: Ana vendió su coche el lunes.
+H: Luis estudia música en Madrid.
+P: ¿Cuándo compró Pedro pan?	ayer
+P: ¿Compró Pedro pan ayer?	SI
+P: ¿Compró Pedro pan hoy?	NO
+P: ¿Quién compró pan ayer?	pedro
+P: ¿Cuándo vendió Ana su coche?	lunes
+P: ¿Quién vendió su coche el lunes?	ana
+P: ¿Cuándo estudia Luis música?	NOSE
+P: ¿Dónde estudia Luis música?	madrid
+
+H: Marta viajó a Roma en 2020.
+H: Marta visitó París en verano.
+P: ¿Cuándo viajó Marta a Roma?	2020
+P: ¿Viajó Marta a Roma en 2020?	SI
+P: ¿Quién viajó a Roma?	marta
+P: ¿Cuándo visitó Marta París?	verano
+
+H: Ana llegó a Madrid el año pasado.
+H: Pedro compra pan.
+P: ¿Cuándo llegó Ana a Madrid?	pasado
+P: ¿Cuándo compra Pedro pan?	NOSE

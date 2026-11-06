@@ -1,0 +1,126 @@
+# CONOCIMIENTO DE FABRICA (bloque C): frases en espanol, una por linea. Se cargan con el mismo camino que cualquier frase.
+# Colores y formas
+Rojo es un color.
+Azul es un color.
+Verde es un color.
+Amarillo es un color.
+Blanco es un color.
+Negro es un color.
+Naranja es un color.
+Gris es un color.
+El cielo es azul.
+La hierba es verde.
+El sol es amarillo.
+La nieve es blanca.
+La sangre es roja.
+Un círculo es una figura.
+Un polígono es una figura.
+Un triángulo es un polígono.
+Un cuadrado es un polígono.
+Un rectángulo es un polígono.
+Un triángulo tiene tres lados.
+Un cuadrado tiene cuatro lados.
+Un rectángulo tiene cuatro lados.
+Un círculo es redondo.
+# Naturaleza
+Un perro es un mamífero.
+Un gato es un mamífero.
+Un caballo es un mamífero.
+Un mamífero es un animal.
+Un pájaro es un animal.
+Un pez es un animal.
+Un pájaro tiene alas.
+Una rosa es una flor.
+Una flor es una planta.
+Un roble es un árbol.
+Un pino es un árbol.
+Un árbol es una planta.
+Enero es un mes.
+Febrero es un mes.
+Marzo es un mes.
+Abril es un mes.
+Mayo es un mes.
+Junio es un mes.
+Julio es un mes.
+Agosto es un mes.
+Septiembre es un mes.
+Octubre es un mes.
+Noviembre es un mes.
+Diciembre es un mes.
+Lunes es un día.
+Martes es un día.
+Miércoles es un día.
+Jueves es un día.
+Viernes es un día.
+Sábado es un día.
+Domingo es un día.
+Primavera es una estación.
+Verano es una estación.
+Otoño es una estación.
+Invierno es una estación.
+Norte es un punto cardinal.
+Sur es un punto cardinal.
+Este es un punto cardinal.
+Oeste es un punto cardinal.
+La lluvia es agua.
+# Cuerpo, emociones y necesidades
+Un ojo es parte del cuerpo.
+Una mano es parte del cuerpo.
+Un pie es parte del cuerpo.
+Una cabeza es parte del cuerpo.
+Un brazo es parte del cuerpo.
+Una pierna es parte del cuerpo.
+Una boca es parte de la cabeza.
+Una nariz es parte de la cabeza.
+Un ojo sirve para ver.
+Una oreja sirve para oír.
+Una nariz sirve para oler.
+Una boca sirve para comer.
+La alegría es una emoción.
+La tristeza es una emoción.
+El miedo es una emoción.
+El enfado es una emoción.
+Comer es una necesidad.
+Dormir es una necesidad.
+Beber es una necesidad.
+# Objetos cotidianos
+Una casa es un edificio.
+Un coche es un vehículo.
+Una bicicleta es un vehículo.
+Un coche tiene motor.
+Una silla es un mueble.
+Una mesa es un mueble.
+Una cama es un mueble.
+Una cama sirve para dormir.
+Una silla sirve para sentarse.
+Un cuchillo sirve para cortar.
+Un coche sirve para viajar.
+Una camisa es una prenda.
+Un pantalón es una prenda.
+El pan es un alimento.
+Una manzana es una fruta.
+Una fruta es un alimento.
+El agua es una bebida.
+# Dinero y trabajo
+Un euro es dinero.
+El dinero sirve para comprar.
+Un médico es una persona.
+Un profesor es una persona.
+# Verbos y opuestos
+Cocinar es una acción.
+Correr es una acción.
+Comprar es una acción.
+Vender es una acción.
+Grande es lo contrario de pequeño.
+Alto es lo contrario de bajo.
+Abrir es lo contrario de cerrar.
+Subir es lo contrario de bajar.
+Entrar es lo contrario de salir.
+Comprar es lo contrario de vender.
+Dar es lo contrario de recibir.
+Empezar es lo contrario de terminar.
+Día es lo contrario de noche.
+Alegre es lo contrario de triste.
+Encender es lo contrario de apagar.
+Coche es sinónimo de automóvil.
+Casa es sinónimo de hogar.

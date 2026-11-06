@@ -1,0 +1,53 @@
+# TEST CIEGO de la Fase 1 (escrito antes de medir; se mide UNA vez con: python -m scripts.eval_preguntas data/preguntas_ciegas.tsv)
+# Criterio fijado antes: >= 80 % de acierto. Los fallos se informan y NO se ajusta el codigo para este fichero en la Fase 1.
+H: Rosa lee un libro.
+H: Diego compró un coche.
+H: Elena no vive en Barcelona.
+H: Tomás abrió la puerta.
+P: ¿Quién lee un libro?	rosa
+P: ¿Qué lee Rosa?	libro
+P: ¿Lee Rosa un libro?	SI
+P: ¿Quién compró un coche?	diego
+P: ¿Qué compró Diego?	coche
+P: ¿Vive Elena en Barcelona?	NO
+P: ¿Qué abrió Tomás?	puerta
+P: ¿Abrió Tomás la ventana?	NOSE
+
+H: Sofía canta una canción.
+H: El niño rompió la ventana.
+H: La maestra enseña matemáticas.
+P: ¿Quién canta una canción?	sofia
+P: ¿Qué canta Sofía?	cancion
+P: ¿Quién rompió la ventana?	nino
+P: ¿Qué rompió el niño?	ventana
+P: ¿Quién enseña matemáticas?	maestra
+P: ¿Enseña la maestra matemáticas?	SI
+P: ¿Canta Sofía una ópera?	NOSE
+
+H: Marina vive en Valencia.
+H: Álvaro trabaja en Sevilla.
+H: Paula vive con su madre.
+P: ¿Dónde vive Marina?	valencia
+P: ¿Dónde trabaja Álvaro?	sevilla
+P: ¿Quién vive en Valencia?	marina
+P: ¿Con quién vive Paula?	madre
+P: ¿Vive Marina en Valencia?	SI
+P: ¿Trabaja Álvaro en Valencia?	NOSE
+
+H: Isabel es la hermana de Daniel.
+H: Raúl es el padre de Clara.
+H: Carmen es una abogada.
+P: ¿Quién es la hermana de Daniel?	isabel
+P: ¿Quién es el padre de Clara?	raul
+P: ¿Es Raúl el padre de Clara?	SI
+P: ¿Es Carmen una abogada?	SI
+
+H: Javier llamó a Lucía.
+H: El médico examina al paciente.
+H: Óscar nunca bebe café.
+P: ¿A quién llamó Javier?	lucia
+P: ¿Quién llamó a Lucía?	javier
+P: ¿A quién examina el médico?	paciente
+P: ¿Quién examina al paciente?	medico
+P: ¿Bebe Óscar café?	NO
+P: ¿Llamó Javier a Pedro?	NOSE

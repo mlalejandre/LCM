@@ -1,0 +1,73 @@
+# TEST DEL NUCLEO DE FABRICA (bloque C). Escrito antes de medir. Criterio fijado antes: >= 70 %.
+# SEMILLA: carga el conocimiento de fabrica (data/semilla.txt) antes de empezar cada bloque.
+HOY: 2026-11-06
+SEMILLA: si
+U: ¿Qué es el rojo?	color
+U: ¿Qué es un cuadrado?	polígono
+U: ¿Es un cuadrado una figura?	sí
+U: ¿Cuántos lados tiene un triángulo?	tres
+U: ¿De qué color es la hierba?	verde
+U: ¿Es azul un color?	sí
+
+U: ¿Es un perro un animal?	sí
+U: ¿Qué es un gato?	mamífero
+U: ¿Es un gato un animal?	sí
+U: ¿Qué es un roble?	árbol
+U: ¿Es un roble una planta?	sí
+U: ¿Qué es julio?	mes
+U: ¿Qué es el invierno?	estación
+U: ¿Qué es el norte?	punto cardinal
+
+U: ¿Es un ojo parte del cuerpo?	sí
+U: ¿Para qué sirve un ojo?	ver
+U: ¿Qué es la alegría?	emoción
+U: ¿Es comer una necesidad?	sí
+U: ¿Cuál es lo contrario de grande?	pequeño
+U: ¿Cuál es lo contrario de abrir?	cerrar
+
+U: ¿Qué es una silla?	mueble
+U: ¿Para qué sirve una cama?	dormir
+U: ¿Qué es una camisa?	prenda
+U: ¿Qué es un euro?	dinero
+U: ¿Para qué sirve el dinero?	comprar
+
+U: Pedro es padre de Ana.
+U: Ana es madre de Luis.
+U: ¿Es Pedro abuelo de Luis?	sí
+U: ¿Quién es nieto de Pedro?	luis
+U: ¿Es Luis hijo de Ana?	sí
+
+U: Marta es hermana de Rosa.
+U: ¿Es Rosa hermano de Marta?	sí
+U: Rosa es madre de Paco.
+U: ¿Es Marta tía de Paco?	sí
+
+U: La rueda es parte del coche.
+U: El coche es parte de la flota.
+U: ¿Es la rueda parte de la flota?	sí
+U: ¿Qué tiene el coche?	rueda
+
+U: Ana tiene un libro.
+U: Ana da el libro a Luis.
+U: ¿Tiene Luis el libro?	sí
+U: ¿Tiene Ana el libro?	!sí
+U: ¿Quién tiene el libro?	luis
+U: ¿Tenía Ana un libro?	sí
+
+U: Pedro vende su coche a Marta.
+U: ¿Tiene Marta un coche?	sí
+U: Luis compra una bicicleta.
+U: ¿Tiene Luis una bicicleta?	sí
+
+U: Ana abre la puerta.
+U: ¿Está abierta la puerta?	sí
+U: Luis cierra la puerta.
+U: ¿Está cerrada la puerta?	sí
+U: ¿Está abierta la puerta?	!sí
+U: Ana rompe el vaso.
+U: ¿Está roto el vaso?	sí
+
+U: Ana va a Madrid.
+U: ¿Dónde está Ana?	madrid
+U: Ana llega a Sevilla.
+U: ¿Dónde está Ana?	sevilla

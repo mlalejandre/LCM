@@ -1,0 +1,23 @@
+# TEST DE CORRECCIONES (Fase 2), escrito antes de medir.  TEACH = frase<TAB>s|p|o que se ensena con ENTENDI.  TEST = frases NUEVAS (misma pauta) con su lectura correcta.
+# Criterios fijados antes: (1) las 3 frases ensenadas quedan bien; (2) >= 50 % de las TEST bien (relajado) y mas que antes de ensenar;
+# (3) sin regresion: conversacion (80) no baja mas de 1,25 puntos y largas ciegas (27) no baja mas de 3,7 puntos (una frase).
+TEACH	Andrés cocina pasta.	andres|cocinar|pasta
+TEACH	Lucía cocina arroz.	lucia|cocinar|arroz
+TEACH	El perro muerde al cartero.	perro|morder|cartero
+TEST	Carlos cocina pollo.	carlos|cocinar|pollo
+TEST	Marta cocina sopa.	marta|cocinar|sopa
+TEST	Álvaro cocina pescado.	alvaro|cocinar|pescado
+TEST	Irene cocina verduras.	irene|cocinar|verduras
+TEST	Mario cocina carne.	mario|cocinar|carne
+TEST	El gato muerde al ratón.	gato|morder|raton
+TEST	La serpiente muerde al niño.	serpiente|morder|nino
+TEST	El perro muerde la pelota.	perro|morder|pelota
+# TEST2 = frases NUEVAS anadidas ANTES de repetir la medida tras la primera (que fallo (1) y (3)); sirven para no ajustar solo a las 8 de TEST.
+TEST2	Gabriel cocina lentejas.	gabriel|cocinar|lentejas
+TEST2	Sara cocina tortilla.	sara|cocinar|tortilla
+TEST2	Hugo cocina huevos.	hugo|cocinar|huevos
+TEST2	Paula cocina patatas.	paula|cocinar|patatas
+TEST2	La vaca muerde la hierba.	vaca|morder|hierba
+TEST2	El lobo muerde al pastor.	lobo|morder|pastor
+TEST2	El caballo muerde la manzana.	caballo|morder|manzana
+TEST2	El tigre muerde al domador.	tigre|morder|domador

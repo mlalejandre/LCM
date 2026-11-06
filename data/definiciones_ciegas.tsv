@@ -1,0 +1,28 @@
+# TEST CIEGO DE DEFINICIONES (bloque E). Escrito antes de medir. Criterio fijado antes: >= 60 %.
+HOY: 2026-11-06
+U: Lucía tiene una bicicleta.	entendido
+U: Bici significa bicicleta.	vale
+U: ¿Tiene Lucía una bici?	sí
+U: ¿Quién tiene una bici?	lucía
+
+U: Alto es lo opuesto de bajo.	vale
+U: ¿Es alto lo contrario de bajo?	sí
+U: La torre es alta.	entendido
+U: La torre es baja.	cuál
+
+U: Una tijera sirve para cortar.	entendido
+U: Una escoba se utiliza para barrer.	entendido
+U: ¿Para qué sirve una escoba?	barrer
+U: ¿Qué sirve para cortar?	tijera
+
+U: Un delfín es un animal marino.	entendido
+U: ¿Cómo es un delfín?	marino
+U: ¿Es un delfín un animal?	sí
+
+U: Correr es andar deprisa.	vale
+U: Marta corre.	entendido
+U: ¿Qué es correr?	andar deprisa
+
+U: Un bolígrafo es un instrumento que sirve para escribir.	entendido
+U: ¿Qué es un bolígrafo?	instrumento
+U: ¿Para qué sirve un bolígrafo?	escribir

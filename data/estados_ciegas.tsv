@@ -1,0 +1,35 @@
+# TEST CIEGO bloque B (frases distintas), escrito ANTES de medir. Criterio: >= 60 %.
+H: Rosa trabaja.
+H: Carlos nada en la piscina.
+H: Elena salió ayer.
+H: Sara vuelve a Madrid.
+P: ¿Quién trabaja?	rosa
+P: ¿Trabaja Rosa?	SI
+P: ¿Quién nada en la piscina?	carlos
+P: ¿Salió Elena?	SI
+P: ¿Cuándo salió Elena?	ayer
+P: ¿Quién vuelve a Madrid?	sara
+
+H: El coche es rojo.
+H: La mesa está sucia.
+H: Pablo es alto.
+H: Lucía no está enferma.
+P: ¿Cómo es el coche?	rojo
+P: ¿Es rojo el coche?	SI
+P: ¿Está sucia la mesa?	SI
+P: ¿Es azul el coche?	NOSE
+P: ¿Está enferma Lucía?	NO
+P: ¿Quién es alto?	pablo
+
+H: Marta sabe nadar.
+H: Juan quiere dormir.
+H: Teresa puede cantar.
+P: ¿Quién puede cantar?	teresa
+P: ¿Quién quiere dormir?	juan
+P: ¿Puede cantar Teresa?	SI
+
+H: Elena afirma que Sara vino.
+H: Juan piensa que Rosa trabaja mucho.
+P: ¿Qué afirma Elena?	Sara vino
+P: ¿Quién piensa que Rosa trabaja mucho?	juan
+P: ¿Vino Sara?	NOSE

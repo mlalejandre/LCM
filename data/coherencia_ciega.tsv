@@ -1,0 +1,32 @@
+# TEST CIEGO de coherencia (frases distintas), escrito ANTES de medir. Criterio: >= 60 %.
+HOY: 2026-11-06
+U: Marta trabaja en Bilbao.	entendido
+U: Marta trabaja en Sevilla.	antes
+U: ¿Dónde trabaja Marta?	sevilla
+U: ¿Dónde trabajaba Marta?	bilbao
+
+U: Juan vive en París.
+U: Juan ya no vive en París.	pasado
+U: ¿Vive Juan en París?	no
+U: ¿Dónde vivía Juan?	París
+
+U: El coche es nuevo.
+U: El coche es viejo.	cuál
+U: La anterior	anterior
+U: ¿Cómo es el coche?	nuevo
+
+U: Rosa está triste.
+U: Rosa está contenta.	antes
+U: ¿Cómo está Rosa?	contenta
+
+U: Clara compra leche.
+U: Clara no compra leche.	cuál
+U: La nueva	nueva
+U: ¿Compra Clara leche?	no
+
+U: Pedro bebe agua.
+U: ¿Qué bebe Pedro?	agua
+U: ¿De dónde sale eso?	dijiste
+U: Luis cree que Pedro bebe vino.
+U: ¿Qué cree Luis?	vino
+U: ¿Cómo sabes que Pedro bebe vino?	no lo sé

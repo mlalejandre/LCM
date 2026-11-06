@@ -1,0 +1,27 @@
+Pedro y Marta viven en Madrid.	pedro|vivir_en|madrid;marta|vivir_en|madrid
+Ana y Luis estudian matemáticas.	ana|estudiar|matematicas;luis|estudiar|matematicas
+Luis compró pan y leche.	luis|comprar|pan;luis|comprar|leche
+Sara lee libros y revistas.	sara|leer|libros;sara|leer|revistas
+Pedro vive en Madrid y trabaja en Sevilla.	pedro|vivir_en|madrid;pedro|trabajar_en|sevilla
+Marta escribe cartas y envía paquetes.	marta|escribir|cartas;marta|enviar|paquetes
+El hombre que vive en Madrid escribe cartas.	hombre|vivir_en|madrid;hombre|escribir|cartas
+La mujer que canta en el coro estudia música.	mujer|cantar_en|coro;mujer|estudiar|musica
+Clara canta en el coro de la iglesia.	clara|cantar_en|coro
+Diego vende su coche en la ciudad.	diego|vender|coche;diego|vender_en|ciudad
+Hugo y Paula no beben café.	~hugo|beber|cafe;~paula|beber|cafe
+Irene vive en Bilbao y estudia en Madrid.	irene|vivir_en|bilbao;irene|estudiar_en|madrid
+Lucía cocina pasta y su hermana prepara ensalada.	lucia|cocinar|pasta;hermana|preparar|ensalada
+Mi padre trabaja en un banco y mi madre trabaja en una escuela.	padre|trabajar_en|banco;madre|trabajar_en|escuela
+Andrés pinta cuadros en su casa.	andres|pintar|cuadros;andres|pintar_en|casa
+El niño que rompió la ventana vive en Toledo.	nino|romper|ventana;nino|vivir_en|toledo
+Carmen abre la puerta y enciende la luz.	carmen|abrir|puerta;carmen|encender|luz
+Raúl y Clara tienen un perro.	raul|tener|perro;clara|tener|perro
+Paco toca la guitarra en un grupo.	paco|tocar|guitarra;paco|tocar_en|grupo
+La profesora explica la lección y los alumnos escuchan.	profesora|explicar|leccion
+Elena come pan, queso y fruta.	elena|comer|pan;elena|comer|queso;elena|comer|fruta
+Javier y Ana ven la televisión en el salón.	javier|ver|television;ana|ver|television;javier|ver_en|salon;ana|ver_en|salon
+Mario trabaja en una fábrica de coches.	mario|trabajar_en|fabrica
+Tomás compra el periódico y lee las noticias.	tomas|comprar|periodico;tomas|leer|noticias
+Alba vive en Cádiz con su abuela y su tío.	alba|vivir_en|cadiz;alba|vivir_con|abuela;alba|vivir_con|tio
+Los niños juegan en el parque.	ninos|jugar_en|parque
+Marina escribe una novela y publica un libro.	marina|escribir|novela;marina|publicar|libro

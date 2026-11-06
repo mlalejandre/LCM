@@ -1,0 +1,44 @@
+# TEST DE VERBOS INTRANSITIVOS, ESTADOS Y MODALES (Fase 3, bloque B), escrito antes de medir. Criterio fijado antes: >= 70 %.
+H: Luis llegó ayer.
+H: Ana duerme.
+H: Pedro corre por el parque.
+H: Marta vive en Sevilla.
+P: ¿Llegó Luis?	SI
+P: ¿Quién llegó?	luis
+P: ¿Quién duerme?	ana
+P: ¿Duerme Pedro?	NOSE
+P: ¿Quién corre por el parque?	pedro
+P: ¿Qué hace Ana?	duerme
+P: ¿Dónde vive Marta?	sevilla
+P: ¿Cuándo llegó Luis?	ayer
+
+H: La casa es grande.
+H: Ana está cansada.
+H: El perro es pequeño.
+H: Luis no está contento.
+P: ¿Es grande la casa?	SI
+P: ¿Cómo es la casa?	grande
+P: ¿Cómo está Ana?	cansada
+P: ¿Está cansada Ana?	SI
+P: ¿Es pequeño el perro?	SI
+P: ¿Es grande el perro?	NOSE
+P: ¿Está contento Luis?	NO
+P: ¿Quién está cansada?	ana
+
+H: Ana quiere comer pan.
+H: Pedro puede nadar.
+H: Luis debe estudiar matemáticas.
+P: ¿Quién quiere comer pan?	ana
+P: ¿Qué quiere comer Ana?	pan
+P: ¿Puede nadar Pedro?	SI
+P: ¿Quién puede nadar?	pedro
+P: ¿Debe estudiar Luis matemáticas?	SI
+P: ¿Quiere Pedro comer pan?	NOSE
+
+H: Pedro dice que Ana vino.
+H: Marta cree que Luis es alto.
+P: ¿Qué dice Pedro?	Ana vino
+P: ¿Quién dice que Ana vino?	pedro
+P: ¿Vino Ana?	NOSE
+P: ¿Es alto Luis?	NOSE
+P: ¿Qué cree Marta?	Luis es alto

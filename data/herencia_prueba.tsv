@@ -1,0 +1,26 @@
+# TEST DE HERENCIA DE PROPIEDADES (Fase 3, paso 3), escrito antes de medir. Criterio fijado antes: >= 75 %.
+# "Los poligonos tienen lados" + "Un triangulo es un poligono" => el triangulo tiene lados (con explicacion). Controles: no hereda hacia ARRIBA ni entre hermanos.
+H: Los polígonos tienen lados.
+H: Un triángulo es un polígono.
+H: Un cuadrado es un polígono.
+H: Un círculo es una figura.
+P: ¿Tiene un triángulo lados?	SI
+P: ¿Qué tiene un cuadrado?	lados
+P: ¿Tiene un círculo lados?	NOSE
+
+H: Los animales respiran aire.
+H: Un perro es un mamífero.
+H: Un mamífero es un animal.
+P: ¿Respira un perro aire?	SI
+P: ¿Qué respira un perro?	aire
+
+H: Un triángulo tiene tres lados.
+H: Un polígono es una figura.
+P: ¿Tiene una figura tres lados?	NOSE
+P: ¿Tiene un polígono lados?	NOSE
+
+H: Los pájaros tienen alas.
+H: Una gaviota es un pájaro.
+P: ¿Tiene una gaviota alas?	SI
+P: ¿Es una gaviota un animal?	NOSE
+P: ¿Tiene un pájaro alas?	SI

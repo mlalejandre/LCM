@@ -1,0 +1,32 @@
+# TEST DE FECHAS ABSOLUTAS Y ORDEN (Fase 3, paso 4), escrito antes de medir. Criterio fijado antes: >= 75 %.
+# HOY: es la fecha de la conversacion (viernes 6 de noviembre de 2026). Lo relativo se guarda como fecha absoluta.
+HOY: 2026-11-06
+H: Pedro compró pan ayer.
+H: Ana vendió su coche el lunes.
+H: Luis compró un libro anteayer.
+H: Marta viajó a Roma en 2020.
+H: Ana llegó a Madrid el año pasado.
+P: ¿Cuándo compró Pedro pan?	5 de noviembre de 2026
+P: ¿Cuándo vendió Ana su coche?	2 de noviembre de 2026
+P: ¿Cuándo compró Luis un libro?	4 de noviembre de 2026
+P: ¿Cuándo llegó Ana a Madrid?	2025
+P: ¿Compró Pedro pan el 5 de noviembre?	SI
+P: ¿Compró Pedro pan el 4 de noviembre?	NO
+P: ¿Vendió Ana su coche el 2 de noviembre?	SI
+P: ¿Qué pasó antes del 3 de noviembre?	coche
+P: ¿Qué pasó después del 4 de noviembre?	pan
+P: ¿Qué pasó primero?	Roma
+P: ¿Qué pasó último?	pan
+P: ¿Qué pasó antes del 1 de enero de 2020?	NOSE
+
+
+HOY: 2027-03-10
+H: Sara compró una casa el 15 de enero de 2027.
+H: Pablo vendió su moto el 20 de febrero.
+H: Clara compró flores ayer.
+P: ¿Cuándo compró Sara una casa?	15 de enero de 2027
+P: ¿Cuándo vendió Pablo su moto?	20 de febrero de 2027
+P: ¿Cuándo compró Clara flores?	9 de marzo de 2027
+P: ¿Qué pasó primero?	casa
+P: ¿Qué pasó último?	flores
+P: ¿Vendió Pablo su moto el 20 de febrero?	SI

@@ -1,0 +1,41 @@
+# TEST DE APRENDER CONCEPTOS POR DEFINICION (bloque E). Escrito antes de medir. Criterio fijado antes: >= 70 %.
+HOY: 2026-11-06
+U: Pedro tiene un coche.	entendido
+U: Un coche es lo mismo que un automóvil.	vale
+U: ¿Tiene Pedro un automóvil?	sí
+U: Auto es sinónimo de coche.	vale
+U: ¿Tiene Pedro un auto?	sí
+U: ¿Quién tiene un automóvil?	pedro
+
+U: Ruidoso es lo contrario de silencioso.	vale
+U: ¿Es ruidoso lo contrario de silencioso?	sí
+U: La calle es ruidosa.	entendido
+U: La calle es silenciosa.	cuál
+
+U: Un tenedor sirve para comer.	entendido
+U: Un martillo se usa para clavar clavos.	entendido
+U: ¿Para qué sirve un tenedor?	comer
+U: ¿Qué sirve para comer?	tenedor
+U: ¿Para qué se usa un martillo?	clavar
+
+U: Cocinar es preparar comida con calor.	vale
+U: Pedro cocina pasta.	entendido
+U: ¿Prepara Pedro pasta?	sí
+U: ¿Qué es cocinar?	preparar comida con calor
+U: ¿Prepara Pedro pan?	no
+
+U: Un gorrión es un pájaro pequeño.	entendido
+U: ¿Cómo es un gorrión?	pequeño
+U: ¿Es un gorrión un pájaro?	sí
+
+U: ¿Qué es un tenedor?	explicas
+U: Un tenedor es un cubierto que sirve para comer.	entendido
+U: ¿Qué es un tenedor?	cubierto
+
+U: Ana vive en Madrid.
+U: Ana vive en Sevilla.
+U: ¿Dónde vivía Ana?	vivía
+
+U: La casa es grande.
+U: ¿Cómo es la casa?	grande
+U: ¿Cómo lo sabes?	dijiste

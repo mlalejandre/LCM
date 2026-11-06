@@ -1,0 +1,34 @@
+# TEST CIEGO bloque B parte 2 (frases distintas), escrito ANTES de medir. Criterio: >= 60 %.
+H: Todos los gatos son animales.
+H: Algunos peces nadan.
+H: Un salmón es un pez.
+H: Ninguna piedra es animal.
+P: ¿Es un gato un animal?	SI
+P: ¿Nadan los peces?	NOSE
+P: ¿Nada un salmón?	NOSE
+P: ¿Es una piedra un animal?	NO
+
+H: Rosa tiene dos hermanos.
+H: Juan ama a Sara.
+H: Juan ama a Rosa.
+P: ¿Cuántos hermanos tiene Rosa?	dos
+P: ¿A cuántas personas ama Juan?	2
+
+H: Sara es más baja que Rosa.
+H: Rosa es más baja que Clara.
+P: ¿Es Sara más baja que Clara?	SI
+P: ¿Es Clara más baja que Sara?	NO
+P: ¿Quién es más baja que Clara?	rosa
+
+H: Rosa normalmente cena a las nueve.
+P: ¿Cuándo cena Rosa?	nueve
+
+H: Sara sonríe porque tiene un regalo.
+H: Juan se fue porque llovía.
+P: ¿Por qué sonríe Sara?	tiene un regalo
+P: ¿Sonríe Sara?	SI
+
+H: El coche está delante de la casa.
+H: Juan trabaja cerca de Madrid.
+P: ¿Dónde está el coche?	delante de la casa
+P: ¿Dónde trabaja Juan?	cerca de Madrid

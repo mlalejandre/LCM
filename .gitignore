@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.parche_backups/
+.pytest_cache/
+# datos descargados o con derechos de autor: cada persona los obtiene (ver README)
+data/ud/
+data/libro.txt
+data/libro_vocab.json
+*.rtf
+regenta.txt
+# modelos entrenados y memoria personal (se regeneran)
+checkpoints/*.pt
+memory/
+reports/reproduce_*.log
+reports/libro_*.txt
+_archivo/
+reports/libro_hechos.txt
+reports/informe.txt
+checkpoints/school.pt.bak
+data/*.pkl

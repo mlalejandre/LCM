@@ -1,0 +1,44 @@
+# TEST CIEGO DE CONVERSACION (bloque A): frases distintas a las de dialogo_prueba.tsv, escritas ANTES de medir. Criterio: >= 60 % (es mas duro).
+HOY: 2026-11-06
+U: Buenas	buenas
+U: Muchas gracias	de nada
+U: Mil gracias	de nada
+U: Disculpa	no pasa nada
+U: Hasta luego	hasta
+U: Hasta mañana	hasta
+U: ¿Qué tal?	bien
+U: Genial	alegro
+U: Ok	vale
+U: ¿A qué día estamos?	6 de noviembre de 2026
+
+U: Soy Lucía	encantado
+U: ¿Sabes cómo me llamo?	Lucía
+U: ¿Cuál es tu nombre?	LCM
+U: ¿Para qué sirves?	preguntas
+U: ¿Qué has aprendido?	todavía no
+
+U: Clara compra pan.	entendido
+U: Marta compra leche.	entendido
+U: Háblame de Clara	pan
+U: ¿Qué sabes sobre Marta?	leche
+U: ¿Qué hemos hablado?	clara
+U: ¿Cuántos hechos sabes?	2
+U: Cuéntame lo que sabes de Rosa	no sé nada de rosa
+U: Borra todo	seguro
+U: Claro	olvidado
+U: ¿Qué sabes?	todavía no
+
+U: Pedro llama a Marta.
+U: ¿Quién llama a Marta?	Pedro
+U: Puedes repetirlo	Pedro
+U: Olvídalo	olvid
+U: ¿Quién llama a Marta?	no lo sé
+
+U: ¿Quién es el abuelo?	explicas
+U: Es un señor mayor	entendido
+U: Luis ama a Ana.	entendido
+U: Esa mujer ama a Luis.	entendido
+U: ¿Quién ama a Luis?	mujer
+U: Estoy equivocado	olvid
+U: Mis amigos son Pedro.	cómo te llamas
+U: Me llamo Rubén	encantado

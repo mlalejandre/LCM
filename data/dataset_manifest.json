@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "d_concept": 128,
+  "max_premises": 4,
+  "concepts": 492,
+  "propositions": 13869,
+  "samples": {
+    "train": 20121,
+    "val": 1306,
+    "test": 1706
+  },
+  "split_policy": "Transitivity: target pair sets the split; both premise pairs must belong to train, preventing val/test target edges from appearing as training inputs. Other rules hold out complete entity instances.",
+  "semantic_note": "Explicit feature ontology with role-bound proposition vectors; not pretrained language semantics."
+}

@@ -1,0 +1,33 @@
+# Bloques separados por una linea en blanco. "H:" = hecho que se ensena (frase normal). "P:" = pregunta<TAB>respuesta esperada.
+# Esperada: SI / NO / NOSE (no se sabe), o una palabra que debe aparecer en la respuesta.
+H: Marta escribió una novela.
+H: Pedro vive en Madrid.
+H: Luis no come carne.
+H: Sara es la profesora de Pablo.
+P: ¿Quién escribió una novela?	marta
+P: ¿Qué escribió Marta?	novela
+P: ¿Vive Pedro en Madrid?	SI
+P: ¿Vive Pedro en Sevilla?	NOSE
+P: ¿Come Luis carne?	NO
+P: ¿Quién vive en Madrid?	pedro
+P: ¿Quién es la profesora de Pablo?	sara
+P: ¿Dónde vive Pedro?	madrid
+
+H: Ana llamó a Juan.
+H: El perro muerde al cartero.
+H: Lucía vendió su casa.
+P: ¿A quién llamó Ana?	juan
+P: ¿Quién llamó a Juan?	ana
+P: ¿Quién muerde al cartero?	perro
+P: ¿Qué vendió Lucía?	casa
+P: ¿Llamó Ana a Juan?	SI
+P: ¿Vendió Lucía un coche?	NOSE
+
+H: Laura trabaja en Madrid.
+H: Hugo estudia matemáticas.
+H: Irene vive con su abuela.
+P: ¿Dónde trabaja Laura?	madrid
+P: ¿Qué estudia Hugo?	matematicas
+P: ¿Con quién vive Irene?	abuela
+P: ¿Trabaja Laura en Madrid?	SI
+P: ¿Estudia Hugo historia?	NOSE

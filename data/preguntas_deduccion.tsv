@@ -1,0 +1,28 @@
+# TEST DE DEDUCCION (Fase 2), escrito antes de medir. "R:" = regla "Si A entonces B" ensenada. Criterio fijado antes: >= 75 %.
+# Hay controles: sin regla, o en sentido contrario, la respuesta correcta es "no lo se" (NOSE), nunca una deduccion inventada.
+R: Si Ana es madre de Luis entonces Luis es hijo de Ana.
+H: Marta es madre de Pablo.
+H: Sara es madre de Juan.
+P: ¿Es Pablo hijo de Marta?	SI
+P: ¿Quién es hijo de Sara?	juan
+P: ¿Es Juan hijo de Sara?	SI
+P: ¿Es Marta madre de Pablo?	SI
+P: ¿Es Sara hijo de Juan?	NOSE
+
+R: Si Ana trabaja en Madrid entonces Ana vive en Madrid.
+H: Pedro trabaja en Bilbao.
+H: Rosa vive en Cádiz.
+P: ¿Vive Pedro en Bilbao?	SI
+P: ¿Dónde vive Pedro?	bilbao
+P: ¿Trabaja Rosa en Cádiz?	NOSE
+
+H: Luis es hijo de Ana.
+P: ¿Es Ana madre de Luis?	NOSE
+
+R: Si Ana compra un coche entonces Ana tiene un coche.
+H: Pedro compra una moto.
+P: ¿Tiene Pedro una moto?	SI
+P: ¿Quién tiene una moto?	pedro
+
+H: Luis no vive en Madrid.
+P: ¿Vive Luis en Madrid?	NO

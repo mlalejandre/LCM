@@ -1,0 +1,56 @@
+[
+ {
+  "fecha": "2026-11-06 23:17",
+  "metrics": {
+   "conversacion_80": 0.9,
+   "largas_ciegas_27": 0.8519,
+   "cantidad_26": 0.8462,
+   "cantidad_ciegas_14": 0.7857,
+   "estados_27": 0.963,
+   "estados_ciegas_18": 0.8889,
+   "fechas_18": 1.0,
+   "herencia_10": 0.8,
+   "tiempo_14": 1.0,
+   "conceptos_14": 0.9286,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 0.9677,
+   "discurso_21": 0.9048,
+   "dialogo_65": 0.9692,
+   "dialogo_ciego_37": 0.9459,
+   "coherencia_29": 0.9655,
+   "coherencia_ciega_19": 0.8421,
+   "definiciones_29": 0.9655,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0
+  }
+ },
+ {
+  "fecha": "2026-11-06 23:19",
+  "metrics": {
+   "conversacion_80": 0.9,
+   "largas_ciegas_27": 0.8519,
+   "cantidad_26": 0.8462,
+   "cantidad_ciegas_14": 0.7857,
+   "estados_27": 0.963,
+   "estados_ciegas_18": 0.8889,
+   "fechas_18": 1.0,
+   "herencia_10": 0.8,
+   "tiempo_14": 1.0,
+   "conceptos_14": 0.9286,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 0.9677,
+   "discurso_21": 0.9048,
+   "dialogo_65": 0.9692,
+   "dialogo_ciego_37": 0.9459,
+   "coherencia_29": 0.9655,
+   "coherencia_ciega_19": 0.8421,
+   "definiciones_29": 0.9655,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0
+  }
+ }
+]

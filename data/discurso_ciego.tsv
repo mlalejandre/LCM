@@ -1,0 +1,21 @@
+Ana vive en Madrid. Trabaja en un banco.	ana|vivir_en|madrid;ana|trabajar_en|banco
+Pedro compró pan. Él lee el periódico.	pedro|comprar|pan;pedro|leer|periodico
+Marta escribe cartas. Envía paquetes.	marta|escribir|cartas;marta|enviar|paquetes
+Luis estudia matemáticas. También estudia historia.	luis|estudiar|matematicas;luis|estudiar|historia
+Sara canta en el coro. Ella toca la guitarra.	sara|cantar_en|coro;sara|tocar|guitarra
+Diego vende su coche. Compra una moto.	diego|vender|coche;diego|comprar|moto
+Elena vive en Bilbao. Ella estudia en Madrid.	elena|vivir_en|bilbao;elena|estudiar_en|madrid
+Hugo abre la puerta. Enciende la luz.	hugo|abrir|puerta;hugo|encender|luz
+Irene lee un libro. Escribe una novela.	irene|leer|libro;irene|escribir|novela
+Carlos trabaja en una fábrica. Vive en Toledo.	carlos|trabajar_en|fabrica;carlos|vivir_en|toledo
+Paula pinta cuadros. Ella vende cuadros en la ciudad.	paula|pintar|cuadros;paula|vender|cuadros;paula|vender_en|ciudad
+Andrés cocina pasta. Prepara ensalada.	andres|cocinar|pasta;andres|preparar|ensalada
+Tomás no bebe café. Bebe agua.	~tomas|beber|cafe;tomas|beber|agua
+Laura estudia música. Toca el piano.	laura|estudiar|musica;laura|tocar|piano
+Mario escribe una carta. Envía la carta.	mario|escribir|carta;mario|enviar|carta
+Rosa lee un libro. Ella escribe un poema.	rosa|leer|libro;rosa|escribir|poema
+Álvaro vive en Sevilla. Trabaja en un hospital.	alvaro|vivir_en|sevilla;alvaro|trabajar_en|hospital
+Lucía enseña matemáticas. Ella vive en Granada.	lucia|ensenar|matematicas;lucia|vivir_en|granada
+Jorge abre una tienda. Vende ropa.	jorge|abrir|tienda;jorge|vender|ropa
+Pedro vive en Madrid. Ana trabaja en Sevilla.	pedro|vivir_en|madrid;ana|trabajar_en|sevilla
+Marta lee cartas. Luis escribe poemas.	marta|leer|cartas;luis|escribir|poemas

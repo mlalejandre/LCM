@@ -1,0 +1,51 @@
+# TEST DE BLOQUE B (parte 2): cuantificadores, numeros, comparaciones, frecuencia/hora, causa, lugar relativo.
+# Escrito antes de medir. Criterio fijado antes: >= 70 %.
+H: Todos los perros son animales.
+H: Algunos pájaros vuelan.
+H: Una gaviota es un pájaro.
+H: Ninguna rana es mamífero.
+P: ¿Es un perro un animal?	SI
+P: ¿Vuelan los pájaros?	NOSE
+P: ¿Vuela una gaviota?	NOSE
+P: ¿Es una rana un mamífero?	NO
+P: ¿Quién vuela?	pájaros
+
+H: Ana tiene tres hijos.
+H: Pedro tiene un perro.
+P: ¿Cuántos hijos tiene Ana?	tres
+P: ¿Tiene Ana tres hijos?	SI
+P: ¿Cuántos hijos tiene Pedro?	NOSE
+
+H: Ana ama a Luis.
+H: Ana ama a Pedro.
+H: Ana ama a Marta.
+P: ¿A cuántos ama Ana?	3
+P: ¿Quién ama a Luis?	ana
+
+H: Luis es más alto que Pedro.
+H: Pedro es más alto que Juan.
+P: ¿Es Luis más alto que Pedro?	SI
+P: ¿Es Luis más alto que Juan?	SI
+P: ¿Es Pedro más alto que Luis?	NO
+P: ¿Es Juan más alto que Luis?	NO
+P: ¿Quién es más alto que Juan?	pedro
+
+H: Ana siempre llega tarde.
+H: Pedro come a las tres.
+P: ¿Cuándo llega Ana?	siempre
+P: ¿Cuándo come Pedro?	las tres
+P: ¿Llega Ana siempre?	SI
+
+H: Ana llora porque está triste.
+H: Pedro compró pan porque tenía hambre.
+P: ¿Por qué llora Ana?	está triste
+P: ¿Por qué compró Pedro pan?	tenía hambre
+P: ¿Llora Ana?	SI
+P: ¿Está triste Ana?	NOSE
+
+H: El libro está encima de la mesa.
+H: Ana vive lejos de Madrid.
+P: ¿Dónde está el libro?	encima de la mesa
+P: ¿Está el libro encima de la mesa?	SI
+P: ¿Está el libro debajo de la mesa?	NOSE
+P: ¿Dónde vive Ana?	lejos de Madrid

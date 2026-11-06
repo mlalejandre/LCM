@@ -1,0 +1,84 @@
+# TEST DE CONVERSACION BASICA (Fase 3, bloque A), escrito antes de medir. Criterio fijado antes: >= 75 %.
+# Formato: "U: turno<TAB>subcadena esperada en la respuesta" ("!x" = NO debe contener x). Sin esperado = solo prepara. Bloque = conversacion nueva.
+HOY: 2026-11-06
+U: Hola	hola
+U: Buenos días	buenos días
+U: ¿Cómo estás?	bien
+U: Gracias	de nada
+U: Perdona	no pasa nada
+U: Vale	vale
+U: Adiós	hasta
+U: ¡Qué bien!	alegro
+U: Muchas gracias por todo	de nada
+U: Buenas tardes	buenas tardes
+U: ¿Qué día es hoy?	6 de noviembre de 2026
+
+U: Me llamo Marcos	encantado
+U: ¿Cómo me llamo?	Marcos
+U: Hola	Marcos
+U: ¿Cómo está usted?	usted
+U: Hola	ayudarle
+U: Tutéame, por favor	de tú
+U: Hola	ayudarte
+
+U: ¿Quién eres?	LCM
+U: ¿Qué sabes hacer?	preguntas
+U: ¿Qué sabes?	todavía no
+U: Pedro compró pan.	entendido
+U: Ana ama a Luis.	entendido
+U: ¿Qué sabes de Pedro?	pan
+U: Dime lo que sabes de Ana	Luis
+U: ¿Qué sabes de Zoe?	no sé nada de zoe
+U: ¿Qué te he dicho?	pan
+U: ¿Cuántas cosas sabes?	2 hechos
+
+U: ¿Qué es un tenedor?	explicas
+U: Es un cubierto	entendido
+U: ¿Qué es un tenedor?	cubierto
+U: ¿Quién es Marta?	explicas
+U: Es la hermana de Luis	entendido
+U: ¿Quién es hermana de Luis?	Marta
+
+U: Pedro compró pan.
+U: Ana vendió su coche.
+U: Olvida que Pedro compró pan	olvid
+U: ¿Quién compró pan?	no lo sé
+U: Olvida lo de Ana	olvid
+U: ¿Quién vendió un coche?	no lo sé
+U: Olvida todo	nada que olvidar
+U: Pedro compró pan.
+U: Luis vendió su moto.
+U: Olvida todo	seguro
+U: No	no olvido
+U: Olvida todo	seguro
+U: Sí	olvidado
+U: ¿Quién compró pan?	no lo sé
+
+U: Pedro compró pan.
+U: ¿Quién compró pan?	Pedro
+U: Repite	Pedro
+U: ¿Qué has dicho?	Pedro
+U: ¿Cómo dices?	Pedro
+
+U: Pedro compró pan.
+U: Blablabla gnorf	no he entendido
+U: Gnorf Pedro blorp zork	Pedro
+
+U: Me llamo Marcos	encantado
+U: Mi madre es Ana.	entendido
+U: ¿Quién es mi madre?	Ana
+U: Ese perro muerde a Pedro.	entendido
+U: ¿Quién muerde a Pedro?	perro
+U: Luis compró pan.
+U: Ana también compró pan.	entendido
+U: ¿Quién compró pan?	Ana
+U: Eso es falso	olvid
+U: ¿Quién compró pan?	!Ana
+U: Javier tampoco compró pan.	no javier
+U: Pedro compró pan ayer.
+U: ¿Qué compró Pedro?	pan
+U: ¿Y Luis?	pan
+
+U: Mi hermano es Pedro.	cómo te llamas
+U: Me llamo Marcos	encantado
+U: ¿Quién es mi hermano?	Pedro

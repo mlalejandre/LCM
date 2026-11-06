@@ -1,0 +1,43 @@
+# TEST DE COHERENCIA (bloque D): cambio de estado, contradicciones, "¿como lo sabes?". Escrito antes de medir. Criterio fijado antes: >= 70 %.
+HOY: 2026-11-06
+U: Ana vive en Madrid.	entendido
+U: Ana vive en Sevilla.	antes
+U: ¿Dónde vive Ana?	sevilla
+U: ¿Dónde vivía Ana?	madrid
+U: ¿Vive Ana en Madrid?	no me consta
+
+U: Pedro trabaja en un banco.	entendido
+U: Pedro ya no trabaja en un banco.	pasado
+U: ¿Dónde trabaja Pedro?	no lo sé
+U: ¿Dónde trabajaba Pedro?	banco
+
+U: La casa es grande.	entendido
+U: La casa es pequeña.	cuál
+U: La nueva	nueva
+U: ¿Cómo es la casa?	pequeña
+
+U: Luis ama a Ana.	entendido
+U: Luis no ama a Ana.	cuál
+U: La anterior	anterior
+U: ¿Ama Luis a Ana?	sí
+
+U: Marta es alta.	entendido
+U: Marta es baja.	cuál
+U: Las dos	las dos
+
+U: Pedro compró pan ayer.
+U: ¿Qué compró Pedro?	pan
+U: ¿Cómo lo sabes?	dijiste
+U: ¿Cómo sabes que Pedro compró pan?	dijiste
+U: Marta dice que Luis llegó.
+U: ¿Cómo sabes que Luis llegó?	no lo sé
+U: ¿Qué dice Marta?	Luis llegó
+
+U: Los polígonos tienen lados.
+U: Un triángulo es un polígono.
+U: ¿Tiene un triángulo lados?	deduzco
+U: ¿Cómo lo sabes?	deduje
+
+U: Ana vive en Madrid.
+U: Ana trabaja en Sevilla.	!antes
+U: ¿Dónde vive Ana?	madrid
