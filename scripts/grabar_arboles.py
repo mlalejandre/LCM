@@ -46,6 +46,45 @@ def empaquetar(extra=()):
     print(f"[Paquete listo: reports/paquete.zip ({os.path.getsize('reports/paquete.zip') // 1024} KB): subelo a la conversacion]")
 
 
+def grabar_candidatos(parser):
+    """parche-77: ademas de lo que los examenes ya hicieron pasar por la escuela, graba (a) los CANDIDATOS de reescritura de cada pregunta y (b) la
+    version con la primera letra en minuscula de cada frase. Asi, un arreglo que cambie QUE candidato se prueba tiene su arbol grabado y el replay
+    no se queda ciego."""
+    import glob
+    import re
+    from src.language.qa import rewrite
+    textos = []
+    for path in sorted(glob.glob("data/*.tsv")) + ["data/semilla.txt"]:
+        if not os.path.exists(path):
+            continue
+        for line in open(path, encoding="utf-8"):
+            line = line.rstrip("\n")
+            if not line.strip() or line.startswith(("#", "HOY:", "SEMILLA:", "R:")):
+                continue
+            t = line[2:] if line[:2] in ("H:", "P:", "U:") else line
+            t = t.split("\t")[0].strip()
+            if t:
+                textos += [s for s in re.split(r"(?<=[.!?])\s+", t) if s]
+    vistos, n = set(), 0
+    for t in textos:
+        cands = [t, t[:1].lower() + t[1:]]
+        if "?" in t or "¿" in t:
+            try:
+                cands += rewrite(t)[0]
+            except Exception:          # noqa
+                pass
+        for c in cands:
+            if c in vistos or len(c.split()) > 40:
+                continue
+            vistos.add(c)
+            try:
+                parser.tree(c)
+                n += 1
+            except Exception:          # noqa
+                pass
+    print(f"Candidatos grabados: {n}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--extra")
@@ -72,6 +111,12 @@ def main():
                 except Exception as exc:          # noqa
                     print(f"  (no se pudo grabar {line!r}: {exc})")
         print(f"Frases extra grabadas: {n}")
+    if not args.sin_check:
+        import torch
+        from src.language.ud import load_school
+        device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
+        model, scripts = load_school(device=device)
+        grabar_candidatos(sp.SchoolParser(model, device, scripts))
     os.makedirs("reports", exist_ok=True)
     json.dump({"version": 1, "fecha": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "n": len(REC), "arboles": REC},
               open("reports/arboles.json", "w", encoding="utf-8"), ensure_ascii=False)

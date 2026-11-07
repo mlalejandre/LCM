@@ -30,7 +30,11 @@ class SchoolParser:
         pred = predict_trees(self.model, [forms], self.device, self.scripts)[0]
         rows = [(f, u, h, r, l) for f, (u, h, r, l) in zip(forms, pred)]
         rows = self._fix_name_adj(self._fix_name_verb(rows))
-        return [(f, u, h, r, (self.overrides.get(f.lower()) or self.overrides.get(_norm(f)) or l) if u == "VERB" else l) for f, u, h, r, l in rows]
+        rows = self._fix_verb_complement(self._fix_relative(self._fix_name_noun_inverted(rows)))      # parche-76
+        rows = self._fix_flat_across_verb(self._fix_subject_verb_appos(self._fix_verb_name_inverted(rows)))      # parche-76 (B)
+        rows = self._fix_comparative(self._fix_participle_state(rows))      # parche-77
+        return [(f, u, h, r, (self.overrides.get(f.lower()) or self.overrides.get(_norm(f)) or self._lema_regular(f, l)) if u == "VERB" else l)
+                for f, u, h, r, l in rows]
 
     @staticmethod
     def _fix_name_verb(rows):
@@ -82,6 +86,12 @@ class SchoolParser:
         if u != "ADJ" or r not in ("amod", "nsubj") or not (f[:1].isupper() and f[1:].islower()) or h < 2:
             return rows
         v = h - 1
+        if v < len(rows) and rows[v][1] == "NOUN" and rows[v][3] == "root" and rows[v][0][:1].islower() \
+                and any(y[2] == h and y[3] == "obj" for y in rows) \
+                and not any(y[2] == h and y[3] in ("nsubj", "csubj", "det") for y in rows[1:]) \
+                and not rows[v][0].lower().endswith(("ar", "er", "ir", "ando", "iendo")):
+            rows = list(rows)                                  # parche-77: "Clara compra pan.": el verbo leido como NOUN raiz con objeto
+            rows[v] = (rows[v][0], "VERB") + tuple(rows[v][2:])
         if v >= len(rows) or rows[v][1] != "VERB" or rows[v][0].lower().endswith(("ar", "er", "ir", "ando", "iendo")):
             return rows
         if any(_norm(rows[k][0]) not in ("no", "nunca", "jamas", "tampoco") for k in range(1, v)):
@@ -92,7 +102,213 @@ class SchoolParser:
             return rows
         return [(f, "PROPN", h, "nsubj", l)] + list(rows[1:])
 
-    def parse(self, sentence: str, topic: Optional[str] = None) -> Optional[List[Dict]]:
+    @staticmethod
+    def _fix_name_noun_inverted(rows):
+        """parche-76: "Lucia cocina pasta y su hermana prepara ensalada.": la escuela lee el nombre como VERB (amod) y el verbo como NOUN (obj),
+        con un ciclo entre las dos primeras palabras. Se devuelve el nombre como sujeto y el verbo como verbo (coordinado con la raiz si la hay)."""
+        if len(rows) < 4:
+            return rows
+        f0, u0, h0, r0 = rows[0][:4]
+        f1, u1, h1, r1 = rows[1][:4]
+        if not (u0 == "VERB" and h0 == 2 and f0[:1].isupper() and f0[1:].islower() and u1 == "NOUN" and h1 == 1 and r1 == "obj"):
+            return rows
+        rows = [list(x) for x in rows]
+        root = next((k for k, x in enumerate(rows) if x[2] == 0 and k > 1), None)
+        rows[0][1], rows[0][2], rows[0][3] = "PROPN", 2, "nsubj"
+        rows[1][1] = "VERB"
+        rows[1][2], rows[1][3] = (0, "root") if root is None else (root + 1, "conj")
+        if len(rows[1]) > 4 and _norm(rows[1][4]) == _norm(f1) and f1.lower().endswith("a"):
+            rows[1][4] = f1.lower()[:-1] + "ar"                      # cocina -> cocinar (la escuela lo lemaba como el sustantivo)
+        for j in range(2, len(rows)):
+            if rows[j][2] == 2 and rows[j][3] in ("amod", "compound") and rows[j][1] in ("NOUN", "ADJ"):
+                rows[j][1], rows[j][3] = "NOUN", "obj"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_relative(rows):
+        """parche-76: "El nino que rompio la ventana vive en Toledo.": la escuela etiqueta "que" como mark de la subordinada (acl) y no como su
+        sujeto; el extractor solo resuelve el relativo si "que" es el sujeto. Se relabela "que" (justo antes del verbo, sin otro sujeto)."""
+        rows = [list(x) for x in rows]
+        for k, x in enumerate(rows):
+            if x[3] != "acl" or x[1] != "VERB" or x[2] <= 0 or k < 1:
+                continue
+            q = rows[k - 1]
+            if _norm(q[0]) == "que" and q[3] == "mark" and q[2] == k + 1 and \
+                    not any(y[2] == k + 1 and y[3] in ("nsubj", "csubj") for y in rows):
+                q[1], q[3] = "PRON", "nsubj"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_verb_complement(rows):
+        """parche-76: "Pedro cocina pasta." / "Andres cocina pasta.": la escuela cuelga "pasta" del verbo como amod (NOUN) o compound (ADJ) en vez
+        de obj. Un sustantivo (o adjetivo compound) en minuscula, a la derecha de un verbo sin ningun complemento, es su objeto directo."""
+        from .extract import FREQ_ADV, TIME_ADV, TIME_NOUNS
+        rows = [list(x) for x in rows]
+        for v, x in enumerate(rows):
+            if x[1] != "VERB":
+                continue
+            kids = [j for j, y in enumerate(rows) if y[2] == v + 1]
+            if any(rows[j][3] in ("obj", "obl", "iobj", "ccomp", "xcomp", "cop", "nmod") for j in kids):
+                continue
+            for j in kids:
+                y = rows[j]
+                forma = _norm(y[0])
+                if j > v and y[0][:1].islower() and forma not in TIME_NOUNS and forma not in TIME_ADV and forma not in FREQ_ADV \
+                        and ((y[1] == "NOUN" and y[3] in ("amod", "compound")) or (y[1] == "ADJ" and y[3] == "compound")) \
+                        and not any(z[2] == j + 1 and z[3] == "det" for z in rows):
+                    y[1], y[3] = "NOUN", "obj"
+                    break
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_verb_first(rows, verbs):
+        """parche-76: "Tomas no bebe cafe. Bebe agua.": la escuela lee "Bebe" como NOUN sujeto y "agua" como verbo. Si la forma ya se vio como VERBO
+        antes en el mismo texto (verbs = {forma: lema}), la frase empieza por el verbo (sujeto omitido) y la segunda palabra es su objeto."""
+        if not verbs or len(rows) < 3:
+            return rows
+        f0, u0, h0, r0 = rows[0][:4]
+        f1, u1, h1, r1 = rows[1][:4]
+        if not (u0 in ("NOUN", "ADJ") and r0 == "nsubj" and h0 == 2 and f0[:1].isupper() and u1 == "VERB" and h1 == 0 and _norm(f0) in verbs):
+            return rows
+        if any(y[2] == 1 for y in rows[1:]):
+            return rows
+        rows = [list(x) for x in rows]
+        rows[0][1], rows[0][2], rows[0][3] = "VERB", 0, "root"
+        if len(rows[0]) > 4:
+            rows[0][4] = verbs[_norm(f0)]
+        rows[1][1], rows[1][2], rows[1][3] = "NOUN", 1, "obj"
+        for j in range(2, len(rows)):
+            if rows[j][2] == 2:
+                rows[j][2] = 1
+        return [tuple(x) for x in rows]
+
+    _VERB_EXTRA = {"nada", "nadan"}          # "nada" se quito de IRREG (casi siempre pronombre); detras de un sustantivo si es verbo
+
+    @staticmethod
+    def _fix_verb_name_inverted(rows):
+        """parche-76: "Vino Sara." (pregunta "¿Vino Sara?"): la escuela lee "Vino Sara" como un nombre compuesto (PROPN + flat). Si la primera palabra es
+        una forma verbal conocida (IRREG), es el VERBO y la segunda su sujeto."""
+        if len(rows) < 3:
+            return rows
+        f0, u0, h0, r0 = rows[0][:4]
+        f1, u1, h1, r1 = rows[1][:4]
+        if not (u0 == "PROPN" and r0 == "root" and f0[:1].isupper() and _norm(f0) in IRREG and u1 == "PROPN" and r1 == "flat" and h1 == 1
+                and not any(y[2] == 1 and y[1] != "PUNCT" for y in rows[2:])):
+            return rows
+        rows = [list(x) for x in rows]
+        rows[0][1] = "VERB"
+        if len(rows[0]) > 4:
+            rows[0][4] = IRREG[_norm(f0)]
+        rows[1][3] = "nsubj"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_subject_verb_appos(rows):
+        """parche-76: "Una gaviota vuela." / "Xqx nada en la piscina.": sin ningun verbo, la escuela deja el sustantivo como raiz y el verbo como
+        appos (NOUN/PRON). Si esa palabra es una forma verbal conocida (IRREG o nada/nadan), pasa a ser el verbo y el sustantivo su sujeto."""
+        if len(rows) < 3 or any(x[1] == "VERB" for x in rows):
+            return rows
+        root = next((k for k, x in enumerate(rows) if x[2] == 0), None)
+        if root is None or rows[root][1] not in ("NOUN", "PROPN"):
+            return rows
+        cand = [k for k, x in enumerate(rows) if ((x[2] == root + 1 and x[3] in ("appos", "flat")) or (x[2] == 0 and k == root + 1))
+                and x[1] in ("NOUN", "PRON", "ADV", "ADJ")
+                and x[0][:1].islower() and (_norm(x[0]) in IRREG or _norm(x[0]) in SchoolParser._VERB_EXTRA)]
+        if len(cand) != 1 or cand[0] < root:
+            return rows
+        k = cand[0]
+        rows = [list(x) for x in rows]
+        rows[k][1], rows[k][2], rows[k][3] = "VERB", 0, "root"
+        if len(rows[k]) > 4:
+            rows[k][4] = IRREG.get(_norm(rows[k][0]), "nadar")
+        rows[root][2], rows[root][3] = k + 1, "nsubj"
+        for j, y in enumerate(rows):
+            if j in (root, k):
+                continue
+            if y[2] == root + 1 and y[3] in ("det", "amod", "flat", "nummod"):
+                continue                                           # los determinantes siguen colgando del sustantivo
+            if y[2] == root + 1 or (y[2] == k + 1 and y[3] == "nmod" and y[1] in ("NOUN", "PROPN")):
+                y[2] = k + 1
+                if y[3] == "nmod":
+                    y[3] = "obl"
+            if y[3] == "punct":
+                y[2] = k + 1
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_flat_across_verb(rows):
+        """parche-76: "Rosa lee Xqx.": la escuela cuelga el nombre de la derecha (flat) del sujeto, saltando el verbo. Un flat nunca cruza un verbo:
+        es el objeto de ese verbo."""
+        rows = [list(x) for x in rows]
+        for j, x in enumerate(rows):
+            if x[3] == "flat" and x[2] >= 1 and x[2] - 1 < j:
+                v = next((k for k in range(x[2], j) if rows[k][1] == "VERB"), None)
+                if v is not None:
+                    x[2], x[3] = v + 1, "obj"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _lema_regular(form, lema):
+        """parche-76: un VERBO cuyo lema es la propia forma o solo su raiz ("cocina"->"cocina", "respira"->"respir") se regulariza a -ar si la forma
+        acaba en -a/-an (3.a persona de los verbos en -ar)."""
+        f = _norm(form)
+        l = _norm(lema)
+        if f.endswith("an") and len(f) > 4 and l in (f, f[:-2]):
+            return f[:-2] + "ar"
+        if f.endswith("a") and len(f) > 3 and l in (f, f[:-1]):
+            return f[:-1] + "ar"
+        return lema
+    @staticmethod
+    def _fix_participle_state(rows):
+        """parche-77: "Ana esta cansada.": la escuela etiqueta el participio como VERB raiz con la copula "esta". Con "estar" + participio es un
+        estado (adjetivo): (ana, estar, cansada) y no (ana, cansar). Con "ser" seria una pasiva y no se toca."""
+        rows = [list(x) for x in rows]
+        for v, x in enumerate(rows):
+            if x[1] == "VERB" and _norm(x[0]).endswith(("ado", "ada", "ados", "adas", "ido", "ida", "idos", "idas")) \
+                    and any(y[2] == v + 1 and y[3] == "cop" and _norm(y[0]).startswith("est") for y in rows):
+                x[1] = "ADJ"
+                if len(x) > 4:
+                    x[4] = x[0].lower()
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_comparative(rows):
+        """parche-77: "Sara es mas baja que Rosa.": la escuela deja "Rosa" como SEGUNDO sujeto del adjetivo (con "que" como mark de Rosa). Es el termino
+        de la comparacion (nmod), como en "Luis es mas alto que Pedro"."""
+        rows = [list(x) for x in rows]
+        for r, x in enumerate(rows):
+            if x[3] not in ("nsubj", "csubj", "acl", "obl", "amod", "xcomp", "nmod") or (x[1] not in ("PROPN", "NOUN") and not (x[1] == "ADJ" and x[0][:1].isupper())) or r < 1:      # parche-78: tambien csubj/acl/..., y nombre leido como ADJ
+                continue
+            q = rows[r - 1]
+            if _norm(q[0]) == "que" and q[2] == r + 1 and q[3] in ("mark", "case") and x[2] > 0 and x[2] != r + 1 \
+                    and any(_norm(y[0]) in ("mas", "menos") and y[2] == x[2] for y in rows) \
+                    and (rows[x[2] - 1][1] == "ADJ" or any(y[2] == x[2] and y[3] == "cop" for y in rows)) \
+                    and (x[3] != "nsubj" or any(y[2] == x[2] and y[3] == "nsubj" and j != r for j, y in enumerate(rows))):
+                x[3] = "nmod"
+                q[3] = "case"
+                if x[1] == "ADJ":
+                    x[1] = "PROPN"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_inverted_subject(rows):
+        """parche-76: "Vuela una gaviota." (de "¿Vuela una gaviota?"): verbo al principio sin sujeto y un unico sintagma nominal con determinante
+        como "objeto": es el sujeto pospuesto. Solo se aplica sin tema previo (en un discurso, "Compra un coche." es sujeto omitido + objeto)."""
+        if len(rows) < 3 or rows[0][1] != "VERB" or rows[0][2] != 0:
+            return rows
+        kids = [j for j, y in enumerate(rows) if y[2] == 1 and y[1] != "PUNCT"]
+        if len(kids) != 1 or rows[kids[0]][3] != "obj" or rows[kids[0]][1] != "NOUN":
+            return rows
+        j = kids[0]
+        if any(z[2] == j + 1 and z[3] != "det" for z in rows):       # "Tiene un triangulo lados.": el sintagma lleva mas dependientes: no es un sujeto solo
+            return rows
+        if not any(z[2] == j + 1 and z[3] == "det" and _norm(z[0]) in ("un", "una", "unos", "unas", "el", "la", "los", "las") for z in rows):
+            return rows
+        rows = [list(x) for x in rows]
+        rows[j][3] = "nsubj"
+        return [tuple(x) for x in rows]
+
+    def parse(self, sentence: str, topic: Optional[str] = None, verbs=None) -> Optional[List[Dict]]:
         """None si no es una afirmacion analizable (pregunta, demasiado corta o larga); si no, lista de proposiciones."""
         if "?" in sentence or "¿" in sentence:
             return None
@@ -102,7 +318,9 @@ class SchoolParser:
         forms = self._forms(sentence)
         if not 3 <= len(forms) <= 40:         # 3 = "Envia paquetes ." (sujeto omitido)
             return None
-        tree = self.tree(sentence)
+        tree = self._fix_verb_first(self.tree(sentence), verbs)
+        if topic is None:
+            tree = self._fix_inverted_subject(tree)
         found = triples_full(tree, entities_only=True, default_subject=topic)
         if not found and topic and sentence[:1].isupper():
             # "Bebe agua.": con mayuscula inicial la escuela puede leer el verbo como nombre; se reintenta en minuscula

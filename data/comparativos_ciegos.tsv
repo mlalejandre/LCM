@@ -1,0 +1,27 @@
+# Examen CIEGO nuevo (parche-78): comparativos encadenados con nombres y adjetivos que NO se usaron para afinar. Informativo: no frena el ciclo.
+H: Marta es más alta que Lucía.
+H: Lucía es más alta que Nuria.
+P: ¿Es Marta más alta que Nuria?	SI
+P: ¿Es Nuria más alta que Marta?	NO
+P: ¿Es Marta más alta que Lucía?	SI
+
+H: Pablo es menos rápido que Hugo.
+H: Hugo es menos rápido que Iván.
+P: ¿Es Pablo menos rápido que Iván?	SI
+P: ¿Es Iván menos rápido que Pablo?	NO
+
+H: Elena es más joven que Rosa.
+P: ¿Es Elena más joven que Marta?	NOSE
+P: ¿Es Rosa más joven que Elena?	NO
+
+H: Carlos es más fuerte que Andrés.
+H: Andrés es más fuerte que Daniel.
+P: ¿Quién es más fuerte que Daniel?	Andrés
+P: ¿Es Carlos más fuerte que Daniel?	SI
+
+H: Irene es más lista que Sofía.
+H: Sofía es más lista que Eva.
+H: Eva es más lista que Alba.
+P: ¿Es Irene más lista que Alba?	SI
+P: ¿Es Alba más lista que Irene?	NO
+P: ¿Es Sofía más lista que Alba?	SI

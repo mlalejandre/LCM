@@ -25,12 +25,20 @@ def opposite(a: str, b: str, extra=()) -> bool:
     return any({stem(x), stem(y)} == {sa, sb} for x, y in list(ANTONYMS) + [tuple(e) for e in extra])
 
 
+_A_MARCA = {"IR", "LLEGAR", "VOLVER", "VENIR", "ENTRAR", "VIAJAR", "REGRESAR", "SALIR", "DAR", "REGALAR", "VENDER", "PRESTAR", "ENTREGAR", "MANDAR", "ENVIAR"}
+
+
+def _pn(p: str) -> str:
+    """parche-77: la "a" personal (AMAR_A) no distingue la relacion; se conserva si marca destino o receptor (IR_A, DAR_A...)."""
+    return p[:-2] if p.endswith("_A") and p[:-2] not in _A_MARCA else p
+
+
 def classify(facts: List[dict], triple: Tuple[str, str, str], neg: bool, has_time: bool = False,
              ya_no: bool = False, extra=()) -> Tuple[str, Optional[dict]]:
     """-> (tipo, hecho_viejo): 'supersede' | 'negation' | 'antonym' | ('', None)."""
     s, p, o = (x.upper() for x in triple)
     for f in facts:
-        same = (f["s"], f["p"], f["o"]) == (s, p, o)
+        same = (f["s"], _pn(f["p"]), f["o"]) == (s, _pn(p), o)
         if same and bool(f.get("neg")) != neg:
             if neg and ya_no and p in FUNCTIONAL:
                 return "supersede_neg", f                     # "Pedro ya no trabaja en X": el viejo pasa a pasado

@@ -160,5 +160,87 @@
    "nucleo_44": 1.0,
    "nucleo_ciego_25": 1.0
   }
+ },
+ {
+  "fecha": "2026-11-07 11:58",
+  "metrics": {
+   "conversacion_80": 1.0,
+   "largas_ciegas_27": 0.963,
+   "cantidad_26": 1.0,
+   "cantidad_ciegas_14": 0.9286,
+   "estados_27": 0.963,
+   "estados_ciegas_18": 0.9444,
+   "fechas_18": 1.0,
+   "herencia_10": 1.0,
+   "tiempo_14": 1.0,
+   "conceptos_14": 0.9286,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 1.0,
+   "discurso_21": 1.0,
+   "dialogo_65": 1.0,
+   "dialogo_ciego_37": 0.9459,
+   "coherencia_29": 0.9655,
+   "coherencia_ciega_19": 0.9474,
+   "definiciones_29": 1.0,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0
+  }
+ },
+ {
+  "fecha": "2026-11-07 12:05",
+  "metrics": {
+   "conversacion_80": 1.0,
+   "largas_ciegas_27": 0.963,
+   "cantidad_26": 1.0,
+   "cantidad_ciegas_14": 0.8571,
+   "estados_27": 1.0,
+   "estados_ciegas_18": 1.0,
+   "fechas_18": 1.0,
+   "herencia_10": 1.0,
+   "tiempo_14": 1.0,
+   "conceptos_14": 1.0,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 1.0,
+   "discurso_21": 1.0,
+   "dialogo_65": 1.0,
+   "dialogo_ciego_37": 1.0,
+   "coherencia_29": 1.0,
+   "coherencia_ciega_19": 1.0,
+   "definiciones_29": 1.0,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0
+  }
+ },
+ {
+  "fecha": "2026-11-07 12:14",
+  "metrics": {
+   "conversacion_80": 1.0,
+   "largas_ciegas_27": 0.963,
+   "cantidad_26": 1.0,
+   "cantidad_ciegas_14": 1.0,
+   "estados_27": 1.0,
+   "estados_ciegas_18": 1.0,
+   "fechas_18": 1.0,
+   "herencia_10": 1.0,
+   "tiempo_14": 1.0,
+   "conceptos_14": 1.0,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 1.0,
+   "nuevo_ciego_comparativos_12": 0.75,
+   "discurso_21": 1.0,
+   "dialogo_65": 1.0,
+   "dialogo_ciego_37": 1.0,
+   "coherencia_29": 1.0,
+   "coherencia_ciega_19": 1.0,
+   "definiciones_29": 1.0,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0
+  }
  }
 ]

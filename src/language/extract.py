@@ -224,6 +224,15 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
                         "when_idx": sorted(skip), "q": quant})
 
         found = False
+        if upos == "PROPN" and subjects and not isinstance(subjects[0], str) and tree[subjects[0]][1] == "NOUN" \
+                and (has_cop or any(tree[c][3] == "cop" for c in _children(tree, subjects[0]))):
+            # parche-76: "La madre de Marcos es Ana." (de "Mi madre es Ana."): el nombre propio es la raiz y el sujeto es el sustantivo de parentesco
+            # con su "de X": (ana, madre_de, marcos), igual que "Ana es la madre de Marcos".
+            nm = [j for j in _children(tree, subjects[0]) if tree[j][3] == "nmod" and tree[j][1] in ("PROPN", "NOUN") and _prep(tree, j) == "de"]
+            if nm:
+                for k in group(nm[0], ("PROPN", "NOUN")):
+                    add(i, _lem(tree, subjects[0]) + "_de", k)
+                found = True
         if has_cop and upos in ("NOUN", "PROPN", "ADJ"):
             for j in kids:
                 if tree[j][3] == "nmod" and tree[j][1] in ("NOUN", "PROPN"):

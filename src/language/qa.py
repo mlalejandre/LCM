@@ -176,7 +176,7 @@ class QA:
                         sw = dict(a0)                       # "¿Es un A un B?": A es el sujeto (parche-58)
                         sw["s"], sw["o"], sw["s_disp"], sw["o_disp"] = a0["o"], a0["s"], a0["o_disp"], a0["s_disp"]
                         sw["template"] = "{s} es {o}"
-                        self._alts = [sw, a0]
+                        self._alts = [sw]                    # parche-77: solo la lectura "A es el sujeto" (antes tambien la invertida)
                         return kind, sw
                     return kind, a0
                 break
