@@ -1,5 +1,5 @@
 {
- "creado": "2026-11-06 23:23",
+ "creado": "2026-11-07 11:27",
  "entorno": {
   "python": "3.11.16",
   "plataforma": "macOS-26.5.2-arm64-arm-64bit",
@@ -15,8 +15,8 @@
   "UD_Spanish-AnCora": "20adddbfcdd773c6dc97ba48ea11ca9364e74185"
  },
  "metricas_referencia": {
-  "conversacion_80": 0.9,
-  "largas_ciegas_27": 0.8519,
+  "conversacion_80": 1.0,
+  "largas_ciegas_27": 0.8889,
   "cantidad_26": 0.8462,
   "cantidad_ciegas_14": 0.7857,
   "estados_27": 0.963,
@@ -48,11 +48,11 @@
  },
  "archivos": {
   ".github/workflows/ci.yml": "2c8c1731afa54d85a76f846b48fe26e79842e74de354b0d89bda5d6cd8feaf8b",
-  ".gitignore": "70a92558260292154ee5a3dba17ca34f4accc465649a8a008850d26fede170bb",
+  ".gitignore": "e8bd09275b358a8ae1a4e7408f1c798eaedd2ef38f04d2614917468c68b82ab0",
   "LCM_EVOLUCION.md": "dc483b7bacf6532fc7caa49ee5ad589fae0b756fbcc9394423bb1f377fb0a5ae",
-  "LICENSE": "be7d70e4eee2270f13374ff4a42f1566f56c67be0a8103613e01efe36d402bb7",
+  "LICENSE": "d9590031a54506df9a2cc5d5109c775c289c17bee299c6760ba688bcdc9207e0",
   "Makefile": "d00753eab36d5d2c92c169636d02c3cd9311ecdacb2063f611174a89b441fcfc",
-  "README.md": "ced521ce15bfd750e94e2f8dc3a82e0b1294a563ca98afb268b600350451ce3b",
+  "README.md": "eb0eee730c8fa65710df504d12eebf735513139468bbccad92df7383c3a8da61",
   "configs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "configs/config.py": "2df3bb1e7e36174424286dbfe8d521a2e2f0b4f4594a0c82b50266fb65f7a1ca",
   "data/cantidad_ciegas.tsv": "b6b1eefd461d1943c3dd60c89a84ee92babc80e9e9a9f2d04916b72fd7cd094d",
@@ -94,7 +94,7 @@
   "scripts/eval_correcciones.py": "7aea12ce930450d41cfb1a64b41f33d3d7a116064d323e14240db7f5574b9bf1",
   "scripts/eval_dialogo.py": "476f3e777abf9d861c0e6c6670de8131a163ba40b81344e844ea9f94e32af74d",
   "scripts/eval_discurso.py": "1ae83f2be5535ee4de22a41b50a1e761837040ff45e91b8bb2eafd2705605edd",
-  "scripts/eval_frases.py": "2c35da01d7d20a476d7c3e7ad782228f63ce54442d156cbcba0bf68dbe3646c1",
+  "scripts/eval_frases.py": "d1fcfcc495550a4f842f52ad26f37d08608d2e9ba6a6544f88282cd9d26dea96",
   "scripts/eval_preguntas.py": "40c8e022446c637d5975f7db81737204802dd1cf9c814ed488c9bbab22e92cff",
   "scripts/eval_school.py": "cdb82438c3184ce2d839c9a1ccf8dacd92b490b2d7ed97ebf2e157cea7ec8d9c",
   "scripts/evaluate_ear.py": "0376338727d9ff7a33b7d6e65cf33fe447a48fff35c44a3582dec581c271ca2e",
@@ -124,13 +124,13 @@
   "src/language/ear.py": "50a03a90a3a9598b5445145e8d041e48da5dcca76fc269617f6ccbce5f1fd18b",
   "src/language/extract.py": "c349f1290ab2ba26b180f80e07b42d33eb3611c841355fa5ae46d50c99f65ca9",
   "src/language/fechas.py": "8e1a5c98c1edf85ba3e02537b375ef93d79150eda8de737a87606665d7433f27",
-  "src/language/irregulares.py": "5a67ff44dc8d886b29b3fec4b2dd87aede094961252d6a12ac525fed43a9c688",
+  "src/language/irregulares.py": "b55cf8ae540bfca2362ea1b0b41a4a8b7114948847a1db90456ff7fb40209986",
   "src/language/lexicon.py": "b5770e0620a411094f0094ff625159075d451aa0a1224b1f97a5b03fa861ce21",
   "src/language/lm.py": "afd5db8be02aff4a03e9d563587f796e46424b5594aa41de3cabf856e3535079",
   "src/language/online_ear.py": "8e3560273cc5d66b3e4e9166d273f383507d16e00edfac46fc20b763c39177eb",
   "src/language/qa.py": "588a8ef54ca48a5f2371f4ad74637a2860ebde48a578f44b875aa5c5ccf7e7b8",
   "src/language/school_learn.py": "60295974e4c2a2866ed18c4e04db1dbc47195e50664bbdfedb3f2a691f52234f",
-  "src/language/school_parser.py": "7245029a000929123e1fb6b1a3ae7f7c46188dabae6ce5e3ada58b5ca8343858",
+  "src/language/school_parser.py": "8123930494c6d8841a77f25074243f927a00bdc3b91d6dcb269c1eb75466f57c",
   "src/language/semilla.py": "b49ecae24e31c1227189d63f638904853669ae8fab305c44bfa8e54f3b05bba5",
   "src/language/training.py": "00cd9d82318dfc015016bd2002d45001e4a197ed4bf3469cd9850f83223be590",
   "src/language/ud.py": "3006a447cc5a7732d1c4a56ee04d477259364f43487e33ad3349d69d89990203",
@@ -164,6 +164,8 @@
   "tests/test_extract.py": "1fb1f2f5d1c65113115ed68548778fbc4ed5648dc40f1c504e216828305b5fb5",
   "tests/test_fechas.py": "ccecdb01331afd0676dabab8c41886e36cad6d9687cfd0a40415e788df3cbd7a",
   "tests/test_nucleo.py": "675c7783b9f651a560b5fecb21110bc95930d5a47e9ec23dbadc715fa332fd8e",
+  "tests/test_parche71.py": "74e5bb3c746b824378b75829422eb26f6455b3c34f5742e1379e1c8b7ee17f1e",
+  "tests/test_parche72.py": "b4b6fce8ae4b96aaa467acb277e3820b64605d7971c096ac23cf28e898d6a9b2",
   "tests/test_qa.py": "0d5347a4048b4b9c5def4ce3868924c806aa3a4f35079763f8dd85f9d357b144",
   "tests/test_reproducibilidad.py": "8ca8ab9b9fcbba546699901a482e97efa8c1d394ae3d861a42aef5e83bdf7e98"
  }

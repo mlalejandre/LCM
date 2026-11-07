@@ -42,6 +42,7 @@ _V = {
     "oir": "oigo oyes oye oimos oyen oyo oyeron",
     "traer": "traigo traes trae traemos traen trajo trajeron",
     "conocer": "conozco conoces conoce conocemos conocen conocio",
+    "morder": "muerdo muerdes muerde mordemos muerden mordio mordieron mordia",
     "producir": "produzco produces produce producimos producen produjo",
 }
 IRREG = {}

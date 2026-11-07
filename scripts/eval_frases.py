@@ -18,8 +18,16 @@ from src.language.ud import load_school
 from src.language.lexicon import norm
 
 
+# parche-71: la "a" personal (conocer a Pablo) no distingue la relacion (igual que qa.pred_key). Se conserva donde marca destino
+# o receptor: ir/llegar/volver/venir/entrar/viajar/regresar/salir a..., dar/regalar/vender/prestar/entregar/mandar/enviar a...
+_A_MARCA = {"ir", "llegar", "volver", "venir", "entrar", "viajar", "regresar", "salir", "dar", "regalar", "vender", "prestar",
+            "entregar", "mandar", "enviar"}
+
+
 def key(p):
     head, _, prep = p.partition("_")
+    if prep == "a" and head not in _A_MARCA:
+        prep = ""
     return head[:3] + "|" + prep
 
 

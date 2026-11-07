@@ -29,7 +29,7 @@ class SchoolParser:
         forms = self._forms(sentence)[:40]
         pred = predict_trees(self.model, [forms], self.device, self.scripts)[0]
         rows = [(f, u, h, r, l) for f, (u, h, r, l) in zip(forms, pred)]
-        rows = self._fix_name_verb(rows)
+        rows = self._fix_name_adj(self._fix_name_verb(rows))
         return [(f, u, h, r, (self.overrides.get(f.lower()) or self.overrides.get(_norm(f)) or l) if u == "VERB" else l) for f, u, h, r, l in rows]
 
     @staticmethod
@@ -70,6 +70,27 @@ class SchoolParser:
                         rows[j][2] = k + 1
             break
         return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_name_adj(rows):
+        """parche-72: "Clara canta en el coro." / "Clara no compra leche.": la escuela lee el nombre propio como ADJ (amod del verbo).
+        Si es la primera palabra, empieza en mayuscula, cuelga de un verbo a su derecha (solo "no/nunca/jamas/tampoco" entre medias),
+        no lleva determinante y el verbo no tiene otro sujeto, es un nombre propio sujeto."""
+        if len(rows) < 3:
+            return rows
+        f, u, h, r, l = rows[0][:5]
+        if u != "ADJ" or r not in ("amod", "nsubj") or not (f[:1].isupper() and f[1:].islower()) or h < 2:
+            return rows
+        v = h - 1
+        if v >= len(rows) or rows[v][1] != "VERB" or rows[v][0].lower().endswith(("ar", "er", "ir", "ando", "iendo")):
+            return rows
+        if any(_norm(rows[k][0]) not in ("no", "nunca", "jamas", "tampoco") for k in range(1, v)):
+            return rows
+        if any(x[2] == 1 and x[3] == "det" for x in rows[1:]):
+            return rows
+        if any(x[2] == h and x[3] in ("nsubj", "csubj") for x in rows[1:]):
+            return rows
+        return [(f, "PROPN", h, "nsubj", l)] + list(rows[1:])
 
     def parse(self, sentence: str, topic: Optional[str] = None) -> Optional[List[Dict]]:
         """None si no es una afirmacion analizable (pregunta, demasiado corta o larga); si no, lista de proposiciones."""
