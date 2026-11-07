@@ -461,5 +461,39 @@
    "nuevo_ciego_dialogo_9": 1.0,
    "nuevo_ciego_dialogo7_8": 0.875
   }
+ },
+ {
+  "fecha": "2026-11-07 12:34",
+  "metrics": {
+   "conversacion_80": 1.0,
+   "largas_ciegas_27": 0.963,
+   "cantidad_26": 1.0,
+   "cantidad_ciegas_14": 1.0,
+   "estados_27": 1.0,
+   "estados_ciegas_18": 1.0,
+   "fechas_18": 1.0,
+   "herencia_10": 1.0,
+   "tiempo_14": 1.0,
+   "conceptos_14": 1.0,
+   "deduccion_12": 1.0,
+   "preguntas_19": 1.0,
+   "preguntas_ciegas_31": 1.0,
+   "nuevo_ciego_comparativos_12": 1.0,
+   "nuevo_ciego_general_13": 1.0,
+   "nuevo_ciego_dificil_26": 0.9615,
+   "nuevo_ciego_cuatro_14": 0.9286,
+   "nuevo_ciego_cinco_13": 0.9231,
+   "discurso_21": 1.0,
+   "dialogo_65": 1.0,
+   "dialogo_ciego_37": 1.0,
+   "coherencia_29": 1.0,
+   "coherencia_ciega_19": 1.0,
+   "definiciones_29": 1.0,
+   "definiciones_ciegas_21": 1.0,
+   "nucleo_44": 1.0,
+   "nucleo_ciego_25": 1.0,
+   "nuevo_ciego_dialogo_9": 1.0,
+   "nuevo_ciego_dialogo7_8": 0.875
+  }
  }
 ]

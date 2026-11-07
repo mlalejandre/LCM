@@ -1,30 +1,13 @@
-CICLO 20261107-123225-105380
-  TESTS UNITARIOS: 88 passed in 1.01s
+CICLO 20261107-123432-720504
+  TESTS UNITARIOS: 88 passed in 1.03s
   RESUMEN: TODO CUMPLE
-    nuevo_ciego_dialogo_9: 77.8% -> 100.0%  MEJORA
   [OK] reproducibilidad/manifiesto.json: 142 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
      metricas de referencia: 29 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M parche.py
- M reports/ciclo.txt
- M reports/historial.json
+M reports/historial.json
  M reproducibilidad/manifiesto.json
- M scripts/check.py
- M src/language/dialogue.py
- M src/language/extract.py
- M src/language/qa.py
- M src/language/school_parser.py
-?? data/ciego_cinco.tsv
-?? data/ciego_cuatro.tsv
-?? data/dialogo_ciego_seis.tsv
-?? data/dialogo_ciego_siete.tsv
-?? tests/test_parche81.py
-?? tests/test_parche82.py
-?? tests/test_parche83.py
-?? tests/test_parche84.py
-?? tests/test_parche85.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push
