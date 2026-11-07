@@ -1,0 +1,36 @@
+# Examen CIEGO 4 (parche-82): herencia de propiedades, contrarios, cantidades, dias de la semana, negacion con "pero", objetos coordinados, parentesco indirecto. Informativo.
+H: Los pájaros vuelan.
+H: Una gaviota es un pájaro.
+P: ¿Vuela una gaviota?	SI
+
+H: Lo contrario de grande es pequeño.
+P: ¿Qué es lo contrario de grande?	pequeño
+
+H: Rosa tiene dos hermanos.
+H: Rosa tiene un perro.
+P: ¿Cuántos hermanos tiene Rosa?	dos
+P: ¿Cuántos perros tiene Rosa?	un
+P: ¿Tiene Rosa dos hermanos?	SI
+
+HOY: 2026-11-07
+H: Pablo llegó el lunes.
+P: ¿Cuándo llegó Pablo?	2 de noviembre de 2026
+
+H: Teo no tiene coche pero tiene una moto.
+P: ¿Tiene Teo coche?	NO
+P: ¿Qué tiene Teo?	moto
+
+H: Laura compró pan y leche.
+P: ¿Qué compró Laura?	pan
+P: ¿Compró Laura leche?	SI
+
+H: El perro de Irene se llama Toby.
+P: ¿Cómo se llama el perro de Irene?	Toby
+
+H: Marcos es el hermano de Julia.
+H: Julia es la madre de Carla.
+P: ¿Es Marcos el tío de Carla?	SI
+
+H: Los niños juegan en el parque.
+P: ¿Quién juega en el parque?	niños
+P: ¿Dónde juegan los niños?	parque

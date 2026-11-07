@@ -94,7 +94,15 @@ def _rewrite(question: str, hole: str = HOLE) -> Tuple[List[str], str]:
         if len(rest) < 2:
             return [], ""
         # "Donde estudia Luis musica?" -> "Luis estudia musica en Xqx" (el verbo detras del sujeto, el hueco al final)
-        return [" ".join([rest[1], rest[0]] + rest[2:] + [prep, hole]) + "."], "objeto"
+        c0 = []
+        k_ = len(rest)
+        while k_ > 1 and (rest[k_ - 1][:1].isupper() or (norm(rest[k_ - 1]) in ("y", "e") and k_ - 2 >= 1 and rest[k_ - 2][:1].isupper())):
+            k_ -= 1                                   # parche-81: "Donde tienen una casa Andrea y Bruno?" -> sujeto coordinado al final
+        if k_ < len(rest) and k_ > 2 and rest[k_][:1].isupper():
+            c0 = [" ".join(rest[k_:] + [rest[0]] + rest[1:k_] + [prep, hole]) + "."]
+        if len(rest) >= 3 and norm(rest[1]) in DETS and not c0:       # parche-83: "Donde juegan los ninos?" -> "los ninos juegan en Xqx"
+            c0 = [" ".join([rest[1], rest[2], rest[0]] + rest[3:] + [prep, hole]) + "."]
+        return c0 + [" ".join([rest[1], rest[0]] + rest[2:] + [prep, hole]) + "."], "objeto"
     if low[i] in WH:
         rest = w[i + 1:]
         if not rest:
@@ -112,6 +120,8 @@ def _rewrite(question: str, hole: str = HOLE) -> Tuple[List[str], str]:
             if len(rest) >= 2:
                 cands.append(" ".join(rest[1:] + [rest[0], hole]) + ".")
             return cands, "sujeto" if low[0] in ("quien", "quienes") else "objeto"
+        if len(rest) >= 3 and rest[1][:1].isupper():           # parche-81: "A quien regalo Ruben un libro?" -> "Ruben regalo un libro a Xqx"
+            return [" ".join([rest[1], rest[0]] + rest[2:] + pre + [hole]) + ".", " ".join(rest[1:] + [rest[0]] + pre + [hole]) + "."], "objeto"
         if len(rest) >= 2:                                     # "A quien llamo Pedro?" -> "Pedro llamo a Xqx"
             return [" ".join(rest[1:] + [rest[0]] + pre + [hole]) + "."], "objeto"
         return [], ""
@@ -277,6 +287,24 @@ class QA:
             if opposite(m.group(1), m.group(2), getattr(self.m, "opposites", [])):
                 return f"Sí, {m.group(1)} es lo contrario de {m.group(2)}."
             return "No lo sé."
+        m = re.fullmatch(r"(?:cual|que) (?:es|seria) (?:lo contrario|lo opuesto|el contrario|el opuesto) de (\w+)", t)
+        if m:                                                    # parche-84: el contrario es simetrico ("Alto es lo contrario de bajo" -> "¿Cual es lo contrario de bajo?")
+            x = m.group(1).upper()
+            outs = []
+            for f in facts:
+                if f["p"] == "CONTRARIO_DE" and not f.get("neg"):
+                    if norm(f["o"]).upper() == x:
+                        outs.append(f["s"])
+                    elif norm(f["s"]).upper() == x:
+                        outs.append(f["o"])
+            for a_, b_ in getattr(self.m, "opposites", []):
+                if norm(b_).upper() == x:
+                    outs.append(a_)
+                elif norm(a_).upper() == x:
+                    outs.append(b_)
+            outs = list(dict.fromkeys(self._disp(o_).lower() if str(o_).isupper() else str(o_) for o_ in outs))
+            if outs:
+                return f"Lo contrario de {m.group(1)} es {' o '.join(outs)}."
         m = re.fullmatch(r"por que (.+)", t)
         if m:
             words = m.group(1).split()

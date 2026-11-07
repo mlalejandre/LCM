@@ -26,7 +26,7 @@ from src.memory.store import MemoryStore
 import tempfile
 
 FRASES = [("conversacion_80", "data/frases_prueba.tsv", .75), ("largas_ciegas_27", "data/frases_largas_ciegas.tsv", .60)]
-PREGUNTAS = [("cantidad_26", "data/cantidad_prueba.tsv", .70), ("cantidad_ciegas_14", "data/cantidad_ciegas.tsv", .60), ("estados_27", "data/estados_prueba.tsv", .70), ("estados_ciegas_18", "data/estados_ciegas.tsv", .60), ("fechas_18", "data/fechas_prueba.tsv", .75), ("herencia_10", "data/herencia_prueba.tsv", .75), ("tiempo_14", "data/tiempo_prueba.tsv", .75), ("conceptos_14", "data/conceptos_prueba.tsv", .75), ("deduccion_12", "data/preguntas_deduccion.tsv", .75), ("preguntas_19", "data/preguntas_prueba.tsv", .70), ("preguntas_ciegas_31", "data/preguntas_ciegas.tsv", .80), ("nuevo_ciego_comparativos_12", "data/comparativos_ciegos.tsv", .0), ("nuevo_ciego_general_13", "data/ciego_general.tsv", .0), ("nuevo_ciego_dificil_26", "data/ciego_dificil.tsv", .0)]      # parche-80: informativo      # parche-79: informativo      # parche-78: informativo
+PREGUNTAS = [("cantidad_26", "data/cantidad_prueba.tsv", .70), ("cantidad_ciegas_14", "data/cantidad_ciegas.tsv", .60), ("estados_27", "data/estados_prueba.tsv", .70), ("estados_ciegas_18", "data/estados_ciegas.tsv", .60), ("fechas_18", "data/fechas_prueba.tsv", .75), ("herencia_10", "data/herencia_prueba.tsv", .75), ("tiempo_14", "data/tiempo_prueba.tsv", .75), ("conceptos_14", "data/conceptos_prueba.tsv", .75), ("deduccion_12", "data/preguntas_deduccion.tsv", .75), ("preguntas_19", "data/preguntas_prueba.tsv", .70), ("preguntas_ciegas_31", "data/preguntas_ciegas.tsv", .80), ("nuevo_ciego_comparativos_12", "data/comparativos_ciegos.tsv", .0), ("nuevo_ciego_general_13", "data/ciego_general.tsv", .0), ("nuevo_ciego_dificil_26", "data/ciego_dificil.tsv", .0), ("nuevo_ciego_cuatro_14", "data/ciego_cuatro.tsv", .0), ("nuevo_ciego_cinco_13", "data/ciego_cinco.tsv", .0)]      # parche-83: informativo      # parche-82: informativo      # parche-80: informativo      # parche-79: informativo      # parche-78: informativo
 DISCURSO = [("discurso_21", "data/discurso_ciego.tsv", .70)]
 
 
@@ -130,7 +130,7 @@ def main():
 
     for name, path, limit in (("coherencia", "data/coherencia_prueba.tsv", .70), ("coherencia_ciega", "data/coherencia_ciega.tsv", .60),
                              ("definiciones", "data/definiciones_prueba.tsv", .70), ("definiciones_ciegas", "data/definiciones_ciegas.tsv", .60),
-                             ("nucleo", "data/nucleo_prueba.tsv", .70), ("nucleo_ciego", "data/nucleo_ciego.tsv", .60)):
+                             ("nucleo", "data/nucleo_prueba.tsv", .70), ("nucleo_ciego", "data/nucleo_ciego.tsv", .60), ("nuevo_ciego_dialogo", "data/dialogo_ciego_seis.tsv", .0), ("nuevo_ciego_dialogo7", "data/dialogo_ciego_siete.tsv", .0)):      # parche-85: informativo      # parche-84: informativo
         g, t, bad = run_dialogo(path)
         rate = g / max(t, 1)
         metrics[f"{name}_{t}"] = round(rate, 4)

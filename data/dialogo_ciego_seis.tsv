@@ -1,0 +1,19 @@
+# Dialogo CIEGO 6 (parche-84): nombre propio, sinonimos, correccion, resumen de lo sabido, "para que sirve" y "como lo sabes". Informativo.
+U: Me llamo Elena.	Elena
+U: ¿Cómo me llamo?	Elena
+
+U: Coche es lo mismo que auto.	Vale
+U: Pedro tiene un coche.	
+U: ¿Tiene Pedro un auto?	Sí
+
+U: Marta vive en Lugo.	
+U: No, Marta vive en Vigo.	
+U: ¿Dónde vive Marta?	Vigo
+
+U: Luis compra pan.	
+U: ¿Qué sabes de Luis?	pan
+U: ¿Quién compra pan?	Luis
+
+U: Un martillo sirve para clavar.	
+U: ¿Para qué sirve un martillo?	clavar
+U: ¿Cómo lo sabes?	dijiste

@@ -1,0 +1,21 @@
+# Dialogo CIEGO 7 (parche-85): correcciones con "No,", pasado, "que sirve para", parentesco, definicion de persona. Informativo.
+U: Soy Pablo.	
+U: ¿Cómo me llamo?	Pablo
+
+U: Ana compra pan.	
+U: ¿Qué compra Ana?	pan
+
+U: Rosa vive en Sevilla.	
+U: No, Rosa vive en Cádiz.	
+U: ¿Dónde vive Rosa?	Cádiz
+U: ¿Dónde vivía Rosa?	Sevilla
+
+U: Un tenedor sirve para comer.	
+U: ¿Qué sirve para comer?	tenedor
+U: ¿Cómo lo sabes?	dijiste
+
+U: Luis es el padre de Juan.	
+U: ¿Quién es el padre de Juan?	Luis
+
+U: Sara es profesora.	
+U: ¿Quién es Sara?	profesora

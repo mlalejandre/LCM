@@ -1,0 +1,36 @@
+# Examen CIEGO 5 (parche-83): contrarios simetricos, edades, "manana", partes (ruedas), herencia con plural, trabajo+vida, lugar con preposicion compuesta, dativo con fecha. Informativo.
+H: Alto es lo contrario de bajo.
+P: ¿Cuál es lo contrario de bajo?	alto
+
+H: Mario tiene diez años.
+P: ¿Cuántos años tiene Mario?	diez
+
+HOY: 2026-11-07
+H: Ana viaja mañana a Roma.
+P: ¿Cuándo viaja Ana a Roma?	8 de noviembre de 2026
+
+H: Un coche tiene cuatro ruedas.
+P: ¿Cuántas ruedas tiene un coche?	cuatro
+
+H: Sara y Tomás son hermanos.
+P: ¿Es Sara hermana de Tomás?	SI
+
+H: Los peces nadan.
+H: Un salmón es un pez.
+P: ¿Nada un salmón?	SI
+
+H: Víctor trabaja en un banco y vive en Cuenca.
+P: ¿Dónde vive Víctor?	Cuenca
+P: ¿Dónde trabaja Víctor?	banco
+
+H: Carmen estudia medicina.
+P: ¿Qué estudia Carmen?	medicina
+P: ¿Estudia Carmen derecho?	NOSE
+
+H: El libro está encima de la mesa.
+P: ¿Dónde está el libro?	encima de la mesa
+
+HOY: 2026-11-07
+H: Ayer Julia llamó a Pablo.
+P: ¿A quién llamó Julia?	Pablo
+P: ¿Cuándo llamó Julia a Pablo?	6 de noviembre de 2026

@@ -207,6 +207,14 @@ class Dialogue:
         d = qa.derived(s, p, o)
         if d:
             return "Lo deduje: " + qa.say(d[0]) + qa._because(d[0]) + "."
+        if not statement and self.last_question and self.last and not getattr(self, "_explaining_last", False):
+            found = qa.parse(self.last.strip()) or []              # parche-84: si la pregunta ahora se lee pero no da hechos, se justifica lo que dije
+            if found:
+                self._explaining_last = True
+                try:
+                    return self.explain(qa, self.last.strip())
+                finally:
+                    self._explaining_last = False
         return "No lo sé, no tengo ese dato."
 
     # ---- entrada principal -----------------------------------------------
@@ -660,7 +668,13 @@ class Conversation:
         self.topic = None
 
     def say(self, raw: str) -> str:
+        mc = re.match(r"^\s*no\s*,\s+(\S.*)$", raw, re.I)
+        if mc and not self.d.pending and not is_question(mc.group(1)) and len(mc.group(1).split()) >= 3 \
+                and not re.search(r"\b(no|nunca|nadie|ni|tampoco|nada|jamas)\b", n(mc.group(1))):
+            raw = mc.group(1)[:1].upper() + mc.group(1)[1:]             # parche-85: "No, Marta vive en Vigo." es una correccion, no una negacion de Vigo
         reply, cont = self.d.act(raw, self.qa)
+        if reply and not cont and is_question(raw) and not re.search(r"\b(sabes|sacas|seguro|repite)\b", n(raw)):
+            self.d.last_question = raw                                      # parche-85: las preguntas especiales tambien se pueden justificar ("¿Como lo sabes?")
         out = []
         if reply:
             out.append(reply)

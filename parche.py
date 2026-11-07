@@ -1,19 +1,26 @@
-"""parche-80: SONDA (sin cambios de codigo). Los 25 examenes cumplen al 100 % (salvo largas_ciegas_27, error del gold), asi que ya no hay fallos que corregir:
-se abre un examen CIEGO mas dificil (26 preguntas: coordinacion, plurales, fechas relativas, comparativos encadenados mezclando mas/menos, parentesco
-con regla implicita, generalizacion "todos los X son Y", cambio de trabajo, dativos). Informativo (criterio 0 %). Sus fallos son el trabajo del parche-81.
-Honestidad: es un examen escrito por nosotros; algunas preguntas pueden pedir cosas que el sistema aun no promete. Cada fallo se clasifica en el parche siguiente
-como (a) error del sistema o (b) pregunta fuera de alcance, y solo (a) se arregla.
-Uso:  python -m scripts.ciclo parche-80.py
+"""parche-85: noveno lote SIMBOLICO (no reentrena). Resultado del parche-84: definiciones_29 de nuevo al 100 %%, nuevo_ciego_cinco_13 12/13, dialogo ciego 6: 7/9.
+
+  1. "No, Marta vive en Vigo." (tras "Marta vive en Lugo."): se leia como NEGACION de Vigo y la memoria seguia en Lugo. Un "No," inicial con coma y una frase afirmativa sin otra
+     negacion es una CORRECCION: se procesa la frase sin el "No,". Verificado en replay con Ana/Madrid/Sevilla: "Vale: antes decias que Ana vive en Madrid; ahora lo tomo como pasado",
+     "¿Donde vive Ana?" -> Sevilla. (Marta/Vigo no se puede verificar: esas frases no estaban grabadas.) No se aplica si hay una pregunta pendiente (pending) ni a "No, gracias".
+  2. "¿Como lo sabes?" tras una pregunta ESPECIAL ("¿Para que sirve un martillo?"): las preguntas que contesta act() sin pasar por after_answer no guardaban last_question
+     y respondia "¿El qué? Pregúntame algo primero". Ahora se guarda (salvo las meta-preguntas "como lo sabes/seguro/repite"). Verificado en replay: "Me lo dijiste tú el ...".
+  FUERA DE ALCANCE (sin tocar): "¿Es Sara hermana de Tomas?", "se llama", "¿Escribe Gloria novelas?" -> NO.
+
+  Dialogo CIEGO 7 nuevo (data/dialogo_ciego_siete.tsv, 8 turnos): nombre, "No," como correccion + pasado, "que sirve para", padre de, quien es X. Informativo (criterio 0 %%).
+
+Criterios fijados ANTES de medir: 88 tests pasan (87 + 1), los 27 examenes anteriores no bajan, nuevo_ciego_dialogo_9 llega a >= 8/9.
+Uso:  python -m scripts.ciclo parche-85.py     (restaura solo si algo falla). No hace commits ni pushes. No reentrena.
 """
 import datetime, py_compile, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CK = "scripts/check.py"
-CK_OLD = '("nuevo_ciego_general_13", "data/ciego_general.tsv", .0)]'
-CK_NEW = '("nuevo_ciego_general_13", "data/ciego_general.tsv", .0), ("nuevo_ciego_dificil_26", "data/ciego_dificil.tsv", .0)]      # parche-80: informativo'
-ALL_EDITS = [(CK, CK_OLD, CK_NEW, "nuevo_ciego_dificil_26")]
-NEW_FILES = {"data/ciego_dificil.tsv": '# Examen CIEGO 3 (parche-80): MAS DIFICIL. Coordinacion, plurales, frases largas, fechas relativas, comparativos con "menos", negacion y cambios. Informativo.\nH: Andrea y Bruno tienen una casa en Valencia.\nP: ¿Quién tiene una casa en Valencia?\tAndrea\nP: ¿Tiene Bruno una casa?\tSI\nP: ¿Dónde tienen una casa Andrea y Bruno?\tValencia\n\nH: Gloria lee novelas y escribe poemas.\nP: ¿Qué escribe Gloria?\tpoemas\nP: ¿Qué lee Gloria?\tnovelas\nP: ¿Escribe Gloria novelas?\tNO\n\nH: Fernando no vive en Madrid sino en Toledo.\nP: ¿Vive Fernando en Madrid?\tNO\nP: ¿Dónde vive Fernando?\tToledo\n\nHOY: 2026-11-07\nH: Ana compró un coche ayer.\nP: ¿Cuándo compró Ana un coche?\t6 de noviembre de 2026\nP: ¿Compró Ana un coche?\tSI\n\nH: Hugo es más viejo que Pedro.\nH: Pedro es menos viejo que Hugo.\nH: Iván es más viejo que Hugo.\nP: ¿Es Iván más viejo que Pedro?\tSI\nP: ¿Es Pedro más viejo que Iván?\tNO\nP: ¿Quién es más viejo que Hugo?\tIván\n\nH: Claudia es la madre de Diego.\nH: Diego es el padre de Estela.\nP: ¿Quién es la madre de Diego?\tClaudia\nP: ¿Es Claudia la abuela de Estela?\tSI\nP: ¿Es Estela la nieta de Claudia?\tSI\n\nH: Todos los gatos son animales.\nH: Félix es un gato.\nP: ¿Es Félix un animal?\tSI\nP: ¿Es un animal Félix?\tSI\n\nH: Mónica está cansada.\nH: Mónica estaba contenta antes.\nP: ¿Está cansada Mónica?\tSI\nP: ¿Cómo está Mónica?\tcansada\n\nH: Rubén regaló un libro a Silvia.\nP: ¿Quién regaló un libro a Silvia?\tRubén\nP: ¿A quién regaló Rubén un libro?\tSilvia\nP: ¿Qué regaló Rubén a Silvia?\tlibro\n\nH: Marina trabajó en Sevilla y ahora trabaja en Bilbao.\nP: ¿Dónde trabaja Marina?\tBilbao\nP: ¿Dónde trabajaba Marina?\tSevilla\n\nH: Los lunes Nico va al gimnasio.\nP: ¿Quién va al gimnasio?\tNico\n'}
+CK_OLD = '("nuevo_ciego_dialogo", "data/dialogo_ciego_seis.tsv", .0)):'
+CK_NEW = '("nuevo_ciego_dialogo", "data/dialogo_ciego_seis.tsv", .0), ("nuevo_ciego_dialogo7", "data/dialogo_ciego_siete.tsv", .0)):      # parche-85: informativo'
+ALL_EDITS = [('src/language/dialogue.py', '        self.topic = None\n\n    def say(self, raw: str) -> str:\n        reply, cont = self.d.act(raw, self.qa)\n        out = []\n        if reply:\n            out.append(reply)\n', '        self.topic = None\n\n    def say(self, raw: str) -> str:\n        mc = re.match(r"^\\s*no\\s*,\\s+(\\S.*)$", raw, re.I)\n        if mc and not self.d.pending and not is_question(mc.group(1)) and len(mc.group(1).split()) >= 3 \\\n                and not re.search(r"\\b(no|nunca|nadie|ni|tampoco|nada|jamas)\\b", n(mc.group(1))):\n            raw = mc.group(1)[:1].upper() + mc.group(1)[1:]             # parche-85: "No, Marta vive en Vigo." es una correccion, no una negacion de Vigo\n        reply, cont = self.d.act(raw, self.qa)\n        if reply and not cont and is_question(raw) and not re.search(r"\\b(sabes|sacas|seguro|repite)\\b", n(raw)):\n            self.d.last_question = raw                                      # parche-85: las preguntas especiales tambien se pueden justificar ("¿Como lo sabes?")\n        out = []\n        if reply:\n            out.append(reply)\n', 'parche-85: "No, Marta vive en Vigo." es una correccion')] + [(CK, CK_OLD, CK_NEW, "nuevo_ciego_dialogo7")]
+NEW_FILES = {"tests/test_parche85.py": '"""parche-85: "No, X ..." es una correccion y las preguntas especiales se pueden justificar."""\nimport re\n\nfrom src.language.dialogue import Conversation\n\n\nclass _QA:\n    def answer(self, q):\n        return "ok"\n\n    def read(self, q):\n        return None, None\n\n\ndef test_no_coma_es_correccion(tmp_path):\n    from src.memory.store import MemoryStore\n    m = MemoryStore(str(tmp_path / "m.json"))\n    seen = []\n\n    class P:\n        today = None\n\n        def parse(self, s, topic=None, verbs=None):\n            seen.append(s)\n            return None\n\n    c = Conversation(m, P(), lambda mem, p: _QA())\n    c.say("No, Marta vive en Vigo.")\n    assert "Marta vive en Vigo." in seen and not any(s.startswith("No,") for s in seen)\n    seen.clear()\n    c.say("No, no vive en Vigo.")                              # con otra negacion no se toca\n    assert any(s.lower().startswith("no") for s in seen)\n', "data/dialogo_ciego_siete.tsv": '# Dialogo CIEGO 7 (parche-85): correcciones con "No,", pasado, "que sirve para", parentesco, definicion de persona. Informativo.\nU: Soy Pablo.\t\nU: ¿Cómo me llamo?\tPablo\n\nU: Ana compra pan.\t\nU: ¿Qué compra Ana?\tpan\n\nU: Rosa vive en Sevilla.\t\nU: No, Rosa vive en Cádiz.\t\nU: ¿Dónde vive Rosa?\tCádiz\nU: ¿Dónde vivía Rosa?\tSevilla\n\nU: Un tenedor sirve para comer.\t\nU: ¿Qué sirve para comer?\ttenedor\nU: ¿Cómo lo sabes?\tdijiste\n\nU: Luis es el padre de Juan.\t\nU: ¿Quién es el padre de Juan?\tLuis\n\nU: Sara es profesora.\t\nU: ¿Quién es Sara?\tprofesora\n'}
 
 
 def main(root: Path = ROOT) -> int:
@@ -44,7 +51,7 @@ def main(root: Path = ROOT) -> int:
         if rel.endswith(".py"):
             py_compile.compile(str(p), doraise=True)
         print(f"  escrito {rel}")
-    print(f"parche-80 instalado. Copias en {bk}" if plan else "parche-80: nada que hacer.")
+    print(f"parche-85 instalado. Copias en {bk}" if plan else "parche-85: nada que hacer.")
     return 0
 
 

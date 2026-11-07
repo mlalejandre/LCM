@@ -33,6 +33,7 @@ class SchoolParser:
         rows = self._fix_verb_complement(self._fix_relative(self._fix_name_noun_inverted(rows)))      # parche-76
         rows = self._fix_flat_across_verb(self._fix_subject_verb_appos(self._fix_verb_name_inverted(rows)))      # parche-76 (B)
         rows = self._fix_comparative(self._fix_participle_state(rows))      # parche-77
+        rows = self._fix_lo_contrario(self._fix_temporal_appos(rows))      # parche-82 / parche-83
         return [(f, u, h, r, (self.overrides.get(f.lower()) or self.overrides.get(_norm(f)) or self._lema_regular(f, l)) if u == "VERB" else l)
                 for f, u, h, r, l in rows]
 
@@ -302,6 +303,56 @@ class SchoolParser:
         return [tuple(x) for x in rows]
 
     @staticmethod
+    def _fix_temporal_appos(rows):
+        """parche-82: "Los lunes Nico va al gimnasio.": la escuela cuelga el nombre propio como aposicion del adverbial temporal ("lunes"). Un nombre propio
+        que sigue a un sintagma temporal (dia/parte del dia/estacion, plural o con determinante) y precede a un verbo raiz sin sujeto es el sujeto."""
+        TEMP = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabados", "sabado", "domingos", "domingo", "tardes", "noches", "mananas", "veranos",
+                "inviernos", "dias", "semanas", "meses", "anos", "fines"}
+        rows = [list(x) for x in rows]
+        for r, x in enumerate(rows):
+            if x[1] != "PROPN" or x[3] not in ("appos", "flat", "nmod") or x[2] < 1:
+                continue
+            t = rows[x[2] - 1]
+            if t[1] != "NOUN" or _norm(t[0]) not in TEMP or x[2] - 1 > r:
+                continue
+            v = next((k for k, y in enumerate(rows) if y[2] == 0 and y[1] == "VERB" and k > r), None)
+            if v is None or any(y[2] == v + 1 and y[3] in ("nsubj", "csubj") for y in rows):
+                continue
+            x[2], x[3] = v + 1, "nsubj"
+        return [tuple(x) for x in rows]
+
+    @staticmethod
+    def _fix_lo_contrario(rows):
+        """parche-83: "Lo contrario de grande es pequeno.": la escuela deja "pequeno" como raiz y "contrario" como su sujeto. Se invierte para que sea
+        igual que "Pequeno es lo contrario de grande": "contrario" raiz, "pequeno" su sujeto, la copula colgada de "contrario"."""
+        rows = [list(x) for x in rows]
+        for c, x in enumerate(rows):
+            if _norm(x[0]) != "contrario" or x[3] != "nsubj" or x[2] < 1:
+                continue
+            r = x[2] - 1
+            if rows[r][2] != 0 or not any(y[2] == c + 1 and y[3] == "det" and _norm(y[0]) == "lo" for y in rows):
+                continue
+            cop = [k for k, y in enumerate(rows) if y[2] == r + 1 and y[3] == "cop"]
+            if not cop:
+                continue
+            x[2], x[3] = 0, "root"
+            rows[r][2], rows[r][3] = c + 1, "nsubj"
+            for k in cop:
+                rows[k][2] = c + 1
+            for k, y in enumerate(rows):
+                if k not in (c, r) and y[2] == r + 1 and y[3] in ("punct",):
+                    y[2] = c + 1
+            if rows[r][1] == "ADJ":
+                rows[r][1] = "PROPN" if rows[r][0][:1].isupper() else "NOUN"
+        for c, x in enumerate(rows):                  # "Lo contrario de grande es Xqx." (pregunta reescrita): la copula cuelga del sujeto; se pasa a "contrario"
+            if _norm(x[0]) == "contrario" and x[3] == "root":
+                sj = [k for k, y in enumerate(rows) if y[2] == c + 1 and y[3] == "nsubj"]
+                for k, y in enumerate(rows):
+                    if y[3] == "cop" and (y[2] - 1) in sj:
+                        y[2] = c + 1
+        return [tuple(x) for x in rows]
+
+    @staticmethod
     def _fix_inverted_subject(rows):
         """parche-76: "Vuela una gaviota." (de "¿Vuela una gaviota?"): verbo al principio sin sujeto y un unico sintagma nominal con determinante
         como "objeto": es el sujeto pospuesto. Solo se aplica sin tema previo (en un discurso, "Compra un coche." es sujeto omitido + objeto)."""
@@ -339,7 +390,14 @@ class SchoolParser:
             alt = triples_full(tree2, entities_only=True, default_subject=topic)
             if alt:
                 tree, found = tree2, alt
+        sino = [k for k, w_ in enumerate(tree) if _norm(w_[0]) == "sino"]
+        if sino:                                     # parche-81: "Fernando no vive en Madrid sino en Toledo": lo que sigue a "sino" es afirmativo
+            for t in found:
+                if t.get("neg") and t.get("oi") is not None and t["oi"] > sino[0]:
+                    t["neg"] = False
         for t in found:
+            if t.get("when") and any(_norm(w_[0]) in ("los", "las") and (k + 1) in t.get("when_idx", []) and _norm(tree[k + 1][0]) not in ("tres", "dos", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "una") and not _norm(tree[k + 1][0]).isdigit() for k, w_ in enumerate(tree[:-1])):
+                t["when"], t["when_disp"] = "", ""             # parche-82: "Los lunes ...": es habitual, no una fecha concreta
             t.update(surface(tree, t))
             if abs_iv and not t.get("when"):
                 t["when"], t["when_disp"] = "abs:" + abs_iv, abs_disp

@@ -217,8 +217,21 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
         skip = set(tm[2]) if tm else set()
         has_cop = any(tree[j][3] == "cop" for j in kids)
 
+        def _cls(idx):
+            """parche-81: en "Todos los gatos son animales" la clase se guarda en singular (GATO, ANIMAL) para que encadene con "Felix es un gato"."""
+            nm_ = _name(tree, idx)
+            f_, l_ = norm(tree[idx][0]), _lem(tree, idx)
+            if tree[idx][1] == "NOUN" and f_ != l_ and f_ in (l_ + "s", l_ + "es") and nm_ == f_:
+                return l_
+            return nm_
+
         def add(sj_, p, o_idx):
             named = isinstance(sj_, str)
+            if p == "es" and not named and o_idx is not None and not neg and not quant:
+                out.append({"s": _cls(sj_), "p": p, "o": _cls(o_idx), "neg": neg, "head": i,
+                            "si": sj_, "oi": o_idx, "when": tm[0] if tm else "", "when_disp": tm[1] if tm else "",
+                            "when_idx": sorted(skip), "q": quant})
+                return
             out.append({"s": sj_ if named else _name(tree, sj_), "p": p, "o": "_" if o_idx is None else _name(tree, o_idx), "neg": neg, "head": i,
                         "si": None if named else sj_, "oi": o_idx, "when": tm[0] if tm else "", "when_disp": tm[1] if tm else "",
                         "when_idx": sorted(skip), "q": quant})
