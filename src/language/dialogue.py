@@ -193,6 +193,10 @@ class Dialogue:
         else:
             return "¿El qué? Pregúntame algo primero."
         hits = qa.lookup(s, p, o)
+        if not hits and s and p:                                   # parche-86: "sirve" ~ "servir_para": mismo verbo con preposicion, objeto libre
+            head = str(p).upper().split("_")[0]
+            hits = [(x["s"], x["p"], x["o"]) for x in self.m.facts
+                    if not x.get("neg") and x["s"] == str(s).upper() and x["p"].split("_")[0] == head and (o in (None, "_") or x["o"] == str(o).upper())][:1]
         if hits:
             f = next(x for x in self.m.facts if (x["s"], x["p"], x["o"]) == hits[0] and not x.get("neg"))
             when = datetime.fromtimestamp(f.get("t", time.time())).strftime("%d/%m/%Y")
@@ -299,6 +303,16 @@ class Dialogue:
     def _definitions(self, raw: str, t: str, qa):
         m_ = self.m
         a = self.ART
+        # nombre propio de una cosa ("El perro de Irene se llama Toby")          # parche-86
+        m = re.fullmatch(r"((?:el|la|mi|su|un|una) .+?) se llama (\w+)", t)
+        if m and "?" not in raw:
+            key = "_".join(self._bare(m.group(1)).split()).upper()
+            mr = re.match(r"\s*(.+?)\s+se\s+llama\s+(\S+?)[\s.!]*$", raw, re.I)
+            val = (mr.group(2) if mr else m.group(2)).strip(".!")
+            m_.add_fact((key, "LLAMARSE", norm(val).upper()), source=raw.strip())
+            m_.display[key] = (mr.group(1) if mr else m.group(1)).strip()
+            m_.display[norm(val).upper()] = val
+            return f"Entendido: {m_.display[key]} se llama {val}.", None
         # sinonimos
         m = re.fullmatch(r"(.+?) (?:es|son) (?:lo mismo que|sinonimo de|sinonima de|igual que|equivalente a|otro nombre de|otra palabra para)\s+(.+)|(.+?) significa (?:lo mismo que )?(.+)", t)
         if m:

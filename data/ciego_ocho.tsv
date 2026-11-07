@@ -1,0 +1,16 @@
+# Examen CIEGO 8 (parche-86): "se llama", varios animales con nombre, posesivos. Informativo.
+H: Mi gato se llama Félix.
+P: ¿Cómo se llama mi gato?	Félix
+
+H: El perro de Marta se llama Rex.
+H: El gato de Marta se llama Mía.
+P: ¿Cómo se llama el perro de Marta?	Rex
+P: ¿Cómo se llama el gato de Marta?	Mía
+
+H: La hija de Luis se llama Clara.
+P: ¿Cómo se llama la hija de Luis?	Clara
+
+H: Sofía tiene un perro.
+H: El perro de Sofía se llama Nube.
+P: ¿Tiene Sofía un perro?	SI
+P: ¿Cómo se llama el perro de Sofía?	Nube

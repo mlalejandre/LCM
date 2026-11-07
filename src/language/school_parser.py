@@ -374,6 +374,12 @@ class SchoolParser:
         """None si no es una afirmacion analizable (pregunta, demasiado corta o larga); si no, lista de proposiciones."""
         if "?" in sentence or "¿" in sentence:
             return None
+        mll = re.fullmatch(r"\s*((?:el|la|mi|su|un|una)\s+\S+(?:\s+(?:de|del)\s+\S+)?)\s+se\s+llama\s+(\S+?)\s*[.!]?\s*", sentence, re.I)
+        if mll and mll.group(2)[:1].isupper():       # parche-86: "El perro de Irene se llama Toby.": el nombre propio de una cosa
+            subj = mll.group(1)
+            key = "_".join(re.sub(r"^(el|la|mi|su|un|una)\s+", "", _norm(subj)).split())
+            return [{"s": key, "p": "llamarse", "o": _norm(mll.group(2)), "neg": False, "head": 0, "si": None, "oi": None, "when": "", "when_disp": "",
+                     "when_idx": [], "q": "", "template": "{s} se llama {o}", "s_disp": subj[:1].upper() + subj[1:], "o_disp": mll.group(2)}]
         from datetime import date
         from src.language.fechas import extract_abs
         sentence, abs_iv, abs_disp = extract_abs(sentence, getattr(self, "today", None) or date.today())

@@ -287,6 +287,13 @@ class QA:
             if opposite(m.group(1), m.group(2), getattr(self.m, "opposites", [])):
                 return f"Sí, {m.group(1)} es lo contrario de {m.group(2)}."
             return "No lo sé."
+        m = re.fullmatch(r"(?:como|que nombre) (?:se llama|tiene) (.+)", t)
+        if m:                                                    # parche-86: "¿Como se llama el perro de Irene?" -> hecho (PERRO_DE_IRENE, LLAMARSE, TOBY)
+            key = "_".join(re.sub(r"^(el|la|mi|su|un|una)\s+", "", m.group(1)).split()).upper()
+            fs = [f for f in facts if f["p"] == "LLAMARSE" and f["s"] == key and not f.get("neg")]
+            if fs:
+                disp = getattr(self.m, "display", {})
+                return f"{disp.get(key, key.replace('_', ' ').title())} se llama {disp.get(fs[-1]['o'], fs[-1]['o'].title())}."
         m = re.fullmatch(r"(?:cual|que) (?:es|seria) (?:lo contrario|lo opuesto|el contrario|el opuesto) de (\w+)", t)
         if m:                                                    # parche-84: el contrario es simetrico ("Alto es lo contrario de bajo" -> "¿Cual es lo contrario de bajo?")
             x = m.group(1).upper()
