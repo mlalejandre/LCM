@@ -1,0 +1,381 @@
+# Autoexamen generado (semilla 101, 10 rondas): NO editar a mano, se regenera.
+U: Julia compra naranjas.	
+U: ¿Qué es lo que compra Julia?	naranjas
+
+U: Raul compra naranjas.	
+U: ¿Quién compra naranjas?	Raul
+
+U: Elena compra naranjas.	
+U: ¿Elena compra naranjas?	Sí
+
+U: Mario vive en Madrid.	
+U: ¿En qué ciudad vive Mario?	Madrid
+
+U: Nora vive en Burgos.	
+U: ¿Quién vive en Burgos?	Nora
+
+U: Raul vive en Madrid.	
+U: No, Raul vive en Burgos.	
+U: ¿Dónde vive Raul?	Burgos
+U: ¿Dónde vivía Raul?	Madrid
+
+U: Julia es ingeniera.	
+U: ¿A qué se dedica Julia?	ingeniera
+
+U: Mario es ingeniero.	
+U: ¿Quién es ingeniero?	Mario
+
+U: Raul es el padre de Elena.	
+U: ¿Quién es el padre de Elena?	Raul
+
+U: Me llamo Mario.	
+U: ¿Sabes cómo me llamo?	Mario
+
+U: Julia es más alta que Elena.	
+U: Elena es más alta que Nora.	
+U: ¿Quién es más alta, Julia o Nora?	Julia
+
+U: 5 x 6	30
+
+U: Elena compra naranjas.	
+U: ¿Qué es lo que compra Elena?	naranjas
+
+U: Carlos compra naranjas.	
+U: ¿Quién compra naranjas?	Carlos
+
+U: Lucia compra naranjas.	
+U: ¿Compra Lucia naranjas?	Sí
+
+U: Andres vive en Cadiz.	
+U: ¿Sabes dónde vive Andres?	Cadiz
+
+U: Clara vive en Granada.	
+U: ¿Quién es la que vive en Granada?	Clara
+
+U: Carlos vive en Cadiz.	
+U: No, Carlos vive en Granada.	
+U: ¿Dónde vive Carlos?	Granada
+U: ¿Dónde vivía Carlos?	Cadiz
+
+U: Elena es profesora.	
+U: ¿De qué trabaja Elena?	profesora
+
+U: Andres es profesor.	
+U: ¿Quién es el profesor?	Andres
+
+U: Carlos es el padre de Lucia.	
+U: ¿Quién es el papá de Lucia?	Carlos
+
+U: Soy Andres.	
+U: ¿Cómo me llamo?	Andres
+
+U: Elena es más alta que Lucia.	
+U: Lucia es más alta que Clara.	
+U: ¿Es Elena más alta que Clara?	Sí
+
+U: 8 x 9	72
+
+U: Carla compra leche.	
+U: Dime qué compra Carla	leche
+
+U: Pedro compra leche.	
+U: ¿Quién es el que compra leche?	Pedro
+
+U: Paula compra leche.	
+U: ¿Compra Paula leche?	Sí
+
+U: Mario vive en Bilbao.	
+U: ¿En qué ciudad vive Mario?	Bilbao
+
+U: Irene vive en Burgos.	
+U: ¿Quién vive en Burgos?	Irene
+
+U: Pedro vive en Bilbao.	
+U: No, Pedro vive en Burgos.	
+U: ¿Dónde vive Pedro?	Burgos
+U: ¿Dónde vivía Pedro?	Bilbao
+
+U: Carla es abogada.	
+U: ¿Qué es Carla?	abogada
+
+U: Mario es abogado.	
+U: ¿Quién es el abogado?	Mario
+
+U: Pedro es el padre de Paula.	
+U: ¿Quién es el padre de Paula?	Pedro
+
+U: Soy Mario.	
+U: ¿Cómo me llamo?	Mario
+
+U: Carla es más alta que Paula.	
+U: Paula es más alta que Irene.	
+U: ¿Quién es más alta, Carla o Irene?	Carla
+
+U: 2 x 7	14
+
+U: Paula compra cafe.	
+U: ¿Qué compra Paula?	cafe
+
+U: Mario compra cafe.	
+U: ¿Quién compra cafe?	Mario
+
+U: Clara compra cafe.	
+U: ¿Compra Clara cafe?	Sí
+
+U: Juan vive en Leon.	
+U: ¿Dónde vive Juan?	Leon
+
+U: Julia vive en Burgos.	
+U: ¿Quién es la que vive en Burgos?	Julia
+
+U: Mario vive en Leon.	
+U: No, Mario vive en Burgos.	
+U: ¿Dónde vive Mario?	Burgos
+U: ¿Dónde vivía Mario?	Leon
+
+U: Paula es medica.	
+U: ¿De qué trabaja Paula?	medica
+
+U: Juan es medico.	
+U: ¿Quién es el medico?	Juan
+
+U: Mario es el padre de Clara.	
+U: ¿Quién es el padre de Clara?	Mario
+
+U: Soy Juan.	
+U: ¿Cuál es mi nombre?	Juan
+
+U: Paula es más alta que Clara.	
+U: Clara es más alta que Julia.	
+U: ¿Es Paula más alta que Julia?	Sí
+
+U: ¿Cuánto es 10 por 12?	120
+
+U: Elena compra manzanas.	
+U: Dime qué compra Elena	manzanas
+
+U: Juan compra manzanas.	
+U: ¿Quién es el que compra manzanas?	Juan
+
+U: Nora compra manzanas.	
+U: ¿Nora compra manzanas?	Sí
+
+U: Luis vive en Lugo.	
+U: ¿Dónde vive Luis?	Lugo
+
+U: Lucia vive en Cuenca.	
+U: ¿Quién vive en Cuenca?	Lucia
+
+U: Juan vive en Lugo.	
+U: No, Juan vive en Cuenca.	
+U: ¿Dónde vive Juan?	Cuenca
+U: ¿Dónde vivía Juan?	Lugo
+
+U: Elena es pintora.	
+U: ¿A qué se dedica Elena?	pintora
+
+U: Luis es pintor.	
+U: ¿Quién es el pintor?	Luis
+
+U: Juan es el padre de Nora.	
+U: ¿Quién es el padre de Nora?	Juan
+
+U: Soy Luis.	
+U: ¿Cómo me llamo?	Luis
+
+U: Elena es más alta que Nora.	
+U: Nora es más alta que Lucia.	
+U: ¿Es Elena más alta que Lucia?	Sí
+
+U: ¿Cuánto es 3 por 2?	6
+
+U: Irene compra flores.	
+U: ¿Qué es lo que compra Irene?	flores
+
+U: Raul compra flores.	
+U: ¿Quién es el que compra flores?	Raul
+
+U: Marta compra flores.	
+U: ¿Compra Marta flores?	Sí
+
+U: Carlos vive en Sevilla.	
+U: ¿En qué ciudad vive Carlos?	Sevilla
+
+U: Nora vive en Cuenca.	
+U: ¿Quién vive en Cuenca?	Nora
+
+U: Raul vive en Sevilla.	
+U: No, Raul vive en Cuenca.	
+U: ¿Dónde vive Raul?	Cuenca
+U: ¿Dónde vivía Raul?	Sevilla
+
+U: Irene es profesora.	
+U: ¿A qué se dedica Irene?	profesora
+
+U: Carlos es profesor.	
+U: ¿Quién es el profesor?	Carlos
+
+U: Raul es el padre de Marta.	
+U: ¿Quién es el padre de Marta?	Raul
+
+U: Soy Carlos.	
+U: ¿Sabes cómo me llamo?	Carlos
+
+U: Irene es más alta que Marta.	
+U: Marta es más alta que Nora.	
+U: ¿Es Irene más alta que Nora?	Sí
+
+U: ¿Cuánto es 2 por 12?	24
+
+U: Sara compra leche.	
+U: ¿Qué compra Sara?	leche
+
+U: Hugo compra leche.	
+U: ¿Quién compra leche?	Hugo
+
+U: Clara compra leche.	
+U: ¿Clara compra leche?	Sí
+
+U: Ivan vive en Madrid.	
+U: ¿Dónde vive Ivan?	Madrid
+
+U: Paula vive en Bilbao.	
+U: ¿Quién es la que vive en Bilbao?	Paula
+
+U: Hugo vive en Madrid.	
+U: No, Hugo vive en Bilbao.	
+U: ¿Dónde vive Hugo?	Bilbao
+U: ¿Dónde vivía Hugo?	Madrid
+
+U: Sara es medica.	
+U: ¿Qué es Sara?	medica
+
+U: Ivan es medico.	
+U: ¿Quién es el medico?	Ivan
+
+U: Hugo es el padre de Clara.	
+U: ¿Quién es el padre de Clara?	Hugo
+
+U: Soy Ivan.	
+U: ¿Cuál es mi nombre?	Ivan
+
+U: Sara es más alta que Clara.	
+U: Clara es más alta que Paula.	
+U: ¿Quién es más alta, Sara o Paula?	Sara
+
+U: ¿Cuánto da 4 por 12?	48
+
+U: Elena compra cafe.	
+U: ¿Qué es lo que compra Elena?	cafe
+
+U: Tomas compra cafe.	
+U: ¿Quién compra cafe?	Tomas
+
+U: Rosa compra cafe.	
+U: ¿Rosa compra cafe?	Sí
+
+U: Ivan vive en Valencia.	
+U: ¿En qué ciudad vive Ivan?	Valencia
+
+U: Lucia vive en Cuenca.	
+U: ¿Quién vive en Cuenca?	Lucia
+
+U: Tomas vive en Valencia.	
+U: No, Tomas vive en Cuenca.	
+U: ¿Dónde vive Tomas?	Cuenca
+U: ¿Dónde vivía Tomas?	Valencia
+
+U: Elena es cantante.	
+U: ¿Qué es Elena?	cantante
+
+U: Ivan es cantante.	
+U: ¿Quién es cantante?	Ivan
+
+U: Tomas es el padre de Rosa.	
+U: ¿Quién es el papá de Rosa?	Tomas
+
+U: Soy Ivan.	
+U: ¿Sabes cómo me llamo?	Ivan
+
+U: Elena es más alta que Rosa.	
+U: Rosa es más alta que Lucia.	
+U: ¿Quién es más alta, Elena o Lucia?	Elena
+
+U: 6 x 5	30
+
+U: Nora compra queso.	
+U: Dime qué compra Nora	queso
+
+U: Mario compra queso.	
+U: ¿Quién compra queso?	Mario
+
+U: Elena compra queso.	
+U: ¿Elena compra queso?	Sí
+
+U: Diego vive en Madrid.	
+U: ¿Sabes dónde vive Diego?	Madrid
+
+U: Ana vive en Granada.	
+U: ¿Quién vive en Granada?	Ana
+
+U: Mario vive en Madrid.	
+U: No, Mario vive en Granada.	
+U: ¿Dónde vive Mario?	Granada
+U: ¿Dónde vivía Mario?	Madrid
+
+U: Nora es pintora.	
+U: ¿Qué es Nora?	pintora
+
+U: Diego es pintor.	
+U: ¿Quién es el pintor?	Diego
+
+U: Mario es el padre de Elena.	
+U: ¿Quién es el padre de Elena?	Mario
+
+U: Me llamo Diego.	
+U: ¿Cuál es mi nombre?	Diego
+
+U: Nora es más alta que Elena.	
+U: Elena es más alta que Ana.	
+U: ¿Quién es más alta, Nora o Ana?	Nora
+
+U: 12 x 6	72
+
+U: Nora compra pan.	
+U: Dime qué compra Nora	pan
+
+U: Mario compra pan.	
+U: ¿Quién compra pan?	Mario
+
+U: Marta compra pan.	
+U: ¿Compra Marta pan?	Sí
+
+U: Hugo vive en Sevilla.	
+U: ¿Sabes dónde vive Hugo?	Sevilla
+
+U: Rosa vive en Cuenca.	
+U: ¿Quién vive en Cuenca?	Rosa
+
+U: Mario vive en Sevilla.	
+U: No, Mario vive en Cuenca.	
+U: ¿Dónde vive Mario?	Cuenca
+U: ¿Dónde vivía Mario?	Sevilla
+
+U: Nora es medica.	
+U: ¿De qué trabaja Nora?	medica
+
+U: Hugo es medico.	
+U: ¿Quién es medico?	Hugo
+
+U: Mario es el padre de Marta.	
+U: ¿Quién es el padre de Marta?	Mario
+
+U: Me llamo Hugo.	
+U: ¿Sabes cómo me llamo?	Hugo
+
+U: Nora es más alta que Marta.	
+U: Marta es más alta que Rosa.	
+U: ¿Es Nora más alta que Rosa?	Sí
+
+U: ¿Cuánto es 7 por 5?	35
+

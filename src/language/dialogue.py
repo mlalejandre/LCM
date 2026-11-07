@@ -700,6 +700,18 @@ class Conversation:
         self.topic = None
 
     def say(self, raw: str) -> str:
+        if not self.d.pending:                                              # parche-90: normalizador de preguntas (una familia -> una forma canonica)
+            from src.language import consultas
+            qm = consultas.quien_mas(raw)
+            if qm:
+                cmp_, adj, a_, b_ = qm
+                for x_, y_ in ((a_, b_), (b_, a_)):
+                    if n(self.say(f"¿Es {x_} {cmp_} {adj} que {y_}?")).startswith("si"):
+                        self.d.last = f"{x_} es {cmp_} {adj} que {y_}."
+                        return self.d.last
+                self.d.last = "No lo sé."
+                return self.d.last
+            raw = consultas.canonical(raw)
         mc = re.match(r"^\s*no\s*,\s+(\S.*)$", raw, re.I)
         if mc and not self.d.pending and not is_question(mc.group(1)) and len(mc.group(1).split()) >= 3 \
                 and not re.search(r"\b(no|nunca|nadie|ni|tampoco|nada|jamas)\b", n(mc.group(1))):

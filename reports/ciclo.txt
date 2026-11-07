@@ -1,9 +1,14 @@
-CICLO 20261107-130235-283449
-  TESTS UNITARIOS: 94 passed in 1.09s
+CICLO 20261107-131018-988275
+      escrito src/language/dialogue.py
+      escrito src/language/consultas.py
+      escrito tests/test_parche90.py
+    parche-90 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-131019-058600
+  parche parche-90.py: aplicado
+  TESTS UNITARIOS: 99 passed in 1.12s
   RESUMEN: TODO CUMPLE
-    enrutador_ciego_73: 97.3% -> 95.9%  EMPEORA
-  [OK] reproducibilidad/manifiesto.json: 153 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 32 (de reports/historial.json)
+    autoexamen_130: 74.6% -> 99.2%  MEJORA
+  [OK] reproducibilidad/manifiesto.json: 158 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 33 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
@@ -12,16 +17,13 @@ M reports/ciclo.txt
  M reproducibilidad/manifiesto.json
  M scripts/check.py
  M src/language/dialogue.py
-?? data/intents_ciego.tsv
-?? data/intents_ciego2.tsv
-?? parche-88.py
-?? scripts/entrenar_intents.py
-?? src/language/intents.py
-?? src/language/intents_gen.py
-?? src/language/intents_modelo.json
-?? src/language/skills.py
-?? tests/test_parche87.py
-?? tests/test_parche88.py
+?? data/autoexamen.tsv
+?? parche-89.py
+?? parche-90.py
+?? scripts/autoexamen.py
+?? src/language/consultas.py
+?? tests/test_parche89.py
+?? tests/test_parche90.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

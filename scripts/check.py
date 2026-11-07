@@ -165,6 +165,19 @@ def main():
         log(f"   FALLO {_t!r} esperado={_y} obtenido={_pred}")
 
 
+    from scripts.autoexamen import ejecutar as _auto                           # parche-89: examen generado (informativo, semilla fija)
+    try:
+        _g, _t, _bad3, _res, _tags = _auto(10, 101)
+        metrics[f"autoexamen_{_t}"] = round(_g / max(_t, 1), 4)
+        log(f"\nautoexamen_{_t}: {_g}/{_t} = {_g / max(_t, 1):.1%}  (informativo)")
+        for _k, (_ok, _tot) in _res.items():
+            log(f"   familia {_k:16s} {_ok}/{_tot}")
+        for _turn, _exp, _ans in _bad3[:40]:
+            log(f"   FALLO [{_tags.get(_turn, '?')}] {_turn!r} esperado={_exp} obtenido={_ans[:100]!r}")
+
+    except Exception as _e:
+        log(f"\nautoexamen: no se pudo ejecutar ({_e!r})")
+
     hist_path = "reports/historial.json"
     hist = json.load(open(hist_path)) if os.path.exists(hist_path) else []
     if hist:
