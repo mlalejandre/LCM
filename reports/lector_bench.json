@@ -198,15 +198,10 @@
    "frases": 6,
    "hechos": 15,
    "esperados": 8,
-   "acertados": 5,
-   "cobertura": 0.625,
+   "acertados": 6,
+   "cobertura": 0.75,
    "prohibidos_afirmados": [],
    "faltan": [
-    [
-     "ALGORITMO",
-     "RESOLVER",
-     "PROBLEMA"
-    ],
     [
      "MEMORIA_RAM",
      "ALMACENAR",
@@ -225,7 +220,7 @@
     "ALGORITMO ES SECUENCIA",
     "ALGORITMO SECUENCIA_DE INSTRUCCION",
     "SECUENCIA_DE_INSTRUCCION ES SECUENCIA",
-    "INSTRUCCION RESOLVER PROBLEMA",
+    "ALGORITMO RESOLVER PROBLEMA",
     "INSTRUCCION_DE_PROGRAMA ES INSTRUCCION",
     "PROCESADOR EJECUTAR INSTRUCCION_DE_PROGRAMA",
     "INTERNET CONECTAR MILLON",
@@ -241,7 +236,7 @@
   }
  },
  "global": {
-  "cobertura": 0.769,
+  "cobertura": 0.788,
   "prohibidos_afirmados": 0,
   "hechos_por_frase": 1.82
  }

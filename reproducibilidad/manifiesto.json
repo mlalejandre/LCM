@@ -1,5 +1,5 @@
 {
- "creado": "2026-11-07 23:07",
+ "creado": "2026-11-08 00:08",
  "entorno": {
   "python": "3.11.16",
   "plataforma": "macOS-26.5.2-arm64-arm-64bit",
@@ -60,7 +60,7 @@
   "razonamiento_exactitud": 1.0,
   "razonamiento_prueba_valida": 1.0,
   "razonamiento_falsa_certeza": 0.0,
-  "lector_cobertura": 0.769,
+  "lector_cobertura": 0.788,
   "lector_prohibidos": 0
  },
  "checkpoints_informativo": {
@@ -190,6 +190,7 @@
   "scripts/web.py": "aadf800449b8629a782c61ec7a0536d54f2726dfbd726d0763361e115dee884d",
   "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "src/language/__init__.py": "4b15588e6ad62649b1ecb4af363ab8de86ddfc710bdd0f39ee28fd1ef0734e8c",
+  "src/language/anclaje.py": "c113c489e1874924f4d343f6c81c2cdc0617cec274edd0936c695b581aef4e68",
   "src/language/book.py": "0d8b143513233c1c1baff0a23efe22ba90d159524c05ee8fa83876c95cd534d3",
   "src/language/book_vocab.py": "74575ba5fae935094a25b005605da8e9aae710f4b45e12d3ecaa709ce69c8c77",
   "src/language/conceptos.py": "ace973ba9b49b6e2160f29754b1dc52f35b91c01912e272db7e687f914a2ccbc",
@@ -206,8 +207,8 @@
   "src/language/intents_gen.py": "37a3458883ff1f08e04f4e09627df860f13eda2e578704a3c81f3a7d55017b8f",
   "src/language/intents_modelo.json": "265e34265b4299b7cb8900da49541251db439eab266ba8074ec1bae3f2a2c4ce",
   "src/language/irregulares.py": "b55cf8ae540bfca2362ea1b0b41a4a8b7114948847a1db90456ff7fb40209986",
-  "src/language/lector.py": "8ae802a824ece29b80334ac845310e130dbf9c21398710e296f29516a3f5dded",
-  "src/language/lector_ud.py": "38f3b828d9ece6c5a506921289a4fd7e059fb96627b26132758b741497bdde12",
+  "src/language/lector.py": "342abeb2f012d915ae186529994ebb55001e8937732992816f497ace7a35b771",
+  "src/language/lector_ud.py": "e08532e85800150baf511172de42b7d525f08875ae762cafeaef766e8dba56ea",
   "src/language/lectura_qa.py": "7d650890f01554129b1bcf7f1205b203b693b84b02209ec8f8a4d20958c978fd",
   "src/language/lexico.py": "025b8ccb4adf77430c3f62091934453399a35b78a97ed7346514e1f56aa93c27",
   "src/language/lexicon.py": "b5770e0620a411094f0094ff625159075d451aa0a1224b1f97a5b03fa861ce21",
@@ -217,7 +218,7 @@
   "src/language/qa.py": "db456d1e9ab28237f08a5ffc1ebea39e0e4f44c7bd172d487b4af2e1028f2119",
   "src/language/reflexion.py": "91f2ac318ff3668b5101042c920320dad32c4f4e046f7494501e964b85971a73",
   "src/language/school_learn.py": "60295974e4c2a2866ed18c4e04db1dbc47195e50664bbdfedb3f2a691f52234f",
-  "src/language/school_parser.py": "8dc1c5422b1a8d22a95c9283dfec461fa8f9abb8846c70a0c00477a93b324b7f",
+  "src/language/school_parser.py": "3c2740a00861a5a02deebd33e9ecea99c6b919831c3fc270c61ce9e181047f82",
   "src/language/semilla.py": "b49ecae24e31c1227189d63f638904853669ae8fab305c44bfa8e54f3b05bba5",
   "src/language/skills.py": "8ea5270beeb417e70d54c1f20f7ca87e341c519a411a0080746cd830462c8310",
   "src/language/training.py": "00cd9d82318dfc015016bd2002d45001e4a197ed4bf3469cd9850f83223be590",
@@ -270,6 +271,9 @@
   "tests/test_parche115.py": "90ae3003deddf9d0967414b725088087435d91da45d81bf48c88c72f453f92d3",
   "tests/test_parche116.py": "fee77d38be654b75f28cfbcb0c355e1b2079b5e7c606845596a8f86110b141b2",
   "tests/test_parche117.py": "92208b16b9303af433be71f9709ddeeac4799281ca35d83c0ca4a793cfccb7e1",
+  "tests/test_parche118.py": "9a0ba20dac353e7b3516b08221de480de1a51ec404ac41c0c046dfa67ce00752",
+  "tests/test_parche120.py": "e7c78ff20dff63622fd86a5e5aaa1462cc6f6570f73323c552bf0629c78907f9",
+  "tests/test_parche122.py": "7dfc99ae742452fcace813712ffbe7d32999a8a6568fecee039b901dfd016565",
   "tests/test_parche71.py": "74e5bb3c746b824378b75829422eb26f6455b3c34f5742e1379e1c8b7ee17f1e",
   "tests/test_parche72.py": "b4b6fce8ae4b96aaa467acb277e3820b64605d7971c096ac23cf28e898d6a9b2",
   "tests/test_parche74.py": "e2aceee7881989796dc2bdc78af086ba8c07fc83a41bf4e32ed38bd12a5fc7d7",

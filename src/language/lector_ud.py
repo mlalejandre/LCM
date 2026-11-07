@@ -75,7 +75,12 @@ class Arbol:
 
     def l(self, i):
         lm = (self.r[i][4] or "").strip()
-        return (lm if lm and lm != "_" else self.r[i][0]).lower()
+        lm = (lm if lm and lm != "_" else self.r[i][0]).lower()
+        if self.r[i][1] in ("VERB", "AUX"):                                          # «insuflarle», «llevarla», «disponerse» -> insuflar, llevar, disponer
+            m = re.fullmatch(r"(\w{3,}?(?:ar|er|ir|ír))(?:me|te|se|nos|os|le|les|lo|los|la|las)(?:lo|la|los|las)?", self.r[i][0].lower())
+            if m:
+                return m.group(1).replace("ír", "ir")
+        return lm
 
     def hijos(self, i, *rels) -> List[int]:
         return [j for j in self.k[i] if self.r[j][3] in rels]
@@ -94,11 +99,13 @@ class Arbol:
 
 class C:
     """Un concepto: clave, texto, y los hechos de clasificacion que lo acompañan."""
-    __slots__ = ("key", "disp", "propio", "idx", "extra", "base")
+    __slots__ = ("key", "disp", "propio", "idx", "extra", "base", "cant", "refleja")
 
     def __init__(self, key, disp, propio=False, idx=-1, base=None):
         self.key, self.disp, self.propio, self.idx, self.base = key, disp, propio, idx, base
         self.extra: List[dict] = []
+        self.cant = ""            # «el 90 % de X»: cantidad con la que se afirma algo de X
+        self.refleja = False      # sujeto de una pasiva refleja («se celebra el día…»)
 
 
 def _participio_masc(form: str) -> str:
@@ -117,11 +124,15 @@ def _sub(c: "C", key: str, disp: str, propio=None) -> "C":
     """Concepto mas especifico que c (c ES base): conserva los hechos acompañantes."""
     n = C(key, disp, c.propio if propio is None else propio, c.idx, base=c.base)
     n.extra = list(c.extra)
+    n.cant = c.cant
     return n
 
 
 class ExtractorUD:
     def __init__(self):
+        self.principal_plural: Optional[bool] = None
+        self.recientes: List[C] = []
+        self.principal_edad = 0                      # frases desde que se fijó el tema: un tema viejo ya no es «el sujeto de esta frase»
         self.principal: Optional[C] = None          # sujeto de la oracion principal anterior (sujeto omitido, «él», «Su X»)
         self.clases: Dict[str, Set[str]] = {}       # clave -> claves de sus clases (para «este animal» = el tema)
         self.motivo = ""
@@ -167,7 +178,8 @@ class ExtractorUD:
                 break
         # adjetivos que subclasifican: «león asiático» ES «león»
         if califica and not propio and prof == 0:
-            adjs = [j for j in A.hijos(i, "amod") if A.u(j) == "ADJ" and j > i and not self._grado(A, j)][:2]
+            adjs = [j for j in A.hijos(i, "amod") if A.u(j) == "ADJ" and j > i and not self._grado(A, j)
+                    and not re.search(r"(ad|id)[oa]s?$", nrm(A.f(j))) and not _es_participio(A.f(j), A.l(j))][:2]       # un participio («encargada», «presentado») es un estado, no una subclase
             if adjs:
                 k3 = c.key + "".join("_" + clave(A.l(j)) for j in adjs)
                 c.extra.append(_ud(k3, "ES", c.key, c.disp + " " + " ".join(A.l(j) for j in adjs), c.disp))
@@ -246,7 +258,7 @@ class ExtractorUD:
         if ns:
             cs: List[C] = []
             for n_ in ns:
-                if A.d(n_) == "csubj" or A.u(n_) == "VERB":
+                if A.d(n_) == "csubj" or A.u(n_) == "VERB" or self._comparado(A, n_):
                     continue
                 if A.u(n_) == "PRON" and A.l(n_) in PRON_REL:
                     ant = self.antecedente(A, p)
@@ -254,14 +266,65 @@ class ExtractorUD:
                         cs += ant
                     continue
                 for e in self.expandir(A, n_):
-                    c = self.concepto(A, e)
+                    c = self._cuantificado(A, e) or self.concepto(A, e)
                     if c is not None:
                         cs.append(c)
             res = cs or None
         else:
-            res = self._heredado(A, p, memo)
+            res = self._refleja(A, p) or self._heredado(A, p, memo)
         memo[p] = res
         return res
+
+    EDAD_MAX = 1
+    VENTANA = 6
+    COMPARATIVAS = ("al igual que", "igual que", "a diferencia de", "asi como", "tal como", "como", "tanto como", "lo mismo que", "de igual modo que")
+
+    @staticmethod
+    def _comparado(A: Arbol, n: int) -> bool:
+        """«Al igual que Mercurio, carece de satélites»: Mercurio es el término de la comparación, no el sujeto."""
+        previas = []
+        j = n - 1
+        while j >= 0 and A.u(j) not in ("PUNCT",) and len(previas) < 4:
+            if A.u(j) == "DET" and A.d(j) == "det" and A.h[j] == n:
+                j -= 1
+                continue
+            previas.insert(0, nrm(A.f(j)))
+            j -= 1
+        txt = re.sub(r"\bde el\b", "del", re.sub(r"\ba el\b", "al", " ".join(previas)))       # la escuela separa «al» y «del»
+        return any(txt.endswith(c) and (txt == c or txt[: -len(c)].endswith(" ")) for c in ExtractorUD.COMPARATIVAS)
+
+    PARTITIVOS = {"mayoría", "mayoria", "mitad", "tercio", "parte", "resto", "porcentaje", "minoría", "minoria", "cuarto"}
+
+    def _cuantificado(self, A: Arbol, i: int) -> Optional[C]:
+        """«El 90 % de las hemorragias…», «la mayoría de los casos…»: se habla de las hemorragias, pero no de todas: se guarda con su cantidad."""
+        if not (A.f(i) == "%" or A.l(i) in self.PARTITIVOS or A.u(i) == "SYM"):
+            return None
+        for j in A.hijos(i, "nmod"):
+            if self._prep(A, j) == "de" and A.u(j) in ("NOUN", "PROPN"):
+                c = self.concepto(A, j, califica=False)
+                if c is None:
+                    return None
+                num = next((A.f(x) for x in A.hijos(i, "nummod")), "")
+                c = _sub(c, c.key, c.disp)
+                c.cant = ((num + " " + A.f(i)) if num else A.l(i)).strip()
+                return c
+        return None
+
+    def _refleja(self, A: Arbol, p: int) -> Optional[List[C]]:
+        """Pasiva refleja con el paciente delante del verbo: «El Día Mundial se celebra el 17 de mayo» (la escuela lo etiqueta como complemento)."""
+        if not A.hijos(p, "expl") or A.hijos(p, "nsubj", "csubj") or A.u(p) != "VERB":
+            return None
+        f = nrm(A.f(p))
+        if f.endswith("n") or f.endswith(("ando", "iendo")):
+            return None
+        for j in A.hijos(p, "obl", "obj"):
+            if j < p and A.u(j) in ("NOUN", "PROPN") and not A.hijos(j, "case") and not A.hijos(j, "nummod"):
+                c = self.concepto(A, j)
+                if c is not None:
+                    c = _sub(c, c.key, c.disp)
+                    c.refleja = True
+                    return [c]
+        return None
 
     def _heredado(self, A: Arbol, p: int, memo) -> Optional[List[C]]:
         d, h = A.d(p), A.h[p]
@@ -273,15 +336,62 @@ class ExtractorUD:
             return self.antecedente(A, p)
         if A.hijos(p, "expl") and not A.hijos(p, "nsubj"):
             return None                                       # «se observan leones»: impersonal / pasiva refleja
-        if self.principal is not None:
+        if self.principal is not None and self.principal_edad <= self.EDAD_MAX and self._puede_heredar(A, p):
             return [self.principal]
         return None
+
+    def _puede_heredar(self, A: Arbol, p: int) -> bool:
+        """El sujeto omitido (el tema del discurso) solo se hereda en un verbo conjugado y que concuerde en número con él: un infinitivo,
+        un gerundio o un participio sin sujeto no son «el tema hace X», y «hicieron» no puede ser un tema singular."""
+        cop = A.hijos(p, "cop") or [j for j in A.hijos(p, "aux") if A.l(j) in ("ser", "estar", "haber")]
+        v = cop[0] if cop else p
+        f, lm = nrm(A.f(v)), nrm(A.l(v))
+        if f.endswith(("ando", "iendo", "yendo")) or (f.endswith(("ar", "er", "ir")) and len(f) > 3 and f == lm) or (not cop and _es_participio(A.f(v), A.l(v))):
+            return False
+        if self.principal_plural is not None and len(f) > 4 and not f.endswith(("ción", "sión")):
+            verbo_plural = f.endswith("n") and not f.endswith(("ion", "men", "ten")) or (cop and f in ("son", "eran", "fueron", "estan", "estaban"))
+            if verbo_plural != self.principal_plural and (f.endswith("n") or self.principal_plural):
+                return False
+        return True
+
+    @staticmethod
+    def _plural_nombre(A: Arbol, i: int) -> Optional[bool]:
+        for d in A.hijos(i, "det"):
+            f = A.f(d).lower()
+            if f in ("los", "las", "unos", "unas", "estos", "estas", "esos", "esas", "sus", "muchos", "muchas", "varios", "varias"):
+                return True
+            if f in ("el", "la", "un", "una", "este", "esta", "ese", "esa", "su"):
+                return False
+        if A.hijos(i, "nummod") and A.f(A.hijos(i, "nummod")[0]).lower() not in ("un", "uno", "una", "1"):
+            return True
+        if A.u(i) == "PROPN":
+            return bool(A.hijos(i, "conj"))                   # un nombre propio es singular (Valdés, Cortés), salvo coordinado: «Ana y Luis»
+        f = A.f(i).lower()
+        return bool(f.endswith("s") and len(f) > 3 and not f.endswith(("is", "us", "es")) or (f.endswith("es") and len(f) > 5))
+
+    def _concordante(self, A: Arbol, p: int, h: int) -> int:
+        """«un niño de once años que practica…»: la escuela cuelga la relativa del nombre más cercano (años). El verbo concuerda en número
+        con su antecedente: si no concuerda con h, se sube por la cadena de «de» hasta el nombre que sí concuerde."""
+        vf = A.f(p).lower()
+        if not A.hijos(p, "nsubj") or A.l(A.hijos(p, "nsubj")[0]) != "que" or len(vf) < 4:
+            return h
+        plural_v = vf.endswith("n") and not vf.endswith(("ción", "sión"))
+        x, vistos = h, 0
+        while vistos < 4:
+            pl = self._plural_nombre(A, x)
+            if pl is None or pl == plural_v:
+                return x
+            if A.d(x) not in ("nmod", "obl") or A.h[x] < 0 or A.u(A.h[x]) not in ("NOUN", "PROPN"):
+                return h
+            x, vistos = A.h[x], vistos + 1
+        return h
 
     def antecedente(self, A: Arbol, p: int) -> Optional[List[C]]:
         """Relativa/participio: el nombre al que modifica (si es un predicado nominal, el sujeto de la copula)."""
         h = A.h[p]
         if h < 0:
             return None
+        h = self._concordante(A, p, h)
         if A.hijos(h, "cop") and A.u(h) in ("NOUN", "PROPN"):
             ns = A.hijos(h, "nsubj")
             if ns:
@@ -296,6 +406,9 @@ class ExtractorUD:
             return []
         A = Arbol(rows)
         self.motivo = ""
+        if self._meta(A):
+            self.motivo = "es texto sobre el propio documento (avisos, enlaces), no conocimiento"
+            return []
         memo: Dict[int, Optional[List[C]]] = {}
         out: List[dict] = []
         omitir: Set[int] = set()
@@ -324,18 +437,50 @@ class ExtractorUD:
                     out += self._copula(A, p, sujs, neg)
                 else:
                     out += self._verbal(A, p, sujs, neg)
+                for h in out[antes:]:
+                    for S_ in sujs:
+                        if S_.cant and h["s"] == S_.key:
+                            h["q"] = S_.cant
+                    if h["p"] == "ES" and h.get("q"):
+                        h["q"] = ""
             except Exception:                                    # noqa
                 continue
             if principal_nuevo is None and p == raiz and A.hijos(p, "nsubj") and len(out) > antes and not (self.principal is not None and sujs[0].key.endswith("_DE_" + self.principal.key)):
                 principal_nuevo = sujs[0]
+        self.principal_edad += 1
         if principal_nuevo is not None:
+            self.principal_edad = 0
+            self.recientes.append(principal_nuevo)
+            del self.recientes[:-self.VENTANA]
+            veces = {}
+            for c_ in self.recientes:
+                veces[c_.key] = veces.get(c_.key, 0) + 1
+            tope = max(veces.values())
+            principal_nuevo = next(c_ for c_ in reversed(self.recientes) if veces[c_.key] == tope)      # el tema es el sujeto más constante, no el último
             self.principal = principal_nuevo
+            self.principal_plural = self._plural_nombre(A, principal_nuevo.idx) if 0 <= principal_nuevo.idx < A.n else None
         elif self.principal is None and out:
             self.principal = _desde_hecho(out[0])
+            self.principal_edad = 0
         for h in out:
             if h["p"] == "ES" and self.principal is not None and h["s"] == self.principal.key:
                 self.clases.setdefault(h["s"], set()).add(h["o"])
         return _limpiar(out)
+
+    DOC = {"artículo", "articulo", "sección", "seccion", "página", "pagina", "aviso", "plantilla", "wikipedia", "borrador"}
+
+    def _meta(self, A: Arbol) -> bool:
+        """Texto sobre el propio documento y no sobre el mundo: «Este artículo necesita más referencias», «Busca fuentes», «véase X»,
+        y las correlativas «cuanto más A, más B» (no afirman un hecho)."""
+        for i in range(A.n):
+            l, f = A.l(i), nrm(A.f(i))
+            if l in self.DOC and any(A.l(j) in ("este", "esta", "dicho", "dicha") for j in A.hijos(i, "det")):
+                return True
+            if f in ("vease", "consultese", "compárese", "comparese") or (f == "busca" and i + 1 < A.n and nrm(A.f(i + 1)) == "fuentes"):
+                return True
+            if f == "cuanto" and i + 1 < A.n and nrm(A.f(i + 1)) in ("mas", "menos", "mayor", "menor"):
+                return True
+        return False
 
     def _hipotetico(self, A: Arbol, p: int) -> bool:
         """Oraciones que no afirman: condicionales, concesivas, creencias (ccomp), epistémicos."""
@@ -392,7 +537,7 @@ class ExtractorUD:
                 continue
             if u in ("NOUN", "PROPN", "X"):
                 for e in self.expandir(A, p):
-                    if A.u(e) not in ("NOUN", "PROPN", "X"):
+                    if A.u(e) not in ("NOUN", "PROPN", "X") or A.l(e) in DEMOSTRATIVOS or A.l(e) in PRON_ANAF:
                         continue
                     core = self.concepto(A, e, califica=False)
                     if core is None or core.key == S.key:
@@ -491,6 +636,9 @@ class ExtractorUD:
                 else:
                     tpl = "{s} " + _tpl_verbo(form, lema) + " " + pr + " {o}"
                     out += self._rel(A, S, pred + "_" + pr.upper(), j, neg, when, tpl)
+        if se and not out_rel(out) and any(S.refleja for S in sujs):
+            for S in sujs:
+                out.append(_ud(S.key, "SE_" + pred, "_", S.disp, "", neg=neg, when=when, tpl="{s} se " + _tpl_verbo(form, lema)))
         if not out_rel(out) and A.d(p) not in ("xcomp", "advcl", "acl", "ccomp") and not pasiva and not se and not A.hijos(p, "xcomp", "ccomp", "obj", "iobj") and not any(A.d(j) == "obl" for j in A.k[p]) and lema not in COPULAS | {"haber", "hacer", "poder", "deber", "soler", "tender", "ir"}:
             for S in sujs:
                 out.append(_ud(S.key, pred, "_", S.disp, "", neg=neg, when=when, tpl="{s} " + _tpl_verbo(form, lema)))
@@ -564,8 +712,14 @@ class LectorUD(Lector):
 
     def leer(self, texto: str, progreso=None) -> dict:
         self.traza = []
+        n0 = len(self.mem.facts)
         rep = super().leer(texto, progreso)
         rep["traza"] = self.traza
+        try:
+            from src.language.anclaje import anclar
+            rep["anclaje"] = anclar(self.mem, rep["hechos"], n0)
+        except Exception:                                                             # noqa
+            pass
         return rep
 
     # trocea una frase larga en tramos que la escuela pueda analizar (max 40 formas)
@@ -617,7 +771,7 @@ class LectorUD(Lector):
         if self.mem.contradicts(tr, bool(h.get("neg"))):                           # lo que ya sé manda: se avisa, no se pisa
             rep.setdefault("conflictos", []).append({"hecho": f"{tr[0]} {'NO ' if h.get('neg') else ''}{tr[1]} {tr[2]}", "frase": frase})
             return
-        nuevo = self.mem.add_fact(tr, source=frase[:300], neg=bool(h.get("neg")), when=h.get("when", ""), when_disp=h.get("when_disp", ""))
+        nuevo = self.mem.add_fact(tr, source=frase[:300], neg=bool(h.get("neg")), when=h.get("when", ""), when_disp=h.get("when_disp", ""), quant=h.get("q", ""))
         self.mem.note_surface(tr, h.get("template") or None, h.get("s_disp"), h.get("o_disp"))
         rep["hechos"].append({"s": tr[0], "p": tr[1], "o": tr[2], "neg": bool(h.get("neg")), "frase": frase, "via": "escuela", "nuevo": bool(nuevo),
                               "sd": h.get("s_disp") or tr[0].title(), "od": h.get("o_disp") or tr[2].title()})
@@ -638,6 +792,12 @@ def escribir_traza(rep: dict, ruta) -> None:
         L.append("   " + " ".join(f"{i + 1}:{r[0]}/{r[1]}->{r[2]}:{r[3]}[{r[4]}]" for i, r in enumerate(t["arbol"])))
         for s_, p_, o_, n_ in t["hechos"]:
             L.append(f"   => {s_} {'NO ' if n_ else ''}{p_} {o_}")
+        L.append("")
+    an = rep.get("anclaje")
+    if an:
+        L.append("CONCEPTOS: " + ", ".join(f"{k}={v}" for k, v in an["cuenta"].items()))
+        for k, e in sorted(an["conceptos"].items()):
+            L.append(f"   {e['estado']:9s} {k}" + (("  [" + " > ".join(e["clase"]) + "]") if e["clase"] else "") + (" (provisional)" if e["estado"] == "nuevo" and not e.get("definido") else "") + (f" ajuste={e['ajuste']}" if e.get("ajuste") is not None else ""))
         L.append("")
     for x in rep.get("sin_entender", [])[:100]:
         L.append("SIN ENTENDER: " + x["frase"][:200] + "  (" + x["motivo"] + ")")

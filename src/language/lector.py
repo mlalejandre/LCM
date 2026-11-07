@@ -1299,6 +1299,9 @@ def resumen(rep: dict, maximo=8) -> str:
         n += 1
         if n >= maximo:
             break
+    if rep.get("anclaje"):
+        c_ = rep["anclaje"]["cuenta"]
+        L.append(f"Conceptos: {c_['conocido']} que ya conocía, {c_['entidad']} nombres propios, {c_['nuevo']} nuevos y {c_.get('dudoso', 0)} que no encajan con mi diccionario.")
     if rep["sin_entender"]:
         L.append("No he entendido, por ejemplo: «" + rep["sin_entender"][0]["frase"][:120] + "» (" + rep["sin_entender"][0]["motivo"] + ").")
     return "\n".join(L)

@@ -254,6 +254,9 @@ class SchoolParser:
         acaba en -a/-an (3.a persona de los verbos en -ar)."""
         f = _norm(form)
         l = _norm(lema)
+        if len(l) > 4 and l.endswith(("ar", "er", "ir")) and form.lower().startswith(lema.lower()) \
+                and form.lower()[len(lema):] in ("á", "án", "ás", "é", "emos", "éis", "ía", "ían", "ías", "íamos"):
+            return lema                                    # parche-118: «revelará» -> revelar (futuro/condicional: el lema ya es el infinitivo)
         if f.endswith("an") and len(f) > 4 and l in (f, f[:-2]):
             return f[:-2] + "ar"
         if f.endswith("a") and len(f) > 3 and l in (f, f[:-1]):
