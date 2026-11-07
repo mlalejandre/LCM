@@ -118,6 +118,14 @@ pip install -r requirements.txt
 python -m pytest -q tests          # comprobación rápida, no necesita datos ni modelos
 ```
 
+### Interfaz web
+
+```bash
+python -m scripts.web        # http://127.0.0.1:8765 (--puerto N, --no-abrir)
+```
+
+Chat, explorador de conceptos con grafo, hechos con su origen y gestor de cartuchos. Solo local, sin internet.
+
 Los modelos entrenados **no se incluyen** en el repositorio: se generan con el paso siguiente.
 
 ## Reproducirlo desde cero

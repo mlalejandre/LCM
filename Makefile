@@ -19,3 +19,5 @@ verificar:
 	python -m scripts.manifiesto --verificar --metricas
 desde-cero:
 	python -m scripts.empaquetar_todo
+web:
+	python -m scripts.web

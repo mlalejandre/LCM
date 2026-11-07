@@ -24,6 +24,8 @@ ALTO = {"object", "physical entity", "entity", "whole", "abstraction", "thing", 
 SUPLEMENTO = {"mamifero": "mammal", "mamiferos": "mammal", "ballena": "whale@cetacean", "delfin": "dolphin@toothed whale", "bicicleta": "bicycle", "cometa": "comet", "azul": "blue", "cuerpo celeste": "celestial body",
               "astro": "celestial body", "ave": "bird", "reptil": "reptile", "anfibio": "amphibian", "insecto": "insect", "pez": "fish", "tierra": "earth", "satelite": "satellite", "asteroide": "asteroid",
               "vehiculo": "vehicle", "herramienta": "tool", "fruta": "fruit", "verdura": "vegetable", "mueble": "furniture", "ropa": "clothing", "metal": "metal", "roca": "rock", "gas": "gas"}
+SUPLEMENTO.update({"circulo": "circle@ellipse in which", "esfera": "sphere@a solid figure bounded", "linea": "line@a length (straight or curved) without"})
+FORZAR_ES = {"cutlery"}                                                           # etiqueta curada que gana aunque la palabra no figure entre los lemas de OMW
 SUPLEMENTO.update({"felino": "feline@", "canido": "canine@carnivorous", "carnivoro": "carnivore@", "herbivoro": "herbivore@", "roedor": "rodent@", "primate": "primate@", "ungulado": "ungulate@", "cetaceo": "cetacean@",
                    "marsupial": "marsupial@", "artropodo": "arthropod@", "molusco": "mollusk@", "crustaceo": "crustacean@", "martes": "Tuesday@third day", "lunes": "Monday@", "miercoles": "Wednesday@", "jueves": "Thursday@",
                    "viernes": "Friday@", "sabado": "Saturday@", "domingo": "Sunday@", "vegetal": "plant@a living organism", "animal": "animal@a living organism", "martillo": "hammer@hand tool", "lapiz": "pencil@writing implement", "tijeras": "scissors@edge tool", "tijera": "scissors@edge tool", "tenedor": "fork@cutlery", "rana": "frog@tailless",
@@ -170,7 +172,7 @@ ETIQUETA_ES = {"mammal": "mamífero", "carnivore": "carnívoro", "bird": "ave", 
                 "crustacean": "crustáceo", "musical instrument": "instrumento musical", "container": "recipiente", "building": "edificio", "food": "alimento", "beverage": "bebida", "liquid": "líquido",
                 "celestial body": "cuerpo celeste", "body part": "parte del cuerpo", "weapon": "arma", "device": "dispositivo", "machine": "máquina", "utensil": "utensilio", "placental": "mamífero placentario",
                 "chordate": "cordado", "organism": "ser vivo", "animal": "animal", "poultry": "ave de corral", "domestic animal": "animal doméstico", "pachyderm": "paquidermo", "equine": "équido", "bovine": "bóvido",
-                "clothing": "ropa", "garment": "prenda", "footwear": "calzado", "jewelry": "joyería", "toy": "juguete", "appliance": "electrodoméstico", "electronic equipment": "equipo electrónico", "cutlery": "cubertería"}
+                "clothing": "ropa", "garment": "prenda", "footwear": "calzado", "jewelry": "joyería", "toy": "juguete", "appliance": "electrodoméstico", "electronic equipment": "equipo electrónico", "cutlery": "cubiertos"}
 
 
 def etiqueta(c, lengua="es"):
@@ -179,7 +181,7 @@ def etiqueta(c, lengua="es"):
     ws = d["lem"].get(lengua, {}).get(c)
     if lengua == "es":
         for e in d["lem"]["en"].get(c, []):
-            if e in ETIQUETA_ES and (not ws or ETIQUETA_ES[e] in ws or any(w.lower() in TAXON for w in ws)):
+            if e in ETIQUETA_ES and (not ws or e in FORZAR_ES or ETIQUETA_ES[e] in ws or any(w.lower() in TAXON for w in ws)):
                 return ETIQUETA_ES[e]
     if not ws:
         return None
@@ -604,6 +606,52 @@ def responder(raw, mem=None):
     return None
 
 
+_SIM = re.compile(r"(?:y )?(?:dime |dame |dinos |nombra |cita )?(?:algunas |unas |las |otras )?(?:palabras |cosas |conceptos |terminos )?(?:similares|parecid\w+|relacionad\w+|afines|cercan\w+) (?:a|con|de) (?:un |una |el |la |los |las )?(\w+)$")
+_SIM2 = re.compile(r"(?:y )?(?:que|con que) (?:cosas |conceptos |palabras )?(?:se parece|se parecen|se relaciona|se relacionan|esta relacionad\w+) (?:a|con) (?:un |una |el |la |los |las )?(\w+)$")
+
+
+def similares(pal, mem=None, n=6):
+    """parche-109: 'dime palabras similares a coche': sinonimos, conceptos parecidos (hermanos por tipo, ordenados por parecido) y los nexos que la reflexion descubrio en memoria. None si no hay concepto."""
+    cs = conceptos(pal)
+    if not cs:
+        return None
+    d = _load()
+    c, k = cs[0], nrm(pal)
+    trozos = []
+    sin = [w for w in nombres(c) if nrm(w) != k and not w[:1].isupper()][:5]
+    if sin:
+        trozos.append("Sinónimos: " + _lista(sin) + ".")
+    mem_ = []
+    for f in getattr(mem, "nexos", []):
+        if str(f["p"]).upper() in ("SE_PARECE_A", "RELACIONADO_CON", "CONTRARIO_DE") and not f.get("neg"):
+            for a, b in ((f["s"], f["o"]), (f["o"], f["s"])):
+                if nrm(a) == k:
+                    v = _vis(mem, b, clase=True)
+                    if v not in mem_:
+                        mem_.append(v)
+    ps = d["hyp"].get(c, [])
+    pool = []
+    for p_ in ps[:1]:
+        pool += [h for h in d["hypo"].get(p_, []) if h != c and etiqueta(h) and not es_genero(h)]
+        for p2 in d["hyp"].get(p_, [])[:1]:
+            pool += [h for h in d["hypo"].get(p2, []) if h != c and h not in pool and etiqueta(h) and not es_genero(h)]
+    rank = sorted(((coseno(c, h), h) for h in pool), key=lambda x: (-x[0], -d["freq"][x[1]]))
+    par = []
+    arr_ = set(ascendentes(c))
+    for s_, h in rank:
+        e = etiqueta(h)
+        if e and h not in arr_ and e not in par and nrm(e) != k and s_ > 0.2 and " " not in e and not e[:1].isupper() and "es" in lengua_de(e):
+            par.append(e)
+        if len(par) >= n:
+            break
+    arriba = etiqueta(ps[0]) if ps else None
+    if mem_:
+        trozos.append("Según lo que he descubierto al reflexionar: " + _lista(mem_[:n]) + ".")
+    if par:
+        trozos.append("Parecidos en el diccionario: " + _lista(par) + (f" (todos son tipos de «{arriba}»)." if arriba else "."))
+    return (f"Sobre «{_vo(pal)}»: " + " ".join(trozos)) if trozos else None
+
+
 def antes(raw, mem=None):
     """Preguntas de concepto que la memoria no puede contestar mejor: 'que es un X' cuando la memoria solo conoce ejemplares de X, y 'en que se parecen A y B'."""
     if not disponible():
@@ -629,6 +677,11 @@ def antes(raw, mem=None):
                 if v not in ej:
                     ej.append(v)
         return "Según mi diccionario de conceptos: " + r + (f" Según lo que me has contado, conozco: {_lista(ej[:6])}." if ej else "")
+    ms = _SIM.match(t) or _SIM2.match(t)
+    if ms and not _propio(raw):
+        r = similares(ms.group(1), mem)
+        if r:
+            return r
     if re.match(r"en que se parecen .+ y .+$", t) or re.match(r"que (?:tienen|tiene) en comun .+ y .+$", t):
         return responder(raw, mem)
     if re.search(r"\b(?:no encaja|no pertenece|sobra|intruso|se parece mas|es mas parecid[oa]|relacion (?:hay )?entre|tienen? que ver|como se relacion\w+|es a .+ como .+ es a)\b", t) \
@@ -649,7 +702,7 @@ def _conoce(mem, t):
     ws = [w for w in t.split() if w not in _VACIAS and len(w) > 2]
     for f in getattr(mem, "facts", []):
         sj = nrm(f["s"])
-        if any(sj == w or _st(sj) == _st(w) for w in ws) and (not _es_clase(mem, f["s"]) or f.get("source") != "semilla"):
+        if any(sj == w or _st(sj) == _st(w) for w in ws) and (not _es_clase(mem, f["s"]) or (f.get("source") != "semilla" and not f.get("cart"))):
             return True
     return False
 
@@ -678,7 +731,7 @@ def complemento(raw, mem=None):
     if "es" not in lengua_de(pal) and nrm(pal) not in SUPLEMENTO:
         return None                                                              # solo palabras del espanol
     for f in getattr(mem, "facts", []):
-        if _st(f["s"]) == _st(pal) and (not _es_clase(mem, f["s"]) or f.get("source") != "semilla"):
+        if _st(f["s"]) == _st(pal) and (not _es_clase(mem, f["s"]) or (f.get("source") != "semilla" and not f.get("cart"))):
             return None                                                          # lo que la persona ha ensenado (o una entidad) manda; el complemento es para el conocimiento de fabrica
     r = describir(pal, mem)
     return ("Según mi diccionario de conceptos: " + r) if r else None

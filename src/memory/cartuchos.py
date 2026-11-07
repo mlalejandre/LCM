@@ -60,7 +60,7 @@ def listar(base: str = DIR):
         for f in sorted(os.listdir(base)):
             if f.endswith(".json") and f != "activos.json":
                 c = cargar(f[:-5], base) or {}
-                out.append((f[:-5], f[:-5] in act, len(c.get("hechos", [])), c.get("fuente", "")))
+                out.append((f[:-5], f[:-5] in act, len(c.get("hechos", [])) + len(c.get("nexos", [])), c.get("fuente", "")))
     return out
 
 
@@ -103,6 +103,14 @@ def _montar_uno(mem, nombre: str, c: dict) -> int:
             g["cart"] = nombre
             mem.facts.append(g)
             n += 1
+    if c.get("nexos"):                                                  # parche-111: los nexos (reflexion) viven APARTE de los hechos: el razonamiento y las preguntas no los ven
+        if not hasattr(mem, "nexos"):
+            mem.nexos = []
+        for h in c["nexos"]:
+            g = copy.deepcopy(h)
+            g["cart"] = nombre
+            mem.nexos.append(g)
+            n += 1
     for s in SECCIONES:
         d = getattr(mem, s)
         for k, v in c.get(s, {}).items():
@@ -120,6 +128,8 @@ def desmontar(mem, nombre: str) -> int:
     own = getattr(mem, "cart_own", {}).pop(nombre, None)
     before = len(mem.facts)
     mem.facts = [f for f in mem.facts if f.get("cart") != nombre]
+    if getattr(mem, "nexos", None):
+        mem.nexos = [h for h in mem.nexos if h.get("cart") != nombre]
     if own:
         for s in SECCIONES:
             d = getattr(mem, s)

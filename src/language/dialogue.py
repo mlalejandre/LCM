@@ -62,6 +62,14 @@ FEM_E = {"madre", "mujer", "tarde", "noche", "clase", "calle", "suegra", "nuera"
 FEM_O = {"mano", "foto", "moto", "radio"}
 
 
+_INVAR = {"saltamontes", "paraguas", "cumpleanos", "sacacorchos", "abrelatas", "cortauñas", "cortaunas", "rascacielos", "lavaplatos", "tocadiscos", "parabrisas", "cascanueces", "sacapuntas", "pasatiempos", "quitamanchas", "tiralineas", "cuentagotas", "lavavajillas", "limpiaparabrisas", "posavasos", "matamoscas", "portaaviones", "guardabosques", "hazmerreir"}
+
+
+def _invariable(w: str) -> bool:
+    """Palabras compuestas que no cambian en plural (saltamontes, paraguas...): no son plurales aunque acaben en -s."""
+    return w in _INVAR or bool(re.match(r"(?:salta|para|saca|abre|corta|lava|porta|cuenta|rompe|limpia|guarda|quita|tira|mata|pasa|rasca|cubre|pica|lanza|cierra|aparca|posa|cuenta)\w{3,}s$", w))
+
+
 def _article(noun: str) -> str:
     w = noun.lower()
     if w in FEM_E or w in FEM_O:
@@ -84,6 +92,15 @@ class Dialogue:
         self.last_question = ""
         self.last_facts: List[tuple] = []   # triples guardados con la ultima frase
         self.dry = False                    # True: contesta pero no borra nada (lo usa talks)
+        self.tema = ""                      # parche-111: ultima pregunta hecha (para saludar con sentido)
+        self.veces = {}     # parche-110: cuantas veces se ha dicho cada cortesia (para no repetir la misma frase)
+
+    def _rotar(self, clave: str, opciones: List[str]) -> str:
+        """Rota entre variantes de una cortesia (sin azar: misma conversacion, mismas respuestas). Cuenta desde la 2a vez que se dice."""
+        n = self.veces.get(clave, 1) - 1
+        if not self.dry:
+            self.veces[clave] = n + 2
+        return opciones[n % len(opciones)]
 
     # ---- utilidades -------------------------------------------------------
     def _forget_pol(self, triple, neg: bool) -> None:
@@ -412,7 +429,7 @@ class Dialogue:
                             return re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", self._disp(o))
                         dn_disp = self._disp(name)
                         _c = _core(name).lower()
-                        pl_disp = dn_disp.lower().startswith(("los ", "las ")) or (_c.endswith("s") and norm(_c) not in ("lunes", "martes", "miercoles", "jueves", "viernes", "crisis", "tesis", "virus") and bool(re.match(r"que es (un|una|el|la) ", t)))
+                        pl_disp = dn_disp.lower().startswith(("los ", "las ")) or (_c.endswith("s") and norm(_c) not in ("lunes", "martes", "miercoles", "jueves", "viernes", "crisis", "tesis", "virus") and not _invariable(norm(_c)) and bool(re.match(r"que es (un|una|el|la) ", t)))
                         if t.startswith("que son") or pl_disp and t.startswith("que son"):
                             # parche-98: "Los asteroides son rocas" (no "El asteroides es una rocas")
                             core = _core(name).lower()
@@ -518,13 +535,31 @@ class Dialogue:
             text = self._hello(GREET[key], "")
             if m.group(2):
                 text += " Estoy bien, gracias."
+            if self.veces.get("hola", 0) and not m.group(2):
+                # parche-111: la respuesta depende de la conversacion (ya nos saludamos; de que se hablo), no de azar
+                u = f", {self.user}" if self.user else ""
+                pref = self._rotar("hola", [" de nuevo", " otra vez", " otra vez por aquí", " de nuevo, ¿seguimos?"])
+                ctx = ""
+                tema = getattr(self, "tema", "") or self.last_question
+                if tema:
+                    ctx = f" Antes me preguntabas «{tema.strip(' ¿?!¡.')}»."
+                elif self.last_facts:
+                    ctx = " Hace un momento aprendí algo nuevo contigo."
+                return f"{GREET[key]}{pref}{u}!{ctx} " + self._help()
+            if not self.dry:
+                self.veces["hola"] = self.veces.get("hola", 0) + 1
             return text + " " + self._help()
         if re.fullmatch(r"(como estas|que tal|que tal estas|como te va|como va todo|como esta usted|que tal esta usted|que tal todo|como te encuentras)( hoy)?", t):
             return "Estoy bien, gracias. ¿Y usted?" if self.formal else "Estoy bien, gracias. ¿Y tú?"
         if re.fullmatch(BYE + r"( \w+)?", t):
             return "¡Hasta luego" + (f", {self.user}" if self.user else "") + "! Aquí estaré cuando quieras."
         if re.fullmatch(THANKS, t):
-            return "De nada, a su disposición." if self.formal else "De nada."
+            base = "De nada, a su disposición." if self.formal else "De nada."
+            if self.veces.get("gracias", 0):
+                return self._rotar("gracias", ["De nada, para eso estoy.", "De nada. ¿Algo más?", "De nada, un placer.", base])
+            if not self.dry:
+                self.veces["gracias"] = 1
+            return base
         if re.fullmatch(SORRY, t):
             return "No pasa nada."
         if t in GOOD:
@@ -857,6 +892,8 @@ class Conversation:
         """parche-95: si la respuesta es un fallo y la pregunta tiene una errata corregible, reintenta con la pregunta corregida."""
         from src.language import consultas
         raw = re.sub(r"^([¿\s]*)[yY]\s+(?=(?:qu[eé]|cu[aá]les?|qui[eé]nes?|cu[aá]nt[oa]s?|d[oó]nde|c[oó]mo)\b)", r"\1", raw)       # parche-103: "y cual es el planeta mas pequeno?"
+        if is_question(raw) and len(raw) < 140:
+            self.d.tema = raw                                                                                                       # parche-111: de que se hablo (para saludar con sentido)
         if not self.d.pending:
             try:
                 sp_ = self._skills_pre(raw) or self._skills_pre(consultas.canonical(raw))

@@ -33,7 +33,7 @@ def test_datos_cargan():
 
 
 @pytest.mark.parametrize("pal,exp", [("mesa", "mobiliario|mueble"), ("pan", "alimento"), ("sol", "estrella"), ("luna", "satélite"), ("cerdo", "cerdo|artiodáctilo"), ("martillo", "herramienta"),
-                                     ("tijeras", "herramienta"), ("tenedor", "cubertería|artículo"), ("corazón", "víscera|órgano"), ("martes", "día")])
+                                     ("tijeras", "herramienta"), ("tenedor", "cubiertos|cubertería|artículo"), ("corazón", "víscera|órgano"), ("martes", "día")])
 def test_sentidos_cotidianos(pal, exp):
     c = C.conceptos(pal)[0]
     cad = " ".join(C.cadena(c, 4)).lower()

@@ -52,3 +52,7 @@ Revisa `data/dataset_manifest.json` y `reports/lcm_evaluation.json` antes de
 interpretar los resultados. Si la evaluacion neuronal es baja, no la ocultes:
 usa el fallo como señal para revisar la composicion, los rasgos, los ejemplos o
 la arquitectura.
+
+## Parche 106: interfaz web
+
+`python -m scripts.web` levanta un servidor local (stdlib) con una pagina unica (`src/web/static/index.html`); logica en `src/web/motor.py`, API en `src/web/servidor.py`.

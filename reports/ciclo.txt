@@ -1,44 +1,76 @@
-CICLO 20261107-192256-165269
-      escrito data/definiciones.json.gz
-      escrito data/CONCEPTOS_LICENCIAS.txt
-      escrito scripts/check.py
-      escrito scripts/think.py
+CICLO 20261107-201435-481129
+      retirado cartuchos/reflexion.json (formato antiguo; se recalcula al abrir scripts.web)
       escrito src/language/conceptos.py
       escrito src/language/dialogue.py
-      escrito src/language/lexico.py
-      escrito tests/test_parche104.py
-      escrito src/language/definiciones.py
-      escrito scripts/construir_definiciones.py
-      escrito tests/test_parche105.py
-      escrito data/textos/sistema_solar_examen9.tsv
-    parche-105 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-192256-300060
-  parche parche-105.py: aplicado
-  TESTS UNITARIOS: 189 passed in 3.47s
+      escrito src/language/reflexion.py
+      escrito src/memory/cartuchos.py
+      escrito src/web/motor.py
+      escrito src/web/static/index.html
+      escrito tests/test_parche109.py
+      escrito tests/test_parche110.py
+    parche-111 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-201435-571183
+  parche parche-111.py: aplicado
+  TESTS UNITARIOS: 216 passed in 8.44s
   RESUMEN: TODO CUMPLE
-    dialogo_65: 100.0% -> 96.9%  EMPEORA
-    definiciones_29: 100.0% -> 96.5%  EMPEORA
-    nucleo_44: 95.5% -> 97.7%  MEJORA
-    nucleo_ciego_25: 96.0% -> 100.0%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 199 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+    dialogo_65: 90.8% -> 98.5%  MEJORA
+    dialogo_ciego_37: 97.3% -> 100.0%  MEJORA
+    texto_solar6_40: 97.5% -> 100.0%  MEJORA
+  [OK] reproducibilidad/manifiesto.json: 209 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
      metricas de referencia: 42 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M data/CONCEPTOS_LICENCIAS.txt
+M LCM_EVOLUCION.md
+ M Makefile
+ M README.md
+ M cartuchos/activos.json
+ D parche-100.py
+ D parche-101.py
+ D parche-102.py
+ D parche-103.py
+ D parche-104.py
+ D parche-105.py
+ D parche-91-2.py
+ D parche-91A.py
+ D parche-92.py
+ D parche-93.py
+ D parche-94.py
+ D parche-95.py
+ D parche-96.py
+ D parche-97.py
+ D parche-98.py
+ D parche-99.py
+ M reports/ciclo.txt
  M reports/historial.json
  M reproducibilidad/manifiesto.json
- M scripts/check.py
- M scripts/think.py
  M src/language/conceptos.py
  M src/language/dialogue.py
- M src/language/lexico.py
- M tests/test_parche104.py
-?? data/definiciones.json.gz
-?? data/textos/sistema_solar_examen9.tsv
-?? parche-105.py
-?? scripts/construir_definiciones.py
-?? src/language/definiciones.py
-?? tests/test_parche105.py
+ M src/memory/cartuchos.py
+ M tests/test_parche105.py
+?? cartuchos/mundo_animales.json
+?? cartuchos/mundo_comida.json
+?? cartuchos/mundo_cuerpo.json
+?? cartuchos/mundo_lugares.json
+?? cartuchos/mundo_materiales.json
+?? cartuchos/mundo_naturaleza.json
+?? cartuchos/mundo_objetos.json
+?? cartuchos/mundo_personas.json
+?? cartuchos/mundo_plantas.json
+?? cartuchos/mundo_tiempo.json
+?? parche-107.py
+?? parche-108.py
+?? parche-109.py
+?? parche-110.py
+?? parche-111.py
+?? reports/.DS_Store
+?? scripts/construir_mundo.py
+?? scripts/web.py
+?? src/language/reflexion.py
+?? src/web/
+?? tests/test_parche106.py
+?? tests/test_parche107.py
+?? tests/test_parche109.py
+?? tests/test_parche110.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

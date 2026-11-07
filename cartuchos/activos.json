@@ -1,3 +1,13 @@
 [
- "sistema_solar"
+ "sistema_solar",
+ "mundo_animales",
+ "mundo_comida",
+ "mundo_cuerpo",
+ "mundo_lugares",
+ "mundo_materiales",
+ "mundo_naturaleza",
+ "mundo_objetos",
+ "mundo_personas",
+ "mundo_plantas",
+ "mundo_tiempo"
 ]
