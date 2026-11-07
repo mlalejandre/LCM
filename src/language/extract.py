@@ -232,7 +232,7 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
                     for k in group(j, ("NOUN", "PROPN")):
                         pr = _prep(tree, k) or base
                         for sk in subjects:
-                            if cmp_ and upos == "ADJ" and any(tree[m][3] == "mark" and norm(tree[m][0]) == "que" for m in _children(tree, j) + kids):
+                            if cmp_ and upos == "ADJ" and any(tree[m][3] in ("mark", "case") and norm(tree[m][0]) == "que" for m in _children(tree, j) + kids):
                                 add(sk, f"{cmp_[0]}_{_lem(tree, i)}_que", k)          # "Luis es mas alto que Pedro"
                             else:
                                 add(sk, _lem(tree, i) + ("_" + pr if pr else ""), k)

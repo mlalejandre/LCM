@@ -1,22 +1,23 @@
-"""parche-72: un nombre propio que la escuela lee como ADJETIVO al principio de la frase ("Clara canta en el coro", "Clara no compra leche").
+"""parche-75: AUTOMATIZACION del ciclo de trabajo (no cambia el comportamiento del sistema ni ninguna nota).
 
-La escuela etiqueta "Clara" como ADJ con relacion amod (colgando del verbo). La regla de parche-43 (_name_like_adj en extract.py) solo
-miraba la relacion nsubj, asi que nunca se activaba. Ahora, en src/language/school_parser.py, un arreglo posterior a la escuela
-(sin reentrenar, como _fix_name_verb) convierte esa palabra en PROPN + nsubj cuando se cumple TODO esto:
-  - es la primera palabra, ADJ, con mayuscula inicial y el resto en minuscula;
-  - cuelga (amod o nsubj) de un VERBO que esta a su derecha, no en infinitivo;
-  - entre ella y el verbo solo puede haber "no / nunca / jamas / tampoco";
-  - no lleva determinante y el verbo no tiene ya otro sujeto.
-No toca extract.py, la memoria ni el dialogo. NO arregla "Lucia cocina pasta y su hermana ..." (la escuela etiqueta VERB+NOUN, otro fallo)
-ni los relativos ni los sujetos coordinados.
+Instala tres herramientas:
+  scripts/grabar_arboles.py  graba lo que predice la escuela para cada frase de los examenes (reports/arboles.json) y empaqueta
+                             informe + arboles + historial en reports/paquete.zip (UNA subida basta).
+  scripts/replay.py          reproduce los 22 examenes SIN la escuela ni torch con esos arboles: permite probar cambios simbolicos
+                             (extractor, preguntas, memoria, dialogo, coherencia...) contra todo en segundos. Verificado: el replay da
+                             exactamente el mismo informe que la ejecucion real grabada.
+  scripts/ciclo.py           aplica uno o varios parches EN ORDEN, mide todo, guarda el manifiesto si todo cumple y, si algo deja de
+                             cumplir, restaura una copia de seguridad. Nunca hace commits ni pushes.
+Tambien anade a .gitignore: .ciclo_backups/, reports/paquete.zip, reports/arboles.json, reports/replay_informe.txt.
 
-Criterios fijados ANTES de medir:
-  - 57 tests pasan (55 + 2 nuevos) y los 22 examenes siguen cumpliendo su criterio.
-  - "Clara canta en el coro de la iglesia." deja de aparecer en FALLO en conversacion_80 y largas_ciegas_27.
-  - "Clara no compra leche." (coherencia_ciega_19) y "Háblame de Clara" / "¿Qué hemos hablado?" (dialogo_ciego_37): se informa tal cual,
-    mejoren o no (dependen tambien de otras reglas).
-  - Ningun examen baja mas de lo que explica una sola pregunta (una pregunta mueve 5-10 puntos en los examenes pequenos).
-Despues:  python -m scripts.check   y   python -m scripts.manifiesto --guardar
+Flujo nuevo (menos idas y vueltas):
+  1) python -m scripts.ciclo                 -> mide el estado actual y deja reports/paquete.zip   (SUBE ESE ZIP UNA VEZ)
+  2) yo preparo y pruebo varios parches contra TODOS los examenes con replay; te devuelvo uno o varios ya verificados
+  3) python -m scripts.ciclo parche-76.py parche-77.py   -> aplica, mide, restaura si falla, deja un paquete.zip nuevo
+  La escuela (pesos) solo se reentrena cuando haga falta; entonces se vuelve a grabar (paso 1).
+
+Criterios fijados ANTES de medir: este parche no cambia ninguna nota; los 59 tests y los 22 examenes quedan EXACTAMENTE como estan.
+Despues:  python -m scripts.ciclo        (mide, graba y guarda el manifiesto, todo en uno)
 No hace commits ni pushes. No reentrena.
 """
 import datetime, py_compile, shutil, sys
@@ -24,101 +25,39 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-CALL_OLD = "        rows = self._fix_name_verb(rows)\n"
-CALL_NEW = "        rows = self._fix_name_adj(self._fix_name_verb(rows))\n"
+NEW_FILES = {
+    'scripts/grabar_arboles.py': '"""Graba lo que predice la ESCUELA para cada frase de los examenes (parche-75).\n\n    python -m scripts.grabar_arboles                 # corre scripts.check y graba reports/arboles.json + reports/paquete.zip\n    python -m scripts.grabar_arboles --extra f.txt   # ademas graba las frases de f.txt (una por linea)\n    python -m scripts.grabar_arboles --sin-check     # solo graba --extra, sin correr los examenes\n\nTodo lo que sigue a la escuela (extractor, preguntas, memoria, dialogo, coherencia, efectos) es codigo simbolico y determinista. Si se\ngraba la salida cruda de la escuela, esa parte se puede reproducir en cualquier maquina con scripts.replay, sin torch ni pesos.\nSe graba la salida SIN arreglos (antes de _fix_name_verb, _fix_name_adj y los lemas irregulares), para poder probar arreglos nuevos.\nSube reports/paquete.zip (informe + arboles + historial): es lo unico que hace falta.\n"""\nimport argparse\nimport datetime\nimport json\nimport os\nimport sys\nimport zipfile\n\nimport src.language.school_parser as sp\n\nREC = {}\n\n\ndef clave(forms):\n    return "\\x1f".join(forms)\n\n\ndef instalar_grabador():\n    original = sp.predict_trees\n\n    def grabando(model, batch, device, scripts):\n        res = original(model, batch, device, scripts)\n        for forms, pred in zip(batch, res):\n            REC[clave(forms)] = [list(x) for x in pred]\n        return res\n\n    sp.predict_trees = grabando\n\n\ndef empaquetar(extra=()):\n    os.makedirs("reports", exist_ok=True)\n    with zipfile.ZipFile("reports/paquete.zip", "w", zipfile.ZIP_DEFLATED) as z:\n        for f in ("reports/informe.txt", "reports/arboles.json", "reports/historial.json", "reports/ciclo.txt", *extra):\n            if os.path.exists(f):\n                z.write(f, os.path.basename(f))\n    print(f"[Paquete listo: reports/paquete.zip ({os.path.getsize(\'reports/paquete.zip\') // 1024} KB): subelo a la conversacion]")\n\n\ndef main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument("--extra")\n    ap.add_argument("--sin-check", action="store_true")\n    args = ap.parse_args()\n    sys.argv = [sys.argv[0]]                      # eval_preguntas.blocks() lee sys.argv[1] como ruta: que no vea nuestros argumentos\n    instalar_grabador()\n    if not args.sin_check:\n        from scripts import check\n        check.main()\n    if args.extra:\n        import torch\n        from src.language.ud import load_school\n        device = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")\n        model, scripts = load_school(device=device)\n        parser = sp.SchoolParser(model, device, scripts)\n        n = 0\n        for line in open(args.extra, encoding="utf-8"):\n            line = line.strip()\n            if line:\n                try:\n                    parser.tree(line)\n                    n += 1\n                except Exception as exc:          # noqa\n                    print(f"  (no se pudo grabar {line!r}: {exc})")\n        print(f"Frases extra grabadas: {n}")\n    os.makedirs("reports", exist_ok=True)\n    json.dump({"version": 1, "fecha": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "n": len(REC), "arboles": REC},\n              open("reports/arboles.json", "w", encoding="utf-8"), ensure_ascii=False)\n    print(f"Arboles grabados: {len(REC)} -> reports/arboles.json")\n    empaquetar()\n\n\nif __name__ == "__main__":\n    main()\n',
+    'scripts/replay.py': '"""Reproduce los examenes SIN la escuela, con los arboles grabados por scripts.grabar_arboles (parche-75).\n\n    python -m scripts.replay [--arboles reports/arboles.json] [--tests]\n\nSustituye solo la prediccion cruda de la escuela por la grabada; el resto (arreglos de la escuela, lemas irregulares, extractor, preguntas,\nmemoria, dialogo, coherencia, efectos) se ejecuta de verdad. Sirve para probar un cambio simbolico contra TODOS los examenes en segundos,\nsin reentrenar. No sirve para medir la escuela: si cambia la escuela hay que volver a grabar.\nNo toca reports/informe.txt ni reports/historial.json (los restaura); escribe reports/replay_informe.txt.\nSi falta alguna frase en la grabacion, la lista al final (hay que volver a grabar con --extra).\n"""\nimport argparse\nimport json\nimport os\nimport sys\nimport types\n\n\ndef _stubs():\n    """Si no hay torch (p. ej. en un servidor), se simulan los modulos pesados que los examenes importan pero no usan."""\n    try:\n        import torch  # noqa\n        return False\n    except ImportError:\n        pass\n\n    def stub(name, **attrs):\n        m = types.ModuleType(name)\n        m.__dict__.update(attrs)\n        sys.modules[name] = m\n\n    class _X:\n        pass\n\n    stub("torch", cuda=types.SimpleNamespace(is_available=lambda: False),\n         backends=types.SimpleNamespace(mps=types.SimpleNamespace(is_available=lambda: False)))\n    stub("src.language.ear", Ear=_X, EarParser=_X)\n    stub("src.reasoning.engine", ReasoningEngine=_X)\n    stub("src.language.ud", School=_X, predict_trees=lambda *a, **k: None, load_school=lambda device="cpu": (None, []))\n    return True\n\n\ndef main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument("--arboles", default="reports/arboles.json")\n    ap.add_argument("--tests", action="store_true", help="correr tambien pytest (necesita torch)")\n    args = ap.parse_args()\n    sys.argv = [sys.argv[0]]\n    sys.path.insert(0, os.getcwd())\n    _stubs()\n    import importlib\n    ud = sys.modules.get("src.language.ud") or importlib.import_module("src.language.ud")\n    ud.load_school = lambda device="cpu": (None, [])\n    rec = json.load(open(args.arboles, encoding="utf-8"))["arboles"]\n    missing = []\n\n    import src.language.school_parser as sp\n\n    def lookup(model, batch, device, scripts):\n        out = []\n        for forms in batch:\n            k = "\\x1f".join(forms)\n            if k in rec:\n                out.append([tuple(x) for x in rec[k]])\n            else:\n                if k not in missing:\n                    missing.append(k)\n                out.append([("X", 0 if i == 0 else 1, "root" if i == 0 else "dep", f.lower()) for i, f in enumerate(forms)])\n        return out\n\n    def init(self, model=None, device="cpu", scripts=(), overrides=None):\n        self.model, self.device, self.scripts = None, device, []\n        self.overrides = {**sp.IRREG, **(overrides or {})}\n\n    sp.predict_trees = lookup\n    sp.SchoolParser.__init__ = init\n\n    saved = {f: (open(f, "rb").read() if os.path.exists(f) else None) for f in ("reports/informe.txt", "reports/historial.json")}\n    from scripts import check\n    if not args.tests:\n        check.subprocess = types.SimpleNamespace(run=lambda *a, **k: types.SimpleNamespace(stdout="TESTS UNITARIOS: omitidos en replay (usa --tests)\\n", returncode=0))\n    try:\n        check.main()\n        os.makedirs("reports", exist_ok=True)\n        open("reports/replay_informe.txt", "wb").write(open("reports/informe.txt", "rb").read())\n    finally:\n        for f, data in saved.items():\n            if data is None:\n                if os.path.exists(f):\n                    os.remove(f)\n            else:\n                open(f, "wb").write(data)\n    print(f"\\n[replay] informe en reports/replay_informe.txt | frases sin arbol grabado: {len(missing)}")\n    for k in missing[:30]:\n        print("   FALTA:", k.replace("\\x1f", " "))\n\n\nif __name__ == "__main__":\n    main()\n',
+    'scripts/ciclo.py': '"""Ciclo automatico (parche-75): aplica uno o varios parches, mide TODO, vuelve atras solo si algo deja de cumplir y empaqueta el resultado.\n\n    python -m scripts.ciclo parche-76.py parche-77.py     # aplica los parches EN ORDEN, mide y guarda el manifiesto si todo cumple\n    python -m scripts.ciclo                               # sin parches: solo mide, graba arboles y empaqueta (estado actual)\n\nPasos: 1) copia de seguridad de src/scripts/tests/data(*.tsv,*.txt)  2) aplica cada parche  3) mide con scripts.grabar_arboles\n(tests + 22 examenes + arboles)  4) si TODO CUMPLE: manifiesto --guardar; si no: restaura la copia de seguridad  5) escribe reports/ciclo.txt y\nreports/paquete.zip (informe + arboles + historial + ciclo). NO hace commits ni pushes: al final imprime los comandos para que los hagas tu.\nUna sola subida (paquete.zip) basta para la siguiente iteracion.\n"""\nimport argparse\nimport datetime\nimport json\nimport os\nimport shutil\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nDIRS = ("src", "scripts", "tests")\n\n\ndef snapshot(root: Path, stamp: str) -> Path:\n    dest = root / ".ciclo_backups" / stamp\n    for d in DIRS:\n        shutil.copytree(root / d, dest / d, ignore=shutil.ignore_patterns("__pycache__"))\n    (dest / "data").mkdir(parents=True, exist_ok=True)\n    for f in (root / "data").glob("*"):\n        if f.is_file() and f.suffix in (".tsv", ".txt"):\n            shutil.copy2(f, dest / "data" / f.name)\n    for f in ("reports/historial.json",):\n        if (root / f).exists():\n            (dest / "reports").mkdir(exist_ok=True)\n            shutil.copy2(root / f, dest / f)\n    olds = sorted(p for p in (root / ".ciclo_backups").iterdir() if p.is_dir())\n    for old in olds[:-5]:                                   # se conservan solo las 5 ultimas copias\n        shutil.rmtree(old, ignore_errors=True)\n    return dest\n\n\ndef restore(root: Path, dest: Path) -> None:\n    for d in DIRS:\n        shutil.rmtree(root / d)\n        shutil.copytree(dest / d, root / d)\n    for f in (root / "data").glob("*"):\n        if f.is_file() and f.suffix in (".tsv", ".txt"):\n            f.unlink()\n    for f in (dest / "data").glob("*"):\n        shutil.copy2(f, root / "data" / f.name)\n    if (dest / "reports" / "historial.json").exists():\n        shutil.copy2(dest / "reports" / "historial.json", root / "reports" / "historial.json")\n\n\ndef run(cmd, root: Path, log):\n    r = subprocess.run(cmd, cwd=root, capture_output=True, text=True)\n    log((r.stdout or "") + (r.stderr or ""))\n    return r.returncode\n\n\ndef main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument("parches", nargs="*")\n    ap.add_argument("--cmd-medir", default=f"{sys.executable} -m scripts.grabar_arboles", help="orden que mide y empaqueta")\n    ap.add_argument("--cmd-manifiesto", default=f"{sys.executable} -m scripts.manifiesto --guardar")\n    args = ap.parse_args()\n    root = Path.cwd()\n    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")\n    lines = []\n    log = lambda s="": (lines.append(s), print(s))\n    log(f"CICLO {stamp}")\n    snap = snapshot(root, stamp)\n    ok_apply = True\n    for p in args.parches:\n        src = Path(p)\n        if not src.is_file():\n            log(f"  PARCHE NO ENCONTRADO: {p}"); ok_apply = False; break\n        tmp = root / f"_parche_ciclo_{src.stem.replace(\'-\', \'_\')}.py"\n        shutil.copy2(src, tmp)\n        try:\n            code = run([sys.executable, str(tmp)], root, lambda s: log("    " + s.replace("\\n", "\\n    ").rstrip()))\n        finally:\n            tmp.unlink(missing_ok=True)\n        log(f"  parche {src.name}: {\'aplicado\' if code == 0 else \'FALLO (codigo %s)\' % code}")\n        if code != 0:\n            ok_apply = False\n            break\n    todo_cumple = False\n    if ok_apply:\n        code = run(args.cmd_medir.split(), root, lambda s: None)\n        inf = root / "reports" / "informe.txt"\n        text = inf.read_text(encoding="utf-8") if inf.exists() else ""\n        resumen = next((l for l in text.splitlines() if l.startswith("RESUMEN:")), "RESUMEN: (no hay informe)")\n        tests = next((l for l in text.splitlines() if l.startswith("TESTS UNITARIOS")), "TESTS UNITARIOS: (sin dato)")\n        todo_cumple = "TODO CUMPLE" in resumen and " failed" not in tests and " error" not in tests\n        log(f"  {tests}")\n        log(f"  {resumen.split(\'  {\')[0]}")\n        cambios = [l.strip() for l in text.splitlines() if "MEJORA" in l or "EMPEORA" in l]\n        for l in cambios:\n            log(f"    {l}")\n    if todo_cumple:\n        run(args.cmd_manifiesto.split(), root, lambda s: log("  " + s.strip()))\n        log("RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.")\n        st = subprocess.run(["git", "status", "--short"], cwd=root, capture_output=True, text=True).stdout.strip()\n        log("\\nArchivos cambiados (git status --short):\\n" + (st or "  (ninguno / no es un repositorio git)"))\n        log("\\nPara publicarlo (lo haces tu; revisa antes que no entra nada no deseado):\\n  git add -A && git commit -m \\"<mensaje>\\" && git push")\n    else:\n        restore(root, snap)\n        log("RESULTADO: NO SE CUMPLEN LOS CRITERIOS (o fallo un parche). Se ha RESTAURADO la copia de seguridad: el proyecto queda como estaba.")\n        log(f"  Copia usada: {snap}")\n    (root / "reports").mkdir(exist_ok=True)\n    (root / "reports" / "ciclo.txt").write_text("\\n".join(lines), encoding="utf-8")\n    sys.argv = [sys.argv[0]]\n    import zipfile\n    with zipfile.ZipFile(root / "reports" / "paquete.zip", "w", zipfile.ZIP_DEFLATED) as z:\n        for f in ("informe.txt", "arboles.json", "historial.json", "ciclo.txt"):\n            if (root / "reports" / f).exists():\n                z.write(root / "reports" / f, f)\n    print(f"\\n[Sube reports/paquete.zip a la conversacion]")\n    return 0 if todo_cumple else 1\n\n\nif __name__ == "__main__":\n    sys.exit(main())\n',
+}
 
-DEF_OLD = '''        return [tuple(x) for x in rows]
-
-    def parse(self, sentence: str, topic'''
-DEF_NEW = '''        return [tuple(x) for x in rows]
-
-    @staticmethod
-    def _fix_name_adj(rows):
-        """parche-72: "Clara canta en el coro." / "Clara no compra leche.": la escuela lee el nombre propio como ADJ (amod del verbo).
-        Si es la primera palabra, empieza en mayuscula, cuelga de un verbo a su derecha (solo "no/nunca/jamas/tampoco" entre medias),
-        no lleva determinante y el verbo no tiene otro sujeto, es un nombre propio sujeto."""
-        if len(rows) < 3:
-            return rows
-        f, u, h, r, l = rows[0][:5]
-        if u != "ADJ" or r not in ("amod", "nsubj") or not (f[:1].isupper() and f[1:].islower()) or h < 2:
-            return rows
-        v = h - 1
-        if v >= len(rows) or rows[v][1] != "VERB" or rows[v][0].lower().endswith(("ar", "er", "ir", "ando", "iendo")):
-            return rows
-        if any(_norm(rows[k][0]) not in ("no", "nunca", "jamas", "tampoco") for k in range(1, v)):
-            return rows
-        if any(x[2] == 1 and x[3] == "det" for x in rows[1:]):
-            return rows
-        if any(x[2] == h and x[3] in ("nsubj", "csubj") for x in rows[1:]):
-            return rows
-        return [(f, "PROPN", h, "nsubj", l)] + list(rows[1:])
-
-    def parse(self, sentence: str, topic'''
-
-TEST = '''"""parche-72: un nombre propio leido como ADJ al principio de la frase pasa a ser sujeto."""
-from src.language.extract import triples_full
-from src.language.school_parser import SchoolParser
-
-fix = SchoolParser._fix_name_adj
-
-
-def _tr(rows):
-    return [(t["s"], t["p"], t["o"], t["neg"]) for t in triples_full(rows, entities_only=True)]
-
-
-def test_nombre_como_adjetivo_inicial():
-    T = [("Clara", "ADJ", 2, "amod", "claro"), ("canta", "VERB", 0, "root", "cantar"), ("en", "ADP", 5, "case", "en"),
-         ("el", "DET", 5, "det", "el"), ("coro", "NOUN", 2, "obl", "coro"), (".", "PUNCT", 2, "punct", ".")]
-    assert fix(T)[0][1:4] == ("PROPN", 2, "nsubj")
-    assert _tr(fix(T)) == [("clara", "cantar_en", "coro", False)]
-    N = [("Clara", "ADJ", 3, "amod", "claro"), ("no", "ADV", 3, "advmod", "no"), ("compra", "VERB", 0, "root", "comprar"),
-         ("leche", "NOUN", 3, "obj", "leche"), (".", "PUNCT", 3, "punct", ".")]
-    assert _tr(fix(N)) == [("clara", "comprar", "leche", True)]
-
-
-def test_no_toca_adjetivos_de_verdad():
-    otro = [("Clara", "ADJ", 3, "amod", "claro"), ("Ana", "PROPN", 3, "nsubj", "ana"), ("canta", "VERB", 0, "root", "cantar"), (".", "PUNCT", 3, "punct", ".")]
-    assert fix(otro)[0][1] == "ADJ"                                   # el verbo ya tiene sujeto
-    minus = [("claro", "ADJ", 2, "amod", "claro"), ("canta", "VERB", 0, "root", "cantar"), (".", "PUNCT", 2, "punct", ".")]
-    assert fix(minus)[0][1] == "ADJ"                                  # sin mayuscula inicial
-    con_det = [("Clara", "ADJ", 2, "amod", "claro"), ("canta", "VERB", 0, "root", "cantar"), (".", "PUNCT", 2, "punct", ".")]
-    assert fix(con_det[:1] + [("el", "DET", 1, "det", "el")] + con_det[1:])[0][1] == "ADJ"
-'''
-
-EDITS = [("src/language/school_parser.py", CALL_OLD, CALL_NEW, "_fix_name_adj(self._fix_name_verb"),
-         ("src/language/school_parser.py", DEF_OLD, DEF_NEW, "def _fix_name_adj")]
-NEW_FILES = {"tests/test_parche72.py": TEST}
+GITIGNORE = [".ciclo_backups/", "reports/paquete.zip", "reports/arboles.json", "reports/replay_informe.txt"]
 
 
 def main(root: Path = ROOT) -> int:
     stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     bk = root / ".parche_backups" / stamp
-    texts, changed = {}, set()
-    for rel, old, new, marca in EDITS:                              # comprobar TODO antes de escribir nada
-        p = root / rel
-        if not p.is_file():
-            print(f"FALTA {rel}: no se toca nada."); return 1
-        txt = texts.get(rel) or p.read_text(encoding="utf-8")
-        if marca in txt:
-            print(f"  {rel}: ya aplicado ({marca})"); texts[rel] = txt; continue
-        if txt.count(old) != 1:
-            print(f"ERROR {rel}: el trozo a cambiar aparece {txt.count(old)} veces (debe ser 1). No se toca nada."); return 1
-        texts[rel] = txt.replace(old, new); changed.add(rel)
-    plan = [(root / rel, rel, texts[rel]) for rel in sorted(changed)]
+    plan = []
     for rel, content in NEW_FILES.items():
         p = root / rel
         if not p.exists() or p.read_text(encoding="utf-8") != content:
             plan.append((p, rel, content))
+    gi = root / ".gitignore"
+    actual = gi.read_text(encoding="utf-8") if gi.exists() else ""
+    faltan = [l for l in GITIGNORE if l not in actual.splitlines()]
+    if faltan:
+        plan.append((gi, ".gitignore", actual + ("" if actual.endswith("\n") or not actual else "\n") + "\n".join(faltan) + "\n"))
     for p, rel, txt in plan:
         if p.exists():
             (bk / rel).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(p, bk / rel)
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(txt, encoding="utf-8")
-        py_compile.compile(str(p), doraise=True)
+        if rel.endswith(".py"):
+            py_compile.compile(str(p), doraise=True)
         print(f"  escrito {rel}")
-    print(f"parche-72 instalado. Copias en {bk}" if plan else "parche-72: nada que hacer.")
-    print("Ahora:  python -m pytest -q tests ;  python -m scripts.check ;  python -m scripts.manifiesto --guardar")
+    print(f"parche-75 instalado. Copias en {bk}" if plan else "parche-75: nada que hacer.")
+    print("Ahora:  python -m scripts.ciclo      y sube reports/paquete.zip")
     return 0
 
 

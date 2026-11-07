@@ -12,7 +12,7 @@ data/libro_vocab.json
 regenta.txt
 # modelos entrenados y memoria personal (se regeneran)
 checkpoints/*.pt
-memory/
+/memory/
 reports/reproduce_*.log
 reports/libro_*.txt
 _archivo/
@@ -21,3 +21,7 @@ reports/informe.txt
 checkpoints/school.pt.bak
 data/*.pkl
 LCM_PROYECTO_COMPLETO.txt
+.ciclo_backups/
+reports/paquete.zip
+reports/arboles.json
+reports/replay_informe.txt

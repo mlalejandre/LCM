@@ -1,0 +1,22 @@
+CICLO 20261107-114435-598247
+  TESTS UNITARIOS: 59 passed in 1.01s
+  RESUMEN: TODO CUMPLE
+  [OK] reproducibilidad/manifiesto.json: 126 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 22 (de reports/historial.json)
+RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
+
+Archivos cambiados (git status --short):
+M .gitignore
+ M parche.py
+ M reports/historial.json
+ M reproducibilidad/manifiesto.json
+ M src/language/extract.py
+?? ,
+?? scripts/ciclo.py
+?? scripts/diag_bloque.py
+?? scripts/grabar_arboles.py
+?? scripts/replay.py
+?? tests/test_parche74.py
+
+Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
+  git add -A && git commit -m "<mensaje>" && git push
