@@ -1,0 +1,56 @@
+# Examen CIEGO 2 del enrutador (parche-88): escrito aparte de las plantillas y ANTES de mirar resultados. Formato: frase<TAB>operacion
+¿Sabes cuánto es 12 por 12?	ARITMETICA
+dime cuanto da veinte entre cuatro	ARITMETICA
+Calcula 345 más 678	ARITMETICA
+¿Cuál es la raíz cuadrada de 144?	ARITMETICA
+cuanto es el 15 por ciento de 80	ARITMETICA
+si multiplico 9 por 7 cuanto sale	ARITMETICA
+¿Cuánto es tres menos cinco?	ARITMETICA
+2 elevado a 8	ARITMETICA
+¿Qué día de la semana fue el 14 de julio de 1789?	DIA_SEMANA
+sabes en qué día de la semana cayó el 6 de enero de 2000	DIA_SEMANA
+¿Qué día de la semana será el 1 de enero de 2030?	DIA_SEMANA
+dime el dia de la semana del 24 de diciembre de 2023	DIA_SEMANA
+¿Cuántos días faltan para Nochevieja?	DIAS_HASTA
+cuantos dias quedan para el 20 de enero	DIAS_HASTA
+¿Cuántos días han pasado desde el 11 de marzo de 2020?	DIAS_HASTA
+cuanto falta para navidad	DIAS_HASTA
+dime cuantos dias hay hasta el 1 de mayo	DIAS_HASTA
+¿Qué tiempo hace hoy en Sevilla?	FUERA
+¿Va a llover este fin de semana?	FUERA
+Dime las últimas noticias	FUERA
+¿Cuánto cuesta ahora el oro?	FUERA
+Cuéntame un chiste	FUERA
+¿Quién ganó anoche la Champions?	FUERA
+Pon una canción de Queen	FUERA
+Reserva mesa para dos	FUERA
+¿Qué hora es en Nueva York?	FUERA
+¿Qué hora tienes?	HORA
+dime la hora porfa	HORA
+¿Me das la hora exacta?	HORA
+¿En qué fecha estamos hoy?	FECHA
+¿Hoy qué día es del mes?	FECHA
+Si hoy es 9 de junio, ¿qué día será pasado mañana?	CALC_FECHA
+Si estamos a 1 de marzo, ¿qué día fue ayer?	CALC_FECHA
+hoy es 25 de diciembre dime la fecha de mañana	CALC_FECHA
+¿Cómo te llamas tú?	IDENTIDAD
+¿Qué eres, una persona?	IDENTIDAD
+¿Qué sabes hacer?	CAPACIDAD
+¿En qué cosas me ayudas?	CAPACIDAD
+¿Dónde estás ahora mismo?	UBICACION
+¿En qué lugar nos hallamos?	UBICACION
+Rosa tiene tres hermanos.	OTRO
+¿Cuántos hermanos tiene Rosa?	OTRO
+Pedro nació el 3 de mayo.	OTRO
+¿Cuándo nació Pedro?	OTRO
+Luis compró cinco manzanas por dos euros.	OTRO
+¿Quién compró cinco manzanas?	OTRO
+La raíz del árbol es profunda.	OTRO
+Marta y Pablo viven entre Madrid y Toledo.	OTRO
+El examen de Clara es el 12 de junio.	OTRO
+¿Es Sara más alta que Rosa?	OTRO
+¿Qué hora llegó el tren de Ana?	OTRO
+Ayer fue lunes.	OTRO
+¿Dónde vive Luis?	OTRO
+Gracias, adiós	OTRO
+¿Quién es el padre de Juan?	OTRO

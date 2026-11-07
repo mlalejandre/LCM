@@ -1,0 +1,74 @@
+# Examen CIEGO del enrutador (parche-87): escrito aparte de las plantillas del generador. Formato: frase<TAB>operacion
+Sabes que hora es?	HORA
+¿Me podrías decir qué hora es, por favor?	HORA
+Qué hora marca el reloj	HORA
+Oye, ¿tienes idea de la hora?	HORA
+dime que hora es	HORA
+¿Cuál es la hora exacta?	HORA
+Son muchas horas ya? dime la hora	HORA
+Qué horas son	HORA
+Me puedes confirmar la hora actual	HORA
+Que dia es hoy	FECHA
+¿A qué fecha estamos hoy?	FECHA
+dime que fecha es	FECHA
+¿Sabes en qué día de la semana estamos?	FECHA
+¿Hoy es lunes, martes...? ¿qué día es?	FECHA
+En que mes estamos	FECHA
+¿Qué día es hoy exactamente?	FECHA
+Cual es la fecha de hoy?	FECHA
+Si hoy es dia 3 de febrero que día fue ayer?	CALC_FECHA
+si hoy es 10 de marzo, qué día será mañana	CALC_FECHA
+Hoy es 1 de enero; ¿qué día fue ayer?	CALC_FECHA
+Si estamos a 28 de febrero, qué fecha será mañana?	CALC_FECHA
+Si hoy es 15 de agosto qué día fue anteayer	CALC_FECHA
+¿Qué día será dentro de 10 días si hoy es 20 de abril?	CALC_FECHA
+Si hoy es 5 de mayo, que fecha fue hace 3 dias	CALC_FECHA
+Supongamos que hoy es 31 de diciembre. ¿Qué día es mañana?	CALC_FECHA
+Si hoy es el 12 de octubre de 2025, ¿qué día será pasado mañana?	CALC_FECHA
+Sabes donde estamos?	UBICACION
+¿Dónde estamos ahora?	UBICACION
+en que sitio nos encontramos	UBICACION
+¿Sabes en qué lugar estás?	UBICACION
+¿En qué ciudad nos encontramos?	UBICACION
+donde estas?	UBICACION
+Quién eres?	IDENTIDAD
+¿Cómo te llamas?	IDENTIDAD
+Dime quién eres tú	IDENTIDAD
+¿Eres una persona de verdad?	IDENTIDAD
+tienes algun nombre?	IDENTIDAD
+¿Qué eres exactamente?	IDENTIDAD
+Qué sabes hacer?	CAPACIDAD
+¿En qué me puedes ayudar?	CAPACIDAD
+dime que cosas puedes hacer	CAPACIDAD
+¿Para qué sirves?	CAPACIDAD
+¿Qué tareas sabes resolver?	CAPACIDAD
+¿Quién compró pan?	OTRO
+¿A qué hora llegó Pedro?	OTRO
+¿Qué día nació Ana?	OTRO
+Pedro vive en Madrid.	OTRO
+Hoy es lunes.	OTRO
+¿Dónde vive Marta?	OTRO
+¿Dónde está el libro?	OTRO
+¿Cuándo compró Clara flores?	OTRO
+Gracias por todo	OTRO
+Hola, buenos días	OTRO
+¿Cómo se llama el perro de Irene?	OTRO
+¿Es Sara más baja que Clara?	OTRO
+¿Qué sabes de Luis?	OTRO
+Me llamo Elena.	OTRO
+¿Cómo lo sabes?	OTRO
+¿Cuál es lo contrario de grande?	OTRO
+Vivo en Valencia desde hace años	OTRO
+¿Qué hora es en Tokio?	FUERA
+Ayer comí paella con mi hermano	OTRO
+¿Quién es el padre de Estela?	OTRO
+¿Cuántos hijos tiene Rosa?	OTRO
+El examen es a las tres.	OTRO
+La fecha de entrega es el lunes	OTRO
+Mi nombre es Pablo	OTRO
+¿Dónde estudia Luis música?	OTRO
+¿Qué eres tú para Marta?	OTRO
+Luisa no sabe qué hora es	OTRO
+¿Qué día de la semana nació Mozart?	OTRO
+¿Por qué compró Pedro pan?	OTRO
+Olvida lo que te dije	OTRO

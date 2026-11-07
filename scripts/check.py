@@ -139,6 +139,32 @@ def main():
         for turn, exp, ans in bad:
             log(f"   FALLO {turn} esperado={exp} obtenido={ans}")
 
+    from src.language import intents as _it                                  # parche-87: enrutador de operaciones (examen ciego propio)
+    _it._ROUTER = None
+    _r = _it.load()
+    _rows = [l.rstrip("\n").partition("\t") for l in open("data/intents_ciego.tsv", encoding="utf-8") if l.strip() and not l.startswith("#")]
+    _bad = []
+    for _t, _, _y in _rows:
+        _pred, _p = _it.route(_t)
+        if _pred != _y.strip():
+            _bad.append((_t, _y.strip(), _pred))
+    _acc = 1 - len(_bad) / max(len(_rows), 1)
+    metrics[f"enrutador_ciego_{len(_rows)}"] = round(_acc, 4)
+    ok_all &= _acc >= .90
+    log(f"\nenrutador_ciego_{len(_rows)}: {len(_rows) - len(_bad)}/{len(_rows)} = {_acc:.1%}  (criterio >= 90%: {'CUMPLE' if _acc >= .90 else 'NO CUMPLE'})")
+    for _t, _y, _pred in _bad:
+        log(f"   FALLO {_t!r} esperado={_y} obtenido={_pred}")
+
+    _rows = [l.rstrip("\n").partition("\t") for l in open("data/intents_ciego2.tsv", encoding="utf-8") if l.strip() and not l.startswith("#")]      # parche-88
+    _bad2 = [(_t, _y.strip(), _it.route(_t)[0]) for _t, _, _y in _rows if _it.route(_t)[0] != _y.strip()]
+    _acc2 = 1 - len(_bad2) / max(len(_rows), 1)
+    metrics[f"enrutador_ciego2_{len(_rows)}"] = round(_acc2, 4)
+    ok_all &= _acc2 >= .85
+    log(f"\nenrutador_ciego2_{len(_rows)}: {len(_rows) - len(_bad2)}/{len(_rows)} = {_acc2:.1%}  (criterio >= 85%: {'CUMPLE' if _acc2 >= .85 else 'NO CUMPLE'})")
+    for _t, _y, _pred in _bad2:
+        log(f"   FALLO {_t!r} esperado={_y} obtenido={_pred}")
+
+
     hist_path = "reports/historial.json"
     hist = json.load(open(hist_path)) if os.path.exists(hist_path) else []
     if hist:

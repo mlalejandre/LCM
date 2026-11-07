@@ -1,22 +1,27 @@
-CICLO 20261107-123729-745319
-  TESTS UNITARIOS: 89 passed in 1.01s
+CICLO 20261107-130235-283449
+  TESTS UNITARIOS: 94 passed in 1.09s
   RESUMEN: TODO CUMPLE
-    nuevo_ciego_cuatro_14: 92.9% -> 100.0%  MEJORA
-    nuevo_ciego_dialogo7_8: 87.5% -> 100.0%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 144 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 30 (de reports/historial.json)
+    enrutador_ciego_73: 97.3% -> 95.9%  EMPEORA
+  [OK] reproducibilidad/manifiesto.json: 153 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 32 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M parche.py
+M reports/ciclo.txt
  M reports/historial.json
  M reproducibilidad/manifiesto.json
  M scripts/check.py
  M src/language/dialogue.py
- M src/language/qa.py
- M src/language/school_parser.py
-?? data/ciego_ocho.tsv
-?? tests/test_parche86.py
+?? data/intents_ciego.tsv
+?? data/intents_ciego2.tsv
+?? parche-88.py
+?? scripts/entrenar_intents.py
+?? src/language/intents.py
+?? src/language/intents_gen.py
+?? src/language/intents_modelo.json
+?? src/language/skills.py
+?? tests/test_parche87.py
+?? tests/test_parche88.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

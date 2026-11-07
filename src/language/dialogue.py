@@ -274,6 +274,24 @@ class Dialogue:
                     self.pending = None
                     return f"Encantado, {self.user}.", (self.resolve(stored) if stored else None)
                 self.pending = None
+        # 1b) enrutador de operaciones (parche-87): decide QUE se pide, sea cual sea la forma de decirlo
+        from src.language import intents, skills
+        op, _conf = intents.route(raw)
+        if op in ("HORA", "FECHA", "IDENTIDAD", "CAPACIDAD"):
+            t = {"HORA": "que hora es", "FECHA": "que dia es hoy", "IDENTIDAD": "quien eres", "CAPACIDAD": "que sabes hacer"}[op]
+            raw = t
+        elif op == "UBICACION":
+            return skills.UBICACION, None
+        elif op == "CALC_FECHA":
+            ans = skills.calc_fecha(raw, self._today())
+            if ans:
+                return ans, None
+        elif op in ("ARITMETICA", "DIA_SEMANA", "DIAS_HASTA", "FUERA"):      # parche-88
+            if op == "FUERA":
+                return skills.FUERA, None
+            ans = skills.aritmetica(raw) if op == "ARITMETICA" else (skills.dia_semana(raw, self._today()) if op == "DIA_SEMANA" else skills.dias_hasta(raw, self._today()))
+            if ans:
+                return ans, None
         # 2) actos sociales
         r = self._social(raw, t)
         if r:
