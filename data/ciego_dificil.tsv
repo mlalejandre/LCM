@@ -1,0 +1,54 @@
+# Examen CIEGO 3 (parche-80): MAS DIFICIL. Coordinacion, plurales, frases largas, fechas relativas, comparativos con "menos", negacion y cambios. Informativo.
+H: Andrea y Bruno tienen una casa en Valencia.
+P: ¿Quién tiene una casa en Valencia?	Andrea
+P: ¿Tiene Bruno una casa?	SI
+P: ¿Dónde tienen una casa Andrea y Bruno?	Valencia
+
+H: Gloria lee novelas y escribe poemas.
+P: ¿Qué escribe Gloria?	poemas
+P: ¿Qué lee Gloria?	novelas
+P: ¿Escribe Gloria novelas?	NO
+
+H: Fernando no vive en Madrid sino en Toledo.
+P: ¿Vive Fernando en Madrid?	NO
+P: ¿Dónde vive Fernando?	Toledo
+
+HOY: 2026-11-07
+H: Ana compró un coche ayer.
+P: ¿Cuándo compró Ana un coche?	6 de noviembre de 2026
+P: ¿Compró Ana un coche?	SI
+
+H: Hugo es más viejo que Pedro.
+H: Pedro es menos viejo que Hugo.
+H: Iván es más viejo que Hugo.
+P: ¿Es Iván más viejo que Pedro?	SI
+P: ¿Es Pedro más viejo que Iván?	NO
+P: ¿Quién es más viejo que Hugo?	Iván
+
+H: Claudia es la madre de Diego.
+H: Diego es el padre de Estela.
+P: ¿Quién es la madre de Diego?	Claudia
+P: ¿Es Claudia la abuela de Estela?	SI
+P: ¿Es Estela la nieta de Claudia?	SI
+
+H: Todos los gatos son animales.
+H: Félix es un gato.
+P: ¿Es Félix un animal?	SI
+P: ¿Es un animal Félix?	SI
+
+H: Mónica está cansada.
+H: Mónica estaba contenta antes.
+P: ¿Está cansada Mónica?	SI
+P: ¿Cómo está Mónica?	cansada
+
+H: Rubén regaló un libro a Silvia.
+P: ¿Quién regaló un libro a Silvia?	Rubén
+P: ¿A quién regaló Rubén un libro?	Silvia
+P: ¿Qué regaló Rubén a Silvia?	libro
+
+H: Marina trabajó en Sevilla y ahora trabaja en Bilbao.
+P: ¿Dónde trabaja Marina?	Bilbao
+P: ¿Dónde trabajaba Marina?	Sevilla
+
+H: Los lunes Nico va al gimnasio.
+P: ¿Quién va al gimnasio?	Nico

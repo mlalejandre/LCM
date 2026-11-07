@@ -1,35 +1,19 @@
-"""parche-78: tercer lote SIMBOLICO (no reentrena). Cierra el unico fallo real del ciclo anterior y abre un examen ciego nuevo.
-
-  1. Comparativos: "Rosa es mas baja que Clara." -> la escuela lee "Clara" como csubj/nmod (a veces con etiqueta ADJ) y se perdia la comparacion
-     (rosa, ser, baja). Ahora el termino tras "que" con "mas/menos" en el mismo nucleo es siempre (rosa, mas_bajo_que, clara). Es lo que hacia fallar
-     "¿Es Sara mas baja que Clara?" (no encadenaba la transitividad). Reproducido y corregido con los arboles reales de reports/arboles.json.
-  2. data/comparativos_ciegos.tsv: examen CIEGO nuevo (12 preguntas, nombres y adjetivos no usados al afinar). Se registra en scripts/check.py como
-     INFORMATIVO (criterio 0 %): muestra fallos pero no hace que el ciclo restaure nada. Sus fallos son la materia prima del parche-79.
-
-Sin tocar: largas_ciegas_27 ("La profesora explica la leccion y los alumnos escuchan."): el sistema extrae ademas (alumnos, escuchar), que es CORRECTO;
-el gold omite esa proposicion. Se deja como esta para no ajustar el examen a la salida.
-
-Criterios fijados ANTES de medir: 74 tests pasan (72 + 2 nuevos), los 22 examenes anteriores no bajan, cantidad_ciegas_14 vuelve a >= 92.9 %.
-Uso:  python -m scripts.ciclo parche-78.py     (restaura solo si algo falla). No hace commits ni pushes. No reentrena.
+"""parche-80: SONDA (sin cambios de codigo). Los 25 examenes cumplen al 100 % (salvo largas_ciegas_27, error del gold), asi que ya no hay fallos que corregir:
+se abre un examen CIEGO mas dificil (26 preguntas: coordinacion, plurales, fechas relativas, comparativos encadenados mezclando mas/menos, parentesco
+con regla implicita, generalizacion "todos los X son Y", cambio de trabajo, dativos). Informativo (criterio 0 %). Sus fallos son el trabajo del parche-81.
+Honestidad: es un examen escrito por nosotros; algunas preguntas pueden pedir cosas que el sistema aun no promete. Cada fallo se clasifica en el parche siguiente
+como (a) error del sistema o (b) pregunta fuera de alcance, y solo (a) se arregla.
+Uso:  python -m scripts.ciclo parche-80.py
 """
 import datetime, py_compile, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SP = "src/language/school_parser.py"
 CK = "scripts/check.py"
-
-OLD = '        for r, x in enumerate(rows):\n            if x[3] != "nsubj" or x[1] not in ("PROPN", "NOUN") or r < 1:\n                continue\n            q = rows[r - 1]\n            if _norm(q[0]) == "que" and q[2] == r + 1 and q[3] == "mark" and x[2] > 0 and rows[x[2] - 1][1] == "ADJ" \\\n                    and any(y[2] == x[2] and y[3] == "nsubj" and j != r for j, y in enumerate(rows)) \\\n                    and any(_norm(y[0]) in ("mas", "menos") and y[2] == x[2] for y in rows):\n                x[3] = "nmod"\n                q[3] = "case"\n'
-NEW = '        for r, x in enumerate(rows):\n            if x[3] not in ("nsubj", "csubj", "acl", "obl", "amod", "xcomp", "nmod") or (x[1] not in ("PROPN", "NOUN") and not (x[1] == "ADJ" and x[0][:1].isupper())) or r < 1:      # parche-78: tambien csubj/acl/..., y nombre leido como ADJ\n                continue\n            q = rows[r - 1]\n            if _norm(q[0]) == "que" and q[2] == r + 1 and q[3] in ("mark", "case") and x[2] > 0 and x[2] != r + 1 \\\n                    and any(_norm(y[0]) in ("mas", "menos") and y[2] == x[2] for y in rows) \\\n                    and (rows[x[2] - 1][1] == "ADJ" or any(y[2] == x[2] and y[3] == "cop" for y in rows)) \\\n                    and (x[3] != "nsubj" or any(y[2] == x[2] and y[3] == "nsubj" and j != r for j, y in enumerate(rows))):\n                x[3] = "nmod"\n                q[3] = "case"\n                if x[1] == "ADJ":\n                    x[1] = "PROPN"\n'
-
-CK_OLD = '("preguntas_ciegas_31", "data/preguntas_ciegas.tsv", .80)]'
-CK_NEW = '("preguntas_ciegas_31", "data/preguntas_ciegas.tsv", .80), ("nuevo_ciego_comparativos_12", "data/comparativos_ciegos.tsv", .0)]      # parche-78: informativo'
-
-ALL_EDITS = [
-    (SP, OLD, NEW, "parche-78: tambien csubj"),
-    (CK, CK_OLD, CK_NEW, "nuevo_ciego_comparativos_12"),
-]
-NEW_FILES = {"tests/test_parche78.py": '"""parche-78: el termino de la comparacion se reconoce aunque la escuela lo etiquete csubj/nmod/ADJ (nombre leido como adjetivo)."""\nfrom src.language.extract import triples_full\nfrom src.language.school_parser import SchoolParser\n\nS = SchoolParser\n\n\ndef _tr(rows):\n    return [(t["s"], t["p"], t["o"], t["neg"]) for t in triples_full(rows, entities_only=True)]\n\n\ndef test_comparativo_con_termino_csubj_o_adjetivo():\n    for dep, pos in (("csubj", "PROPN"), ("nmod", "ADJ"), ("csubj", "ADJ")):\n        R = [("Rosa", "PROPN", 4, "nsubj", "rosa"), ("es", "AUX", 4, "cop", "ser"), ("más", "ADV", 4, "advmod", "mas"), ("baja", "ADJ", 0, "root", "bajo"),\n             ("que", "SCONJ", 6, "mark", "que"), ("Clara", pos, 4, dep, "clara"), (".", "PUNCT", 4, "punct", ".")]\n        assert _tr(S._fix_comparative(R)) == [("rosa", "mas_bajo_que", "clara", False)], (dep, pos)\n\n\ndef test_comparativo_no_toca_otras_frases():\n    N = [("Rosa", "PROPN", 2, "nsubj", "rosa"), ("sabe", "VERB", 0, "root", "saber"), ("que", "SCONJ", 5, "mark", "que"), ("Clara", "PROPN", 2, "ccomp", "clara"),\n         ("vino", "VERB", 2, "ccomp", "venir"), (".", "PUNCT", 2, "punct", ".")]\n    assert S._fix_comparative(N) == [tuple(x) for x in N]\n', "data/comparativos_ciegos.tsv": '# Examen CIEGO nuevo (parche-78): comparativos encadenados con nombres y adjetivos que NO se usaron para afinar. Informativo: no frena el ciclo.\nH: Marta es más alta que Lucía.\nH: Lucía es más alta que Nuria.\nP: ¿Es Marta más alta que Nuria?\tSI\nP: ¿Es Nuria más alta que Marta?\tNO\nP: ¿Es Marta más alta que Lucía?\tSI\n\nH: Pablo es menos rápido que Hugo.\nH: Hugo es menos rápido que Iván.\nP: ¿Es Pablo menos rápido que Iván?\tSI\nP: ¿Es Iván menos rápido que Pablo?\tNO\n\nH: Elena es más joven que Rosa.\nP: ¿Es Elena más joven que Marta?\tNOSE\nP: ¿Es Rosa más joven que Elena?\tNO\n\nH: Carlos es más fuerte que Andrés.\nH: Andrés es más fuerte que Daniel.\nP: ¿Quién es más fuerte que Daniel?\tAndrés\nP: ¿Es Carlos más fuerte que Daniel?\tSI\n\nH: Irene es más lista que Sofía.\nH: Sofía es más lista que Eva.\nH: Eva es más lista que Alba.\nP: ¿Es Irene más lista que Alba?\tSI\nP: ¿Es Alba más lista que Irene?\tNO\nP: ¿Es Sofía más lista que Alba?\tSI\n'}
+CK_OLD = '("nuevo_ciego_general_13", "data/ciego_general.tsv", .0)]'
+CK_NEW = '("nuevo_ciego_general_13", "data/ciego_general.tsv", .0), ("nuevo_ciego_dificil_26", "data/ciego_dificil.tsv", .0)]      # parche-80: informativo'
+ALL_EDITS = [(CK, CK_OLD, CK_NEW, "nuevo_ciego_dificil_26")]
+NEW_FILES = {"data/ciego_dificil.tsv": '# Examen CIEGO 3 (parche-80): MAS DIFICIL. Coordinacion, plurales, frases largas, fechas relativas, comparativos con "menos", negacion y cambios. Informativo.\nH: Andrea y Bruno tienen una casa en Valencia.\nP: ¿Quién tiene una casa en Valencia?\tAndrea\nP: ¿Tiene Bruno una casa?\tSI\nP: ¿Dónde tienen una casa Andrea y Bruno?\tValencia\n\nH: Gloria lee novelas y escribe poemas.\nP: ¿Qué escribe Gloria?\tpoemas\nP: ¿Qué lee Gloria?\tnovelas\nP: ¿Escribe Gloria novelas?\tNO\n\nH: Fernando no vive en Madrid sino en Toledo.\nP: ¿Vive Fernando en Madrid?\tNO\nP: ¿Dónde vive Fernando?\tToledo\n\nHOY: 2026-11-07\nH: Ana compró un coche ayer.\nP: ¿Cuándo compró Ana un coche?\t6 de noviembre de 2026\nP: ¿Compró Ana un coche?\tSI\n\nH: Hugo es más viejo que Pedro.\nH: Pedro es menos viejo que Hugo.\nH: Iván es más viejo que Hugo.\nP: ¿Es Iván más viejo que Pedro?\tSI\nP: ¿Es Pedro más viejo que Iván?\tNO\nP: ¿Quién es más viejo que Hugo?\tIván\n\nH: Claudia es la madre de Diego.\nH: Diego es el padre de Estela.\nP: ¿Quién es la madre de Diego?\tClaudia\nP: ¿Es Claudia la abuela de Estela?\tSI\nP: ¿Es Estela la nieta de Claudia?\tSI\n\nH: Todos los gatos son animales.\nH: Félix es un gato.\nP: ¿Es Félix un animal?\tSI\nP: ¿Es un animal Félix?\tSI\n\nH: Mónica está cansada.\nH: Mónica estaba contenta antes.\nP: ¿Está cansada Mónica?\tSI\nP: ¿Cómo está Mónica?\tcansada\n\nH: Rubén regaló un libro a Silvia.\nP: ¿Quién regaló un libro a Silvia?\tRubén\nP: ¿A quién regaló Rubén un libro?\tSilvia\nP: ¿Qué regaló Rubén a Silvia?\tlibro\n\nH: Marina trabajó en Sevilla y ahora trabaja en Bilbao.\nP: ¿Dónde trabaja Marina?\tBilbao\nP: ¿Dónde trabajaba Marina?\tSevilla\n\nH: Los lunes Nico va al gimnasio.\nP: ¿Quién va al gimnasio?\tNico\n'}
 
 
 def main(root: Path = ROOT) -> int:
@@ -60,7 +44,7 @@ def main(root: Path = ROOT) -> int:
         if rel.endswith(".py"):
             py_compile.compile(str(p), doraise=True)
         print(f"  escrito {rel}")
-    print(f"parche-78 instalado. Copias en {bk}" if plan else "parche-78: nada que hacer.")
+    print(f"parche-80 instalado. Copias en {bk}" if plan else "parche-80: nada que hacer.")
     return 0
 
 

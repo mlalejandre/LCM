@@ -1,5 +1,5 @@
 {
- "creado": "2026-11-07 12:14",
+ "creado": "2026-11-07 12:18",
  "entorno": {
   "python": "3.11.16",
   "plataforma": "macOS-26.5.2-arm64-arm-64bit",
@@ -28,7 +28,9 @@
   "deduccion_12": 1.0,
   "preguntas_19": 1.0,
   "preguntas_ciegas_31": 1.0,
-  "nuevo_ciego_comparativos_12": 0.75,
+  "nuevo_ciego_comparativos_12": 1.0,
+  "nuevo_ciego_general_13": 1.0,
+  "nuevo_ciego_dificil_26": 0.7308,
   "discurso_21": 1.0,
   "dialogo_65": 1.0,
   "dialogo_ciego_37": 1.0,
@@ -58,6 +60,8 @@
   "configs/config.py": "2df3bb1e7e36174424286dbfe8d521a2e2f0b4f4594a0c82b50266fb65f7a1ca",
   "data/cantidad_ciegas.tsv": "b6b1eefd461d1943c3dd60c89a84ee92babc80e9e9a9f2d04916b72fd7cd094d",
   "data/cantidad_prueba.tsv": "856e7d30e101707f38b7fcc807dc49d789e47b7badb687e61a5fca3b1e49df6e",
+  "data/ciego_dificil.tsv": "4fb21e40efc257b94e185481966e5d46a645406e588ea069cbe36143855f194e",
+  "data/ciego_general.tsv": "860e90456ab5a125e98c6ff2ba41b1b1276c6799f510c9005377bb6835eee6fc",
   "data/coherencia_ciega.tsv": "aaa569c228addd01e643fb0786ad9a792edd15e4b93edcd219032b0c3c4ff61e",
   "data/coherencia_prueba.tsv": "5e5e62ada3e024cb2153277bb898618e13a7fbe667d0110c49f09c9b35d0bb9f",
   "data/comparativos_ciegos.tsv": "f0d078714db1b1d094e83e50a46362bb46762172bb7548167a6ac07561bf89c8",
@@ -89,7 +93,7 @@
   "limpieza.py": "ca43d5a5673ea235c5e3bd59e77533f6206e56200db39787b32a05e2df911e43",
   "reports/RESULTADOS.md": "5f801387a3611c052a100079ec685428da8f95766949ecc6b3d0264f5ff98799",
   "requirements.txt": "bbd066e06ca02eb6341e528cdc96d34f75c8a9158f6ab1b8a39d9e2f3f63f486",
-  "scripts/check.py": "fcb0cc2cafff29c0d6d5b409fd0fea09c5426077cd15886d3a8bbab7c79da14b",
+  "scripts/check.py": "dbb6a9452ae061d2add2a6d2f215fd8dc3dcc863475edc66d3f3897c2066dc4d",
   "scripts/ciclo.py": "b743c4a1c4b502c197ade9fe6f516091eefa5c78046a581131b197129a0c19cc",
   "scripts/clean.py": "7b52dacf71ce8071e3b4046004a34fadd7479016f186cc1a3838d0a757fcef6f",
   "scripts/compare_ear.py": "72018feb8e496f837a28e66db0f77ae4ea0ae285e03820d9defb359fb76edec4",
@@ -136,7 +140,7 @@
   "src/language/online_ear.py": "8e3560273cc5d66b3e4e9166d273f383507d16e00edfac46fc20b763c39177eb",
   "src/language/qa.py": "36cc382a057f248f8cc1ade6d69526d37345fa9822477967b573d7724d67e656",
   "src/language/school_learn.py": "60295974e4c2a2866ed18c4e04db1dbc47195e50664bbdfedb3f2a691f52234f",
-  "src/language/school_parser.py": "184c38addcb12a4e2c53bf63be0d21daf8099fd80a027c5cd919478dd319aaca",
+  "src/language/school_parser.py": "801e8cb17bcace05334875a4a55a8e1dab041ad5f90acb5c349c5c4e73a1d312",
   "src/language/semilla.py": "b49ecae24e31c1227189d63f638904853669ae8fab305c44bfa8e54f3b05bba5",
   "src/language/training.py": "00cd9d82318dfc015016bd2002d45001e4a197ed4bf3469cd9850f83223be590",
   "src/language/ud.py": "3006a447cc5a7732d1c4a56ee04d477259364f43487e33ad3349d69d89990203",
@@ -176,6 +180,7 @@
   "tests/test_parche76.py": "9b0e703db1f02c9dfc842ef5bfc6b8fc1e0b185748656de85dc4fe164521d73c",
   "tests/test_parche77.py": "7c6bb3f8fee4220c3a28ab7a81c69a44186461001c223faac01f511f0017c796",
   "tests/test_parche78.py": "6751084d8436866fc88eb9fc767d2631a3e34f1088cce0d2be366434e9975058",
+  "tests/test_parche79.py": "aa75c29ff9e369b39455e58661600fc07cc1da814b5d7ba894d525e9e0887991",
   "tests/test_qa.py": "0d5347a4048b4b9c5def4ce3868924c806aa3a4f35079763f8dd85f9d357b144",
   "tests/test_reproducibilidad.py": "8ca8ab9b9fcbba546699901a482e97efa8c1d394ae3d861a42aef5e83bdf7e98"
  }

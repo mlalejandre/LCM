@@ -273,21 +273,32 @@ class SchoolParser:
 
     @staticmethod
     def _fix_comparative(rows):
-        """parche-77: "Sara es mas baja que Rosa.": la escuela deja "Rosa" como SEGUNDO sujeto del adjetivo (con "que" como mark de Rosa). Es el termino
-        de la comparacion (nmod), como en "Luis es mas alto que Pedro"."""
+        """parche-77/78: "Sara es mas baja que Rosa.": el termino de la comparacion (nombre tras "que", con "mas/menos" + adjetivo en la frase) es siempre
+        un nmod del adjetivo, con "que" como case, sea cual sea la etiqueta que le ponga la escuela (nsubj, csubj, appos, flat, nmod, ADJ...).
+        Si el adjetivo ha quedado colgando de otro nombre y la frase no tiene raiz, el adjetivo pasa a ser la raiz."""
         rows = [list(x) for x in rows]
         for r, x in enumerate(rows):
-            if x[3] not in ("nsubj", "csubj", "acl", "obl", "amod", "xcomp", "nmod") or (x[1] not in ("PROPN", "NOUN") and not (x[1] == "ADJ" and x[0][:1].isupper())) or r < 1:      # parche-78: tambien csubj/acl/..., y nombre leido como ADJ
+            if r < 1 or x[3] in ("punct", "root", "det", "case", "mark", "cc", "cop", "advmod") or x[2] == r + 1:      # parche-78: cualquier etiqueta
+                continue
+            if x[1] not in ("PROPN", "NOUN") and not (x[1] == "ADJ" and x[0][:1].isupper()):
                 continue
             q = rows[r - 1]
-            if _norm(q[0]) == "que" and q[2] == r + 1 and q[3] in ("mark", "case") and x[2] > 0 and x[2] != r + 1 \
-                    and any(_norm(y[0]) in ("mas", "menos") and y[2] == x[2] for y in rows) \
-                    and (rows[x[2] - 1][1] == "ADJ" or any(y[2] == x[2] and y[3] == "cop" for y in rows)) \
-                    and (x[3] != "nsubj" or any(y[2] == x[2] and y[3] == "nsubj" and j != r for j, y in enumerate(rows))):
-                x[3] = "nmod"
-                q[3] = "case"
-                if x[1] == "ADJ":
-                    x[1] = "PROPN"
+            if _norm(q[0]) != "que" or q[2] != r + 1 or q[3] not in ("mark", "case"):
+                continue
+            hs = [y[2] for y in rows if _norm(y[0]) in ("mas", "menos") and y[3] == "advmod" and 0 < y[2] < r]
+            if not hs:
+                continue
+            h = hs[0]
+            if rows[h - 1][1] != "ADJ" and not any(y[2] == h and y[3] == "cop" for y in rows):
+                continue
+            if h - 1 == r:
+                continue
+            if rows[h - 1][2] != 0 and not any(y[2] == 0 for y in rows):      # sin raiz: el adjetivo (colgado de un nombre) pasa a ser la raiz
+                rows[h - 1][2], rows[h - 1][3] = 0, "root"
+            x[2], x[3] = h, "nmod"
+            q[3] = "case"
+            if x[1] == "ADJ":
+                x[1] = "PROPN"
         return [tuple(x) for x in rows]
 
     @staticmethod

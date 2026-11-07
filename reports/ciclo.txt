@@ -1,29 +1,20 @@
-CICLO 20261107-121424-633866
-  TESTS UNITARIOS: 74 passed in 1.08s
+CICLO 20261107-121841-248867
+  TESTS UNITARIOS: 77 passed in 1.00s
   RESUMEN: TODO CUMPLE
-    cantidad_ciegas_14: 85.7% -> 100.0%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 130 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 23 (de reports/historial.json)
+  [OK] reproducibilidad/manifiesto.json: 133 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 25 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M exportar.py
- M parche.py
+M parche.py
  M reports/ciclo.txt
  M reports/historial.json
  M reproducibilidad/manifiesto.json
  M scripts/check.py
- M scripts/grabar_arboles.py
- M src/language/discourse.py
- M src/language/extract.py
- M src/language/qa.py
  M src/language/school_parser.py
- M src/reasoning/coherence.py
-?? .DS_Store
-?? data/comparativos_ciegos.tsv
-?? tests/test_parche76.py
-?? tests/test_parche77.py
-?? tests/test_parche78.py
+?? data/ciego_dificil.tsv
+?? data/ciego_general.tsv
+?? tests/test_parche79.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

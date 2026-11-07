@@ -1,0 +1,30 @@
+# Examen CIEGO nuevo 2 (parche-79): mezcla de relaciones, lugares, cantidades, estados, negacion y cambios. Informativo: no frena el ciclo.
+H: Lola es hermana de Mario.
+H: Mario es hijo de Rita.
+P: ¿Quién es hermana de Mario?	Lola
+P: ¿De quién es hijo Mario?	Rita
+
+H: Tomás vive en Bilbao.
+H: Tomás trabaja en un hospital.
+P: ¿Dónde vive Tomás?	Bilbao
+P: ¿Dónde trabaja Tomás?	hospital
+
+H: Nora tiene tres gatos.
+P: ¿Cuántos gatos tiene Nora?	tres
+P: ¿Tiene Nora tres gatos?	SI
+
+H: Óscar está enfermo.
+P: ¿Está enfermo Óscar?	SI
+P: ¿Cómo está Óscar?	enfermo
+
+H: Julia no come carne.
+P: ¿Come Julia carne?	NO
+
+H: Víctor vive en Cádiz.
+H: Víctor vive en Lugo.
+P: ¿Dónde vive Víctor?	Lugo
+P: ¿Dónde vivía Víctor?	Cádiz
+
+H: Berta escribió una carta.
+P: ¿Quién escribió una carta?	Berta
+P: ¿Qué escribió Berta?	carta
