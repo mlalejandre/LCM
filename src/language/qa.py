@@ -626,6 +626,40 @@ class QA:
         return [f for f in got if f not in have and (s is None or f[0] == s.upper()) and (o is None or f[2] == o.upper())
                 and same_pred(f[1], p)]
 
+    # ---- parche-112: razonador general (reglas y propiedades de relacion como DATOS de los cartuchos) --------------------------
+    def _razonador(self):
+        m = self.m
+        props, reglas = getattr(m, "propiedades", None), getattr(m, "reglas", None)
+        if not props and not reglas:
+            return None
+        sig = (len(m.facts), len(reglas or []), len(props or {}))
+        if getattr(self, "_rz_sig", None) != sig:
+            from src.reasoning.razonador import Razonador
+            fs = [f for f in m.facts if not f.get("q") and not f.get("archived")]
+            self._rz = Razonador([(f["s"], f["p"], f["o"]) for f in fs if not f.get("neg")], list(reglas or []), dict(props or {}),
+                                 [(f["s"], f["p"], f["o"]) for f in fs if f.get("neg")])
+            self._rz_sig = sig
+        return self._rz
+
+    @staticmethod
+    def _nom(x):
+        return x.replace("_", " ").lower()
+
+    def razonar(self, s, p, o):
+        """(valor, texto) con valor SI/NO si el razonador lo demuestra o lo refuta; None si no sabe. La memoria y las lecciones mandan: esto solo actua al fallar."""
+        try:
+            rz = self._razonador()
+            if rz is None or not s or not o:
+                return None
+            r = rz.preguntar(s.upper(), p.upper(), o.upper())
+            if r.valor not in ("SI", "NO") or r.prueba is None:
+                return None
+            from src.reasoning.razonador import explicar
+            pasos = explicar(r.prueba, self._nom)
+            return r.valor, pasos
+        except Exception:
+            return None
+
     # ---- decir ------------------------------------------------------
     def _disp(self, name):
         d = getattr(self.m, "display", {}).get(name.upper())
@@ -828,6 +862,9 @@ class QA:
             d = self.derived(s, p, o)
             if d:
                 return "Sí, lo deduzco: " + self.say(d[0]) + self._because(d[0]) + "."
+            rz = self.razonar(s, p, o) if s and o else None
+            if rz:
+                return ("Sí, lo razono:\n" if rz[0] == "SI" else "No, lo razono:\n") + rz[1]
             if self.lookup(s, p, None) or self.lookup(None, p, o):
                 return "Eso no me consta; solo sé " + "; ".join(dict.fromkeys(self.say(f) for f in (self.lookup(s, p, None) or self.lookup(None, p, o))[:3])) + "."
             return "No lo sé."
@@ -840,4 +877,14 @@ class QA:
             return " ".join(dict.fromkeys(self.say(f) + "." for f in hits))[:600]
         if ded:
             return "Lo deduzco: " + " ".join(dict.fromkeys(self.say(f) + self._because(f) + "." for f in ded[:5]))
+        if (s is None) != (o is None) and p:
+            try:
+                rz = self._razonador()
+                sol = rz.consultar(s and s.upper(), p.upper(), o and o.upper(), 12) if rz else []
+            except Exception:
+                sol = []
+            if sol:
+                ents = [x["o"] if s else x["s"] for x in sol]
+                return "Lo razono: " + ", ".join(self._nom(e) for e in ents) + "."
         return "No lo sé."
+

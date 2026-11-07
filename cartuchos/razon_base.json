@@ -1,0 +1,230 @@
+{
+ "nombre": "razon_base",
+ "fuente": "parche-112: paquete de reglas de razonamiento general",
+ "hechos": [],
+ "reglas": [
+  {
+   "id": "parte_por_clase",
+   "si": [
+    [
+     "?X",
+     "ES",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "PARTE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "PARTE_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "abuelo_p",
+   "si": [
+    [
+     "?X",
+     "PADRE_DE",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "PADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "ABUELO_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "abuelo_pm",
+   "si": [
+    [
+     "?X",
+     "PADRE_DE",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "MADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "ABUELO_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "abuela_m",
+   "si": [
+    [
+     "?X",
+     "MADRE_DE",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "PADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "ABUELA_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "abuela_mm",
+   "si": [
+    [
+     "?X",
+     "MADRE_DE",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "MADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "ABUELA_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "hermano_pp",
+   "si": [
+    [
+     "?P",
+     "PADRE_DE",
+     "?X"
+    ],
+    [
+     "?P",
+     "PADRE_DE",
+     "?Y"
+    ],
+    [
+     "?X",
+     "@DISTINTO",
+     "?Y"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "HERMANO_DE",
+    "?Y"
+   ]
+  },
+  {
+   "id": "tio",
+   "si": [
+    [
+     "?X",
+     "HERMANO_DE",
+     "?Y"
+    ],
+    [
+     "?Y",
+     "PADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "TIO_DE",
+    "?Z"
+   ]
+  },
+  {
+   "id": "primo",
+   "si": [
+    [
+     "?A",
+     "PADRE_DE",
+     "?X"
+    ],
+    [
+     "?A",
+     "HERMANO_DE",
+     "?B"
+    ],
+    [
+     "?B",
+     "PADRE_DE",
+     "?Z"
+    ]
+   ],
+   "entonces": [
+    "?X",
+    "PRIMO_DE",
+    "?Z"
+   ]
+  }
+ ],
+ "propiedades": {
+  "ES": {
+   "transitiva": true
+  },
+  "PARTE_DE": {
+   "transitiva": true
+  },
+  "TENER": {
+   "heredable": true
+  },
+  "VIVIR_EN": {
+   "heredable": true
+  },
+  "COMER": {
+   "heredable": true
+  },
+  "PODER": {
+   "heredable": true
+  },
+  "PADRE_DE": {
+   "inversa": "HIJO_DE",
+   "subprop": "ANTEPASADO_DE"
+  },
+  "MADRE_DE": {
+   "inversa": "HIJO_DE",
+   "subprop": "ANTEPASADO_DE"
+  },
+  "ANTEPASADO_DE": {
+   "transitiva": true,
+   "asimetrica": true
+  },
+  "HERMANO_DE": {
+   "simetrica": true
+  },
+  "HERMANA_DE": {
+   "simetrica": true
+  },
+  "PRIMO_DE": {
+   "simetrica": true
+  },
+  "ESPOSO_DE": {
+   "inversa": "ESPOSA_DE"
+  },
+  "ANTES_DE": {
+   "transitiva": true,
+   "inversa": "DESPUES_DE",
+   "asimetrica": true
+  },
+  "DESPUES_DE": {
+   "transitiva": true,
+   "asimetrica": true
+  }
+ }
+}

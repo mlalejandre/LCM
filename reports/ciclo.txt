@@ -1,76 +1,63 @@
-CICLO 20261107-201435-481129
-      retirado cartuchos/reflexion.json (formato antiguo; se recalcula al abrir scripts.web)
-      escrito src/language/conceptos.py
+CICLO 20261107-223943-987377
+      escrito scripts/check.py
+      escrito scripts/ciclo.py
       escrito src/language/dialogue.py
-      escrito src/language/reflexion.py
-      escrito src/memory/cartuchos.py
       escrito src/web/motor.py
-      escrito src/web/static/index.html
-      escrito tests/test_parche109.py
-      escrito tests/test_parche110.py
-    parche-111 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-201435-571183
-  parche parche-111.py: aplicado
-  TESTS UNITARIOS: 216 passed in 8.44s
+      escrito src/language/lector_ud.py
+      escrito tests/test_parche115.py
+      escrito scripts/lector_bench.py
+      escrito data/lector_bench/campos.json
+      escrito data/lector_bench/gold_muestra.tsv
+    parche-115 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-223944-079954
+  parche parche-115.py: aplicado
+  TESTS UNITARIOS: 249 passed in 9.25s
   RESUMEN: TODO CUMPLE
-    dialogo_65: 90.8% -> 98.5%  MEJORA
-    dialogo_ciego_37: 97.3% -> 100.0%  MEJORA
     texto_solar6_40: 97.5% -> 100.0%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 209 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 42 (de reports/historial.json)
+  [OK] reproducibilidad/manifiesto.json: 223 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 47 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M LCM_EVOLUCION.md
- M Makefile
- M README.md
+M .DS_Store
  M cartuchos/activos.json
- D parche-100.py
- D parche-101.py
- D parche-102.py
- D parche-103.py
- D parche-104.py
- D parche-105.py
- D parche-91-2.py
- D parche-91A.py
- D parche-92.py
- D parche-93.py
- D parche-94.py
- D parche-95.py
- D parche-96.py
- D parche-97.py
- D parche-98.py
- D parche-99.py
+ D parche-107.py
+ D parche-108.py
+ D parche-109.py
+ D parche-110.py
+ D parche-111.py
+ M reports/.DS_Store
  M reports/ciclo.txt
  M reports/historial.json
  M reproducibilidad/manifiesto.json
- M src/language/conceptos.py
+ M scripts/check.py
+ M scripts/ciclo.py
+ M src/language/consultas.py
  M src/language/dialogue.py
+ M src/language/qa.py
  M src/memory/cartuchos.py
- M tests/test_parche105.py
-?? cartuchos/mundo_animales.json
-?? cartuchos/mundo_comida.json
-?? cartuchos/mundo_cuerpo.json
-?? cartuchos/mundo_lugares.json
-?? cartuchos/mundo_materiales.json
-?? cartuchos/mundo_naturaleza.json
-?? cartuchos/mundo_objetos.json
-?? cartuchos/mundo_personas.json
-?? cartuchos/mundo_plantas.json
-?? cartuchos/mundo_tiempo.json
-?? parche-107.py
-?? parche-108.py
-?? parche-109.py
-?? parche-110.py
-?? parche-111.py
-?? reports/.DS_Store
-?? scripts/construir_mundo.py
-?? scripts/web.py
-?? src/language/reflexion.py
-?? src/web/
-?? tests/test_parche106.py
-?? tests/test_parche107.py
-?? tests/test_parche109.py
-?? tests/test_parche110.py
+ M src/web/motor.py
+ M src/web/servidor.py
+ M src/web/static/index.html
+?? cartuchos/razon_base.json
+?? cartuchos/reflexion.json
+?? data/lector_bench/
+?? data/textos/leon.txt
+?? data/textos/madrid_prado.txt
+?? data/textos/ornitorrinco.txt
+?? parche-113.py
+?? parche-114.py
+?? parche-115.py
+?? reports/lector_bench.json
+?? reports/razonamiento.json
+?? scripts/construir_razonamiento.py
+?? scripts/lector_bench.py
+?? scripts/razonar_bench.py
+?? src/language/lector.py
+?? src/language/lector_ud.py
+?? src/reasoning/razonador.py
+?? tests/test_parche112.py
+?? tests/test_parche113.py
+?? tests/test_parche115.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

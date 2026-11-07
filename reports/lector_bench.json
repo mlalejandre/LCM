@@ -1,0 +1,248 @@
+{
+ "campos": {
+  "biologia": {
+   "frases": 6,
+   "hechos": 9,
+   "esperados": 7,
+   "acertados": 6,
+   "cobertura": 0.857,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "NUCLEO",
+     "ALMACENAR",
+     "MATERIAL_GENETICO"
+    ]
+   ],
+   "sin_entender": [
+    "El núcleo almacena el material genético."
+   ],
+   "extraido": [
+    "MITOCONDRIA ES ORGANULO",
+    "MITOCONDRIA SER CELULAR",
+    "MITOCONDRIA PRODUCIR ENERGIA",
+    "MITOCONDRIA CONTENER ADN",
+    "CELULA_EUCARIOTA ES CELULA",
+    "CELULA_EUCARIOTA TENER NUCLEO",
+    "FOTOSINTESIS OCURRIR_EN CLOROPLASTO",
+    "DIOXIDO_DE_CARBONO ES DIOXIDO",
+    "PLANTA ABSORBER DIOXIDO_DE_CARBONO"
+   ]
+  },
+  "fisica_cuantica": {
+   "frases": 6,
+   "hechos": 14,
+   "esperados": 8,
+   "acertados": 6,
+   "cobertura": 0.75,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "FOTON",
+     "TRANSPORTAR",
+     "FUERZA_ELECTROMAGNETICA"
+    ],
+    [
+     "NEUTRINO",
+     "TENER",
+     "CARGA_ELECTRICA"
+    ]
+   ],
+   "sin_entender": [],
+   "extraido": [
+    "ELECTRON ES PARTICULA",
+    "ELECTRON SER ELEMENTAL",
+    "ELECTRON TENER CARGA",
+    "PRINCIPIO_DE_INCERTIDUMBRE ES PRINCIPIO",
+    "WERNER_HEISENBERG FORMULAR PRINCIPIO_DE_INCERTIDUMBRE",
+    "FUNCION_DE_ONDA ES FUNCION",
+    "ESTADO_DE_SISTEMA ES ESTADO",
+    "FUNCION_DE_ONDA DESCRIBIR ESTADO_DE_SISTEMA",
+    "FUERZA_ELECTROMAGNETICO ES FUERZA",
+    "FOTON TRANSPORTAR FUERZA_ELECTROMAGNETICO",
+    "ATOMO CONTENER NUCLEO",
+    "ATOMO CONTENER ELECTRON",
+    "CARGA_ELECTRICO ES CARGA",
+    "NEUTRINO NO TENER CARGA_ELECTRICO"
+   ]
+  },
+  "medicina": {
+   "frases": 8,
+   "hechos": 9,
+   "esperados": 8,
+   "acertados": 5,
+   "cobertura": 0.625,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "DIABETES",
+     "AFECTAR",
+     "METABOLISMO_DE_GLUCOSA"
+    ],
+    [
+     "ALEXANDER_FLEMING",
+     "DESCUBRIR",
+     "PENICILINA"
+    ],
+    [
+     "ANTIBIOTICO",
+     "COMBATIR",
+     "INFECCION_BACTERIANA"
+    ]
+   ],
+   "sin_entender": [
+    "Los antibióticos combaten las infecciones bacterianas.",
+    "Si el paciente toma el fármaco, la fiebre baja.",
+    "Algunos autores creen que el virus surgió en un laboratorio."
+   ],
+   "extraido": [
+    "DIABETES ES ENFERMEDAD",
+    "DIABETES SER CRONICO",
+    "NIVEL_DE_AZUCAR ES NIVEL",
+    "INSULINA REGULAR NIVEL_DE_AZUCAR",
+    "INSULINA REGULAR_EN SANGRE",
+    "PANCREAS PRODUCIR INSULINA",
+    "RIESGO_DE_INFARTO ES RIESGO",
+    "HIPERTENSION AUMENTAR RIESGO_DE_INFARTO",
+    "PENICILINA DESCUBIERR_POR ALEXANDER_FLEMING"
+   ]
+  },
+  "historia": {
+   "frases": 6,
+   "hechos": 10,
+   "esperados": 6,
+   "acertados": 5,
+   "cobertura": 0.833,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "TRATADO_DE_VERSALLES",
+     "PONER",
+     "FIN"
+    ]
+   ],
+   "sin_entender": [],
+   "extraido": [
+    "NAPOLEON_BONAPARTE ES EMPERADOR",
+    "NAPOLEON_BONAPARTE EMPERADOR_DE FRANCES",
+    "EMPERADOR_DE_FRANCES ES EMPERADOR",
+    "CRISTOBAL_COLON LLEGAR_A AMERICA",
+    "JOHANNES_GUTENBERG INVENTAR IMPRENTA",
+    "TRATADO_DE_VERSALLES ES TRATADO",
+    "TRATADO_DE_VERSALLES PONER_A GUERRA",
+    "JULIO_CESAR CONQUISTAR GALIA",
+    "ECONOMIA_EUROPEO ES ECONOMIA",
+    "REVOLUCION TRANSFORMAR ECONOMIA_EUROPEO"
+   ]
+  },
+  "geografia": {
+   "frases": 6,
+   "hechos": 14,
+   "esperados": 9,
+   "acertados": 8,
+   "cobertura": 0.889,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "NILO",
+     "ATRAVESAR",
+     "EGIPTO"
+    ]
+   ],
+   "sin_entender": [],
+   "extraido": [
+    "MADRID ES CAPITAL",
+    "MADRID CAPITAL_DE ESPANA",
+    "CAPITAL_DE_ESPANA ES CAPITAL",
+    "TEIDE ES VOLCAN",
+    "TEIDE ESTAR_EN TENERIFE",
+    "NILO ATRAVIESAR EGIPTO",
+    "CORDILLERA_DE_ANDES ES CORDILLERA",
+    "SIETE_PAIS ES PAIS",
+    "CORDILLERA_DE_ANDES RECORRER SIETE_PAIS",
+    "AMAZONAS ES RIO",
+    "AMAZONAS RIO_DE AMERICA",
+    "RIO_DE_AMERICA ES RIO",
+    "ISLANDIA ES ISLA",
+    "ISLANDIA SER VOLCANICO"
+   ]
+  },
+  "derecho_economia": {
+   "frases": 6,
+   "hechos": 9,
+   "esperados": 6,
+   "acertados": 5,
+   "cobertura": 0.833,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "PARLAMENTO",
+     "APROBAR",
+     "LEY"
+    ]
+   ],
+   "sin_entender": [],
+   "extraido": [
+    "DERECHO_FUNDAMENTAL ES DERECHO",
+    "DERECHO_FUNDAMENTAL_DE_CIUDADANO ES DERECHO_FUNDAMENTAL",
+    "CONSTITUCION ESTABLECER DERECHO_FUNDAMENTAL_DE_CIUDADANO",
+    "PARLAMENTO APRUER LEY",
+    "BANCO_CENTRAL CONTROLAR INFLACION",
+    "PODER_ADQUISITIVO ES PODER",
+    "INFLACION REDUCIR PODER_ADQUISITIVO",
+    "CONTRATO OBLIGAR_A PARTE",
+    "JUEZ DICTAR SENTENCIA"
+   ]
+  },
+  "informatica": {
+   "frases": 6,
+   "hechos": 15,
+   "esperados": 8,
+   "acertados": 5,
+   "cobertura": 0.625,
+   "prohibidos_afirmados": [],
+   "faltan": [
+    [
+     "ALGORITMO",
+     "RESOLVER",
+     "PROBLEMA"
+    ],
+    [
+     "MEMORIA_RAM",
+     "ALMACENAR",
+     "DATO"
+    ],
+    [
+     "PYTHON",
+     "SER",
+     "INTERPRETADO"
+    ]
+   ],
+   "sin_entender": [
+    "La memoria RAM almacena datos temporalmente."
+   ],
+   "extraido": [
+    "ALGORITMO ES SECUENCIA",
+    "ALGORITMO SECUENCIA_DE INSTRUCCION",
+    "SECUENCIA_DE_INSTRUCCION ES SECUENCIA",
+    "INSTRUCCION RESOLVER PROBLEMA",
+    "INSTRUCCION_DE_PROGRAMA ES INSTRUCCION",
+    "PROCESADOR EJECUTAR INSTRUCCION_DE_PROGRAMA",
+    "INTERNET CONECTAR MILLON",
+    "INTERNET CONECTAR_DE DISPOSITIVO",
+    "PYTHON ES LENGUAJE",
+    "PYTHON LENGUAJE_DE PROGRAMACION",
+    "LENGUAJE_DE_PROGRAMACION ES LENGUAJE",
+    "COMPILADOR TRADUCIR CODIGO",
+    "COMPILADOR TRADUCIR FUENTE",
+    "LENGUAJE_MAQUINA ES LENGUAJE",
+    "COMPILADOR TRADUCIR_A LENGUAJE_MAQUINA"
+   ]
+  }
+ },
+ "global": {
+  "cobertura": 0.769,
+  "prohibidos_afirmados": 0,
+  "hechos_por_frase": 1.82
+ }
+}

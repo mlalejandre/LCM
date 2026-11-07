@@ -106,6 +106,8 @@ def crear_servidor(motor, puerto=8765, host="127.0.0.1"):
             try:
                 if r == "/api/chat":
                     return self._json(motor.chat(d.get("texto", "")))
+                if r == "/api/aprender":
+                    return self._json(motor.aprender(d.get("texto", "")))
                 if r == "/api/chat/nueva":
                     return self._json(motor.nueva_conversacion())
                 if r == "/api/olvidar":

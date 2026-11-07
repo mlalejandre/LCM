@@ -105,8 +105,9 @@ class Motor:
         texto = (texto or "").strip()
         if not texto:
             return {"error": "Escribe algo."}
-        if len(texto) > 2000:
-            return {"error": "Mensaje demasiado largo (máx. 2000 caracteres)."}
+        from src.language.lector import MAX_TEXTO
+        if len(texto) > MAX_TEXTO:
+            return {"error": f"Texto demasiado largo (máx. {MAX_TEXTO:,} caracteres): pártelo en dos.".replace(",", ".")}
         with self.lock:
             antes = self._claves()
             n0 = len(self.mem.facts)
@@ -115,13 +116,41 @@ class Motor:
                 resp = self.conv.say(texto)
             except Exception as e:                                             # noqa
                 return {"error": f"No he podido procesar eso ({type(e).__name__})."}
-            nuevos = [self._fila(f) for f in self.mem.facts if (f["s"], f["p"], f["o"], bool(f.get("neg"))) not in antes]
+            nuevos = [self._fila(f) for f in self.mem.facts if (f["s"], f["p"], f["o"], bool(f.get("neg"))) not in antes][:40]
             try:
                 self.mem.save()
             except OSError:
                 pass
             from src.language.consultas import es_fallo
             return {"respuesta": resp, "aprendido": nuevos, "fallo": bool(es_fallo(resp)), "ms": int((time.time() - t0) * 1000), "hechos": len(self.mem.facts), "delta": len(self.mem.facts) - n0}
+
+    def aprender(self, texto):
+        """parche-113: aprende de un texto largo (pegado o subido). Devuelve el informe completo: hechos con su frase de origen y frases no entendidas."""
+        texto = (texto or "").strip()
+        from src.language.lector import MAX_TEXTO, resumen
+        from src.language.lector_ud import lector_para
+        if len(texto) < 20:
+            return {"error": "Pega un texto (al menos una frase)."}
+        if len(texto) > MAX_TEXTO:
+            return {"error": f"Texto demasiado largo (máx. {MAX_TEXTO:,} caracteres): pártelo en dos.".replace(",", ".")}
+        with self.lock:
+            t0 = time.time()
+            n0 = len(self.mem.facts)
+
+            def escuela(cl, tema):
+                try:
+                    return self.parser.parse(cl, self.conv.topic) or []
+                except Exception:                                                  # noqa
+                    return []
+            rep = lector_para(self.mem, self.parser).leer(texto)
+            try:
+                self.mem.save()
+            except OSError:
+                pass
+            hs = [{"sd": self._tit(h["sd"]), "pd": h["p"].lower().replace("_", " "), "od": h["od"], "s": h["s"], "p": h["p"], "o": h["o"], "neg": h["neg"], "frase": h["frase"], "via": h["via"], "nuevo": h["nuevo"]}
+                  for h in rep["hechos"]]
+            return {"ok": True, "frases": rep["frases"], "caracteres": rep["caracteres"], "nuevos": rep["nuevos"], "hechos": hs, "titulos": rep["titulos"][:50],
+                    "sin_entender": rep["sin_entender"][:200], "resumen": resumen(rep), "ms": int((time.time() - t0) * 1000), "total": len(self.mem.facts), "delta": len(self.mem.facts) - n0}
 
     def nueva_conversacion(self):
         with self.lock:

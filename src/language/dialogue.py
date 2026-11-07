@@ -759,6 +759,7 @@ class Conversation:
         self.qa = qa_factory(memory, parser)
         self.d = Dialogue(memory)
         self.topic = None
+        self.lectura = None
 
     _U = {  # unidad -> (magnitud, valor base, singular, plural)
         "milimetro": ("L", 0.001, "milímetro"), "centimetro": ("L", 0.01, "centímetro"), "decimetro": ("L", 0.1, "decímetro"), "metro": ("L", 1.0, "metro"), "kilometro": ("L", 1000.0, "kilómetro"),
@@ -888,9 +889,40 @@ class Conversation:
             return f"{rel.replace('manana', 'mañana').capitalize()} {verb} {DAYS[d.weekday()]}, {d.day} de {meses[d.month - 1]} de {d.year}."
         return None
 
+    _APRENDE = re.compile(r"^\s*(?:por favor,?\s*)?(?:aprende|aprended|memoriza|estudia|lee|analiza|apr[eé]ndete)\s*(?:esto|lo siguiente|este texto|el siguiente texto|el texto|esta informaci[oó]n|el siguiente art[ií]culo)?\s*[:\-–]\s*(.+)$", re.I | re.S)
+
+    def es_texto_para_aprender(self, raw: str):
+        """parche-113: «aprende esto: …» o un texto largo con varias frases afirmativas -> el texto; si no, None."""
+        m = self._APRENDE.match(raw or "")
+        if m and len(m.group(1).strip()) > 20:
+            return m.group(1).strip()
+        if len(raw or "") >= 600 and not raw.strip().startswith("¿") and len(re.findall(r"[.!?](?:\s|$)", raw)) >= 4 and raw.count("?") <= 1:
+            return raw.strip()
+        return None
+
+    def aprender_texto(self, texto: str) -> str:
+        """parche-113: lee el texto entero (sin limite de 2000) con el LECTOR y lo guarda en la memoria. Deja el informe completo en self.lectura."""
+        from src.language.lector import resumen
+        from src.language.lector_ud import lector_para
+
+        def escuela(cl, tema):
+            try:
+                return self.parser.parse(cl, self.topic) or []
+            except Exception:                                                       # noqa
+                return []
+        rep = lector_para(self.m, self.parser).leer(texto)
+        self.lectura = rep
+        out = resumen(rep)
+        self.d.last = out
+        return out
+
     def say(self, raw: str) -> str:
         """parche-95: si la respuesta es un fallo y la pregunta tiene una errata corregible, reintenta con la pregunta corregida."""
         from src.language import consultas
+        if not self.d.pending:
+            txt_ = self.es_texto_para_aprender(raw)
+            if txt_:
+                return self.aprender_texto(txt_)
         raw = re.sub(r"^([¿\s]*)[yY]\s+(?=(?:qu[eé]|cu[aá]les?|qui[eé]nes?|cu[aá]nt[oa]s?|d[oó]nde|c[oó]mo)\b)", r"\1", raw)       # parche-103: "y cual es el planeta mas pequeno?"
         if is_question(raw) and len(raw) < 140:
             self.d.tema = raw                                                                                                       # parche-111: de que se hablo (para saludar con sentido)

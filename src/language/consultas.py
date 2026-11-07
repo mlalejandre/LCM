@@ -123,6 +123,9 @@ def canonical(raw: str) -> str:
         body = _POR_FAVOR.sub(" ", body).strip()
         raw = ("¿" + _cap(body) + "?") if raw.strip().endswith("?") or raw.strip().startswith("¿") else body
     asked = raw.strip().endswith("?") or raw.strip().startswith("¿")
+    mimp = re.match(r"^(?:dime|d[ií]game|ind[ií]came|cu[eé]ntame|menciona|d[ií]melo)\s+(?:por favor\s+)?((?:qué|que(?=\s+(?:es|son|significa|hay|animal(?:es)?|cosa|cosas|persona|personas|pa[ií]s(?:es)?|ciudad(?:es)?|planeta|planetas|r[ií]o|color|nombre|idioma|lengua)\b)|qui[eé]n(?:es)?|cu[aá]l(?:es)?|d[oó]nde|c[oó]mo|por qu[eé])\b.+?)[?.!]*$", body, re.I)
+    if mimp and not asked:
+        return "¿" + _cap(mimp.group(1).strip()) + "?"                         # parche-113: "dime que animal tiene cuatro patas" es una pregunta, no un hecho
     mcar = re.match(r"^(?:dime|dame|d[ií]game|cu[eé]ntame|busca|mu[eé]strame|ens[eé][nñ]ame)\s+(?:las |los |algunas |unas |todas las )?(?:caracter\w*|propiedades|rasgos|datos|cosas)\s+(del|de la|de los|de las|de|sobre|acerca de)\s+(.+?)[?.!]*$", body, re.I)
     if mcar:                                                                  # parche-103: "Dime características de la Tierra" (aunque lleve errata)
         pr_ = mcar.group(1).lower()

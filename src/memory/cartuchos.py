@@ -60,7 +60,7 @@ def listar(base: str = DIR):
         for f in sorted(os.listdir(base)):
             if f.endswith(".json") and f != "activos.json":
                 c = cargar(f[:-5], base) or {}
-                out.append((f[:-5], f[:-5] in act, len(c.get("hechos", [])) + len(c.get("nexos", [])), c.get("fuente", "")))
+                out.append((f[:-5], f[:-5] in act, len(c.get("hechos", [])) + len(c.get("nexos", [])) + len(c.get("reglas", [])), c.get("fuente", "")))
     return out
 
 
@@ -111,6 +111,24 @@ def _montar_uno(mem, nombre: str, c: dict) -> int:
             g["cart"] = nombre
             mem.nexos.append(g)
             n += 1
+    if c.get("reglas"):                                                 # parche-112: reglas de razonamiento (Horn) y propiedades de relacion, como datos
+        if not hasattr(mem, "reglas"):
+            mem.reglas = []
+        ids = {r.get("id") for r in mem.reglas}
+        for r in c["reglas"]:
+            if r.get("id") not in ids:
+                g = copy.deepcopy(r)
+                g["cart"] = nombre
+                mem.reglas.append(g)
+                n += 1
+    if c.get("propiedades"):
+        if not hasattr(mem, "propiedades"):
+            mem.propiedades = {}
+        own["_prop"] = []
+        for k, v in c["propiedades"].items():
+            if k not in mem.propiedades:
+                mem.propiedades[k] = v
+                own["_prop"].append(k)
     for s in SECCIONES:
         d = getattr(mem, s)
         for k, v in c.get(s, {}).items():
@@ -130,7 +148,11 @@ def desmontar(mem, nombre: str) -> int:
     mem.facts = [f for f in mem.facts if f.get("cart") != nombre]
     if getattr(mem, "nexos", None):
         mem.nexos = [h for h in mem.nexos if h.get("cart") != nombre]
+    if getattr(mem, "reglas", None):
+        mem.reglas = [r for r in mem.reglas if r.get("cart") != nombre]
     if own:
+        for k in own.get("_prop", []):
+            getattr(mem, "propiedades", {}).pop(k, None)
         for s in SECCIONES:
             d = getattr(mem, s)
             for k in own.get(s, []):

@@ -185,6 +185,33 @@ def main():
     except Exception as _e:
         log(f"\nautoexamen: no se pudo ejecutar ({_e!r})")
 
+    from scripts import razonar_bench as _rb                                   # parche-112: banco de razonamiento (7 dominios x 8 niveles, oraculo independiente)
+    try:
+        _rr = _rb.ejecutar(semilla=1, n=60, k=25, escala=True)
+        _g = _rr["global"]
+        metrics["razonamiento_exactitud"] = _g["exactitud"]
+        metrics["razonamiento_prueba_valida"] = _g["prueba_valida"]
+        metrics["razonamiento_falsa_certeza"] = _g["falsa_certeza"]
+        ok_all &= _g["exactitud"] >= .97 and _g["prueba_valida"] >= .99 and _g["falsa_certeza"] <= .005
+        log("\n" + _rb.texto(_rr))
+        log(f"   (criterios: exactitud >= 97%, prueba_valida >= 99%, falsa_certeza <= 0.5%: {'CUMPLE' if _g['exactitud'] >= .97 and _g['prueba_valida'] >= .99 and _g['falsa_certeza'] <= .005 else 'NO CUMPLE'})")
+        os.makedirs("reports", exist_ok=True)
+        json.dump(_rr, open("reports/razonamiento.json", "w"), indent=1, ensure_ascii=False, default=str)
+    except Exception as _e:
+        log(f"\nrazonamiento: no se pudo ejecutar ({_e!r})")
+        ok_all = False
+
+    try:                                                                       # parche-115: lector de textos con la escuela, banco multi-campo (informativo)
+        from scripts import lector_bench as _lb
+        _lr = _lb.ejecutar(parser)
+        metrics["lector_cobertura"] = _lr["global"]["cobertura"]
+        metrics["lector_prohibidos"] = _lr["global"]["prohibidos_afirmados"]
+        log("\n" + _lb.texto(_lr))
+        os.makedirs("reports", exist_ok=True)
+        json.dump(_lr, open("reports/lector_bench.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    except Exception as _e:
+        log(f"\nlector: no se pudo ejecutar el banco ({_e!r})")
+
     hist_path = "reports/historial.json"
     hist = json.load(open(hist_path)) if os.path.exists(hist_path) else []
     if hist:
