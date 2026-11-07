@@ -1,29 +1,77 @@
-CICLO 20261107-131018-988275
-      escrito src/language/dialogue.py
-      escrito src/language/consultas.py
-      escrito tests/test_parche90.py
-    parche-90 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-131019-058600
-  parche parche-90.py: aplicado
-  TESTS UNITARIOS: 99 passed in 1.12s
+CICLO 20261107-174713-851279
+  TESTS UNITARIOS: 144 passed in 3.14s
   RESUMEN: TODO CUMPLE
-    autoexamen_130: 74.6% -> 99.2%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 158 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 33 (de reports/historial.json)
+    texto_solar4_356: 95.8% -> 100.0%  MEJORA
+    texto_solar5_67: 98.5% -> 100.0%  MEJORA
+    texto_solar6_40: 97.5% -> 100.0%  MEJORA
+    texto_solar7_16: 68.8% -> 93.8%  MEJORA
+    texto_solar8_33: 75.8% -> 97.0%  MEJORA
+  [OK] reproducibilidad/manifiesto.json: 194 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 41 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M reports/ciclo.txt
+D parche-88.py
+ D parche-89.py
+ D parche-90.py
+ D parche.py
+ M reports/ciclo.txt
  M reports/historial.json
  M reproducibilidad/manifiesto.json
  M scripts/check.py
+ M scripts/think.py
+ M src/language/consultas.py
  M src/language/dialogue.py
-?? data/autoexamen.tsv
-?? parche-89.py
-?? parche-90.py
-?? scripts/autoexamen.py
-?? src/language/consultas.py
-?? tests/test_parche89.py
-?? tests/test_parche90.py
+ M src/language/extract.py
+ M src/language/qa.py
+ M src/language/school_parser.py
+ M src/memory/store.py
+ M src/reasoning/lessons.py
+?? cartuchos/
+?? data/CONCEPTOS_LICENCIAS.txt
+?? data/LEXICO_LICENCIA.txt
+?? data/conceptos.json.gz
+?? data/lexico_es.json
+?? data/textos/
+?? data/vocabulario.txt
+?? data/vocabulario_extra.txt
+?? parche-100.py
+?? parche-101.py
+?? parche-102.py
+?? parche-103.py
+?? parche-91-2.py
+?? parche-91A.py
+?? parche-92.py
+?? parche-93.py
+?? parche-94.py
+?? parche-95.py
+?? parche-96.py
+?? parche-97.py
+?? parche-98.py
+?? parche-99.py
+?? reports/lectura.txt
+?? scripts/cartucho.py
+?? scripts/construir_conceptos.py
+?? scripts/construir_lexico.py
+?? scripts/leer_texto.py
+?? scripts/poda.py
+?? scripts/vocabulario.py
+?? src/language/conceptos.py
+?? src/language/ingesta.py
+?? src/language/lexico.py
+?? src/language/marcos.py
+?? src/memory/cartuchos.py
+?? tests/test_parche102.py
+?? tests/test_parche103.py
+?? tests/test_parche91.py
+?? tests/test_parche92.py
+?? tests/test_parche93.py
+?? tests/test_parche94.py
+?? tests/test_parche95.py
+?? tests/test_parche96.py
+?? tests/test_parche97.py
+?? tests/test_parche98.py
+?? tests/test_parche99.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

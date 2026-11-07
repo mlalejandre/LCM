@@ -1,0 +1,35 @@
+# Examen 7 (parche-98): LEXICO: sinonimos/antonimos/tipo de y palabras que no conoce pero la memoria si por sinonimo. Informativo.
+SEMILLA: fabrica
+U: El Sol es una estrella.	
+U: El Sol está en el centro del Sistema Solar.	
+U: Los planetas giran alrededor del Sol.	
+U: Mercurio es el planeta más cercano al Sol.	
+U: Venus es el segundo planeta.	
+U: La Tierra es el tercer planeta y tiene una luna.	
+U: La Luna gira alrededor de la Tierra.	
+U: Marte es un planeta rojo.	
+U: Marte tiene dos lunas.	
+U: Júpiter es el planeta más grande.	
+U: Júpiter es un gigante gaseoso.	
+U: Saturno tiene anillos.	
+U: Urano y Neptuno son planetas helados.	
+U: Plutón es un planeta enano.	
+U: Los asteroides son rocas pequeñas.	
+U: Los cometas están hechos de hielo y polvo.	
+U: El Sistema Solar es el conjunto de planetas, asteroides, cometas y lunas que orbitan alrededor del Sol.	
+U: ¿Es Plutón un planeta diminuto?	enano
+U: ¿Qué planeta es el más próximo al Sol?	Mercurio
+U: ¿Cuál es el planeta más próximo al Sol?	Mercurio
+U: ¿Qué planeta está más próximo al Sol?	Mercurio
+U: ¿Cuál es el sinónimo de rápido?	veloz
+U: ¿Cuál es el antónimo de grande?	pequeño
+U: ¿Cuál es lo contrario de comprar?	vender
+U: Dime otra palabra para comprar	adquirir
+U: ¿Es un gato un animal?	animal
+U: ¿Es un coche un vehículo?	vehículo
+U: ¿Qué es un perro?	cánido
+U: ¿Qué es una silla?	asiento
+U: ¿Qué sinónimos tiene coche?	automóvil
+U: Dame un sinónimo de coche	auto
+U: ¿Qué palabra significa lo contrario de vender?	comprar
+U: ¿Qué es Marte?	rojo

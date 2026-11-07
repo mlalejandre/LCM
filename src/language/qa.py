@@ -228,6 +228,158 @@ class QA:
         return None, ""
 
     # ---- estados, acciones y lo que dicen otros (parche-55) --------------
+    def _special_texto(self, t, question, facts, says):
+        """parche-93: familias de preguntas que salen al leer textos. Devuelve None si la frase no es de estas familias."""
+        import re
+
+        def stem(w):
+            return re.sub(r"(os|as|es|o|a|e)$", "", w)
+
+        COMPL = r"((?:a|al|a la|del|de|de la|de los|de las|en|en el|en la) .+)"
+        # a) superlativos y ordinales: "¿Cual es el planeta mas cercano al Sol?" / "¿Que planeta es el mas grande?" / "¿Cual es el tercer planeta?"
+        ORD = {"primer": "primero", "primero": "primero", "primera": "primero", "segundo": "segundo", "segunda": "segundo", "tercer": "tercero", "tercero": "tercero",
+               "tercera": "tercero", "cuarto": "cuarto", "cuarta": "cuarto", "quinto": "quinto", "quinta": "quinto", "sexto": "sexto", "sexta": "sexto",
+               "septimo": "septimo", "septima": "septimo", "octavo": "octavo", "octava": "octavo", "noveno": "noveno", "novena": "noveno",
+               "decimo": "decimo", "decima": "decimo", "ultimo": "ultimo", "ultima": "ultimo"}
+        want = None
+        t_sup = re.sub(r" que (?:conoces|sabes|tienes|hay)$", "", t)         # parche-95: "el planeta mas grande que conoces"
+        m = re.fullmatch(r"(?:cual|que|quien) (?:es|era|fue) (?:(?:el|la) )?(?:(\w+) )?(mas|menos) (\w+)(?: " + COMPL + ")?", t_sup)
+        if m:
+            want = ("sup", m.group(2), m.group(3), m.group(1), m.group(4))
+        if not want:
+            m = re.fullmatch(r"que (\w+) (?:es|era|fue) (?:el|la) (mas|menos) (\w+)(?: " + COMPL + ")?", t_sup)
+            if m:
+                want = ("sup", m.group(2), m.group(3), m.group(1), m.group(4))
+        if not want:
+            m = re.fullmatch(r"(?:cual|que|quien) (?:es|era|fue) (?:el|la) (\w+) (\w+)(?: " + COMPL + ")?", t)
+            if m and m.group(1) in ORD:
+                want = ("ord", ORD[m.group(1)], None, m.group(2), m.group(3))
+        if not want:
+            m = re.fullmatch(r"que (\w+) (?:es|era|fue) (?:el|la) (\w+)(?: " + COMPL + ")?", t)
+            if m and m.group(2) in ORD:
+                want = ("ord", ORD[m.group(2)], None, m.group(1), m.group(3))
+        if want:
+            kind, a, adj, noun, comp = want
+            key = ("ser_el_" + a + "_" + adj) if kind == "sup" else ("ser_el_" + a)
+            ck = "_".join(comp.split()) if comp else ""
+            hit = []
+            for f in facts:
+                fp = f["p"].lower()
+                if f.get("neg") or not fp.startswith("ser_el_"):
+                    continue
+                if kind == "sup":
+                    if not (fp.startswith("ser_el_" + a + "_") and stem(fp[len("ser_el_" + a + "_"):]) == stem(adj)):
+                        continue
+                elif fp != key:
+                    continue
+                fo = f["o"].lower()
+                if noun and not (fo == noun or fo.startswith(noun + "_") or fo.startswith(noun[:-1] + "_") or fo == noun[:-1]):
+                    continue
+                if ck and not fo.endswith(ck):
+                    continue
+                hit.append(f)
+            if hit:
+                return says(hit)
+            return "No lo sé."
+        # c) "¿De que estan hechos los cometas?" / "¿De que esta compuesta la Tierra?"
+        m = re.fullmatch(r"de que (?:esta|estan|es|son) (?:hech[oa]s?|formad[oa]s?|compuest[oa]s?|constituid[oa]s?) (.+)", t)
+        if m:
+            names = self._subject_in(m.group(1).split())
+            fs = [f for f in facts if f["s"] in names and f["p"] in ("HECHO_DE", "FORMADO_DE", "FORMADO_POR", "COMPUESTO_DE", "COMPUESTO_POR", "CONSTITUIDO_POR", "CONSTITUIDO_DE") and not f.get("neg")]
+            if fs:
+                out = []
+                for nm in dict.fromkeys(f["s"] for f in fs):
+                    objs = [self._disp(f["o"]).lower() for f in fs if f["s"] == nm]
+                    d = self._disp(nm)
+                    pl = d.lower().startswith(("los ", "las ")) or canon(nm) != nm.upper() or nm.upper().endswith("S")
+                    out.append(f"{d[:1].upper() + d[1:]} {'están hechos' if pl else 'está hecho'} de {' y '.join(objs)}.")
+                return " ".join(out)
+        # b) "¿Alrededor de que gira la Luna?" / "¿Cerca de que vive Ana?": pregunta con la preposicion por delante
+        m = re.fullmatch(r"(alrededor de|cerca de|lejos de|detras de|delante de|encima de|debajo de|dentro de|fuera de|junto a|sobre|con|desde|hacia|para|por|sin|entre|en|a|de) que (\w+) (.+)", t)
+        if m:
+            prep, verb, rest = m.group(1), m.group(2), m.group(3)
+            names = self._subject_in(rest.split())
+            suf = "_" + prep.replace(" ", "_").upper()
+            base = [f for f in facts if f["s"] in names and f["p"].endswith(suf) and not f.get("neg")]
+            vs = re.sub(r"(an|en|a|e)$", "", verb)
+            fs = [f for f in base if f["p"].lower().startswith(vs[:3])] or base
+            if names and fs:
+                return says(fs)
+        # d) "¿Que planetas son helados?": miembros de una clase con una cualidad
+        m = re.fullmatch(r"(?:que|cuales|cuantos|cuantas) (\w+?)s? (?:son|es|eran) (\w+)", t)
+        if m and m.group(2) not in ("un", "una", "el", "la", "los", "las"):
+            cls, adj = m.group(1), m.group(2)
+            cls_keys = {cls.upper(), cls.upper() + "E", cls.upper() + "ES"}
+            members = [f["s"] for f in facts if f["p"] == "ES" and f["o"] in cls_keys and not f.get("neg")]
+            have = [x for x in dict.fromkeys(members)
+                    if any(g["s"] == x and g["p"] in ("SER", "ESTAR") and not g.get("neg") and stem(g["o"].lower()) == stem(adj) for g in facts)]
+            if members and have:
+                names_ = [self._disp(x) for x in have]
+                names_ = [n_[:1].upper() + n_[1:] if i == 0 else n_ for i, n_ in enumerate(names_)]
+                joined = names_[0] if len(names_) == 1 else ", ".join(names_[:-1]) + " y " + names_[-1]
+                plural = len(have) > 1
+                adj_t = adj if not plural or adj.endswith("s") else adj + ("es" if adj[-1] not in "aeiou" else "s")
+                return f"{joined} {'son' if plural else 'es'} {cls}{'s' if plural else ''} {adj_t}."
+        # e) "¿Que es Pluton?" cuando de el se sabe una clase Y cualidades: "Pluton es un planeta enano."
+        m = re.fullmatch(r"que (?:es|son) (\w+)", t)
+        if m and not getattr(self, "_in_past", False):
+            names = self._subject_in([m.group(1)])
+            for nm in sorted(names):
+                cls_ = [f["o"] for f in facts if f["s"] == nm and f["p"] == "ES" and not f.get("neg")]
+                adjs = [f["o"] for f in facts if f["s"] == nm and f["p"] == "SER" and not f.get("neg")]
+                if cls_ and adjs:
+                    def indef(o_):
+                        d_ = self._disp(o_)
+                        art = re.match(r"(el|la|los|las|un|una|unos|unas)\s+", d_, flags=re.I)
+                        fem = art.group(1).lower() in ("la", "las", "una", "unas") if art else o_.upper().endswith("A")
+                        d_ = re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", d_, flags=re.I)
+                        return ("una " if fem else "un ") + d_.lower()
+                    adj_t = " ".join(self._disp(a_).lower() for a_ in dict.fromkeys(adjs))
+                    d = self._disp(nm)
+                    pl_ = t.startswith("que son") or d.lower().startswith(("los ", "las ")) or nm.upper().endswith("S")
+                    if pl_ and len(set(cls_)) == 1:                          # parche-98: "Los asteroides son rocas pequeñas" (no "El asteroides es una rocas")
+                        d = re.sub(r"^(el|la) ", lambda m_: "los " if m_.group(1).lower() == "el" else "las ", d, flags=re.I)
+                        if not re.match(r"(los|las) ", d, re.I):
+                            d = "los " + d
+                        c_ = re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", self._disp(cls_[0]), flags=re.I).lower()
+                        c_ = c_ if c_.endswith("s") else c_ + ("es" if c_[-1] not in "aeiou" else "s")
+                        return f"{d[:1].upper() + d[1:]} son {c_} {adj_t}."
+                    if len(set(cls_)) == 1:
+                        return f"{d} es {indef(cls_[0])} {adj_t}."
+                    return f"{d} es {' y '.join(indef(c_) for c_ in dict.fromkeys(cls_))}, {adj_t}."
+        # f) "¿De que se compone el Sistema Solar?" / "¿Que incluye X?": definicion por enumeracion (conjunto_de)
+        m = re.fullmatch(r"(?:de que (?:se compone|esta compuesto|esta compuesta|esta formado|esta formada|consta|esta constituido|esta constituida)|"
+                         r"que (?:contiene|incluye|abarca|comprende)|que hay en|cuales son las partes de|que partes tiene) (.+)", t)
+        if m:
+            ws = [w for w in m.group(1).split() if w not in ("el", "la", "los", "las")]
+            names = {"_".join(ws).upper()} & {f["s"] for f in facts} or self._subject_in(ws)
+            fs = [f for f in facts if f["s"] in names and f["p"] == "CONJUNTO_DE" and not f.get("neg")]
+            if fs:
+                objs = [re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", self._disp(f["o"]).lower()) for f in fs]
+                d = self._disp(fs[0]["s"])
+                joined = objs[0] if len(objs) == 1 else ", ".join(objs[:-1]) + " y " + objs[-1]
+                return f"{d[:1].upper() + d[1:]} está formado por {joined}."
+        # g) listas y recuentos de una clase: "¿Cuales son los planetas que conoces?" / "¿Cuantos planetas hay?"
+        m = (re.fullmatch(r"(cuantos|cuantas) (\w+) (?:hay|conoces|existen|tienes|sabes|conocemos)(?: .+)?", t)
+             or re.fullmatch(r"(cuales|nombra|enumera|lista|cita|menciona|dime|di|muestrame) (?:son )?(?:los|las) (\w+)(?: que (?:conoces|sabes|tienes|hay|existen))?(?: (?:de|del|en|de la|de los) .+)?", t)
+             or re.fullmatch(r"(que) (\w+) (?:conoces|sabes|tienes|existen|hay)(?: .+)?", t))
+        if m and m.group(2) not in ("hora", "dia", "fecha", "cosas", "cosa", "veces"):
+            cls = m.group(2)
+            keys = {cls.upper(), cls.upper()[:-1], cls.upper()[:-2], cls.upper() + "E"}
+            mem_ = []
+            for f in facts:
+                if f["p"] == "ES" and f["o"] in keys and not f.get("neg") and f["s"] not in keys and f["s"] not in mem_:
+                    mem_.append(f["s"])
+            if mem_:
+                disp = [self._disp(x) for x in mem_]
+                disp = [d_[:1].upper() + d_[1:] if d_[:2].islower() and d_.split()[0] not in ("el", "la", "los", "las") else d_ for d_ in disp]
+                joined = disp[0] if len(disp) == 1 else ", ".join(disp[:-1]) + " y " + disp[-1]
+                if m.group(1) in ("cuantos", "cuantas"):
+                    return f"Conozco {len(mem_)} {cls if len(mem_) != 1 else cls[:-1]}: {joined}."
+                fem = bool(re.match(r"(la|una)\s", self._disp(cls.upper()[:-1]).lower())) if cls.endswith("s") else False
+                return f"{'Las' if fem else 'Los'} {cls} que conozco son: {joined}." if cls.endswith("s") else f"Conozco: {joined}."
+        return None
+
     def _subject_in(self, words):
         """Nombres de la memoria que aparecen en las palabras ("la casa" -> CASA)."""
         toks = {canon(w.upper()) for w in words if w not in DETS}
@@ -244,6 +396,9 @@ class QA:
                 if x not in out:
                     out.append(x)
             return " ".join(out[:6])
+        sp93 = self._special_texto(t, question, facts, says)                # parche-93: preguntas sobre textos (superlativos, ordinales, ...)
+        if sp93:
+            return sp93
         m = re.fullmatch(r"que (?:es|son) ((?:un|una|el|la|los|las) \w+)", t)
         if m and not getattr(self, "_in_past", False):
             # "¿Que es un triangulo?": se contesta con lo que la memoria sabe (guardado o deducido), sin depender de como la escuela lea la pregunta
@@ -263,6 +418,14 @@ class QA:
                     art = m.group(1).split()[0]
                     subj = self._disp(nm).lower()
                     subj = subj if re.match(r"(un|una|el|la|los|las)\s", subj) else f"{art} {subj}"
+                    if t.startswith("que son") or subj.startswith(("los ", "las ")):          # parche-98: "Los asteroides son rocas" (no "es una rocas")
+                        subj = re.sub(r"^(el|la) ", lambda m_: "los " if m_.group(1) == "el" else "las ", subj)
+                        subj = subj if subj.startswith(("los ", "las ")) else "los " + subj
+                        pls = []
+                        for o_ in objs[:3]:
+                            c_ = re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", self._disp(o_).lower())
+                            pls.append(c_ if c_.endswith("s") else c_ + ("es" if c_[-1] not in "aeiou" else "s"))
+                        return f"{subj.capitalize()} son {' y '.join(pls)}."
                     return f"{subj.capitalize()} es {' y '.join(cls(o_) for o_ in objs[:3])}."
         m = re.fullmatch(r"de que color (?:es|son|era) (.+)", t)
         if m:
@@ -468,6 +631,24 @@ class QA:
         d = getattr(self.m, "display", {}).get(name.upper())
         return d or name.replace("_", " ").title()
 
+    @staticmethod
+    def _agree(tpl, s_txt):
+        """parche-93: concordancia sujeto-verbo al reutilizar una plantilla: "Urano giran" -> "Urano gira"; "Los asteroides es" -> "Los asteroides son"."""
+        import re
+        m = re.match(r"\{s\}\s+(\w+)", tpl)
+        if not m:
+            return tpl
+        verb, low = m.group(1), s_txt.lower()
+        plural = low.startswith(("los ", "las ", "unos ", "unas ", "todos ", "todas ", "algunos ", "algunas ")) or " y " in low
+        new = None
+        if plural:
+            new = {"es": "son", "esta": "están", "está": "están"}.get(verb)
+        elif len(verb) > 3 or verb in ("son", "van"):
+            new = {"son": "es", "estan": "está", "están": "está"}.get(verb)
+            if new is None and re.search(r"(an|en)$", verb) and verb not in ("estan", "están") and not re.search(r"(?i)^(juan|ruben|joan|carmen|german|adan|efren)$", verb):
+                new = verb[:-1]
+        return tpl[:m.start(1)] + new + tpl[m.end(1):] if new else tpl
+
     def say(self, fact, neg=False):
         s, p, o = fact
         tpl = None
@@ -486,6 +667,11 @@ class QA:
         o_txt = self._disp(o)
         if p.upper() in ("SER", "ESTAR") and o.upper() not in getattr(self.m, "display", {}):
             o_txt = o.replace("_", " ").lower()                  # adjetivos en minuscula: "la puerta está abierta"
+        if p.upper() == "ES" and not neg:                       # parche-95: "Plutón es un planeta" (no "el planeta") si la clase tiene 3 o mas miembros
+            mm_ = re.match(r"(el|la) (\w+)$", o_txt, re.I)
+            if mm_ and len({f["s"] for f in self.m.facts if f["p"] == "ES" and f["o"] == o.upper() and not f.get("neg")}) >= 3:
+                o_txt = ("un " if mm_.group(1).lower() == "el" else "una ") + mm_.group(2)
+        tpl = self._agree(tpl, self._disp(s))
         text = tpl.format(s=self._disp(s), o=o_txt).replace(" de el ", " del ").replace(" a el ", " al ")
         text = text.replace(" _", "").strip()
         ws = [d for _, d in self._whens(fact) if d] if not neg else []
@@ -526,6 +712,57 @@ class QA:
         return False
 
     def answer(self, question: str) -> str:
+        from src.language import marcos                                 # parche-96: marcos de pregunta sin analizador (leen los hechos directamente)
+        inpast = getattr(self, "_in_past", False)
+        if not inpast:
+            try:
+                pri = marcos.responder(self, question, primero=True)
+            except Exception:                                           # noqa
+                pri = None
+            if pri:
+                return pri
+        r = self._answer_base(question)
+        if r.startswith(("No lo sé", "No he entendido", "No conozco", "No sé", "Creo que hablas", "Creo que preguntas", "Eso no me consta")) and not inpast:
+            try:
+                alt = marcos.responder(self, question)
+            except Exception:                                           # noqa
+                alt = None
+            if alt:
+                return alt
+        if r.startswith("Sí") and not inpast:
+            r = self._calificador_sin_respaldo(question, r)
+        return r
+
+    def _calificador_sin_respaldo(self, question: str, r: str) -> str:
+        """parche-102: "¿Es Venus un planeta rojo?" no puede contestarse "Sí. Venus es un planeta." si nada dice que Venus sea rojo: el calificador no se ignora."""
+        import unicodedata
+
+        def nm(w):
+            return "".join(c for c in unicodedata.normalize("NFD", str(w).lower().replace("_", " ")) if unicodedata.category(c) != "Mn").strip()
+        q = re.match(r"^[¿\s]*(?:es|son|era|eran)\s+(.+?)\s+(?:un|una|unos|unas|el|la|los|las)\s+(\w+)\s+([a-záéíóúñ]+)\s*\??\s*$", question.strip(), re.I)
+        if not q:
+            return r
+        x, cls, adj = nm(q.group(1)), nm(q.group(2)), nm(q.group(3))
+        x = re.sub(r"^(el|la|los|las)\s+", "", x)
+        if len(adj) < 4 or adj in (cls, x) or adj in nm(r) or adj in ("mas", "menos", "como", "pero", "mismo", "misma", "otro", "otra"):
+            return r
+        raiz = adj[:-1] if adj[-1] in "oasey" else adj
+        mine = [f for f in self.m.facts if nm(f["s"]) == x and not f.get("neg")]
+        if not mine:
+            return r
+        for f in mine:
+            if raiz in nm(f["o"]) or raiz in nm(f["p"]):
+                return r
+        for f in self.m.facts:                              # tambien vale que lo diga la clase ("los planetas son rojos") o un alias
+            if nm(f["s"]) in (cls, nm(cls) + "s") and (raiz in nm(f["o"]) or raiz in nm(f["p"])):
+                return r
+        disp = self._disp(mine[0]["s"])
+        cdisp = next((self._disp(f["o"]) for f in mine if str(f["p"]).upper() == "ES" and nm(f["o"]) == cls), cls)
+        if not re.match(r"(un|una|el|la)\s", cdisp.lower()):
+            cdisp = "un " + cdisp
+        return f"No lo sé: sé que {disp} es {cdisp}, pero no que sea {q.group(3)}."
+
+    def _answer_base(self, question: str) -> str:
         past = getattr(self.m, "past", [])
         if past and self._wants_past(question):
             saved = self.m.facts

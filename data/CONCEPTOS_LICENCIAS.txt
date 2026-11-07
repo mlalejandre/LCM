@@ -1,0 +1,8 @@
+data/conceptos.json.gz se construye con scripts/construir_conceptos.py a partir de datos abiertos (atribucion obligatoria):
+ * Princeton WordNet 3.0 - https://wordnet.princeton.edu/license-and-commercial-use  (jerarquia, partes, glosas, frecuencias)
+ * Open Multilingual WordNet 1.4 (https://omwn.org): nombres de los conceptos en cada lengua:
+     - espanol, catalan, gallego, euskera: Multilingual Central Repository (MCR), CC BY 3.0  http://adimen.si.ehu.es/web/MCR/
+     - italiano: MultiWordNet, CC BY 3.0
+     - portugues: OpenWN-PT, CC BY-SA 4.0
+     - frances: WOLF (Wordnet Libre du Francais), licencia CeCILL-C
+Para retirarlo del modelo basta borrar data/conceptos.json.gz (todo sigue funcionando sin el).

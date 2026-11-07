@@ -155,6 +155,18 @@ def main():
             print(" [escuela] Analizo frases libres en espanol (school.pt) cuando el oido de plantillas no las entiende.")
             from src.language.semilla import load_seed
             added = load_seed(memory, school)
+            try:                                                  # parche-91: cartuchos de conocimiento activos (cartuchos/activos.json)
+                from src.memory.cartuchos import montar
+                for _n, _k in montar(memory):
+                    print(f" [cartucho] {_n}: " + (f"{_k} hechos" if _k is not None else f"NO ENCONTRADO (quitalo: python -m scripts.cartucho retirar {_n})"))
+            except Exception as _e:                               # noqa
+                print(f" [cartucho] no se pudieron montar: {_e!r}")
+            try:                                                  # parche-99: diccionario de conceptos (universales, multilingue)
+                from src.language import conceptos as _cc
+                if _cc.disponible():
+                    print(f" [conceptos] {_cc.total()} conceptos universales (sentidos con nombres en es/en/fr/it/pt/ca/gl/eu), con jerarquia, partes y vector de rasgos.")
+            except Exception:                                     # noqa
+                pass
             if added:
                 memory.save()
                 print(f" [semilla] Conocimiento de fabrica cargado: {added} hechos (colores, formas, naturaleza, cuerpo, objetos, opuestos...).")
@@ -274,25 +286,46 @@ def main():
 
     dialogue = Dialogue(memory)
 
+    def deduce(facts):
+        """Motor simbolico (relaciones fijas) + lecciones aprendidas con "Si... entonces..." (con explicacion)."""
+        given = {Fact(*f) for f in facts}
+        out = {(f.subject, f.predicate, f.obj): [] for f in engine.deduce(given)["facts"] - given}
+        out.update(apply_lessons(facts, memory.active_lessons(), is_var=lambda n: is_entity(space, n)))
+        for k, v in list(inherit(facts).items()) + list(compare(facts).items()):
+            out.setdefault(k, v)
+        return out
+
+    conv_box = []
+
+    def get_conv():
+        """parche-103: las PREGUNTAS pasan por la misma capa que los examenes (Conversation.say: normalizador de familias, erratas, sinonimos, lexico, conceptos, seguimiento).
+        Comparte memoria y Dialogue con esta sesion."""
+        if not conv_box:
+            from src.language.dialogue import Conversation
+            c = Conversation(memory, school, lambda m, p: QA(m, school.parse, deduce))
+            c.d = dialogue
+            conv_box.append(c)
+        return conv_box[0]
+
     def answer_question(raw):
         if school is None:
             print("[pregunta] Necesito la escuela de espanol (python -m scripts.train_school).\n")
             return
-
-        def deduce(facts):
-            """Motor simbolico (relaciones fijas) + lecciones aprendidas con "Si... entonces..." (con explicacion)."""
-            given = {Fact(*f) for f in facts}
-            out = {(f.subject, f.predicate, f.obj): [] for f in engine.deduce(given)["facts"] - given}
-            out.update(apply_lessons(facts, memory.active_lessons(), is_var=lambda n: is_entity(space, n)))
-            for k, v in list(inherit(facts).items()) + list(compare(facts).items()):
-                out.setdefault(k, v)
-            return out
-
-        qa = QA(memory, school.parse, deduce)
-        print("[respuesta] " + dialogue.after_answer(raw, qa.answer(raw), qa) + "\n")
+        print("[respuesta] " + get_conv().say(raw) + "\n")
 
     def handle_natural(raw):
         nonlocal dirty, last_sentence
+        if school is not None and not dialogue.pending:
+            from src.language import consultas as _cs
+            try:
+                _q = is_question(raw) or is_question(_cs.canonical(raw))
+            except Exception:                                  # noqa
+                _q = False
+            if not _q and _cs.es_orden(raw):                   # parche-103: una orden no es un hecho: no se aprende
+                print("[respuesta] Eso parece una orden y no un hecho, así que no lo guardo. Todavía no sé hacerlo; si quieres saber algo, pregúntamelo con ¿…?\n")
+                return
+            if _q:                                             # parche-103: pregunta (con o sin signos, "dime un sinonimo de perro"): capa completa de preguntas
+                return answer_question(raw)
         reply, cont = dialogue.act(raw, QA(memory, school.parse, None) if school is not None else None)
         if reply:
             dialogue.last = reply

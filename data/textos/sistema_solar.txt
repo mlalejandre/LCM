@@ -1,0 +1,6 @@
+# Ejemplo: sustituye este texto por el tuyo (lenguaje natural, frases completas).
+El Sistema Solar
+El Sol es una estrella. El Sol está en el centro del Sistema Solar. Los planetas giran alrededor del Sol.
+Mercurio es el planeta más cercano al Sol. Venus es el segundo planeta. La Tierra es el tercer planeta y tiene una luna. La Luna gira alrededor de la Tierra.
+Marte es un planeta rojo. Marte tiene dos lunas. Júpiter es el planeta más grande. Júpiter es un gigante gaseoso. Saturno tiene anillos. Urano y Neptuno son planetas helados.
+Plutón es un planeta enano. Los asteroides son rocas pequeñas. Los cometas están hechos de hielo y polvo.

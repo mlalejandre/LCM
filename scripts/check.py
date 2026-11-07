@@ -39,7 +39,13 @@ def tree_lines(parser, sentence):
 
 def main():
     out, metrics, ok_all = [], {}, True
-    log = lambda s="": out.append(s)
+    import time as _time
+    _t0 = _time.time()
+
+    def log(s=""):                                            # parche-100: se ve el avance en pantalla (stderr), no solo al final
+        out.append(s)
+        if s and not s.startswith("   "):
+            print(f"[check {_time.time() - _t0:5.0f}s] {s.strip()[:150]}", file=sys.stderr, flush=True)
     r = subprocess.run([sys.executable, "-m", "pytest", "-q", "tests"], capture_output=True, text=True)
     log("TESTS UNITARIOS: " + (r.stdout.strip().splitlines() or ["?"])[-1])
     ok_all &= r.returncode == 0
@@ -130,7 +136,8 @@ def main():
 
     for name, path, limit in (("coherencia", "data/coherencia_prueba.tsv", .70), ("coherencia_ciega", "data/coherencia_ciega.tsv", .60),
                              ("definiciones", "data/definiciones_prueba.tsv", .70), ("definiciones_ciegas", "data/definiciones_ciegas.tsv", .60),
-                             ("nucleo", "data/nucleo_prueba.tsv", .70), ("nucleo_ciego", "data/nucleo_ciego.tsv", .60), ("nuevo_ciego_dialogo", "data/dialogo_ciego_seis.tsv", .0), ("nuevo_ciego_dialogo7", "data/dialogo_ciego_siete.tsv", .0)):      # parche-85: informativo      # parche-84: informativo
+                             ("nucleo", "data/nucleo_prueba.tsv", .70), ("nucleo_ciego", "data/nucleo_ciego.tsv", .60), ("nuevo_ciego_dialogo", "data/dialogo_ciego_seis.tsv", .0), ("nuevo_ciego_dialogo7", "data/dialogo_ciego_siete.tsv", .0), ("texto_solar", "data/textos/sistema_solar_examen.tsv", .0), ("texto_solar2", "data/textos/sistema_solar_examen2.tsv", .0), ("texto_solar3", "data/textos/sistema_solar_examen3.tsv", .0), ("texto_solar4", "data/textos/sistema_solar_examen4.tsv", .0), ("texto_solar5", "data/textos/sistema_solar_examen5.tsv", .0), ("texto_solar6", "data/textos/sistema_solar_examen6.tsv", .0), ("texto_solar7", "data/textos/sistema_solar_examen7.tsv", .0), ("texto_solar8", "data/textos/sistema_solar_examen8.tsv", .0)):      # parche-85: informativo      # parche-84: informativo
+        print(f"[check {_time.time() - _t0:5.0f}s] ... ejecutando {name}", file=sys.stderr, flush=True)
         g, t, bad = run_dialogo(path)
         rate = g / max(t, 1)
         metrics[f"{name}_{t}"] = round(rate, 4)

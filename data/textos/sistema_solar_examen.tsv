@@ -1,0 +1,43 @@
+# Examen de COMPRENSION del texto del sistema solar (parche-92). Informativo. Las frases son las de data/textos/sistema_solar.txt; las preguntas NO estan en el texto tal cual.
+SEMILLA: conocimiento de fabrica (colores...) como en scripts.think
+U: El Sol es una estrella.	
+U: El Sol está en el centro del Sistema Solar.	
+U: Los planetas giran alrededor del Sol.	
+U: Mercurio es el planeta más cercano al Sol.	
+U: Venus es el segundo planeta.	
+U: La Tierra es el tercer planeta y tiene una luna.	
+U: La Luna gira alrededor de la Tierra.	
+U: Marte es un planeta rojo.	
+U: Marte tiene dos lunas.	
+U: Júpiter es el planeta más grande.	
+U: Júpiter es un gigante gaseoso.	
+U: Saturno tiene anillos.	
+U: Urano y Neptuno son planetas helados.	
+U: Plutón es un planeta enano.	
+U: Los asteroides son rocas pequeñas.	
+U: Los cometas están hechos de hielo y polvo.	
+U: ¿Qué es el Sol?	estrella
+U: ¿Dónde está el Sol?	centro
+U: ¿Qué gira alrededor del Sol?	planetas
+U: ¿Qué es Mercurio?	planeta
+U: ¿Cuál es el planeta más cercano al Sol?	Mercurio
+U: ¿Cuál es el segundo planeta?	Venus
+U: ¿Cuál es el tercer planeta?	Tierra
+U: ¿Cuántas lunas tiene Marte?	dos
+U: ¿Qué tiene la Tierra?	luna
+U: ¿Alrededor de qué gira la Luna?	Tierra
+U: ¿De qué color es Marte?	rojo
+U: ¿Cuál es el planeta más grande?	Júpiter
+U: ¿Qué es Júpiter?	gigante
+U: ¿Qué tiene Saturno?	anillos
+U: ¿Qué planetas son helados?	Urano
+U: ¿Cómo es Neptuno?	helado
+U: ¿Qué es Plutón?	enano
+U: ¿Qué son los asteroides?	rocas
+U: ¿De qué están hechos los cometas?	hielo
+U: ¿Gira la Tierra alrededor del Sol?	Sí
+U: ¿Es la Tierra un planeta?	Sí
+U: ¿Es Plutón un planeta?	Sí
+U: ¿Tiene Marte tres lunas?	No
+U: ¿Qué sabes de Saturno?	anillos
+U: ¿Es Marte un planeta rojo?	Sí

@@ -143,6 +143,52 @@ def _is_say(tree: Tree, i: int) -> bool:
         and any(tree[j][3] == "ccomp" for j in _children(tree, i))
 
 
+ORDINALS = {"primer": "primero", "primero": "primero", "primera": "primero", "segundo": "segundo", "segunda": "segundo", "tercer": "tercero", "tercero": "tercero",
+            "tercera": "tercero", "cuarto": "cuarto", "cuarta": "cuarto", "quinto": "quinto", "quinta": "quinto", "sexto": "sexto", "sexta": "sexto",
+            "septimo": "septimo", "septima": "septimo", "octavo": "octavo", "octava": "octavo", "noveno": "noveno", "novena": "noveno",
+            "decimo": "decimo", "decima": "decimo", "ultimo": "ultimo", "ultima": "ultimo"}
+
+
+def _lower_det(tree: Tree, span) -> str:
+    """Sintagma tal como se escribio, con el articulo inicial en minuscula si no es nombre propio ("La Tierra" -> "la Tierra")."""
+    words = [tree[k][0] for k in span]
+    if words and tree[span[0]][1] != "PROPN":
+        words[0] = words[0][:1].lower() + words[0][1:]
+    return " ".join(words)
+
+
+def _sing_adj(tree: Tree, idx: int, nm: str) -> str:
+    """parche-93: adjetivo en plural -> singular masculino (helados -> helado, pequenas -> pequeno). Solo plurales; el resto no cambia."""
+    f_, l_ = norm(tree[idx][0]), _lem(tree, idx)
+    if nm == f_ and f_ != l_ and (f_ in (l_ + "s", l_ + "es") or (f_.endswith("as") and l_.endswith("o") and f_[:-2] == l_[:-1])):
+        return l_
+    return nm
+
+
+def _superl(tree: Tree, noun: int, adj: int):
+    """parche-93: "Mercurio es el planeta mas cercano al Sol" / "Venus es el segundo planeta". -> {p, o, template, o_disp} o None.
+    p = ser_el_mas_cercano / ser_el_segundo ; o = planeta[_al_sol]."""
+    if not any(tree[d][3] == "det" and norm(tree[d][0]) in ("el", "la", "los", "las") for d in _children(tree, noun)):
+        return None
+    adv = [norm(tree[c][0]) for c in _children(tree, adj) if tree[c][3] == "advmod" and norm(tree[c][0]) in ("mas", "menos")]
+    ordn = ORDINALS.get(norm(tree[adj][0]))
+    if not adv and not ordn:
+        return None
+    comp = [c for c in _children(tree, adj) if tree[c][3] in ("nmod", "obl") and tree[c][1] in ("NOUN", "PROPN")]
+    ctxt = ""
+    if comp:
+        span = sorted({comp[0]} | set(_span(tree, comp[0])) | {c for c in _children(tree, comp[0]) if tree[c][3] == "case"})
+        ctxt = " ".join(tree[k][0] for k in span).replace(" el ", " el ")
+        ctxt = ctxt.replace("a el ", "al ").replace("de el ", "del ")
+    nkey = _lem(tree, noun)
+    o = nkey + ("_" + "_".join(norm(w) for w in ctxt.split()) if ctxt else "")
+    ntxt = tree[noun][0].lower()
+    if ordn:
+        return {"p": "ser_el_" + ordn, "o": o, "template": "{s} es el " + tree[adj][0].lower() + " " + ntxt + (" " + ctxt if ctxt else ""), "o_disp": ""}
+    return {"p": "ser_el_" + adv[0] + "_" + _lem(tree, adj), "o": o,
+            "template": "{s} es el " + ntxt + " " + adv[0].replace("mas", "más") + " " + tree[adj][0].lower() + (" " + ctxt if ctxt else ""), "o_disp": ""}
+
+
 def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = False, coordination: bool = True,
                  default_subject: str = None) -> List[Dict]:
     """v3 (parche-42): coordinacion de sujetos, objetos y complementos ("Pedro y Marta viven en Madrid") y verbos coordinados
@@ -222,7 +268,7 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
             nm_ = _name(tree, idx)
             f_, l_ = norm(tree[idx][0]), _lem(tree, idx)
             if tree[idx][1] == "NOUN" and f_ != l_ and f_ in (l_ + "s", l_ + "es") and nm_ == f_:
-                return l_
+                return l_ + "e" if (f_ == l_ + "es" and l_.endswith("oid")) else l_      # parche-92: asteroides -> asteroide (no "asteroid")
             return nm_
 
         def add(sj_, p, o_idx):
@@ -232,7 +278,13 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
                             "si": sj_, "oi": o_idx, "when": tm[0] if tm else "", "when_disp": tm[1] if tm else "",
                             "when_idx": sorted(skip), "q": quant})
                 return
-            out.append({"s": sj_ if named else _name(tree, sj_), "p": p, "o": "_" if o_idx is None else _name(tree, o_idx), "neg": neg, "head": i,
+            o_nm = "_" if o_idx is None else _name(tree, o_idx)
+            if o_idx is not None and p in ("ser", "estar") and tree[o_idx][1] == "ADJ":
+                o_nm = _sing_adj(tree, o_idx, o_nm)                       # parche-93: "planetas helados" -> HELADO
+            s_nm = sj_ if named else _name(tree, sj_)
+            if not named and p in ("ser", "estar") and o_idx is not None and tree[o_idx][1] == "ADJ" and tree[sj_][1] == "NOUN":
+                s_nm = _cls(sj_)                                          # parche-94: "Los asteroides son pequenos" -> ASTEROIDE (igual que ASTEROIDE ES ROCA)
+            out.append({"s": s_nm, "p": p, "o": o_nm, "neg": neg, "head": i,
                         "si": None if named else sj_, "oi": o_idx, "when": tm[0] if tm else "", "when_disp": tm[1] if tm else "",
                         "when_idx": sorted(skip), "q": quant})
 
@@ -267,7 +319,13 @@ def triples_full(tree: Tree, resolve_rel: bool = True, entities_only: bool = Fal
                     if not cop_f.startswith("est") and upos == "NOUN":
                         for a in kids:
                             if tree[a][3] == "amod" and tree[a][1] == "ADJ":
-                                add(sk, "ser", a)                                  # "un gorrion es un pajaro pequeno" (parche-58)
+                                sup = _superl(tree, i, a)                          # parche-93: "el planeta mas grande" / "el tercer planeta"
+                                if sup:
+                                    out.append({"s": _name(tree, sk), "p": sup["p"], "o": sup["o"], "neg": neg, "head": i, "si": sk, "oi": None,
+                                                "when": "", "when_disp": "", "when_idx": [], "q": quant, "fixed": True,
+                                                "template": sup["template"], "s_disp": _lower_det(tree, _span(tree, sk)), "o_disp": sup["o_disp"]})
+                                else:
+                                    add(sk, "ser", a)                              # "un gorrion es un pajaro pequeno" (parche-58)
             elif not found and upos == "ADJ" and resolve_rel:
                 cop = next(norm(tree[j][0]) for j in kids if tree[j][3] == "cop")
                 rel_p = "estar" if cop.startswith("est") else "ser"      # parche-55: "La casa es grande" / "Ana esta cansada"
@@ -375,7 +433,19 @@ def surface(tree: Tree, t: Dict) -> Dict:
     if t.get("si") is None or any(w[3] in ("conj", "cc") for w in tree):
         return {}                                   # con coordinaciones no hay una plantilla unica fiable
     forms = [w[0] for w in tree]
+    if t.get("fixed"):
+        return {}                                   # parche-93: superlativos/ordinales traen su propia plantilla
     ss, os_ = _span(tree, t["si"]), (_span(tree, t["oi"]) if t.get("oi") is not None else [])
+    amods = set()
+    if t["p"] == "es" and t.get("oi") is not None:   # parche-93: "es un planeta enano": la clase se muestra "un planeta" (el adjetivo es otro hecho)
+        todo = [c for c in _children(tree, t["oi"]) if tree[c][3] == "amod"]
+        while todo:
+            c = todo.pop()
+            if c in amods:                              # parche-101: un arbol con ciclo (cabeza que se apunta a si misma) no puede dejarlo en bucle
+                continue
+            amods.add(c)
+            todo += _children(tree, c)
+        os_ = [k for k in os_ if k not in amods]
     if set(ss) & set(os_):
         return {}
     drop = {j for j in _children(tree, t["head"]) if tree[j][3] == "advmod" and norm(tree[j][0]) in NEG} | set(t.get("when_idx", []))
@@ -384,7 +454,7 @@ def surface(tree: Tree, t: Dict) -> Dict:
     for k, f in enumerate(forms):
         if k >= stop:
             break
-        if k in drop or tree[k][1] == "PUNCT":
+        if k in drop or k in amods or tree[k][1] == "PUNCT":
             continue
         if k == ss[0]:
             toks.append("{s}")

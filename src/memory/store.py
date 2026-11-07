@@ -36,12 +36,24 @@ class MemoryStore:
             self.load()
 
     # ---- persistencia -------------------------------------------------
+    def _personal(self) -> dict:
+        """Lo que se guarda en la memoria PERSONAL: sin lo que viene de cartuchos montados (parche-91), que se recompone al arrancar."""
+        from src.memory.cartuchos import duenos
+        own_pairs = [p for d in getattr(self, "cart_own", {}).values() for p in d.get("opposites", [])]
+        data = {"concepts": self.concepts, "facts": [f for f in self.facts if not f.get("cart")], "past": self.past, "alias": self.alias,
+                "opposites": [p for p in self.opposites if list(p) not in own_pairs], "verb_isa": self.verb_isa, "defs": self.defs, "lessons": self.lessons,
+                "tick": self.tick, "surface": self.surface, "display": self.display}
+        for sec in ("alias", "verb_isa", "defs", "surface", "display"):
+            own = duenos(self, sec)
+            if own:
+                data[sec] = {k: v for k, v in data[sec].items() if k not in own}
+        return data
+
     def save(self) -> None:
         os.makedirs(os.path.dirname(self.path) or ".", exist_ok=True)
         tmp = self.path + ".tmp"
         with open(tmp, "w", encoding="utf-8") as handle:
-            json.dump({"concepts": self.concepts, "facts": self.facts, "past": self.past, "alias": self.alias, "opposites": self.opposites, "verb_isa": self.verb_isa, "defs": self.defs, "lessons": self.lessons, "tick": self.tick,
-                       "surface": self.surface, "display": self.display},
+            json.dump(self._personal(),
                       handle, ensure_ascii=False, indent=1)
         os.replace(tmp, self.path)
 

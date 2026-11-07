@@ -1,0 +1,25 @@
+
+   		  ------------------------------------------
+    		  Multilingual Central Respository (MCR) 3.0
+    		  ------------------------------------------
+
+  The contents of this package are distributed under different open licenses. 
+If you want to redistribute this software, part of it, or derived works based 
+on it or on any of its parts, make sure you are doing so under the terms stated
+in the license applying to each of the involved modules.
+
+  The licenses applying to the modules contained in MCR are the following:
+
+ 1.- English WordNet synset and relation data, contained in folder engWN/ are 
+     distributed under the original WordNet license. You can find it at 
+     http://wordnet.princeton.edu/wordnet/license
+
+ 2.- All other data in this package are distributed under Attribution 3.0 Unported
+     (CC BY 3.0) license. You can find it at 
+     http://creativecommons.org/licenses/by/3.0/
+
+---
+lexico_es.json se construye con scripts/construir_lexico.py a partir de:
+ * Multilingual Central Repository (MCR), espanol - CC BY 3.0 - http://adimen.si.ehu.es/web/MCR/ (distribuido en Open Multilingual WordNet 1.4)
+ * Princeton WordNet 3.0 (relaciones entre sentidos) - https://wordnet.princeton.edu/license-and-commercial-use
+Atribucion obligatoria. Para retirarlo del modelo basta borrar data/lexico_es.json.

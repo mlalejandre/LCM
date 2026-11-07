@@ -1,0 +1,375 @@
+# Examen 4 (parche-96): ~400 preguntas con formulaciones diversas sobre el sistema solar. Informativo.
+SEMILLA: fabrica
+U: El Sol es una estrella.	
+U: El Sol está en el centro del Sistema Solar.	
+U: Los planetas giran alrededor del Sol.	
+U: Mercurio es el planeta más cercano al Sol.	
+U: Venus es el segundo planeta.	
+U: La Tierra es el tercer planeta y tiene una luna.	
+U: La Luna gira alrededor de la Tierra.	
+U: Marte es un planeta rojo.	
+U: Marte tiene dos lunas.	
+U: Júpiter es el planeta más grande.	
+U: Júpiter es un gigante gaseoso.	
+U: Saturno tiene anillos.	
+U: Urano y Neptuno son planetas helados.	
+U: Plutón es un planeta enano.	
+U: Los asteroides son rocas pequeñas.	
+U: Los cometas están hechos de hielo y polvo.	
+U: El Sistema Solar es el conjunto de planetas, asteroides, cometas y lunas que orbitan alrededor del Sol.	
+U: Oye, ¿Qué es el Sol?	estrella
+U: Oye, ¿Qué tiene la Tierra?	luna
+U: qué planeta es el mayor	Júpiter
+U: Me gustaría saber alrededor de qué giran los planetas	Sol
+U: Oye, ¿Qué incluye el Sistema Solar?	asteroides
+U: Por favor, ¿Qué tiene Marte?	lunas
+U: qué planeta es un gigante gaseoso	Júpiter
+U: Por favor, ¿Están hechos de hielo los cometas?	Sí
+U: Oye, ¿Es la Tierra el tercer planeta?	Sí
+U: están hechos de hielo los cometas	Sí
+U: ¿Son rocas los asteroides?	Sí
+U: ¿Es Mercurio el planeta más cercano al Sol?	Sí
+U: ¿Es Neptuno un planeta helado?	Sí
+U: ¿Alrededor de qué giran los planetas?	Sol
+U: ¿Sabes qué planeta es el más cercano al Sol?	Mercurio
+U: Por favor, ¿Cómo son Urano y Neptuno?	helado
+U: Quisiera saber qué está en el centro del Sistema Solar	Sol
+U: ¿Qué planetas conoces?	Neptuno
+U: ¿Sabes qué sabes de la Luna?	Tierra
+U: ¿Es el Sol una estrella?	Sí
+U: Por favor, ¿Qué lugar ocupa Venus?	segundo
+U: Dime qué sabes de Saturno	anillos
+U: Por favor, ¿Es Plutón un planeta enano?	Sí
+U: Oye, ¿Qué planeta es el tercero?	Tierra
+U: qué son los asteroides	rocas
+U: Oye, ¿Qué planetas son helados?	Urano
+U: Dime qué lugar ocupa Venus	segundo
+U: Por favor, ¿Cuántas lunas tiene Marte?	dos
+U: ¿Cuál es el planeta enano?	Plutón
+U: Quisiera saber cuál es el planeta más grande	Júpiter
+U: ¿Tiene lunas Marte?	Sí
+U: Por favor, ¿Cuál es el planeta de los anillos?	Saturno
+U: ¿Sabes cuál es el planeta enano?	Plutón
+U: Quisiera saber qué contiene el Sistema Solar	lunas
+U: Me gustaría saber qué gira alrededor del Sol	planetas
+U: Por favor, ¿Qué planeta es el más cercano al Sol?	Mercurio
+U: ¿Es Urano un planeta helado?	Sí
+U: Dime qué tiene Marte	lunas
+U: Quisiera saber qué gira alrededor de la Tierra	Luna
+U: Por favor, ¿Qué tipo de planeta es Plutón?	enano
+U: Me gustaría saber qué lugar ocupa Venus	segundo
+U: Oye, ¿Alrededor de qué gira la Luna?	Tierra
+U: ¿En qué lugar está el Sol?	centro
+U: Quisiera saber qué planeta es rojo	Marte
+U: Oye, ¿Cuántos satélites tiene Marte?	dos
+U: Dime cuál es el planeta de los anillos	Saturno
+U: Me gustaría saber qué tiene Marte	lunas
+U: ¿Qué orbita la Tierra?	Luna
+U: ¿Tiene anillos Saturno?	Sí
+U: Por favor, ¿Qué tipo de astro es el Sol?	estrella
+U: ¿Qué sabes de Saturno?	anillos
+U: qué tipo de planeta es júpiter	gaseoso
+U: Oye, ¿Qué es el Sistema Solar?	conjunto
+U: Me gustaría saber cuántas lunas tiene Marte	dos
+U: ¿Sabes cuántas lunas tiene la Tierra?	una
+U: qué es el sistema solar	conjunto
+U: Por favor, ¿Qué es Júpiter?	planeta
+U: Dime cuál es el planeta más grande	Júpiter
+U: ¿Qué contiene el Sistema Solar?	lunas
+U: Quisiera saber cuál es el planeta enano	Plutón
+U: ¿Sabes qué orbita la Tierra?	Luna
+U: Oye, ¿Cuáles son los planetas?	Mercurio
+U: Me gustaría saber qué sabes de Marte	rojo
+U: qué planetas son helados	Urano
+U: qué sabes de saturno	anillos
+U: Oye, ¿Es Plutón un planeta enano?	Sí
+U: ¿Tiene la Tierra alguna luna?	Sí
+U: ¿Sabes cuántos planetas hay?	8
+U: ¿Cuál es el planeta que está más cerca del Sol?	Mercurio
+U: Por favor, ¿Qué sabes de Júpiter?	grande
+U: ¿Qué es el Sistema Solar?	conjunto
+U: Me gustaría saber cuál es el planeta enano	Plutón
+U: Me gustaría saber cuántos planetas hay	8
+U: Me gustaría saber de qué color es Marte	rojo
+U: ¿Sabes qué planeta es un gigante gaseoso?	Júpiter
+U: Por favor, ¿Qué son los asteroides?	rocas
+U: Nombra los planetas	Venus
+U: ¿Qué tipo de planeta es Júpiter?	gaseoso
+U: qué está en el centro del sistema solar	Sol
+U: Quisiera saber qué sabes del Sol	estrella
+U: ¿Qué tiene Saturno?	anillos
+U: ¿Qué hay en el centro del Sistema Solar?	Sol
+U: ¿Sabes qué lugar ocupa Venus?	segundo
+U: cuál es el segundo planeta	Venus
+U: Dime qué incluye el Sistema Solar	asteroides
+U: Me gustaría saber qué gira alrededor de la Tierra	Luna
+U: ¿Es Plutón un planeta?	Sí
+U: ¿Cuál es el planeta rojo?	Marte
+U: ¿Sabes qué planeta es el segundo?	Venus
+U: ¿Sabes cuál es el planeta rojo?	Marte
+U: qué planetas conoces	Neptuno
+U: Quisiera saber alrededor de qué giran los planetas	Sol
+U: ¿Sabes qué sabes de Júpiter?	grande
+U: Por favor, ¿La Tierra tiene luna?	Sí
+U: Oye, ¿Cuál es el planeta rojo?	Marte
+U: ¿Es Mercurio un planeta?	Sí
+U: Me gustaría saber qué hay en el centro del Sistema Solar	Sol
+U: Por favor, ¿Qué es Plutón?	enano
+U: Quisiera saber qué planeta es el mayor	Júpiter
+U: ¿Dónde está el Sol?	centro
+U: ¿Cuántas lunas tiene Marte?	dos
+U: ¿Cómo son Urano y Neptuno?	helado
+U: Me gustaría saber quién tiene anillos	Saturno
+U: Dime qué sabes del Sol	estrella
+U: ¿Es Venus el segundo planeta?	Sí
+U: es la tierra el tercer planeta	Sí
+U: Dime cuáles son los planetas	Mercurio
+U: Por favor, ¿De qué están hechos los cometas?	hielo
+U: ¿Sabes cuántos satélites tiene Marte?	dos
+U: Por favor, ¿Cuál es el segundo planeta?	Venus
+U: ¿Cuál es el segundo planeta?	Venus
+U: ¿Cómo es Marte?	rojo
+U: Por favor, ¿Qué es el Sistema Solar?	conjunto
+U: ¿Cuántos planetas conoces?	8
+U: ¿Gira la Luna alrededor de la Tierra?	Sí
+U: ¿Sabes qué es Plutón?	enano
+U: Por favor, ¿El Sol es una estrella?	Sí
+U: ¿Sabes qué giran alrededor del Sol?	planetas
+U: cuál es el planeta que está más cerca del sol	Mercurio
+U: Quisiera saber de qué están hechos los cometas	hielo
+U: Me gustaría saber qué sabes de la Luna	Tierra
+U: es marte rojo	Sí
+U: de qué se compone el sistema solar	cometas
+U: son rocas los asteroides	Sí
+U: ¿Sabes cuál es el planeta más cercano al Sol?	Mercurio
+U: Oye, ¿Cuál es el tercer planeta?	Tierra
+U: Oye, ¿Cuál es el planeta más cercano al Sol?	Mercurio
+U: Oye, ¿Cuántas lunas tiene la Tierra?	una
+U: Dime cuántas lunas tiene Marte	dos
+U: Por favor, ¿Qué orbita alrededor del Sol?	asteroides
+U: Por favor, ¿Cuántas lunas tiene la Tierra?	una
+U: Quisiera saber qué orbita alrededor del Sol	asteroides
+U: ¿Qué planeta es el mayor?	Júpiter
+U: ¿Sabes qué tipo de planeta es Júpiter?	gaseoso
+U: Quisiera saber qué materiales forman los cometas	polvo
+U: ¿Es Plutón un planeta enano?	Sí
+U: Me gustaría saber qué son los cometas	hielo
+U: cuáles son los planetas	Mercurio
+U: Me gustaría saber qué giran alrededor del Sol	planetas
+U: ¿Qué son los cometas?	hielo
+U: ¿Quién tiene anillos?	Saturno
+U: ¿Sabes qué tiene la Tierra?	luna
+U: ¿Qué tiene la Tierra?	luna
+U: es urano un planeta helado	Sí
+U: ¿Es la Tierra el tercer planeta?	Sí
+U: Quisiera saber cuál es el planeta más cercano al Sol	Mercurio
+U: Oye, ¿Qué materiales forman los cometas?	polvo
+U: ¿Alrededor de qué gira la Luna?	Tierra
+U: Oye, nombra los planetas	Venus
+U: Por favor, ¿Es Marte rojo?	Sí
+U: Quisiera saber qué son los asteroides	rocas
+U: Quisiera saber qué son los cometas	hielo
+U: Dime qué tiene Saturno	anillos
+U: Dime cuál es el planeta más cercano al Sol	Mercurio
+U: Oye, ¿Tiene lunas Marte?	Sí
+U: son pequeños los asteroides	Sí
+U: Oye, ¿En qué lugar está el Sol?	centro
+U: Dime qué tipo de planeta es Júpiter	gaseoso
+U: Por favor, ¿Qué es el Sol?	estrella
+U: ¿Es Júpiter el planeta más grande?	Sí
+U: qué tipo de astro es el sol	estrella
+U: Oye, ¿Dónde está el Sol?	centro
+U: ¿Cuál es el planeta más grande?	Júpiter
+U: cómo son los asteroides	pequeñ
+U: Dime qué orbita la Tierra	Luna
+U: Oye, ¿Cuál es el planeta de los anillos?	Saturno
+U: Quisiera saber qué planeta tiene anillos	Saturno
+U: Por favor, ¿Cuál es el planeta más grande?	Júpiter
+U: qué tiene la tierra	luna
+U: tiene la tierra alguna luna	Sí
+U: Dime qué tipo de astro es el Sol	estrella
+U: Por favor, ¿Son pequeños los asteroides?	Sí
+U: Oye, ¿Tiene la Tierra alguna luna?	Sí
+U: qué sabes de marte	rojo
+U: Por favor, ¿Cuáles son los planetas helados?	Neptuno
+U: Quisiera saber cuántas lunas tiene Marte	dos
+U: ¿Sabes qué está en el centro del Sistema Solar?	Sol
+U: Oye, ¿Es Mercurio el planeta más cercano al Sol?	Sí
+U: Oye, ¿Cómo son Urano y Neptuno?	helado
+U: ¿Qué sabes de Júpiter?	grande
+U: Me gustaría saber qué es Plutón	enano
+U: Me gustaría saber qué planeta es un gigante gaseoso	Júpiter
+U: Oye, ¿De qué color es Marte?	rojo
+U: Oye, ¿Es Júpiter un gigante gaseoso?	Sí
+U: Quisiera saber qué sabes de Marte	rojo
+U: ¿De qué se compone el Sistema Solar?	cometas
+U: Quisiera saber qué tiene Marte	lunas
+U: Me gustaría saber cuál es el tercer planeta	Tierra
+U: Dime qué planeta es el tercero	Tierra
+U: ¿Sabes qué tipo de planeta es Plutón?	enano
+U: ¿Sabes de qué color es Marte?	rojo
+U: Por favor, ¿Gira la Luna alrededor de la Tierra?	Sí
+U: de qué están hechos los cometas	hielo
+U: Oye, ¿Qué es Júpiter?	planeta
+U: ¿Es Júpiter un gigante gaseoso?	Sí
+U: Oye, ¿Qué es Plutón?	enano
+U: ¿Qué planeta es el tercero?	Tierra
+U: Por favor, ¿Es Urano un planeta helado?	Sí
+U: Me gustaría saber qué planetas conoces	Neptuno
+U: Oye, ¿Qué está en el centro del Sistema Solar?	Sol
+U: Oye, ¿Qué planeta es el más cercano al Sol?	Mercurio
+U: Me gustaría saber qué tipo de astro es el Sol	estrella
+U: Quisiera saber quién tiene anillos	Saturno
+U: ¿Cuáles son los planetas helados?	Neptuno
+U: ¿Qué giran alrededor del Sol?	planetas
+U: Quisiera saber cuáles son los planetas helados	Neptuno
+U: ¿La Tierra tiene luna?	Sí
+U: Por favor, ¿Cuál es el planeta más cercano al Sol?	Mercurio
+U: Por favor, ¿Qué tipo de planeta es Júpiter?	gaseoso
+U: Quisiera saber cuál es el segundo planeta	Venus
+U: Quisiera saber cuántas lunas tiene la Tierra	una
+U: Quisiera saber cuántos planetas conoces	8
+U: ¿Qué planeta es un gigante gaseoso?	Júpiter
+U: ¿Sabes alrededor de qué gira la Luna?	Tierra
+U: ¿Qué planeta es el segundo?	Venus
+U: Oye, ¿Es Marte rojo?	Sí
+U: Quisiera saber qué planeta es el más grande	Júpiter
+U: Oye, ¿Qué planeta tiene anillos?	Saturno
+U: ¿Qué tipo de planeta es Plutón?	enano
+U: Quisiera saber cuántos planetas hay	8
+U: Por favor, ¿Qué sabes del Sol?	estrella
+U: Por favor, ¿Qué contiene el Sistema Solar?	lunas
+U: ¿Están hechos de hielo los cometas?	Sí
+U: ¿Qué planeta es el más cercano al Sol?	Mercurio
+U: Por favor, ¿Es Plutón un planeta?	Sí
+U: en qué lugar está el sol	centro
+U: Oye, ¿Es Neptuno un planeta helado?	Sí
+U: ¿Sabes qué planeta es el tercero?	Tierra
+U: ¿Sabes de qué están hechos los cometas?	hielo
+U: giran los planetas alrededor del sol	Sí
+U: ¿Qué es la Tierra?	planeta
+U: Dime cuál es el tercer planeta	Tierra
+U: Por favor, ¿Cuántos satélites tiene Marte?	dos
+U: Por favor, ¿Giran los planetas alrededor del Sol?	Sí
+U: Por favor, nombra los planetas	Venus
+U: ¿Sabes qué son los asteroides?	rocas
+U: ¿Qué gira alrededor de la Tierra?	Luna
+U: ¿Sabes qué es la Tierra?	planeta
+U: qué planeta es el más grande	Júpiter
+U: Por favor, ¿Es Marte un planeta rojo?	Sí
+U: Por favor, ¿Qué es Mercurio?	planeta
+U: ¿Sabes qué sabes de Marte?	rojo
+U: ¿De qué están hechos los cometas?	hielo
+U: Dime qué tipo de planeta es Plutón	enano
+U: ¿Qué es Júpiter?	planeta
+U: es neptuno un planeta helado	Sí
+U: Oye, ¿Qué planeta es un gigante gaseoso?	Júpiter
+U: Oye, ¿Qué tipo de astro es el Sol?	estrella
+U: Por favor, ¿Cuántos planetas hay?	8
+U: Oye, ¿Qué sabes de la Luna?	Tierra
+U: Oye, ¿Es Mercurio un planeta?	Sí
+U: Por favor, ¿Dónde está el Sol?	centro
+U: tiene anillos saturno	Sí
+U: Dime cuál es el planeta que está más cerca del Sol	Mercurio
+U: Dime qué planeta tiene anillos	Saturno
+U: Me gustaría saber qué es Mercurio	planeta
+U: Dime qué materiales forman los cometas	polvo
+U: qué son los cometas	hielo
+U: ¿Son pequeños los asteroides?	Sí
+U: ¿Qué orbita alrededor del Sol?	asteroides
+U: qué es la tierra	planeta
+U: Dime qué gira alrededor del Sol	planetas
+U: Me gustaría saber cuál es el planeta más grande	Júpiter
+U: Oye, ¿Qué orbita alrededor del Sol?	asteroides
+U: Por favor, ¿Qué planetas conoces?	Neptuno
+U: ¿Qué planetas son helados?	Urano
+U: Dime qué planeta es el más grande	Júpiter
+U: Quisiera saber qué es Mercurio	planeta
+U: Quisiera saber qué lugar ocupa Venus	segundo
+U: Me gustaría saber cuáles son los planetas helados	Neptuno
+U: ¿Cuántos satélites tiene Marte?	dos
+U: qué tiene marte	lunas
+U: ¿Sabes qué planetas conoces?	Neptuno
+U: qué planeta tiene anillos	Saturno
+U: Quisiera saber qué es la Tierra	planeta
+U: Por favor, ¿Qué gira alrededor del Sol?	planetas
+U: Por favor, ¿Cuál es el planeta que está más cerca del Sol?	Mercurio
+U: Me gustaría saber qué es el Sol	estrella
+U: ¿Qué gira alrededor del Sol?	planetas
+U: Me gustaría saber qué planeta es rojo	Marte
+U: Me gustaría saber qué planeta es el segundo	Venus
+U: ¿Qué planeta es el más grande?	Júpiter
+U: ¿Es Marte un planeta rojo?	Sí
+U: ¿Qué es el Sol?	estrella
+U: ¿Qué son los asteroides?	rocas
+U: Me gustaría saber qué orbita la Tierra	Luna
+U: ¿Es Marte rojo?	Sí
+U: es júpiter el planeta más grande	Sí
+U: Oye, ¿Qué planeta es el segundo?	Venus
+U: Oye, ¿Cuántos planetas conoces?	8
+U: Por favor, ¿Qué incluye el Sistema Solar?	asteroides
+U: cuántos satélites tiene marte	dos
+U: ¿Sabes qué planeta es el mayor?	Júpiter
+U: ¿Sabes quién tiene anillos?	Saturno
+U: ¿Sabes de qué se compone el Sistema Solar?	cometas
+U: Oye, ¿Qué hay en el centro del Sistema Solar?	Sol
+U: Dime qué gira alrededor de la Tierra	Luna
+U: Oye, ¿Es el Sol una estrella?	Sí
+U: es marte un planeta rojo	Sí
+U: ¿Qué sabes del Sol?	estrella
+U: Dime qué hay en el centro del Sistema Solar	Sol
+U: Dime qué sabes de Marte	rojo
+U: Quisiera saber qué giran alrededor del Sol	planetas
+U: ¿Sabes cuál es el planeta que está más cerca del Sol?	Mercurio
+U: alrededor de qué gira la luna	Tierra
+U: Por favor, ¿Qué tiene Saturno?	anillos
+U: cuál es el planeta de los anillos	Saturno
+U: ¿Qué es Mercurio?	planeta
+U: ¿Sabes qué es el Sistema Solar?	conjunto
+U: Por favor, ¿Es Venus el segundo planeta?	Sí
+U: Quisiera saber qué es Plutón	enano
+U: ¿El Sol es una estrella?	Sí
+U: Por favor, ¿Cuáles son los planetas?	Mercurio
+U: ¿Qué planeta es rojo?	Marte
+U: Me gustaría saber cuáles son los planetas	Mercurio
+U: ¿Qué está en el centro del Sistema Solar?	Sol
+U: ¿Cuál es el tercer planeta?	Tierra
+U: Dime qué es Júpiter	planeta
+U: es plutón un planeta	Sí
+U: Dime qué planeta es el segundo	Venus
+U: es mercurio el planeta más cercano al sol	Sí
+U: Oye, ¿Qué son los cometas?	hielo
+U: Me gustaría saber cuántas lunas tiene la Tierra	una
+U: Oye, ¿Qué contiene el Sistema Solar?	lunas
+U: ¿Cómo son los asteroides?	pequeñ
+U: Quisiera saber qué planeta es el más cercano al Sol	Mercurio
+U: ¿Qué sabes de la Luna?	Tierra
+U: Por favor, ¿Qué materiales forman los cometas?	polvo
+U: Quisiera saber cuál es el planeta rojo	Marte
+U: Por favor, ¿Qué planeta es el tercero?	Tierra
+U: ¿De qué están compuestos los cometas?	polvo
+U: ¿Qué materiales forman los cometas?	polvo
+U: Quisiera saber qué sabes de Saturno	anillos
+U: Me gustaría saber alrededor de qué gira la Luna	Tierra
+U: Oye, ¿Alrededor de qué giran los planetas?	Sol
+U: Me gustaría saber qué sabes de Júpiter	grande
+U: ¿Giran los planetas alrededor del Sol?	Sí
+U: ¿De qué color es Marte?	rojo
+U: ¿Qué incluye el Sistema Solar?	asteroides
+U: ¿Qué planeta tiene anillos?	Saturno
+U: Por favor, ¿Qué es la Tierra?	planeta
+U: ¿Cuál es el planeta de los anillos?	Saturno
+U: Dime cuántos planetas hay	8
+U: ¿Sabes cuántos planetas conoces?	8
+U: Me gustaría saber qué tiene Saturno	anillos
+U: Dime qué planeta es rojo	Marte
+U: Oye, ¿De qué están compuestos los cometas?	polvo
+U: Oye, ¿Son rocas los asteroides?	Sí
+U: Oye, ¿Qué sabes de Júpiter?	grande
+U: Por favor, ¿Qué tiene la Tierra?	luna
+U: Por favor, ¿Qué planetas son helados?	Urano
+U: ¿Sabes qué planeta es rojo?	Marte
+U: Por favor, ¿De qué color es Marte?	rojo
+U: Por favor, ¿De qué están compuestos los cometas?	polvo
+U: Dime cuántos planetas conoces	8
+U: qué gira alrededor de la tierra	Luna

@@ -13,7 +13,7 @@ Reglas explicitas y comprobables, no un modelo generativo:
 """
 import re
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import List, Optional, Tuple
 
 from src.language.lexicon import norm
@@ -405,11 +405,37 @@ class Dialogue:
                         if canon(f["s"]) == canon(name) and f["p"] == "ES" and f["o"] not in objs:
                             objs.append(f["o"])
                     if objs:
-                        def _cls(o):
-                            d = self._disp(o).lower()
-                            return d if re.match(r"(un|una)\s", d) else ("una " if o.endswith("A") else "un ") + d
-                        cls = [_cls(o) for o in objs[:3]]
-                        return f"{self._art(self._disp(name).lower()).capitalize()} es {' y '.join(cls)}.", None
+                        def _sg(w):
+                            return w[:-3] + "z" if w.endswith("ces") else (w[:-2] if re.search(r"[^aeiou]es$", w) and not w.endswith(("ides", "ones")) else (w[:-1] if w.endswith("s") else w))
+
+                        def _core(o):
+                            return re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", self._disp(o))
+                        dn_disp = self._disp(name)
+                        _c = _core(name).lower()
+                        pl_disp = dn_disp.lower().startswith(("los ", "las ")) or (_c.endswith("s") and norm(_c) not in ("lunes", "martes", "miercoles", "jueves", "viernes", "crisis", "tesis", "virus") and bool(re.match(r"que es (un|una|el|la) ", t)))
+                        if t.startswith("que son") or pl_disp and t.startswith("que son"):
+                            # parche-98: "Los asteroides son rocas" (no "El asteroides es una rocas")
+                            core = _core(name).lower()
+                            subj = ("las " if dn_disp.lower().startswith("las ") else "los ") + core
+                            pls = []
+                            for o in objs[:3]:
+                                c_ = _core(o).lower()
+                                pls.append(c_ if c_.endswith("s") else c_ + ("es" if c_[-1] not in "aeiou" else "s"))
+                            return f"{subj.capitalize()} son {' y '.join(pls)}.", None
+                        if pl_disp:                                      # se pregunta en singular lo que se guardo en plural
+                            art_ = "la " if dn_disp.lower().startswith("las ") else "el "
+                            subj = art_ + " ".join(_sg(w) for w in _core(name).lower().split())
+                        else:
+                            subj = self._art(dn_disp)
+                        cls = []
+                        for o in objs[:3]:
+                            c_ = _core(o)
+                            if c_.lower().endswith("s") and not c_.lower().endswith(("is", "us")):
+                                c_ = " ".join(_sg(w) for w in c_.split())
+                            ar_ = re.match(r"(el|la|los|las|un|una|unos|unas)\s", self._disp(o).lower())
+                            fem = (ar_.group(1) in ("la", "las", "una", "unas")) if ar_ else o.upper().endswith("A")
+                            cls.append(("una " if fem else "un ") + c_.lower())
+                        return f"{subj[:1].upper() + subj[1:]} es {' y '.join(cls)}.", None
         return None
 
     @staticmethod
@@ -699,7 +725,99 @@ class Conversation:
         self.d = Dialogue(memory)
         self.topic = None
 
+    def _skills_pre(self, raw: str) -> Optional[str]:
+        """parche-103: habilidades que no dependen del analizador ni del enrutador: contar, aritmetica con palabras, dias relativos (hoy/ayer/manana)."""
+        from src.language import skills
+        t = re.sub(r"\s+", " ", re.sub(r"[¡!¿?.,;:\"«»]", " ", n(raw))).strip()
+        m = re.match(r"^(?:puedes |podrias |sabes |quiero que )?(?:contar|cuentas?|cuentame|cuente)(?: del? 1)? (?:hasta|al) (\d{1,3})$", t) \
+            or re.match(r"^(?:puedes |podrias )?(?:contar|cuenta) hasta (\w+)$", t)
+        if m:
+            raw_n = m.group(1)
+            nn = int(raw_n) if raw_n.isdigit() else skills.NUMS.get(raw_n)
+            if nn and 1 <= nn <= 100:
+                return ", ".join(str(i) for i in range(1, nn + 1)) + "."
+        if re.match(r"^(?:y )?(?:cuanto|cuantos?) (?:es|son|da|vale|sale|serian|seria)\b|^(?:calcula|dime cuanto es|cual es el resultado de)\b", t) \
+                and re.search(r"\d|\b(?:uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|veinte|treinta|cuarenta|cincuenta|cien|raiz|por ciento)\b", t):
+            ans = skills.aritmetica(raw)
+            if ans:
+                return ans
+        m = re.match(r"^(?:y )?(?:que|cual) (?:dia|fecha|dia de la semana) (?:fue|era|es|sera|seria|va a ser|va a a ser|vamos a tener|toca) (hoy|ayer|anteayer|antes de ayer|manana|pasado manana)$", t) \
+            or re.match(r"^(hoy|ayer|anteayer|antes de ayer|manana|pasado manana) (?:que|cual) (?:dia|fecha) (?:fue|era|es|sera|va a ser|va a a ser)$", t)
+        if m:
+            rel = m.group(1)
+            delta = {"hoy": 0, "ayer": -1, "anteayer": -2, "antes de ayer": -2, "manana": 1, "pasado manana": 2}[rel]
+            d0 = self.d._today()
+            d = d0 + timedelta(days=delta)
+            verb = "fue" if delta < 0 else ("es" if delta == 0 else "será")
+            meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+            return f"{rel.replace('manana', 'mañana').capitalize()} {verb} {DAYS[d.weekday()]}, {d.day} de {meses[d.month - 1]} de {d.year}."
+        return None
+
     def say(self, raw: str) -> str:
+        """parche-95: si la respuesta es un fallo y la pregunta tiene una errata corregible, reintenta con la pregunta corregida."""
+        from src.language import consultas
+        raw = re.sub(r"^([¿\s]*)[yY]\s+(?=(?:qu[eé]|cu[aá]les?|qui[eé]nes?|cu[aá]nt[oa]s?|d[oó]nde|c[oó]mo)\b)", r"\1", raw)       # parche-103: "y cual es el planeta mas pequeno?"
+        if not self.d.pending:
+            try:
+                sp_ = self._skills_pre(raw) or self._skills_pre(consultas.canonical(raw))
+            except Exception:                                                                                                  # noqa
+                sp_ = None
+            if sp_:
+                self.d.last = sp_
+                return sp_
+        if self.d.pending or not (is_question(raw) or is_question(consultas.canonical(raw))):
+            return self._say1(raw)
+        try:
+            from src.language import conceptos                                      # parche-99: "que es un X" (la memoria solo conoce ejemplares) y "en que se parecen A y B"
+            pre_ = conceptos.antes(raw, self.m) or conceptos.antes(consultas.canonical(raw), self.m)
+        except Exception:                                                           # noqa
+            pre_ = None
+        if pre_:
+            self.d.last, self.d.pending = pre_, None
+            return pre_
+        saved = (self.d.last, self.d.last_question, self.topic)
+        out = self._say1(raw)
+        if not consultas.es_fallo(out):
+            try:                                                                    # parche-102: la memoria contesta y el diccionario de conceptos anade la ficha
+                from src.language import conceptos
+                comp_ = conceptos.complemento(raw, self.m) or conceptos.complemento(consultas.canonical(raw), self.m)
+            except Exception:                                                       # noqa
+                comp_ = None
+            if comp_ and comp_ not in out:
+                out = out + " " + comp_
+                self.d.last = out
+        if consultas.es_fallo(out):
+            fixed = consultas.corregir(raw, self.m)
+            subs_fix = list(consultas.SUBS)
+            for alt_ in (fixed, consultas.sinonimizar(fixed, self.m)):             # parche-98: errata, luego sinonimo conocido por la memoria
+                if alt_ != raw:
+                    after = (self.d.last, self.d.last_question, self.topic, self.d.pending)
+                    self.d.last, self.d.last_question, self.topic, self.d.pending = saved + (None,)
+                    out2 = self._say1(alt_)
+                    if not consultas.es_fallo(out2):
+                        subs_all = subs_fix + [x_ for x_ in consultas.SUBS if x_ not in subs_fix] if alt_ is not fixed else subs_fix
+                        nota = " ".join(f"(Entiendo «{a_}» como «{b_}».)" for a_, b_ in subs_all if a_.lower() != b_.lower())
+                        return (nota + " " + out2) if nota else out2
+                    self.d.last, self.d.last_question, self.topic, self.d.pending = after
+            try:
+                from src.language import conceptos                                  # parche-99: diccionario de conceptos (la memoria manda; esto es el fondo de fabrica)
+                cx = conceptos.responder(raw, self.m) or conceptos.responder(consultas.canonical(raw), self.m)
+            except Exception:                                                       # noqa
+                cx = None
+            if cx:
+                self.d.last, self.d.pending = cx, None
+                return cx
+            try:
+                from src.language import lexico
+                lx = lexico.responder(raw) or lexico.responder(consultas.canonical(raw))                                          # parche-98: preguntas sobre palabras (sinonimo, antonimo, tipo de)
+            except Exception:                                                       # noqa
+                lx = None
+            if lx:
+                self.d.last, self.d.pending = lx, None
+                return lx
+        return out
+
+    def _say1(self, raw: str) -> str:
         if not self.d.pending:                                              # parche-90: normalizador de preguntas (una familia -> una forma canonica)
             from src.language import consultas
             qm = consultas.quien_mas(raw)
@@ -710,6 +828,14 @@ class Conversation:
                         self.d.last = f"{x_} es {cmp_} {adj} que {y_}."
                         return self.d.last
                 self.d.last = "No lo sé."
+                return self.d.last
+            sg = consultas.seguimiento(raw, self.d.last_question, self.m)       # parche-97: "¿Y Venus?"
+            if sg:
+                raw = sg
+            cmp2 = consultas.comparar(raw)
+            if cmp2:                                                            # parche-97: "Compara Marte y la Tierra"
+                outs = [self.say(f"¿Qué sabes de {x_}?") for x_ in cmp2]
+                self.d.last = " ".join(f"{x_}: {o_}" for x_, o_ in zip(cmp2, outs))
                 return self.d.last
             raw = consultas.canonical(raw)
         mc = re.match(r"^\s*no\s*,\s+(\S.*)$", raw, re.I)

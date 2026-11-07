@@ -1,0 +1,35 @@
+# Examen 2 de comprension (parche-94): preguntas reales de uso (listas, recuentos, 'dime algo de', definicion por enumeracion). Informativo.
+SEMILLA: fabrica
+U: El Sol es una estrella.	
+U: El Sol está en el centro del Sistema Solar.	
+U: Los planetas giran alrededor del Sol.	
+U: Mercurio es el planeta más cercano al Sol.	
+U: Venus es el segundo planeta.	
+U: La Tierra es el tercer planeta y tiene una luna.	
+U: La Luna gira alrededor de la Tierra.	
+U: Marte es un planeta rojo.	
+U: Marte tiene dos lunas.	
+U: Júpiter es el planeta más grande.	
+U: Júpiter es un gigante gaseoso.	
+U: Saturno tiene anillos.	
+U: Urano y Neptuno son planetas helados.	
+U: Plutón es un planeta enano.	
+U: Los asteroides son rocas pequeñas.	
+U: Los cometas están hechos de hielo y polvo.	
+U: El Sistema Solar es el conjunto de planetas, asteroides, cometas y lunas que orbitan alrededor del Sol.	
+U: ¿Cuántos planetas hay en el sistema solar?	8
+U: ¿Cuáles son los planetas que conoces del sistema solar?	Mercurio
+U: ¿Cuáles son los planetas que conoces del sistema solar?	Neptuno
+U: ¿Qué me puedes decir de Mercurio?	cercano
+U: Háblame de Marte	rojo
+U: ¿Qué puedes contarme sobre Saturno?	anillos
+U: Cuéntame algo sobre Plutón	enano
+U: ¿Qué sabes acerca de Venus?	segundo
+U: ¿Qué planetas conoces?	Urano
+U: Dime los planetas que sabes	Tierra
+U: ¿Cuántos planetas conoces?	8
+U: ¿De qué se compone el Sistema Solar?	cometas
+U: ¿Qué incluye el Sistema Solar?	asteroides
+U: ¿Qué orbita alrededor del Sol?	asteroides
+U: ¿Son pequeños los asteroides?	Sí
+U: ¿Qué son los asteroides?	rocas

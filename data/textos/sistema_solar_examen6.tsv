@@ -1,0 +1,59 @@
+# Examen 6 (parche-97): formas GENERALES de preguntar (contar, listar, definir, tag questions, existencia, seguimiento, comparar). Informativo.
+SEMILLA: fabrica
+U: El Sol es una estrella.	
+U: El Sol está en el centro del Sistema Solar.	
+U: Los planetas giran alrededor del Sol.	
+U: Mercurio es el planeta más cercano al Sol.	
+U: Venus es el segundo planeta.	
+U: La Tierra es el tercer planeta y tiene una luna.	
+U: La Luna gira alrededor de la Tierra.	
+U: Marte es un planeta rojo.	
+U: Marte tiene dos lunas.	
+U: Júpiter es el planeta más grande.	
+U: Júpiter es un gigante gaseoso.	
+U: Saturno tiene anillos.	
+U: Urano y Neptuno son planetas helados.	
+U: Plutón es un planeta enano.	
+U: Los asteroides son rocas pequeñas.	
+U: Los cometas están hechos de hielo y polvo.	
+U: El Sistema Solar es el conjunto de planetas, asteroides, cometas y lunas que orbitan alrededor del Sol.	
+U: cuenta los planetas que existen en el sistema solar	8
+U: puedes contar el numero de planetas que existen en el sistema solar?	8
+U: dime el número de lunas que tiene Marte	dos
+U: ¿Podrías decirme cuántos planetas hay?	8
+U: Marte es rojo, ¿verdad?	Sí
+U: ¿Es verdad que Marte es rojo?	Sí
+U: ¿Es cierto que Júpiter es el planeta más grande?	Sí
+U: Dime si es verdad que Saturno tiene anillos	Sí
+U: ¿Verdad que la Tierra tiene una luna?	Sí
+U: Necesito que me digas qué es el Sol	estrella
+U: Quiero que me expliques qué es un cometa	hielo
+U: ¿Qué significa Plutón?	enano
+U: Definición de cometa	hielo
+U: ¿Qué entiendes por asteroide?	roca
+U: Dime todo lo que sepas de Marte	rojo
+U: Cuéntame todo sobre la Tierra	luna
+U: Muéstrame lo que sabes de Marte	rojo
+U: Lista los planetas	Mercurio
+U: Dame una lista de los planetas	Venus
+U: Dime el nombre de los planetas	Neptuno
+U: ¿Cómo se llaman los planetas?	Tierra
+U: Enséñame los planetas que conoces	Urano
+U: ¿Existen planetas helados?	Urano
+U: ¿Hay algún planeta rojo?	Marte
+U: ¿Existe algún planeta con anillos?	Saturno
+U: ¿Conoces algún planeta rojo?	Marte
+U: ¿Conoces el planeta Marte?	rojo
+U: ¿Has oído hablar de Plutón?	enano
+U: ¿Cuántas lunas tiene Marte?	dos
+U: ¿Y la Tierra?	una
+U: Compara Marte y la Tierra	rojo
+U: ¿Cuál es la diferencia entre Marte y la Tierra?	luna
+U: ¿Cuál es mayor: Júpiter o Marte?	Júpiter
+U: ¿Cuál es más grande, Marte o Júpiter?	Júpiter
+U: cual es el planeta mas lejano al sol?	No lo sé
+U: Por favor, dime cuántas lunas tiene Marte	dos
+U: Dime por favor cuántas lunas tiene Marte	dos
+U: ¿Puedes decirme de qué color es Marte?	rojo
+U: ¿Sabrías decirme cuántas lunas tiene Marte?	dos
+U: Me puedes explicar qué son los asteroides	rocas

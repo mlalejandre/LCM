@@ -104,6 +104,8 @@ def apply_lessons(facts: Iterable[Triple], lessons: Sequence[dict], is_var: Call
 def canon(name: str) -> str:
     """Forma comparable sin plural: POLIGONOS -> POLIGONO, ANIMALES -> ANIMAL (solo para comparar clases con sus miembros)."""
     w = name.upper()
+    if w.endswith("OIDES"):                      # parche-94: asteroides -> asteroide (no "asteroid")
+        return w[:-1]
     if w.endswith("CES"):
         return w[:-3] + "Z"
     if w.endswith("ES") and len(w) > 4 and w[-3] not in "AEIOU":

@@ -370,6 +370,35 @@ class SchoolParser:
         rows[j][3] = "nsubj"
         return [tuple(x) for x in rows]
 
+    def _conjunto(self, m, topic=None, verbs=None):
+        """parche-94: definicion por enumeracion. "El Sistema Solar es el conjunto de planetas, asteroides, cometas y lunas que orbitan alrededor del Sol."
+        -> (sistema_solar conjunto_de X) por cada elemento, y la oracion de relativo se aplica a cada elemento plural: (X orbitar_alrededor_de sol)."""
+        subj = m.group(1).strip()
+        key = "_".join(re.sub(r"^(el|la|los|las)\s+", "", _norm(subj)).split())
+        body, rel = m.group(2), ""
+        parts = re.split(r"\s+(?:que|los que|las que)\s+", body, maxsplit=1)
+        if len(parts) == 2:
+            body, rel = parts
+        items = []
+        for it in re.split(r"\s*,\s*|\s+y\s+|\s+e\s+|\s*\.\.\.\s*|\s*…\s*|\s+etc\.?", body):
+            it = re.sub(r"^(el|la|los|las|un|una|unos|unas)\s+", "", it.strip(" .;"), flags=re.I)
+            if it and len(it.split()) <= 3:
+                items.append(it)
+        out = []
+        for it in items:
+            ik = "_".join(_norm(it).split())
+            out.append({"s": key, "p": "conjunto_de", "o": ik, "neg": False, "head": 0, "si": None, "oi": None, "when": "", "when_disp": "", "when_idx": [], "q": "",
+                        "template": "{s} es el conjunto de {o}", "s_disp": subj[:1].lower() + subj[1:], "o_disp": it.lower()})
+        if rel and out:
+            for it in items:
+                if it.lower().endswith("s"):
+                    try:
+                        sub = self.parse(f"Los {it} {rel.strip(' .')}.", topic, verbs) or []
+                    except Exception:                                  # noqa
+                        sub = []
+                    out += sub
+        return out or None
+
     def parse(self, sentence: str, topic: Optional[str] = None, verbs=None) -> Optional[List[Dict]]:
         """None si no es una afirmacion analizable (pregunta, demasiado corta o larga); si no, lista de proposiciones."""
         if "?" in sentence or "¿" in sentence:
@@ -380,6 +409,9 @@ class SchoolParser:
             key = "_".join(re.sub(r"^(el|la|mi|su|un|una)\s+", "", _norm(subj)).split())
             return [{"s": key, "p": "llamarse", "o": _norm(mll.group(2)), "neg": False, "head": 0, "si": None, "oi": None, "when": "", "when_disp": "",
                      "when_idx": [], "q": "", "template": "{s} se llama {o}", "s_disp": subj[:1].upper() + subj[1:], "o_disp": mll.group(2)}]
+        mcj = re.fullmatch(r"\s*((?:el|la|los|las)\s+[^,.:;]+?)\s+(?:es|son|era|eran)\s+(?:el|la)\s+(?:conjunto|grupo|totalidad|colecci[oó]n|serie)\s+de\s+(.+?)\s*[.!]?\s*", sentence, re.I)
+        if mcj:
+            return self._conjunto(mcj, topic, verbs)               # parche-94: "El Sistema Solar es el conjunto de planetas, ... que orbitan ..."
         from datetime import date
         from src.language.fechas import extract_abs
         sentence, abs_iv, abs_disp = extract_abs(sentence, getattr(self, "today", None) or date.today())
