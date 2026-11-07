@@ -162,7 +162,7 @@ def responder(raw):
             h = [x for j in _load()["hyp"].get(i, []) for x in _load()["syn"].get(j, [])[:2]]
             if h:
                 break
-        s_ = [x for x in sinonimos(w, "n") if " " not in x] if ss else []
+        s_ = [x for x in (sinonimos(w, "n") or sinonimos(w)) if " " not in x] if ss else []
         if h:
             return f"Según el léxico, «{orig(w)}» es un tipo de {_lista(h, 3)}." + (f" Otras palabras: {_lista(s_, 4)}." if s_ else "")
         if s_:

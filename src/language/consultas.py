@@ -127,6 +127,11 @@ def canonical(raw: str) -> str:
     if mcar:                                                                  # parche-103: "Dime características de la Tierra" (aunque lleve errata)
         pr_ = mcar.group(1).lower()
         return "¿Qué sabes " + (pr_ if pr_.startswith("de") else "de") + " " + mcar.group(2).strip() + "?"
+    _LOC = r"(?:sistema solar|universo|galaxia|v[ií]a l[aá]ctea|cosmos)"
+    mlo = re.match(r"^[¿\s]*(?:en|dentro d(?:el|e)|d(?:el|e)) (?:el |la )?" + _LOC + r",?\s+(cu[aá]nt[oa]s \w+) (?:hay|existen|tiene|tienen|conoces|sabes)[?\s]*$", body, re.I) \
+        or re.match(r"^[¿\s]*(cu[aá]nt[oa]s \w+) (?:tiene|tienen|posee|hay en|existen en|hay dentro d(?:el|e)|conoces d(?:el|e)) (?:el |la )?" + _LOC + r"[?\s]*$", body, re.I)
+    if mlo:                                                                   # parche-104: "cuantos planetas tiene el sistema solar" / "en el sistema solar cuantos planetas hay"
+        return "¿" + re.sub(r"^cu[aá]nt", "Cuánt", mlo.group(1), flags=re.I) + " hay?"
     mcu = re.match(r"^(?:puedes |podr[ií]as )?(?:contar|cuenta)\s+hasta\s+(\w+)[?.!]*$", body, re.I)
     if mcu:
         return "¿Cuenta hasta " + mcu.group(1) + "?"                          # parche-103: lo contesta Conversation._skills_pre

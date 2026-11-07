@@ -7,3 +7,9 @@ def test_ordenes_no_son_hechos_y_caracteristicas():
     assert not consultas.es_orden("Llama es un animal.") and not consultas.es_orden("Pedro cuenta cuentos.")
     assert consultas.canonical("Dime caracteríricas de la Tierra") == "¿Qué sabes de la Tierra?"
     assert consultas.canonical("puedes contar hasta 10?") == "¿Cuenta hasta 10?"
+
+
+def test_cuantos_en_sistema_solar_y_unidades():
+    assert consultas.canonical("cuántos planetas tiene el sistema solar?") == "¿Cuántos planetas hay?"
+    assert consultas.canonical("en el sistema solar cuantos planetas hay?") == "¿Cuántos planetas hay?"
+    assert consultas.canonical("cuántas lunas tiene Marte?") != "¿Cuántas lunas hay?"

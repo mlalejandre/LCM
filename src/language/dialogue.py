@@ -725,6 +725,74 @@ class Conversation:
         self.d = Dialogue(memory)
         self.topic = None
 
+    _U = {  # unidad -> (magnitud, valor base, singular, plural)
+        "milimetro": ("L", 0.001, "milímetro"), "centimetro": ("L", 0.01, "centímetro"), "decimetro": ("L", 0.1, "decímetro"), "metro": ("L", 1.0, "metro"), "kilometro": ("L", 1000.0, "kilómetro"),
+        "miligramo": ("M", 0.001, "miligramo"), "gramo": ("M", 1.0, "gramo"), "kilogramo": ("M", 1000.0, "kilogramo"), "kilo": ("M", 1000.0, "kilo"), "tonelada": ("M", 1e6, "tonelada"),
+        "mililitro": ("V", 0.001, "mililitro"), "centilitro": ("V", 0.01, "centilitro"), "litro": ("V", 1.0, "litro"),
+        "segundo": ("T", 1.0, "segundo"), "minuto": ("T", 60.0, "minuto"), "hora": ("T", 3600.0, "hora"), "dia": ("T", 86400.0, "día"), "semana": ("T", 604800.0, "semana"), "ano": ("T", 31536000.0, "año")}
+
+    def _unidades(self, t: str) -> Optional[str]:
+        """parche-104: "cuantos metros tiene un kilometro", "cuantos segundos son 2 horas" (conversion de unidades, sin analizador)."""
+        from src.language import skills
+
+        def un(w):
+            w = w.strip()
+            for c in (w, w[:-1], w[:-2]):
+                if c in self._U:
+                    return c
+            return None
+        m = re.match(r"^(?:y )?cuant[oa]s (\w+) (?:tiene|tienen|hay en|caben en|mide|miden|son|equivalen a|hay dentro de|son en) (un|una|uno|\w+) (\w+)$", t)
+        if not m:
+            return None
+        a, b = un(m.group(1)), un(m.group(3))
+        if not a or not b or self._U[a][0] != self._U[b][0]:
+            return None
+        qty = m.group(2)
+        k = 1.0 if qty in ("un", "una", "uno") else (float(qty) if qty.replace(".", "", 1).isdigit() else skills.NUMS.get(qty))
+        if k is None:
+            return None
+        v = k * self._U[b][1] / self._U[a][1]
+        vs = str(int(round(v))) if abs(v - round(v)) < 1e-9 else f"{v:.6g}".replace(".", ",")
+        sa, sb = self._U[a][2], self._U[b][2]
+        pa = sa + ("es" if sa.endswith(("r", "n")) and False else "s")
+        pb = sb + "s"
+        fem = sb in ("hora", "semana", "tonelada")
+        ksh = ("una" if fem else "un") if k == 1 else (str(int(k)) if k == int(k) else str(k).replace(".", ","))
+        left = f"{ksh} {sb if k == 1 else pb}"
+        return f"{left[:1].upper() + left[1:]} {'tiene' if k == 1 else 'son'} {vs} {sa if v == 1 else pa}."
+
+    _MESES_D = {"enero": 31, "febrero": 28, "marzo": 31, "abril": 30, "mayo": 31, "junio": 30, "julio": 31, "agosto": 31, "septiembre": 30, "setiembre": 30, "octubre": 31, "noviembre": 30, "diciembre": 31}
+    _LADOS = {"triangulo": 3, "cuadrado": 4, "rectangulo": 4, "rombo": 4, "trapecio": 4, "pentagono": 5, "hexagono": 6, "heptagono": 7, "octogono": 8, "eneagono": 9, "decagono": 10, "circulo": 0}
+
+    def _hechos_fabrica(self, t: str) -> Optional[str]:
+        """parche-104: conocimiento general de calendario y geometria que no hay que ensenar a nadie (calendario, figuras)."""
+        m = re.match(r"^(?:y )?cuant[oa]s (dias|meses|semanas|horas) (?:tiene|tienen|hay en|son en) (?:un |el |una |la )?(\w+)$", t)
+        if m:
+            u, w = m.group(1), m.group(2)
+            if u == "dias" and w == "ano":
+                return "Un año tiene 365 días (366 si es bisiesto)."
+            if u == "meses" and w == "ano":
+                return "Un año tiene 12 meses."
+            if u == "dias" and w == "mes":
+                return "Un mes tiene entre 28 y 31 días."
+            if u == "dias" and w in self._MESES_D:
+                return f"{w.capitalize()} tiene {self._MESES_D[w]} días" + (" (29 si el año es bisiesto)." if w == "febrero" else ".")
+            if u == "meses" and w == "semestre":
+                return "Un semestre tiene 6 meses."
+            if u == "meses" and w == "trimestre":
+                return "Un trimestre tiene 3 meses."
+            if u == "meses" and w == "bimestre":
+                return "Un bimestre tiene 2 meses."
+        m = re.match(r"^(?:y )?cuant[oa]s (?:lados|vertices|esquinas) tiene (?:un |el |una |la )?(\w+)$", t)
+        if m and m.group(1) in self._LADOS:
+            k = self._LADOS[m.group(1)]
+            nom = {"triangulo": "triángulo", "rectangulo": "rectángulo", "pentagono": "pentágono", "hexagono": "hexágono", "heptagono": "heptágono", "octogono": "octógono", "eneagono": "eneágono", "decagono": "decágono", "circulo": "círculo"}.get(m.group(1), m.group(1))
+            return f"Un {nom} tiene {k} lados." if k else "Un círculo no tiene lados: es una curva cerrada."
+        if re.match(r"^(?:y )?cuant[oa]s (?:continentes|oceanos) (?:hay|existen|tiene la tierra|tiene el planeta)(?: en la tierra| en el mundo| en el planeta)?$", t):
+            return ("Se suelen contar 7 continentes: África, América del Norte, América del Sur, Antártida, Asia, Europa y Oceanía."
+                    if "continentes" in t else "Se suelen contar 5 océanos: Pacífico, Atlántico, Índico, Antártico y Ártico.")
+        return None
+
     def _skills_pre(self, raw: str) -> Optional[str]:
         """parche-103: habilidades que no dependen del analizador ni del enrutador: contar, aritmetica con palabras, dias relativos (hoy/ayer/manana)."""
         from src.language import skills
@@ -741,6 +809,37 @@ class Conversation:
             ans = skills.aritmetica(raw)
             if ans:
                 return ans
+        t2 = skills._words_to_digits(t)
+        mop = re.match(r"^(?:y )?(?:cuanto (?:es|son|da|vale|seria)|calcula|dime) (la mitad|el doble|el triple|el cuadruple|el cuadrado|el cubo|la tercera parte|la cuarta parte|la quinta parte|la decima parte) de (\d+(?:[.,]\d+)?)$", t2) \
+            or re.match(r"^(?:y )?(?:cuanto (?:es|son|da|vale|seria)|calcula) (\d+(?:[.,]\d+)?) (?:elevado )?al (cuadrado|cubo)$", t2)
+        if mop:                                                                        # parche-104: "la mitad de 50", "el cuadrado de 9", "3 al cuadrado"
+            if mop.group(2) in ("cuadrado", "cubo"):
+                x, oper = float(mop.group(1).replace(",", ".")), mop.group(2)
+            else:
+                x, oper = float(mop.group(2).replace(",", ".")), mop.group(1)
+            f = {"la mitad": lambda v: v / 2, "el doble": lambda v: v * 2, "el triple": lambda v: v * 3, "el cuadruple": lambda v: v * 4, "el cuadrado": lambda v: v ** 2, "cuadrado": lambda v: v ** 2,
+                 "el cubo": lambda v: v ** 3, "cubo": lambda v: v ** 3, "la tercera parte": lambda v: v / 3, "la cuarta parte": lambda v: v / 4, "la quinta parte": lambda v: v / 5, "la decima parte": lambda v: v / 10}[oper]
+            r = f(x)
+            fm = lambda v: str(int(round(v))) if abs(v - round(v)) < 1e-9 else f"{v:.6g}".replace(".", ",")
+            if oper in ("cuadrado", "cubo"):
+                return f"{fm(x)} al {oper} es {fm(r)}."
+            return f"{oper.capitalize()} de {fm(x)} es {fm(r)}."
+        fab = self._hechos_fabrica(t)
+        if fab:
+            return fab
+        mrel = re.match(r"^(?:y )?(?:que|cual) (?:dia|fecha|dia de la semana) (?:fue|era|es|sera|seria|va a ser|toca|cae|caera|caia) (hace|dentro de|en) (\w+) (dias?|semanas?)$", t) \
+            or re.match(r"^(?:y )?(hace|dentro de|en) (\w+) (dias?|semanas?) (?:que|cual) (?:dia|fecha|dia de la semana) (?:fue|era|es|sera|seria|va a ser|toca|cae|caera|caia)$", t)
+        if mrel:                                                                       # parche-104: "que dia fue hace 4 dias" / "dentro de 10 dias que dia sera"
+            k = int(mrel.group(2)) if mrel.group(2).isdigit() else skills.NUMS.get(mrel.group(2))
+            if k is not None and 0 <= k <= 100000:
+                k *= 7 if mrel.group(3).startswith("semana") else 1
+                past = mrel.group(1) == "hace"
+                d = self.d._today() + timedelta(days=-k if past else k)
+                meses_ = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+                return f"{'Hace' if past else 'Dentro de'} {mrel.group(2)} {mrel.group(3).replace('dia', 'día')} {'fue' if past else 'será'} {DAYS[d.weekday()]}, {d.day} de {meses_[d.month - 1]} de {d.year}."
+        uni = self._unidades(t)
+        if uni:
+            return uni
         m = re.match(r"^(?:y )?(?:que|cual) (?:dia|fecha|dia de la semana) (?:fue|era|es|sera|seria|va a ser|va a a ser|vamos a tener|toca) (hoy|ayer|anteayer|antes de ayer|manana|pasado manana)$", t) \
             or re.match(r"^(hoy|ayer|anteayer|antes de ayer|manana|pasado manana) (?:que|cual) (?:dia|fecha) (?:fue|era|es|sera|va a ser|va a a ser)$", t)
         if m:
