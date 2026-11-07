@@ -787,7 +787,8 @@ class Conversation:
         if m and m.group(1) in self._LADOS:
             k = self._LADOS[m.group(1)]
             nom = {"triangulo": "triángulo", "rectangulo": "rectángulo", "pentagono": "pentágono", "hexagono": "hexágono", "heptagono": "heptágono", "octogono": "octógono", "eneagono": "eneágono", "decagono": "decágono", "circulo": "círculo"}.get(m.group(1), m.group(1))
-            return f"Un {nom} tiene {k} lados." if k else "Un círculo no tiene lados: es una curva cerrada."
+            pal = {3: "tres", 4: "cuatro", 5: "cinco", 6: "seis", 7: "siete", 8: "ocho", 9: "nueve", 10: "diez"}.get(k, str(k))          # parche-105: en palabras, como contesta la memoria
+            return f"Un {nom} tiene {pal} lados." if k else "Un círculo no tiene lados: es una curva cerrada."
         if re.match(r"^(?:y )?cuant[oa]s (?:continentes|oceanos) (?:hay|existen|tiene la tierra|tiene el planeta)(?: en la tierra| en el mundo| en el planeta)?$", t):
             return ("Se suelen contar 7 continentes: África, América del Norte, América del Sur, Antártida, Asia, Europa y Oceanía."
                     if "continentes" in t else "Se suelen contar 5 océanos: Pacífico, Atlántico, Índico, Antártico y Ártico.")
@@ -865,6 +866,15 @@ class Conversation:
                 self.d.last = sp_
                 return sp_
         if self.d.pending or not (is_question(raw) or is_question(consultas.canonical(raw))):
+            if not self.d.pending:
+                try:                                                                # parche-105: "Dime cinco frutas", "gato es a felino como perro es a ?"
+                    from src.language import conceptos
+                    ord_ = conceptos.antes_orden(raw, self.m)
+                except Exception:                                                   # noqa
+                    ord_ = None
+                if ord_:
+                    self.d.last, self.d.pending = ord_, None
+                    return ord_
             return self._say1(raw)
         try:
             from src.language import conceptos                                      # parche-99: "que es un X" (la memoria solo conoce ejemplares) y "en que se parecen A y B"

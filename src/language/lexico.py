@@ -132,7 +132,8 @@ def responder(raw):
         mm = next((x for x in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑüÜ]+", raw) if nrm(x) == w), None)
         return mm or w
 
-    m = re.match(r"(?:cual es |cuales son |dime |dame )?(?:el |los |un |algun )?(?:sinonimos?|palabras? (?:parecidas?|equivalentes?)) (?:de |a |para )(?:la palabra )?(.+)$", t) \
+    m = re.match(r"(?:cual es |cuales son |que es |que seria |dime |dame |dime tambien |y )?(?:el |los |un |algun |otro )?(?:sinonimos?|palabras? (?:parecidas?|equivalentes?)) (?:de |a |para )(?:la palabra )?(.+)$", t) \
+        or re.match(r"(?:que|cual) (?:palabra )?(?:es|seria|puede ser) (?:un |el )?sinonimo (?:de|a|para) (?:la palabra )?(.+)$", t) \
         or re.match(r"(?:dime |dame |que |cual )?(?:otra|otras) palabras? (?:hay |existe |puedo usar |se puede usar )?(?:para|por|de) (?:la palabra )?(.+)$", t) \
         or re.match(r"como se dice (.+) de otra (?:forma|manera)$", t) or re.match(r"que palabra significa (?:lo mismo que|igual que) (.+)$", t)
     if m:
@@ -142,7 +143,8 @@ def responder(raw):
             if r:
                 return f"Según el léxico, otras palabras para «{orig(w)}»: {_lista(r)}."
         return None
-    m = re.match(r"(?:cual es |cuales son |dime |dame )?(?:el |los |un |algun )?(?:antonimos?|opuestos?|contrarios?) (?:de |a )(?:la palabra )?(.+)$", t) \
+    m = re.match(r"(?:cual es |cuales son |que es |que seria |dime |dame |y )?(?:el |los |un |algun )?(?:antonimos?|opuestos?|contrarios?) (?:de |a )(?:la palabra )?(.+)$", t) \
+        or re.match(r"(?:que|cual) (?:palabra )?(?:es|seria|puede ser) (?:un |el )?(?:antonimo|opuesto|contrario) (?:de|a|para) (?:la palabra )?(.+)$", t) \
         or re.match(r"(?:cual es )?lo (?:contrario|opuesto) (?:de|a) (.+)$", t) or re.match(r"que palabra significa lo contrario (?:de|que) (.+)$", t)
     if m and len(m.group(1).split()) <= 3:
         w = m.group(1).split()[-1]

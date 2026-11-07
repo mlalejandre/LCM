@@ -6,3 +6,8 @@ data/conceptos.json.gz se construye con scripts/construir_conceptos.py a partir 
      - portugues: OpenWN-PT, CC BY-SA 4.0
      - frances: WOLF (Wordnet Libre du Francais), licencia CeCILL-C
 Para retirarlo del modelo basta borrar data/conceptos.json.gz (todo sigue funcionando sin el).
+
+parche-105 (data/definiciones.json.gz, grafo de definiciones)
+ - Derivado de Princeton WordNet 3.0 (licencia WordNet, ver arriba): glosas enlazadas a conceptos, relaciones de cualidad, similitud, derivacion, implicacion, causa, tema y pertenencia.
+   Se genera con scripts/construir_definiciones.py a partir de los mismos ficheros de WordNet y de data/conceptos.json.gz.
+ - Las tablas FUNCION (para que sirve un objeto), PROFESION (a que se dedica un oficio) y ETIQUETA_ES / SUPLEMENTO (nombres corrientes de categorias y huecos del MCR) son conocimiento propio del proyecto.

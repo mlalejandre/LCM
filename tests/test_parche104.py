@@ -21,7 +21,7 @@ def _conv():
 
 
 @pytest.mark.parametrize("q,exp", [("cuántos metros tiene un kilómetro?", "1000 metros"), ("cuántos segundos tiene una hora?", "3600 segundos"), ("cuántos días tiene un año", "365"),
-                                   ("cuántos días tiene febrero", "28"), ("cuántos lados tiene un triángulo", "3 lados"), ("cuánto es la mitad de 50", "25"),
+                                   ("cuántos días tiene febrero", "28"), ("cuántos lados tiene un triángulo", "tres lados"), ("cuánto es la mitad de 50", "25"),
                                    ("cuánto son 3 al cuadrado", "9"), ("cuenta hasta 5", "1, 2, 3, 4, 5"), ("cuanto son dos mas dos", "4")])
 def test_habilidades(q, exp):
     assert exp in _conv()._skills_pre(q)

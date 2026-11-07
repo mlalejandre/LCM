@@ -322,6 +322,14 @@ def main():
             except Exception:                                  # noqa
                 _q = False
             if not _q and _cs.es_orden(raw):                   # parche-103: una orden no es un hecho: no se aprende
+                try:                                           # parche-105: pero "dime cinco frutas" es una pregunta de diccionario
+                    from src.language import conceptos as _cn
+                    _r = _cn.antes_orden(raw, memory)
+                except Exception:                              # noqa
+                    _r = None
+                if _r:
+                    print("[respuesta] " + _r + "\n")
+                    return
                 print("[respuesta] Eso parece una orden y no un hecho, así que no lo guardo. Todavía no sé hacerlo; si quieres saber algo, pregúntamelo con ¿…?\n")
                 return
             if _q:                                             # parche-103: pregunta (con o sin signos, "dime un sinonimo de perro"): capa completa de preguntas

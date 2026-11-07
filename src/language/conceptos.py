@@ -24,6 +24,21 @@ ALTO = {"object", "physical entity", "entity", "whole", "abstraction", "thing", 
 SUPLEMENTO = {"mamifero": "mammal", "mamiferos": "mammal", "ballena": "whale@cetacean", "delfin": "dolphin@toothed whale", "bicicleta": "bicycle", "cometa": "comet", "azul": "blue", "cuerpo celeste": "celestial body",
               "astro": "celestial body", "ave": "bird", "reptil": "reptile", "anfibio": "amphibian", "insecto": "insect", "pez": "fish", "tierra": "earth", "satelite": "satellite", "asteroide": "asteroid",
               "vehiculo": "vehicle", "herramienta": "tool", "fruta": "fruit", "verdura": "vegetable", "mueble": "furniture", "ropa": "clothing", "metal": "metal", "roca": "rock", "gas": "gas"}
+SUPLEMENTO.update({"felino": "feline@", "canido": "canine@carnivorous", "carnivoro": "carnivore@", "herbivoro": "herbivore@", "roedor": "rodent@", "primate": "primate@", "ungulado": "ungulate@", "cetaceo": "cetacean@",
+                   "marsupial": "marsupial@", "artropodo": "arthropod@", "molusco": "mollusk@", "crustaceo": "crustacean@", "martes": "Tuesday@third day", "lunes": "Monday@", "miercoles": "Wednesday@", "jueves": "Thursday@",
+                   "viernes": "Friday@", "sabado": "Saturday@", "domingo": "Sunday@", "vegetal": "plant@a living organism", "animal": "animal@a living organism", "martillo": "hammer@hand tool", "lapiz": "pencil@writing implement", "tijeras": "scissors@edge tool", "tijera": "scissors@edge tool", "tenedor": "fork@cutlery", "rana": "frog@tailless",
+                   "corazon": "heart@hollow muscular organ", "reina": "queen@female sovereign", "fuego": "fire@process of combustion", "papel": "paper@material made of cellulose", "cuaderno": "notebook@book with blank pages",
+                   "mochila": "backpack@bag carried", "gafas": "eyeglasses@optical instrument", "falda": "skirt@garment", "guante": "glove@handwear: covers", "cinturon": "belt@band to tie", "peine": "comb@flat device",
+                   "cepillo": "brush@implement", "horno": "oven@kitchen appliance", "sello": "stamp@small adhesive token", "equipo": "team@cooperative unit", "cama": "bed@piece of furniture", "llave": "key@metal device",
+                   "gallo": "cock@adult male chicken", "perro": "dog@member of the genus Canis", "gato": "cat@feline mammal", "caballo": "horse@solid-hoofed", "vaca": "cow@female of domestic cattle", "oveja": "sheep@woolly",
+                   "cerdo": "pig@domestic swine", "pato": "duck@small wild or domestic", "conejo": "rabbit@any of various burrowing", "raton": "mouse@any of numerous small rodents", "mono": "monkey@any of various long-tailed",
+                   "elefante": "elephant@five-toed pachyderm", "lobo": "wolf@any of various predatory", "oso": "bear@massive plantigrade", "zorro": "fox@alert carnivorous mammal", "tortuga": "turtle@any of various aquatic",
+                   "lluvia": "rain@water falling in drops", "nube": "cloud@visible mass of water", "viento": "wind@air moving", "cielo": "sky@atmosphere and outer space", "estrella": "star@(astronomy) a celestial body",
+                   "montana": "mountain@land mass that projects", "rio": "river@large natural stream", "mar": "sea@division of an ocean", "arbol": "tree@tall perennial woody plant", "flor": "flower@reproductive organ",
+                   "hoja": "leaf@organ of photosynthesis", "fruta": "fruit@edible reproductive body", "manzana": "apple@fruit with red or yellow", "naranja": "orange@round yellow to orange fruit", "platano": "banana@elongated crescent-shaped",
+                   "pan": "bread@food made from dough", "leche": "milk@a white nutritious liquid", "agua": "water@binary compound", "sal": "salt@white crystalline", "azucar": "sugar@a white crystalline carbohydrate",
+                   "casa": "house@a dwelling", "coche": "car@a motor vehicle", "ciudad": "city@a large and densely populated", "pais": "country@a politically organized", "escuela": "school@an educational institution",
+                   "libro": "book@a written work", "mesa": "table@a piece of furniture having a smooth flat top", "silla": "chair@a seat for one person", "ventana": "window@a framework of wood", "puerta": "door@a swinging or sliding barrier"})
 _ART = {"un", "una", "unos", "unas", "el", "la", "los", "las", "al", "del", "lo", "tipo", "clase", "de", "cierto", "algun", "alguna", "otro", "otra"}
 
 
@@ -94,16 +109,18 @@ def conceptos(palabra, lengua=None, solo_nombres=True):
     if not d["ok"]:
         return []
     w = nrm(palabra)
+    w0 = w
     hits = d["idx"].get(w)
-    if not hits:
+    if not hits or w.endswith("s"):                                  # "gatos": si el singular existe y se usa mas, manda el singular (el plural exacto puede ser otro concepto: gatos = latigo)
         for s_ in _sing(w):
-            hits = d["idx"].get(s_)
-            if hits:
-                w = s_
+            h2 = d["idx"].get(s_)
+            if h2 and (not hits or max(d["freq"][c] for _l, c in h2 if _l == "es" or not any(x[0] == "es" for x in h2)) > max(d["freq"][c] for _l, c in hits)):
+                hits, w = h2, s_
                 break
     pre = []
-    if w in SUPLEMENTO and lengua is None:                       # huecos del MCR: el concepto va primero
-        lem_, _, pista = SUPLEMENTO[w].partition("@")
+    if (w0 in SUPLEMENTO or w in SUPLEMENTO) and lengua is None:                       # huecos del MCR: el concepto va primero
+        lem_, _, pista = SUPLEMENTO[w0 if w0 in SUPLEMENTO else w].partition("@")
+        lem_ = lem_.lower()
         pre = [c for lg_, c in d["idx"].get(lem_, []) if lg_ == "en" and (not solo_nombres or d["pos"][c] == "n") and pista in d["gloss"][c]]
         pre.sort(key=lambda c: (-d["fen"].get(c, {}).get(lem_, 0), -d["freq"][c]))
         pre = pre[:1]
@@ -118,23 +135,57 @@ def conceptos(palabra, lengua=None, solo_nombres=True):
     for _lg, c in hits:
         if c not in cs and (not solo_nombres or d["pos"][c] == "n"):
             cs.append(c)
-    cs = sorted(cs, key=lambda c: (-d["fen"].get(c, {}).get(w, 0), -d["freq"][c]))
+    en_ = lengua == "en" or not any(h[0] == "es" for h in d["idx"].get(nrm(palabra), []) or [])
+    cs = sorted(cs, key=lambda c: (-_peso(c, w, en_), -d["freq"][c]))
     return pre + [c for c in cs if c not in pre]
+
+
+_REGISTRO = re.compile(r"^(?:\((?:slang|informal|vulgar|offensive|derogatory|mythology)|insulting|a coarse|a person who is|someone who is|a (?:stupid|foolish|despicable)|terms? (?:of|for)|disparaging|\(roman|\(greek|\(often followed|\(usually|alternative names? for|type genus|genus of|family of|an? (?:genus|family|order|class) )", re.I)
+
+
+def _peso(c, w, en_):
+    """Peso de un sentido para ordenar: el uso del lema SOLO si la palabra es inglesa (una palabra espanola puede coincidir por azar con un lema ingles: mesa, pan, sol); los sentidos
+    vulgares, figurados o mitologicos pierden peso. Los nombres propios (mayuscula) tambien."""
+    d = _D
+    p = d["fen"].get(c, {}).get(w, 0) if en_ else 0
+    if _REGISTRO.match(d["gloss"][c]) or all(x[:1].isupper() for x in d["lem"]["en"].get(c, ["x"])):
+        p -= 100000
+    return p
 
 
 def lengua_de(palabra):
     d = _load()
-    hits = d["idx"].get(nrm(palabra)) or []
+    w = nrm(palabra)
+    hits = list(d["idx"].get(w) or [])
+    if not any(lg == "es" for lg, _ in hits):                         # "gatos": el plural cuenta como la palabra espanola "gato"
+        for s_ in _sing(w):
+            hits += [h for h in d["idx"].get(s_, []) if h[0] == "es"]
     return sorted({lg for lg, _ in hits})
+
+
+# nombres espanoles corrientes de categorias que el MCR da solo en latin cientifico o no da (parche-105)
+ETIQUETA_ES = {"mammal": "mamífero", "carnivore": "carnívoro", "bird": "ave", "reptile": "reptil", "amphibian": "anfibio", "insect": "insecto", "fish": "pez", "vertebrate": "vertebrado", "plant": "planta",
+                "fruit": "fruta", "vegetable": "verdura", "tool": "herramienta", "vehicle": "vehículo", "furniture": "mueble", "wheeled vehicle": "vehículo con ruedas", "primate": "primate", "rodent": "roedor",
+                "feline": "felino", "canine": "cánido", "herbivore": "herbívoro", "ungulate": "ungulado", "cetacean": "cetáceo", "marsupial": "marsupial", "arthropod": "artrópodo", "mollusk": "molusco",
+                "crustacean": "crustáceo", "musical instrument": "instrumento musical", "container": "recipiente", "building": "edificio", "food": "alimento", "beverage": "bebida", "liquid": "líquido",
+                "celestial body": "cuerpo celeste", "body part": "parte del cuerpo", "weapon": "arma", "device": "dispositivo", "machine": "máquina", "utensil": "utensilio", "placental": "mamífero placentario",
+                "chordate": "cordado", "organism": "ser vivo", "animal": "animal", "poultry": "ave de corral", "domestic animal": "animal doméstico", "pachyderm": "paquidermo", "equine": "équido", "bovine": "bóvido",
+                "clothing": "ropa", "garment": "prenda", "footwear": "calzado", "jewelry": "joyería", "toy": "juguete", "appliance": "electrodoméstico", "electronic equipment": "equipo electrónico", "cutlery": "cubertería"}
 
 
 def etiqueta(c, lengua="es"):
     """Nombre del concepto en una lengua (la palabra sencilla mas corta primero); None si no tiene."""
     d = _load()
     ws = d["lem"].get(lengua, {}).get(c)
+    if lengua == "es":
+        for e in d["lem"]["en"].get(c, []):
+            if e in ETIQUETA_ES and (not ws or ETIQUETA_ES[e] in ws or any(w.lower() in TAXON for w in ws)):
+                return ETIQUETA_ES[e]
     if not ws:
         return None
-    ok = [w for w in ws if " " not in w and not w[:1].isupper()] or [w for w in ws if not w[:1].isupper()] or ws
+    gen = {x.lower() for x in d["lem"]["en"].get(c, []) if x[:1].isupper()}                  # nombre cientifico (fagus, albizia): solo si no hay otro
+    ws2 = [w for w in ws if w.lower() not in gen] or ws
+    ok = [w for w in ws2 if " " not in w and not w[:1].isupper()] or [w for w in ws2 if not w[:1].isupper()] or ws2
     return ok[0]
 
 
@@ -165,6 +216,9 @@ def ascendentes(c, max_niv=12):
     return out
 
 
+OMITIR = {"mamífero placentario", "cordado", "euterios", "ser vivo"}                       # categorias reales pero poco informativas para una persona
+
+
 def cadena(c, n=5):
     """Camino principal hacia arriba con nombres en espanol (sin los niveles demasiado abstractos)."""
     d = _load()
@@ -173,17 +227,23 @@ def cadena(c, n=5):
         vistos.add(x)
         if x != c:
             for lab, dst in ((etiqueta(x), es), (etiqueta(x, "en"), en)):
-                if lab and lab.lower() not in ALTO and lab.lower() not in TAXON and lab not in dst:
+                if lab and lab.lower() not in ALTO and lab.lower() not in TAXON and lab not in dst and lab not in OMITIR:
                     dst.append(lab)
         ts = d["hyp"].get(x, [])
         x = ts[0] if ts else None
     return (es if len(es) >= 2 else es + [e for e in en if e not in es])[:n]
 
 
+def es_genero(x):
+    """True si el concepto es un genero o taxon cientifico (fagus, albizia): su nombre en espanol es el latin."""
+    e = (etiqueta(x) or "").lower()
+    return any(w[:1].isupper() and w.lower() == e for w in _load()["lem"]["en"].get(x, []))
+
+
 def tipos(c, n=8):
     """Subtipos directos con nombre en espanol, los mas usados primero."""
     d = _load()
-    hs = [h for h in d["hypo"].get(c, []) if etiqueta(h)]
+    hs = [h for h in d["hypo"].get(c, []) if etiqueta(h) and not es_genero(h)]
     hs.sort(key=lambda h: -d["freq"][h])
     out = []
     for h in hs:
@@ -228,6 +288,19 @@ def vector(c):
         for k in ("parte", "miembro", "sustancia"):
             for t in d[k].get(c, []):
                 v[(k, t)] = 0.4
+        try:
+            from src.language import definiciones as _df                  # parche-105: lo que menciona su definicion y lo que hace aportan rasgos
+            X = _df._load()
+            if X["ok"]:
+                for t in X["gl"].get(c, []):
+                    v[("g", t)] = 0.25
+                for t in X["deriv"].get(c, []):
+                    v[("g", t)] = max(v.get(("g", t), 0), 0.3)
+                u = X["uso"].get(c)
+                if u and u[0] is not None:
+                    v[("g", u[0])] = 0.35
+        except ImportError:
+            pass
         d["vec"][c] = v
     return v
 
@@ -306,7 +379,7 @@ def _ruta(c, objetivo):
     d = _load()
     while x is not None:
         lab = etiqueta(x)
-        if lab and lab.lower() not in TAXON and lab not in out:
+        if lab and lab.lower() not in TAXON and lab not in out and (lab not in OMITIR or x == objetivo or x == c):
             out.append(lab)
         if x == objetivo:
             return out
@@ -329,10 +402,15 @@ def describir(palabra, mem=None):
     """Ficha en prosa del concepto al que se refiere la palabra (sentido mas usado)."""
     cs = conceptos(palabra)
     if not cs:
-        return None
+        try:
+            from src.language import definiciones as _df                  # parche-105: adjetivos y verbos (abstracto, correr)
+            return _df.describir_otro(palabra)
+        except ImportError:
+            return None
     c = cs[0]
     ft = caracteristicas(c)
     palabra = _vo(palabra)
+    ft["tipo_de"] = [x for x in ft["tipo_de"] if nrm(x) != nrm(palabra)]
     nom = palabra if (any(nrm(n_) == nrm(palabra) for n_ in ft["nombres"]) or nrm(palabra) in SUPLEMENTO or not ft["nombres"]) else (ft["nombres"][0] if ft["nombres"] else (ft["en"][0] if ft["en"] else palabra))
     lg = lengua_de(palabra)
     pre = ""
@@ -356,6 +434,12 @@ def describir(palabra, mem=None):
     for k, txt in (("partes", "Partes"), ("miembros", "Miembros"), ("sustancias", "Hecho de")):
         if ft[k]:
             out += f" {txt}: {_lista(ft[k][:5])}."
+    try:
+        from src.language import definiciones as _df                  # parche-105: para que sirve, actividad, contrarios, lo que menciona su definicion
+        for x in _df.ampliar(c, palabra):
+            out += " " + x
+    except ImportError:
+        pass
     if ft["subtipos"]:
         out += f" Algunos tipos: {_lista(ft['subtipos'][:6])}."
     if len(cs) > 1:
@@ -419,6 +503,13 @@ def responder(raw, mem=None):
     if _propio(raw) and not re.match(r"[¿\s]*(?:es|son)\b", nrm(raw)) and not re.search(r"\b(?:se parecen|en comun)\b", nrm(raw)):
         return None
     t = re.sub(r"\s+", " ", re.sub(r"[¡!¿?.,;:\"«»]", " ", nrm(raw))).strip()
+    try:
+        from src.language import definiciones as _df                  # parche-105: grafo de definiciones (para que sirve, relacion entre, intruso, analogias, ejemplos...)
+        r_ = _df.responder(re.sub(r"\s+", " ", re.sub(r"[¡!¿?.;\"«»]", " ", nrm(raw))).strip().replace(" :", ":"), raw, mem) or _df.responder(t, raw, mem)
+        if r_:
+            return r_
+    except ImportError:
+        pass
     # traduccion
     m = re.match(r"(?:como )?se dice (.+?) en (\w+)$", t) or re.match(r"(?:cual es|dime|dame) (?:la palabra para |el nombre de |la traduccion de )?(.+?) en (\w+)$", t) \
         or re.match(r"(?:como )?(?:se llama|se traduce) (.+?) en (\w+)$", t) or re.match(r"traduce (.+?) al (\w+)$", t)
@@ -540,6 +631,37 @@ def antes(raw, mem=None):
         return "Según mi diccionario de conceptos: " + r + (f" Según lo que me has contado, conozco: {_lista(ej[:6])}." if ej else "")
     if re.match(r"en que se parecen .+ y .+$", t) or re.match(r"que (?:tienen|tiene) en comun .+ y .+$", t):
         return responder(raw, mem)
+    if re.search(r"\b(?:no encaja|no pertenece|sobra|intruso|se parece mas|es mas parecid[oa]|relacion (?:hay )?entre|tienen? que ver|como se relacion\w+|es a .+ como .+ es a)\b", t) \
+            or re.match(r"(?:y )?(?:dime|dame|nombra|cita|menciona|enumera|define|defineme|definicion de|dime la definicion de|cual es la definicion de|que entiendes por|como se llama un (?:grupo|conjunto)|para que (?:sirve|sirven|se usa|se usan|se utiliza)|que hace un|que hacen los|a que se dedica|de que (?:es|son) (?:parte|miembro)|a que pertenece)\b", t) \
+            or re.match(r"(?:y )?(?:es|son) \w+ \w+ \w+ o \w+", t):
+        if _conoce(mem, t):
+            return None                                                              # la persona ha hablado de eso: manda la memoria
+        return responder(raw, mem)
+    return None
+
+
+_VACIAS = {"que", "para", "sirve", "sirven", "hace", "hacen", "un", "una", "el", "la", "los", "las", "de", "del", "es", "son", "y", "o", "entre", "relacion", "dime", "dame", "nombra", "define", "cual", "como", "se", "usa", "tipo", "tipos",
+           "parte", "grupo", "conjunto", "llama", "a", "se", "dedica", "cita", "menciona", "enumera", "tres", "cinco", "dos", "cuatro", "algunos", "ejemplos", "tiene", "ver", "con", "encaja", "sobra", "parece", "mas", "pertenece", "miembro"}
+
+
+def _conoce(mem, t):
+    """True si la memoria tiene hechos sobre alguna palabra de la pregunta que NO es una clase de fabrica (Rex, mi hermana...): entonces responde la memoria."""
+    ws = [w for w in t.split() if w not in _VACIAS and len(w) > 2]
+    for f in getattr(mem, "facts", []):
+        sj = nrm(f["s"])
+        if any(sj == w or _st(sj) == _st(w) for w in ws) and (not _es_clase(mem, f["s"]) or f.get("source") != "semilla"):
+            return True
+    return False
+
+
+def antes_orden(raw, mem=None):
+    """parche-105: ordenes y frases con signos raros que son preguntas de concepto ("Dime cinco frutas", "gato es a felino como perro es a ?"). None si no aplica."""
+    if not disponible():
+        return None
+    t = re.sub(r"\s+", " ", re.sub(r"[¡!¿?.;\"«»]", " ", nrm(raw))).strip()
+    if re.match(r"(?:y )?(?:dime|dame|nombra|cita|menciona|enumera|define|defineme|ponme|lista)\b", t) or re.search(r"\bes a .+ como .+ es a\b", t) \
+            or re.search(r"\b(?:no encaja|no pertenece|sobra|intruso|se parece mas)\b", t):
+        return antes(raw, mem)
     return None
 
 

@@ -1,21 +1,44 @@
-CICLO 20261107-175420-607445
-  TESTS UNITARIOS: 155 passed in 3.06s
+CICLO 20261107-192256-165269
+      escrito data/definiciones.json.gz
+      escrito data/CONCEPTOS_LICENCIAS.txt
+      escrito scripts/check.py
+      escrito scripts/think.py
+      escrito src/language/conceptos.py
+      escrito src/language/dialogue.py
+      escrito src/language/lexico.py
+      escrito tests/test_parche104.py
+      escrito src/language/definiciones.py
+      escrito scripts/construir_definiciones.py
+      escrito tests/test_parche105.py
+      escrito data/textos/sistema_solar_examen9.tsv
+    parche-105 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261107-192256-300060
+  parche parche-105.py: aplicado
+  TESTS UNITARIOS: 189 passed in 3.47s
   RESUMEN: TODO CUMPLE
-    nucleo_44: 97.7% -> 95.5%  EMPEORA
-    nucleo_ciego_25: 100.0% -> 96.0%  EMPEORA
-  [OK] reproducibilidad/manifiesto.json: 195 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
-     metricas de referencia: 41 (de reports/historial.json)
+    dialogo_65: 100.0% -> 96.9%  EMPEORA
+    definiciones_29: 100.0% -> 96.5%  EMPEORA
+    nucleo_44: 95.5% -> 97.7%  MEJORA
+    nucleo_ciego_25: 96.0% -> 100.0%  MEJORA
+  [OK] reproducibilidad/manifiesto.json: 199 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+     metricas de referencia: 42 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M reports/historial.json
+M data/CONCEPTOS_LICENCIAS.txt
+ M reports/historial.json
  M reproducibilidad/manifiesto.json
- M src/language/consultas.py
+ M scripts/check.py
+ M scripts/think.py
+ M src/language/conceptos.py
  M src/language/dialogue.py
  M src/language/lexico.py
- M tests/test_parche103.py
-?? parche-104.py
-?? tests/test_parche104.py
+ M tests/test_parche104.py
+?? data/definiciones.json.gz
+?? data/textos/sistema_solar_examen9.tsv
+?? parche-105.py
+?? scripts/construir_definiciones.py
+?? src/language/definiciones.py
+?? tests/test_parche105.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

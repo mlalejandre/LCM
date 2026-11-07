@@ -1,0 +1,63 @@
+# Examen 9 (parche-105): GRAFO DE DEFINICIONES: para que sirve, que hace, relacion entre conceptos, intruso, parecido, analogias, ejemplos, adjetivos y verbos. Informativo.
+SEMILLA: fabrica
+U: ¿Para qué sirve un martillo?	golpear
+U: ¿Para qué sirve un paraguas?	lluvia
+U: ¿Para qué sirve una brújula?	orientarse
+U: ¿Para qué sirve un termómetro?	temperatura
+U: ¿Para qué se usa una escoba?	barrer
+U: Para qué sirve una cuchara	comer
+U: ¿Para qué sirve una llave?	cerraduras
+U: ¿Para qué sirve un reloj?	tiempo
+U: ¿Para qué sirve un libro?	leer
+U: ¿Para qué sirve una bicicleta?	pedaleando
+U: ¿Para qué sirve un hospital?	curar
+U: ¿Para qué sirve una escuela?	enseñar
+U: ¿Qué hace un bombero?	incendios
+U: ¿Qué hace un cartero?	cartas
+U: ¿Qué hace un juez?	juzgar
+U: ¿Qué hace un piloto?	aviones
+U: ¿Qué hace un granjero?	animales
+U: ¿A qué se dedica un profesor?	enseñar
+U: ¿A qué se dedica un médico?	enfermos
+U: ¿Qué relación hay entre un perro y un lobo?	cánido
+U: ¿Qué relación hay entre un perro y un gato?	carnívoro
+U: ¿Qué relación hay entre un pez y un tiburón?	tipo de «pez»
+U: ¿Qué relación hay entre la leche y el queso?	leche
+U: ¿Qué relación hay entre un coche y una rueda?	rueda
+U: ¿Qué relación hay entre el sol y la luz?	luz
+U: ¿Cómo se relacionan un gato y un tigre?	felino
+U: ¿Cuál no encaja: perro, gato, mesa?	«mesa»
+U: ¿Cuál sobra: manzana, pera, silla, plátano?	«silla»
+U: ¿Cuál no encaja: rojo, azul, mesa, verde?	«mesa»
+U: ¿Cuál sobra: lunes, martes, enero, viernes?	«enero»
+U: ¿Cuál no encaja: guitarra, piano, violín, martillo?	«martillo»
+U: ¿Qué se parece más a un perro: un gato o un coche?	«gato»
+U: ¿Qué es más parecido a una silla, una mesa o una nube?	«mesa»
+U: ¿Qué se parece más a un tigre: un gato o un pez?	«gato»
+U: gato es a felino como perro es a ?	cánido
+U: alto es a bajo como rápido es a ?	lento
+U: Dime cinco frutas	pera
+U: Nombra cuatro herramientas	cuchillo
+U: Dame ejemplos de instrumentos musicales	guitarra
+U: ¿De qué es parte una rueda?	vehículo
+U: ¿Un perro es un animal o un vegetal?	no de «vegetal»
+U: Define perro	cánido
+U: ¿Cómo definirías un hospital?	centro de salud
+U: ¿Qué quiere decir feliz?	triste
+U: ¿Qué significa abstracto?	concreto
+U: ¿Qué sabes de las abejas?	insecto
+U: Háblame de los gatos	felino
+U: Cuéntame algo sobre el sol	estrella
+U: ¿Qué es un sinónimo de rápido?	veloz
+U: ¿Qué es una mesa?	mueble
+U: ¿Qué es el pan?	alimento
+U: ¿De qué está hecho el pan?	masa
+U: ¿Qué es un martillo?	Sirve para golpear
+U: ¿Qué es un tomate?	verdura
+U: ¿Qué partes tiene una bicicleta?	sillín
+U: ¿Cómo se dice mesa en inglés?	table
+U: ¿Qué es la lluvia?	precipitación
+U: ¿Qué es el amor?	Lo contrario: odio
+U: ¿Qué significa correr?	verbo
+U: ¿Cuántos lados tiene un triángulo?	tres
+U: ¿Cuántos metros tiene un kilómetro?	1000
