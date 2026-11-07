@@ -797,6 +797,18 @@ class QA:
         return f"No lo sé: sé que {disp} es {cdisp}, pero no que sea {q.group(3)}."
 
     def _answer_base(self, question: str) -> str:
+        r = self._answer_base0(question)
+        if r.startswith(("No lo sé", "No he entendido", "Eso no me consta")):
+            try:
+                from .lectura_qa import responder
+                r2 = responder(self, question)
+            except Exception:                                                  # noqa
+                r2 = None
+            if r2:
+                return r2
+        return r
+
+    def _answer_base0(self, question: str) -> str:
         past = getattr(self.m, "past", [])
         if past and self._wants_past(question):
             saved = self.m.facts

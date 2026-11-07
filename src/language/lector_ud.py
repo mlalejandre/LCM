@@ -43,10 +43,26 @@ class Arbol:
         self.r = rows
         self.n = len(rows)
         self.h = [x[2] - 1 for x in rows]
+        self._sanear()
         self.k: List[List[int]] = [[] for _ in rows]
         for i, h in enumerate(self.h):
             if 0 <= h < self.n:
                 self.k[h].append(i)
+
+    def _sanear(self):
+        """La escuela predice cada cabeza por separado: puede dar ciclos (una palabra colgando de sí misma o dos de la otra).
+        Un ciclo haría que los recorridos no acaben nunca: se corta soltando una palabra del ciclo (queda como raíz suelta)."""
+        n = self.n
+        for i in range(n):
+            if not (0 <= self.h[i] < n) or self.h[i] == i:
+                self.h[i] = -1 if self.h[i] == i or not (0 <= self.h[i] < n) else self.h[i]
+        for i in range(n):
+            ruta, x = [], i
+            while 0 <= x < n and x not in ruta:
+                ruta.append(x)
+                x = self.h[x]
+            if 0 <= x < n:                                    # volvió a un nodo de la ruta: ciclo
+                self.h[ruta[-1]] = -1
 
     def f(self, i):
         return self.r[i][0]
@@ -65,11 +81,14 @@ class Arbol:
         return [j for j in self.k[i] if self.r[j][3] in rels]
 
     def sub(self, i) -> List[int]:
-        out, st = [], [i]
+        out, st, vistos = [], [i], {i}
         while st:
             x = st.pop()
             out.append(x)
-            st.extend(self.k[x])
+            for y in self.k[x]:
+                if y not in vistos:
+                    vistos.add(y)
+                    st.append(y)
         return sorted(out)
 
 
@@ -356,7 +375,10 @@ class ExtractorUD:
                 for e in [p] + [j for j in A.hijos(p, "conj") if A.u(j) in ("ADJ", "VERB")]:
                     if self._grado(A, e):
                         continue
-                    ad = clave(A.l(e)) if A.u(e) == "ADJ" else clave(_participio_masc(A.f(e)))
+                    if A.u(e) == "ADJ" and A.l(e)[-2:] in ("ar", "er", "ir") and len(A.l(e)) > 4:
+                        ad = clave(_participio_masc(A.f(e))) if _es_participio(A.f(e), A.l(e)) else ""      # lema verbal: «vencido», no «vencer»
+                    else:
+                        ad = clave(A.l(e)) if A.u(e) == "ADJ" else clave(_participio_masc(A.f(e)))
                     if not ad:
                         continue
                     out.append(_ud(S.key, pred_cop, ad, S.disp, A.l(e), neg=neg))
@@ -538,6 +560,13 @@ class LectorUD(Lector):
         super().__init__(mem, None, lex)
         self.parser = parser
         self.ud = ExtractorUD()
+        self.traza: List[dict] = []
+
+    def leer(self, texto: str, progreso=None) -> dict:
+        self.traza = []
+        rep = super().leer(texto, progreso)
+        rep["traza"] = self.traza
+        return rep
 
     # trocea una frase larga en tramos que la escuela pueda analizar (max 40 formas)
     def _tramos(self, f: str) -> List[str]:
@@ -569,8 +598,13 @@ class LectorUD(Lector):
                 rows = []
             if not rows:
                 continue
-            hs = self.ud.oracion(rows, inicio=inicio_parrafo)
+            try:
+                hs = self.ud.oracion(rows, inicio=inicio_parrafo)
+            except RecursionError:                                                # noqa  (árbol raro: se salta ese tramo, no se cuelga)
+                hs = []
             motivo = motivo or self.ud.motivo
+            if len(self.traza) < 600:
+                self.traza.append({"tramo": tr, "arbol": rows, "hechos": [(h["s"], h["p"], h["o"], bool(h.get("neg"))) for h in hs]})
             for h in hs:
                 self._guardar_ud(h, orig, rep)
         if len(rep["hechos"]) == n0:
@@ -594,3 +628,33 @@ def lector_para(mem, parser=None):
     if parser is not None and hasattr(parser, "tree"):
         return LectorUD(mem, parser)
     return Lector(mem, None)
+
+
+def escribir_traza(rep: dict, ruta) -> None:
+    """Deja en un fichero, para cada frase leida: su arbol de dependencias (el de la escuela) y los hechos que salieron. Sirve para auditar la lectura."""
+    L = [f"LECTURA: {rep.get('frases', 0)} frases, {len(rep.get('hechos', []))} hechos, {len(rep.get('sin_entender', []))} sin aprovechar", ""]
+    for t in rep.get("traza", []):
+        L.append(t["tramo"])
+        L.append("   " + " ".join(f"{i + 1}:{r[0]}/{r[1]}->{r[2]}:{r[3]}[{r[4]}]" for i, r in enumerate(t["arbol"])))
+        for s_, p_, o_, n_ in t["hechos"]:
+            L.append(f"   => {s_} {'NO ' if n_ else ''}{p_} {o_}")
+        L.append("")
+    for x in rep.get("sin_entender", [])[:100]:
+        L.append("SIN ENTENDER: " + x["frase"][:200] + "  (" + x["motivo"] + ")")
+    try:
+        import os
+        os.makedirs(os.path.dirname(str(ruta)), exist_ok=True)
+        open(ruta, "w", encoding="utf-8").write("\n".join(L))
+    except OSError:
+        pass
+
+
+def guardar_traza(rep: dict) -> None:
+    """Deja reports/ultima_lectura.txt (arbol + hechos de cada frase) para auditar lo que se leyo."""
+    try:
+        import os
+        if rep.get("traza"):
+            raiz = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            escribir_traza(rep, os.path.join(raiz, "reports", "ultima_lectura.txt"))
+    except Exception:                                                                  # noqa
+        pass

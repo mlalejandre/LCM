@@ -112,7 +112,7 @@ def main():
     sys.argv = [sys.argv[0]]
     import zipfile
     with zipfile.ZipFile(root / "reports" / "paquete.zip", "w", zipfile.ZIP_DEFLATED) as z:
-        for f in ("informe.txt", "arboles.json", "historial.json", "ciclo.txt", "razonamiento.json", "lector_bench.json"):
+        for f in ("informe.txt", "arboles.json", "historial.json", "ciclo.txt", "razonamiento.json", "lector_bench.json", "ultima_lectura.txt"):
             if (root / "reports" / f).exists():
                 z.write(root / "reports" / f, f)
     print(f"\n[Sube reports/paquete.zip a la conversacion]")

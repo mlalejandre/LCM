@@ -143,6 +143,8 @@ class Motor:
                 except Exception:                                                  # noqa
                     return []
             rep = lector_para(self.mem, self.parser).leer(texto)
+            from src.language.lector_ud import guardar_traza
+            guardar_traza(rep)
             try:
                 self.mem.save()
             except OSError:

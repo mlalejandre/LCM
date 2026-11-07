@@ -903,7 +903,7 @@ class Conversation:
     def aprender_texto(self, texto: str) -> str:
         """parche-113: lee el texto entero (sin limite de 2000) con el LECTOR y lo guarda en la memoria. Deja el informe completo en self.lectura."""
         from src.language.lector import resumen
-        from src.language.lector_ud import lector_para
+        from src.language.lector_ud import guardar_traza, lector_para
 
         def escuela(cl, tema):
             try:
@@ -912,6 +912,7 @@ class Conversation:
                 return []
         rep = lector_para(self.m, self.parser).leer(texto)
         self.lectura = rep
+        guardar_traza(rep)
         out = resumen(rep)
         self.d.last = out
         return out
