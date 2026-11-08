@@ -935,6 +935,13 @@ class Conversation:
             if sp_:
                 self.d.last = sp_
                 return sp_
+            try:
+                vd_ = self._vida(raw)                                                # parche-129: lo que la persona dijo de alguien (nacimiento, edad) y mensajes «afirmacion + pregunta»
+            except Exception:                                                        # noqa
+                vd_ = None
+            if vd_:
+                self.d.last = vd_
+                return vd_
             if getattr(self.m, "textos", None):                                     # parche-127: preguntas sobre lo leido en un texto (entidades, tipo de pregunta, arbol de la frase)
                 try:
                     from src.language import lectura_ent
@@ -1026,10 +1033,75 @@ class Conversation:
                     lec2_ = lectura_ent.responder(self, raw, final=True)
                 except Exception:                                                  # noqa
                     lec2_ = None
-                if lec2_:
+                if lec2_ and not (lec2_.startswith(("No he leído nada", "Lo más")) and self._pide_capacidad(raw)):
                     self.d.last, self.d.pending = lec2_, None
                     return lec2_
+            if self._pide_capacidad(raw):                                          # parche-129: «¿puedes cantar?»: se dice que eso no se sabe hacer
+                from src.language import vida
+                self.d.last, self.d.pending = vida.MENSAJE_CAPACIDAD, None
+                return vida.MENSAJE_CAPACIDAD
         return out
+
+    @staticmethod
+    def _pide_capacidad(raw: str) -> bool:
+        try:
+            from src.language import vida
+            return vida.pide_capacidad(raw)
+        except Exception:                                                           # noqa
+            return False
+
+    def _en_texto(self):
+        """parche-129: palabra -> True si algun texto leido la nombra (las personas de la conversacion no estan en ningun texto)."""
+        ind = None
+        if getattr(self.m, "textos", None):
+            try:
+                from src.language import lectura_ent
+                ind = lectura_ent.indice(self.m)
+            except Exception:                                                       # noqa
+                ind = None
+        return lambda w: bool(ind) and (w in ind.idf or w in ind.vocab_all)
+
+    def _vida(self, raw: str) -> Optional[str]:
+        """parche-129: «¿que dia nacio Marta?», «¿que edad tiene Marta hoy?» con la fecha que dijo la persona; y «Marta nacio el 12 de octubre de 1982 que edad tiene hoy?» (se aprende y se contesta)."""
+        from src.language import vida
+        if len(raw) > 220:
+            return None
+        en_t = self._en_texto()
+        sp = vida.partir(raw)
+        if sp:
+            izq, der = sp
+            a = self.say(izq.rstrip(".") + ".")
+            if self.d.pending:
+                return a
+            lf = getattr(self.d, "last_facts", None) or []
+            suj = lf[0][0] if lf else None
+            q = "¿" + der + "?"
+            r = vida.responder(q, self.m, ctx=suj, en_texto=en_t)
+            if r is None:
+                if suj and not re.search(r"[A-ZÁÉÍÓÚÑ]", der) and not vida.entidades_de_conversacion(self.m, der, en_t):
+                    q = "¿" + der + " " + vida._nombre_disp(self.m, suj) + "?"
+                r = self.say(q)
+            out = (a + " " + r).strip()
+            self.d.last = out
+            return out
+        r = vida.responder(raw, self.m, en_texto=en_t)
+        if r is None:
+            r = vida.comparar_edades(raw, self.m, self._nacimiento_en_texto, en_t)       # «¿quien es mayor, Marta o Yamal?»
+        return r
+
+    def _nacimiento_en_texto(self, nombre: str):
+        """parche-129: (nombre, (anyo, mes, dia) del nacimiento o None) de una entidad de un texto leido; None si ningun texto la nombra."""
+        if not getattr(self.m, "textos", None):
+            return None
+        from src.language import lectura_ent as L, relaciones as R
+        ind = L.indice(self.m)
+        ind._parser, ind._conv = getattr(self, "parser", None), self
+        q2 = L.analizar(ind, "¿Cuándo nació " + nombre + "?", getattr(self, "parser", None))
+        if q2 is None or not q2.ents or q2.ents_ctx:
+            return None
+        fid = q2.ents[0]
+        h = R.nacimiento_de(ind, fid)
+        return ind.disp[fid], ((h.y, h.m, h.d) if h and h.y else None)
 
     def _say1(self, raw: str) -> str:
         if not self.d.pending:                                              # parche-90: normalizador de preguntas (una familia -> una forma canonica)

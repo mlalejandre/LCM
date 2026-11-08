@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import copy
 import math
+import os
 import re
 import unicodedata
 from collections import Counter, defaultdict
@@ -112,6 +113,7 @@ class Frase:
                 except ValueError:
                     h = 0
                 self.tok.append(T(len(self.tok), c[0], c[1], off + h - 1 if h > 0 else -1, c[3], c[4]))
+        self.con_arbol = bool(self.tok)
         if not self.tok:
             self.tok = _tokens_texto(self.texto)
         else:
@@ -132,6 +134,15 @@ class Frase:
         for t in self.tok:
             if t.h >= 0:
                 self.hij[t.h].append(t.i)
+        if self.con_arbol:
+            try:
+                if self._reparar():
+                    self.hij = defaultdict(list)
+                    for t in self.tok:
+                        if t.h >= 0:
+                            self.hij[t.h].append(t.i)
+            except Exception:                                                                        # noqa  (un arbol raro nunca debe romper la lectura)
+                pass
         self.ment: List[Tuple[int, int, frozenset, str, tuple]] = []
         self.fams: Set[str] = set()
         self.impl: Set[str] = set()
@@ -178,6 +189,90 @@ class Frase:
                 k = tk[k].h
             tk[raiz_].h, tk[raiz_].d = k, "acl:relcl"
 
+    # ---- reparacion de errores tipicos del arbol ----------------------------------------------------------------------------------
+    def _romano(self, i: int) -> bool:
+        t = self.tok[i]
+        return bool(re.fullmatch(r"[IVXLCDM]{1,6}", t.f)) and t.u in ("NUM", "X", "PROPN", "NOUN", "ADJ") and i > 0 and self.tok[i - 1].u == "PROPN"
+
+    def _reparar(self) -> bool:
+        """El parser estadistico falla de forma sistematica en tres cosas que el resto de la lectura necesita bien:
+        1) el sujeto que va tras un complemento circunstancial («En 1254 el rey Alfonso le concedio…») sale como complemento;
+        2) con un pronombre clitico delante («donde los recogio el portaaviones») el sujeto pospuesto sale como objeto;
+        3) las enumeraciones «Nombre, cargo, Nombre, cargo» cuelgan los cargos del nombre equivocado.
+        Se corrigen aqui, de forma general, antes de que nadie lea el arbol."""
+        tk, n = self.tok, len(self.tok)
+        cambio = False
+        hij = self.hij
+        for v in tk:                                                                          # «orbita lunar», «luz solar»: un infinitivo pegado a un nombre sin preposicion es un adjetivo
+            if v.u == "VERB" and v.i > 0 and tk[v.i - 1].u == "NOUN" and v.d in ("xcomp", "acl", "amod", "dep", "conj") and re.fullmatch(r"[a-z]+(?:ar|er|ir)", v.f) \
+                    and not _sinonimos(v.nf, "VERB") and all(tk[c].d in ("nummod", "nmod", "det", "case", "punct") for c in hij.get(v.i, ())):
+                v.u, v.h, v.d = "ADJ", v.i - 1, "amod"
+                cambio = True
+        for v in tk:
+            if v.u != "VERB" or v.d in ("amod", "acl", "acl:relcl", "xcomp") or not v.d:
+                continue
+            hs = [tk[c] for c in hij.get(v.i, ())]
+            if any(c.d in ("nsubj", "nsubj:pass", "csubj", "csubj:pass") for c in hs):
+                continue
+            cl = [c for c in hs if c.d == "obj" and c.u == "PRON" and c.nl in ("lo", "la", "los", "las", "el") and c.i < v.i]
+            pos = [c for c in hs if c.d in ("obj", "obl") and c.i > v.i and c.u in ("NOUN", "PROPN") and not any(tk[x].d == "case" for x in hij.get(c.i, ()))
+                   and (c.u == "PROPN" or any(tk[x].d == "det" for x in hij.get(c.i, ())))]
+            if cl and pos and not any(c.d == "obj" and c.i > v.i and c.u in ("NOUN", "PROPN") and c is not pos[0] for c in hs):
+                pos[0].d = "nsubj"
+                cambio = True
+                continue
+            pre = [c for c in hs if c.d == "obl" and c.i < v.i and c.u in ("NOUN", "PROPN") and c.nl not in TIEMPO and c.nl not in MESES and not c.f.isdigit()
+                   and not any(tk[x].d == "case" for x in hij.get(c.i, ())) and (c.u == "PROPN" or any(tk[x].d == "det" for x in hij.get(c.i, ())))]
+            if pre and not any(c.d == "obj" and c.i < v.i and c.u in ("NOUN", "PROPN") for c in hs):
+                pre.sort(key=lambda c: -c.i)
+                pre[0].d = "nsubj"
+                cambio = True
+        # ---- «Nombre, cargo de X, Nombre, cargo de Y»: cada cargo es aposicion del nombre que lo precede --------------------------------------
+        segs, a = [], 0
+        for i, t in enumerate(tk):
+            if t.f in (",", ";", ":"):
+                segs.append((a, i - 1))
+                a = i + 1
+        if a <= n - 1:
+            segs.append((a, n - 1))
+        segs = [(x, y) for x, y in segs if x <= y]
+        pares = []
+        for k in range(1, len(segs)):
+            a2, b2 = segs[k]
+            while b2 > a2 and tk[b2].u == "PUNCT":
+                b2 -= 1
+            if tk[segs[k][0] - 1].f != ",":
+                continue
+            j = a2
+            while j <= b2 and tk[j].u in ("DET", "ADJ"):
+                j += 1
+            if j > b2 or tk[j].u != "NOUN" or tk[j].nl in TIEMPO or tk[j].nl in MESES or any(tk[x].u in ("VERB", "AUX") and not (tk[x].d in ("acl", "acl:relcl")) for x in range(a2, b2 + 1)):
+                continue
+            e = segs[k - 1][1]
+            while e >= segs[k - 1][0] and tk[e].u == "PUNCT":
+                e -= 1
+            if e < segs[k - 1][0] or not (tk[e].u == "PROPN" or self._romano(e)):
+                continue
+            s_ = e
+            while s_ - 1 >= segs[k - 1][0] and (tk[s_ - 1].u == "PROPN" or self._romano(s_ - 1)
+                                               or (tk[s_ - 1].nl in ("de", "del") and s_ - 2 >= segs[k - 1][0] and tk[s_ - 2].u == "PROPN")):
+                s_ -= 1
+            raiz_rol = next((x for x in range(a2, b2 + 1) if tk[x].u == "NOUN" and (tk[x].h < a2 or tk[x].h > b2 or tk[x].h < 0)), j)
+            pares.append((s_, raiz_rol, (a2, b2)))
+        def _desc(x):
+            return set(self.sub(x))
+        for s_, r_, _ in pares:
+            if (tk[r_].h != s_ or tk[r_].d != "appos") and s_ not in _desc(r_):
+                tk[r_].h, tk[r_].d = s_, "appos"
+                cambio = True
+        if len(pares) >= 2:
+            primero = pares[0][0]
+            for s_, _, _ in pares[1:]:
+                if any(a3 <= tk[s_].h <= b3 for _, _, (a3, b3) in pares) and s_ != primero and primero not in _desc(s_):
+                    tk[s_].h, tk[s_].d = primero, "conj"
+                    cambio = True
+        return cambio
+
     # ---- arbol -----------------------------------------------------------------------------------------------------------------
     def sub(self, i: int, saltar=lambda t: False) -> List[int]:
         out, pila, vistos = [], [i], set()
@@ -195,6 +290,9 @@ class Frase:
     def np(self, i: int) -> Tuple[int, int]:
         """Sintagma nominal que cuelga de i, sin oraciones de relativo, coordinaciones ni incisos."""
         def saltar(t):
+            if t.d == "conj" and t.u == "PROPN" and t.h >= 0 and self.tok[t.h].u == "PROPN" and t.i >= 2 and self.tok[t.i - 1].nf in ("y", "e", ",") \
+                    and self.tok[t.i - 1].d in ("cc", "punct") and self.tok[t.i - 2].u == "PROPN" and not any(self.tok[k].u in ("VERB", "AUX") for k in range(i, t.i)):
+                return False                                                                           # «Castilla y León», «Ávila, Béjar y Zamora»: la coordinacion de nombres propios es un solo sintagma
             if t.d.startswith(("acl", "advcl", "conj", "cc", "parataxis", "punct", "mark", "xcomp", "ccomp")):
                 return True
             return t.d == "appos" and t.i > 0 and self.tok[t.i - 1].f == ","
@@ -228,6 +326,8 @@ class Frase:
         t, n = self.tok[i], len(self.tok)
         if t.u == "PROPN":
             return True
+        if self._romano(i):
+            return True                                                                                   # «Alfonso X», «Felipe VI»: el numeral romano es parte del nombre
         if t.u in ("X", "NOUN", "ADJ") and len(t.f) >= 2 and t.f.isupper() and not any(c.isdigit() for c in t.f) and t.nf not in ("la", "el"):
             return True
         if t.u == "NOUN" and i > 0 and i + 1 < n and t.f[:1].isupper() and not t.f.isupper() and self.tok[i + 1].u == "PROPN" and self.tok[i + 1].f[:1].isupper() \
@@ -259,6 +359,8 @@ class Frase:
                 if self.tok[k].f == "." and (_es_inicial(self.tok[j], self.tok[k]) or len(self.tok[j].f) == 1) and k + 1 < n and self._es_prop(k + 1):
                     j = k
                     continue
+                if self.tok[k].nf in ("el", "la", "los", "las") and j > i and len(self.tok[j].nf) > 2 and not self._romano(j) and _palabra_comun(self.tok[j].nf) and self.tok[j].nf not in MESES:
+                    break                                                                                 # «Durante la Edad Media el Ebro fue…»: el articulo tras un adjetivo corriente abre otro sintagma
                 if self.tok[k].nf in CONEC_NOMBRE:
                     m = k
                     while m < n and self.tok[m].nf in CONEC_NOMBRE and m - k < 2:
@@ -268,10 +370,12 @@ class Frase:
                         continue
                 break
             toks = self.tok[i:j + 1]
-            clave = frozenset(t.nf for t in toks if t.nf not in CONEC and len(t.nf) > 1 and not t.nf.isdigit() and t.f != ".")
+            def _val(t):
+                return t.nf not in CONEC and (len(t.nf) > 1 or self._romano(t.i)) and not t.nf.isdigit() and t.f != "."
+            clave = frozenset(t.nf for t in toks if _val(t))
             nums = [t for t in toks if t.nf.isdigit()]
             if clave and not (nums and len(toks) == len(nums)):
-                orden = tuple(t.nf for t in toks if t.nf not in CONEC and len(t.nf) > 1 and not t.nf.isdigit() and t.f != ".")
+                orden = tuple(t.nf for t in toks if _val(t))
                 out.append((i, j, clave, detok([t.f for t in toks]), orden))
             i = j + 1
         self.ment = out
@@ -494,7 +598,14 @@ class Indice:
         self.protagonista: Dict[int, Optional[str]] = {}
         for d, fs in por_doc.items():
             fs.sort(key=lambda f: f.k)
-            c = Counter(x for f in fs for x in f.fams)
+            def _orden(f):                                                   # orden de aparicion en la frase (los conjuntos no tienen orden estable)
+                vistos = []
+                for a_, b_, k_, _, _ in f.ment:
+                    x_ = self.familia_de(k_)
+                    if x_ in f.fams and x_ not in vistos:
+                        vistos.append(x_)
+                return vistos + sorted(f.fams - set(vistos))
+            c = Counter(x for f in fs for x in _orden(f))
             tema = c.most_common(1)[0][0] if c else None
             self.protagonista[d] = tema
             for f in fs:
@@ -609,13 +720,18 @@ _GRUPOS_VERBO = [
     "vivir habitar residir", "cazar capturar atrapar", "comer alimentarse nutrirse devorar ingerir", "llamar denominar apodar bautizar", "empezar comenzar iniciar",
     "terminar acabar finalizar concluir", "abrir inaugurar", "construir edificar levantar erigir", "inventar idear desarrollar", "contener guardar conservar custodiar atesorar", "alojar acoger hospedar albergar",
     "situar ubicar localizar", "proteger defender resguardar", "sustituir reemplazar relevar suplir", "decir afirmar declarar manifestar asegurar", "pensar creer opinar",
-    "estudiar cursar", "casar desposar", "matar asesinar", "dirigir liderar capitanear", "participar intervenir", "ayudar asistir auxiliar", "enfermar padecer sufrir",
+    "estudiar cursar", "tener contar poseer", "casar desposar", "matar asesinar", "dirigir liderar capitanear", "participar intervenir", "ayudar asistir auxiliar", "enfermar padecer sufrir",
 ]
+MEDIDA_DE = {"medir": ["longitud", "altura", "extension", "tamano", "anchura", "profundidad", "dimension", "largo", "alto", "ancho"], "pesar": ["peso", "masa"],
+             "costar": ["coste", "precio", "valor", "importe"], "durar": ["duracion", "tiempo"], "tardar": ["tiempo", "duracion"], "cobrar": ["sueldo", "salario"],
+             "habitar": ["habitantes", "poblacion"], "poblar": ["habitantes", "poblacion"]}
 EQUIV: Dict[str, List[str]] = {}
 for _g in _GRUPOS_VERBO:                                                              # equivalencias corrientes del idioma (no de ningun texto): «ganar un premio» ~ «recibir/obtener un premio»
     _ws = _g.split()
     for _w in _ws:
         EQUIV[_w] = [x for x in _ws if x != _w]
+for _w, _al in MEDIDA_DE.items():                                                      # «cuanto mide» se contesta con «su longitud es de…»
+    EQUIV[_w] = EQUIV.get(_w, []) + _al
 
 
 def _sinonimos(w: str, pos: str) -> List[str]:
@@ -637,7 +753,15 @@ def _filas_pregunta(raw: str, parser) -> List[Tuple[str, str, str]]:
         except Exception:                                                            # noqa
             rows = []
     if rows:
-        return [_sin_enclitico(nrm(r[0]), r[1], nrm(r[4] or r[0])) for r in rows if r[1] != "PUNCT"]
+        out_ = []
+        for r in rows:
+            if r[1] == "PUNCT":
+                continue
+            if r[0].lower() == "está" and r[1] in ("DET", "PRON", "ADJ", "NOUN", "X"):
+                out_.append(("esta", "VERB", "estar"))                           # «¿Está Machu Picchu en Chile?»: con tilde es el verbo, no el demostrativo
+                continue
+            out_.append(_sin_enclitico(nrm(r[0]), r[1], nrm(r[4] or r[0])))
+        return out_
     return [(nrm(w), "X", nrm(w)) for w in re.findall(r"[\wáéíóúüñ]+", raw.lower())]
 
 
@@ -750,6 +874,15 @@ def buscar_ents(ind: Indice, toks: List[Tuple[str, str, str]], saltar: Set[int] 
         return [], corr, desconocidos, res
     top = max(cand.values())
     fams = sorted((f for f, s in cand.items() if s >= max(1.0, top * 0.55)), key=lambda f: (-cand[f], -ind.n_fam[f]))[:4]
+    if len(fams) >= 2:                                      # «Cervantes» a secas: si una familia aparece mucho mas que la otra que comparte esa unica palabra, es de quien se habla
+        for fa in list(fams):
+            otros = [g for g in fams if g != fa and hits.get(g) == hits.get(fa) and len(hits.get(fa, ())) == 1 and all(t in caps for t in hits.get(fa, ()))]       # solo si la palabra va con mayuscula en la pregunta: «trofeo» suelto no es nombre
+            pres_ = getattr(ind, "_pres_fam", None)
+            if pres_ is None:
+                pres_ = Counter(x for f_ in ind.fr for x in (f_.fams | f_.impl))
+                ind._pres_fam = pres_
+            if otros and all(pres_[fa] >= 2 * max(1, pres_[g]) for g in otros):
+                fams = [g for g in fams if g == fa or g not in otros]
     # una familia cuyos tokens ya cubre otra mas completa de la misma pregunta no cuenta dos veces
     out = []
     for f in fams:
@@ -763,6 +896,19 @@ def analizar(ind: Indice, raw: str, parser=None, ctx: Optional[List[str]] = None
     toks = _filas_pregunta(raw, parser)
     if not toks:
         return None
+    if toks and toks[0][1] in ("NOUN", "X", "ADJ"):                    # «¿Piso Collins la Luna?»: el verbo inicial sin sujeto delante se lee como sustantivo
+        m_ = re.match(r"[¿¡\s]*([A-Za-zÁÉÍÓÚáéíóúñÑ]+)", raw)
+        w0 = m_.group(1) if m_ else ""
+        if w0 and nrm(w0) == toks[0][0] and re.search(r"(?:[óé]|[ií][óé]|aron|ieron|aba|aban|[ií]a|[ií]an)$", w0.lower()) and len(toks) >= 3 and toks[1][1] in ("PROPN", "DET") and nrm(w0) not in ind.n_prop:
+            base = nrm(w0)
+            cand = []
+            if re.search(r"(?:o|aron|aba|aban)$", base):
+                cand = [re.sub(r"(?:o|aron|aba|aban)$", "ar", base)]
+            elif re.search(r"(?:io|ieron|ia|ian)$", base):
+                st_ = re.sub(r"(?:io|ieron|ia|ian)$", "", base)
+                cand = [st_ + "er", st_ + "ir"]
+            lem_ = next((c_ for c_ in cand if c_ in ind.vocab_lem), cand[0] if cand else base)
+            toks = [(toks[0][0], "VERB", lem_)] + toks[1:]
     q.toks = toks
     qs = " ".join(t[0] for t in toks)
     qs = re.sub(r"\bde el\b", "del", qs)
@@ -797,7 +943,7 @@ def analizar(ind: Indice, raw: str, parser=None, ctx: Optional[List[str]] = None
             elif w == "cuando":
                 q.tipo, q.prep = "cuando", prev if prev in ("desde", "hasta") else ""
             elif w in ("donde", "adonde"):
-                q.tipo, q.prep = "donde", prev if prev in ("de", "desde", "hacia", "por") else ""
+                q.tipo, q.prep = "donde", prev if prev in ("de", "desde", "hacia", "por", "a") else ("a" if w == "adonde" else "")
             elif w in ("cuanto", "cuanta", "cuantos", "cuantas"):
                 q.tipo = "cuanto"
             elif w == "por" and sig == "que":
@@ -817,7 +963,7 @@ def analizar(ind: Indice, raw: str, parser=None, ctx: Optional[List[str]] = None
                     q.tipo = "cuando"
                 elif sig in ("lugar", "estadio", "ciudad", "pais", "sitio", "sede", "campo", "region", "zona", "pueblo", "continente"):
                     q.tipo = "donde"
-                elif sig in ("edad", "velocidad", "distancia", "altura", "peso", "longitud", "temperatura", "porcentaje", "profundidad", "superficie", "duracion", "ritmo") or (sig == "tiempo" and "llevaba" in nf):
+                elif sig in ("edad", "velocidad", "distancia", "altura", "peso", "longitud", "temperatura", "porcentaje", "profundidad", "superficie", "duracion", "ritmo", "altitud", "anchura", "extension", "capacidad") or (sig == "tiempo" and "llevaba" in nf):
                     q.tipo = "cuanto"
                 else:
                     q.tipo, q.prep = "que", prev if prev in PREPS else ""
@@ -837,6 +983,15 @@ def analizar(ind: Indice, raw: str, parser=None, ctx: Optional[List[str]] = None
                 if toks[i][1] in ("NOUN", "PROPN", "X") and toks[i][0] not in STOPQ:
                     foco_i = i
                     q.tipo = "quien" if toks[0][0].startswith("quien") else "def"
+                    break
+    if foco_i is None and q.tipo == "que" and toks and toks[0][0] in ("cual", "cuales"):       # «cual es el lema de…»: lo que se pide es ese sustantivo
+        cop = next((i for i, t in enumerate(toks[:3]) if t[0] in ("es", "son", "fue", "fueron", "era", "eran")), None)
+        if cop is not None:
+            for i in range(cop + 1, min(len(toks), cop + 4)):
+                if toks[i][1] in ("NOUN",) and toks[i][0] not in STOPQ and i not in usados:
+                    foco_i = i
+                    break
+                if toks[i][1] not in ("DET", "ADJ", "NUM"):
                     break
     if foco_i is None and q.tipo in ("cuando", "donde") and toks and toks[0][0] in ("cuando", "donde", "adonde"):      # «cuando fue la final del Mundial»: el hecho por el que se pregunta es el sustantivo tras «ser»
         cop = next((i for i, t in enumerate(toks[:3]) if t[0] in ("fue", "es", "era", "sera", "son", "fueron", "eran")), None)
@@ -977,10 +1132,16 @@ def puntuar(ind: Indice, q: Q, f: Frase) -> Tuple[float, float]:
         got += W_ENT * m
     for k in q.claves:
         w = _w_clave(ind, k)
+        if k.kind == "verbo" and k.nl in EVENTO and len(q.claves) > 1:
+            w *= 0.3                                                         # «que pasa con X»: el verbo es un comodin, lo que cuenta es X
         tot += w
         m = _casa(k, f.lem, f.raices)
         if m < 0.75:
             m = max(m, _casa_ctx(k, f) * (0.5 if k.kind == "foco" else 1.0))      # aquello por lo que se pregunta debe estar en la frase, no solo cerca
+        if m < 0.75 and k is q.foco and k.nl in CATEGORIAS and q.tipo == "que" and q.verbo:
+            vm_ = _casa(q.verbo, f.lem, f.raices)
+            if vm_ >= 0.75 or any(t.u == "NOUN" and t.nl in AGENTIVO.get(q.verbo.nl, ()) for t in f.tok):
+                m = 0.8                                                           # «que obra escribio»: la frase da el ejemplar (el titulo) y no la palabra de la clase
         got += w * m
     for d in q.desconocidos:
         tot += 1.5
@@ -1068,6 +1229,11 @@ def anclas(ind: Indice, f: Frase, q: Q) -> List[int]:
             break
     if not out:
         out = [a for a, b, k, _, _ in f.ment if ind.familia_de(k) in q.ents]
+    ords = {k.nl for k in q.claves if k.nl in ("primero", "segundo", "tercero", "cuarto", "quinto", "sexto", "septimo", "octavo", "noveno", "decimo", "ultimo")}
+    if ords:
+        pos = [t.i + 1 for t in f.tok if (t.nl in ords or t.nf in ords or nrm(t.l or "") in ords or t.nf.rstrip("oa") in {o.rstrip("oa") for o in ords}) and t.i + 1 < len(f.tok)]
+        if pos:
+            return pos
     return out or [0]
 
 
@@ -1079,7 +1245,7 @@ def _mencion_en(f: Frase, a: int, b: int):
     return [m for m in f.ment if m[0] >= a and m[1] <= b]
 
 
-NUMW = re.compile(r"(?:un|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veinti\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|doscientos|trescientos|cuatrocientos|quinientos|mil|medio|media)")
+NUMW = re.compile(r"(?:millon|millones|billon|billones|docena|un|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis|diecisiete|dieciocho|diecinueve|veinte|veinti\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|doscientos|trescientos|cuatrocientos|quinientos|mil|medio|media)")
 TEMPN = {"tiempo", "epoca", "edad", "era", "siglo", "decada", "periodo", "etapa", "fase", "dia", "noche", "mes", "ano", "semana", "hora", "minuto", "segundo",
          "momento", "vida", "nacimiento", "infancia", "juventud", "madurez", "verano", "invierno", "primavera", "otono", "final", "principio", "inicio", "comienzo",
          "dias", "meses", "anos", "semanas", "horas", "minutos", "siglos", "decadas", "finales", "principios", "mediados", "comienzos"}
@@ -1091,6 +1257,7 @@ def _relativos_tiempo(f: Frase) -> List[Tuple[int, int, float]]:
     tk, n, out = f.tok, len(f.tok), []
     for i, t in enumerate(tk):
         k = None
+        edad_ = False
         if t.nf in ("desde", "hasta", "tras", "durante", "en", "entre", "dentro"):
             k = i + 1
         elif t.nf == "a" and i + 2 < n and tk[i + 1].nf == "partir" and tk[i + 2].nf == "de":
@@ -1099,6 +1266,7 @@ def _relativos_tiempo(f: Frase) -> List[Tuple[int, int, float]]:
             k = i + 1
         elif t.nf == "a" and i + 1 < n and tk[i + 1].nf in ("los", "las") and i + 2 < n and (tk[i + 2].u == "NUM" or NUMW.fullmatch(tk[i + 2].nf)):
             k = i + 1
+            edad_ = True
         if k is None:
             continue
         j = k
@@ -1107,7 +1275,9 @@ def _relativos_tiempo(f: Frase) -> List[Tuple[int, int, float]]:
             j += 1
         if j >= n or tk[j].nf not in TEMPN or j == k and tk[j].nf in ("final", "principio", "inicio", "comienzo", "mes", "ano", "dia", "momento"):
             continue
-        fin, cal = j, 0.55
+        if tk[j].nf in ("final", "principio", "inicio", "comienzo") and not (j + 1 < n and tk[j + 1].nf == "de"):
+            continue                                                                  # «combatio hasta el final» no es una fecha
+        fin, cal = j, (0.3 if edad_ and tk[j].nf in ("ano", "anos") else 0.55)                  # «murio a los 76 años»: es una edad, no una fecha
         if tk[j].nf in ("tiempo", "tiempos", "epoca", "edad", "era", "periodo", "etapa", "fase", "siglo", "finales", "principios", "mediados", "comienzos") and j + 2 < n and tk[j + 1].nf == "de":
             m = j + 2
             while m < n and m - j <= 5 and tk[m].u in ("DET", "NOUN", "PROPN", "ADJ", "NUM") :
@@ -1175,6 +1345,35 @@ def tiempos(f: Frase) -> List[Tuple[int, int, float]]:
     return out
 
 
+def _verbo_encima(f: Frase, v, k) -> bool:
+    """El verbo v cuelga (gerundio, participio, subordinada) del verbo por el que se pregunta: «marco su primer gol, jugando contra Granada en ...»."""
+    x, pasos = v.h, 0
+    while x >= 0 and pasos < 12:
+        if f.tok[x].u in ("VERB", "AUX") and _coincide(f.tok[x], k):
+            return True
+        x, pasos = f.tok[x].h, pasos + 1
+    return False
+
+
+def _cabeza_span(f: Frase, a: int, b: int) -> int:
+    """Token del tramo [a, b] cuya cabeza queda fuera del tramo (la raiz del sintagma)."""
+    for x in range(a, b + 1):
+        h = f.tok[x].h
+        if h < a or h > b:
+            return x
+    return a
+
+
+def _verbo_de(f: Frase, i: int):
+    """Primer verbo (VERB/AUX) por encima del token i en el arbol."""
+    x, pasos = f.tok[i].h, 0
+    while x >= 0 and pasos < 12:
+        if f.tok[x].u in ("VERB", "AUX"):
+            return f.tok[x]
+        x, pasos = f.tok[x].h, pasos + 1
+    return None
+
+
 def ext_cuando(ind, f, q, anc):
     ts = tiempos(f)
     if not ts:
@@ -1186,10 +1385,37 @@ def ext_cuando(ind, f, q, anc):
         if cls_ is None:
             return 0
         return -25 if (sp_[0] > 0 and f.tok[sp_[0] - 1].nf in cls_) or f.tok[sp_[0]].nf in cls_ else 25
-    a, b, cal = min(ts, key=lambda s: (_dist((s[0] + s[1]) // 2, anc) + (30 if ajeno(f, s[0], ok, ind) else 0) - 8 * s[2] + _p(s)))
+    def _gob(s):                                                               # el verbo del que cuelga la fecha: «en 1254 ... concedio» ≠ «en 1255 ... otorgo»
+        v_ = _verbo_de(f, _cabeza_span(f, s[0], s[1]))
+        if v_ is None:
+            return 0
+        if q.verbo and q.verbo.nl not in GENERICOS:
+            if _coincide(v_, q.verbo):
+                return 1 if _grado(v_, q.verbo) <= 2 else 0
+            if _verbo_encima(f, v_, q.verbo):
+                return 0
+            if any(_coincide(t_, q.verbo) and t_.u in ("VERB", "AUX") for t_ in f.tok):
+                return -1
+        vs_ = {x_.i for x_ in ((f.tok[a_] if f.tok[a_].u in ("VERB", "AUX") else _verbo_de(f, a_)) for a_ in anc if f.tok[a_].u != "PUNCT") if x_ is not None}      # el verbo que gobierna aquello por lo que se pregunta («los primeros estatutos»)
+        if vs_:
+            return 1 if v_.i in vs_ else -1
+        return 0
+    def _expl(s_):
+        return any(x_.nf in MESES or re.fullmatch(r"\d{4}", x_.nf) for x_ in f.tok[s_[0]:s_[1] + 1])
+    def _dur_rel(s_):                                                           # «tras tres dias de viaje»: una duracion, no la fecha, si la frase da una fecha explicita
+        if _expl(s_):
+            return 0
+        pre_ = f.tok[s_[0] - 1].nf if s_[0] > 0 else ""
+        return 14 if (pre_ in ("tras", "durante", "despues") or f.tok[s_[0]].nf in ("tras", "durante", "despues")) and any(_expl(o_) for o_ in ts if o_ is not s_) else 0
+    a, b, cal = min(ts, key=lambda s: (_dist((s[0] + s[1]) // 2, anc) + (30 if ajeno(f, s[0], ok, ind) else 0) - 8 * s[2] + _p(s) - 20 * _gob(s) + _dur_rel(s)))
     sp = f.texto_span(a, b)
     if cls_ is not None and _p((a, b)) > 0:
         cal *= 0.25
+    g_ = _gob((a, b))
+    if g_ > 0:
+        cal = cal + 0.4 * (1.0 - cal)
+    elif g_ < 0:
+        cal *= 0.5
     return sp, sp, cal * (0.3 if ajeno(f, a, ok, ind) else 1.0)
 
 
@@ -1231,17 +1457,33 @@ def ext_donde(ind, f, q, anc):
                 if any(x.nf in MESES or re.fullmatch(r"\d{4}", x.nf) or x.nf in TIEMPO or x.u == "NUM" for x in tx):
                     continue
                 ms = _mencion_en(f, a, b)
+                ini_ = t.i
                 if estricto:
                     if not ms or all(ind.familia_de(m[2]) in prohibidos for m in ms):
                         continue
+                    pro_ = [m for m in ms if ind.familia_de(m[2]) in prohibidos]
+                    if pro_:                                  # «desde el Centro Kennedy, en Florida»: lo que se pregunta es lo que acompaña al nombre, no el nombre
+                        k_ = max(m[1] for m in pro_) + 1
+                        while k_ <= b and f.tok[k_].u == "PUNCT":
+                            k_ += 1
+                        if k_ > b or not any(m[0] >= k_ for m in ms):
+                            continue
+                        ini_ = k_
                 elif f.tok[t.h].u not in ("NOUN", "PROPN"):
                     continue
                 d = _dist(t.i, anc)
+                if q.prep == "a" and t.nf != "a":
+                    d += 2                                                        # «a donde se traslado»: el destino va con «a»
+                if q.verbo and q.verbo.nl not in GENERICOS:
+                    v_ = _verbo_de(f, t.i)
+                    if v_ is not None and not (_coincide(v_, q.verbo) and _grado(v_, q.verbo) <= 2) and any(_coincide(x_, q.verbo) and x_.u in ("VERB", "AUX") for x_ in f.tok) \
+                            and not _verbo_encima(f, v_, q.verbo):
+                        d += 25                                                   # «murio ..., sus cenizas fueron esparcidas en un lugar secreto»: ese lugar es de otra accion
                 if best is None or d < best[0]:
-                    best = (d, t.i, b)
+                    best = (d, ini_, b)
         if best:
             sp = f.texto_span(best[1], best[2])
-            return sp, sp, 1.0 if estricto else 0.5
+            return sp, sp, (1.0 if estricto else 0.5) * (0.5 if best[0] >= 25 else 1.0)
     return None
 
 
@@ -1252,6 +1494,16 @@ def _es_num(t) -> bool:
 def _cantidades(f: Frase):
     out = []
     n = len(f.tok)
+    for t in f.tok:                              # «un millon de visitantes», «una docena de huevos»: «un» + sustantivo colectivo + «de» + lo contado
+        if t.u == "NOUN" and t.nf in ("millon", "billon", "docena", "centenar", "millar") and t.i >= 1 and f.tok[t.i - 1].nf in ("un", "una") and t.i + 2 < n and f.tok[t.i + 1].nf == "de":
+            k_ = t.i + 2
+            while k_ < n and f.tok[k_].u == "DET":
+                k_ += 1
+            if k_ < n and f.tok[k_].u in ("NOUN", "PROPN"):
+                a_ = t.i - 1
+                while a_ >= 1 and (f.tok[a_ - 1].nf in ("casi", "aproximadamente", "unos", "unas", "exactamente") or (a_ >= 2 and f.tok[a_ - 1].nf == "de" and f.tok[a_ - 2].nf in ("mas", "menos", "cerca", "alrededor"))):
+                    a_ -= 1 if f.tok[a_ - 1].nf != "de" else 2
+                out.append((k_, a_, t.i))
     for t in f.tok:
         if not _es_num(t) or t.nf in MESES:
             continue
@@ -1271,16 +1523,26 @@ def _cantidades(f: Frase):
             a -= 2
             while a > 0 and _es_num(f.tok[a - 1]):
                 a -= 1
-        out.append((h, a, h))
+        b_ = h
+        if f.tok[h].nl in COLECTIVOS and h + 2 < n and f.tok[h + 1].nf == "de":
+            k_ = h + 2
+            while k_ < n and f.tok[k_].u in ("DET", "ADJ") and f.tok[k_].nf in ("los", "las", "sus", "estos", "estas", "unos", "unas"):
+                k_ += 1
+            if k_ < n and f.tok[k_].u in ("NOUN", "PROPN"):
+                h = k_                                                      # «un millon de visitantes»: lo contado es lo que sigue a «de»
+        while a >= 1 and (f.tok[a - 1].nf in ("casi", "aproximadamente", "unos", "unas", "exactamente") or (a >= 2 and f.tok[a - 1].nf == "de" and f.tok[a - 2].nf in ("mas", "menos", "cerca", "alrededor"))):
+            a -= 1 if f.tok[a - 1].nf != "de" else 2                    # «mas de un millon»: la cifra lleva su aproximacion
+        out.append((h, a, b_))
     return out
 
 
+COLECTIVOS = {"millon", "billon", "docena", "centenar", "millar", "decena", "cuarto", "mitad", "par"}
 _T_ = {"segundo", "minuto", "hora", "dia", "semana", "mes", "ano", "siglo", "decada", "milenio"}
 _D_ = {"metro", "kilometro", "km", "cm", "centimetro", "milimetro", "milla", "pie", "pulgada", "m", "mm"}
 UNIDADES = {"ritmo": {"km", "kilometro", "metro", "milla", "m"}, "tiempo": _T_, "duracion": _T_, "edad": {"ano", "mes", "dia", "semana"}, "distancia": _D_, "longitud": _D_, "altura": _D_, "largo": _D_, "ancho": _D_,
             "profundidad": _D_, "tamano": _D_ | {"hectarea", "kg"}, "peso": {"kg", "kilo", "kilogramo", "gramo", "g", "tonelada", "libra", "t"},
             "velocidad": {"km", "kilometro", "metro", "milla", "m"}, "porcentaje": {"%", "ciento"}, "superficie": {"hectarea", "km2", "kilometro", "metro"},
-            "temperatura": {"grado", "c"}}
+            "temperatura": {"grado", "c"}, "altitud": _D_, "anchura": _D_, "extension": _D_ | {"hectarea", "km2", "kilometro"}, "capacidad": {"litro", "hectometro", "metro", "kg", "tonelada", "persona", "plaza"}}
 
 
 VERBO_UNIDAD = {"pesar": "peso", "medir": "longitud", "durar": "duracion", "tardar": "duracion", "costar": "precio", "cobrar": "precio", "ganar": "precio", "vivir": "edad", "correr": "velocidad",
@@ -1289,6 +1551,15 @@ UNIDADES["precio"] = {"euro", "dolar", "peso", "libra", "yen", "franco", "millon
 
 
 def ext_cuanto(ind, f, q, anc):
+    try:
+        from . import relaciones as _R
+        r_ = _R.ext_cuanto_rico(ind, f, q, anc)
+    except Exception:                                                                       # noqa
+        if os.environ.get("LCM_DEBUG"):
+            raise
+        r_ = None
+    if r_:
+        return r_
     cs = _cantidades(f)
     if q.foco:
         un = UNIDADES.get(q.foco.nl)
@@ -1335,6 +1606,77 @@ def _agente_por(ind, f, i: int, fam_q, lim: int = 10):
     return None
 
 
+MANDO = {"mandar", "comandar", "dirigir", "capitanear", "liderar", "gobernar", "encabezar"}
+
+
+def _mando(ind, f, q, fam_q):
+    """«la flota britanica, mandada por Nelson, con la escuadra combinada, al mando de Villeneuve»: quien manda es el agente cuyo complemento es lo que se pregunta."""
+    otros = {k.nl for k in q.claves if k.kind in ("cont", "foco") and k.nl not in LIGEROS} | {k.rz for k in q.claves if k.kind in ("cont", "foco")}
+    ents_w = set()
+    for e in q.ents:
+        ents_w |= set(e.split("+"))
+    cands = []
+    for t in f.tok:
+        ag = pac = None
+        if t.nf == "mando" and t.u == "NOUN" and t.i >= 1 and f.tok[t.i - 1].nf in ("al", "a", "el", "bajo") and t.i + 1 < len(f.tok) and f.tok[t.i + 1].nf in ("de", "del"):
+            k = t.i + 2
+            while k < len(f.tok) and f.tok[k].u == "DET":
+                k += 1
+            ms = [m for m in f.ment if m[0] >= k and m[0] <= k + 3]
+            if ms:
+                ag = ms[0]
+            j = t.i - 1
+            while j >= 0 and (f.tok[j].u in ("PUNCT", "ADP", "DET") or f.tok[j].nf in ("al", "a")):
+                j -= 1
+            pac = j
+        elif t.u in ("VERB", "ADJ") and _coincide(t, q.verbo) and (re.search(r"(?:ad[oa]s?|id[oa]s?)$", t.nf) or IRREG_PART.match(t.nf)):
+            for c in f.hij.get(t.i, []):
+                if f.tok[c].d.startswith("obl") and any(f.tok[x].nf == "por" and f.tok[x].d == "case" for x in f.hij.get(c, [])):
+                    a_, b_ = f.np(c)
+                    ms = _mencion_en(f, a_, b_)
+                    if ms:
+                        ag = ms[0]
+            j = t.i - 1
+            while j >= 0 and f.tok[j].u == "PUNCT":
+                j -= 1
+            pac = j
+        if ag is not None and pac is not None and pac >= 0 and ind.familia_de(ag[2]) not in fam_q:
+            a_, b_ = f.np(pac)
+            palabras = {x.nl for x in f.tok[a_:b_ + 1]} | {x.nf for x in f.tok[a_:b_ + 1]} | {raiz(x.nl) for x in f.tok[a_:b_ + 1]}
+            pts = sum(1 for o in otros if o in palabras) + sum(1 for w in ents_w if w in palabras)
+            cands.append((pts, -ag[0], ag[3]))
+    if not cands:
+        return None
+    cands.sort(reverse=True)
+    if len(cands) >= 2 and cands[0][0] == cands[1][0]:
+        return None
+    return cands[0][2] if cands[0][0] > 0 else None
+
+
+def ext_quien_pl(ind, f, q, anc):
+    r = ext_quien(ind, f, q, anc)
+    if not r or not r[0] or not re.search(r"\bquienes\b", nrm(q.raw)):
+        return r
+    for m in f.ment:
+        if m[3] == r[0]:
+            h = next((k for k in range(m[0], m[1] + 1) if f.tok[k].h < m[0] or f.tok[k].h > m[1]), m[0])
+            sibs, pila = [m], [h]
+            while pila:
+                x = pila.pop()
+                for c in f.hij.get(x, []):
+                    if f.tok[c].d == "conj":
+                        mc = next((mm for mm in f.ment if mm[0] <= c <= mm[1]), None)
+                        if mc and mc not in sibs:
+                            sibs.append(mc)
+                            pila.append(c)
+            if len(sibs) >= 2:
+                sibs.sort(key=lambda mm: mm[0])
+                nom = [mm[3] for mm in sibs]
+                txt = ", ".join(nom[:-1]) + " y " + nom[-1]
+                return txt, txt, r[2]
+    return r
+
+
 def ext_quien(ind, f, q, anc):
     fam_q = set(q.ents)
     ment = [(a, b, s_, ind.familia_de(k)) for a, b, k, s_, _ in f.ment]
@@ -1356,6 +1698,18 @@ def ext_quien(ind, f, q, anc):
                         x_ = f.tok[x_].h
                     if not dentro_:
                         return m[2], m[2], 1.0
+        for t in f.tok:                                                          # «una estudiante serbia con la que se casaria»: el antecedente del relativo es la persona a la que se refiere el sustantivo
+            if t.nf == "que" and t.u == "PRON" and t.i >= 2 and f.tok[t.i - 1].nf in ("la", "el", "los", "las") and f.tok[t.i - 2].nf in cls and f.tok[t.i - 2].u == "ADP" \
+                    and t.h >= 0 and f.tok[t.h].d in ("acl", "acl:relcl") and f.tok[t.h].h >= 0:
+                n_ = f.tok[f.tok[t.h].h]
+                cand_ = []
+                if n_.d == "appos" and n_.h >= 0:
+                    cand_ = [m for m in ment if m[0] <= n_.h <= m[1]]
+                if not cand_:
+                    cand_ = [m for m in ment if m[0] <= n_.i <= m[1]] or [m for m in ment if any(f.tok[c].d == "appos" and m[0] <= c <= m[1] for c in f.hij.get(n_.i, []))]
+                cand_ = [m for m in cand_ if m[3] not in fam_q]
+                if cand_:
+                    return cand_[0][2], cand_[0][2], 1.0
         for t in f.tok:
             if t.d == "case" and t.nf in cls and t.u == "ADP":
                 a, b = f.np(t.h)
@@ -1368,8 +1722,22 @@ def ext_quien(ind, f, q, anc):
         if best:
             return best[1], best[1], 1.0
     if q.verbo and not q.prep:
-        for v in f.tok:
-            if (v.u in ("VERB", "AUX") or (v.u == "ADJ" and (re.search(r"(?:ad[oa]s?|id[oa]s?)$", v.nf) or IRREG_PART.match(v.nf)))) and _coincide(v, q.verbo):
+        vs_ = [v for v in f.tok if (v.u in ("VERB", "AUX") or (v.u == "ADJ" and (re.search(r"(?:ad[oa]s?|id[oa]s?)$", v.nf) or IRREG_PART.match(v.nf)))) and _coincide(v, q.verbo)]
+        vs_.sort(key=lambda v: (min(_grado(v, q.verbo), 1) if _grado(v, q.verbo) != 2 else 2, v.i))                 # el verbo mismo antes que un sinonimo: «en 1255 el papa le otorgo…» y no «en 1254 el rey le concedio…»
+        if q.foco:
+            def _bajo_foco(v):
+                x_, n_ = v.h, 0
+                while x_ >= 0 and n_ < 4:
+                    if f.tok[x_].u in ("NOUN", "PROPN") and _coincide(f.tok[x_], q.foco) and any(f.tok[c_].d == "cop" for c_ in f.hij.get(x_, [])):
+                        return True
+                    x_, n_ = f.tok[x_].h, n_ + 1
+                return False
+            vs_ = [v for v in vs_ if not _bajo_foco(v)]                                   # «la ciudad mas poblada de las que bana el rio»: «bana» describe a la ciudad, no es la accion de la pregunta
+        mando_ = _mando(ind, f, q, fam_q) if (q.verbo.nl in MANDO) else None
+        if mando_:
+            return mando_, mando_, 1.0
+        for v in vs_:
+            if True:
                 fg = {0: 1.0, 1: 1.0, 2: 0.7, 3: 0.85}.get(_grado(v, q.verbo), 0.85)           # un sinonimo del verbo vale menos que el verbo mismo
                 es_part = bool(re.search(r"(?:ad[oa]s?|id[oa]s?)$", v.nf) or IRREG_PART.match(v.nf)) and not any(f.tok[x].nl == "haber" for x in range(max(0, v.i - 3), v.i))
                 pasivo = es_part and (v.u == "ADJ" or v.d in ("amod", "acl", "acl:relcl") or any(f.tok[x].d in ("aux:pass", "cop") for x in f.hij.get(v.i, [])) or v.u == "VERB")      # «descritas por Linneo»: el sujeto es lo descrito, no quien lo hizo
@@ -1389,23 +1757,53 @@ def ext_quien(ind, f, q, anc):
                         return sp, sp, 1.0 * fg
                     if ct.d.startswith("obl") and any(f.tok[x].nf == "por" and f.tok[x].d == "case" for x in f.hij.get(c, [])):
                         a, b = f.np(c)
+                        while b + 1 < len(f.tok) and f.tok[b + 1].h == ct.h and f.tok[b + 1].u in ("NOUN", "ADJ") and f.tok[b + 1].d.startswith(("obl", "amod")) \
+                                and not any(f.tok[x].d == "case" for x in f.hij.get(b + 1, [])) and not any(f.tok[x].d == "det" for x in f.hij.get(b + 1, [])):
+                            b += 1                                                    # «por piratas berberiscos»: el analizador deja el adjetivo suelto
                         ms = _mencion_en(f, a, b)
-                        sp = ms[0][3] if ms else f.texto_span(a, b)
+                        sp = ms[0][3] if ms else re.sub(r"^por\s+", "", f.texto_span(a, b))
                         return sp, sp, 1.0 * fg
                 ag = _agente_por(ind, f, v.i, fam_q)
                 if ag:
                     return ag, ag, 0.95 * fg
-                impl = [x for x in f.impl if x not in fam_q]
+                impl = sorted((x for x in f.impl if x not in fam_q), key=lambda x: (-f.impl_w.get(x, 0.7), x))             # orden estable: primero el de mas peso
                 if impl:
                     return ind.disp[impl[0]], ind.disp[impl[0]], 0.6
+        for n_ in f.tok:                              # «tras el pago de un rescate por los frailes»: el sustantivo de accion lleva su agente
+            if n_.u == "NOUN" and _coincide(n_, q.verbo) and _grado(n_, q.verbo) <= 3 and len(n_.nl) >= 4:
+                for p_ in f.tok[n_.i + 1:n_.i + 9]:
+                    if p_.u in ("VERB",) or p_.f in (",", ".", ";"):
+                        break
+                    if p_.nf == "por" and p_.u == "ADP" and p_.i + 1 < len(f.tok):
+                        a_, b_ = f.np(p_.h) if p_.h > p_.i else (p_.i + 1, p_.i + 1)
+                        a_ = max(a_, p_.i + 1)
+                        ms_ = _mencion_en(f, a_, b_)
+                        sp_ = ms_[0][3] if ms_ else f.texto_span(a_, b_)
+                        if (ind.familia_de(ms_[0][2]) not in fam_q) if ms_ else bool(sp_):
+                            return sp_, sp_, 0.9
     if q.foco and not q.prep:                                                   # «su padre, Guillermo Kahlo»: el nombre en aposicion al sustantivo por el que se pregunta
+        otros_ = [k_.nl for k_ in q.claves if k_ is not q.foco and k_ is not q.verbo and k_.kind in ("cont", "foco")]
+        mejor_ap = None
         for t in f.tok:
             if t.u in ("NOUN", "PROPN") and _coincide(t, q.foco) and _grado(t, q.foco) == 0:
                 for c in f.hij.get(t.i, []):
                     if f.tok[c].d == "appos" and f.tok[c].u == "PROPN":
                         ms = [m for m in _mencion_en(f, *f.np(c)) if ind.familia_de(m[2]) not in fam_q]
                         if ms:
-                            return ms[0][3], ms[0][3], 1.25
+                            hay_ = {f.tok[x].nl for x in f.sub(t.i)}
+                            pts_ = sum(1 for o_ in otros_ if o_ in hay_)                # «piloto del modulo de mando»: el cargo cuyo complemento tambien esta en la pregunta
+                            if mejor_ap is None or pts_ > mejor_ap[0]:
+                                mejor_ap = (pts_, ms[0][3])
+        for t in f.tok:                                                          # «Michael Collins, piloto del modulo de mando»: el cargo cuelga del nombre
+            if t.u == "NOUN" and t.d == "appos" and t.h >= 0 and f.tok[t.h].u == "PROPN" and _coincide(t, q.foco) and _grado(t, q.foco) == 0:
+                ms = [m for m in _mencion_en(f, *f.np(t.h)) if ind.familia_de(m[2]) not in fam_q]
+                if ms:
+                    hay_ = {f.tok[x].nl for x in f.sub(t.i)}
+                    pts_ = sum(1 for o_ in otros_ if o_ in hay_)
+                    if mejor_ap is None or pts_ > mejor_ap[0]:
+                        mejor_ap = (pts_, ms[0][3])
+        if mejor_ap:
+            return mejor_ap[1], mejor_ap[1], 1.25
     if q.foco and not q.prep:                                                   # «quien fue la primera mujer profesora»: el sujeto de esa frase copulativa (a veces omitido)
         for t in f.tok:
             if t.u in ("NOUN", "PROPN") and _coincide(t, q.foco) and any(f.tok[c].d == "cop" for c in f.hij.get(t.i, [])):
@@ -1415,7 +1813,7 @@ def ext_quien(ind, f, q, anc):
                         ms = _mencion_en(f, a, b)
                         sp = ms[0][3] if ms else f.texto_span(a, b)
                         return sp, sp, 0.95
-                impl = [x for x in f.impl if x not in fam_q]
+                impl = sorted((x for x in f.impl if x not in fam_q), key=lambda x: (-f.impl_w.get(x, 0.7), x))             # orden estable: primero el de mas peso
                 if impl:
                     return ind.disp[impl[0]], ind.disp[impl[0]], 0.8
     if True:                                                                    # «quien marco el gol» -> «un solitario gol de Merino»; «a quien sustituyo» -> «en reemplazo de Dani Olmo»
@@ -1486,13 +1884,163 @@ def _aposicion_de(f: Frase, i: int) -> Optional[int]:
     return None
 
 
+AGENTIVO = {"escribir": {"autor", "escritor", "novelista", "poeta", "dramaturgo"}, "pintar": {"pintor", "autor"}, "componer": {"compositor", "autor"}, "crear": {"creador", "autor"},
+            "construir": {"constructor", "arquitecto"}, "disenar": {"disenador", "arquitecto"}, "esculpir": {"escultor", "autor"}, "inventar": {"inventor"}, "descubrir": {"descubridor"},
+            "fundar": {"fundador"}, "publicar": {"autor", "editor"}, "dirigir": {"director"}}
+CITA_N = {"frase", "palabra", "lema", "eslogan", "expresion", "cita", "inscripcion", "leyenda", "grito", "consigna", "mensaje", "divisa", "proverbio", "refran", "dicho", "motto"}
+HABLA = {"decir", "pronunciar", "gritar", "exclamar", "escribir", "afirmar", "declarar", "proclamar"}
+
+
+def _entrecomillado(f, q):
+    foco_ok = bool(q.foco) and nrm(q.foco.nl) in CITA_N
+    verbo_ok = bool(q.verbo) and q.verbo.nl in HABLA and not q.foco
+    if not (foco_ok or verbo_ok):
+        return None
+    qs_ = list(re.finditer(r"[«\"“]([^»\"”]{3,})[»\"”]", f.texto))
+    if not qs_:
+        return None
+    if foco_ok and not any(t.u in ("NOUN", "PROPN") and _coincide(t, q.foco) for t in f.tok):
+        return None
+    if verbo_ok and not any(_coincide(t, q.verbo) for t in f.tok):
+        return None
+    m = qs_[0]
+    sp = "«" + m.group(1) + "»"
+    return sp, sp, 1.0
+
+
+def _predicado_cual(f, q, t):
+    """«¿Cual es el lema de…?» <- «Su lema es X»;  «¿Cual es el mayor embalse?» <- «…el de Mequinenza, que es el mayor de la cuenca»;  «¿Cuales son los afluentes…?» <- «…son el Aragon, el Gallego y el Segre»."""
+    plural = nrm(q.raw).lstrip("¿ ").startswith("cuales ")
+    adjs_q = [k.nl for k in q.claves if k.kind == "cont" and any(tk[2] == k.nl and tk[1] == "ADJ" for tk in q.toks)]
+    sup_q = re.search(r"\bmas (\w+)", nrm(q.raw))
+    if sup_q and not any(x.u == "ADJ" and (nrm(x.f) == sup_q.group(1) or nrm(x.l or x.f)[:5] == sup_q.group(1)[:5]) or nrm(x.f) == sup_q.group(1) for x in f.tok):
+        pass
+    # --- cabeza copulativa: con el arbol si sostiene la frase, y si no, en lineal
+    c_ = None
+    if t.d.startswith("nsubj") and t.h >= 0 and (f.tok[t.h].nl == "ser" or any(f.tok[c].d == "cop" for c in f.hij.get(t.h, []))):
+        k0 = next((c for c in f.hij.get(t.h, []) if f.tok[c].d == "cop"), None)
+        c_ = k0 if k0 is not None else t.h
+    if c_ is None and not t.d.startswith("root"):
+        c_ = next((x.i for x in f.tok[t.i + 1:t.i + 13] if x.nl == "ser" and x.u in ("AUX", "VERB")), None)
+        if c_ is not None and any(x.u == "VERB" and x.nl != "ser" for x in f.tok[t.i + 1:c_]):
+            c_ = None
+    if c_ is None or f.tok[c_].nf == "sido" or (c_ + 1 < len(f.tok) and re.search(r"(?:ad[oa]s?|id[oa]s?)$", f.tok[c_ + 1].nf) and f.tok[c_ + 1].u in ("VERB", "ADJ")) \
+            or (c_ > 0 and f.tok[c_ - 1].nl == "haber"):
+        return None                                                                    # «ha sido comparado»: pasiva, no atribucion
+    if sup_q and not any(x.nf.startswith(sup_q.group(1)[:5]) or nrm(x.l or "").startswith(sup_q.group(1)[:5]) for x in f.tok):
+        return None                                                                    # «la universidad mas antigua»: la frase debe decir ese adjetivo
+    # --- relativa: «X, que es el mayor de la cuenca» -> X
+    if c_ > 0 and f.tok[c_ - 1].nf == "que" and c_ >= 3 and f.tok[c_ - 2].f == ",":
+        j = c_ - 3
+        m_ = next((m for m in f.ment if m[0] <= j <= m[1]), None)
+        if m_:
+            return m_[3], m_[3], 0.95
+    e_ = len(f.tok)
+    for x in f.tok[c_ + 1:]:
+        if x.f in (",", ".", ";", ":", "(") and not (plural and x.f == "," and x.i + 1 < len(f.tok) and f.tok[x.i + 1].u in ("DET", "PROPN", "NOUN")) \
+                or x.nf in ("que", "aunque", "pero", "mientras") or (x.nf in ("y", "e") and x.i + 1 < len(f.tok) and f.tok[x.i + 1].nf in ("su", "sus", "este", "esta", "estos", "estas") and not plural):
+            e_ = x.i
+            break
+        if plural and x.nf in ("mientras", "aunque", "pero"):
+            e_ = x.i
+            break
+    if plural:
+        for x in f.tok[c_ + 1:e_]:
+            if x.u == "VERB" and x.i > c_ + 1:
+                e_ = x.i
+                break
+    while e_ - 1 > c_ and f.tok[e_ - 1].f in (",", "y", "e"):
+        e_ -= 1
+    if e_ > c_ + 1:
+        sp = f.texto_span(c_ + 1, e_ - 1)
+        if len(sp) > 1:
+            return sp, sp, 0.95
+    return None
+
+
+def _miembro_pregunta(f, q, a: int, b: int):
+    """«dióxido de carbono del aire y agua del suelo» + «¿qué toman las plantas del suelo?»: el miembro de la enumeracion que lleva lo que la pregunta anade."""
+    n = len(f.tok)
+    e, k = b, b + 1
+    while k < n:
+        t = f.tok[k]
+        if t.u in ("VERB", "AUX") or t.f in (".", ";", ":"):
+            break
+        if t.f == ",":
+            nx = f.tok[k + 1] if k + 1 < n else None
+            if nx is None or nx.u in ("CCONJ", "SCONJ", "PRON", "ADV"):
+                break
+        if t.u in ("NOUN", "PROPN", "ADP", "DET", "ADJ", "CCONJ", "NUM") or t.f == ",":
+            e, k = k, k + 1
+            continue
+        break
+    miembros, ini = [], a
+    for k in range(a + 1, e + 1):
+        t = f.tok[k]
+        if (t.nf in ("y", "e", "o", "u") or t.f == ",") and k + 1 <= e and f.tok[k + 1].u in ("DET", "NOUN", "PROPN", "NUM"):
+            miembros.append((ini, k - 1))
+            ini = k + 1
+    miembros.append((ini, e))
+    if len(miembros) < 2:
+        return None
+    pal = {k_.nl for k_ in q.claves if k_.kind in ("cont", "foco")} | {k_.rz for k_ in q.claves if k_.kind in ("cont", "foco")}
+    pal -= {t_[2] for t_ in q.toks if t_[1] in ("VERB", "AUX", "PRON", "DET", "ADP")}
+    pts = []
+    for (i, j) in miembros:
+        hay = {x.nl for x in f.tok[i:j + 1]} | {raiz(x.nl) for x in f.tok[i:j + 1]}
+        pts.append(len(pal & hay))
+    mx = max(pts)
+    if mx == 0 or pts.count(mx) != 1:
+        if mx == 0 and e - a <= 12 and all(j - i <= 6 for i, j in miembros):
+            return f.texto_span(a, e)                                          # «producen glucosa y oxigeno»: sin nada que distinga, se contestan todos los miembros
+        return None
+    i, j = miembros[pts.index(mx)]
+    while i < j and f.tok[i].u == "DET":
+        i += 1
+    return f.texto_span(i, j)
+
+
 def ext_que(ind, f, q, anc):
+    r_q = _entrecomillado(f, q)
+    if r_q:
+        return r_q
     if q.verbo and q.verbo.nl in EVENTO and not q.foco:                          # «que le paso el 17 de septiembre»: lo que cuenta la frase entera
+        for c_ in q.claves:
+            if c_.kind != "cont" or c_.nl in LIGEROS or c_.nl.isdigit():
+                continue
+            for s_ in f.tok:                                                   # «el oxigeno se libera a la atmosfera» <- «¿que pasa con el oxigeno?»
+                if s_.u == "NOUN" and _coincide(s_, c_) and _grado(s_, c_) == 0 and s_.d.startswith("nsubj") and s_.h >= 0 and f.tok[s_.h].u == "VERB" and f.tok[s_.h].i > s_.i:
+                    v_ = f.tok[s_.h]
+                    a_ = v_.i - 1 if (v_.i >= 1 and f.tok[v_.i - 1].nf == "se") else v_.i
+                    fin_ = v_.i
+                    while fin_ + 1 < len(f.tok) and f.tok[fin_ + 1].f not in (",", ";", "."):
+                        fin_ += 1
+                    sp_ = f.texto_span(a_, fin_)
+                    if sp_:
+                        return sp_, sp_, 1.0
         return "", "", 0.7
+    if q.verbo and q.verbo.nl in AGENTIVO:                          # «autor de Don Quijote»: lo que escribio
+        for t in f.tok:
+            if t.u == "NOUN" and t.nl in AGENTIVO[q.verbo.nl] and t.i + 1 < len(f.tok) and f.tok[t.i + 1].nf in ("de", "del"):
+                c_ = next((x for x in f.hij.get(t.i, []) if f.tok[x].d == "nmod" and x > t.i), None)
+                if c_ is not None:
+                    a_, b_ = f.np(c_)
+                    sp_ = f.texto_span(a_, b_)
+                    sp_ = re.sub(r"^(?:de|del)\s+", "", sp_)
+                    sp_ = re.sub(r",\s+(?:la|el|las|los|una|un)\s.*$", "", sp_) if sp_[:1].isupper() else sp_       # «Don Quijote de la Mancha, la primera novela moderna»: el titulo sin su aposicion
+                    if sp_:
+                        return sp_, sp_, 0.9
     if q.foco:
         best = None
         for t in f.tok:
             if t.u in ("NOUN", "PROPN") and _coincide(t, q.foco):
+                if t.i + 2 < len(f.tok) and f.tok[t.i + 1].f == ":" and t.nl not in TIEMPO and not ajeno(f, t.i, set(q.ents), ind):
+                    fin_ = t.i + 2
+                    while fin_ + 1 < len(f.tok) and f.tok[fin_ + 1].f not in (".", ";"):
+                        fin_ += 1
+                    sp_ = f.texto_span(t.i + 2, fin_)
+                    if sp_:
+                        return sp_, sp_, 1.0                                           # «dos sectores: el agricola y el urbano»: la enumeracion tras los dos puntos
                 h_ = _aposicion_de(f, t.i)
                 if h_ is not None and f.tok[h_].u in ("PROPN", "NOUN") and not _coincide(f.tok[h_], q.foco):
                     a, b = f.np(h_)
@@ -1502,9 +2050,21 @@ def ext_que(ind, f, q, anc):
                         if best is None or d < best[0]:
                             best = (d, sp)
                         continue
+                if nrm(q.raw).lstrip("¿ ").startswith(("cual ", "cuales ")) and t.d == "root" and any(f.tok[c].d == "cop" for c in f.hij.get(t.i, [])):
+                    sj_ = next((c for c in f.hij.get(t.i, []) if f.tok[c].d.startswith("nsubj")), None)
+                    if sj_ is not None:
+                        ms_ = _mencion_en(f, *f.np(sj_))
+                        if ms_ and ind.familia_de(ms_[0][2]) not in set(q.ents):
+                            return ms_[0][3], ms_[0][3], 1.0                              # «Zaragoza es la ciudad mas poblada»: el sujeto de la frase copulativa
+                if nrm(q.raw).lstrip("¿ ").startswith(("cual ", "cuales ")) and not ajeno(f, t.i, set(q.ents), ind):
+                    r_cual = _predicado_cual(f, q, t)
+                    if r_cual:
+                        return r_cual
                 a, b = f.np(t.i)
                 sp = f.texto_span(a, b)
                 d = (_grado(t, q.foco), _dist(t.i, anc) + (30 if ajeno(f, t.i, set(q.ents), ind) else 0), -(b - a))
+                if nrm(q.raw).lstrip("¿ ").startswith(("cual ", "cuales ")):
+                    continue                                                           # «cual es X»: repetir el sintagma por el que se pregunta no contesta nada
                 if best is None or d < best[0]:
                     best = (d, sp)
         return (best[1], best[1], 1.0) if best else None
@@ -1512,16 +2072,60 @@ def ext_que(ind, f, q, anc):
         for v in f.tok:
             if v.u == "VERB" and _coincide(v, q.verbo):
                 for c in f.hij.get(v.i, []):
+                    if f.tok[c].d == "obj" and c > v.i and f.tok[c].u == "NOUN" and v.d in ("acl", "acl:relcl") and v.h >= 0 and f.tok[v.h].u in ("NOUN", "PROPN") \
+                            and any(f.tok[x].nf == "que" and f.tok[x].d in ("mark", "obj", "nsubj") for x in f.hij.get(v.i, [])) and any(f.tok[x].d == "det" for x in f.hij.get(c, [])) \
+                            and not any(f.tok[x].d == "case" for x in f.hij.get(c, [])):
+                        ant_ = v.h
+                        qi_ = next((x for x in f.hij.get(v.i, []) if f.tok[x].nf == "que"), None)
+                        if f.tok[ant_].d.startswith("nmod") and f.tok[ant_].h >= 0 and f.tok[f.tok[ant_].h].u in ("NOUN", "PROPN") and qi_ is not None and qi_ > 0 and f.tok[qi_ - 1].f == ",":
+                            ant_ = f.tok[ant_].h                                         # «una rana sobre una calavera, que…»: la coma separa el relativo del complemento y lo refiere al nucleo
+                        a, b = f.np(ant_)                                                # «una rana, que deben encontrar los estudiantes»: el postverbal es el sujeto; lo que se encuentra es el antecedente
+                        sp = f.texto_span(a, b)
+                        return sp, sp, 0.9
                     if f.tok[c].d in ("obj", "iobj") and f.tok[c].u != "PRON" and not any(f.tok[x].d == "case" for x in f.hij.get(c, [])):
                         a, b = f.np(c)
+                        sp = f.texto_span(a, b)
+                        if f.tok[c].d == "obj" and c > v.i:
+                            mq_ = _miembro_pregunta(f, q, a, b)
+                            if mq_:
+                                return mq_, mq_, 0.8
+                        return sp, sp, 0.8
+                    if f.tok[c].d in ("obj", "iobj") and f.tok[c].nf == "que" and v.d in ("acl", "acl:relcl") and v.h >= 0 and f.tok[v.h].u in ("NOUN", "PROPN"):
+                        a, b = f.np(v.h)                                                 # «una rana ..., que deben encontrar los estudiantes»: lo que se encuentra es el antecedente del relativo
+                        sp = f.texto_span(a, b)
+                        return sp, sp, 0.9
+                    if f.tok[c].d in ("nsubj", "nsubj:pass") and f.tok[c].u == "NOUN" and f.tok[c].i > v.i and not q.ents_ctx and q.verbo.nl in ("aparecer", "existir", "figurar", "surgir", "haber", "yacer", "habitar"):
+                        a, b = f.np(c)                                                   # «En ella aparece una famosa rana»: el sujeto pospuesto es lo que aparece
                         sp = f.texto_span(a, b)
                         return sp, sp, 0.8
     return None
 
 
 def ext_def(ind, f, q, anc):
+    r_q = _entrecomillado(f, q)
+    if r_q:
+        return r_q
     if not q.foco:
         return None
+    for t in f.tok:                               # «clorofila, el pigmento verde que absorbe la luz»: lo que sigue a la coma define al nombre
+        if t.u == "NOUN" and _coincide(t, q.foco) and _grado(t, q.foco) == 0 and t.i + 3 < len(f.tok) and f.tok[t.i + 1].f == ",":
+            k = t.i + 2
+            while k < len(f.tok) and f.tok[k].u == "DET":
+                k += 1
+            if k < len(f.tok) and f.tok[k].u == "NOUN" and k > t.i + 2:
+                fin = k
+                while fin + 1 < len(f.tok) and f.tok[fin + 1].f not in (",", ".", ";"):
+                    fin += 1
+                seg = f.tok[t.i + 2:fin + 1]
+                antes_que = []
+                for x in seg:
+                    if x.nf in ("que", "donde", "cuyo", "cuya"):
+                        break
+                    antes_que.append(x)
+                if not any(x.u == "CCONJ" for x in antes_que) and not any(x.u == "VERB" for x in antes_que) and fin >= k:
+                    sp_ = f.texto_span(t.i + 2, fin)
+                    if sp_:
+                        return sp_, sp_, 1.0
     for t in f.tok:
         if t.u in ("NOUN", "PROPN") and _coincide(t, q.foco):
             cop = any(f.tok[c].d == "cop" for c in f.hij.get(t.i, []))
@@ -1533,7 +2137,52 @@ def ext_def(ind, f, q, anc):
     return None
 
 
+CONSEC = [("razon", "por", "la", "cual"), ("razon", "por", "la", "que"), ("motivo", "por", "el", "cual"), ("motivo", "por", "el", "que"), ("por", "lo", "que"), ("por", "lo", "cual"),
+          ("por", "eso"), ("por", "ello"), ("de", "ahi", "que"), ("por", "este", "motivo"), ("por", "esta", "razon")]
+
+
+def _causa_previa(f, q):
+    """«…, donde perdio el uso de la mano izquierda, razon por la cual se le aposto el Manco»: lo que se pregunta es la consecuencia; la causa es la clausula anterior."""
+    nf = [t.nf for t in f.tok]
+    cl = [k for k in q.claves if k.kind in ("verbo", "cont", "foco") and k.nl not in GENERICOS]
+    for i in range(len(nf)):
+        for pat in CONSEC:
+            if tuple(nf[i:i + len(pat)]) != pat:
+                continue
+            ant = [t for t in f.tok[:i] if t.u != "PUNCT"]
+            pos = [t for t in f.tok[i + len(pat):] if t.u != "PUNCT"]
+            ma = sum(1 for k in cl if any(_coincide(t, k) for t in ant))
+            mp = sum(1 for k in cl if any(_coincide(t, k) for t in pos))
+            if mp <= ma or mp == 0:
+                continue
+            ini = 0
+            for j in range(i - 1, -1, -1):
+                if nf[j] in ("donde", "cuando", "mientras", "pues") and j < i - 2:
+                    ini = j + 1
+                    break
+            fin = i - 1
+            while fin > ini and f.tok[fin].u == "PUNCT":
+                fin -= 1
+            if fin - ini >= 2:
+                sp = f.texto_span(ini, fin)
+                return sp, sp, 1.0
+    return None
+
+
 def ext_causa(ind, f, q, anc):
+    r_prev = _causa_previa(f, q)
+    if r_prev:
+        return r_prev
+    for t in f.tok:                      # «recibio el Nobel, no por la relatividad, sino por su explicacion del efecto fotoelectrico»
+        if t.nf == "sino" and t.i + 2 < len(f.tok) and f.tok[t.i + 1].nf in ("por", "a", "debido", "gracias", "para") and any(f.tok[j].nf == "no" for j in range(max(0, t.i - 12), t.i)):
+            b = len(f.tok) - 1
+            for x in f.tok[t.i + 2:]:
+                if x.f in (".", ";"):
+                    b = x.i - 1
+                    break
+            sp = f.texto_span(t.i + 1, b)
+            if len(sp) > 6:
+                return sp, sp, 1.0
     for t in f.tok:
         if (t.nf in ("porque", "debido") or (t.nf == "ya" and t.i + 1 < len(f.tok) and f.tok[t.i + 1].nf == "que") or t.nf in ("gracias",)) and t.i > 0:
             b = len(f.tok) - 1
@@ -1585,6 +2234,8 @@ def ext_causa(ind, f, q, anc):
     for t in f.tok:                                                  # «obtuvo el Nobel por el descubrimiento del polonio»: un «por ...» que no es el agente de un participio
         if t.nf == "por" and t.u == "ADP" and t.i > 1 and t.i + 2 < len(f.tok):
             ant = f.tok[t.i - 1]
+            if f.tok[t.i + 1].nf in ("lo", "ello", "eso", "esto", "tanto") or (f.tok[t.i + 1].nf in ("la", "el") and f.tok[t.i + 2].nf in ("cual", "que")):
+                continue                                                          # «por lo que», «por la cual»: conector de consecuencia, no causa
             if re.search(r"(?:ad[oa]s?|id[oa]s?)$", ant.nf) or IRREG_PART.match(ant.nf) or f.tok[t.i + 1].u == "PROPN":
                 continue
             sig_ = f.tok[t.i + 1]
@@ -1612,8 +2263,24 @@ def ext_causa(ind, f, q, anc):
 FUNCION = {"permitir", "ayudar", "facilitar", "evitar", "impedir", "proteger", "servir", "favorecer", "hacer", "causar", "provocar", "ofrecer", "aumentar", "reducir", "mejorar"}
 
 
+USO = {"utilizar", "usar", "emplear", "servir", "aprovechar"}
+
+
 def ext_finalidad(ind, f, q, anc):
     neg = {t.i for t in f.tok if t.nf == "no"}
+    if q.verbo and q.verbo.nl in USO:                         # «la glucosa se utiliza como fuente de energia»
+        for v in f.tok:
+            if v.u in ("VERB", "AUX") and (v.nl in USO or _coincide(v, q.verbo)):
+                for k in range(v.i + 1, min(len(f.tok), v.i + 10)):
+                    if f.tok[k].f in (",", ";", "."):
+                        break
+                    if f.tok[k].nf == "como" and k + 1 < len(f.tok):
+                        fin = k
+                        while fin + 1 < len(f.tok) and f.tok[fin + 1].f not in (",", ";", "."):
+                            fin += 1
+                        sp = f.texto_span(k, fin)
+                        return sp, sp, 1.0
+
     for t in f.tok:
         if t.nf == "para" and t.i + 1 < len(f.tok) and f.tok[t.i + 1].u == "VERB" and t.i > 0:
             b = len(f.tok) - 1
@@ -1691,7 +2358,7 @@ def ext_significado(ind, f, q, anc):
     return None
 
 
-EXT = {"significado": ext_significado, "nombre": ext_nombre, "def": ext_def, "cuando": ext_cuando, "donde": ext_donde, "cuanto": ext_cuanto, "quien": ext_quien, "que": ext_que, "porque": ext_causa, "para_que": ext_finalidad}
+EXT = {"significado": ext_significado, "nombre": ext_nombre, "def": ext_def, "cuando": ext_cuando, "donde": ext_donde, "cuanto": ext_cuanto, "quien": ext_quien_pl, "que": ext_que, "porque": ext_causa, "para_que": ext_finalidad}
 
 
 # ====================================================== composicion ======================================================================
@@ -1770,12 +2437,32 @@ def contestar(ind: Indice, q: Q, final: bool = False) -> Optional[Tuple[str, Lis
     # ---------------- perfil: «quien es X», «que sabes de X», «hablame de X» --------------------------------------------------------
     if q.tipo == "perfil":
         if q.ents:
+            try:
+                from . import relaciones as _R0
+                r0 = _R0.parentesco(ind, q)
+            except Exception:                                                                # noqa
+                if os.environ.get("LCM_DEBUG"):
+                    raise
+                r0 = None
+            if r0:
+                return pre + r0, q.ents
+        if q.ents:
             fid = q.ents[0]
             fs = perfil(ind, fid)
             if not fs:
                 return None
             return pre + ind.disp[fid] + ", por lo que he leído:\n" + "\n".join("• «" + cita(f, "", 230) + "»" for f in fs), [fid]
         return None
+    if q.tipo != "perfil" and not getattr(q, "_sub", False):
+        try:
+            from . import relaciones as _R
+            r_rel = _R.intentar(ind, q, final)
+        except Exception:                                                                   # noqa  (una pregunta rara nunca debe romper la conversacion)
+            if os.environ.get("LCM_DEBUG"):
+                raise
+            r_rel = None
+        if r_rel:
+            return pre + r_rel[0], r_rel[1]
     if q.desconocidos and (not q.ents or q.ents_ctx) and q.tipo != "si_no":     # el tema de la pregunta es una palabra que nunca se ha leido: contestar con otra cosa seria inventar
         return None
     rk = ranking(ind, q, 500 if q.tipo == "nombre" else 12)
@@ -1810,8 +2497,22 @@ def contestar(ind: Indice, q: Q, final: bool = False) -> Optional[Tuple[str, Lis
                     r = (r[0], r[1], r[2] * 0.85)                             # solo lo nombra un sinonimo
             if r:
                 flojas = 0 if es_ctx else sum(1 for e in q.ents if nivel_ent(f, e) < 0.6 and ind.especifica(e) and e not in q.debiles)
-                cands.append((g + 1.6 * r[2] - 0.8 * flojas, c, f, r))
+                def _tvg(gmax):
+                    return bool(q.verbo) and q.verbo.nl not in GENERICOS and q.tipo in ("quien", "cuando", "donde") \
+                        and any((t.u in ("VERB", "AUX") or (t.u == "ADJ" and (re.search(r"(?:ad[oa]s?|id[oa]s?)$", t.nf) or IRREG_PART.match(t.nf)))) and _coincide(t, q.verbo) and _grado(t, q.verbo) <= gmax
+                                and not (q.ents and (_sujeto_ajeno(ind, f, t, set(q.ents)) or ajeno(f, t.i, set(q.ents), ind))) for t in f.tok) \
+                        and all(nivel_ent(f, e) >= 0.65 for e in q.ents if e not in q.debiles) and (q.tipo != "cuando" or bool(re.search(r"\d", r[0])))
+                tv_ = (1 if _tvg(1) else (0.5 if _tvg(2) else 0))
+                anyo_ = 0.0
+                if q.tipo in ("quien", "que", "donde", "causa", "porque", "para_que", "como", "cuanto", "nombre"):
+                    ys_ = set(re.findall(r"(?<!\d)\d{4}(?!\d)", q.raw))
+                    if ys_ and not any(y_ in f.texto for y_ in ys_):
+                        anyo_ = 1.2                                         # «¿con quien se caso en 1903?»: la frase de otro año no responde
+                cands.append((g + 1.6 * r[2] - 0.8 * flojas - anyo_, c, f, r, tv_))
         if cands:
+            if any(x[4] == 1 for x in cands):                                    # una frase con el verbo por el que se pregunta gana a otra que solo comparte los sustantivos
+                cands = [(x[0] + (0 if x[4] else -1.5),) + x[1:] for x in cands]
+            cands = [x[:4] for x in cands]
             cands.sort(key=lambda x: -x[0])
             _, c, f, (resp, sp, cal) = cands[0]
             solida = bool(q.ents) and not es_ctx and all(nivel_ent(f, e) >= 1.0 for e in q.ents)      # la entidad por la que se pregunta esta en la frase: se admite menos cobertura
@@ -1828,7 +2529,7 @@ def contestar(ind: Indice, q: Q, final: bool = False) -> Optional[Tuple[str, Lis
                 if ce:
                     return pre + cap(ce) + ". En el texto: «" + cita(nx) + "»", q.ents
         # ---- sin extraccion: la frase mas cercana, solo si encaja bien --------------------------------------------------------------
-        if mejor_c >= (0.45 if final else 0.65) and not es_ctx:
+        if mejor_c >= (0.45 if final else 0.65) and not es_ctx and not _pide_capacidad(q):
             return pre + "Lo más cercano que he leído: «" + cita(mejor_f) + "»", q.ents
         return None
     # ---------------- si/no -------------------------------------------------------------------------------------------------------------
@@ -1837,18 +2538,35 @@ def contestar(ind: Indice, q: Q, final: bool = False) -> Optional[Tuple[str, Lis
             for g, c, f in rk:
                 if c < 0.5:
                     break
-                if all(any(_coincide(t, k) and (k.kind != "verbo" or (t.u in ("VERB", "AUX") and _grado(t, k) != 2)) for t in f.tok if t.u != "PUNCT") for k in q.claves if not (k.kind == "verbo" and k.nl in LIGEROS)) \
+                def _clave_ok(k):
+                    if any(_coincide(t, k) and (k.kind != "verbo" or (t.u in ("VERB", "AUX") and _grado(t, k) != 2)) for t in f.tok if t.u != "PUNCT"):
+                        return True
+                    if k.kind == "cont" and k.nl.isdigit() and q.ents and all(nivel_ent(f, e) >= 0.6 for e in q.ents):
+                        return True                                               # «el Apolo 11»: el numero es parte del nombre y la frase habla de el sin repetirlo
+                    if k.kind == "cont" and _casa_ctx(k, f) >= 0.5 and any(t.u == "PRON" and t.nf in ("lo", "la", "los", "las", "le", "les", "ellos", "ellas", "el", "ella") for t in f.tok):
+                        return True                                               # «los recogio»: el pronombre recoge lo dicho antes
+                    return False
+                if all(_clave_ok(k) for k in q.claves if not (k.kind == "verbo" and k.nl in LIGEROS)) \
                         and all(nivel_ent(f, e) >= 0.45 for e in q.ents) and not q.desconocidos:
                     neg = _negada(f, anclas(ind, f, q))
                     return pre + ("No." if neg else "Sí.") + " En el texto: «" + cita(f) + "»", q.ents
             if ausente(ind, q):
                 return None
-            if mejor_c >= 0.5 and (final or q.ents) and not (es_ctx and not final):
+            if mejor_c >= 0.5 and (final or q.ents) and not (es_ctx and not final) and not _pide_capacidad(q):
                 return pre + "No lo sé con certeza. Lo más parecido que he leído: «" + cita(mejor_f) + "»", q.ents
             return None
-        if mejor_c >= (0.45 if final else 0.65):
+        if mejor_c >= (0.45 if final else 0.65) and not _pide_capacidad(q):
             return pre + "Lo más cercano que he leído: «" + cita(mejor_f) + "»", q.ents
     return None
+
+
+def _pide_capacidad(q: Q) -> bool:
+    """parche-129: «¿puedes cantar?» se le pide algo a quien contesta; una frase suelta del texto con una palabra parecida no es la respuesta."""
+    try:
+        from src.language import vida
+        return vida.pide_capacidad(getattr(q, "raw", "") or "")
+    except Exception:                                                           # noqa
+        return False
 
 
 def _siguiente(ind: Indice, f: Frase) -> Optional[Frase]:
@@ -1875,6 +2593,9 @@ def _tronco(w: str) -> str:
     return w[:-1] if len(w) > 3 and w[-1] in "aeo" else w
 
 
+CATEGORIAS = {"obra", "libro", "escrito", "texto", "titulo", "pais", "nacion", "lugar", "persona", "personaje", "cosa", "objeto", "nombre", "animal", "planta", "ciudad", "region", "territorio"}   # clases genericas: el texto da el ejemplar («Don Quijote»), no la palabra de la clase
+
+
 def ausente(ind: Indice, q: Q) -> Optional[str]:
     """Palabra de contenido de la pregunta (sustantivo/verbo propio) que no aparece en ninguna frase leida, ni sus sinonimos: de eso no hay nada."""
     tr = getattr(ind, "_troncos", None)
@@ -1882,6 +2603,8 @@ def ausente(ind: Indice, q: Q) -> Optional[str]:
         tr = ind._troncos = {_tronco(w) for w in list(ind.idf) + list(ind.vocab_all)}
     for k in q.claves:
         if k.kind not in ("cont", "foco") or k.w < 1.5 or k.nl in LIGEROS:
+            continue
+        if k.nl in CATEGORIAS and k is q.foco and q.tipo in ("que", "cual") and q.verbo:
             continue
         if k.nl in ind.idf or k.rz in ind.idf_r or k.nl in ind.vocab_all or _tronco(k.nl) in tr:
             continue
@@ -1960,15 +2683,46 @@ def _protagonista_global(ind: Indice) -> Optional[str]:
     return None
 
 
+_CORTES = re.compile(r"^[¿\s]*(?:(?:y|oye|por favor|entonces|pues)[,\s]+)*(?:me\s+)?(?:puedes|podr[ií]as|sabr[ií]as|ser[ií]as tan amable de|ser[ií]as capaz de)\s+"
+                     r"(?:decirme|indicarme|explicarme|contarme|mencionarme|aclararme|decirnos|decir|indicar|explicar|contar|aclarar)\s+(?P<resto>.+?)[?\s]*$", re.I)
+_WH_RESTO = re.compile(r"^(?:cuando|donde|quien|quienes|como|cual|cuales|cuanto|cuanta|cuantos|cuantas|que|por que|para que|a que|en que|de que|con que|a quien|de quien|con quien|adonde)\b")
+
+
+def sin_cortesia(raw: str) -> Optional[str]:
+    """«¿Puedes decirme cuantos anos tiene X?» es la pregunta «¿cuantos anos tiene X?»; «puedes decirme la hora» es una peticion que el texto no contesta (None)."""
+    m = _CORTES.match(raw or "")
+    if not m:
+        return raw
+    resto = m.group("resto").strip()
+    if re.match(r"^si\s+\S", resto, re.I):
+        return "¿" + re.sub(r"^si\s+", "", resto, flags=re.I) + "?"
+    if _WH_RESTO.match(nrm(resto)):
+        return "¿" + resto + "?"
+    imp = "Dime " + resto
+    return imp if es_peticion(imp) else None
+
+
 def responder(conv, raw: str, final: bool = False) -> Optional[str]:
     mem = getattr(conv, "m", None)
     ind = indice(mem) if mem is not None else None
     if ind is None:
         return None
+    raw = sin_cortesia(raw)                                                     # parche-129: «¿puedes decirme cuando nacio X?»
+    if raw is None:
+        return None
+    ind._parser = getattr(conv, "parser", None)
+    ind._conv = conv
     q = analizar(ind, raw, getattr(conv, "parser", None))
     if q is None:
         return None
     explicito = bool(q.ents) or bool(q.corr)
+    if not explicito:                                                           # parche-129: se pregunta por alguien del que solo se habla en la conversacion («marta nacio...»): no es el protagonista del texto
+        try:
+            from src.language import vida
+            if vida.entidades_de_conversacion(mem, raw, lambda w_: w_ in ind.idf or w_ in ind.vocab_all):
+                return None
+        except Exception:                                                       # noqa
+            pass
     solo = False
     if not explicito and q.tipo != "perfil":                                    # una pregunta que se sostiene sola no necesita la entidad de la conversacion
         q0 = copy.copy(q)

@@ -228,6 +228,24 @@ def _abrev_antes(txt: str, i: int) -> bool:
     return w in ABREV or (len(w) == 1 and w.isalpha() and txt[j:i][:1].isupper()) or bool(re.fullmatch(r"(?:[a-z]\.)+[a-z]", txt[j:i].lower()))
 
 
+_ARRANQUE = {"el", "la", "los", "las", "un", "una", "unos", "unas", "su", "sus", "en", "tras", "durante", "desde", "con", "por", "para", "al", "del", "este",
+             "esta", "estos", "estas", "ese", "esa", "aquel", "aquella", "tambien", "despues", "entre", "alli", "sin", "segun", "hoy", "ya", "pero", "mas", "no",
+             "se", "fue", "es", "era", "cuando", "como", "asi", "luego", "mientras", "ademas", "sobre", "hacia", "ante", "bajo", "hasta", "actualmente", "finalmente"}
+
+
+def _numeral_fin_frase(txt: str, i: int, fin: int) -> bool:
+    """«... cohete Saturno V. La tripulacion ...»: una sola letra de numeral romano (I, V, X, L, C, M, D) tras un nombre y delante de un arranque de frase
+    (articulo, preposicion...) cierra la frase; una inicial de nombre («John F. Kennedy») va seguida de un apellido, no de un articulo."""
+    j = i
+    while j > 0 and txt[j - 1].isalpha():
+        j -= 1
+    w = txt[j:i]
+    if len(w) != 1 or w not in "IVXLCMD" or j < 2 or not txt[j - 2].isalnum():
+        return False
+    m = re.match(r"[A-Za-zÁÉÍÓÚÑáéíóúñ]+", txt[fin:])
+    return bool(m) and nrm(m.group(0)) in _ARRANQUE
+
+
 def frases(parrafo: str) -> List[str]:
     out, ini, n = [], 0, len(parrafo)
     for m in re.finditer(r"[.!?]+[\"»”)]*\s+", parrafo):
@@ -236,7 +254,8 @@ def frases(parrafo: str) -> List[str]:
         if not sig or not (sig.isupper() or sig in "¿¡\"«“—(0123456789"):
             continue
         if parrafo[m.start()] == "." and (_abrev_antes(parrafo, m.start()) or re.search(r"\d$", parrafo[:m.start()]) and sig.isdigit()):
-            continue
+            if not _numeral_fin_frase(parrafo, m.start(), fin):
+                continue
         out.append(parrafo[ini:m.start() + 1].strip())
         ini = fin
     if ini < n:

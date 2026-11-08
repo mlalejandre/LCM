@@ -16,7 +16,7 @@ MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agost
 WEEKDAYS = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
 SEASONS = {"primavera": ((3, 21), (6, 20)), "verano": ((6, 21), (9, 22)), "otono": ((9, 23), (12, 20)), "invierno": ((12, 21), (3, 20))}
 FUTURE = {"proximo", "proxima", "siguiente"}
-_ABS = re.compile(r"\b(?:el\s+|del\s+|de\s+)?(\d{1,2})\s+de\s+(" + "|".join(MONTHS) + r")(?:\s+de\s+(\d{4}))?", re.I)
+_ABS = re.compile(r"\b(?:(?:el|del|de)\s+)?(?:d[ií]a\s+)?(\d{1,2})\s+de\s+(" + "|".join(MONTHS) + r")(?:\s+de\s+(\d{4}))?", re.I)
 
 
 def _iv(a: date, b: date) -> str:

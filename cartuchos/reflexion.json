@@ -2972,6 +2972,24 @@
    "peso": 0.5
   },
   {
+   "s": "BACTERICIDA",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«bactericida» se define con «crecimiento»",
+   "peso": 0.5
+  },
+  {
    "s": "BAHÍA",
    "p": "RELACIONADO_CON",
    "o": "GOLFO",
@@ -3419,6 +3437,24 @@
    "when_abs": null,
    "q": "",
    "por": "«bicicleta» se define con «rueda»",
+   "peso": 0.5
+  },
+  {
+   "s": "BIGOTE",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«bigote» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -4124,6 +4160,24 @@
    "peso": 0.5
   },
   {
+   "s": "CABELLO",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«cabello» se define con «crecimiento»",
+   "peso": 0.5
+  },
+  {
    "s": "CABINA",
    "p": "RELACIONADO_CON",
    "o": "AREA",
@@ -4733,6 +4787,24 @@
    "when_abs": null,
    "q": "",
    "por": "«candelaria» se define con «templo»",
+   "peso": 0.5
+  },
+  {
+   "s": "CANDIDATA",
+   "p": "RELACIONADO_CON",
+   "o": "POLÍTICO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«candidata» se define con «político»",
    "peso": 0.5
   },
   {
@@ -6911,6 +6983,24 @@
    "when_abs": null,
    "q": "",
    "por": "«corteza» se define con «tallo»",
+   "peso": 0.5
+  },
+  {
+   "s": "COSECHA",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«cosecha» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -12980,6 +13070,24 @@
    "peso": 0.5
   },
   {
+   "s": "LECHO",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«lecho» se define con «crecimiento»",
+   "peso": 0.5
+  },
+  {
    "s": "LENGUA",
    "p": "RELACIONADO_CON",
    "o": "MEMBRANA",
@@ -13445,6 +13553,24 @@
    "when_abs": null,
    "q": "",
    "por": "«madrina» se define con «esposa»",
+   "peso": 0.5
+  },
+  {
+   "s": "MADUREZ",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«madurez» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -16994,6 +17120,42 @@
    "peso": 0.5
   },
   {
+   "s": "PASE",
+   "p": "RELACIONADO_CON",
+   "o": "JUGADOR",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«pase» se define con «jugador»",
+   "peso": 0.5
+  },
+  {
+   "s": "PASE",
+   "p": "RELACIONADO_CON",
+   "o": "PELOTA",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«pase» se define con «pelota»",
+   "peso": 0.5
+  },
+  {
    "s": "PASTO",
    "p": "RELACIONADO_CON",
    "o": "CAMPO",
@@ -17315,6 +17477,24 @@
    "when_abs": null,
    "q": "",
    "por": "«pelo» se define con «calor»",
+   "peso": 0.5
+  },
+  {
+   "s": "PELO",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«pelo» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -18143,6 +18323,24 @@
    "when_abs": null,
    "q": "",
    "por": "«presión» se define con «area»",
+   "peso": 0.5
+  },
+  {
+   "s": "PRIMAVERA",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«primavera» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -19421,6 +19619,24 @@
    "when_abs": null,
    "q": "",
    "por": "«rodilla» se define con «tibia»",
+   "peso": 0.5
+  },
+  {
+   "s": "ROEDOR",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«roedor» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -21728,6 +21944,24 @@
    "peso": 0.5
   },
   {
+   "s": "TERRAZA",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«terraza» se define con «crecimiento»",
+   "peso": 0.5
+  },
+  {
    "s": "TERRIER",
    "p": "RELACIONADO_CON",
    "o": "TREN",
@@ -22124,6 +22358,24 @@
    "peso": 0.5
   },
   {
+   "s": "TOXINA",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«toxina» se define con «crecimiento»",
+   "peso": 0.5
+  },
+  {
    "s": "TRACTO",
    "p": "RELACIONADO_CON",
    "o": "SISTEMA",
@@ -22517,6 +22769,24 @@
    "when_abs": null,
    "q": "",
    "por": "«unicornio» se define con «caballo»",
+   "peso": 0.5
+  },
+  {
+   "s": "UNICORNIO",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«unicornio» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -22985,6 +23255,24 @@
    "when_abs": null,
    "q": "",
    "por": "«verano» se define con «temporada»",
+   "peso": 0.5
+  },
+  {
+   "s": "VERDE",
+   "p": "RELACIONADO_CON",
+   "o": "CRECIMIENTO",
+   "n": 1,
+   "t": 0,
+   "source": "reflexion",
+   "imp": 1.0,
+   "tick": 0,
+   "archived": false,
+   "neg": false,
+   "when": "",
+   "when_disp": "",
+   "when_abs": null,
+   "q": "",
+   "por": "«verde» se define con «crecimiento»",
    "peso": 0.5
   },
   {
@@ -30835,6 +31123,8 @@
   "PIGMENTO": "pigmento",
   "BABA": "baba",
   "BOCA": "boca",
+  "BACTERICIDA": "bactericida",
+  "CRECIMIENTO": "crecimiento",
   "BAHÍA": "bahía",
   "BALANZA": "balanza",
   "GRAVEDAD": "gravedad",
@@ -30907,6 +31197,7 @@
   "VELOCIDAD": "velocidad",
   "BÚNKER": "búnker",
   "CABECERA": "cabecera",
+  "CABELLO": "cabello",
   "CABINA": "cabina",
   "AREA": "area",
   "CACAHUETE": "cacahuete",
@@ -30941,8 +31232,9 @@
   "TERRITORIO": "territorio",
   "CANDELARIA": "candelaria",
   "TEMPLO": "templo",
-  "CANDIDATO": "candidato",
+  "CANDIDATA": "candidata",
   "POLÍTICO": "político",
+  "CANDIDATO": "candidato",
   "CANELONES": "canelones",
   "CANINO": "canino",
   "INCISIVO": "incisivo",
@@ -31324,6 +31616,7 @@
   "NACIMIENTO": "nacimiento",
   "LASAÑA": "lasaña",
   "LATERAL": "lateral",
+  "LECHO": "lecho",
   "LENGUA": "lengua",
   "MEMBRANA": "membrana",
   "LICUADORA": "licuadora",
@@ -31464,6 +31757,7 @@
   "ALTURA": "altura",
   "PARIENTE": "pariente",
   "PARTICIPACION": "participacion",
+  "PASE": "pase",
   "PATILLA": "patilla",
   "PATRIARCA": "patriarca",
   "PATRIARCADO": "patriarcado",
@@ -31635,6 +31929,7 @@
   "TORMENTA": "tormenta",
   "TORNO": "torno",
   "TORTUGA": "tortuga",
+  "TOXINA": "toxina",
   "TRACTOR": "tractor",
   "TRANSPARENCIA": "transparencia",
   "TRIGO": "trigo",
@@ -31736,7 +32031,6 @@
   "BURRITO": "burrito",
   "CABAÑA": "cabaña",
   "MANSIÓN": "mansión",
-  "CABELLO": "cabello",
   "PEINADO": "peinado",
   "CALA": "cala",
   "MUSA": "musa",
@@ -31783,7 +32077,6 @@
   "PLANTACIÓN": "plantación",
   "JUNIO": "junio",
   "LAGO": "lago",
-  "LECHO": "lecho",
   "JARDÍN": "jardín",
   "LLUVIA": "lluvia",
   "LOBO": "lobo",
@@ -31809,20 +32102,20 @@
  "display": {},
  "opposites": [],
  "nombre": "reflexion",
- "creado": "2026-11-08 00:27",
+ "creado": "2026-11-08 13:07",
  "version": 1,
  "fuente": "reflexión sobre los conceptos de la memoria",
  "descripcion": "Nexos descubiertos entre conceptos (parecidos, definiciones, partes, contrarios)",
  "informe": {
-  "conceptos": 1755,
+  "conceptos": 1762,
   "sin_sentido_claro": 15,
-  "nexos": 1700,
-  "segundos": 0.26,
+  "nexos": 1716,
+  "segundos": 0.25,
   "por_tipo": {
    "CONTRARIO_DE": 9,
    "HECHO_DE": 27,
    "PARTE_DE": 32,
-   "RELACIONADO_CON": 1256,
+   "RELACIONADO_CON": 1272,
    "SE_PARECE_A": 376
   },
   "ejemplos": {
@@ -32025,11 +32318,11 @@
     "nexos": 14
    },
    {
-    "concepto": "edificio",
+    "concepto": "crecimiento",
     "nexos": 13
    }
   ],
-  "aislados": 557,
+  "aislados": 559,
   "dudas": [
    {
     "concepto": "blanco",
@@ -32107,6 +32400,6 @@
     "diccionario": "es deidad > convicción > contenido mental"
    }
   ],
-  "fecha": "2026-11-08 00:27"
+  "fecha": "2026-11-08 13:07"
  }
 }

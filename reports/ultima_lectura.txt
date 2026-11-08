@@ -1,1338 +1,176 @@
-LECTURA: 144 frases, 416 hechos, 58 sin aprovechar
-
-Lamine Yamal en la Copa Mundial de Fútbol de 2026
-   1:Lamine/PROPN->0:root[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:en/ADP->5:case[en] 4:la/DET->5:det[el] 5:Copa/PROPN->1:nmod[copa] 6:Mundial/PROPN->5:amod[mundial] 7:de/ADP->8:case[de] 8:Fútbol/PROPN->5:nmod[futbol] 9:de/ADP->10:case[de] 10:2026/NUM->8:nmod[2026] 11:./PUNCT->1:punct[.]
-
-13 de julio de 2007
-   1:13/NUM->0:root[13] 2:de/ADP->3:case[de] 3:julio/NOUN->1:nmod[julio] 4:de/ADP->5:case[de] 5:2007/NUM->3:nmod[2007] 6:./PUNCT->1:punct[.]
-
-Nacionalidad Española
-   1:Nacionalidad/NOUN->0:root[nacionalidad] 2:Española/ADJ->1:amod[espanola] 3:./PUNCT->1:punct[.]
-
-Dorsal 10
-   1:Dorsal/NUM->2:amod[dorsal] 2:10/NUM->1:nummod[10] 3:./PUNCT->1:punct[.]
-
-Dorsal 19
-   1:Dorsal/NUM->2:amod[dorsal] 2:19/NUM->1:nummod[19] 3:./PUNCT->1:punct[.]
-
-Lamine Yamal Nasraoui Ebana es un futbolista español que juega como extremo derecho en el F. C. Barcelona de la Primera División de España.
-   1:Lamine/PROPN->7:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:Nasraoui/PROPN->1:flat[nasraoui] 4:Ebana/PROPN->1:flat[ebana] 5:es/AUX->7:cop[ser] 6:un/DET->7:det[uno] 7:futbolista/NOUN->0:root[futbolista] 8:español/ADJ->7:amod[espanol] 9:que/PRON->10:nsubj[que] 10:juega/VERB->7:acl[jugar] 11:como/ADP->12:case[como] 12:extremo/NOUN->10:obl[extremo] 13:derecho/ADJ->12:amod[derecho] 14:en/ADP->16:case[en] 15:el/DET->16:det[el] 16:F/PROPN->10:obl[f] 17:./PUNCT->7:punct[.] 18:C/PROPN->16:appos[c] 19:./PUNCT->7:punct[.] 20:Barcelona/PROPN->18:flat[barcelona] 21:de/ADP->24:case[de] 22:la/DET->24:det[el] 23:Primera/ADJ->24:amod[primero] 24:División/PROPN->23:flat[division] 25:de/ADP->26:case[de] 26:España/PROPN->24:nmod[espana] 27:./PUNCT->7:punct[.]
-   => LAMINE_YAMAL_NASRAOUI_EBANA ES FUTBOLISTA
-   => LAMINE_YAMAL_NASRAOUI_EBANA SER ESPANOL
-   => EXTREMO_DERECHO ES EXTREMO
-   => LAMINE_YAMAL_NASRAOUI_EBANA JUGAR_COMO EXTREMO_DERECHO
-   => LAMINE_YAMAL_NASRAOUI_EBANA JUGAR_EN F
-
-Lamine Yamal Nasraoui Ebana nació en Esplugas de Llobregat, Barcelona el 13 de julio de 2007.
-   1:Lamine/PROPN->5:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:Nasraoui/PROPN->1:flat[nasraoui] 4:Ebana/PROPN->1:flat[ebana] 5:nació/VERB->0:root[nacer] 6:en/ADP->7:case[en] 7:Esplugas/PROPN->5:obl[esplugas] 8:de/ADP->9:case[de] 9:Llobregat/PROPN->7:nmod[llobregat] 10:,/PUNCT->11:punct[,] 11:Barcelona/PROPN->7:appos[barcelona] 12:el/DET->13:det[el] 13:13/NUM->5:obl[13] 14:de/ADP->15:case[de] 15:julio/NOUN->13:nmod[julio] 16:de/ADP->17:case[de] 17:2007/NUM->15:nmod[2007] 18:./PUNCT->5:punct[.]
-   => ESPLUGAS_DE_LLOBREGAT ES ESPLUGAS
-   => LAMINE_YAMAL_NASRAOUI_EBANA NACER_EN ESPLUGAS_DE_LLOBREGAT
-
-Es internacional absoluto con la selección de España.
-   1:Es/AUX->2:cop[ser] 2:internacional/ADJ->0:root[internacional] 3:absoluto/ADJ->2:amod[absoluto] 4:con/ADP->6:case[con] 5:la/DET->6:det[el] 6:selección/NOUN->2:nmod[seleccion] 7:de/ADP->8:case[de] 8:España/PROPN->6:nmod[espana] 9:./PUNCT->2:punct[.]
-   => LAMINE_YAMAL_NASRAOUI_EBANA SER INTERNACIONAL
-   => SELECCION_DE_ESPANA ES SELECCION
-   => LAMINE_YAMAL_NASRAOUI_EBANA INTERNACIONAL_CON SELECCION_DE_ESPANA
-
-Criado en el barrio mataronense de Rocafonda, fue fichado para las divisiones juveniles de Barcelona y formado en La Masía.
-   1:Criado/VERB->10:nsubj[criar] 2:en/ADP->4:case[en] 3:el/DET->4:det[el] 4:barrio/NOUN->1:obl[barrio] 5:mataronense/VERB->1:acl[mataronen] 6:de/ADP->7:case[de] 7:Rocafonda/PROPN->5:obl[rocafonda] 8:,/PUNCT->1:punct[,] 9:fue/AUX->10:aux[ser] 10:fichado/VERB->0:root[fichar] 11:para/ADP->13:case[para] 12:las/DET->13:det[el] 13:divisiones/NOUN->10:obl[division] 14:juveniles/ADJ->13:amod[juvenil] 15:de/ADP->16:case[de] 16:Barcelona/PROPN->13:nmod[barcelona] 17:y/CCONJ->18:cc[y] 18:formado/VERB->10:conj[formar] 19:en/ADP->21:case[en] 20:La/DET->21:det[el] 21:Masía/PROPN->18:obl[masia] 22:./PUNCT->10:punct[.]
-
-Debutó con el primer equipo en 2023 , convirtiéndose en el jugador más joven en disputar un partido oficial con el Barcelona.
-   1:Debutó/VERB->0:root[debutar] 2:con/ADP->5:case[con] 3:el/DET->5:det[el] 4:primer/ADJ->5:amod[primero] 5:equipo/NOUN->1:obl[equipo] 6:en/ADP->7:case[en] 7:2023/NUM->1:obl[2023] 8:,/PUNCT->9:punct[,] 9:convirtiéndose/VERB->1:advcl[convirtienr] 10:en/ADP->12:case[en] 11:el/DET->12:det[el] 12:jugador/NOUN->9:obl[jugador] 13:más/ADV->14:advmod[mas] 14:joven/ADJ->12:amod[joven] 15:en/ADP->16:mark[en] 16:disputar/VERB->9:advcl[disputar] 17:un/DET->18:det[uno] 18:partido/NOUN->16:obj[partido] 19:oficial/ADJ->18:amod[oficial] 20:con/ADP->22:case[con] 21:el/DET->22:det[el] 22:Barcelona/PROPN->18:nmod[barcelona] 23:./PUNCT->1:punct[.]
-
-Es también el futbolista más joven en marcar en la historia de El Clásico .
-   1:Es/AUX->4:cop[ser] 2:también/ADV->4:advmod[tambien] 3:el/DET->4:det[el] 4:futbolista/NOUN->0:root[futbolista] 5:más/ADV->6:advmod[mas] 6:joven/ADJ->4:amod[joven] 7:en/ADP->8:mark[en] 8:marcar/VERB->4:acl[marcar] 9:en/ADP->11:case[en] 10:la/DET->11:det[el] 11:historia/NOUN->8:obl[historia] 12:de/ADP->14:case[de] 13:El/DET->14:det[el] 14:Clásico/PROPN->11:nmod[clasico] 15:./PUNCT->4:punct[.]
-   => HISTORIA_DE_CLASICO ES HISTORIA
-   => FUTBOLISTA MARCAR_EN HISTORIA_DE_CLASICO
-
-En su primera temporada completa, se consolidó como titular y fue reconocido como el «mejor futbolista joven del mundo» con el Trofeo Kopa otorgado por France Football y el Premio Golden Boy.
-   1:En/ADP->4:case[en] 2:su/DET->4:det[su] 3:primera/ADJ->4:amod[primero] 4:temporada/NOUN->8:obl[temporada] 5:completa/ADJ->4:amod[completo] 6:,/PUNCT->4:punct[,] 7:se/PRON->8:expl[el] 8:consolidó/VERB->0:root[consolidar] 9:como/ADP->10:case[como] 10:titular/NOUN->8:obl[titular] 11:y/CCONJ->13:cc[y] 12:fue/AUX->13:aux[ser] 13:reconocido/VERB->8:conj[reconocer] 14:como/ADP->18:mark[como] 15:el/DET->18:det[el] 16:«/PUNCT->18:punct[«] 17:mejor/ADJ->18:amod[mejor] 18:futbolista/NOUN->13:obl[futbolista] 19:joven/ADJ->18:amod[joven] 20:de/ADP->22:case[de] 21:el/DET->22:det[el] 22:mundo/NOUN->18:nmod[mundo] 23:»/PUNCT->18:punct[»] 24:con/ADP->26:case[con] 25:el/DET->26:det[el] 26:Trofeo/PROPN->28:obl[trofeo] 27:Kopa/PROPN->26:appos[kopa] 28:otorgado/VERB->26:acl[otorgar] 29:por/ADP->30:case[por] 30:France/PROPN->28:obl[france] 31:Football/PROPN->30:flat[football] 32:y/CCONJ->34:cc[y] 33:el/DET->34:det[el] 34:Premio/PROPN->30:conj[premio] 35:Golden/PROPN->34:appos[golden] 36:Boy/PROPN->34:appos[boy] 37:./PUNCT->8:punct[.]
-
-En 2025 se convirtió en el único futbolista en conquistar de forma consecutiva el Trofeo Kopa, y obtuvo también el Balón de Plata como segundo mejor jugador del mundo.
-   1:En/ADP->2:case[en] 2:2025/NUM->4:obl[2025] 3:se/PRON->4:expl[el] 4:convirtió/VERB->0:root[convertir] 5:en/ADP->8:case[en] 6:el/DET->8:det[el] 7:único/ADJ->8:amod[unico] 8:futbolista/NOUN->4:obl[futbolista] 9:en/ADP->10:mark[en] 10:conquistar/VERB->4:advcl[conquistar] 11:de/ADP->12:case[de] 12:forma/NOUN->10:obl[forma] 13:consecutiva/ADJ->12:amod[consecutivo] 14:el/DET->15:det[el] 15:Trofeo/PROPN->10:obj[trofeo] 16:Kopa/PROPN->15:flat[kopa] 17:,/PUNCT->19:punct[,] 18:y/CCONJ->19:cc[y] 19:obtuvo/VERB->4:conj[obtener] 20:también/ADV->19:advmod[tambien] 21:el/DET->22:det[el] 22:Balón/PROPN->19:obj[balon] 23:de/ADP->24:case[de] 24:Plata/PROPN->22:nmod[plata] 25:como/ADP->26:case[como] 26:segundo/ADJ->28:amod[segundo] 27:mejor/ADJ->28:amod[mejor] 28:jugador/NOUN->19:obj[jugador] 29:de/ADP->31:case[de] 30:el/DET->31:det[el] 31:mundo/NOUN->28:nmod[mundo] 32:./PUNCT->4:punct[.]
-
-También fue incluido en el FIFPro World XI de 2025.
-   1:También/ADV->3:advmod[tambien] 2:fue/AUX->3:aux[ser] 3:incluido/VERB->0:root[incluir] 4:en/ADP->6:case[en] 5:el/DET->6:det[el] 6:FIFPro/PROPN->3:obl[fifpro] 7:World/PROPN->6:flat[world] 8:XI/NUM->7:nummod[xi] 9:de/ADP->10:case[de] 10:2025/NUM->6:nmod[2025] 11:./PUNCT->3:punct[.]
-
-En 2026 obtuvo su tercer Trofeo Kopa y el Balón de Bronce.
-   1:En/ADP->2:case[en] 2:2026/NUM->3:obl[2026] 3:obtuvo/VERB->0:root[obtener] 4:su/DET->6:det[su] 5:tercer/ADJ->6:amod[tercero] 6:Trofeo/NOUN->3:obj[trofeo] 7:Kopa/PROPN->6:appos[kopa] 8:y/CCONJ->10:cc[y] 9:el/DET->10:det[el] 10:Balón/PROPN->6:conj[balon] 11:de/ADP->12:case[de] 12:Bronce/PROPN->10:nmod[bronce] 13:./PUNCT->3:punct[.]
-
-A la selección de fútbol de su país la ha representado en diversas categorías juveniles.
-   1:A/ADP->3:case[a] 2:la/DET->3:det[el] 3:selección/NOUN->11:obl[seleccion] 4:de/ADP->5:case[de] 5:fútbol/NOUN->3:nmod[futbol] 6:de/ADP->8:case[de] 7:su/DET->8:det[su] 8:país/NOUN->3:nmod[pais] 9:la/PRON->11:obj[el] 10:ha/AUX->11:aux[haber] 11:representado/VERB->0:root[representar] 12:en/ADP->14:case[en] 13:diversas/DET->14:det[diverso] 14:categorías/NOUN->11:obl[categoria] 15:juveniles/ADJ->14:amod[juvenil] 16:./PUNCT->11:punct[.]
-
-Con 16 años y 57 días de edad, debutó con la selección absoluta, estableciendo un récord del jugador más joven en la historia de España de hacerlo así y también de marcar un gol.
-   1:Con/ADP->3:case[con] 2:16/NUM->3:nummod[16] 3:años/NOUN->10:obl[ano] 4:y/CCONJ->5:cc[y] 5:57/NUM->3:nummod[57] 6:días/NOUN->3:conj[dia] 7:de/ADP->8:case[de] 8:edad/NOUN->6:nmod[edad] 9:,/PUNCT->3:punct[,] 10:debutó/VERB->0:root[debutar] 11:con/ADP->13:case[con] 12:la/DET->13:det[el] 13:selección/NOUN->10:obl[seleccion] 14:absoluta/ADJ->13:amod[absoluto] 15:,/PUNCT->16:punct[,] 16:estableciendo/VERB->10:advcl[establecer] 17:un/DET->18:det[uno] 18:récord/NOUN->16:obj[record] 19:de/ADP->21:case[de] 20:el/DET->21:det[el] 21:jugador/NOUN->18:nmod[jugador] 22:más/ADV->23:advmod[mas] 23:joven/ADJ->21:amod[joven] 24:en/ADP->26:case[en] 25:la/DET->26:det[el] 26:historia/NOUN->16:obl[historia] 27:de/ADP->28:case[de] 28:España/PROPN->26:nmod[espana] 29:de/ADP->30:mark[de] 30:hacerlo/VERB->26:acl[hacerlo] 31:así/ADV->30:advmod[asi] 32:y/CCONJ->33:cc[y] 33:también/ADV->35:advmod[tambien] 34:de/ADP->35:mark[de] 35:marcar/VERB->30:advcl[marcar] 36:un/DET->37:det[uno] 37:gol/NOUN->35:obj[gol] 38:./PUNCT->10:punct[.]
-   => HISTORIA_DE_ESPANA ES HISTORIA
-   => HISTORIA_DE_ESPANA MARCAR GOL
-
-En 2024, representó a su país en la Eurocopa, donde España consiguió su cuarto título continental.
-   1:En/ADP->2:case[en] 2:2024/NUM->4:obl[2024] 3:,/PUNCT->2:punct[,] 4:representó/VERB->0:root[representar] 5:a/ADP->7:case[a] 6:su/DET->7:det[su] 7:país/NOUN->4:obl[pais] 8:en/ADP->10:case[en] 9:la/DET->10:det[el] 10:Eurocopa/PROPN->4:obl[eurocopa] 11:,/PUNCT->14:punct[,] 12:donde/ADV->14:advmod[donde] 13:España/PROPN->14:nsubj[espana] 14:consiguió/VERB->10:acl[conseguir] 15:su/DET->17:det[su] 16:cuarto/ADJ->17:amod[cuarto] 17:título/NOUN->14:obj[titulo] 18:continental/ADJ->17:amod[continental] 19:./PUNCT->4:punct[.]
-   => TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES TITULO
-   => TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_CONTINENTAL ES TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => ESPANA CONSEGUIR TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_CONTINENTAL
-
-Su actuación le valió el premio al «mejor jugador joven» del torneo.
-   1:Su/DET->2:det[su] 2:actuación/NOUN->4:nsubj[actuacion] 3:le/PRON->4:obl[el] 4:valió/VERB->0:root[valir] 5:el/DET->6:det[el] 6:premio/NOUN->4:obj[premio] 7:a/ADP->11:case[a] 8:el/DET->11:det[el] 9:«/PUNCT->11:punct[«] 10:mejor/ADJ->11:amod[mejor] 11:jugador/NOUN->4:obl[jugador] 12:joven/ADJ->11:amod[joven] 13:»/PUNCT->11:punct[»] 14:de/ADP->16:case[de] 15:el/DET->16:det[el] 16:torneo/NOUN->11:nmod[torneo] 17:./PUNCT->4:punct[.]
-   => ACTUACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES ACTUACION
-   => ACTUACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA VALIR PREMIO
-   => JUGADOR_JOVEN ES JUGADOR
-   => JUGADOR_JOVEN_DE_TORNEO ES JUGADOR_JOVEN
-   => ACTUACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA VALIR_A JUGADOR_JOVEN_DE_TORNEO
-
-Es el jugador más joven en la Eurocopa en debutar y asistir , además de anotar un gol .
-   1:Es/AUX->3:cop[ser] 2:el/DET->3:det[el] 3:jugador/NOUN->0:root[jugador] 4:más/ADV->5:advmod[mas] 5:joven/ADJ->3:amod[joven] 6:en/ADP->8:case[en] 7:la/DET->8:det[el] 8:Eurocopa/PROPN->3:nmod[eurocopa] 9:en/ADP->10:mark[en] 10:debutar/VERB->3:advcl[debutar] 11:y/CCONJ->12:cc[y] 12:asistir/VERB->10:conj[asistir] 13:,/PUNCT->16:punct[,] 14:además/ADV->16:mark[ademas] 15:de/ADP->14:fixed[de] 16:anotar/VERB->12:advcl[anotar] 17:un/DET->18:det[uno] 18:gol/NOUN->16:obj[gol] 19:./PUNCT->3:punct[.]
-
-En la Copa Mundial de Fútbol de 2026, levantó el segundo título mundial de su selección,
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:Copa/PROPN->10:obl[copa] 4:Mundial/PROPN->3:amod[mundial] 5:de/ADP->6:case[de] 6:Fútbol/PROPN->3:nmod[futbol] 7:de/ADP->8:case[de] 8:2026/NUM->6:nmod[2026] 9:,/PUNCT->3:punct[,] 10:levantó/VERB->0:root[levantar] 11:el/DET->13:det[el] 12:segundo/ADJ->13:amod[segundo] 13:título/NOUN->10:obj[titulo] 14:mundial/ADJ->13:amod[mundial] 15:de/ADP->17:case[de] 16:su/DET->17:det[su] 17:selección/NOUN->13:nmod[seleccion] 18:,/PUNCT->10:punct[,] 19:./PUNCT->10:punct[.]
-
-y anotó un gol contra Arabia Saudita que lo colocó como el octavo jugador más joven en marcar un gol en una Copa Mundial de Fútbol .
-   1:y/CCONJ->2:cc[y] 2:anotó/VERB->0:root[anotar] 3:un/DET->4:det[uno] 4:gol/NOUN->2:obj[gol] 5:contra/ADP->6:case[contra] 6:Arabia/PROPN->4:nmod[arabia] 7:Saudita/PROPN->6:flat[saudita] 8:que/SCONJ->10:nsubj[que] 9:lo/PRON->10:obj[el] 10:colocó/VERB->6:acl[colocar] 11:como/ADP->14:mark[como] 12:el/DET->14:det[el] 13:octavo/ADJ->14:amod[octavo] 14:jugador/NOUN->10:obl[jugador] 15:más/ADV->16:advmod[mas] 16:joven/ADJ->14:amod[joven] 17:en/ADP->18:mark[en] 18:marcar/VERB->10:advcl[marcar] 19:un/DET->20:det[uno] 20:gol/NOUN->18:obj[gol] 21:en/ADP->23:case[en] 22:una/DET->23:det[uno] 23:Copa/PROPN->18:obl[copa] 24:Mundial/PROPN->23:amod[mundial] 25:de/ADP->26:case[de] 26:Fútbol/PROPN->23:nmod[futbol] 27:./PUNCT->2:punct[.]
-
-Yamal nació el 13 de julio de 2007 en Esplugas de Llobregat, en el área metropolitana de Barcelona.
-   1:Yamal/PROPN->2:nsubj[yamal] 2:nació/VERB->0:root[nacer] 3:el/DET->4:det[el] 4:13/NUM->2:obl[13] 5:de/ADP->6:case[de] 6:julio/NOUN->4:nmod[julio] 7:de/ADP->8:case[de] 8:2007/NUM->6:nmod[2007] 9:en/ADP->10:case[en] 10:Esplugas/PROPN->2:obl[esplugas] 11:de/ADP->12:case[de] 12:Llobregat/PROPN->10:nmod[llobregat] 13:,/PUNCT->16:punct[,] 14:en/ADP->16:case[en] 15:el/DET->16:det[el] 16:área/NOUN->2:obl[area] 17:metropolitana/ADJ->16:amod[metropolitano] 18:de/ADP->19:case[de] 19:Barcelona/PROPN->16:nmod[barcelona] 20:./PUNCT->2:punct[.]
-   => ESPLUGAS_DE_LLOBREGAT ES ESPLUGAS
-   => YAMAL NACER_EN ESPLUGAS_DE_LLOBREGAT
-   => AREA_METROPOLITANO ES AREA
-   => AREA_METROPOLITANO_DE_BARCELONA ES AREA_METROPOLITANO
-   => YAMAL NACER_EN AREA_METROPOLITANO_DE_BARCELONA
-
-Es hijo de Sheila Ebana, una camarera originaria de Bata, Guinea Ecuatorial, y Mounir Nasraoui, un pintor de edificios de Larache, Marruecos.
-   1:Es/AUX->2:cop[ser] 2:hijo/NOUN->0:root[hijo] 3:de/ADP->4:case[de] 4:Sheila/PROPN->2:nmod[sheila] 5:Ebana/PROPN->4:flat[ebana] 6:,/PUNCT->8:punct[,] 7:una/DET->8:det[uno] 8:camarera/NOUN->2:conj[camarera] 9:originaria/ADJ->8:amod[originario] 10:de/ADP->11:case[de] 11:Bata/PROPN->8:nmod[bata] 12:,/PUNCT->13:punct[,] 13:Guinea/PROPN->11:conj[guinea] 14:Ecuatorial/PROPN->13:flat[ecuatorial] 15:,/PUNCT->17:punct[,] 16:y/CCONJ->17:cc[y] 17:Mounir/PROPN->4:conj[mounir] 18:Nasraoui/PROPN->17:flat[nasraoui] 19:,/PUNCT->21:punct[,] 20:un/DET->21:det[uno] 21:pintor/NOUN->17:appos[pintor] 22:de/ADP->23:case[de] 23:edificios/NOUN->21:nmod[edificio] 24:de/ADP->25:case[de] 25:Larache/PROPN->23:nmod[larache] 26:,/PUNCT->27:punct[,] 27:Marruecos/PROPN->25:conj[marruecos] 28:./PUNCT->2:punct[.]
-   => LAMINE_YAMAL_NASRAOUI_EBANA ES HIJO
-   => LAMINE_YAMAL_NASRAOUI_EBANA HIJO_DE SHEILA_EBANA
-   => HIJO_DE_SHEILA_EBANA ES HIJO
-   => LAMINE_YAMAL_NASRAOUI_EBANA ES CAMARERA
-   => LAMINE_YAMAL_NASRAOUI_EBANA SER ORIGINARIO
-   => LAMINE_YAMAL_NASRAOUI_EBANA CAMARERA_DE BATA
-   => CAMARERA_DE_BATA ES CAMARERA
-
-Su nombre de pila compuesto honra a dos personas, Lamine y Yamal, quienes ayudaron económicamente a sus padres antes de su nacimiento.
-   1:Su/DET->2:det[su] 2:nombre/NOUN->6:nsubj[nombre] 3:de/ADP->4:case[de] 4:pila/NOUN->2:nmod[pila] 5:compuesto/ADJ->4:amod[compuesr] 6:honra/VERB->0:root[honrar] 7:a/ADP->9:case[a] 8:dos/NUM->9:nummod[dos] 9:personas/NOUN->6:obj[persona] 10:,/PUNCT->11:punct[,] 11:Lamine/PROPN->9:appos[lamine] 12:y/CCONJ->13:cc[y] 13:Yamal/PROPN->11:conj[yamal] 14:,/PUNCT->16:punct[,] 15:quienes/PRON->16:nsubj[quien] 16:ayudaron/VERB->9:acl[ayudar] 17:económicamente/ADV->16:advmod[economicamente] 18:a/ADP->20:case[a] 19:sus/DET->20:det[su] 20:padres/NOUN->16:obl[padre] 21:antes/ADV->16:advmod[antes] 22:de/ADP->21:fixed[de] 23:su/DET->24:det[su] 24:nacimiento/NOUN->20:nmod[nacimiento] 25:./PUNCT->6:punct[.]
-   => NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES NOMBRE
-   => NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA_DE_PILA ES NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => LAMINE ES DOS_PERSONA
-   => DOS_PERSONA ES PERSONA
-   => NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA_DE_PILA HONRAR LAMINE
-   => PADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES PADRE
-   => LAMINE AYUDAR_A PADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-
-Sus padres se separaron cuando él tenía tres años, aunque ambos continuaron presentes en su crianza.
-   1:Sus/DET->2:det[su] 2:padres/NOUN->4:nsubj[padre] 3:se/PRON->4:expl[el] 4:separaron/VERB->0:root[separar] 5:cuando/SCONJ->7:mark[cuando] 6:él/PRON->7:nsubj[el] 7:tenía/VERB->4:advcl[tener] 8:tres/NUM->9:nummod[tres] 9:años/NOUN->7:obj[ano] 10:,/PUNCT->13:punct[,] 11:aunque/SCONJ->13:mark[aunque] 12:ambos/PRON->13:nsubj[ambos] 13:continuaron/VERB->4:advcl[continuar] 14:presentes/NOUN->13:obj[presente] 15:en/ADP->17:case[en] 16:su/DET->17:det[su] 17:crianza/NOUN->13:obl[crianza] 18:./PUNCT->4:punct[.]
-   => PADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES PADRE
-   => LAMINE_YAMAL_NASRAOUI_EBANA TENER ANO
-
-Inicialmente, la familia vivía en Mataró, pero tras la separación, su madre se mudó a Granollers, donde Yamal comenzó a jugar al fútbol en el club local La Torreta a los cuatro años.
-   1:Inicialmente/ADV->5:advmod[inicialmente] 2:,/PUNCT->1:punct[,] 3:la/DET->4:det[el] 4:familia/NOUN->5:nsubj[familia] 5:vivía/VERB->0:root[vivir] 6:en/ADP->7:case[en] 7:Mataró/PROPN->5:obl[mataro] 8:,/PUNCT->17:punct[,] 9:pero/CCONJ->17:cc[pero] 10:tras/ADP->12:case[tras] 11:la/DET->12:det[el] 12:separación/NOUN->17:obl[separacion] 13:,/PUNCT->12:punct[,] 14:su/DET->15:det[su] 15:madre/NOUN->17:nsubj[madre] 16:se/PRON->17:expl[el] 17:mudó/VERB->5:conj[mudar] 18:a/ADP->19:case[a] 19:Granollers/PROPN->17:obl[granollers] 20:,/PUNCT->23:punct[,] 21:donde/ADV->23:advmod[donde] 22:Yamal/PROPN->23:nsubj[yamal] 23:comenzó/VERB->17:advcl[comenzar] 24:a/ADP->25:mark[a] 25:jugar/VERB->23:xcomp[jugar] 26:a/ADP->28:case[a] 27:el/DET->28:det[el] 28:fútbol/NOUN->25:obl[futbol] 29:en/ADP->31:case[en] 30:el/DET->31:det[el] 31:club/NOUN->25:obl[club] 32:local/ADJ->31:amod[local] 33:La/DET->34:det[el] 34:Torreta/PROPN->31:appos[torreta] 35:a/ADP->38:case[a] 36:los/DET->38:det[el] 37:cuatro/NUM->38:nummod[cuatro] 38:años/NOUN->25:obl[ano] 39:./PUNCT->5:punct[.]
-   => FAMILIA VIVIR_EN MATARO
-   => MADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES MADRE
-   => MADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA MUDAR_TRAS SEPARACION
-   => MADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA MUDAR_A GRANOLLERS
-   => YAMAL JUGAR_A FUTBOL
-   => TORRETA ES CLUB_LOCAL
-   => CLUB_LOCAL ES CLUB
-   => YAMAL JUGAR_EN TORRETA
-   => YAMAL JUGAR_A ANO
-
-Alternaba su tiempo entre ambas ciudades.
-   1:Alternaba/VERB->0:root[alternar] 2:su/DET->3:det[su] 3:tiempo/NOUN->1:obj[tiempo] 4:entre/ADP->6:case[entre] 5:ambas/NUM->6:nummod[ambos] 6:ciudades/NOUN->1:obl[ciudad] 7:./PUNCT->1:punct[.]
-   => TIEMPO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES TIEMPO
-   => LAMINE_YAMAL_NASRAOUI_EBANA ALTERNAR TIEMPO_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => AMBAS_CIUDAD ES CIUDAD
-   => LAMINE_YAMAL_NASRAOUI_EBANA ALTERNAR_ENTRE AMBAS_CIUDAD
-
-En Mataró, creció en Rocafonda, un barrio marginado y estigmatizado.
-   1:En/ADP->2:case[en] 2:Mataró/PROPN->4:obl[mataro] 3:,/PUNCT->2:punct[,] 4:creció/VERB->0:root[crecer] 5:en/ADP->6:case[en] 6:Rocafonda/PROPN->4:obl[rocafonda] 7:,/PUNCT->9:punct[,] 8:un/DET->9:det[uno] 9:barrio/NOUN->6:appos[barrio] 10:marginado/ADJ->9:amod[marginado] 11:y/CCONJ->12:cc[y] 12:estigmatizado/ADJ->10:conj[estigmatizado] 13:./PUNCT->4:punct[.]
-   => LAMINE_YAMAL_NASRAOUI_EBANA CRECER_EN MATARO
-   => ROCAFONDA ES BARRIO
-   => LAMINE_YAMAL_NASRAOUI_EBANA CRECER_EN ROCAFONDA
-
-La celebración de sus goles, las hace, mostrando con sus dedos el número 304, que son los últimos dígitos del código postal 08304 del lugar de su niñez.
-   1:La/DET->2:det[el] 2:celebración/NOUN->8:nsubj[celebracion] 3:de/ADP->5:case[de] 4:sus/DET->5:det[su] 5:goles/NOUN->2:nmod[gol] 6:,/PUNCT->8:punct[,] 7:las/PRON->8:obj[el] 8:hace/VERB->2:advcl[hacer] 9:,/PUNCT->10:punct[,] 10:mostrando/VERB->8:advcl[mostrar] 11:con/ADP->13:case[con] 12:sus/DET->13:det[su] 13:dedos/NOUN->10:obl[dedo] 14:el/DET->15:det[el] 15:número/NOUN->10:obj[numero] 16:304/NUM->15:nummod[304] 17:,/PUNCT->22:punct[,] 18:que/PRON->22:mark[que] 19:son/AUX->22:cop[ser] 20:los/DET->22:det[el] 21:últimos/ADJ->22:amod[ultimo] 22:dígitos/NOUN->15:acl[digito] 23:de/ADP->25:case[de] 24:el/DET->25:det[el] 25:código/NOUN->22:nmod[codigo] 26:postal/ADJ->25:amod[postal] 27:08304/NOUN->25:appos[08304] 28:de/ADP->30:case[de] 29:el/DET->30:det[el] 30:lugar/NOUN->27:nmod[lugar] 31:de/ADP->33:case[de] 32:su/DET->33:det[su] 33:niñez/NOUN->30:nmod[ninez] 34:./PUNCT->8:punct[.]
-   => CELEBRACION_DE_GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES CELEBRACION
-   => GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES GOL
-   => CELEBRACION_DE_GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA HACER LAMINE_YAMAL_NASRAOUI_EBANA
-   => DEDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES DEDO
-   => CELEBRACION_DE_GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA MOSTRAR_CON DEDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => 304_NUMERO ES NUMERO
-   => CELEBRACION_DE_GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA MOSTRAR 304_NUMERO
-   => 304_NUMERO ES DIGITO
-   => 304_NUMERO DIGITO_DE CODIGO
-   => DIGITO_DE_CODIGO ES DIGITO
-
-A los seis años, fue descubierto por el Barcelona e invitado a entrenar en La Masia.
-   1:A/ADP->4:case[a] 2:los/DET->4:det[el] 3:seis/NUM->4:nummod[seis] 4:años/NOUN->7:obl[ano] 5:,/PUNCT->4:punct[,] 6:fue/AUX->7:aux[ser] 7:descubierto/VERB->0:root[descubierr] 8:por/ADP->10:case[por] 9:el/DET->10:det[el] 10:Barcelona/PROPN->7:obl[barcelona] 11:e/CCONJ->12:cc[e] 12:invitado/VERB->7:conj[invitado] 13:a/ADP->14:mark[a] 14:entrenar/VERB->12:advcl[entrenar] 15:en/ADP->17:case[en] 16:La/DET->17:det[el] 17:Masia/PROPN->14:obl[masia] 18:./PUNCT->7:punct[.]
-
-En febrero de 2014, fue fichado y firmado por Albert Puig Ortoneda,, tras la captación y aprobación de Óscar Hernández Romero e Isidre Gil.
-   1:En/ADP->2:case[en] 2:febrero/NOUN->7:obl[febrero] 3:de/ADP->4:case[de] 4:2014/NUM->2:nmod[2014] 5:,/PUNCT->2:punct[,] 6:fue/AUX->7:aux[ser] 7:fichado/VERB->0:root[fichar] 8:y/CCONJ->9:cc[y] 9:firmado/VERB->7:conj[firmar] 10:por/ADP->11:case[por] 11:Albert/PROPN->9:obl[albert] 12:Puig/PROPN->11:flat[puig] 13:Ortoneda/PROPN->11:flat[ortoneda] 14:,/PUNCT->18:punct[,] 15:,/PUNCT->18:punct[,] 16:tras/ADP->18:case[tras] 17:la/DET->18:det[el] 18:captación/NOUN->7:obl[captacion] 19:y/CCONJ->20:cc[y] 20:aprobación/NOUN->18:conj[aprobacion] 21:de/ADP->22:case[de] 22:Óscar/PROPN->20:nmod[oscar] 23:Hernández/PROPN->22:flat[hernandez] 24:Romero/PROPN->22:flat[romero] 25:e/CCONJ->26:cc[e] 26:Isidre/PROPN->22:conj[isidre] 27:Gil/PROPN->26:flat[gil] 28:./PUNCT->7:punct[.]
-
-Fue considerado una de las mayores promesas de la academia y se trasladó a Barcelona para vivir y entrenar en la academia.
-   1:Fue/AUX->2:aux[ser] 2:considerado/VERB->0:root[considerar] 3:una/PRON->2:obj[uno] 4:de/ADP->7:case[de] 5:las/DET->7:det[el] 6:mayores/ADJ->7:amod[mayor] 7:promesas/NOUN->3:nmod[promesa] 8:de/ADP->10:case[de] 9:la/DET->10:det[el] 10:academia/NOUN->7:nmod[academia] 11:y/CCONJ->13:cc[y] 12:se/PRON->13:expl[el] 13:trasladó/VERB->2:conj[trasladar] 14:a/ADP->15:case[a] 15:Barcelona/PROPN->13:obl[barcelona] 16:para/ADP->17:mark[para] 17:vivir/VERB->13:advcl[vivir] 18:y/CCONJ->19:cc[y] 19:entrenar/VERB->17:conj[entrenar] 20:en/ADP->22:case[en] 21:la/DET->22:det[el] 22:academia/NOUN->19:obl[academia] 23:./PUNCT->2:punct[.]
-
-Ingresó al equipo Prebenjamín del club,
-   1:Ingresó/VERB->0:root[ingresar] 2:a/ADP->4:case[a] 3:el/DET->4:det[el] 4:equipo/NOUN->1:obj[equipo] 5:Prebenjamín/PROPN->4:appos[prebenjamin] 6:de/ADP->8:case[de] 7:el/DET->8:det[el] 8:club/NOUN->4:nmod[club] 9:,/PUNCT->1:punct[,] 10:./PUNCT->1:punct[.]
-
-y su primer partido oficial con la camiseta azulgrana se disputó el 5 de octubre de ese mismo año en el Camp de Futbol de la Escola Industrial
-   1:y/CCONJ->11:cc[y] 2:su/DET->4:det[su] 3:primer/ADJ->4:amod[primero] 4:partido/NOUN->11:nsubj[partido] 5:oficial/ADJ->4:amod[oficial] 6:con/ADP->8:case[con] 7:la/DET->8:det[el] 8:camiseta/NOUN->4:nmod[camiseta] 9:azulgrana/ADJ->8:amod[azulgrana] 10:se/PRON->11:expl[el] 11:disputó/VERB->0:root[disputar] 12:el/DET->13:det[el] 13:5/NUM->11:obl[5] 14:de/ADP->15:case[de] 15:octubre/NOUN->13:nmod[octubre] 16:de/ADP->19:case[de] 17:ese/DET->19:det[ese] 18:mismo/ADJ->19:amod[mismo] 19:año/NOUN->15:nmod[ano] 20:en/ADP->22:case[en] 21:el/DET->22:det[el] 22:Camp/PROPN->11:obl[camp] 23:de/ADP->24:case[de] 24:Futbol/PROPN->22:nmod[futbol] 25:de/ADP->27:case[de] 26:la/DET->27:det[el] 27:Escola/PROPN->22:nmod[escola] 28:Industrial/PROPN->27:amod[industrial] 29:./PUNCT->11:punct[.]
-   => PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES PARTIDO
-   => PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_OFICIAL ES PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => CAMP_DE_FUTBOL ES CAMP
-   => PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_OFICIAL DISPUTAR_EN CAMP_DE_FUTBOL
-
-donde anotó dos goles en la victoria por 2-3 frente al Don Bosco.
-   1:donde/ADV->2:advmod[donde] 2:anotó/VERB->0:root[anotar] 3:dos/NUM->4:nummod[dos] 4:goles/NOUN->2:obj[gol] 5:en/ADP->7:case[en] 6:la/DET->7:det[el] 7:victoria/NOUN->2:obl[victoria] 8:por/ADP->9:case[por] 9:2/NUM->7:nmod[2] 10:-/PUNCT->11:punct[-] 11:3/NUM->9:dep[3] 12:frente/NOUN->15:case[frente] 13:a/ADP->12:fixed[a] 14:el/DET->15:det[el] 15:Don/PROPN->2:obl[don] 16:Bosco/PROPN->15:flat[bosco] 17:./PUNCT->2:punct[.]
-
-Desde entonces, ha jugado en doce equipos diferentes dentro de la estructura formativa del Barcelona, siguiendo la progresión correspondiente a su edad.
-   1:Desde/ADP->2:case[desde] 2:entonces/ADV->5:advmod[entonces] 3:,/PUNCT->2:punct[,] 4:ha/AUX->5:aux[haber] 5:jugado/VERB->0:root[jugar] 6:en/ADP->8:case[en] 7:doce/NUM->8:nummod[doce] 8:equipos/NOUN->5:obl[equipo] 9:diferentes/ADJ->8:amod[diferente] 10:dentro/ADV->13:case[dentro] 11:de/ADP->10:fixed[de] 12:la/DET->13:det[el] 13:estructura/NOUN->10:obl[estructura] 14:formativa/ADJ->13:amod[formativo] 15:de/ADP->17:case[de] 16:el/DET->17:det[el] 17:Barcelona/PROPN->13:nmod[barcelona] 18:,/PUNCT->19:punct[,] 19:siguiendo/VERB->5:advcl[seguir] 20:la/DET->21:det[el] 21:progresión/NOUN->19:obj[progresion] 22:correspondiente/ADJ->21:amod[correspondiente] 23:a/ADP->25:case[a] 24:su/DET->25:det[su] 25:edad/NOUN->19:obl[edad] 26:./PUNCT->5:punct[.]
-   => DOCE_EQUIPO ES EQUIPO
-   => DOCE_EQUIPO_DIFERENTE ES DOCE_EQUIPO
-   => LAMINE_YAMAL_NASRAOUI_EBANA JUGAR_EN DOCE_EQUIPO_DIFERENTE
-   => PROGRESION_CORRESPONDIENTE ES PROGRESION
-   => LAMINE_YAMAL_NASRAOUI_EBANA SEGUIR PROGRESION_CORRESPONDIENTE
-   => EDAD_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES EDAD
-   => LAMINE_YAMAL_NASRAOUI_EBANA SEGUIR_A EDAD_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-
-Durante cinco temporadas participó en el fútbol-7, donde acumuló 151 partidos y 301 goles, destacando especialmente en la temporada 2016-17 con el Benjamín A
-   1:Durante/ADP->3:case[durante] 2:cinco/NUM->3:nummod[cinco] 3:temporadas/NOUN->4:obl[temporada] 4:participó/VERB->0:root[participar] 5:en/ADP->7:case[en] 6:el/DET->7:det[el] 7:fútbol/NOUN->4:obl[futbol] 8:-/PUNCT->9:punct[-] 9:7/NUM->7:appos[7] 10:,/PUNCT->12:punct[,] 11:donde/ADV->12:advmod[donde] 12:acumuló/VERB->7:acl[acumular] 13:151/NUM->14:nummod[151] 14:partidos/NOUN->12:obj[partido] 15:y/CCONJ->16:cc[y] 16:301/NUM->17:nummod[301] 17:goles/NOUN->14:conj[gol] 18:,/PUNCT->19:punct[,] 19:destacando/VERB->17:acl[destacar] 20:especialmente/ADV->19:advmod[especialmente] 21:en/ADP->23:case[en] 22:la/DET->23:det[el] 23:temporada/NOUN->19:obl[temporada] 24:2016/NUM->23:appos[2016] 25:-/PUNCT->26:punct[-] 26:17/NUM->23:appos[17] 27:con/ADP->29:case[con] 28:el/DET->29:det[el] 29:Benjamín/PROPN->19:obl[benjamin] 30:A/PROPN->29:appos[a] 31:./PUNCT->4:punct[.]
-   => 151_PARTIDO ES PARTIDO
-   => FUTBOL ACUMULAR 151_PARTIDO
-   => 301_GOL ES GOL
-   => FUTBOL ACUMULAR 301_GOL
-   => 301_GOL DESTACAR_CON BENJAMIN
-
-donde marcó 79 goles en 32 partidos.
-   1:donde/ADV->2:advmod[donde] 2:marcó/VERB->0:root[marcar] 3:79/NUM->4:nummod[79] 4:goles/NOUN->2:obj[gol] 5:en/ADP->7:case[en] 6:32/NUM->7:nummod[32] 7:partidos/NOUN->2:obl[partido] 8:./PUNCT->2:punct[.]
-
-Posteriormente, ascendió al fútbol-11, donde hasta mediados de 2023 había disputado 98 partidos y anotado 56 goles.
-   1:Posteriormente/ADV->3:advmod[posteriormente] 2:,/PUNCT->1:punct[,] 3:ascendió/VERB->0:root[ascender] 4:a/ADP->6:case[a] 5:el/DET->6:det[el] 6:fútbol/NOUN->3:obl[futbol] 7:-/PUNCT->8:punct[-] 8:11/NUM->6:appos[11] 9:,/PUNCT->16:punct[,] 10:donde/ADV->16:advmod[donde] 11:hasta/ADP->12:case[hasta] 12:mediados/NOUN->16:obl[mediado] 13:de/ADP->14:case[de] 14:2023/NUM->12:nmod[2023] 15:había/AUX->16:aux[haber] 16:disputado/VERB->3:advcl[disputar] 17:98/NUM->18:nummod[98] 18:partidos/NOUN->16:obj[partido] 19:y/CCONJ->20:cc[y] 20:anotado/VERB->16:conj[anotar] 21:56/NUM->22:nummod[56] 22:goles/NOUN->20:obj[gol] 23:./PUNCT->3:punct[.]
-
-Su rendimiento fue afectado por la pandemia de COVID-19, que limitó su participación a 32 encuentros en las temporadas 2019-20 y 2020-21,
-   1:Su/DET->2:det[su] 2:rendimiento/NOUN->4:nsubj[rendimiento] 3:fue/AUX->4:aux[ser] 4:afectado/VERB->0:root[afectar] 5:por/ADP->7:case[por] 6:la/DET->7:det[el] 7:pandemia/NOUN->4:obl[pandemia] 8:de/ADP->9:case[de] 9:COVID/PROPN->7:nmod[covid] 10:-/PUNCT->11:punct[-] 11:19/NUM->9:nummod[19] 12:,/PUNCT->14:punct[,] 13:que/PRON->14:nsubj[que] 14:limitó/VERB->7:acl[limitar] 15:su/DET->16:det[su] 16:participación/NOUN->14:obj[participacion] 17:a/ADP->19:case[a] 18:32/NUM->19:nummod[32] 19:encuentros/NOUN->14:obj[encuentro] 20:en/ADP->22:case[en] 21:las/DET->22:det[el] 22:temporadas/NOUN->14:obl[temporada] 23:2019/NUM->22:appos[2019] 24:-/PUNCT->25:punct[-] 25:20/NUM->23:dep[20] 26:y/CCONJ->27:cc[y] 27:2020/X->29:dep[2020] 28:-/PUNCT->29:punct[-] 29:21/NUM->25:conj[21] 30:,/PUNCT->29:punct[,] 31:./PUNCT->4:punct[.]
-   => RENDIMIENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES RENDIMIENTO
-   => PANDEMIA_DE_19_COVID ES PANDEMIA
-   => 19_COVID ES COVID
-   => PANDEMIA_DE_19_COVID AFECTAR RENDIMIENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => PARTICIPACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES PARTICIPACION
-   => PANDEMIA_DE_19_COVID LIMITAR PARTICIPACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA
-   => 32_ENCUENTRO ES ENCUENTRO
-   => PANDEMIA_DE_19_COVID LIMITAR 32_ENCUENTRO
-
-aunque logró marcar 28 goles en ese periodo.
-   1:aunque/SCONJ->2:mark[aunque] 2:logró/VERB->0:root[lograr] 3:marcar/VERB->2:xcomp[marcar] 4:28/NUM->5:nummod[28] 5:goles/NOUN->3:obj[gol] 6:en/ADP->8:case[en] 7:ese/DET->8:det[ese] 8:periodo/NOUN->3:obl[periodo] 9:./PUNCT->2:punct[.]
-
-A pesar de esta interrupción, su talento fue evidente, lo que le permitió ascender al Cadete A siendo un año menor que sus compañeros, donde anotó 20 goles en 32 partidos.
-   1:A/ADP->5:case[a] 2:pesar/NOUN->1:fixed[pesar] 3:de/ADP->5:case[de] 4:esta/DET->5:det[este] 5:interrupción/NOUN->2:nmod[interrupcion] 6:,/PUNCT->2:punct[,] 7:su/DET->8:det[su] 8:talento/NOUN->10:nsubj[talento] 9:fue/AUX->10:cop[ser] 10:evidente/ADJ->0:root[evidente] 11:,/PUNCT->15:punct[,] 12:lo/PRON->15:det[el] 13:que/PRON->15:mark[que] 14:le/PRON->15:obl[el] 15:permitió/VERB->10:advcl[permitir] 16:ascender/VERB->15:xcomp[ascender] 17:a/ADP->19:case[a] 18:el/DET->19:det[el] 19:Cadete/PROPN->16:obl[cadete] 20:A/ADP->19:case[a] 21:siendo/AUX->23:cop[ser] 22:un/DET->23:det[uno] 23:año/NOUN->16:obl[ano] 24:menor/ADJ->23:amod[menor] 25:que/SCONJ->30:mark[que] 26:sus/DET->27:det[su] 27:compañeros/NOUN->30:obj[companero] 28:,/PUNCT->30:punct[,] 29:donde/ADV->30:advmod[donde] 30:anotó/VERB->23:acl[anotar] 31:20/NUM->32:nummod[20] 32:goles/NOUN->30:obj[gol] 33:en/ADP->35:case[en] 34:32/NUM->35:nummod[32] 35:partidos/NOUN->30:obl[partido] 36:./PUNCT->10:punct[.]
-   => TALENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA ES TALENTO
-   => TALENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA SER EVIDENTE
-
-Posteriormente, fue promovido al Juvenil A, consolidándose como una de las figuras del equipo.
-   1:Posteriormente/ADV->4:advmod[posteriormente] 2:,/PUNCT->1:punct[,] 3:fue/AUX->4:aux[ser] 4:promovido/VERB->0:root[promover] 5:a/ADP->7:case[a] 6:el/DET->7:det[el] 7:Juvenil/PROPN->4:obl[juvenil] 8:A/PROPN->7:flat[a] 9:,/PUNCT->10:punct[,] 10:consolidándose/VERB->4:advcl[consolidandr] 11:como/ADP->12:case[como] 12:una/PRON->10:obl[uno] 13:de/ADP->15:case[de] 14:las/DET->15:det[el] 15:figuras/NOUN->12:nmod[figura] 16:de/ADP->18:case[de] 17:el/DET->18:det[el] 18:equipo/NOUN->15:nmod[equipo] 19:./PUNCT->4:punct[.]
-
-2020-21 14 15 1.07
-   1:2020/NUM->6:dep[2020] 2:-/PUNCT->1:punct[-] 3:21/NUM->4:dep[21] 4:14/NUM->5:nummod[14] 5:15/NUM->6:nummod[15] 6:1.07/NUM->5:compound[1.07] 7:./PUNCT->1:punct[.]
-
-2022-23: Temporada debut
-   1:2022/NUM->0:root[2022] 2:-/PUNCT->3:punct[-] 3:23/NUM->1:nummod[23] 4::/PUNCT->5:punct[:] 5:Temporada/PROPN->6:dep[temporada] 6:debut/ADJ->5:flat[debut] 7:./PUNCT->1:punct[.]
-
-Para la temporada 2022-23, fue incluido en el Juvenil A, una categoría superior a su edad.
-   1:Para/ADP->3:case[para] 2:la/DET->3:det[el] 3:temporada/NOUN->9:obl[temporada] 4:2022/X->3:appos[2022] 5:-/PUNCT->6:punct[-] 6:23/NUM->4:dep[23] 7:,/PUNCT->3:punct[,] 8:fue/AUX->9:aux[ser] 9:incluido/VERB->0:root[incluir] 10:en/ADP->12:case[en] 11:el/DET->12:det[el] 12:Juvenil/PROPN->9:obl[juvenil] 13:A/PROPN->12:appos[a] 14:,/PUNCT->16:punct[,] 15:una/DET->16:det[uno] 16:categoría/NOUN->12:appos[categoria] 17:superior/ADJ->16:amod[superior] 18:a/ADP->20:case[a] 19:su/DET->20:det[su] 20:edad/NOUN->17:nmod[edad] 21:./PUNCT->9:punct[.]
-
-El 4 de septiembre de 2022, Xavi lo convocó para entrenar con el primer equipo junto a otros jugadores jóvenes.
-   1:El/DET->2:det[el] 2:4/NUM->10:obl[4] 3:de/ADP->4:case[de] 4:septiembre/NOUN->2:nmod[septiembre] 5:de/ADP->6:case[de] 6:2022/NUM->4:nmod[2022] 7:,/PUNCT->2:punct[,] 8:Xavi/PROPN->10:nsubj[xavi] 9:lo/PRON->10:obj[el] 10:convocó/VERB->0:root[convocar] 11:para/ADP->12:mark[para] 12:entrenar/VERB->10:advcl[entrenar] 13:con/ADP->16:case[con] 14:el/DET->16:det[el] 15:primer/ADJ->16:amod[primero] 16:equipo/NOUN->12:obl[equipo] 17:junto/ADJ->20:case[junto] 18:a/ADP->17:fixed[a] 19:otros/DET->20:det[otro] 20:jugadores/NOUN->12:obl[jugador] 21:jóvenes/ADJ->20:amod[joven] 22:./PUNCT->10:punct[.]
-   => XAVI CONVOCAR LAMINE_YAMAL_NASRAOUI_EBANA
-   => XAVI ENTRENAR_CON EQUIPO
-
-A pesar de no haber firmado aún su primer contrato profesional, fue uno de los futbolistas de la cantera que más llamó la atención del entrenador.
-   1:A/ADP->2:case[a] 2:pesar/VERB->14:nmod[pesar] 3:de/ADP->6:case[de] 4:no/ADV->6:advmod[no] 5:haber/AUX->6:aux[haber] 6:firmado/VERB->14:advcl[firmar] 7:aún/ADV->6:advmod[aun] 8:su/DET->10:det[su] 9:primer/ADJ->10:amod[primero] 10:contrato/NOUN->6:nsubj[contrato] 11:profesional/ADJ->10:amod[profesional] 12:,/PUNCT->6:punct[,] 13:fue/AUX->14:cop[ser] 14:uno/PRON->0:root[uno] 15:de/ADP->17:case[de] 16:los/DET->17:det[el] 17:futbolistas/NOUN->14:nmod[futbolista] 18:de/ADP->20:case[de] 19:la/DET->20:det[el] 20:cantera/NOUN->17:nmod[cantera] 21:que/SCONJ->23:mark[que] 22:más/ADV->23:advmod[mas] 23:llamó/VERB->20:acl[llamar] 24:la/DET->25:det[el] 25:atención/NOUN->23:obj[atencion] 26:de/ADP->28:case[de] 27:el/DET->28:det[el] 28:entrenador/NOUN->25:nmod[entrenador] 29:./PUNCT->14:punct[.]
-   => CONTRATO_DE_XAVI ES CONTRATO
-   => CONTRATO_DE_XAVI_PROFESIONAL ES CONTRATO_DE_XAVI
-   => ATENCION_DE_ENTRENADOR ES ATENCION
-   => CANTERA LLAMAR ATENCION_DE_ENTRENADOR
-
-Su debut finalmente se produjo el 29 de abril de 2023, a los 15 años de edad, por un partido del Campeonato Nacional, oportunidad en
-   1:Su/DET->2:det[su] 2:debut/NOUN->5:nsubj[debut] 3:finalmente/ADV->5:advmod[finalmente] 4:se/PRON->5:expl[el] 5:produjo/VERB->0:root[producir] 6:el/DET->7:det[el] 7:29/NUM->5:obl[29] 8:de/ADP->9:case[de] 9:abril/NOUN->7:nmod[abril] 10:de/ADP->11:case[de] 11:2023/NUM->9:nmod[2023] 12:,/PUNCT->16:punct[,] 13:a/ADP->16:case[a] 14:los/DET->16:det[el] 15:15/NUM->16:nummod[15] 16:años/NOUN->5:obl[ano] 17:de/ADP->18:case[de] 18:edad/NOUN->16:nmod[edad] 19:,/PUNCT->22:punct[,] 20:por/ADP->22:case[por] 21:un/DET->22:det[uno] 22:partido/NOUN->5:obl[partido] 23:de/ADP->25:case[de] 24:el/DET->25:det[el] 25:Campeonato/PROPN->22:nmod[campeonato] 26:Nacional/PROPN->25:amod[nacional] 27:,/PUNCT->28:punct[,] 28:oportunidad/NOUN->25:appos[oportunidad] 29:en/ADP->28:case[en] 30:./PUNCT->5:punct[.]
-   => DEBUT_DE_XAVI ES DEBUT
-   => DEBUT_DE_XAVI PRODUCIR_A EDAD
-   => PARTIDO_DE_CAMPEONATO ES PARTIDO
-   => CAMPEONATO ES OPORTUNIDAD
-   => DEBUT_DE_XAVI PRODUCIR_POR PARTIDO_DE_CAMPEONATO
-
-que su equipo F. C. Barcelona enfrentaba a Real Betis.
-   1:que/SCONJ->9:mark[que] 2:su/DET->3:det[su] 3:equipo/NOUN->9:nsubj[equipo] 4:F/PROPN->3:appos[f] 5:./PUNCT->9:punct[.] 6:C/PROPN->4:flat[c] 7:./PUNCT->9:punct[.] 8:Barcelona/PROPN->9:nsubj[barcelona] 9:enfrentaba/VERB->0:root[enfrentar] 10:a/ADP->12:case[a] 11:Real/PROPN->9:obj[real] 12:Betis/PROPN->9:obj[betis] 13:./PUNCT->9:punct[.]
-   => F_C ES EQUIPO_DE_XAVI
-   => EQUIPO_DE_XAVI ES EQUIPO
-   => F_C ENFRENTAR REAL
-   => F_C ENFRENTAR BETIS
-   => BARCELONA ENFRENTAR REAL
-   => BARCELONA ENFRENTAR BETIS
-
-Yamal era suplente, ingresó con la camiseta número 41, como reemplazante de Gavi al final del segundo tiempo.
-   1:Yamal/PROPN->3:nsubj[yamal] 2:era/AUX->3:cop[ser] 3:suplente/ADJ->0:root[suplente] 4:,/PUNCT->5:punct[,] 5:ingresó/VERB->3:parataxis[ingresar] 6:con/ADP->8:case[con] 7:la/DET->8:det[el] 8:camiseta/NOUN->5:obl[camiseta] 9:número/NOUN->5:obl[numero] 10:41/NUM->9:nummod[41] 11:,/PUNCT->13:punct[,] 12:como/SCONJ->13:case[como] 13:reemplazante/NOUN->5:obl[reemplazante] 14:de/ADP->15:case[de] 15:Gavi/PROPN->13:nmod[gavi] 16:a/ADP->18:case[a] 17:el/DET->18:det[el] 18:final/NOUN->13:nmod[final] 19:de/ADP->22:case[de] 20:el/DET->22:det[el] 21:segundo/ADJ->22:amod[segundo] 22:tiempo/NOUN->18:nmod[tiempo] 23:./PUNCT->3:punct[.]
-   => YAMAL SER SUPLENTE
-
-En las primeras jugadas, intentó asociaciones con jugadores experimentados como Robert Lewandowski y hasta estuvo cerca de marcar un gol.
-   1:En/ADP->4:case[en] 2:las/DET->4:det[el] 3:primeras/ADJ->4:amod[primero] 4:jugadas/NOUN->6:obl[jugada] 5:,/PUNCT->4:punct[,] 6:intentó/VERB->0:root[intentar] 7:asociaciones/NOUN->6:obj[asociacion] 8:con/ADP->9:case[con] 9:jugadores/NOUN->6:obl[jugador] 10:experimentados/ADJ->9:amod[experimentado] 11:como/ADP->12:case[como] 12:Robert/PROPN->10:obl[robert] 13:Lewandowski/PROPN->12:flat[lewandowski] 14:y/CCONJ->16:cc[y] 15:hasta/ADV->16:advmod[hasta] 16:estuvo/VERB->6:conj[estar] 17:cerca/ADV->16:advmod[cerca] 18:de/ADP->17:fixed[de] 19:marcar/VERB->16:advcl[marcar] 20:un/DET->21:det[uno] 21:gol/NOUN->19:obj[gol] 22:./PUNCT->6:punct[.]
-   => YAMAL MARCAR GOL
-
-Después del juego, Yamal recibió el respeto de los fanáticos, así como las reseñas de prensa:
-   1:Después/ADV->7:advmod[despues] 2:de/ADP->1:fixed[de] 3:el/DET->4:det[el] 4:juego/NOUN->7:obl[juego] 5:,/PUNCT->4:punct[,] 6:Yamal/PROPN->7:nsubj[yamal] 7:recibió/VERB->0:root[recibir] 8:el/DET->9:det[el] 9:respeto/NOUN->7:obj[respeto] 10:de/ADP->12:case[de] 11:los/DET->12:det[el] 12:fanáticos/NOUN->9:nmod[fanatico] 13:,/PUNCT->17:punct[,] 14:así/ADV->17:cc[asi] 15:como/CCONJ->14:fixed[como] 16:las/DET->17:det[el] 17:reseñas/NOUN->7:conj[resena] 18:de/ADP->19:case[de] 19:prensa/NOUN->17:nmod[prensa] 20::/PUNCT->14:punct[:]
-   => RESPETO_DE_FANATICO ES RESPETO
-   => YAMAL RECIBIR RESPETO_DE_FANATICO
-
-«Lamine Yamal parece normal, pero no lo es».
-   1:«/PUNCT->4:punct[«] 2:Lamine/PROPN->4:nsubj[lamine] 3:Yamal/PROPN->2:flat[yamal] 4:parece/VERB->0:root[parecer] 5:normal/ADJ->4:xcomp[normal] 6:,/PUNCT->10:punct[,] 7:pero/CCONJ->9:cc[pero] 8:no/ADV->9:advmod[no] 9:lo/PRON->10:nsubj[el] 10:es/AUX->9:cop[ser] 11:»/PUNCT->4:punct[»] 12:./PUNCT->4:punct[.]
-
-Lamine Yamal, con 15 años y 290 días, se convirtió en el jugador más joven en disputar un partido de LaLiga con el Barcelona, superando el récord de Vicenç Martínez
-   1:Lamine/PROPN->12:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:,/PUNCT->6:punct[,] 4:con/ADP->6:case[con] 5:15/NUM->6:nummod[15] 6:años/NOUN->1:nmod[ano] 7:y/CCONJ->9:cc[y] 8:290/NUM->9:nummod[290] 9:días/NOUN->6:conj[dia] 10:,/PUNCT->6:punct[,] 11:se/PRON->12:expl[el] 12:convirtió/VERB->0:root[convertir] 13:en/ADP->15:case[en] 14:el/DET->15:det[el] 15:jugador/NOUN->12:obl[jugador] 16:más/ADV->17:advmod[mas] 17:joven/ADJ->15:amod[joven] 18:en/ADP->19:mark[en] 19:disputar/VERB->12:advcl[disputar] 20:un/DET->21:det[uno] 21:partido/NOUN->19:obj[partido] 22:de/ADP->23:case[de] 23:LaLiga/PROPN->21:nmod[laliga] 24:con/ADP->26:case[con] 25:el/DET->26:det[el] 26:Barcelona/PROPN->21:nmod[barcelona] 27:,/PUNCT->28:punct[,] 28:superando/VERB->19:advcl[superar] 29:el/DET->30:det[el] 30:récord/NOUN->28:obj[record] 31:de/ADP->32:case[de] 32:Vicenç/PROPN->30:nmod[vicenc] 33:Martínez/PROPN->32:flat[martinez] 34:./PUNCT->12:punct[.]
-   => LAMINE_YAMAL CONVERTIR_EN JUGADOR
-   => PARTIDO_DE_LALIGA ES PARTIDO
-   => LAMINE_YAMAL DISPUTAR PARTIDO_DE_LALIGA
-   => RECORD_DE_VICENC_MARTINEZ ES RECORD
-   => LAMINE_YAMAL SUPERAR RECORD_DE_VICENC_MARTINEZ
-
-quien debutó con 16 años y 280 días el 19 de octubre de 1941.
-   1:quien/PRON->2:nsubj[quien] 2:debutó/VERB->0:root[debutar] 3:con/ADP->5:case[con] 4:16/NUM->5:nummod[16] 5:años/NOUN->2:obl[ano] 6:y/CCONJ->8:cc[y] 7:280/NUM->8:nummod[280] 8:días/NOUN->2:obl[dia] 9:el/DET->10:det[el] 10:19/NUM->2:obl[19] 11:de/ADP->12:case[de] 12:octubre/NOUN->10:nmod[octubre] 13:de/ADP->14:case[de] 14:1941/NUM->12:nmod[1941] 15:./PUNCT->2:punct[.]
-
-El 14 de mayo de 2023, el F. C. Barcelona se proclamó campeón de LaLiga tras vencer al Espanyol por 2 a 4 en el derbi disputado en Cornellà-El Prat.
-   1:El/DET->2:det[el] 2:14/NUM->15:obl[14] 3:de/ADP->4:case[de] 4:mayo/NOUN->2:nmod[mayo] 5:de/ADP->6:case[de] 6:2023/NUM->4:nmod[2023] 7:,/PUNCT->2:punct[,] 8:el/DET->9:det[el] 9:F/PROPN->15:nsubj[f] 10:./PUNCT->15:punct[.] 11:C/PROPN->9:appos[c] 12:./PUNCT->15:punct[.] 13:Barcelona/PROPN->9:flat[barcelona] 14:se/PRON->15:expl[el] 15:proclamó/VERB->0:root[proclamar] 16:campeón/NOUN->15:obj[campeon] 17:de/ADP->18:case[de] 18:LaLiga/PROPN->16:nmod[laliga] 19:tras/ADP->20:mark[tras] 20:vencer/VERB->15:advcl[vencer] 21:a/ADP->23:case[a] 22:el/DET->23:det[el] 23:Espanyol/PROPN->20:obj[espanyol] 24:por/ADP->25:case[por] 25:2/NUM->15:obl[2] 26:a/ADP->27:case[a] 27:4/NUM->25:nmod[4] 28:en/ADP->30:case[en] 29:el/DET->30:det[el] 30:derbi/NOUN->20:obl[derbi] 31:disputado/ADJ->30:amod[disputado] 32:en/ADP->33:case[en] 33:Cornellà/PROPN->30:nmod[cornella] 34:-/PUNCT->36:punct[-] 35:El/DET->36:det[el] 36:Prat/PROPN->33:flat[prat] 37:./PUNCT->15:punct[.]
-   => CAMPEON_DE_LALIGA ES CAMPEON
-   => F_BARCELONA PROCLAMAR CAMPEON_DE_LALIGA
-   => F_BARCELONA VENCER ESPANYOL
-   => F_BARCELONA VENCER_EN DERBI
-
-Con la consecución del título, Yamal, con 15 años y 305 días, se convirtió en el campeón más joven en la historia de la Liga, superando a su entonces compañero Ansu Fati.
-   1:Con/ADP->3:case[con] 2:la/DET->3:det[el] 3:consecución/NOUN->18:obl[consecucion] 4:de/ADP->6:case[de] 5:el/DET->6:det[el] 6:título/NOUN->3:nmod[titulo] 7:,/PUNCT->8:punct[,] 8:Yamal/PROPN->6:appos[yamal] 9:,/PUNCT->12:punct[,] 10:con/ADP->12:case[con] 11:15/NUM->12:nummod[15] 12:años/NOUN->3:nmod[ano] 13:y/CCONJ->15:cc[y] 14:305/NUM->15:nummod[305] 15:días/NOUN->12:conj[dia] 16:,/PUNCT->3:punct[,] 17:se/PRON->18:expl[el] 18:convirtió/VERB->0:root[convertir] 19:en/ADP->21:case[en] 20:el/DET->21:det[el] 21:campeón/NOUN->18:obl[campeon] 22:más/ADV->23:advmod[mas] 23:joven/ADJ->21:amod[joven] 24:en/ADP->26:case[en] 25:la/DET->26:det[el] 26:historia/NOUN->21:nmod[historia] 27:de/ADP->29:case[de] 28:la/DET->29:det[el] 29:Liga/PROPN->26:nmod[liga] 30:,/PUNCT->31:punct[,] 31:superando/VERB->18:advcl[superar] 32:a/ADP->35:case[a] 33:su/DET->35:det[su] 34:entonces/ADV->35:advmod[entonces] 35:compañero/NOUN->31:obj[companero] 36:Ansu/PROPN->35:appos[ansu] 37:Fati/PROPN->36:flat[fati] 38:./PUNCT->18:punct[.]
-
-2023-24: Consolidación e inclusión en la Eurocopa
-   1:2023/NUM->3:dep[2023] 2:-/PUNCT->3:punct[-] 3:24/NUM->1:dep[24] 4::/PUNCT->5:punct[:] 5:Consolidación/NOUN->3:appos[consolidacion] 6:e/CCONJ->7:cc[e] 7:inclusión/NOUN->5:conj[inclusion] 8:en/ADP->10:case[en] 9:la/DET->10:det[el] 10:Eurocopa/PROPN->5:nmod[eurocopa] 11:./PUNCT->1:punct[.]
-
-En la temporada 2023-24, Yamal se consolidó en la alineación titular del Barcelona, jugando 50 partidos y anotando 7 goles, a la par de su debut oficial con la selección española.
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:temporada/NOUN->10:obl[temporada] 4:2023/NUM->3:appos[2023] 5:-/PUNCT->6:punct[-] 6:24/NUM->4:dep[24] 7:,/PUNCT->3:punct[,] 8:Yamal/PROPN->10:nsubj[yamal] 9:se/PRON->10:expl[el] 10:consolidó/VERB->0:root[consolidar] 11:en/ADP->13:case[en] 12:la/DET->13:det[el] 13:alineación/NOUN->10:obl[alineacion] 14:titular/ADJ->13:amod[titular] 15:de/ADP->17:case[de] 16:el/DET->17:det[el] 17:Barcelona/PROPN->13:nmod[barcelona] 18:,/PUNCT->19:punct[,] 19:jugando/VERB->10:advcl[jugar] 20:50/NUM->21:nummod[50] 21:partidos/NOUN->19:obj[partido] 22:y/CCONJ->23:cc[y] 23:anotando/VERB->19:conj[anotar] 24:7/NUM->25:nummod[7] 25:goles/NOUN->23:obj[gol] 26:,/PUNCT->29:punct[,] 27:a/ADP->29:case[a] 28:la/DET->29:det[el] 29:par/NOUN->27:fixed[par] 30:de/ADP->32:case[de] 31:su/DET->32:det[su] 32:debut/NOUN->29:nmod[debut] 33:oficial/ADJ->32:amod[oficial] 34:con/ADP->36:case[con] 35:la/DET->36:det[el] 36:selección/NOUN->32:nmod[seleccion] 37:española/ADJ->36:amod[espanol] 38:./PUNCT->10:punct[.]
-   => ALINEACION_TITULAR ES ALINEACION
-   => ALINEACION_TITULAR_DE_BARCELONA ES ALINEACION_TITULAR
-   => YAMAL CONSOLIDAR_EN ALINEACION_TITULAR_DE_BARCELONA
-   => 50_PARTIDO ES PARTIDO
-   => YAMAL JUGAR 50_PARTIDO
-   => 7_GOL ES GOL
-   => YAMAL ANOTAR 7_GOL
-
-Destacó en el Trofeo Joan Gamper al participar en los tres goles de la remontada.
-   1:Destacó/VERB->0:root[destacar] 2:en/ADP->4:case[en] 3:el/DET->4:det[el] 4:Trofeo/PROPN->1:obl[trofeo] 5:Joan/PROPN->4:appos[joan] 6:Gamper/PROPN->5:flat[gamper] 7:a/ADP->9:mark[a] 8:el/DET->9:det[el] 9:participar/VERB->1:advcl[participar] 10:en/ADP->13:case[en] 11:los/DET->13:det[el] 12:tres/NUM->13:nummod[tres] 13:goles/NOUN->9:obl[gol] 14:de/ADP->16:case[de] 15:la/DET->16:det[el] 16:remontada/NOUN->13:nmod[remontado] 17:./PUNCT->1:punct[.]
-   => YAMAL DESTACAR_EN TROFEO
-   => TRES_GOL ES GOL
-   => TRES_GOL_DE_REMONTADO ES TRES_GOL
-   => YAMAL PARTICIPAR_EN TRES_GOL_DE_REMONTADO
-
-Durante un partido contra Cádiz, se convirtió en el jugador más joven en ser titular en LaLiga con 16 años y 38 días.
-   1:Durante/ADP->3:case[durante] 2:un/DET->3:det[uno] 3:partido/NOUN->8:obl[partido] 4:contra/ADP->5:case[contra] 5:Cádiz/PROPN->3:nmod[cadiz] 6:,/PUNCT->3:punct[,] 7:se/PRON->8:expl[el] 8:convirtió/VERB->0:root[convertir] 9:en/ADP->11:case[en] 10:el/DET->11:det[el] 11:jugador/NOUN->8:obl[jugador] 12:más/ADV->13:advmod[mas] 13:joven/ADJ->11:amod[joven] 14:en/ADP->16:mark[en] 15:ser/AUX->16:cop[ser] 16:titular/ADJ->8:advcl[titular] 17:en/ADP->18:case[en] 18:LaLiga/PROPN->16:nmod[laliga] 19:con/ADP->21:case[con] 20:16/NUM->21:nummod[16] 21:años/NOUN->16:nmod[ano] 22:y/CCONJ->24:cc[y] 23:38/NUM->24:nummod[38] 24:días/NOUN->21:conj[dia] 25:./PUNCT->8:punct[.]
-
-El 27 de agosto, en la victoria 4-3 contra Villarreal, dio una asistencia y se convirtió en el asistente más joven del siglo en la competición.
-   1:El/DET->2:det[el] 2:27/NUM->15:obl[27] 3:de/ADP->4:case[de] 4:agosto/NOUN->2:nmod[agosto] 5:,/PUNCT->8:punct[,] 6:en/ADP->8:case[en] 7:la/DET->8:det[el] 8:victoria/NOUN->15:obl[victoria] 9:4/NUM->11:compound[4] 10:-/PUNCT->11:punct[-] 11:3/NUM->9:dep[3] 12:contra/ADP->13:case[contra] 13:Villarreal/PROPN->8:nmod[villarreal] 14:,/PUNCT->8:punct[,] 15:dio/VERB->0:root[dar] 16:una/DET->17:det[uno] 17:asistencia/NOUN->15:obj[asistencia] 18:y/CCONJ->20:cc[y] 19:se/PRON->20:expl[el] 20:convirtió/VERB->15:conj[convertir] 21:en/ADP->23:case[en] 22:el/DET->23:det[el] 23:asistente/NOUN->20:obl[asistente] 24:más/ADV->25:advmod[mas] 25:joven/ADJ->23:amod[joven] 26:de/ADP->28:case[de] 27:el/DET->28:det[el] 28:siglo/NOUN->23:nmod[siglo] 29:en/ADP->31:case[en] 30:la/DET->31:det[el] 31:competición/NOUN->25:nmod[competicion] 32:./PUNCT->15:punct[.]
-
-El 8 de octubre, marcó su primer gol, jugando contra Granada en el Nuevo Los Cármenes.
-   1:El/DET->2:det[el] 2:8/NUM->6:obl[8] 3:de/ADP->4:case[de] 4:octubre/NOUN->2:nmod[octubre] 5:,/PUNCT->2:punct[,] 6:marcó/VERB->0:root[marcar] 7:su/DET->9:det[su] 8:primer/ADJ->9:amod[primero] 9:gol/NOUN->6:obj[gol] 10:,/PUNCT->11:punct[,] 11:jugando/VERB->6:advcl[jugar] 12:contra/ADP->13:case[contra] 13:Granada/PROPN->11:obl[granada] 14:en/ADP->18:case[en] 15:el/DET->16:det[el] 16:Nuevo/ADJ->18:amod[nuevo] 17:Los/DET->18:det[el] 18:Cármenes/PROPN->16:flat[carmenes] 19:./PUNCT->6:punct[.]
-
-Barcelona acabaría segundo en el Nacional, y no lograría pasar a la semifinal de la Champions.
-   1:Barcelona/PROPN->2:nsubj[barcelona] 2:acabaría/VERB->0:root[acabar] 3:segundo/ADJ->2:obj[segundo] 4:en/ADP->6:case[en] 5:el/DET->6:det[el] 6:Nacional/PROPN->3:nmod[nacional] 7:,/PUNCT->10:punct[,] 8:y/CCONJ->10:cc[y] 9:no/ADV->10:advmod[no] 10:lograría/VERB->2:conj[lograr] 11:pasar/VERB->10:xcomp[pasar] 12:a/ADP->14:case[a] 13:la/DET->14:det[el] 14:semifinal/NOUN->11:obl[semifinal] 15:de/ADP->17:case[de] 16:la/DET->17:det[el] 17:Champions/PROPN->14:nmod[champions] 18:./PUNCT->2:punct[.]
-   => SEMIFINAL_DE_CHAMPIONS ES SEMIFINAL
-   => BARCELONA PASAR_A SEMIFINAL_DE_CHAMPIONS
-
-Sin embargo, fue el jugador más joven en ser titular con el Barcelona en LaLiga, en dar una asistencia con 16 años y 45 días, en marcar un gol con el club
-   1:Sin/ADP->6:cc[sin] 2:embargo/NOUN->1:fixed[embargo] 3:,/PUNCT->1:punct[,] 4:fue/AUX->6:cop[ser] 5:el/DET->6:det[el] 6:jugador/NOUN->0:root[jugador] 7:más/ADV->8:advmod[mas] 8:joven/ADJ->6:amod[joven] 9:en/ADP->11:mark[en] 10:ser/AUX->11:cop[ser] 11:titular/ADJ->6:acl[titular] 12:con/ADP->14:case[con] 13:el/DET->14:det[el] 14:Barcelona/PROPN->11:nmod[barcelona] 15:en/ADP->16:case[en] 16:LaLiga/PROPN->11:obl[laliga] 17:,/PUNCT->19:punct[,] 18:en/ADP->19:mark[en] 19:dar/VERB->11:advcl[dar] 20:una/DET->21:det[uno] 21:asistencia/NOUN->19:obj[asistencia] 22:con/ADP->24:case[con] 23:16/NUM->24:nummod[16] 24:años/NOUN->19:obl[ano] 25:y/CCONJ->27:cc[y] 26:45/NUM->27:nummod[45] 27:días/NOUN->24:conj[dia] 28:,/PUNCT->30:punct[,] 29:en/ADP->30:mark[en] 30:marcar/VERB->19:advcl[marcar] 31:un/DET->32:det[uno] 32:gol/NOUN->30:obj[gol] 33:con/ADP->35:case[con] 34:el/DET->35:det[el] 35:club/NOUN->30:obl[club] 36:./PUNCT->6:punct[.]
-   => JUGADOR DAR ASISTENCIA
-   => JUGADOR DAR_CON ANO
-   => JUGADOR DAR_CON DIA
-   => JUGADOR MARCAR GOL
-   => JUGADOR MARCAR_CON CLUB
-
-y participar en un Clásico, así como el más joven en anotar un doblete en el torneo.
-   1:y/CCONJ->2:cc[y] 2:participar/VERB->0:root[participar] 3:en/ADP->5:case[en] 4:un/DET->5:det[uno] 5:Clásico/NOUN->2:obl[clasico] 6:,/PUNCT->7:punct[,] 7:así/ADV->11:cc[asi] 8:como/CCONJ->7:fixed[como] 9:el/DET->11:det[el] 10:más/ADV->11:advmod[mas] 11:joven/ADJ->2:conj[joven] 12:en/ADP->13:mark[en] 13:anotar/VERB->11:advcl[anotar] 14:un/DET->15:det[uno] 15:doblete/NOUN->13:obj[doblete] 16:en/ADP->18:case[en] 17:el/DET->18:det[el] 18:torneo/NOUN->15:nmod[torneo] 19:./PUNCT->2:punct[.]
-
-Además, se convirtió en el primer jugador menor de 17 años en lograrlo.
-   1:Además/ADV->4:advmod[ademas] 2:,/PUNCT->1:punct[,] 3:se/PRON->4:expl[el] 4:convirtió/VERB->0:root[convertir] 5:en/ADP->8:case[en] 6:el/DET->8:det[el] 7:primer/ADJ->8:amod[primero] 8:jugador/NOUN->4:obl[jugador] 9:menor/ADJ->8:amod[menor] 10:de/ADP->12:case[de] 11:17/NUM->12:nummod[17] 12:años/NOUN->8:nmod[ano] 13:en/ADP->14:mark[en] 14:lograrlo/VERB->4:advcl[lograrlo] 15:./PUNCT->4:punct[.]
-
-En la Champions League, fue el segundo jugador más joven en debutar,, el más joven en ser titular y el más joven en jugar en la fase de eliminatorias.
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:Champions/PROPN->9:obl[champions] 4:League/PROPN->3:flat[league] 5:,/PUNCT->3:punct[,] 6:fue/AUX->9:cop[ser] 7:el/DET->9:det[el] 8:segundo/ADJ->9:amod[segundo] 9:jugador/NOUN->0:root[jugador] 10:más/ADV->11:advmod[mas] 11:joven/ADJ->9:amod[joven] 12:en/ADP->13:mark[en] 13:debutar/VERB->11:advcl[debutar] 14:,/PUNCT->18:punct[,] 15:,/PUNCT->21:punct[,] 16:el/DET->18:det[el] 17:más/ADV->18:advmod[mas] 18:joven/ADJ->9:amod[joven] 19:en/ADP->21:mark[en] 20:ser/AUX->21:cop[ser] 21:titular/ADJ->18:advcl[titular] 22:y/CCONJ->25:cc[y] 23:el/DET->25:det[el] 24:más/ADV->25:advmod[mas] 25:joven/ADJ->21:conj[joven] 26:en/ADP->27:mark[en] 27:jugar/VERB->25:advcl[jugar] 28:en/ADP->30:case[en] 29:la/DET->30:det[el] 30:fase/NOUN->27:obl[fase] 31:de/ADP->32:case[de] 32:eliminatorias/NOUN->30:nmod[eliminatoria] 33:./PUNCT->9:punct[.]
-
-En la Supercopa de España, se convirtió en el goleador más joven de la competición con 16 años y 182 días.
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:Supercopa/PROPN->8:obl[supercopa] 4:de/ADP->5:case[de] 5:España/PROPN->3:nmod[espana] 6:,/PUNCT->3:punct[,] 7:se/PRON->8:expl[el] 8:convirtió/VERB->0:root[convertir] 9:en/ADP->11:case[en] 10:el/DET->11:det[el] 11:goleador/NOUN->8:obl[goleador] 12:más/ADV->13:advmod[mas] 13:joven/ADJ->11:amod[joven] 14:de/ADP->16:case[de] 15:la/DET->16:det[el] 16:competición/NOUN->11:nmod[competicion] 17:con/ADP->19:case[con] 18:16/NUM->19:nummod[16] 19:años/NOUN->16:nmod[ano] 20:y/CCONJ->22:cc[y] 21:182/NUM->22:nummod[182] 22:días/NOUN->19:conj[dia] 23:./PUNCT->8:punct[.]
-
-En la Copa del Rey, también estableció un récord como el goleador más joven del torneo y recibió el premio Golden Boy The Youngest.
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:Copa/PROPN->9:obl[copa] 4:de/ADP->6:case[de] 5:el/DET->6:det[el] 6:Rey/PROPN->3:nmod[rey] 7:,/PUNCT->3:punct[,] 8:también/ADV->9:advmod[tambien] 9:estableció/VERB->0:root[establecer] 10:un/DET->11:det[uno] 11:récord/NOUN->9:obj[record] 12:como/ADP->14:case[como] 13:el/DET->14:det[el] 14:goleador/NOUN->11:nmod[goleador] 15:más/ADV->16:advmod[mas] 16:joven/ADJ->14:amod[joven] 17:de/ADP->19:case[de] 18:el/DET->19:det[el] 19:torneo/NOUN->16:nmod[torneo] 20:y/CCONJ->21:cc[y] 21:recibió/VERB->9:conj[recibir] 22:el/DET->23:det[el] 23:premio/NOUN->21:obj[premio] 24:Golden/PROPN->23:appos[golden] 25:Boy/PROPN->24:flat[boy] 26:The/PROPN->24:flat[the] 27:Youngest/PROPN->24:flat[youngest] 28:./PUNCT->9:punct[.]
-
-Debido a su muy buen año, los principales clubes comenzaron a «ojear» al joven talento, pero Lamine rechazó a todos, renovando hasta 2026 con una cláusula de 1000 millones de euros.
-   1:Debido/VERB->11:advcl[deber] 2:a/ADP->1:fixed[a] 3:su/DET->6:det[su] 4:muy/ADV->5:advmod[mucho] 5:buen/ADJ->6:amod[buen] 6:año/NOUN->1:obl[ano] 7:,/PUNCT->1:punct[,] 8:los/DET->10:det[el] 9:principales/ADJ->10:amod[principal] 10:clubes/NOUN->11:nsubj[club] 11:comenzaron/VERB->0:root[comenzar] 12:a/ADP->14:mark[a] 13:«/PUNCT->14:punct[«] 14:ojear/VERB->11:xcomp[ojear] 15:»/PUNCT->14:punct[»] 16:a/ADP->19:case[a] 17:el/DET->19:det[el] 18:joven/ADJ->19:amod[joven] 19:talento/NOUN->14:obl[talento] 20:,/PUNCT->23:punct[,] 21:pero/CCONJ->23:cc[pero] 22:Lamine/PROPN->23:nsubj[lamine] 23:rechazó/VERB->14:conj[rechazar] 24:a/ADP->25:case[a] 25:todos/PRON->27:obj[todo] 26:,/PUNCT->27:punct[,] 27:renovando/VERB->23:advcl[renovar] 28:hasta/ADP->29:case[hasta] 29:2026/NUM->27:obl[2026] 30:con/ADP->32:case[con] 31:una/DET->32:det[uno] 32:cláusula/NOUN->27:obl[clausula] 33:de/ADP->35:case[de] 34:1000/NUM->35:nummod[1000] 35:millones/NOUN->32:nmod[millon] 36:de/ADP->37:case[de] 37:euros/NOUN->35:nmod[euro] 38:./PUNCT->11:punct[.]
-   => CLUB OJEAR_A TALENTO
-   => LAMINE RECHAZAR _
-   => LAMINE RENOVAR_CON CLAUSULA
-
-Para inicios de la temporada 2024-25, Lamine se perfilaba para ser uno de los incluidos en la Eurocopa que se celebraba en Alemania.
-   1:Para/ADP->2:case[para] 2:inicios/NOUN->12:obl[inicio] 3:de/ADP->5:case[de] 4:la/DET->5:det[el] 5:temporada/NOUN->2:nmod[temporada] 6:2024/NUM->5:appos[2024] 7:-/PUNCT->8:punct[-] 8:25/NUM->6:dep[25] 9:,/PUNCT->2:punct[,] 10:Lamine/PROPN->12:nsubj[lamine] 11:se/PRON->12:expl[el] 12:perfilaba/VERB->0:root[perfilar] 13:para/ADP->15:case[para] 14:ser/AUX->15:cop[ser] 15:uno/PRON->12:obl[uno] 16:de/ADP->18:case[de] 17:los/DET->18:det[el] 18:incluidos/VERB->15:nmod[incluido] 19:en/ADP->21:case[en] 20:la/DET->21:det[el] 21:Eurocopa/PROPN->18:obl[eurocopa] 22:que/PRON->24:nsubj[que] 23:se/PRON->24:expl[el] 24:celebraba/VERB->21:acl[celebrar] 25:en/ADP->26:case[en] 26:Alemania/PROPN->24:obl[alemania] 27:./PUNCT->12:punct[.]
-   => INICIO_DE_TEMPORADA ES INICIO
-   => LAMINE PERFILAR_PARA INICIO_DE_TEMPORADA
-   => EUROCOPA CELEBRAR_EN ALEMANIA
-
-Durante la Liga, su promedio goleador incrementó considerablemente, pasando de 0.14 del año pasado a 0.25 durante el actual campeonato.
-   1:Durante/ADP->3:case[durante] 2:la/DET->3:det[el] 3:Liga/PROPN->8:obl[liga] 4:,/PUNCT->3:punct[,] 5:su/DET->6:det[su] 6:promedio/NOUN->8:nsubj[promedio] 7:goleador/NOUN->6:amod[goleador] 8:incrementó/VERB->0:root[incrementar] 9:considerablemente/ADJ->8:advmod[considerablemente] 10:,/PUNCT->11:punct[,] 11:pasando/VERB->8:advcl[pasar] 12:de/ADP->13:case[de] 13:0.14/NUM->11:obl[0.14] 14:de/ADP->16:case[de] 15:el/DET->16:det[el] 16:año/NOUN->11:obl[ano] 17:pasado/ADJ->16:amod[pasado] 18:a/ADP->19:case[a] 19:0.25/NUM->17:obl[0.25] 20:durante/ADP->23:case[durante] 21:el/DET->23:det[el] 22:actual/ADJ->23:amod[actual] 23:campeonato/NOUN->11:obl[campeonato] 24:./PUNCT->8:punct[.]
-   => PROMEDIO_DE_YAMAL ES PROMEDIO
-   => PROMEDIO_DE_YAMAL INCREMENTAR_DURANTE LIGA
-   => PROMEDIO_DE_YAMAL PASAR_DE ANO
-   => PROMEDIO_DE_YAMAL PASAR_DURANTE CAMPEONATO
-
-Siendo una figura creciente en el fútbol español, para Luis de la Fuente, el entrenador de la Selección en ese momento, Lamine era más que una figura de cambio y un proyecto a futuro.
-   1:Siendo/AUX->3:cop[ser] 2:una/DET->3:det[uno] 3:figura/NOUN->0:root[figura] 4:creciente/ADJ->3:amod[creciente] 5:en/ADP->7:case[en] 6:el/DET->7:det[el] 7:fútbol/NOUN->3:nmod[futbol] 8:español/ADJ->7:amod[espanol] 9:,/PUNCT->11:punct[,] 10:para/ADP->11:case[para] 11:Luis/PROPN->7:nmod[luis] 12:de/ADP->14:case[de] 13:la/DET->14:det[el] 14:Fuente/PROPN->11:flat[fuente] 15:,/PUNCT->17:punct[,] 16:el/DET->17:det[el] 17:entrenador/NOUN->3:appos[entrenador] 18:de/ADP->20:case[de] 19:la/DET->20:det[el] 20:Selección/NOUN->17:nmod[seleccion] 21:en/ADP->23:case[en] 22:ese/DET->23:det[ese] 23:momento/NOUN->17:nmod[momento] 24:,/PUNCT->3:punct[,] 25:Lamine/PROPN->17:appos[lamine] 26:era/AUX->30:cop[ser] 27:más/ADV->26:advmod[mas] 28:que/SCONJ->27:fixed[que] 29:una/DET->30:det[uno] 30:figura/NOUN->26:nsubj[figura] 31:de/ADP->32:case[de] 32:cambio/NOUN->30:nmod[cambio] 33:y/CCONJ->35:cc[y] 34:un/DET->35:det[uno] 35:proyecto/NOUN->30:conj[proyecto] 36:a/ADP->37:case[a] 37:futuro/NOUN->35:nmod[futuro] 38:./PUNCT->3:punct[.]
-   => YAMAL ES FIGURA
-   => YAMAL FIGURA_DE CAMBIO
-   => FIGURA_DE_CAMBIO ES FIGURA
-   => YAMAL ES PROYECTO
-
-Así fue como, paso de entrar en la lista de pre-convocados, el 7 de mayo de 2024 Luis de la Fuente anunció los convocados a la Eurocopa y dejó sorpresivamente adentro a Yamal.
-   1:Así/ADV->2:advmod[asi] 2:fue/VERB->0:root[ir] 3:como/SCONJ->5:mark[como] 4:,/PUNCT->5:punct[,] 5:paso/VERB->2:nsubj[paso] 6:de/ADP->7:mark[de] 7:entrar/VERB->5:advcl[entrar] 8:en/ADP->10:case[en] 9:la/DET->10:det[el] 10:lista/NOUN->7:obl[lista] 11:de/ADP->12:case[de] 12:pre/X->10:nmod[pre] 13:-/PUNCT->14:punct[-] 14:convocados/ADJ->10:amod[convocado] 15:,/PUNCT->17:punct[,] 16:el/DET->17:det[el] 17:7/NUM->14:obl[7] 18:de/ADP->19:case[de] 19:mayo/NOUN->17:nmod[mayo] 20:de/ADP->21:case[de] 21:2024/NUM->22:nummod[2024] 22:Luis/PROPN->21:flat[luis] 23:de/ADP->25:case[de] 24:la/DET->25:det[el] 25:Fuente/PROPN->22:nmod[fuente] 26:anunció/VERB->2:conj[anunciar] 27:los/DET->28:det[el] 28:convocados/NOUN->26:obj[convocado] 29:a/ADP->31:case[a] 30:la/DET->31:det[el] 31:Eurocopa/PROPN->28:nmod[eurocopa] 32:y/CCONJ->33:cc[y] 33:dejó/VERB->26:conj[dejar] 34:sorpresivamente/ADV->33:advmod[sorpresivamente] 35:adentro/ADV->33:xcomp[adentro] 36:a/ADP->37:case[a] 37:Yamal/PROPN->33:obl[yamal] 38:./PUNCT->2:punct[.]
-
-Lamine disputó sus partidos con España, donde anotó un gol y se consagró campeón.
-   1:Lamine/PROPN->2:nsubj[lamine] 2:disputó/VERB->0:root[disputar] 3:sus/DET->4:det[su] 4:partidos/NOUN->2:obj[partido] 5:con/ADP->6:case[con] 6:España/PROPN->2:obl[espana] 7:,/PUNCT->9:punct[,] 8:donde/ADV->9:advmod[donde] 9:anotó/VERB->6:acl[anotar] 10:un/DET->11:det[uno] 11:gol/NOUN->9:obj[gol] 12:y/CCONJ->14:cc[y] 13:se/PRON->14:expl[el] 14:consagró/VERB->2:conj[consagrar] 15:campeón/NOUN->14:obj[campeon] 16:./PUNCT->2:punct[.]
-   => PARTIDO_DE_YAMAL ES PARTIDO
-   => LAMINE DISPUTAR PARTIDO_DE_YAMAL
-   => LAMINE DISPUTAR_CON ESPANA
-   => ESPANA ANOTAR GOL
-   => LAMINE CONSAGRAR CAMPEON
-
-En la prensa, el seleccionador español declararía lo siguiente:
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:prensa/NOUN->8:obl[prensa] 4:,/PUNCT->3:punct[,] 5:el/DET->6:det[el] 6:seleccionador/NOUN->8:nsubj[seleccionador] 7:español/ADJ->6:amod[espanol] 8:declararía/VERB->0:root[declarar] 9:lo/PRON->10:det[el] 10:siguiente/ADJ->8:obj[siguiente] 11::/PUNCT->8:punct[:]
-   => SELECCIONADOR_ESPANOL ES SELECCIONADOR
-   => SELECCIONADOR_ESPANOL DECLARAR_EN PRENSA
-
-«Lo llevo comentando durante 44 días y estos futbolistas son un ejemplo para la sociedad por los valores que representan.
-   1:«/PUNCT->3:punct[«] 2:Lo/PRON->3:obj[el] 3:llevo/VERB->13:advcl[llevar] 4:comentando/VERB->3:advcl[comentar] 5:durante/ADP->7:case[durante] 6:44/NUM->7:nummod[44] 7:días/NOUN->4:obl[dia] 8:y/CCONJ->13:cc[y] 9:estos/DET->10:det[este] 10:futbolistas/NOUN->13:nsubj[futbolista] 11:son/AUX->13:cop[ser] 12:un/DET->13:det[uno] 13:ejemplo/NOUN->0:root[ejemplo] 14:para/ADP->16:case[para] 15:la/DET->16:det[el] 16:sociedad/NOUN->13:nmod[sociedad] 17:por/ADP->19:case[por] 18:los/DET->19:det[el] 19:valores/NOUN->16:nmod[valor] 20:que/PRON->21:nsubj[que] 21:representan/VERB->19:acl[representar] 22:./PUNCT->13:punct[.]
-   => FUTBOLISTA LLEVAR LAMINE
-   => FUTBOLISTA COMENTAR_DURANTE DIA
-   => FUTBOLISTA ES EJEMPLO
-
-No sé si cambiaremos algo en la sociedad, pero la gente joven que vea a estos jugadores no como niños mimados, sino como gente que ha trabajado muchísimo».
-   1:No/ADV->2:advmod[no] 2:sé/VERB->0:root[saber] 3:si/SCONJ->4:mark[si] 4:cambiaremos/VERB->2:ccomp[cambiarer] 5:algo/PRON->4:obj[algo] 6:en/ADP->8:case[en] 7:la/DET->8:det[el] 8:sociedad/NOUN->4:obl[sociedad] 9:,/PUNCT->15:punct[,] 10:pero/CCONJ->15:cc[pero] 11:la/DET->12:det[el] 12:gente/NOUN->13:nsubj[gente] 13:joven/ADJ->12:amod[joven] 14:que/PRON->15:nsubj[que] 15:vea/VERB->13:acl[ver] 16:a/ADP->18:case[a] 17:estos/DET->18:det[este] 18:jugadores/NOUN->15:obj[jugador] 19:no/ADV->21:advmod[no] 20:como/ADP->21:case[como] 21:niños/NOUN->15:obl[nino] 22:mimados/ADJ->21:amod[mimado] 23:,/PUNCT->26:punct[,] 24:sino/CCONJ->26:cc[sino] 25:como/SCONJ->26:case[como] 26:gente/NOUN->21:conj[gente] 27:que/PRON->29:nsubj[que] 28:ha/AUX->29:aux[haber] 29:trabajado/VERB->26:acl[trabajar] 30:muchísimo/PRON->29:advmod[muchisimo] 31:»/PUNCT->29:punct[»] 32:./PUNCT->2:punct[.]
-
-Yamal durante el partido Athletic Club vs FC Barcelona, temporada 2025-26
-   1:Yamal/PROPN->0:root[yamal] 2:durante/ADP->4:case[durante] 3:el/DET->4:det[el] 4:partido/NOUN->1:nmod[partido] 5:Athletic/PROPN->6:det[athletic] 6:Club/PROPN->4:appos[club] 7:vs/X->6:amod[vs] 8:FC/PROPN->6:appos[fc] 9:Barcelona/PROPN->8:flat[barcelona] 10:,/PUNCT->11:punct[,] 11:temporada/NOUN->4:appos[temporada] 12:2025/NUM->11:appos[2025] 13:-/PUNCT->14:punct[-] 14:26/NUM->12:dep[26] 15:./PUNCT->1:punct[.]
-
-Con la irrupción de Lamine, Barcelona mejoraría su rendimiento del año anterior.
-   1:Con/ADP->3:case[con] 2:la/DET->3:det[el] 3:irrupción/NOUN->8:obl[irrupcion] 4:de/ADP->5:case[de] 5:Lamine/PROPN->3:nmod[lamine] 6:,/PUNCT->3:punct[,] 7:Barcelona/PROPN->8:nsubj[barcelona] 8:mejoraría/VERB->0:root[mejorar] 9:su/DET->10:det[su] 10:rendimiento/NOUN->8:obj[rendimiento] 11:de/ADP->13:case[de] 12:el/DET->13:det[el] 13:año/NOUN->10:nmod[ano] 14:anterior/ADJ->13:amod[anterior] 15:./PUNCT->8:punct[.]
-   => IRRUPCION_DE_LAMINE ES IRRUPCION
-   => BARCELONA MEJORAR_CON IRRUPCION_DE_LAMINE
-   => RENDIMIENTO_DE_LAMINE ES RENDIMIENTO
-   => RENDIMIENTO_DE_LAMINE_DE_ANO ES RENDIMIENTO_DE_LAMINE
-   => BARCELONA MEJORAR RENDIMIENTO_DE_LAMINE_DE_ANO
-
-Yamal quedaría como máximo asistente del torneo por primera vez en su carrera, con 13 asistencias.
-   1:Yamal/PROPN->2:nsubj[yamal] 2:quedaría/VERB->0:root[quedar] 3:como/ADP->5:case[como] 4:máximo/ADJ->5:amod[maximo] 5:asistente/NOUN->2:obl[asistente] 6:de/ADP->8:case[de] 7:el/DET->8:det[el] 8:torneo/NOUN->5:nmod[torneo] 9:por/ADP->11:case[por] 10:primera/ADJ->11:amod[primero] 11:vez/NOUN->8:nmod[vez] 12:en/ADP->14:case[en] 13:su/DET->14:det[su] 14:carrera/NOUN->2:obl[carrera] 15:,/PUNCT->18:punct[,] 16:con/ADP->18:case[con] 17:13/NUM->18:nummod[13] 18:asistencias/NOUN->14:nmod[asistencia] 19:./PUNCT->2:punct[.]
-   => ASISTENTE_DE_TORNEO ES ASISTENTE
-   => YAMAL QUEDAR_COMO ASISTENTE_DE_TORNEO
-   => CARRERA_DE_LAMINE ES CARRERA
-   => YAMAL QUEDAR_EN CARRERA_DE_LAMINE
-
-En la Liga, Lamine disputó 35 partidos y marcó 9 goles, contribuyendo a una destacada campaña en la que el equipo se consagró campeón en la antepenúltima jornada, tras vencer al Espanyol.
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:Liga/PROPN->6:obl[liga] 4:,/PUNCT->3:punct[,] 5:Lamine/PROPN->6:nsubj[lamine] 6:disputó/VERB->0:root[disputar] 7:35/NUM->8:nummod[35] 8:partidos/NOUN->6:obj[partido] 9:y/CCONJ->10:cc[y] 10:marcó/VERB->6:conj[marcar] 11:9/NUM->12:nummod[9] 12:goles/NOUN->10:obj[gol] 13:,/PUNCT->14:punct[,] 14:contribuyendo/VERB->6:advcl[contribuir] 15:a/ADP->18:case[a] 16:una/DET->18:det[uno] 17:destacada/ADJ->18:amod[destacado] 18:campaña/NOUN->14:obj[campana] 19:en/ADP->21:case[en] 20:la/DET->21:det[el] 21:que/PRON->25:obl[que] 22:el/DET->23:det[el] 23:equipo/NOUN->25:nsubj[equipo] 24:se/PRON->25:expl[el] 25:consagró/VERB->18:acl[consagrar] 26:campeón/NOUN->25:nsubj[campeon] 27:en/ADP->30:case[en] 28:la/DET->30:det[el] 29:antepenúltima/ADJ->30:amod[antepenultimo] 30:jornada/NOUN->25:obl[jornada] 31:,/PUNCT->33:punct[,] 32:tras/ADP->33:mark[tras] 33:vencer/VERB->25:advcl[vencer] 34:a/ADP->36:case[a] 35:el/DET->36:det[el] 36:Espanyol/PROPN->33:obl[espanyol] 37:./PUNCT->6:punct[.]
-   => LAMINE DISPUTAR_EN LIGA
-   => 35_PARTIDO ES PARTIDO
-   => LAMINE DISPUTAR 35_PARTIDO
-   => 9_GOL ES GOL
-   => LAMINE MARCAR 9_GOL
-   => LAMINE CONTRIBUIR CAMPANA
-   => EQUIPO CONSAGRAR_EN JORNADA
-   => CAMPEON CONSAGRAR_EN JORNADA
-   => EQUIPO VENCER_A ESPANYOL
-   => CAMPEON VENCER_A ESPANYOL
-
-Se convirtió en el segundo goleador más joven en la historia de la Champions League al anotar ante el Mónaco.
-   1:Se/PRON->2:expl[el] 2:convirtió/VERB->0:root[convertir] 3:en/ADP->6:case[en] 4:el/DET->6:det[el] 5:segundo/ADJ->6:amod[segundo] 6:goleador/NOUN->2:obl[goleador] 7:más/ADV->8:advmod[mas] 8:joven/ADJ->6:amod[joven] 9:en/ADP->11:case[en] 10:la/DET->11:det[el] 11:historia/NOUN->2:obl[historia] 12:de/ADP->14:case[de] 13:la/DET->14:det[el] 14:Champions/PROPN->11:nmod[champions] 15:League/PROPN->14:flat[league] 16:a/ADP->18:mark[a] 17:el/DET->18:det[el] 18:anotar/VERB->2:advcl[anotar] 19:ante/ADP->21:case[ante] 20:el/DET->21:det[el] 21:Mónaco/PROPN->18:obl[monaco] 22:./PUNCT->2:punct[.]
-
-El 26 de octubre, se convirtió en el jugador más joven en marcar en un clásico frente al Real Madrid,, en la victoria por 0-4 en el Santiago Bernabeú
-   1:El/DET->2:det[el] 2:26/NUM->7:obl[26] 3:de/ADP->4:case[de] 4:octubre/NOUN->2:nmod[octubre] 5:,/PUNCT->2:punct[,] 6:se/PRON->7:expl[el] 7:convirtió/VERB->0:root[convertir] 8:en/ADP->10:case[en] 9:el/DET->10:det[el] 10:jugador/NOUN->7:obl[jugador] 11:más/ADV->12:advmod[mas] 12:joven/ADJ->10:amod[joven] 13:en/ADP->14:mark[en] 14:marcar/VERB->7:advcl[marcar] 15:en/ADP->17:case[en] 16:un/DET->17:det[uno] 17:clásico/ADJ->14:obl[clasico] 18:frente/NOUN->17:case[frente] 19:a/ADP->18:fixed[a] 20:el/DET->21:det[el] 21:Real/PROPN->18:obl[real] 22:Madrid/PROPN->21:flat[madrid] 23:,/PUNCT->27:punct[,] 24:,/PUNCT->27:punct[,] 25:en/ADP->27:case[en] 26:la/DET->27:det[el] 27:victoria/NOUN->14:obl[victoria] 28:por/ADP->29:case[por] 29:0/NUM->27:nmod[0] 30:-/PUNCT->31:punct[-] 31:4/NUM->29:appos[4] 32:en/ADP->34:case[en] 33:el/DET->34:det[el] 34:Santiago/PROPN->27:nmod[santiago] 35:Bernabeú/PROPN->34:flat[bernabeu] 36:./PUNCT->7:punct[.]
-
-superando la marca de Ansu Fati.
-   1:superando/VERB->0:root[superar] 2:la/DET->3:det[el] 3:marca/NOUN->1:obj[marca] 4:de/ADP->5:case[de] 5:Ansu/PROPN->3:nmod[ansu] 6:Fati/PROPN->5:flat[fati] 7:./PUNCT->1:punct[.]
-
-El 12 de enero de 2025 ganó la Supercopa de España, frente al Real Madrid, siendo Lamine Yamal el autor de un gol en la final.
-   1:El/DET->2:det[el] 2:12/NUM->7:obl[12] 3:de/ADP->4:case[de] 4:enero/NOUN->2:nmod[enero] 5:de/ADP->6:case[de] 6:2025/NUM->4:nmod[2025] 7:ganó/VERB->0:root[ganar] 8:la/DET->9:det[el] 9:Supercopa/PROPN->7:obj[supercopa] 10:de/ADP->11:case[de] 11:España/PROPN->9:nmod[espana] 12:,/PUNCT->17:punct[,] 13:frente/NOUN->17:case[frente] 14:a/ADP->13:fixed[a] 15:el/DET->16:det[el] 16:Real/PROPN->17:amod[real] 17:Madrid/PROPN->16:flat[madrid] 18:,/PUNCT->20:punct[,] 19:siendo/AUX->20:cop[ser] 20:Lamine/PROPN->7:advcl[lamine] 21:Yamal/PROPN->20:flat[yamal] 22:el/DET->23:det[el] 23:autor/NOUN->20:appos[autor] 24:de/ADP->26:case[de] 25:un/DET->26:det[uno] 26:gol/NOUN->23:nmod[gol] 27:en/ADP->29:case[en] 28:la/DET->29:det[el] 29:final/NOUN->26:nmod[final] 30:./PUNCT->7:punct[.]
-
-Su tanto, en la Ciudad Deportiva del Rey Abdullah,
-   1:Su/DET->2:det[su] 2:tanto/PRON->0:root[tanto] 3:,/PUNCT->6:punct[,] 4:en/ADP->6:case[en] 5:la/DET->6:det[el] 6:Ciudad/NOUN->2:nmod[ciudad] 7:Deportiva/ADJ->6:amod[deportivo] 8:de/ADP->10:case[de] 9:el/DET->10:det[el] 10:Rey/PROPN->6:nmod[rey] 11:Abdullah/PROPN->10:flat[abdullah] 12:,/PUNCT->6:punct[,] 13:./PUNCT->2:punct[.]
-
-y que significó el empate momentáneo barcelonista, lo convirtió en el goleador más joven en la historia del certamen, con 17 años y 182 días.
-   1:y/CCONJ->10:cc[y] 2:que/PRON->3:nsubj[que] 3:significó/VERB->10:advcl[significar] 4:el/DET->5:det[el] 5:empate/NOUN->3:nsubj[empate] 6:momentáneo/NOUN->5:amod[momentaneo] 7:barcelonista/ADJ->5:amod[barcelonista] 8:,/PUNCT->3:punct[,] 9:lo/PRON->10:obj[el] 10:convirtió/VERB->0:root[convertir] 11:en/ADP->13:case[en] 12:el/DET->13:det[el] 13:goleador/NOUN->10:obl[goleador] 14:más/ADV->15:advmod[mas] 15:joven/ADJ->13:amod[joven] 16:en/ADP->18:case[en] 17:la/DET->18:det[el] 18:historia/NOUN->10:obl[historia] 19:de/ADP->21:case[de] 20:el/DET->21:det[el] 21:certamen/NOUN->18:nmod[certamen] 22:,/PUNCT->25:punct[,] 23:con/ADP->25:case[con] 24:17/NUM->25:nummod[17] 25:años/NOUN->18:nmod[ano] 26:y/CCONJ->28:cc[y] 27:182/NUM->28:nummod[182] 28:días/NOUN->25:conj[dia] 29:./PUNCT->10:punct[.]
-   => EMPATE_BARCELONISTA ES EMPATE
-
-El 2 de febrero, batió un récord de Lionel Messi al completar 21 regates en un partido contra el Alavés.
-   1:El/DET->2:det[el] 2:2/NUM->6:obl[2] 3:de/ADP->4:case[de] 4:febrero/NOUN->2:nmod[febrero] 5:,/PUNCT->2:punct[,] 6:batió/VERB->0:root[batir] 7:un/DET->8:det[uno] 8:récord/NOUN->6:obj[record] 9:de/ADP->10:case[de] 10:Lionel/PROPN->8:nmod[lionel] 11:Messi/PROPN->10:flat[messi] 12:a/ADP->14:mark[a] 13:el/DET->14:det[el] 14:completar/VERB->8:acl[completar] 15:21/NUM->16:nummod[21] 16:regates/NOUN->14:obj[regate] 17:en/ADP->19:case[en] 18:un/DET->19:det[uno] 19:partido/NOUN->14:obl[partido] 20:contra/ADP->22:case[contra] 21:el/DET->22:det[el] 22:Alavés/PROPN->19:nmod[alaves] 23:./PUNCT->6:punct[.]
-   => RECORD_DE_LIONEL_MESSI ES RECORD
-   => 21_REGATE ES REGATE
-   => RECORD_DE_LIONEL_MESSI COMPLETAR 21_REGATE
-   => RECORD_DE_LIONEL_MESSI COMPLETAR_EN PARTIDO
-
-El 26 de abril ganó la Copa del Rey, también frente al Real Madrid, siendo el autor de dos asistencias en la final.
-   1:El/DET->2:det[el] 2:26/NUM->5:obl[26] 3:de/ADP->4:case[de] 4:abril/NOUN->2:nmod[abril] 5:ganó/VERB->0:root[ganar] 6:la/DET->7:det[el] 7:Copa/PROPN->5:obj[copa] 8:de/ADP->10:case[de] 9:el/DET->10:det[el] 10:Rey/PROPN->7:nmod[rey] 11:,/PUNCT->2:punct[,] 12:también/ADV->5:advmod[tambien] 13:frente/NOUN->5:advmod[frente] 14:a/ADP->13:fixed[a] 15:el/DET->16:det[el] 16:Real/PROPN->17:amod[real] 17:Madrid/PROPN->16:flat[madrid] 18:,/PUNCT->21:punct[,] 19:siendo/AUX->21:cop[ser] 20:el/DET->21:det[el] 21:autor/NOUN->5:advcl[autor] 22:de/ADP->24:case[de] 23:dos/NUM->24:nummod[dos] 24:asistencias/NOUN->21:nmod[asistencia] 25:en/ADP->27:case[en] 26:la/DET->27:det[el] 27:final/NOUN->21:nmod[final] 28:./PUNCT->5:punct[.]
-
-Su rendimiento le valió el Trofeo Kopa y Golden Boy, premios que reconocen al mejor futbolista del fútbol mundial y europeo menor de 21 años, respectivamente.
-   1:Su/DET->2:det[su] 2:rendimiento/NOUN->4:nsubj[rendimiento] 3:le/PRON->4:obl[el] 4:valió/VERB->0:root[valir] 5:el/DET->6:det[el] 6:Trofeo/PROPN->4:nsubj[trofeo] 7:Kopa/PROPN->6:appos[kopa] 8:y/CCONJ->9:cc[y] 9:Golden/PROPN->6:conj[golden] 10:Boy/PROPN->9:flat[boy] 11:,/PUNCT->12:punct[,] 12:premios/NOUN->6:appos[premio] 13:que/PRON->14:nsubj[que] 14:reconocen/VERB->12:acl[reconocer] 15:a/ADP->18:case[a] 16:el/DET->18:det[el] 17:mejor/ADJ->18:amod[mejor] 18:futbolista/NOUN->14:obj[futbolista] 19:de/ADP->21:case[de] 20:el/DET->21:det[el] 21:fútbol/NOUN->18:nmod[futbol] 22:mundial/ADJ->21:amod[mundial] 23:y/CCONJ->24:cc[y] 24:europeo/ADJ->22:conj[europeo] 25:menor/ADJ->18:amod[menor] 26:de/ADP->28:case[de] 27:21/NUM->28:nummod[21] 28:años/NOUN->25:nmod[ano] 29:,/PUNCT->30:punct[,] 30:respectivamente/ADV->28:advmod[respectivamente] 31:./PUNCT->4:punct[.]
-   => RENDIMIENTO_DE_LAMINE ES RENDIMIENTO
-   => TROFEO ES PREMIO
-   => FUTBOLISTA_MENOR ES FUTBOLISTA
-   => FUTBOLISTA_MENOR_DE_FUTBOL ES FUTBOLISTA_MENOR
-   => PREMIO RECONOCER FUTBOLISTA_MENOR_DE_FUTBOL
-
-Además recibió el reconocimiento a Deportista Revelación del Año en los Premios Laureus.
-   1:Además/ADV->2:advmod[ademas] 2:recibió/VERB->0:root[recibir] 3:el/DET->4:det[el] 4:reconocimiento/NOUN->2:obj[reconocimiento] 5:a/ADP->6:case[a] 6:Deportista/PROPN->4:nmod[deportista] 7:Revelación/PROPN->6:flat[revelacion] 8:de/ADP->10:case[de] 9:el/DET->10:det[el] 10:Año/PROPN->6:nmod[ano] 11:en/ADP->13:case[en] 12:los/DET->13:det[el] 13:Premios/PROPN->4:nmod[premios] 14:Laureus/PROPN->13:appos[laureus] 15:./PUNCT->2:punct[.]
-
-En este año, designó oficialmente como su representante a Jorge Mendes, quien asumió la responsabilidad de guiar su carrera y negociar contratos clave.
-   1:En/ADP->3:case[en] 2:este/DET->3:det[este] 3:año/NOUN->5:obl[ano] 4:,/PUNCT->3:punct[,] 5:designó/VERB->0:root[designar] 6:oficialmente/ADV->5:advmod[oficialmente] 7:como/ADP->9:case[como] 8:su/DET->9:det[su] 9:representante/NOUN->5:obj[representante] 10:a/ADP->11:case[a] 11:Jorge/PROPN->9:nmod[jorge] 12:Mendes/PROPN->11:flat[mendes] 13:,/PUNCT->15:punct[,] 14:quien/PRON->15:nsubj[quien] 15:asumió/VERB->11:acl[asumir] 16:la/DET->17:det[el] 17:responsabilidad/NOUN->15:obj[responsabilidad] 18:de/ADP->19:mark[de] 19:guiar/VERB->17:acl[guiar] 20:su/DET->21:det[su] 21:carrera/NOUN->19:obj[carrera] 22:y/CCONJ->23:cc[y] 23:negociar/VERB->19:conj[negociar] 24:contratos/NOUN->23:obj[contrato] 25:clave/NOUN->24:compound[clave] 26:./PUNCT->5:punct[.]
-   => JORGE_MENDES ASUMIR RESPONSABILIDAD
-   => CARRERA_DE_LAMINE ES CARRERA
-   => RESPONSABILIDAD GUIAR CARRERA_DE_LAMINE
-   => RESPONSABILIDAD NEGOCIAR CONTRATO_CLAVE
-
-Antes de ser convocado por la Selección absoluta, desde 2022, la Federación de Fútbol de Marruecos y el director técnico de la Selección Marroquí, Walid Regragui, mantuvieron conversaciones con Lamine Yamal
-   1:Antes/ADV->4:mark[antes] 2:de/ADP->1:fixed[de] 3:ser/AUX->4:aux[ser] 4:convocado/VERB->1:advcl[convocar] 5:por/ADP->7:case[por] 6:la/DET->7:det[el] 7:Selección/NOUN->4:obl[seleccion] 8:absoluta/ADJ->7:amod[absoluto] 9:,/PUNCT->11:punct[,] 10:desde/ADP->11:case[desde] 11:2022/NOUN->4:obl[2022] 12:,/PUNCT->11:punct[,] 13:la/DET->14:det[el] 14:Federación/PROPN->7:conj[federacion] 15:de/ADP->16:case[de] 16:Fútbol/PROPN->14:nmod[futbol] 17:de/ADP->18:case[de] 18:Marruecos/PROPN->16:nmod[marruecos] 19:y/CCONJ->21:cc[y] 20:el/DET->21:det[el] 21:director/NOUN->14:conj[director] 22:técnico/ADJ->21:amod[tecnico] 23:de/ADP->25:case[de] 24:la/DET->25:det[el] 25:Selección/NOUN->21:nmod[seleccion] 26:Marroquí/PROPN->25:flat[marroqui] 27:,/PUNCT->28:punct[,] 28:Walid/PROPN->14:conj[walid] 29:Regragui/PROPN->28:flat[regragui] 30:,/PUNCT->28:punct[,] 31:mantuvieron/VERB->0:root[mantener] 32:conversaciones/NOUN->31:obj[conversacion] 33:con/ADP->34:case[con] 34:Lamine/PROPN->31:obl[lamine] 35:Yamal/PROPN->34:flat[yamal] 36:./PUNCT->31:punct[.]
-
-y su entorno para convencerlo de jugar para Marruecos.
-   1:y/CCONJ->3:cc[y] 2:su/DET->3:det[su] 3:entorno/NOUN->0:root[entorno] 4:para/ADP->5:mark[para] 5:convencerlo/VERB->3:nmod[convencerlo] 6:de/ADP->7:mark[de] 7:jugar/VERB->5:advcl[jugar] 8:para/ADP->9:case[para] 9:Marruecos/PROPN->7:obl[marruecos] 10:./PUNCT->3:punct[.]
-
-Aunque Yamal es español por nacimiento, gracias a sus raíces marroquíes por parte de su padre tenía la posibilidad de jugar junto a Los Leones del Atlás.
-   1:Aunque/SCONJ->4:mark[aunque] 2:Yamal/PROPN->4:advmod[yamal] 3:es/AUX->4:cop[ser] 4:español/ADJ->18:advcl[espanol] 5:por/ADP->6:case[por] 6:nacimiento/NOUN->4:nmod[nacimiento] 7:,/PUNCT->11:punct[,] 8:gracias/NOUN->11:case[gracias] 9:a/ADP->8:fixed[a] 10:sus/DET->11:det[su] 11:raíces/NOUN->8:nmod[raiz] 12:marroquíes/ADJ->11:amod[marroquie] 13:por/ADP->14:case[por] 14:parte/NOUN->8:nmod[parte] 15:de/ADP->17:case[de] 16:su/DET->17:det[su] 17:padre/NOUN->14:nmod[padre] 18:tenía/VERB->0:root[tener] 19:la/DET->20:det[el] 20:posibilidad/NOUN->18:obj[posibilidad] 21:de/ADP->22:mark[de] 22:jugar/VERB->20:acl[jugar] 23:junto/ADJ->26:case[junto] 24:a/ADP->23:fixed[a] 25:Los/DET->26:det[el] 26:Leones/PROPN->22:obl[leones] 27:de/ADP->29:case[de] 28:el/DET->29:det[el] 29:Atlás/PROPN->26:nmod[atlas] 30:./PUNCT->18:punct[.]
-
-Regragui insistió por más de un año, hasta que en 2023 Yamal le comunicó su decisión de jugar en la Selección Española, su mayor conexión con España
-   1:Regragui/PROPN->2:nsubj[regragui] 2:insistió/VERB->0:root[insistir] 3:por/ADP->7:case[por] 4:más/ADV->2:advmod[mas] 5:de/ADP->7:case[de] 6:un/DET->7:det[uno] 7:año/NOUN->2:obl[ano] 8:,/PUNCT->15:punct[,] 9:hasta/ADP->15:mark[hasta] 10:que/SCONJ->15:mark[que] 11:en/ADP->12:case[en] 12:2023/NUM->15:obl[2023] 13:Yamal/PROPN->15:nsubj[yamal] 14:le/PRON->15:obl[el] 15:comunicó/VERB->2:advcl[comunicar] 16:su/DET->17:det[su] 17:decisión/NOUN->15:obj[decision] 18:de/ADP->19:mark[de] 19:jugar/VERB->17:acl[jugar] 20:en/ADP->22:case[en] 21:la/DET->22:det[el] 22:Selección/NOUN->19:obl[seleccion] 23:Española/ADJ->22:amod[espanola] 24:,/PUNCT->27:punct[,] 25:su/DET->27:det[su] 26:mayor/ADJ->27:amod[mayor] 27:conexión/NOUN->22:appos[conexion] 28:con/ADP->29:case[con] 29:España/PROPN->27:nmod[espana] 30:./PUNCT->2:punct[.]
-   => REGRAGUI INSISTIR_POR ANO
-
-y su rápido crecimiento en las categorías inferiores lo motivaron a rechazar la oferta proveniente de Marruecos.
-   1:y/CCONJ->10:cc[y] 2:su/DET->4:det[su] 3:rápido/ADJ->4:amod[rapido] 4:crecimiento/NOUN->10:nsubj[crecimiento] 5:en/ADP->7:case[en] 6:las/DET->7:det[el] 7:categorías/NOUN->4:nmod[categoria] 8:inferiores/ADJ->7:amod[inferior] 9:lo/PRON->10:obj[el] 10:motivaron/VERB->0:root[motivar] 11:a/ADP->12:mark[a] 12:rechazar/VERB->10:xcomp[rechazar] 13:la/DET->14:det[el] 14:oferta/NOUN->12:obj[oferta] 15:proveniente/ADJ->14:amod[proveniente] 16:de/ADP->17:case[de] 17:Marruecos/PROPN->14:nmod[marruecos] 18:./PUNCT->10:punct[.]
-   => CRECIMIENTO_DE_REGRAGUI ES CRECIMIENTO
-   => CRECIMIENTO_DE_REGRAGUI MOTIVAR REGRAGUI
-   => OFERTA_PROVENIENTE ES OFERTA
-   => OFERTA_PROVENIENTE_DE_MARRUECOS ES OFERTA_PROVENIENTE
-   => CRECIMIENTO_DE_REGRAGUI RECHAZAR OFERTA_PROVENIENTE_DE_MARRUECOS
-
-Dos o tres días después de hablar con él me llamó con respeto y me dijo "míster, gracias por el cariño pero voy a elegir a España.
-   1:Dos/NUM->4:nummod[dos] 2:o/CCONJ->4:cc[o] 3:tres/NUM->1:nummod[tres] 4:días/NOUN->1:nmod[dia] 5:después/ADV->4:advmod[despues] 6:de/ADP->7:mark[de] 7:hablar/VERB->5:advcl[hablar] 8:con/ADP->11:case[con] 9:él/DET->11:det[el] 10:me/PRON->11:obl[yo] 11:llamó/VERB->0:root[llamar] 12:con/ADP->13:case[con] 13:respeto/NOUN->11:obl[respeto] 14:y/CCONJ->16:cc[y] 15:me/PRON->16:obl[yo] 16:dijo/VERB->11:conj[decir] 17:"/PUNCT->18:punct["] 18:míster/ADJ->16:xcomp[mister] 19:,/PUNCT->23:punct[,] 20:gracias/NOUN->23:case[gracia] 21:por/ADP->20:fixed[por] 22:el/DET->23:det[el] 23:cariño/NOUN->16:obl[carino] 24:pero/CCONJ->25:cc[pero] 25:voy/VERB->16:conj[ir] 26:a/ADP->27:mark[a] 27:elegir/VERB->25:xcomp[elegir] 28:a/ADP->29:case[a] 29:España/PROPN->27:obj[espana] 30:./PUNCT->11:punct[.]
-   => REGRAGUI LLAMAR_CON RESPETO
-   => REGRAGUI ELEGIR ESPANA
-
-Me siento español".
-   1:Me/PRON->2:obl[yo] 2:siento/VERB->0:root[sentir] 3:español/ADJ->2:obj[espanol] 4:"/PUNCT->2:punct["] 5:./PUNCT->2:punct[.]
-
-Es un chaval muy honesto.
-   1:Es/AUX->3:cop[ser] 2:un/DET->3:det[uno] 3:chaval/NOUN->0:root[chaval] 4:muy/ADV->5:advmod[mucho] 5:honesto/ADJ->3:amod[honesto] 6:./PUNCT->3:punct[.]
-
-Selección española de fútbol en 2025 en las eliminatorias de UEFA rumbo al mundial de 2026.
-   1:Selección/NOUN->0:root[seleccion] 2:española/ADJ->1:amod[espanol] 3:de/ADP->4:case[de] 4:fútbol/NOUN->1:nmod[futbol] 5:en/ADP->6:case[en] 6:2025/NUM->4:nmod[2025] 7:en/ADP->9:case[en] 8:las/DET->9:det[el] 9:eliminatorias/NOUN->1:nmod[eliminatoria] 10:de/ADP->11:case[de] 11:UEFA/PROPN->9:nmod[uefa] 12:rumbo/NOUN->11:appos[rumbo] 13:a/ADP->15:case[a] 14:el/DET->15:det[el] 15:mundial/NOUN->9:nmod[mundial] 16:de/ADP->17:case[de] 17:2026/NUM->15:nmod[2026] 18:./PUNCT->1:punct[.]
-
-Lamine Yamal debutó oficialmente con la Selección Española absoluta el 8 de septiembre de 2023, ante Georgia en Boris Paichadze Dinamo Arena, con tan solo 16 años.
-   1:Lamine/PROPN->3:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:debutó/VERB->0:root[debutar] 4:oficialmente/ADV->3:advmod[oficialmente] 5:con/ADP->7:case[con] 6:la/DET->7:det[el] 7:Selección/NOUN->3:obl[seleccion] 8:Española/ADJ->7:amod[espanola] 9:absoluta/ADJ->7:amod[absoluto] 10:el/DET->11:det[el] 11:8/NUM->3:obl[8] 12:de/ADP->13:case[de] 13:septiembre/NOUN->11:nmod[septiembre] 14:de/ADP->15:case[de] 15:2023/NUM->13:nmod[2023] 16:,/PUNCT->18:punct[,] 17:ante/ADP->18:case[ante] 18:Georgia/PROPN->3:obl[georgia] 19:en/ADP->20:case[en] 20:Boris/PROPN->3:obl[boris] 21:Paichadze/PROPN->20:flat[paichadze] 22:Dinamo/PROPN->20:flat[dinamo] 23:Arena/PROPN->20:flat[arena] 24:,/PUNCT->18:punct[,] 25:con/ADP->29:case[con] 26:tan/ADV->28:advmod[tanto] 27:solo/ADV->28:advmod[solo] 28:16/NUM->29:nummod[16] 29:años/NOUN->3:obl[ano] 30:./PUNCT->3:punct[.]
-   => SELECCION_ESPANOLA_ABSOLUTO ES SELECCION
-   => LAMINE_YAMAL DEBUTAR_CON SELECCION_ESPANOLA_ABSOLUTO
-   => LAMINE_YAMAL DEBUTAR_ANTE GEORGIA
-   => LAMINE_YAMAL DEBUTAR_EN BORIS_PAICHADZE_DINAMO_ARENA
-   => LAMINE_YAMAL DEBUTAR_CON ANO
-
-Previo al debut, apenas había disputado 9 partidos con Barcelona y Luis de la Fuente, entrenador de la Selección en aquel entonces, le anunció a Yamal que contaría con él para el próximo partido.
-   1:Previo/VERB->0:root[previo] 2:a/ADP->4:case[a] 3:el/DET->4:det[el] 4:debut/NOUN->1:obl[debut] 5:,/PUNCT->8:punct[,] 6:apenas/ADV->8:advmod[apenas] 7:había/AUX->8:aux[haber] 8:disputado/VERB->1:advcl[disputar] 9:9/NUM->10:nummod[9] 10:partidos/NOUN->8:obj[partido] 11:con/ADP->12:case[con] 12:Barcelona/PROPN->8:obl[barcelona] 13:y/CCONJ->14:cc[y] 14:Luis/PROPN->12:conj[luis] 15:de/ADP->17:case[de] 16:la/DET->17:det[el] 17:Fuente/PROPN->14:nmod[fuente] 18:,/PUNCT->19:punct[,] 19:entrenador/NOUN->12:appos[entrenador] 20:de/ADP->22:case[de] 21:la/DET->22:det[el] 22:Selección/NOUN->19:nmod[seleccion] 23:en/ADP->25:case[en] 24:aquel/DET->25:det[aquel] 25:entonces/ADV->28:advmod[entonces] 26:,/PUNCT->1:punct[,] 27:le/PRON->28:obl[el] 28:anunció/VERB->0:root[anunciar] 29:a/ADP->30:case[a] 30:Yamal/PROPN->28:obj[yamal] 31:que/SCONJ->32:mark[que] 32:contaría/VERB->28:ccomp[contar] 33:con/ADP->38:case[con] 34:él/DET->32:obl[el] 35:para/ADP->38:case[para] 36:el/DET->38:det[el] 37:próximo/ADJ->38:amod[proximo] 38:partido/NOUN->32:obl[partido] 39:./PUNCT->1:punct[.]
-   => LAMINE_YAMAL PREVIO_A DEBUT
-   => 9_PARTIDO ES PARTIDO
-   => LAMINE_YAMAL DISPUTAR 9_PARTIDO
-   => BARCELONA ES ENTRENADOR
-   => LAMINE_YAMAL DISPUTAR_CON BARCELONA
-   => LUIS_DEL_FUENTE ES LUIS
-   => LAMINE_YAMAL DISPUTAR_CON LUIS_DEL_FUENTE
-   => LAMINE_YAMAL ANUNCIAR YAMAL
-
-Yamal entró en el final del primer tiempo, en reemplazo de Dani Olmo, con el partido ya liquidado 4 a 0 a favor de los españoles.
-   1:Yamal/PROPN->2:nsubj[yamal] 2:entró/VERB->0:root[entrar] 3:en/ADP->5:case[en] 4:el/DET->5:det[el] 5:final/NOUN->2:obl[final] 6:de/ADP->9:case[de] 7:el/DET->9:det[el] 8:primer/ADJ->9:amod[primero] 9:tiempo/NOUN->5:nmod[tiempo] 10:,/PUNCT->12:punct[,] 11:en/ADP->12:case[en] 12:reemplazo/NOUN->2:obl[reemplazo] 13:de/ADP->14:case[de] 14:Dani/PROPN->12:nmod[dani] 15:Olmo/PROPN->14:flat[olmo] 16:,/PUNCT->19:punct[,] 17:con/ADP->19:case[con] 18:el/DET->19:det[el] 19:partido/NOUN->12:nmod[partido] 20:ya/ADV->21:advmod[ya] 21:liquidado/ADJ->19:amod[liquidado] 22:4/NUM->21:nummod[4] 23:a/ADP->24:case[a] 24:0/NUM->21:obl[0] 25:a/ADP->26:case[a] 26:favor/NOUN->25:fixed[favor] 27:de/ADP->25:fixed[de] 28:los/DET->29:det[el] 29:españoles/NOUN->26:nmod[espanol] 30:./PUNCT->2:punct[.]
-   => FINAL_DE_TIEMPO ES FINAL
-   => YAMAL ENTRAR_EN FINAL_DE_TIEMPO
-   => REEMPLAZO_DE_DANI_OLMO ES REEMPLAZO
-   => YAMAL ENTRAR_EN REEMPLAZO_DE_DANI_OLMO
-
-En cuarenta minutos de juego, convirtió su primer gol,
-   1:En/ADP->3:case[en] 2:cuarenta/NUM->3:nummod[cuarenta] 3:minutos/NOUN->7:obl[minuto] 4:de/ADP->5:case[de] 5:juego/NOUN->3:nmod[juego] 6:,/PUNCT->3:punct[,] 7:convirtió/VERB->0:root[convertir] 8:su/DET->10:det[su] 9:primer/ADJ->10:amod[primero] 10:gol/NOUN->7:nsubj[gol] 11:,/PUNCT->3:punct[,] 12:./PUNCT->7:punct[.]
-   => GOL_DE_YAMAL ES GOL
-   => GOL_DE_YAMAL CONVERTIR_EN JUEGO
-
-lo que le convirtió en el futbolista más joven de la historia en jugar y marcar para España, a la edad de 16 años y 57 días.
-   1:lo/PRON->4:det[el] 2:que/PRON->4:nsubj[que] 3:le/PRON->4:obl[el] 4:convirtió/VERB->1:acl[convertir] 5:en/ADP->7:case[en] 6:el/DET->7:det[el] 7:futbolista/NOUN->4:obl[futbolista] 8:más/ADV->9:advmod[mas] 9:joven/ADJ->7:amod[joven] 10:de/ADP->12:case[de] 11:la/DET->12:det[el] 12:historia/NOUN->7:nmod[historia] 13:en/ADP->14:mark[en] 14:jugar/VERB->9:advcl[jugar] 15:y/CCONJ->16:cc[y] 16:marcar/VERB->14:conj[marcar] 17:para/ADP->18:case[para] 18:España/PROPN->16:obl[espana] 19:,/PUNCT->22:punct[,] 20:a/ADP->22:case[a] 21:la/DET->22:det[el] 22:edad/NOUN->16:obl[edad] 23:de/ADP->25:case[de] 24:16/NUM->25:nummod[16] 25:años/NOUN->22:nmod[ano] 26:y/CCONJ->28:cc[y] 27:57/NUM->28:nummod[57] 28:días/NOUN->25:conj[dia] 29:./PUNCT->1:punct[.]
-
-Asimismo, el más joven en marcar en una fase de clasificación para la Eurocopa, tras superar a su compañero de equipo Gavi.
-   1:Asimismo/ADV->5:advmod[asimismo] 2:,/PUNCT->1:punct[,] 3:el/DET->5:det[el] 4:más/ADV->5:advmod[mas] 5:joven/ADJ->0:root[joven] 6:en/ADP->7:mark[en] 7:marcar/VERB->5:advcl[marcar] 8:en/ADP->10:case[en] 9:una/DET->10:det[uno] 10:fase/NOUN->7:obl[fase] 11:de/ADP->12:case[de] 12:clasificación/NOUN->10:nmod[clasificacion] 13:para/ADP->15:case[para] 14:la/DET->15:det[el] 15:Eurocopa/PROPN->10:nmod[eurocopa] 16:,/PUNCT->18:punct[,] 17:tras/ADP->18:mark[tras] 18:superar/VERB->7:advcl[superar] 19:a/ADP->21:case[a] 20:su/DET->21:det[su] 21:compañero/NOUN->18:obj[companero] 22:de/ADP->23:case[de] 23:equipo/NOUN->21:nmod[equipo] 24:Gavi/PROPN->23:appos[gavi] 25:./PUNCT->5:punct[.]
-
-Luego del partido, Yamal confesaría que aquel día «estaba viviendo un sueño».
-   1:Luego/ADV->4:case[luego] 2:de/ADP->1:fixed[de] 3:el/DET->4:det[el] 4:partido/NOUN->7:obl[partido] 5:,/PUNCT->4:punct[,] 6:Yamal/PROPN->7:nsubj[yamal] 7:confesaría/VERB->0:root[confesar] 8:que/SCONJ->13:mark[que] 9:aquel/DET->10:det[aquel] 10:día/NOUN->13:obl[dia] 11:«/PUNCT->10:punct[«] 12:estaba/AUX->13:aux[estar] 13:viviendo/VERB->7:ccomp[vivir] 14:un/DET->15:det[uno] 15:sueño/NOUN->13:obj[sueno] 16:»/PUNCT->13:punct[»] 17:./PUNCT->7:punct[.]
-
-Tras haber jugado varios partidos para la Selección durante 2024, en ese año Luis de la Fuente lo convocó para jugar la Eurocopa celebrado en Alemania.
-   1:Tras/ADP->3:mark[tras] 2:haber/AUX->3:aux[haber] 3:jugado/VERB->20:advcl[jugar] 4:varios/DET->5:det[varios] 5:partidos/NOUN->3:obj[partido] 6:para/ADP->8:case[para] 7:la/DET->8:det[el] 8:Selección/NOUN->3:obl[seleccion] 9:durante/ADP->10:case[durante] 10:2024/NUM->3:obl[2024] 11:,/PUNCT->14:punct[,] 12:en/ADP->14:case[en] 13:ese/DET->14:det[ese] 14:año/NOUN->20:obl[ano] 15:Luis/PROPN->14:appos[luis] 16:de/ADP->18:case[de] 17:la/DET->18:det[el] 18:Fuente/PROPN->15:nmod[fuente] 19:lo/PRON->20:obj[el] 20:convocó/VERB->0:root[convocar] 21:para/ADP->22:mark[para] 22:jugar/VERB->20:advcl[jugar] 23:la/DET->24:det[el] 24:Eurocopa/PROPN->22:obj[eurocopa] 25:celebrado/ADJ->24:amod[celebrado] 26:en/ADP->27:case[en] 27:Alemania/PROPN->22:obl[alemania] 28:./PUNCT->20:punct[.]
-
-Yamal se encontraba concentrado junto a otros veintiocho jugadores en un predio ubicado en Donaueschingen, utilizado por la RFEF como lugar de entrenamiento, cuando el 7 de mayo de 2024 el entrenador le comunicó
-   1:Yamal/ADV->3:advmod[yamal] 2:se/PRON->3:expl[el] 3:encontraba/VERB->0:root[encontrar] 4:concentrado/ADJ->3:xcomp[concentrado] 5:junto/ADJ->9:case[junto] 6:a/ADP->5:fixed[a] 7:otros/DET->9:det[otro] 8:veintiocho/NUM->9:nummod[veintiocho] 9:jugadores/NOUN->3:obl[jugador] 10:en/ADP->12:case[en] 11:un/DET->12:det[uno] 12:predio/NOUN->3:obl[predio] 13:ubicado/VERB->12:acl[ubicar] 14:en/ADP->15:case[en] 15:Donaueschingen/PROPN->13:obl[donaueschingen] 16:,/PUNCT->17:punct[,] 17:utilizado/VERB->12:acl[utilizar] 18:por/ADP->20:case[por] 19:la/DET->20:det[el] 20:RFEF/PROPN->17:obl[rfef] 21:como/ADP->22:case[como] 22:lugar/NOUN->17:obl[lugar] 23:de/ADP->24:case[de] 24:entrenamiento/NOUN->22:nmod[entrenamiento] 25:,/PUNCT->28:punct[,] 26:cuando/SCONJ->36:mark[cuando] 27:el/DET->28:det[el] 28:7/NUM->17:obl[7] 29:de/ADP->30:case[de] 30:mayo/NOUN->28:nmod[mayo] 31:de/ADP->32:case[de] 32:2024/NUM->30:nmod[2024] 33:el/DET->34:det[el] 34:entrenador/NOUN->36:nsubj[entrenador] 35:le/PRON->36:obl[el] 36:comunicó/VERB->3:conj[comunicar] 37:./PUNCT->3:punct[.]
-   => PREDIO ESTAR_EN DONAUESCHINGEN
-   => PREDIO UTILIZAR_POR RFEF
-   => LUGAR_DE_ENTRENAMIENTO ES LUGAR
-   => PREDIO UTILIZAR_COMO LUGAR_DE_ENTRENAMIENTO
-
-que iba a tenerlo en cuenta
-   1:que/SCONJ->2:mark[que] 2:iba/VERB->0:root[ir] 3:a/ADP->4:mark[a] 4:tenerlo/NOUN->2:xcomp[tenerlo] 5:en/ADP->6:case[en] 6:cuenta/NOUN->2:obl[cuenta] 7:./PUNCT->2:punct[.]
-
-ya que era la figura indiscutida de Barcelona y del fútbol español, por lo que su rendimiento en el campeonato fue excelso.
-   1:ya/ADV->5:mark[ya] 2:que/SCONJ->1:fixed[que] 3:era/AUX->5:cop[ser] 4:la/DET->5:det[el] 5:figura/NOUN->24:nsubj[figura] 6:indiscutida/ADJ->5:amod[indiscutido] 7:de/ADP->8:case[de] 8:Barcelona/PROPN->5:nmod[barcelona] 9:y/CCONJ->12:cc[y] 10:de/ADP->12:case[de] 11:el/DET->12:det[el] 12:fútbol/NOUN->5:nmod[futbol] 13:español/ADJ->12:amod[espanol] 14:,/PUNCT->5:punct[,] 15:por/ADP->17:case[por] 16:lo/PRON->17:det[el] 17:que/SCONJ->24:mark[que] 18:su/DET->19:det[su] 19:rendimiento/NOUN->24:nsubj[rendimiento] 20:en/ADP->22:case[en] 21:el/DET->22:det[el] 22:campeonato/NOUN->19:nmod[campeonato] 23:fue/AUX->24:cop[ser] 24:excelso/ADJ->0:root[excelso] 25:./PUNCT->24:punct[.]
-   => FIGURA_DE_BARCELONA ES FIGURA
-   => FIGURA_DE_BARCELONA SER EXCELSO
-   => RENDIMIENTO_DE_YAMAL ES RENDIMIENTO
-   => RENDIMIENTO_DE_YAMAL SER EXCELSO
-
-Registró una asistencia durante la fase de grupos, donde España salió primera contra Italia, Croacia y Albania.
-   1:Registró/VERB->0:root[registrar] 2:una/DET->3:det[uno] 3:asistencia/NOUN->1:obj[asistencia] 4:durante/ADP->6:case[durante] 5:la/DET->6:det[el] 6:fase/NOUN->1:obl[fase] 7:de/ADP->8:case[de] 8:grupos/NOUN->6:nmod[grupo] 9:,/PUNCT->12:punct[,] 10:donde/ADV->12:advmod[donde] 11:España/PROPN->12:nsubj[espana] 12:salió/VERB->6:acl[salir] 13:primera/ADJ->12:obj[primero] 14:contra/ADP->15:case[contra] 15:Italia/PROPN->12:obl[italia] 16:,/PUNCT->17:punct[,] 17:Croacia/PROPN->15:conj[croacia] 18:y/CCONJ->19:cc[y] 19:Albania/PROPN->15:conj[albania] 20:./PUNCT->1:punct[.]
-   => YAMAL REGISTRAR ASISTENCIA
-   => FASE_DE_GRUPO ES FASE
-   => YAMAL REGISTRAR_DURANTE FASE_DE_GRUPO
-   => ESPANA SALIR_CONTRA ITALIA
-   => ESPANA SALIR_CONTRA CROACIA
-   => ESPANA SALIR_CONTRA ALBANIA
-
-En octavos de final, apabullaron a Georgia por 4 a 1 con otra asistencia de Yamal, en cuartos de final, eliminaron a Alemania, y en semifinales, se enfrentaron a Francia.
-   1:En/ADP->2:case[en] 2:octavos/NOUN->6:obl[octavo] 3:de/ADP->4:case[de] 4:final/NOUN->2:nmod[final] 5:,/PUNCT->2:punct[,] 6:apabullaron/VERB->0:root[apabullar] 7:a/ADP->8:case[a] 8:Georgia/PROPN->6:obl[georgia] 9:por/ADP->10:case[por] 10:4/NUM->6:obl[4] 11:a/ADP->12:case[a] 12:1/NUM->6:obl[1] 13:con/ADP->15:case[con] 14:otra/DET->15:det[otro] 15:asistencia/NOUN->6:obl[asistencia] 16:de/ADP->17:case[de] 17:Yamal/PROPN->15:nmod[yamal] 18:,/PUNCT->20:punct[,] 19:en/ADP->20:case[en] 20:cuartos/NOUN->6:obl[cuarto] 21:de/ADP->22:case[de] 22:final/NOUN->20:nmod[final] 23:,/PUNCT->20:punct[,] 24:eliminaron/VERB->6:parataxis[eliminar] 25:a/ADP->26:case[a] 26:Alemania/PROPN->24:obj[alemania] 27:,/PUNCT->33:punct[,] 28:y/CCONJ->33:cc[y] 29:en/ADP->30:case[en] 30:semifinales/NOUN->33:obl[semifinal] 31:,/PUNCT->20:punct[,] 32:se/PRON->33:expl[el] 33:enfrentaron/VERB->24:conj[enfrentar] 34:a/ADP->35:case[a] 35:Francia/PROPN->33:obl[francia] 36:./PUNCT->6:punct[.]
-
-Yamal, convirtió el primer tanto, lo que fue uno de los goles del torneo,, seguido por otro marcado por Dani Olmo, la otra gran figura del equipo.
-   1:Yamal/PROPN->3:nsubj[yamal] 2:,/PUNCT->1:punct[,] 3:convirtió/VERB->0:root[convertir] 4:el/DET->6:det[el] 5:primer/ADJ->6:amod[primero] 6:tanto/NOUN->3:obl[tanto] 7:,/PUNCT->11:punct[,] 8:lo/PRON->11:nsubj[el] 9:que/PRON->11:nsubj[que] 10:fue/AUX->11:cop[ser] 11:uno/PRON->3:ccomp[uno] 12:de/ADP->14:case[de] 13:los/DET->14:det[el] 14:goles/NOUN->11:nmod[gol] 15:de/ADP->17:case[de] 16:el/DET->17:det[el] 17:torneo/NOUN->14:nmod[torneo] 18:,/PUNCT->20:punct[,] 19:,/PUNCT->20:punct[,] 20:seguido/VERB->11:acl[seguir] 21:por/ADP->23:case[por] 22:otro/DET->23:det[otro] 23:marcado/NOUN->20:obl[marcado] 24:por/ADP->25:case[por] 25:Dani/PROPN->23:nmod[dani] 26:Olmo/PROPN->25:flat[olmo] 27:,/PUNCT->31:punct[,] 28:la/DET->31:det[el] 29:otra/DET->31:det[otro] 30:gran/ADJ->31:amod[gran] 31:figura/NOUN->25:appos[figura] 32:de/ADP->34:case[de] 33:el/DET->34:det[el] 34:equipo/NOUN->31:nmod[equipo] 35:./PUNCT->3:punct[.]
-
-En la final, vencieron a la Inglaterra por 2 a 1, con un gol de Nico Williams,
-   1:En/ADP->3:case[en] 2:la/DET->3:det[el] 3:final/NOUN->5:obl[final] 4:,/PUNCT->3:punct[,] 5:vencieron/VERB->0:root[vencer] 6:a/ADP->8:case[a] 7:la/DET->8:det[el] 8:Inglaterra/PROPN->5:obl[inglaterra] 9:por/ADP->10:case[por] 10:2/NUM->5:obl[2] 11:a/ADP->12:case[a] 12:1/NUM->5:obl[1] 13:,/PUNCT->16:punct[,] 14:con/ADP->16:case[con] 15:un/DET->16:det[uno] 16:gol/NOUN->5:obl[gol] 17:de/ADP->18:case[de] 18:Nico/PROPN->16:nmod[nico] 19:Williams/PROPN->18:flat[williams] 20:,/PUNCT->16:punct[,] 21:./PUNCT->5:punct[.]
-
-y de Mikel Oyarzabal, coronando a España como campeona de Europa en el Estadio Olímpico de Berlín ante 65 mil espectadores
-   1:y/CCONJ->6:cc[y] 2:de/ADP->3:case[de] 3:Mikel/PROPN->6:obl[mikel] 4:Oyarzabal/PROPN->3:flat[oyarzabal] 5:,/PUNCT->6:punct[,] 6:coronando/VERB->3:acl[coronar] 7:a/ADP->8:case[a] 8:España/PROPN->6:obl[espana] 9:como/ADP->10:case[como] 10:campeona/NOUN->6:obl[campeona] 11:de/ADP->12:case[de] 12:Europa/PROPN->10:nmod[europa] 13:en/ADP->15:case[en] 14:el/DET->15:det[el] 15:Estadio/PROPN->10:nmod[estadio] 16:Olímpico/ADJ->15:amod[olimpico] 17:de/ADP->18:case[de] 18:Berlín/PROPN->15:nmod[berlin] 19:ante/ADP->22:case[ante] 20:65/NUM->22:nummod[65] 21:mil/NUM->22:nummod[mil] 22:espectadores/NOUN->6:obl[espectador] 23:./PUNCT->6:punct[.]
-   => MIKEL_OYARZABAL CORONAR_A ESPANA
-   => CAMPEONA_DE_EUROPA ES CAMPEONA
-   => MIKEL_OYARZABAL CORONAR_COMO CAMPEONA_DE_EUROPA
-   => 65_ESPECTADOR ES ESPECTADOR
-   => MIKEL_OYARZABAL CORONAR_ANTE 65_ESPECTADOR
-
-que quedaron maravillados por los talentos de aquel joven Yamal —el jugador más joven en ganar la Eurocopa, con 17 años y un día de edad
-   1:que/SCONJ->2:mark[que] 2:quedaron/VERB->0:root[quedar] 3:maravillados/ADJ->2:obj[maravillado] 4:por/ADP->6:case[por] 5:los/DET->6:det[el] 6:talentos/NOUN->2:obl[talento] 7:de/ADP->9:case[de] 8:aquel/DET->9:det[aquel] 9:joven/NOUN->6:nmod[joven] 10:Yamal/PROPN->9:appos[yamal] 11:—/NUM->10:nummod[—] 12:el/DET->13:det[el] 13:jugador/NOUN->9:appos[jugador] 14:más/ADV->15:advmod[mas] 15:joven/ADJ->13:amod[joven] 16:en/ADP->17:mark[en] 17:ganar/VERB->13:acl[ganar] 18:la/DET->19:det[el] 19:Eurocopa/PROPN->17:obj[eurocopa] 20:,/PUNCT->23:punct[,] 21:con/ADP->23:case[con] 22:17/NUM->23:nummod[17] 23:años/NOUN->17:obl[ano] 24:y/CCONJ->26:cc[y] 25:un/DET->26:det[uno] 26:día/NOUN->23:conj[dia] 27:de/ADP->28:case[de] 28:edad/NOUN->26:nmod[edad] 29:./PUNCT->2:punct[.]
-   => JUGADOR GANAR EUROCOPA
-   => JUGADOR GANAR_CON ANO
-   => JUGADOR GANAR_CON EDAD
-
-quien recibió el Premio al mejor jugador joven del torneo y fue el máximo asistente, con cuatro asistencias e incluido en el once ideal del torneo junto a otros cinco futbolistas españoles.
-   1:quien/PRON->2:nsubj[quien] 2:recibió/VERB->0:root[recibir] 3:el/DET->4:det[el] 4:Premio/NOUN->2:obj[premio] 5:a/ADP->8:case[a] 6:el/DET->8:det[el] 7:mejor/ADJ->8:amod[mejor] 8:jugador/NOUN->2:obl[jugador] 9:joven/ADJ->8:amod[joven] 10:de/ADP->12:case[de] 11:el/DET->12:det[el] 12:torneo/NOUN->8:nmod[torneo] 13:y/CCONJ->17:cc[y] 14:fue/AUX->17:cop[ser] 15:el/DET->17:det[el] 16:máximo/ADJ->17:amod[maximo] 17:asistente/NOUN->8:acl[asistente] 18:,/PUNCT->21:punct[,] 19:con/ADP->21:case[con] 20:cuatro/NUM->21:nummod[cuatro] 21:asistencias/NOUN->17:nmod[asistencia] 22:e/CCONJ->23:cc[e] 23:incluido/VERB->17:conj[incluir] 24:en/ADP->26:case[en] 25:el/DET->26:det[el] 26:once/NUM->23:obl[once] 27:ideal/NOUN->26:amod[ideal] 28:de/ADP->30:case[de] 29:el/DET->30:det[el] 30:torneo/NOUN->27:nmod[torneo] 31:junto/ADJ->35:case[junto] 32:a/ADP->31:fixed[a] 33:otros/DET->35:det[otro] 34:cinco/NUM->35:nummod[cinco] 35:futbolistas/NOUN->30:nmod[futbolista] 36:españoles/ADJ->35:amod[espanol] 37:./PUNCT->2:punct[.]
-   => JUGADOR_DE_TORNEO ES JUGADOR
-   => JUGADOR_DE_TORNEO ES ASISTENTE
-   => JUGADOR_DE_TORNEO SER MAXIMO
-   => CUATRO_ASISTENCIA ES ASISTENCIA
-   => JUGADOR_DE_TORNEO TENER CUATRO_ASISTENCIA
-
-Luego de ganar el torneo, la delegación española, con Luis de la Fuente a la cabeza, fue recibida por Pedro Sánchez, Felipe VI y la Familia real en el Palacio de la Zarzuela.
-   1:Luego/ADV->3:mark[luego] 2:de/ADP->1:fixed[de] 3:ganar/VERB->21:advcl[ganar] 4:el/DET->5:det[el] 5:torneo/NOUN->3:obj[torneo] 6:,/PUNCT->3:punct[,] 7:la/DET->8:det[el] 8:delegación/NOUN->21:nsubj[delegacion] 9:española/ADJ->8:amod[espanol] 10:,/PUNCT->12:punct[,] 11:con/ADP->12:case[con] 12:Luis/PROPN->8:nmod[luis] 13:de/ADP->15:case[de] 14:la/DET->15:det[el] 15:Fuente/PROPN->12:nmod[fuente] 16:a/ADP->18:case[a] 17:la/DET->18:det[el] 18:cabeza/NOUN->3:obl[cabeza] 19:,/PUNCT->3:punct[,] 20:fue/AUX->21:aux[ser] 21:recibida/VERB->0:root[recibir] 22:por/ADP->23:case[por] 23:Pedro/PROPN->21:obl[pedro] 24:Sánchez/PROPN->23:flat[sanchez] 25:,/PUNCT->26:punct[,] 26:Felipe/PROPN->23:conj[felipe] 27:VI/NUM->26:nummod[vi] 28:y/CCONJ->30:cc[y] 29:la/DET->30:det[el] 30:Familia/PROPN->23:conj[familia] 31:real/ADJ->30:amod[real] 32:en/ADP->34:case[en] 33:el/DET->34:det[el] 34:Palacio/PROPN->21:obl[palacio] 35:de/ADP->37:case[de] 36:la/DET->37:det[el] 37:Zarzuela/PROPN->34:nmod[zarzuela] 38:./PUNCT->21:punct[.]
-   => DELEGACION_ESPANOL ES DELEGACION
-   => DELEGACION_ESPANOL GANAR TORNEO
-   => DELEGACION_ESPANOL GANAR_A CABEZA
-   => PEDRO_SANCHEZ RECIBIR DELEGACION_ESPANOL
-   => VI_FELIPE ES FELIPE
-   => VI_FELIPE RECIBIR DELEGACION_ESPANOL
-   => FAMILIA RECIBIR DELEGACION_ESPANOL
-   => PALACIO_DEL_ZARZUELA ES PALACIO
-   => DELEGACION_ESPANOL RECIBIDO_EN PALACIO_DEL_ZARZUELA
-
-Primera participación en la Copa Mundial de Fútbol y campeón del torneo
-   1:Primera/ADJ->2:amod[primero] 2:participación/NOUN->0:root[participacion] 3:en/ADP->5:case[en] 4:la/DET->5:det[el] 5:Copa/PROPN->2:nmod[copa] 6:Mundial/PROPN->5:amod[mundial] 7:de/ADP->8:case[de] 8:Fútbol/PROPN->5:nmod[futbol] 9:y/CCONJ->10:cc[y] 10:campeón/NOUN->5:conj[campeon] 11:de/ADP->13:case[de] 12:el/DET->13:det[el] 13:torneo/NOUN->10:nmod[torneo] 14:./PUNCT->2:punct[.]
-
-Lamine Yamal con la medalla de oro de la Copa Mundial de Fútbol de 2026.
-   1:Lamine/PROPN->0:root[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:con/ADP->5:case[con] 4:la/DET->5:det[el] 5:medalla/NOUN->1:nmod[medalla] 6:de/ADP->7:case[de] 7:oro/NOUN->5:nmod[oro] 8:de/ADP->10:case[de] 9:la/DET->10:det[el] 10:Copa/PROPN->5:nmod[copa] 11:Mundial/PROPN->10:amod[mundial] 12:de/ADP->13:case[de] 13:Fútbol/PROPN->10:nmod[futbol] 14:de/ADP->15:case[de] 15:2026/NUM->13:nmod[2026] 16:./PUNCT->1:punct[.]
-
-Tras su consagración en el campeonato europeo, Yamal continuó brillando en el fútbol español, ganando su sexto título a nivel clubes con la obtención del Campeonato de Liga 2025-26 con el FC Barcelona.
-   1:Tras/ADP->3:case[tras] 2:su/DET->3:det[su] 3:consagración/NOUN->10:obl[consagracion] 4:en/ADP->6:case[en] 5:el/DET->6:det[el] 6:campeonato/NOUN->3:nmod[campeonato] 7:europeo/ADJ->6:amod[europeo] 8:,/PUNCT->3:punct[,] 9:Yamal/PROPN->10:nsubj[yamal] 10:continuó/VERB->0:root[continuar] 11:brillando/VERB->10:xcomp[brillar] 12:en/ADP->14:case[en] 13:el/DET->14:det[el] 14:fútbol/NOUN->11:obl[futbol] 15:español/ADJ->14:amod[espanol] 16:,/PUNCT->17:punct[,] 17:ganando/VERB->10:advcl[ganar] 18:su/DET->20:det[su] 19:sexto/ADJ->20:amod[sexto] 20:título/NOUN->17:obj[titulo] 21:a/ADP->22:case[a] 22:nivel/NOUN->17:obl[nivel] 23:clubes/NOUN->22:amod[club] 24:con/ADP->26:case[con] 25:la/DET->26:det[el] 26:obtención/NOUN->17:obl[obtencion] 27:de/ADP->29:case[de] 28:el/DET->29:det[el] 29:Campeonato/PROPN->26:nmod[campeonato] 30:de/ADP->31:case[de] 31:Liga/PROPN->29:nmod[liga] 32:2025/NUM->29:appos[2025] 33:-/PUNCT->34:punct[-] 34:26/NUM->32:dep[26] 35:con/ADP->37:case[con] 36:el/DET->37:det[el] 37:FC/PROPN->26:nmod[fc] 38:Barcelona/PROPN->37:flat[barcelona] 39:./PUNCT->10:punct[.]
-   => FUTBOL_ESPANOL ES FUTBOL
-   => YAMAL BRILLAR_EN FUTBOL_ESPANOL
-   => TITULO_DE_DELEGACION_ESPANOL ES TITULO
-   => YAMAL GANAR TITULO_DE_DELEGACION_ESPANOL
-   => YAMAL GANAR_A NIVEL
-   => OBTENCION_DE_CAMPEONATO ES OBTENCION
-   => YAMAL GANAR_CON OBTENCION_DE_CAMPEONATO
-
-Por ello, había mucha expectativa en los medios y aficionados españoles por su estreno mundialista en Estados Unidos, México y Canadá, sumado a su reciente lesión con el club blaugrana.
-   1:Por/ADP->2:case[por] 2:ello/PRON->4:obl[el] 3:,/PUNCT->2:punct[,] 4:había/VERB->0:root[haber] 5:mucha/DET->6:det[mucho] 6:expectativa/NOUN->4:obj[expectativa] 7:en/ADP->9:case[en] 8:los/DET->9:det[el] 9:medios/NOUN->6:nmod[medio] 10:y/CCONJ->11:cc[y] 11:aficionados/NOUN->9:conj[aficionado] 12:españoles/ADJ->9:amod[espanol] 13:por/ADP->15:case[por] 14:su/DET->15:det[su] 15:estreno/NOUN->6:nmod[estreno] 16:mundialista/ADJ->15:amod[mundialista] 17:en/ADP->18:case[en] 18:Estados/PROPN->15:nmod[estados] 19:Unidos/PROPN->18:amod[unido] 20:,/PUNCT->21:punct[,] 21:México/PROPN->18:conj[mexico] 22:y/CCONJ->23:cc[y] 23:Canadá/PROPN->18:conj[canada] 24:,/PUNCT->25:punct[,] 25:sumado/VERB->15:acl[sumar] 26:a/ADP->29:case[a] 27:su/DET->29:det[su] 28:reciente/ADJ->29:amod[reciente] 29:lesión/NOUN->25:obl[lesion] 30:con/ADP->32:case[con] 31:el/DET->32:det[el] 32:club/NOUN->25:obl[club] 33:blaugrana/ADJ->32:amod[blaugrana] 34:./PUNCT->4:punct[.]
-   => ESTRENO_DE_YAMAL ES ESTRENO
-   => LESION_DE_YAMAL ES LESION
-   => ESTRENO_DE_YAMAL SUMAR_A LESION_DE_YAMAL
-   => CLUB_BLAUGRANA ES CLUB
-   => ESTRENO_DE_YAMAL SUMAR_CON CLUB_BLAUGRANA
-
-Yamal abandonó sus entrenamientos con el Barcelona para enfocarse en sesiones de fisioterapia para desinflamar y cicatrizar la musculatura del muslo dos meses antes de que la delegación viajara a Norteamérica para disputar el certamen.
-   1:Yamal/PROPN->2:nsubj[yamal] 2:abandonó/VERB->0:root[abandonar] 3:sus/DET->4:det[su] 4:entrenamientos/NOUN->2:obj[entrenamiento] 5:con/ADP->7:case[con] 6:el/DET->7:det[el] 7:Barcelona/PROPN->2:obl[barcelona] 8:para/ADP->9:mark[para] 9:enfocarse/VERB->2:advcl[enfocarse] 10:en/ADP->11:case[en] 11:sesiones/NOUN->9:obl[sesion] 12:de/ADP->13:case[de] 13:fisioterapia/NOUN->11:nmod[fisioterapia] 14:para/ADP->15:mark[para] 15:desinflamar/VERB->9:advcl[desinflamar] 16:y/CCONJ->17:cc[y] 17:cicatrizar/VERB->15:conj[cicatrizar] 18:la/DET->19:det[el] 19:musculatura/NOUN->17:obj[musculatura] 20:de/ADP->22:case[de] 21:el/DET->22:det[el] 22:muslo/NOUN->19:nmod[muslo] 23:dos/NUM->24:nummod[dos] 24:meses/NOUN->17:obl[mes] 25:antes/ADV->30:advmod[antes] 26:de/ADP->25:fixed[de] 27:que/SCONJ->30:mark[que] 28:la/DET->29:det[el] 29:delegación/NOUN->30:nsubj[delegacion] 30:viajara/VERB->25:advcl[viajarar] 31:a/ADP->32:case[a] 32:Norteamérica/PROPN->30:obl[norteamerica] 33:para/ADP->34:mark[para] 34:disputar/VERB->30:advcl[disputar] 35:el/DET->36:det[el] 36:certamen/NOUN->34:obj[certamen] 37:./PUNCT->2:punct[.]
-   => ENTRENAMIENTO_DE_YAMAL ES ENTRENAMIENTO
-   => YAMAL ABANDONAR ENTRENAMIENTO_DE_YAMAL
-   => YAMAL ABANDONAR_CON BARCELONA
-   => SESION_DE_FISIOTERAPIA ES SESION
-   => YAMAL ENFOCAR_EN SESION_DE_FISIOTERAPIA
-   => MUSCULATURA_DE_MUSLO ES MUSCULATURA
-   => YAMAL CICATRIZAR MUSCULATURA_DE_MUSLO
-   => DELEGACION VIAJARAR_A NORTEAMERICA
-   => DELEGACION DISPUTAR CERTAMEN
-
-Luis de la Fuente realizó una convocatoria donde mezcló a los campeones vigentes de la Euro junto a las jóvenes promesas que ganaron ese mismo torneo
-   1:Luis/PROPN->5:nsubj[luis] 2:de/ADP->4:case[de] 3:la/DET->4:det[el] 4:Fuente/PROPN->1:nmod[fuente] 5:realizó/VERB->0:root[realizar] 6:una/DET->7:det[uno] 7:convocatoria/NOUN->5:obj[convocatoria] 8:donde/ADV->9:advmod[donde] 9:mezcló/VERB->7:acl[mezclar] 10:a/ADP->12:case[a] 11:los/DET->12:det[el] 12:campeones/NOUN->9:obl[campeon] 13:vigentes/ADJ->12:amod[vigente] 14:de/ADP->16:case[de] 15:la/DET->16:det[el] 16:Euro/PROPN->12:nmod[euro] 17:junto/ADJ->21:case[junto] 18:a/ADP->17:fixed[a] 19:las/DET->21:det[el] 20:jóvenes/ADJ->21:amod[joven] 21:promesas/NOUN->7:nmod[promesa] 22:que/PRON->23:nsubj[que] 23:ganaron/VERB->21:acl[ganar] 24:ese/DET->26:det[ese] 25:mismo/ADJ->26:amod[mismo] 26:torneo/NOUN->23:obj[torneo] 27:./PUNCT->5:punct[.]
-   => LUIS_DEL_FUENTE ES LUIS
-   => LUIS_DEL_FUENTE REALIZAR CONVOCATORIA
-   => CAMPEON_VIGENTE ES CAMPEON
-   => CAMPEON_VIGENTE_DE_EURO ES CAMPEON_VIGENTE
-   => CONVOCATORIA MEZCLAR_A CAMPEON_VIGENTE_DE_EURO
-   => PROMESA GANAR TORNEO
-
-convirtiendo a España en una de las principales candidatas a revalidar el título.
-   1:convirtiendo/VERB->0:root[convirter] 2:a/ADP->3:case[a] 3:España/PROPN->1:obj[espana] 4:en/ADP->5:case[en] 5:una/PRON->1:obl[uno] 6:de/ADP->9:case[de] 7:las/DET->9:det[el] 8:principales/ADJ->9:amod[principal] 9:candidatas/NOUN->5:nmod[candidata] 10:a/ADP->11:mark[a] 11:revalidar/VERB->9:acl[revalidar] 12:el/DET->13:det[el] 13:título/NOUN->11:obj[titulo] 14:./PUNCT->1:punct[.]
-   => CANDIDATA REVALIDAR TITULO
-
-Por otro lado, Yamal se incorporó el 30 de mayo a la selección sin tener el alta médica.
-   1:Por/ADP->7:advmod[por] 2:otro/DET->3:det[otro] 3:lado/NOUN->7:obl[lado] 4:,/PUNCT->3:punct[,] 5:Yamal/PROPN->7:nsubj[yamal] 6:se/PRON->7:expl[el] 7:incorporó/VERB->0:root[incorporar] 8:el/DET->9:det[el] 9:30/NUM->7:obl[30] 10:de/ADP->11:case[de] 11:mayo/NOUN->9:nmod[mayo] 12:a/ADP->14:case[a] 13:la/DET->14:det[el] 14:selección/NOUN->7:obl[seleccion] 15:sin/ADP->16:mark[sin] 16:tener/VERB->14:advcl[tener] 17:el/DET->19:det[el] 18:alta/ADJ->19:amod[alto] 19:médica/NOUN->16:obj[medico] 20:./PUNCT->7:punct[.]
-   => YAMAL INCORPORAR_A SELECCION
-
-De la Fuente aseguró, días antes del debut en el torneo, que «los médicos nos dicen que Lamine está en perfectas condiciones, no para 90 minutos, sí para participar durante un tiempo
-   1:De/ADP->3:case[de] 2:la/DET->3:det[el] 3:Fuente/PROPN->4:obl[fuente] 4:aseguró/VERB->0:root[asegurar] 5:,/PUNCT->6:punct[,] 6:días/NOUN->4:obl[dia] 7:antes/ADV->4:advmod[antes] 8:de/ADP->7:fixed[de] 9:el/DET->10:det[el] 10:debut/NOUN->7:obl[debut] 11:en/ADP->13:case[en] 12:el/DET->13:det[el] 13:torneo/NOUN->10:nmod[torneo] 14:,/PUNCT->20:punct[,] 15:que/PRON->20:nsubj[que] 16:«/PUNCT->20:punct[«] 17:los/DET->18:det[el] 18:médicos/NOUN->20:nsubj[medico] 19:nos/PRON->20:obl[yo] 20:dicen/VERB->4:advcl[decir] 21:que/SCONJ->23:mark[que] 22:Lamine/PROPN->23:nsubj[lamine] 23:está/VERB->20:ccomp[estar] 24:en/ADP->26:case[en] 25:perfectas/ADJ->26:amod[perfecto] 26:condiciones/NOUN->23:obl[condicion] 27:,/PUNCT->31:punct[,] 28:no/ADV->31:advmod[no] 29:para/ADP->28:case[para] 30:90/NUM->31:nummod[90] 31:minutos/NOUN->26:nmod[minuto] 32:,/PUNCT->31:punct[,] 33:sí/SCONJ->35:mark[si] 34:para/ADP->35:mark[para] 35:participar/VERB->31:advcl[participar] 36:durante/ADP->38:case[durante] 37:un/DET->38:det[uno] 38:tiempo/NOUN->35:obl[tiempo] 39:./PUNCT->4:punct[.]
-   => YAMAL ASEGURAR_DE FUENTE
-
-esto lo dice la lógica deportiva».
-   1:esto/PRON->3:nsubj[este] 2:lo/PRON->3:obj[el] 3:dice/VERB->0:root[decir] 4:la/DET->5:det[el] 5:lógica/NOUN->3:nsubj[logico] 6:deportiva/ADJ->5:amod[deportivo] 7:»/PUNCT->3:punct[»] 8:./PUNCT->3:punct[.]
-   => LOGICO_DEPORTIVO ES LOGICO
-   => LOGICO_DEPORTIVO DECIR YAMAL
-
-Yamal debutó en la Copa del Mundo el 15 de junio de 2026 contra Cabo Verde en el Mercedes-Benz Stadium ante 67 mil espectadores.
-   1:Yamal/PROPN->2:nsubj[yamal] 2:debutó/VERB->0:root[debutar] 3:en/ADP->5:case[en] 4:la/DET->5:det[el] 5:Copa/PROPN->2:obl[copa] 6:de/ADP->8:case[de] 7:el/DET->8:det[el] 8:Mundo/PROPN->5:nmod[mundo] 9:el/DET->10:det[el] 10:15/NUM->2:obl[15] 11:de/ADP->12:case[de] 12:junio/NOUN->10:nmod[junio] 13:de/ADP->14:case[de] 14:2026/NUM->12:nmod[2026] 15:contra/ADP->16:case[contra] 16:Cabo/PROPN->2:obl[cabo] 17:Verde/PROPN->16:amod[verde] 18:en/ADP->20:case[en] 19:el/DET->20:det[el] 20:Mercedes/PROPN->2:obl[mercedes] 21:-/PUNCT->22:punct[-] 22:Benz/PROPN->20:appos[benz] 23:Stadium/PROPN->22:flat[stadium] 24:ante/ADP->27:case[ante] 25:67/NUM->27:nummod[67] 26:mil/NUM->27:nummod[mil] 27:espectadores/NOUN->2:obl[espectador] 28:./PUNCT->2:punct[.]
-   => COPA_DEL_MUNDO ES COPA
-   => YAMAL DEBUTAR_EN COPA_DEL_MUNDO
-   => YAMAL DEBUTAR_CONTRA CABO
-   => YAMAL DEBUTAR_EN MERCEDES
-   => 67_ESPECTADOR ES ESPECTADOR
-   => YAMAL DEBUTAR_ANTE 67_ESPECTADOR
-
-Aquella tarde, España empataría por 0 a 0, y tanto Yamal como el equipo no tuvieron una gran actuación.
-   1:Aquella/DET->2:det[aquel] 2:tarde/NOUN->5:obl[tarde] 3:,/PUNCT->2:punct[,] 4:España/PROPN->5:nsubj[espana] 5:empataría/VERB->0:root[empatariar] 6:por/ADP->7:case[por] 7:0/NUM->5:obl[0] 8:a/ADP->9:case[a] 9:0/NUM->7:nmod[0] 10:,/PUNCT->18:punct[,] 11:y/CCONJ->18:cc[y] 12:tanto/PRON->13:nmod[tanto] 13:Yamal/PROPN->12:nsubj[yamal] 14:como/ADP->16:case[como] 15:el/DET->16:det[el] 16:equipo/NOUN->18:nsubj[equipo] 17:no/ADV->18:advmod[no] 18:tuvieron/VERB->5:conj[tener] 19:una/DET->21:det[uno] 20:gran/ADJ->21:amod[gran] 21:actuación/NOUN->18:obj[actuacion] 22:./PUNCT->5:punct[.]
-
-Seis días después, el equipo logró repuntar con una goleada a Arabia Saudita por 4 a 0, donde Lamine marcó su primer gol en el torneo,
-   1:Seis/NUM->2:nummod[seis] 2:días/NOUN->7:obl[dia] 3:después/ADV->2:amod[despues] 4:,/PUNCT->3:punct[,] 5:el/DET->6:det[el] 6:equipo/NOUN->7:nsubj[equipo] 7:logró/VERB->0:root[lograr] 8:repuntar/VERB->7:xcomp[repuntar] 9:con/ADP->11:case[con] 10:una/DET->11:det[uno] 11:goleada/NOUN->8:obl[goleada] 12:a/ADP->13:case[a] 13:Arabia/PROPN->11:nmod[arabia] 14:Saudita/PROPN->13:flat[saudita] 15:por/ADP->16:case[por] 16:4/NUM->7:obl[4] 17:a/ADP->18:case[a] 18:0/NUM->16:nmod[0] 19:,/PUNCT->22:punct[,] 20:donde/ADV->22:advmod[donde] 21:Lamine/PROPN->22:nsubj[lamine] 22:marcó/VERB->13:acl[marcar] 23:su/DET->25:det[su] 24:primer/ADJ->25:amod[primero] 25:gol/NOUN->22:obj[gol] 26:en/ADP->28:case[en] 27:el/DET->28:det[el] 28:torneo/NOUN->25:nmod[torneo] 29:,/PUNCT->7:punct[,] 30:./PUNCT->7:punct[.]
-   => EQUIPO REPUNTAR_CON GOLEADA
-   => GOL_DE_YAMAL ES GOL
-   => LAMINE MARCAR GOL_DE_YAMAL
-
-y terminó de sellar su clasificación a los dieciseisavos de final con una victoria ante Uruguay por 1 a 0.
-   1:y/CCONJ->2:cc[y] 2:terminó/VERB->0:root[terminar] 3:de/ADP->4:mark[de] 4:sellar/VERB->2:xcomp[sellar] 5:su/DET->6:det[su] 6:clasificación/NOUN->4:obj[clasificacion] 7:a/ADP->9:case[a] 8:los/DET->9:det[el] 9:dieciseisavos/NOUN->6:nmod[dieciseisavo] 10:de/ADP->11:case[de] 11:final/NOUN->9:nmod[final] 12:con/ADP->14:case[con] 13:una/DET->14:det[uno] 14:victoria/NOUN->9:nmod[victoria] 15:ante/ADP->16:case[ante] 16:Uruguay/PROPN->14:nmod[uruguay] 17:por/ADP->18:case[por] 18:1/NUM->14:nmod[1] 19:a/ADP->20:case[a] 20:0/NUM->18:nmod[0] 21:./PUNCT->2:punct[.]
-   => CLASIFICACION_DE_YAMAL ES CLASIFICACION
-   => YAMAL SELLAR CLASIFICACION_DE_YAMAL
-
-En la siguiente fase, España se enfrentó a la Austria de David Alaba, no tuvo mayores complicaciones y venció 3 a 0 a los austriacos.
-   1:En/ADP->4:case[en] 2:la/DET->4:det[el] 3:siguiente/ADJ->4:amod[siguiente] 4:fase/NOUN->8:obl[fase] 5:,/PUNCT->4:punct[,] 6:España/PROPN->8:nsubj[espana] 7:se/PRON->8:expl[el] 8:enfrentó/VERB->0:root[enfrentar] 9:a/ADP->11:case[a] 10:la/DET->11:det[el] 11:Austria/PROPN->8:obl[austria] 12:de/ADP->13:case[de] 13:David/PROPN->11:nmod[david] 14:Alaba/PROPN->13:flat[alaba] 15:,/PUNCT->17:punct[,] 16:no/ADV->17:advmod[no] 17:tuvo/VERB->0:root[tener] 18:mayores/ADJ->19:amod[mayor] 19:complicaciones/NOUN->17:obj[complicacion] 20:y/CCONJ->21:cc[y] 21:venció/VERB->17:conj[vencer] 22:3/NUM->21:obj[3] 23:a/ADP->24:case[a] 24:0/NUM->21:obl[0] 25:a/ADP->27:case[a] 26:los/DET->27:det[el] 27:austriacos/NOUN->21:obl[austriaco] 28:./PUNCT->8:punct[.]
-   => ESPANA ENFRENTAR_EN FASE
-   => AUSTRIA_DE_DAVID_ALABA ES AUSTRIA
-   => ESPANA ENFRENTAR_A AUSTRIA_DE_DAVID_ALABA
-   => YAMAL NO TENER COMPLICACION
-   => YAMAL VENCER_A AUSTRIACO
-
-Para los octavos de final, los españoles debían enfrentarse a uno de los candidatos al título: Portugal.
-   1:Para/ADP->3:case[para] 2:los/DET->3:det[el] 3:octavos/NOUN->10:obl[octavo] 4:de/ADP->5:case[de] 5:final/NOUN->3:nmod[final] 6:,/PUNCT->3:punct[,] 7:los/DET->8:det[el] 8:españoles/NOUN->10:nsubj[espanol] 9:debían/AUX->10:aux[deber] 10:enfrentarse/VERB->0:root[enfrentarser] 11:a/ADP->12:case[a] 12:uno/PRON->10:obj[uno] 13:de/ADP->15:case[de] 14:los/DET->15:det[el] 15:candidatos/NOUN->12:nmod[candidato] 16:a/ADP->18:case[a] 17:el/DET->18:det[el] 18:título/NOUN->15:nmod[titulo] 19::/PUNCT->20:punct[:] 20:Portugal/PROPN->18:appos[portugal] 21:./PUNCT->10:punct[.]
-   => OCTAVO_DE_FINAL ES OCTAVO
-   => ESPANOL ENFRENTAR_PARA OCTAVO_DE_FINAL
-
-Ante los portugueses, España ganó con un solitario gol de Merino a los minutos de descuento del segundo tiempo.
-   1:Ante/ADP->3:case[ante] 2:los/DET->3:det[el] 3:portugueses/NOUN->6:obl[portugues] 4:,/PUNCT->3:punct[,] 5:España/PROPN->6:nsubj[espana] 6:ganó/VERB->0:root[ganar] 7:con/ADP->10:case[con] 8:un/DET->10:det[uno] 9:solitario/ADJ->10:amod[solitario] 10:gol/NOUN->6:obj[gol] 11:de/ADP->12:case[de] 12:Merino/PROPN->10:nmod[merino] 13:a/ADP->15:case[a] 14:los/DET->15:det[el] 15:minutos/NOUN->6:obl[minuto] 16:de/ADP->17:case[de] 17:descuento/NOUN->15:nmod[descuento] 18:de/ADP->21:case[de] 19:el/DET->21:det[el] 20:segundo/ADJ->21:amod[segundo] 21:tiempo/NOUN->17:nmod[tiempo] 22:./PUNCT->6:punct[.]
-   => ESPANA GANAR_ANTE PORTUGUES
-   => GOL_DE_MERINO ES GOL
-   => ESPANA GANAR GOL_DE_MERINO
-   => MINUTO_DE_DESCUENTO ES MINUTO
-   => ESPANA GANAR_A MINUTO_DE_DESCUENTO
-
-En los cuartos de final eliminó a Bélgica, el triunfo por 2 a 1, con el descuento marcado por Charles De Ketelaere, le permitió a España alcanzar las semifinales.
-   1:En/ADP->3:case[en] 2:los/DET->3:det[el] 3:cuartos/NOUN->6:obl[cuarto] 4:de/ADP->5:case[de] 5:final/NOUN->3:nmod[final] 6:eliminó/VERB->0:root[eliminar] 7:a/ADP->8:case[a] 8:Bélgica/PROPN->6:obj[belgica] 9:,/PUNCT->11:punct[,] 10:el/DET->11:det[el] 11:triunfo/NOUN->6:obj[triunfo] 12:por/ADP->13:case[por] 13:2/NUM->11:nmod[2] 14:a/ADP->15:case[a] 15:1/NUM->11:nmod[1] 16:,/PUNCT->19:punct[,] 17:con/ADP->19:case[con] 18:el/DET->19:det[el] 19:descuento/NOUN->11:nmod[descuento] 20:marcado/ADJ->19:amod[marcado] 21:por/ADP->22:case[por] 22:Charles/PROPN->20:obl[charles] 23:De/ADP->24:case[de] 24:Ketelaere/PROPN->22:flat[ketelaere] 25:,/PUNCT->19:punct[,] 26:le/PRON->27:obl[el] 27:permitió/VERB->0:root[permitir] 28:a/ADP->29:case[a] 29:España/PROPN->30:obl[espana] 30:alcanzar/VERB->27:xcomp[alcanzar] 31:las/DET->32:det[el] 32:semifinales/NOUN->30:obj[semifinal] 33:./PUNCT->6:punct[.]
-   => ESPANA ELIMINAR_EN CUARTO_DE_FINAL
-   => ESPANA ELIMINAR BELGICA
-   => ESPANA ELIMINAR TRIUNFO
-   => ESPANA ALCANZAR SEMIFINAL
-
-La semifinal fue el 14 de julio frente a Francia en el AT&T Stadium.
-   1:La/DET->2:det[el] 2:semifinal/NOUN->3:nsubj[semifinal] 3:fue/AUX->2:cop[ser] 4:el/DET->5:det[el] 5:14/NUM->3:obl[14] 6:de/ADP->7:case[de] 7:julio/NOUN->5:nmod[julio] 8:frente/NOUN->10:case[frente] 9:a/ADP->10:case[a] 10:Francia/PROPN->5:nmod[francia] 11:en/ADP->13:case[en] 12:el/DET->13:det[el] 13:AT/PROPN->10:nmod[at] 14:&/CCONJ->15:cc[&] 15:T/PROPN->13:conj[t] 16:Stadium/PROPN->15:flat[stadium] 17:./PUNCT->3:punct[.]
-
-Los franceses habían alcanzado esa instancia tras clasificar como primeros en el Grupo I, vencer a Suecia en dieciseisavos de final, a Paraguay en octavos y a Marruecos en cuartos.
-   1:Los/DET->2:det[el] 2:franceses/NOUN->4:nsubj[frances] 3:habían/AUX->4:aux[haber] 4:alcanzado/VERB->0:root[alcanzar] 5:esa/DET->6:det[ese] 6:instancia/NOUN->4:obj[instancia] 7:tras/ADP->8:mark[tras] 8:clasificar/VERB->4:advcl[clasificar] 9:como/ADP->10:case[como] 10:primeros/ADJ->8:obj[primero] 11:en/ADP->13:case[en] 12:el/DET->13:det[el] 13:Grupo/PROPN->8:obl[grupo] 14:I/NUM->13:nummod[i] 15:,/PUNCT->16:punct[,] 16:vencer/VERB->4:advcl[vencer] 17:a/ADP->18:case[a] 18:Suecia/PROPN->16:obj[suecia] 19:en/ADP->20:case[en] 20:dieciseisavos/NOUN->16:obl[dieciseisavo] 21:de/ADP->22:case[de] 22:final/NOUN->20:nmod[final] 23:,/PUNCT->25:punct[,] 24:a/ADP->25:case[a] 25:Paraguay/PROPN->20:nmod[paraguay] 26:en/ADP->27:case[en] 27:octavos/NOUN->16:obl[octavo] 28:y/CCONJ->30:cc[y] 29:a/ADP->30:case[a] 30:Marruecos/PROPN->27:conj[marruecos] 31:en/ADP->32:case[en] 32:cuartos/NOUN->27:nmod[cuarto] 33:./PUNCT->4:punct[.]
-   => FRANCES ALCANZAR INSTANCIA
-   => I_GRUPO ES GRUPO
-   => FRANCES CLASIFICAR_EN I_GRUPO
-   => FRANCES VENCER SUECIA
-   => DIECISEISAVO_DE_FINAL ES DIECISEISAVO
-   => FRANCES VENCER_EN DIECISEISAVO_DE_FINAL
-   => FRANCES VENCER_EN OCTAVO
-   => FRANCES VENCER_EN MARRUECOS
-
-España, ya con un Lamine Yamal envalentonado, no tuvo mayores complicaciones y venció 2 a 0 a los franceses.
-   1:España/PROPN->11:nsubj[espana] 2:,/PUNCT->6:punct[,] 3:ya/ADV->6:advmod[ya] 4:con/ADP->6:case[con] 5:un/DET->6:det[uno] 6:Lamine/PROPN->1:nmod[lamine] 7:Yamal/PROPN->6:flat[yamal] 8:envalentonado/ADJ->6:amod[envalentonar] 9:,/PUNCT->6:punct[,] 10:no/ADV->11:advmod[no] 11:tuvo/VERB->0:root[tener] 12:mayores/ADJ->13:amod[mayor] 13:complicaciones/NOUN->11:obj[complicacion] 14:y/CCONJ->15:cc[y] 15:venció/VERB->11:conj[vencer] 16:2/NUM->15:obj[2] 17:a/ADP->18:case[a] 18:0/NUM->15:obl[0] 19:a/ADP->21:case[a] 20:los/DET->21:det[el] 21:franceses/NOUN->15:obl[frances] 22:./PUNCT->11:punct[.]
-   => ESPANA NO TENER COMPLICACION
-   => ESPANA VENCER_A FRANCES
-
-La final, fue contra Argentina el 19 de julio ante 80 mil espectadores.
-   1:La/DET->2:det[el] 2:final/NOUN->4:nsubj[final] 3:,/PUNCT->2:punct[,] 4:fue/AUX->0:root[ser] 5:contra/ADP->6:case[contra] 6:Argentina/PROPN->4:obl[argentina] 7:el/DET->8:det[el] 8:19/NUM->4:obl[19] 9:de/ADP->10:case[de] 10:julio/NOUN->8:nmod[julio] 11:ante/ADP->14:case[ante] 12:80/NUM->14:nummod[80] 13:mil/NUM->14:nummod[mil] 14:espectadores/NOUN->4:obl[espectador] 15:./PUNCT->4:punct[.]
-   => FINAL SER_CONTRA ARGENTINA
-   => 80_ESPECTADOR ES ESPECTADOR
-   => FINAL SER_ANTE 80_ESPECTADOR
-
-El encuentro se mantuvo con la posesión de balón de los españoles superior al de los argentinos, Ferrán Torres convirtió el único gol a los 106 minutos,
-   1:El/DET->2:det[el] 2:encuentro/NOUN->4:nsubj[encuentro] 3:se/PRON->4:expl[el] 4:mantuvo/VERB->0:root[mantener] 5:con/ADP->7:case[con] 6:la/DET->7:det[el] 7:posesión/NOUN->4:obl[posesion] 8:de/ADP->9:case[de] 9:balón/NOUN->7:nmod[balon] 10:de/ADP->12:case[de] 11:los/DET->12:det[el] 12:españoles/NOUN->7:nmod[espanol] 13:superior/ADJ->12:amod[superior] 14:a/ADP->18:case[a] 15:el/DET->7:nmod[el] 16:de/ADP->18:case[de] 17:los/DET->18:det[el] 18:argentinos/NOUN->15:nmod[argentino] 19:,/PUNCT->20:punct[,] 20:Ferrán/PROPN->22:nsubj[ferran] 21:Torres/PROPN->20:flat[torres] 22:convirtió/VERB->0:root[convertir] 23:el/DET->25:det[el] 24:único/ADJ->25:amod[unico] 25:gol/NOUN->22:obj[gol] 26:a/ADP->29:case[a] 27:los/DET->28:det[el] 28:106/NUM->29:nummod[106] 29:minutos/NOUN->22:obl[minuto] 30:,/PUNCT->29:punct[,] 31:./PUNCT->4:punct[.]
-   => POSESION_DE_BALON ES POSESION
-   => ENCUENTRO MANTENER_CON POSESION_DE_BALON
-   => FERRAN_TORRES CONVERTIR GOL
-   => FERRAN_TORRES CONVERTIR_A MINUTO
-
-y España fue campeona del mundo por segunda vez en la historia, dieciséis años después de su primer título.
-   1:y/CCONJ->4:cc[y] 2:España/PROPN->4:nsubj[espana] 3:fue/AUX->4:cop[ser] 4:campeona/NOUN->0:root[campeona] 5:de/ADP->7:case[de] 6:el/DET->7:det[el] 7:mundo/NOUN->4:nmod[mundo] 8:por/ADP->10:case[por] 9:segunda/ADJ->10:amod[segundo] 10:vez/NOUN->4:obl[vez] 11:en/ADP->13:case[en] 12:la/DET->13:det[el] 13:historia/NOUN->4:nmod[historia] 14:,/PUNCT->16:punct[,] 15:dieciséis/NUM->16:nummod[dieciseis] 16:años/NOUN->13:nmod[ano] 17:después/ADV->16:advmod[despues] 18:de/ADP->17:fixed[de] 19:su/DET->21:det[su] 20:primer/ADJ->21:amod[primero] 21:título/NOUN->17:obl[titulo] 22:./PUNCT->4:punct[.]
-   => ESPANA ES CAMPEONA
-   => ESPANA CAMPEONA_DE MUNDO
-   => CAMPEONA_DE_MUNDO ES CAMPEONA
-
-Torneo Sede Resultado Partidos Goles Asist.
-   1:Torneo/NOUN->0:root[torneo] 2:Sede/PROPN->1:appos[sede] 3:Resultado/PROPN->1:appos[resultado] 4:Partidos/PROPN->1:appos[partidos] 5:Goles/PROPN->4:flat[goles] 6:Asist/PROPN->4:flat[asist] 7:./PUNCT->1:punct[.]
-
-Torneo Sede Resultado Partidos Goles Asist.
-   1:Torneo/NOUN->0:root[torneo] 2:Sede/PROPN->1:appos[sede] 3:Resultado/PROPN->1:appos[resultado] 4:Partidos/PROPN->1:appos[partidos] 5:Goles/PROPN->4:flat[goles] 6:Asist/PROPN->4:flat[asist] 7:./PUNCT->1:punct[.]
-
-Copa Mundial 2026 De izquierda a derecha las banderas de Estados Unidos, México y Canadá Norteamérica Campeón 8 1 0
-   1:Copa/PROPN->0:root[copa] 2:Mundial/PROPN->1:flat[mundial] 3:2026/PROPN->1:amod[2026] 4:De/ADP->5:case[de] 5:izquierda/NOUN->1:nmod[izquierda] 6:a/ADP->7:case[a] 7:derecha/NOUN->5:nmod[derecha] 8:las/DET->9:det[el] 9:banderas/NOUN->7:appos[bandera] 10:de/ADP->11:case[de] 11:Estados/PROPN->9:nmod[estados] 12:Unidos/PROPN->11:amod[unido] 13:,/PUNCT->14:punct[,] 14:México/PROPN->11:conj[mexico] 15:y/CCONJ->16:cc[y] 16:Canadá/PROPN->11:conj[canada] 17:Norteamérica/PROPN->16:amod[norteamerica] 18:Campeón/PROPN->16:flat[campeon] 19:8/NUM->20:nummod[8] 20:1/NUM->21:nummod[1] 21:0/NUM->20:compound[0] 22:./PUNCT->1:punct[.]
-
-Lamine Yamal tiene un estilo de juego dinámico y versátil.
-   1:Lamine/PROPN->3:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:tiene/VERB->0:root[tener] 4:un/DET->5:det[uno] 5:estilo/NOUN->3:obj[estilo] 6:de/ADP->7:case[de] 7:juego/NOUN->5:nmod[juego] 8:dinámico/ADJ->7:amod[dinamico] 9:y/CCONJ->10:cc[y] 10:versátil/ADJ->8:conj[versatil] 11:./PUNCT->3:punct[.]
-   => ESTILO_DE_JUEGO ES ESTILO
-   => LAMINE_YAMAL TENER ESTILO_DE_JUEGO
-
-Su principal fortaleza radica en su velocidad y habilidad de regate, que le permite superar a los defensores con facilidad.
-   1:Su/DET->3:det[su] 2:principal/ADJ->3:amod[principal] 3:fortaleza/NOUN->4:nsubj[fortaleza] 4:radica/VERB->0:root[radicar] 5:en/ADP->7:case[en] 6:su/DET->7:det[su] 7:velocidad/NOUN->4:obl[velocidad] 8:y/CCONJ->9:cc[y] 9:habilidad/NOUN->7:conj[habilidad] 10:de/ADP->11:case[de] 11:regate/NOUN->9:nmod[regate] 12:,/PUNCT->15:punct[,] 13:que/PRON->15:nsubj[que] 14:le/PRON->15:obl[el] 15:permite/VERB->4:advcl[permitir] 16:superar/VERB->15:xcomp[superar] 17:a/ADP->19:case[a] 18:los/DET->19:det[el] 19:defensores/NOUN->16:obj[defensor] 20:con/ADP->21:case[con] 21:facilidad/NOUN->16:obl[facilidad] 22:./PUNCT->4:punct[.]
-   => FORTALEZA_DE_ESPANA ES FORTALEZA
-   => VELOCIDAD_DE_ESPANA ES VELOCIDAD
-   => FORTALEZA_DE_ESPANA RADICAR_EN VELOCIDAD_DE_ESPANA
-   => HABILIDAD_DE_REGATE ES HABILIDAD
-   => FORTALEZA_DE_ESPANA RADICAR_EN HABILIDAD_DE_REGATE
-
-Es un delantero zurdo con capacidad de regate, pase y gol, que puede jugar tanto de delantero centro como de centrocampista ofensivo o de extremo, principalmente por la banda derecha.
-   1:Es/AUX->3:cop[ser] 2:un/DET->3:det[uno] 3:delantero/NOUN->0:root[delantero] 4:zurdo/ADJ->3:amod[zurdo] 5:con/ADP->6:case[con] 6:capacidad/NOUN->3:nmod[capacidad] 7:de/ADP->8:case[de] 8:regate/NOUN->6:nmod[regate] 9:,/PUNCT->10:punct[,] 10:pase/VERB->3:conj[pase] 11:y/CCONJ->12:cc[y] 12:gol/NOUN->8:conj[gol] 13:,/PUNCT->16:punct[,] 14:que/SCONJ->16:mark[que] 15:puede/AUX->16:aux[poder] 16:jugar/VERB->3:acl[jugar] 17:tanto/PRON->19:advmod[tanto] 18:de/ADP->19:case[de] 19:delantero/NOUN->20:nmod[delantero] 20:centro/NOUN->19:appos[centro] 21:como/ADP->23:case[como] 22:de/ADP->23:case[de] 23:centrocampista/NOUN->20:nmod[centrocampista] 24:ofensivo/ADJ->23:amod[ofensivo] 25:o/CCONJ->27:cc[o] 26:de/ADP->27:case[de] 27:extremo/NOUN->23:conj[extremo] 28:,/PUNCT->32:punct[,] 29:principalmente/ADV->32:advmod[principalmente] 30:por/ADP->32:case[por] 31:la/DET->32:det[el] 32:banda/NOUN->29:nmod[banda] 33:derecha/ADJ->32:amod[derecho] 34:./PUNCT->3:punct[.]
-   => ESPANA ES DELANTERO
-   => ESPANA SER ZURDO
-   => ESPANA TENER CAPACIDAD
-   => ESPANA PASE _
-
-Además, su capacidad para hacer pases precisos y asistir a sus compañeros le ha permitido destacarse no solo por su capacidad de gol, sino también por su visión de juego.
-   1:Además/ADV->16:advmod[ademas] 2:,/PUNCT->1:punct[,] 3:su/DET->4:det[su] 4:capacidad/NOUN->16:nsubj[capacidad] 5:para/ADP->6:mark[para] 6:hacer/VERB->4:acl[hacer] 7:pases/NOUN->6:obj[pase] 8:precisos/ADJ->7:amod[preciso] 9:y/CCONJ->10:cc[y] 10:asistir/VERB->6:conj[asistir] 11:a/ADP->13:case[a] 12:sus/DET->13:det[su] 13:compañeros/NOUN->10:obl[companero] 14:le/PRON->16:obl[el] 15:ha/AUX->16:aux[haber] 16:permitido/VERB->0:root[permitir] 17:destacarse/VERB->16:xcomp[destacarse] 18:no/ADV->19:advmod[no] 19:solo/ADV->17:advmod[solo] 20:por/ADP->22:case[por] 21:su/DET->22:det[su] 22:capacidad/NOUN->17:obl[capacidad] 23:de/ADP->24:case[de] 24:gol/NOUN->22:nmod[gol] 25:,/PUNCT->30:punct[,] 26:sino/CCONJ->30:cc[sino] 27:también/ADV->30:advmod[tambien] 28:por/ADP->30:case[por] 29:su/DET->30:det[su] 30:visión/NOUN->16:obl[vision] 31:de/ADP->32:case[de] 32:juego/NOUN->30:nmod[juego] 33:./PUNCT->16:punct[.]
-   => CAPACIDAD_DE_ESPANA ES CAPACIDAD
-   => CAPACIDAD_DE_ESPANA HACER PASE
-   => COMPANERO_DE_ESPANA ES COMPANERO
-   => CAPACIDAD_DE_ESPANA ASISTIR_A COMPANERO_DE_ESPANA
-   => VISION_DE_ESPANA ES VISION
-   => VISION_DE_ESPANA_DE_JUEGO ES VISION_DE_ESPANA
-   => CAPACIDAD_DE_ESPANA PERMITIR_POR VISION_DE_ESPANA_DE_JUEGO
-   => CAPACIDAD_DE_ESPANA_DE_GOL ES CAPACIDAD_DE_ESPANA
-   => CAPACIDAD_DE_ESPANA DESTACAR_POR CAPACIDAD_DE_ESPANA_DE_GOL
-
-Desde sus inicios Yamal demostró madurez en el campo.
-   1:Desde/ADP->3:case[desde] 2:sus/DET->3:det[su] 3:inicios/NOUN->5:obl[inicio] 4:Yamal/PROPN->5:nsubj[yamal] 5:demostró/VERB->0:root[demostrar] 6:madurez/NOUN->5:obj[madurez] 7:en/ADP->9:case[en] 8:el/DET->9:det[el] 9:campo/NOUN->5:obl[campo] 10:./PUNCT->5:punct[.]
-   => INICIO_DE_ESPANA ES INICIO
-   => YAMAL DEMOSTRAR_DESDE INICIO_DE_ESPANA
-   => YAMAL DEMOSTRAR MADUREZ
-   => YAMAL DEMOSTRAR_EN CAMPO
-
-Su toma de decisiones rápida y precisa lo ha hecho sobresalir en competiciones internacionales, como la Eurocopa 2024, donde fue aclamado por su rendimiento.
-   1:Su/DET->2:det[su] 2:toma/NOUN->10:nsubj[toma] 3:de/ADP->4:case[de] 4:decisiones/NOUN->2:nmod[decision] 5:rápida/ADJ->4:amod[rapido] 6:y/CCONJ->7:cc[y] 7:precisa/VERB->2:conj[precisar] 8:lo/PRON->10:obj[el] 9:ha/AUX->10:aux[haber] 10:hecho/VERB->0:root[hacer] 11:sobresalir/VERB->10:xcomp[sobresalir] 12:en/ADP->13:case[en] 13:competiciones/NOUN->11:obl[competicion] 14:internacionales/ADJ->13:amod[internacional] 15:,/PUNCT->18:punct[,] 16:como/SCONJ->18:case[como] 17:la/DET->18:det[el] 18:Eurocopa/PROPN->13:nmod[eurocopa] 19:2024/NUM->18:flat[2024] 20:,/PUNCT->23:punct[,] 21:donde/ADV->23:advmod[donde] 22:fue/AUX->23:aux[ser] 23:aclamado/VERB->18:acl[aclamar] 24:por/ADP->26:case[por] 25:su/DET->26:det[su] 26:rendimiento/NOUN->23:obl[rendimiento] 27:./PUNCT->10:punct[.]
-   => ESPANA PRECISAR _
-   => TOMA_DE_ESPANA ES TOMA
-   => TOMA_DE_ESPANA_DE_DECISION ES TOMA_DE_ESPANA
-   => TOMA_DE_ESPANA_DE_DECISION HACER ESPANA
-   => TOMA_DE_ESPANA_DE_DECISION SOBRESALIR _
-   => RENDIMIENTO_DE_ESPANA ES RENDIMIENTO
-   => RENDIMIENTO_DE_ESPANA ACLAMAR EUROCOPA_2024
-
-Su estilo de juego ha sido comparado con el de Lionel Messi, debido a sus habilidades técnicas similares, como su control de balón en espacios reducidos y su capacidad para finalizar jugadas de forma efectiva.
-   1:Su/DET->2:det[su] 2:estilo/NOUN->7:nsubj[estilo] 3:de/ADP->4:case[de] 4:juego/NOUN->2:nmod[juego] 5:ha/AUX->7:aux[haber] 6:sido/AUX->7:aux[ser] 7:comparado/VERB->0:root[comparar] 8:con/ADP->11:case[con] 9:el/DET->7:obl[el] 10:de/ADP->11:case[de] 11:Lionel/PROPN->7:obl[lionel] 12:Messi/PROPN->11:flat[messi] 13:,/PUNCT->17:punct[,] 14:debido/VERB->17:case[debido] 15:a/ADP->17:case[a] 16:sus/DET->17:det[su] 17:habilidades/NOUN->7:obl[habilidad] 18:técnicas/ADJ->17:amod[tecnico] 19:similares/ADJ->17:amod[similar] 20:,/PUNCT->23:punct[,] 21:como/ADP->23:case[como] 22:su/DET->23:det[su] 23:control/NOUN->17:nmod[control] 24:de/ADP->25:case[de] 25:balón/NOUN->23:nmod[balon] 26:en/ADP->27:case[en] 27:espacios/NOUN->23:nmod[espacio] 28:reducidos/ADJ->27:amod[reducido] 29:y/CCONJ->31:cc[y] 30:su/DET->31:det[su] 31:capacidad/NOUN->27:conj[capacidad] 32:para/ADP->33:mark[para] 33:finalizar/VERB->31:advcl[finalizar] 34:jugadas/NOUN->33:obj[jugada] 35:de/ADP->36:case[de] 36:forma/NOUN->34:nmod[forma] 37:efectiva/ADJ->36:amod[efectivo] 38:./PUNCT->7:punct[.]
-   => ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION ES ESTILO
-   => ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION_DE_JUEGO ES ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION
-   => ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION_DE_JUEGO SER COMPARADO
-   => ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION_DE_JUEGO COMPARADO_CON LIONEL_MESSI
-   => TOMA_DE_ESPANA ES TOMA
-   => TOMA_DE_ESPANA_DE_DECISION ES TOMA_DE_ESPANA
-   => TOMA_DE_ESPANA_DE_DECISION DEBIDO _
-
-Yamal también ha citado al exjugador del Barcelona Neymar como una gran influencia en su propio estilo de juego.
-   1:Yamal/PROPN->4:nsubj[yamal] 2:también/ADV->4:advmod[tambien] 3:ha/AUX->4:aux[haber] 4:citado/VERB->0:root[citar] 5:a/ADP->7:case[a] 6:el/DET->7:det[el] 7:exjugador/NOUN->4:obl[exjugador] 8:de/ADP->10:case[de] 9:el/DET->10:det[el] 10:Barcelona/PROPN->7:nmod[barcelona] 11:Neymar/PROPN->10:flat[neymar] 12:como/ADP->15:case[como] 13:una/DET->15:det[uno] 14:gran/ADJ->15:amod[gran] 15:influencia/NOUN->4:obl[influencia] 16:en/ADP->19:case[en] 17:su/DET->19:det[su] 18:propio/ADJ->19:det[propio] 19:estilo/NOUN->15:nmod[estilo] 20:de/ADP->21:case[de] 21:juego/NOUN->19:nmod[juego] 22:./PUNCT->4:punct[.]
-   => EXJUGADOR_DE_BARCELONA_NEYMAR ES EXJUGADOR
-   => YAMAL CITAR_A EXJUGADOR_DE_BARCELONA_NEYMAR
-   => YAMAL CITAR_COMO INFLUENCIA
-
-Lamine Yamal recibió una recepción positiva de la prensa deportiva internacional, que lo consideraría uno de los jóvenes talentos más prometedores del fútbol mundial.
-   1:Lamine/PROPN->3:nsubj[lamine] 2:Yamal/PROPN->1:flat[yamal] 3:recibió/VERB->0:root[recibir] 4:una/DET->5:det[uno] 5:recepción/NOUN->3:obj[recepcion] 6:positiva/ADJ->5:amod[positivo] 7:de/ADP->9:case[de] 8:la/DET->9:det[el] 9:prensa/NOUN->5:nmod[prensa] 10:deportiva/ADJ->9:amod[deportivo] 11:internacional/ADJ->9:amod[internacional] 12:,/PUNCT->15:punct[,] 13:que/SCONJ->15:mark[que] 14:lo/PRON->15:obj[el] 15:consideraría/VERB->16:cop[considerar] 16:uno/PRON->15:nsubj[uno] 17:de/ADP->19:case[de] 18:los/DET->19:det[el] 19:jóvenes/NOUN->16:nmod[joven] 20:talentos/ADJ->19:amod[talento] 21:más/ADV->22:advmod[mas] 22:prometedores/ADJ->19:amod[prometedor] 23:de/ADP->25:case[de] 24:el/DET->25:det[el] 25:fútbol/NOUN->22:nmod[futbol] 26:mundial/ADJ->25:amod[mundial] 27:./PUNCT->3:punct[.]
-   => RECEPCION_POSITIVO ES RECEPCION
-   => RECEPCION_POSITIVO_DE_PRENSA ES RECEPCION_POSITIVO
-   => LAMINE_YAMAL RECIBIR RECEPCION_POSITIVO_DE_PRENSA
-
-Su actuación en la Eurocopa 2024, donde se convirtió en el goleador más joven de la historia del torneo, consolidó su estatus como una de las grandes promesas del fútbol.
-   1:Su/DET->2:det[su] 2:actuación/NOUN->23:nsubj[actuacion] 3:en/ADP->5:case[en] 4:la/DET->5:det[el] 5:Eurocopa/PROPN->2:nmod[eurocopa] 6:2024/NUM->5:flat[2024] 7:,/PUNCT->10:punct[,] 8:donde/ADV->10:advmod[donde] 9:se/PRON->10:expl[el] 10:convirtió/VERB->5:acl[convertir] 11:en/ADP->13:case[en] 12:el/DET->13:det[el] 13:goleador/NOUN->10:obl[goleador] 14:más/ADV->15:advmod[mas] 15:joven/ADJ->13:amod[joven] 16:de/ADP->18:case[de] 17:la/DET->18:det[el] 18:historia/NOUN->15:nmod[historia] 19:de/ADP->21:case[de] 20:el/DET->21:det[el] 21:torneo/NOUN->18:nmod[torneo] 22:,/PUNCT->23:punct[,] 23:consolidó/VERB->18:acl[consolidar] 24:su/DET->25:det[su] 25:estatus/NOUN->23:obj[estatus] 26:como/ADP->27:case[como] 27:una/PRON->25:nmod[uno] 28:de/ADP->31:case[de] 29:las/DET->31:det[el] 30:grandes/ADJ->31:amod[grande] 31:promesas/NOUN->27:nmod[promesa] 32:de/ADP->34:case[de] 33:el/DET->34:det[el] 34:fútbol/NOUN->31:nmod[futbol] 35:./PUNCT->23:punct[.]
-   => EUROCOPA_2024 CONVERTIR_EN GOLEADOR
-   => ACTUACION_DE_LAMINE_YAMAL ES ACTUACION
-   => ESTATUS_DE_LAMINE_YAMAL ES ESTATUS
-   => ACTUACION_DE_LAMINE_YAMAL CONSOLIDAR ESTATUS_DE_LAMINE_YAMAL
-
-Medios como The Guardian, L'Equipe y La Gazzetta dello Sport, lo han comparado con figuras como Lionel Messi, destacando su capacidad de regate, su velocidad y su visión de juego.
-   1:Medios/NOUN->17:nsubj[medio] 2:como/ADP->4:case[como] 3:The/DET->1:nmod[the] 4:Guardian/PROPN->1:nmod[guardian] 5:,/PUNCT->8:punct[,] 6:L/PROPN->4:conj[l] 7:'/PUNCT->8:punct['] 8:Equipe/PROPN->4:appos[equipe] 9:y/CCONJ->11:cc[y] 10:La/DET->11:det[el] 11:Gazzetta/PROPN->3:conj[gazzetta] 12:dello/PROPN->11:flat[dello] 13:Sport/PROPN->11:flat[sport] 14:,/PUNCT->17:punct[,] 15:lo/PRON->17:obj[el] 16:han/AUX->17:aux[haber] 17:comparado/VERB->0:root[comparar] 18:con/ADP->19:case[con] 19:figuras/NOUN->17:obl[figura] 20:como/ADP->21:case[como] 21:Lionel/PROPN->17:obl[lionel] 22:Messi/PROPN->21:flat[messi] 23:,/PUNCT->24:punct[,] 24:destacando/VERB->17:advcl[destacar] 25:su/DET->26:det[su] 26:capacidad/NOUN->24:obj[capacidad] 27:de/ADP->28:case[de] 28:regate/NOUN->26:nmod[regate] 29:,/PUNCT->31:punct[,] 30:su/DET->31:det[su] 31:velocidad/NOUN->26:conj[velocidad] 32:y/CCONJ->34:cc[y] 33:su/DET->34:det[su] 34:visión/NOUN->26:conj[vision] 35:de/ADP->36:case[de] 36:juego/NOUN->34:nmod[juego] 37:./PUNCT->17:punct[.]
-   => MEDIO COMPARAR LAMINE_YAMAL
-   => MEDIO COMPARAR_CON FIGURA
-   => MEDIO COMPARAR_COMO LIONEL_MESSI
-   => CAPACIDAD_DE_LAMINE_YAMAL ES CAPACIDAD
-   => CAPACIDAD_DE_LAMINE_YAMAL_DE_REGATE ES CAPACIDAD_DE_LAMINE_YAMAL
-   => MEDIO DESTACAR CAPACIDAD_DE_LAMINE_YAMAL_DE_REGATE
-   => VELOCIDAD_DE_LAMINE_YAMAL ES VELOCIDAD
-   => MEDIO DESTACAR VELOCIDAD_DE_LAMINE_YAMAL
-   => VISION_DE_LAMINE_YAMAL ES VISION
-   => VISION_DE_LAMINE_YAMAL_DE_JUEGO ES VISION_DE_LAMINE_YAMAL
-   => MEDIO DESTACAR VISION_DE_LAMINE_YAMAL_DE_JUEGO
-
-El rendimiento de Lamine con la selección española, en particular su gol en la semifinal contra la selección de Francia, fue aclamado como una «joya» y una muestra de «madurez
-   1:El/DET->2:det[el] 2:rendimiento/NOUN->24:nsubj[rendimiento] 3:de/ADP->4:case[de] 4:Lamine/PROPN->2:nmod[lamine] 5:con/ADP->7:case[con] 6:la/DET->7:det[el] 7:selección/NOUN->2:nmod[seleccion] 8:española/ADJ->7:amod[espanol] 9:,/PUNCT->11:punct[,] 10:en/ADP->11:case[en] 11:particular/ADJ->10:fixed[particular] 12:su/DET->13:det[su] 13:gol/NOUN->24:nsubj[gol] 14:en/ADP->16:case[en] 15:la/DET->16:det[el] 16:semifinal/NOUN->13:nmod[semifinal] 17:contra/ADP->19:case[contra] 18:la/DET->19:det[el] 19:selección/NOUN->16:nmod[seleccion] 20:de/ADP->21:case[de] 21:Francia/PROPN->19:nmod[francia] 22:,/PUNCT->11:punct[,] 23:fue/AUX->24:aux[ser] 24:aclamado/VERB->0:root[aclamar] 25:como/SCONJ->26:case[como] 26:una/DET->28:det[uno] 27:«/PUNCT->28:punct[«] 28:joya/NOUN->24:obl[joya] 29:»/PUNCT->28:punct[»] 30:y/CCONJ->32:cc[y] 31:una/DET->32:det[uno] 32:muestra/NOUN->24:conj[muestra] 33:de/ADP->35:case[de] 34:«/PUNCT->35:punct[«] 35:madurez/NOUN->32:nmod[madurez] 36:./PUNCT->24:punct[.]
-   => RENDIMIENTO_DE_LAMINE ES RENDIMIENTO
-   => RENDIMIENTO_DE_LAMINE SER ACLAMADO
-   => GOL_DE_YAMAL ES GOL
-   => GOL_DE_YAMAL SER ACLAMADO
-
-y habilidad», a pesar de su juventud.
-   1:y/CCONJ->2:cc[y] 2:habilidad/NOUN->0:root[habilidad] 3:»/PUNCT->2:punct[»] 4:,/PUNCT->6:punct[,] 5:a/ADP->9:case[a] 6:pesar/NOUN->5:fixed[pesar] 7:de/ADP->5:fixed[de] 8:su/DET->9:det[su] 9:juventud/NOUN->6:nmod[juventud] 10:./PUNCT->2:punct[.]
-
-Cuando era un bebé, apareció en una sesión fotográfica benéfica de Unicef en 2007 junto a su futuro club, el F. C. Barcelona
-   1:Cuando/SCONJ->4:mark[cuando] 2:era/AUX->4:cop[ser] 3:un/DET->4:det[uno] 4:bebé/NOUN->6:nsubj[bebe] 5:,/PUNCT->4:punct[,] 6:apareció/VERB->0:root[aparecer] 7:en/ADP->9:case[en] 8:una/DET->9:det[uno] 9:sesión/NOUN->6:obl[sesion] 10:fotográfica/ADJ->9:amod[fotografico] 11:benéfica/ADJ->9:amod[benefico] 12:de/ADP->13:case[de] 13:Unicef/PROPN->9:nmod[unicef] 14:en/ADP->15:case[en] 15:2007/NUM->9:nmod[2007] 16:junto/ADJ->20:case[junto] 17:a/ADP->16:fixed[a] 18:su/DET->20:det[su] 19:futuro/ADJ->20:amod[futuro] 20:club/NOUN->6:obl[club] 21:,/PUNCT->23:punct[,] 22:el/DET->23:det[el] 23:F/PROPN->20:appos[f] 24:./PUNCT->6:punct[.] 25:C/PROPN->23:appos[c] 26:./PUNCT->6:punct[.] 27:Barcelona/PROPN->25:flat[barcelona] 28:./PUNCT->6:punct[.]
-   => BEBE APARECER _
-
-durante la cual fue bañado por un Lionel Messi de veinte años.
-   1:durante/ADP->3:case[durante] 2:la/DET->3:det[el] 3:cual/PRON->5:obl[cual] 4:fue/AUX->5:aux[ser] 5:bañado/VERB->0:root[banar] 6:por/ADP->8:case[por] 7:un/DET->8:det[uno] 8:Lionel/PROPN->5:obl[lionel] 9:Messi/PROPN->8:flat[messi] 10:de/ADP->12:case[de] 11:veinte/NUM->12:nummod[veinte] 12:años/NOUN->5:obl[ano] 13:./PUNCT->5:punct[.]
-   => LIONEL_MESSI BANAR BEBE
-   => BEBE BANADO_DE ANO
-
-Las imágenes se volvieron virales en internet debido a que ambos jugadores se enfrentarían como las estrellas de sus respectivas selecciones en la Final de la Copa Mundial de Fútbol de 2026.
-   1:Las/DET->2:det[el] 2:imágenes/NOUN->4:nsubj[imagen] 3:se/PRON->4:expl[el] 4:volvieron/VERB->0:root[volver] 5:virales/ADJ->4:xcomp[viral] 6:en/ADP->7:case[en] 7:internet/NOUN->4:obl[internet] 8:debido/VERB->14:advcl[deber] 9:a/ADP->8:fixed[a] 10:que/SCONJ->14:mark[que] 11:ambos/DET->12:det[ambos] 12:jugadores/NOUN->14:nsubj[jugador] 13:se/PRON->14:expl[el] 14:enfrentarían/VERB->4:advcl[enfrentaer] 15:como/ADP->17:case[como] 16:las/DET->17:det[el] 17:estrellas/NOUN->14:obl[estrella] 18:de/ADP->21:case[de] 19:sus/DET->21:det[su] 20:respectivas/ADJ->21:amod[respectivo] 21:selecciones/NOUN->17:nmod[seleccion] 22:en/ADP->24:case[en] 23:la/DET->24:det[el] 24:Final/NOUN->21:nmod[final] 25:de/ADP->27:case[de] 26:la/DET->27:det[el] 27:Copa/PROPN->24:nmod[copa] 28:Mundial/PROPN->27:amod[mundial] 29:de/ADP->30:case[de] 30:Fútbol/PROPN->27:nmod[futbol] 31:de/ADP->32:case[de] 32:2026/NUM->30:nmod[2026] 33:./PUNCT->4:punct[.]
-   => IMAGEN VOLVER_EN INTERNET
-
-En 2025, se hizo público su romance con la cantante Nicki Nicole, aunque la relación culminó luego de dos meses de haberse hecho conocida.
-   1:En/ADP->2:case[en] 2:2025/NUM->5:obl[2025] 3:,/PUNCT->2:punct[,] 4:se/PRON->5:expl[el] 5:hizo/VERB->0:root[hacer] 6:público/NOUN->5:xcomp[publico] 7:su/DET->8:det[su] 8:romance/NOUN->5:nsubj[romance] 9:con/ADP->11:case[con] 10:la/DET->11:det[el] 11:cantante/NOUN->5:obl[cantante] 12:Nicki/PROPN->11:appos[nicki] 13:Nicole/PROPN->12:flat[nicole] 14:,/PUNCT->18:punct[,] 15:aunque/SCONJ->18:mark[aunque] 16:la/DET->17:det[el] 17:relación/NOUN->18:nsubj[relacion] 18:culminó/VERB->5:advcl[culminar] 19:luego/ADV->22:advmod[luego] 20:de/ADP->19:fixed[de] 21:dos/NUM->22:nummod[dos] 22:meses/NOUN->18:obl[mes] 23:de/ADP->25:case[de] 24:haberse/AUX->25:aux[haber] 25:hecho/VERB->22:nmod[hacer] 26:conocida/ADJ->25:xcomp[conocido] 27:./PUNCT->5:punct[.]
-   => ROMANCE_DE_IMAGEN ES ROMANCE
-   => NICKI_NICOLE ES CANTANTE
-   => ROMANCE_DE_IMAGEN HACER_CON NICKI_NICOLE
-
-CONCEPTOS: entidad=49, conocido=304, dudoso=0, nuevo=7
-   conocido  151_PARTIDO
-   conocido  21_REGATE
-   conocido  301_GOL
-   conocido  304_NUMERO
-   conocido  32_ENCUENTRO
-   conocido  35_PARTIDO
-   conocido  50_PARTIDO
-   nuevo     65_ESPECTADOR (provisional)
-   conocido  67_ESPECTADOR
-   conocido  7_GOL
-   conocido  80_ESPECTADOR
-   conocido  9_GOL
-   conocido  9_PARTIDO
-   conocido  ACLAMADO
-   conocido  ACTUACION  [intérprete > artista > alguien > organismo] ajuste=0.151
-   conocido  ACTUACION_DE_LAMINE_YAMAL  [actividad > acción > evento > rasgo psicológico] ajuste=0.022
-   conocido  ACTUACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [intérprete > artista > alguien > organismo] ajuste=0.211
-   entidad   ALBANIA
-   entidad   ALEMANIA
-   conocido  ALEVIN_A
-   conocido  ALEVIN_C
-   conocido  ALINEACION
-   conocido  ALINEACION_TITULAR
-   conocido  ALINEACION_TITULAR_DE_BARCELONA
-   conocido  ALTURA  [dimensión > magnitud > propiedad > atributo]
-   conocido  AMBAS_CIUDAD
-   conocido  ANO  [parte del cuerpo > parte] ajuste=0.08
-   conocido  APODO_S
-   conocido  AREA  [región > lugar]
-   conocido  AREA_METROPOLITANO
-   conocido  AREA_METROPOLITANO_DE_BARCELONA
-   entidad   ARGENTINA
-   conocido  ARTICULO_PRINCIPAL
-   conocido  ASISTENCIA  [actividad > acción > evento > rasgo psicológico] ajuste=0.054
-   conocido  ASISTENTE  [ayudante > trabajador > alguien > organismo] ajuste=0.126
-   conocido  ASISTENTE_DE_TORNEO  [ayudante > trabajador > alguien > organismo] ajuste=0.011
-   conocido  ATENCION  [acto > cognición > rasgo psicológico] ajuste=0.014
-   conocido  ATENCION_DE_ENTRENADOR  [acto > cognición > rasgo psicológico] ajuste=0.014
-   entidad   AUSTRIA
-   conocido  AUSTRIACO  [europeo > habitante > alguien > organismo] ajuste=0.015
-   conocido  AUSTRIA_DE_DAVID_ALABA  [estado > distrito administrativo > distrito > región] ajuste=0.071
-   entidad   BARCELONA
-   conocido  BARCELONA_B
-   conocido  BARRIO  [distrito > región > lugar]
-   entidad   BATA
-   conocido  BEBE  [alguien > organismo] ajuste=0.066
-   conocido  BELGICA  [estado > distrito administrativo > distrito > región] ajuste=0.07
-   conocido  BENJAMIN_A
-   conocido  BENJAMIN_B
-   entidad   BETIS
-   entidad   BORIS_PAICHADZE_DINAMO_ARENA
-   conocido  CABEZA  [cognición > rasgo psicológico] ajuste=0.066
-   entidad   CABO
-   conocido  CADETE_A
-   conocido  CADETE_B
-   conocido  CAMARERA  [barman > empleado > trabajador > alguien] ajuste=0.149
-   conocido  CAMARERA_DE_BATA  [barman > empleado > trabajador > alguien] ajuste=0.149
-   conocido  CAMBIO  [acción > evento > rasgo psicológico] ajuste=0.231
-   entidad   CAMP
-   conocido  CAMPANA  [dispositivo > instrumental] ajuste=0.115
-   conocido  CAMPEON  [adversario > alguien > organismo] ajuste=0.199
-   conocido  CAMPEONA
-   entidad   CAMPEONATO
-   conocido  CAMPEONA_DE_EUROPA
-   conocido  CAMPEONA_DE_MUNDO
-   conocido  CAMPEON_DE_LALIGA  [adversario > alguien > organismo] ajuste=0.308
-   conocido  CAMPEON_VIGENTE
-   conocido  CAMPEON_VIGENTE_DE_EURO
-   conocido  CAMPO  [entorno > situación > estado > atributo] ajuste=0.202
-   conocido  CAMP_DE_FUTBOL  [colectividad > grupo social > agrupación] ajuste=0.37
-   conocido  CANDIDATA  [alguien > organismo] ajuste=0.146
-   conocido  CANTANTE  [instrumentista > intérprete > artista > alguien] ajuste=0.011
-   conocido  CANTERA  [excavación > excavation > artifact] ajuste=0.008
-   conocido  CAPACIDAD  [cognición > rasgo psicológico] ajuste=0.124
-   conocido  CAPACIDAD_DE_ESPANA  [cognición > rasgo psicológico] ajuste=0.149
-   conocido  CAPACIDAD_DE_ESPANA_DE_GOL  [cognición > rasgo psicológico] ajuste=0.149
-   conocido  CAPACIDAD_DE_LAMINE_YAMAL  [cognición > rasgo psicológico] ajuste=0.176
-   conocido  CAPACIDAD_DE_LAMINE_YAMAL_DE_REGATE  [cognición > rasgo psicológico] ajuste=0.176
-   conocido  CARRERA  [punto > éxito > logro > acción] ajuste=0.085
-   conocido  CARRERA_DE_LAMINE  [punto > éxito > logro > acción] ajuste=0.085
-   conocido  CELEBRACION  [diversión > actividad > acción > evento] ajuste=0.075
-   conocido  CELEBRACION_DE_GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [diversión > actividad > acción > evento] ajuste=0.075
-   conocido  CERTAMEN  [evento social > evento > rasgo psicológico] ajuste=0.1
-   conocido  CIUDAD  [municipio > región > lugar] ajuste=0.011
-   conocido  CLASIFICACION  [agrupación > arrangement > group] ajuste=0.131
-   conocido  CLASIFICACION_DE_YAMAL  [agrupación > arrangement > group] ajuste=0.131
-   conocido  CLAUSULA  [condición > premisa > postulado > proposición] ajuste=0.013
-   conocido  CLUB  [asociación > organización > grupo social > agrupación] ajuste=0.019
-   conocido  CLUB_BLAUGRANA
-   conocido  CLUB_LOCAL
-   conocido  COMPANERO  [amigo > alguien > organismo] ajuste=0.015
-   conocido  COMPANERO_DE_ESPANA  [amigo > alguien > organismo] ajuste=0.015
-   conocido  COMPLICACION  [complejidad > calidad > atributo] ajuste=0.037
-   conocido  CONTRATO  [acuerdo > afirmación > contenido > comunicación] ajuste=0.012
-   conocido  CONTRATO_CLAVE
-   conocido  CONTRATO_DE_XAVI  [acuerdo > afirmación > contenido > comunicación] ajuste=0.012
-   conocido  CONTRATO_DE_XAVI_PROFESIONAL  [acuerdo > afirmación > contenido > comunicación] ajuste=0.012
-   conocido  CONVOCATORIA  [desafío > acción > evento > rasgo psicológico] ajuste=0.107
-   entidad   COPA
-   conocido  COPA_DEL_MUNDO
-   conocido  CRECIMIENTO  [proceso > process] ajuste=0.238
-   conocido  CRECIMIENTO_DE_REGRAGUI  [proceso > process] ajuste=0.238
-   entidad   CROACIA
-   conocido  CUARTO_DE_FINAL  [zona > construcción] ajuste=0.009
-   nuevo     CUATRO_ASISTENCIA
-   conocido  DEBUT  [presentación > información > acción > evento] ajuste=0.038
-   conocido  DEBUT_DEPORTIVO
-   conocido  DEBUT_DE_XAVI  [presentación > información > acción > evento] ajuste=0.038
-   conocido  DEDO  [unidad lineal > cantidad definida > cantidad] ajuste=0.099
-   conocido  DEDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [unidad lineal > cantidad definida > cantidad] ajuste=0.099
-   conocido  DELANTERO
-   conocido  DELEGACION  [apoderamiento > dirección > control social > acción] ajuste=0.092
-   conocido  DELEGACION_ESPANOL
-   conocido  DEPORTE  [diversión > actividad > acción > evento]
-   conocido  DERBI
-   conocido  DIA  [cantidad > time unit > measure] ajuste=0.072
-   conocido  DIECISEISAVO
-   conocido  DIECISEISAVO_DE_FINAL
-   conocido  DIGITO  [entero > número > cantidad definida > cantidad] ajuste=0.099
-   conocido  DIGITO_DE_CODIGO  [entero > número > cantidad definida > cantidad] ajuste=0.099
-   conocido  DOCE_EQUIPO
-   conocido  DOCE_EQUIPO_DIFERENTE
-   entidad   DONAUESCHINGEN
-   conocido  DOS_PERSONA
-   conocido  EDAD  [propiedad > atributo] ajuste=0.049
-   conocido  EDAD_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [propiedad > atributo] ajuste=0.169
-   conocido  EJEMPLO  [acontecimiento > evento > rasgo psicológico] ajuste=0.041
-   conocido  EMPATE  [equivalencia > distinción > estado > atributo]
-   conocido  EMPATE_BARCELONISTA
-   conocido  ENCUENTRO  [combate > batalla > acción > evento] ajuste=0.098
-   conocido  ENTRENADOR  [autoridad > alguien > organismo] ajuste=0.093
-   conocido  ENTRENAMIENTO  [afán > faena > trabajo > actividad] ajuste=0.086
-   conocido  ENTRENAMIENTO_DE_YAMAL  [afán > faena > trabajo > actividad] ajuste=0.086
-   conocido  EQUIPO  [sección > organización > grupo social > agrupación] ajuste=0.153
-   conocido  EQUIPO_DE_XAVI  [sección > organización > grupo social > agrupación] ajuste=0.094
-   conocido  ESPANA  [estado > distrito administrativo > distrito > región] ajuste=0.008
-   conocido  ESPANOL  [europeo > habitante > alguien > organismo] ajuste=0.163
-   entidad   ESPANYOL
-   entidad   ESPLUGAS
-   conocido  ESPLUGAS_DE_LLOBREGAT
-   conocido  ESTATUS  [sección > organización > grupo social > agrupación] ajuste=0.022
-   conocido  ESTATUS_DE_LAMINE_YAMAL  [sección > organización > grupo social > agrupación] ajuste=0.022
-   conocido  ESTILO  [propiedad > atributo] ajuste=0.041
-   conocido  ESTILO_DE_JUEGO  [propiedad > atributo]
-   conocido  ESTILO_DE_TOMA_DE_ESPANA_DE_DECISION  [propiedad > atributo] ajuste=0.041
-   conocido  ESTRENO
-   conocido  ESTRENO_DE_YAMAL
-   entidad   EUROCOPA
-   entidad   EUROCOPA_2024
-   conocido  EVIDENTE
-   conocido  EXCELSO
-   conocido  EXJUGADOR  [jugador > alguien > organismo] ajuste=0.019
-   conocido  EXJUGADOR_DE_BARCELONA_NEYMAR  [jugador > alguien > organismo] ajuste=0.019
-   conocido  EXTREMO  [grado > propiedad > atributo] ajuste=0.016
-   conocido  EXTREMO_DERECHO
-   entidad   FAMILIA
-   conocido  FASE  [estado > atributo] ajuste=0.045
-   conocido  FASE_DE_GRUPO  [estado > atributo] ajuste=0.032
-   entidad   FELIPE
-   conocido  FERRAN_TORRES
-   conocido  FIGURA  [actuación > actividad > acción > evento] ajuste=0.117
-   conocido  FIGURA_DE_BARCELONA  [adorno > decoration > artifact] ajuste=0.133
-   conocido  FIGURA_DE_CAMBIO  [actuación > actividad > acción > evento] ajuste=0.15
-   conocido  FINAL  [instante > cantidad] ajuste=0.041
-   conocido  FINAL_DE_TIEMPO  [extremo > parte > lugar]
-   conocido  FORTALEZA  [propiedad > atributo] ajuste=0.288
-   conocido  FORTALEZA_DE_ESPANA  [propiedad > atributo] ajuste=0.288
-   conocido  FRANCES  [estado > distrito administrativo > distrito > región] ajuste=0.096
-   entidad   FUENTE
-   conocido  FUTBOL  [juego atlético > deporte > diversión > actividad] ajuste=0.046
-   conocido  FUTBOLISTA  [atleta > alguien > organismo] ajuste=0.085
-   conocido  FUTBOLISTA_MENOR
-   conocido  FUTBOLISTA_MENOR_DE_FUTBOL
-   conocido  FUTBOL_ESPANOL
-   entidad   F_BARCELONA
-   entidad   F_C
-   conocido  GANANCIAS  [abono > coste > gasto > traspaso]
-   entidad   GEORGIA
-   conocido  GOL  [espíritu > convicción > contenido mental > cognición] ajuste=0.022
-   conocido  GOLEADA
-   conocido  GOLEADOR
-   conocido  GOLES_EN_CLUBES  [espíritu > convicción > contenido mental > cognición]
-   conocido  GOL_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [punto > éxito > logro > acción] ajuste=0.067
-   conocido  GOL_DE_MERINO  [espíritu > convicción > contenido mental > cognición] ajuste=0.012
-   conocido  GOL_DE_YAMAL  [punto > éxito > logro > acción] ajuste=0.179
-   entidad   GRANOLLERS
-   entidad   GRUPO
-   conocido  HABILIDAD  [aptitud > calidad > atributo] ajuste=0.21
-   conocido  HABILIDAD_DE_REGATE  [aptitud > calidad > atributo] ajuste=0.21
-   conocido  HIJO  [descendencia > pariente > alguien > organismo] ajuste=0.152
-   conocido  HIJO_DE_SHEILA_EBANA  [descendencia > pariente > alguien > organismo] ajuste=0.152
-   conocido  HISTORIA  [constancia > evidencia > indicación > comunicación] ajuste=0.011
-   conocido  HISTORIA_DE_CLASICO  [constancia > evidencia > indicación > comunicación] ajuste=0.01
-   conocido  HISTORIA_DE_ESPANA  [artes > campo > área de conocimiento > contenido mental] ajuste=0.053
-   conocido  IMAGEN  [representación > creación] ajuste=0.186
-   conocido  INFANTIL_A
-   conocido  INFANTIL_B
-   conocido  INFLUENCIA  [poder > calidad > atributo] ajuste=0.019
-   conocido  INICIO  [instante > cantidad] ajuste=0.121
-   conocido  INICIO_DE_ESPANA  [instante > cantidad] ajuste=0.121
-   conocido  INICIO_DE_TEMPORADA  [instante > cantidad]
-   conocido  INSTANCIA  [acontecimiento > evento > rasgo psicológico] ajuste=0.041
-   conocido  INTERNACIONAL
-   conocido  INTERNET  [red > sistema > instrumental] ajuste=0.186
-   conocido  IRRUPCION  [entrada > llegada > acción > evento] ajuste=0.163
-   conocido  IRRUPCION_DE_LAMINE  [entrada > llegada > acción > evento] ajuste=0.163
-   entidad   ITALIA
-   entidad   I_GRUPO
-   entidad   JORGE_MENDES
-   conocido  JORNADA  [etapa > cantidad] ajuste=0.027
-   conocido  JUEGO  [actividad > acción > evento > rasgo psicológico] ajuste=0.203
-   conocido  JUGADOR  [alguien > organismo] ajuste=0.092
-   conocido  JUGADOR_DE_TORNEO  [alguien > organismo] ajuste=0.11
-   conocido  JUGADOR_JOVEN
-   conocido  JUGADOR_JOVEN_DE_TORNEO
-   conocido  JUVENIL_A
-   entidad   LAMINE
-   entidad   LAMINE_YAMAL
-   entidad   LAMINE_YAMAL_NASRAOUI_EBANA
-   conocido  LESION  [circunstancias > estado > atributo] ajuste=0.015
-   conocido  LESION_DE_YAMAL  [circunstancias > estado > atributo] ajuste=0.015
-   entidad   LIGA
-   entidad   LIONEL_MESSI
-   nuevo     LOGICO (provisional)
-   nuevo     LOGICO_DEPORTIVO
-   conocido  LUGAR  [cognición > rasgo psicológico] ajuste=0.127
-   conocido  LUGAR_DE_ENTRENAMIENTO  [cognición > rasgo psicológico] ajuste=0.127
-   entidad   LUIS
-   conocido  LUIS_DEL_FUENTE
-   conocido  MADRE  [órganos reproductores > órgano > parte del cuerpo > parte] ajuste=0.067
-   conocido  MADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [órganos reproductores > órgano > parte del cuerpo > parte] ajuste=0.067
-   conocido  MADUREZ  [estado > atributo] ajuste=0.221
-   entidad   MARRUECOS
-   conocido  MATARO
-   nuevo     MAXIMO (provisional)
-   conocido  MEDIO  [situación > estado > atributo] ajuste=0.116
-   entidad   MERCEDES
-   entidad   MIKEL_OYARZABAL
-   conocido  MINUTO  [cantidad > time unit > measure] ajuste=0.062
-   conocido  MINUTO_DE_DESCUENTO  [cantidad > time unit > measure] ajuste=0.014
-   conocido  MUNDO  [gente > agrupación] ajuste=0.099
-   conocido  MUSCULATURA  [aparato > parte del cuerpo > parte] ajuste=0.012
-   conocido  MUSCULATURA_DE_MUSLO  [aparato > parte del cuerpo > parte] ajuste=0.012
-   conocido  NACIMIENTO  [punto > lugar]
-   entidad   NICKI_NICOLE
-   conocido  NIVEL  [propiedad > atributo] ajuste=0.038
-   conocido  NOMBRE  [personaje > adulta > alguien > organismo] ajuste=0.402
-   conocido  NOMBRE_COMPLETO
-   conocido  NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [personaje > adulta > alguien > organismo] ajuste=0.402
-   conocido  NOMBRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA_DE_PILA  [personaje > adulta > alguien > organismo] ajuste=0.402
-   conocido  NORTEAMERICA
-   conocido  OBTENCION  [logro > acción > evento > rasgo psicológico] ajuste=0.075
-   conocido  OBTENCION_DE_CAMPEONATO  [logro > acción > evento > rasgo psicológico] ajuste=0.075
-   conocido  OCTAVO
-   conocido  OCTAVO_DE_FINAL
-   conocido  OFERTA  [proceso > economic process > process] ajuste=0.205
-   nuevo     OFERTA_PROVENIENTE
-   nuevo     OFERTA_PROVENIENTE_DE_MARRUECOS
-   conocido  OPORTUNIDAD  [accidente > acontecimiento > evento > rasgo psicológico] ajuste=0.116
-   conocido  ORIGINARIO
-   conocido  PADRE  [autoridad > alguien > organismo] ajuste=0.31
-   conocido  PADRE_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [autoridad > alguien > organismo] ajuste=0.31
-   conocido  PAIS  [sección > organización > grupo social > agrupación]
-   entidad   PALACIO
-   conocido  PALACIO_DEL_ZARZUELA
-   conocido  PANDEMIA  [epidemia > brote > acontecimiento > evento] ajuste=0.094
-   conocido  PANDEMIA_DE_19_COVID  [epidemia > brote > acontecimiento > evento] ajuste=0.094
-   conocido  PARTICIPACION  [acción > evento > rasgo psicológico] ajuste=0.216
-   conocido  PARTICIPACION_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [acción > evento > rasgo psicológico] ajuste=0.216
-   conocido  PARTIDO  [organización > grupo social > agrupación] ajuste=0.132
-   conocido  PARTIDO_DE_CAMPEONATO  [campeonato > evento social > evento > rasgo psicológico] ajuste=0.148
-   conocido  PARTIDO_DE_LALIGA  [adulta > alguien > organismo] ajuste=0.258
-   conocido  PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [organización > grupo social > agrupación] ajuste=0.37
-   conocido  PARTIDO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_OFICIAL  [organización > grupo social > agrupación] ajuste=0.37
-   conocido  PARTIDO_DE_YAMAL  [adulta > alguien > organismo] ajuste=0.162
-   conocido  PASE  [jugada > plan > idea > contenido mental] ajuste=0.047
-   conocido  PEDRO_SANCHEZ
-   conocido  PERSONA  [organismo > organism > living thing] ajuste=0.448
-   conocido  PESO  [propiedad > atributo]
-   conocido  PORTUGUES
-   conocido  POSESION  [control > actividad > acción > evento] ajuste=0.098
-   conocido  POSESION_DE_BALON  [control > actividad > acción > evento] ajuste=0.098
-   conocido  POSICION  [propiedad > atributo]
-   conocido  PREBENJAMIN
-   conocido  PREDIO  [construcción > structure > artifact] ajuste=0.093
-   conocido  PREMIO  [distinción > símbolo > señal > comunicación] ajuste=0.217
-   conocido  PRENSA  [acción > evento > rasgo psicológico] ajuste=0.008
-   conocido  PROGRESION  [inestabilidad > calidad > atributo] ajuste=0.161
-   conocido  PROGRESION_CORRESPONDIENTE
-   conocido  PROMEDIO
-   conocido  PROMEDIO_DE_YAMAL
-   conocido  PROMESA  [adversario > alguien > organismo] ajuste=0.225
-   conocido  PROYECTO  [trabajo > actividad > acción > evento] ajuste=0.232
-   entidad   REAL
-   conocido  RECEPCION  [adquisición > acción > evento > rasgo psicológico]
-   conocido  RECEPCION_POSITIVO
-   conocido  RECEPCION_POSITIVO_DE_PRENSA
-   conocido  RECORD  [evidencia > indicación > comunicación] ajuste=0.048
-   conocido  RECORD_DE_LIONEL_MESSI  [evidencia > indicación > comunicación] ajuste=0.055
-   conocido  RECORD_DE_VICENC_MARTINEZ  [evidencia > indicación > comunicación] ajuste=0.048
-   conocido  REEMPLAZO
-   conocido  REEMPLAZO_DE_DANI_OLMO
-   entidad   REGRAGUI
-   conocido  RENDIMIENTO  [logro > acción > evento > rasgo psicológico] ajuste=0.202
-   conocido  RENDIMIENTO_DE_ESPANA  [logro > acción > evento > rasgo psicológico] ajuste=0.13
-   conocido  RENDIMIENTO_DE_LAMINE  [logro > acción > evento > rasgo psicológico] ajuste=0.119
-   conocido  RENDIMIENTO_DE_LAMINE_DE_ANO  [logro > acción > evento > rasgo psicológico] ajuste=0.163
-   conocido  RENDIMIENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [logro > acción > evento > rasgo psicológico] ajuste=0.195
-   conocido  RENDIMIENTO_DE_YAMAL  [producción > industria > comercio > negociación] ajuste=0.018
-   conocido  RESPETO  [honor > distinción > estado > atributo] ajuste=0.002
-   conocido  RESPETO_DE_FANATICO  [honor > distinción > estado > atributo]
-   conocido  RESPONSABILIDAD  [control social > acción > evento > rasgo psicológico] ajuste=0.198
-   conocido  RFEF
-   entidad   ROCAFONDA
-   conocido  ROMANCE  [relación > estado > atributo] ajuste=0.011
-   conocido  ROMANCE_DE_IMAGEN  [relación > estado > atributo] ajuste=0.011
-   conocido  SELECCION  [acción > evento > rasgo psicológico] ajuste=0.024
-   conocido  SELECCIONADOR  [autoridad > alguien > organismo] ajuste=0.035
-   conocido  SELECCIONADOR_ESPANOL
-   conocido  SELECCION_DE_ESPANA  [acción > evento > rasgo psicológico]
-   conocido  SELECCION_ESPANOLA_ABSOLUTO
-   conocido  SEMIFINAL  [encuentro > campeonato > evento social > evento] ajuste=0.04
-   conocido  SEMIFINAL_DE_CHAMPIONS  [encuentro > campeonato > evento social > evento] ajuste=0.005
-   conocido  SEPARACION  [separación > acción > evento > rasgo psicológico] ajuste=0.064
-   conocido  SESION  [espectáculo > evento social > evento > rasgo psicológico] ajuste=0.09
-   conocido  SESION_DE_FISIOTERAPIA  [espectáculo > evento social > evento > rasgo psicológico] ajuste=0.09
-   entidad   SHEILA_EBANA
-   conocido  SUBTOTAL
-   entidad   SUECIA
-   conocido  SUPLENTE  [actor > intérprete > artista > alguien]
-   conocido  TALENTO  [aptitud > capacidad > cognición > rasgo psicológico] ajuste=0.022
-   conocido  TALENTO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [aptitud > capacidad > cognición > rasgo psicológico]
-   conocido  TIEMPO  [etapa > cantidad] ajuste=0.011
-   conocido  TIEMPO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [etapa > cantidad] ajuste=0.011
-   conocido  TITULO  [nombre > componente > relación] ajuste=0.046
-   conocido  TITULO_DE_DELEGACION_ESPANOL  [nombre > componente > relación] ajuste=0.029
-   conocido  TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA  [nombre > componente > relación] ajuste=0.003
-   conocido  TITULO_DE_LAMINE_YAMAL_NASRAOUI_EBANA_CONTINENTAL  [nombre > componente > relación] ajuste=0.003
-   conocido  TOMA  [adquisición > acción > evento > rasgo psicológico] ajuste=0.108
-   conocido  TOMA_DE_ESPANA  [adquisición > acción > evento > rasgo psicológico] ajuste=0.108
-   conocido  TOMA_DE_ESPANA_DE_DECISION  [adquisición > acción > evento > rasgo psicológico] ajuste=0.108
-   conocido  TORNEO  [campeonato > evento social > evento > rasgo psicológico] ajuste=0.049
-   entidad   TORRETA
-   conocido  TOTAL  [cantidad > concepción > idea > contenido mental]
-   conocido  TRES_GOL
-   conocido  TRES_GOL_DE_REMONTADO
-   conocido  TRIUNFO  [victoria > conclusión > acontecimiento > evento] ajuste=0.048
-   entidad   TROFEO
-   conocido  VELOCIDAD  [marcha > propiedad > atributo] ajuste=0.136
-   conocido  VELOCIDAD_DE_ESPANA  [marcha > propiedad > atributo] ajuste=0.249
-   conocido  VELOCIDAD_DE_LAMINE_YAMAL  [relación > magnitude relation > relation] ajuste=0.069
-   conocido  VISION  [orientación > actitud > cognición > rasgo psicológico] ajuste=0.11
-   conocido  VISION_DE_ESPANA  [orientación > actitud > cognición > rasgo psicológico] ajuste=0.134
-   conocido  VISION_DE_ESPANA_DE_JUEGO  [orientación > actitud > cognición > rasgo psicológico] ajuste=0.134
-   conocido  VISION_DE_LAMINE_YAMAL  [orientación > actitud > cognición > rasgo psicológico] ajuste=0.15
-   conocido  VISION_DE_LAMINE_YAMAL_DE_JUEGO  [orientación > actitud > cognición > rasgo psicológico] ajuste=0.15
-   conocido  VI_FELIPE
-   entidad   XAVI
-   entidad   YAMAL
-   conocido  ZURDO
-
-SIN ENTENDER: Lamine Yamal en la Copa Mundial de Fútbol de 2026  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: 13 de julio de 2007 (19 años)  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Nacionalidad(es) Española  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: (F. C. Barcelona)  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Dorsal(es) 10  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Dorsal(es) 19  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Criado en el barrio mataronense de Rocafonda, fue fichado para las divisiones juveniles de Barcelona y formado en La Masía.  (no he podido determinar el sujeto)
-SIN ENTENDER: Debutó con el primer equipo en 2023 (15 años y 87 días), convirtiéndose en el jugador más joven en disputar un partido oficial con el Barcelona.  (no he podido determinar el sujeto)
-SIN ENTENDER: En su primera temporada completa, se consolidó como titular y fue reconocido como el «mejor futbolista joven del mundo» con el Trofeo Kopa otorgado por France Football y el Premio Golden Boy.  (no he podido determinar el sujeto)
-SIN ENTENDER: En 2025 se convirtió en el único futbolista en conquistar de forma consecutiva el Trofeo Kopa, y obtuvo también el Balón de Plata como segundo mejor jugador del mundo.  (no he podido determinar el sujeto)
-SIN ENTENDER: También fue incluido en el FIFPro World XI de 2025.  (no he podido determinar el sujeto)
-SIN ENTENDER: En 2026 obtuvo su tercer Trofeo Kopa y el Balón de Bronce.  (no he podido determinar el sujeto)
-SIN ENTENDER: A la selección de fútbol de su país la ha representado en diversas categorías juveniles.  (no he podido determinar el sujeto)
-SIN ENTENDER: Es el jugador más joven en la Eurocopa en debutar y asistir (16 años y 338 días), además de anotar un gol (16 años y 361 días).  (no he podido determinar el sujeto)
-SIN ENTENDER: En la Copa Mundial de Fútbol de 2026, levantó el segundo título mundial de su selección, y anotó un gol contra Arabia Saudita que lo colocó como el octavo jugador más joven en marcar un gol en una Cop  (no he podido determinar el sujeto)
-SIN ENTENDER: A los seis años, fue descubierto por el Barcelona e invitado a entrenar en La Masia.  (no he podido determinar el sujeto)
-SIN ENTENDER: En febrero de 2014, fue fichado y firmado por Albert Puig Ortoneda —actual responsable del fútbol formativo—, tras la captación y aprobación de Óscar Hernández Romero e Isidre Gil.  (no he podido determinar el sujeto)
-SIN ENTENDER: Fue considerado una de las mayores promesas de la academia y se trasladó a Barcelona para vivir y entrenar en la academia.  (no he podido determinar el sujeto)
-SIN ENTENDER: Posteriormente, ascendió al fútbol-11, donde hasta mediados de 2023 había disputado 98 partidos y anotado 56 goles.  (no he podido determinar el sujeto)
-SIN ENTENDER: Posteriormente, fue promovido al Juvenil A, consolidándose como una de las figuras del equipo.  (no he podido determinar el sujeto)
-SIN ENTENDER: 2020-21 14 15 1.07  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: 2022-23: Temporada debut  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Para la temporada 2022-23, fue incluido en el Juvenil A, una categoría superior a su edad.  (no he podido determinar el sujeto)
-SIN ENTENDER: «Lamine Yamal parece normal, pero no lo es».  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Con la consecución del título, Yamal, con 15 años y 305 días, se convirtió en el campeón más joven en la historia de la Liga, superando a su entonces compañero Ansu Fati.  (no he podido determinar el sujeto)
-SIN ENTENDER: 2023-24: Consolidación e inclusión en la Eurocopa  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Durante un partido contra Cádiz, se convirtió en el jugador más joven en ser titular en LaLiga con 16 años y 38 días.  (no he podido determinar el sujeto)
-SIN ENTENDER: El 27 de agosto, en la victoria 4-3 contra Villarreal, dio una asistencia y se convirtió en el asistente más joven del siglo en la competición.  (no he podido determinar el sujeto)
-SIN ENTENDER: El 8 de octubre, marcó su primer gol, jugando contra Granada en el Nuevo Los Cármenes.  (no he podido determinar el sujeto)
-SIN ENTENDER: Además, se convirtió en el primer jugador menor de 17 años en lograrlo.  (no he podido determinar el sujeto)
-SIN ENTENDER: En la Champions League, fue el segundo jugador más joven en debutar —detrás de Youssoufa Moukoko—, el más joven en ser titular y el más joven en jugar en la fase de eliminatorias.  (no he podido determinar el sujeto)
-SIN ENTENDER: En la Supercopa de España, se convirtió en el goleador más joven de la competición con 16 años y 182 días.  (no he podido determinar el sujeto)
-SIN ENTENDER: En la Copa del Rey, también estableció un récord como el goleador más joven del torneo y recibió el premio Golden Boy The Youngest.  (no he podido determinar el sujeto)
-SIN ENTENDER: Así fue como, paso de entrar en la lista de pre-convocados, el 7 de mayo de 2024 Luis de la Fuente anunció los convocados a la Eurocopa y dejó sorpresivamente adentro a Yamal.  (no he podido determinar el sujeto)
-SIN ENTENDER: No sé si cambiaremos algo en la sociedad, pero la gente joven que vea a estos jugadores no como niños mimados, sino como gente que ha trabajado muchísimo».  (no he podido determinar el sujeto)
-SIN ENTENDER: Yamal durante el partido Athletic Club vs FC Barcelona, temporada 2025-26  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Se convirtió en el segundo goleador más joven en la historia de la Champions League al anotar ante el Mónaco.  (no he podido determinar el sujeto)
-SIN ENTENDER: El 26 de octubre, se convirtió en el jugador más joven en marcar en un clásico frente al Real Madrid —17 años y 105 días—, en la victoria por 0-4 en el Santiago Bernabeú, superando la marca de Ansu Fa  (no he podido determinar el sujeto)
-SIN ENTENDER: El 12 de enero de 2025 ganó la Supercopa de España, frente al Real Madrid, siendo Lamine Yamal el autor de un gol en la final.  (no he podido determinar el sujeto)
-SIN ENTENDER: El 26 de abril ganó la Copa del Rey, también frente al Real Madrid, siendo el autor de dos asistencias en la final.  (no he podido determinar el sujeto)
-SIN ENTENDER: Además recibió el reconocimiento a Deportista Revelación del Año en los Premios Laureus.  (no he podido determinar el sujeto)
-SIN ENTENDER: Antes de ser convocado por la Selección absoluta, desde 2022, la Federación de Fútbol de Marruecos y el director técnico de la Selección Marroquí, Walid Regragui, mantuvieron conversaciones con Lamine  (no he podido determinar el sujeto)
-SIN ENTENDER: Aunque Yamal es español por nacimiento, gracias a sus raíces marroquíes por parte de su padre tenía la posibilidad de jugar junto a Los Leones del Atlás.  (no he podido determinar el sujeto)
-SIN ENTENDER: Me siento español".  (no he podido determinar el sujeto)
-SIN ENTENDER: Es un chaval muy honesto.  (no he podido determinar el sujeto)
-SIN ENTENDER: Selección española de fútbol en 2025 en las eliminatorias de UEFA rumbo al mundial de 2026.  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Asimismo, el más joven en marcar en una fase de clasificación para la Eurocopa, tras superar a su compañero de equipo Gavi.  (no he podido determinar el sujeto)
-SIN ENTENDER: Luego del partido, Yamal confesaría que aquel día «estaba viviendo un sueño».  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Tras haber jugado varios partidos para la Selección durante 2024, en ese año Luis de la Fuente lo convocó para jugar la Eurocopa celebrado en Alemania.  (no he podido determinar el sujeto)
-SIN ENTENDER: En octavos de final, apabullaron a Georgia por 4 a 1 con otra asistencia de Yamal, en cuartos de final, eliminaron a Alemania, y en semifinales, se enfrentaron a Francia.  (no he podido determinar el sujeto)
-SIN ENTENDER: Yamal, convirtió el primer tanto, lo que fue uno de los goles del torneo —el jugador más joven en marcar en una Eurocopa, a la edad de 16 años y 362 días—, seguido por otro marcado por Dani Olmo, la o  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Primera participación en la Copa Mundial de Fútbol y campeón del torneo (2026-presente)  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Lamine Yamal con la medalla de oro de la Copa Mundial de Fútbol de 2026.  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Aquella tarde, España empataría por 0 a 0, y tanto Yamal como el equipo no tuvieron una gran actuación.  (no he podido determinar el sujeto)
-SIN ENTENDER: La semifinal fue el 14 de julio frente a Francia en el AT&T Stadium.  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Torneo Sede Resultado Partidos Goles Asist.  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Torneo Sede Resultado Partidos Goles Asist.  (no encuentro una relación clara entre conceptos)
-SIN ENTENDER: Copa Mundial 2026 De izquierda a derecha las banderas de Estados Unidos, México y Canadá Norteamérica Campeón 8 1 0  (no encuentro una relación clara entre conceptos)
+LECTURA: 16 frases, 53 hechos, 1 sin aprovechar
+
+La batalla de Trafalgar fue un combate naval que tuvo lugar el 21 de octubre de 1805 frente al cabo de Trafalgar, en la costa de Cádiz.
+   1:La/DET->2:det[el] 2:batalla/NOUN->7:nsubj[batalla] 3:de/ADP->4:case[de] 4:Trafalgar/PROPN->2:nmod[trafalgar] 5:fue/AUX->7:cop[ser] 6:un/DET->7:det[uno] 7:combate/NOUN->0:root[combate] 8:naval/ADJ->7:amod[naval] 9:que/PRON->10:nsubj[que] 10:tuvo/VERB->7:acl[tener] 11:lugar/NOUN->10:compound[lugar] 12:el/DET->13:det[el] 13:21/NUM->10:obl[21] 14:de/ADP->15:case[de] 15:octubre/NOUN->13:nmod[octubre] 16:de/ADP->17:case[de] 17:1805/NUM->15:nmod[1805] 18:frente/NOUN->21:case[frente] 19:a/ADP->18:fixed[a] 20:el/DET->18:det[el] 21:cabo/NOUN->18:obl[cabo] 22:de/ADP->23:case[de] 23:Trafalgar/PROPN->21:nmod[trafalgar] 24:,/PUNCT->27:punct[,] 25:en/ADP->27:case[en] 26:la/DET->27:det[el] 27:costa/NOUN->23:obl[costa] 28:de/ADP->29:case[de] 29:Cádiz/PROPN->27:nmod[cadiz] 30:./PUNCT->7:punct[.]
+   => BATALLA_DE_TRAFALGAR ES BATALLA
+   => BATALLA_DE_TRAFALGAR ES COMBATE
+   => BATALLA_DE_TRAFALGAR SER NAVAL
+   => BATALLA_DE_TRAFALGAR TENER _
+
+Enfrentó a la flota británica, mandada por el almirante Horatio Nelson, con la escuadra combinada de Francia y España, al mando del almirante francés Pierre de Villeneuve.
+   1:Enfrentó/VERB->0:root[enfrentar] 2:a/ADP->4:case[a] 3:la/DET->4:det[el] 4:flota/NOUN->1:obl[flota] 5:británica/ADJ->4:amod[britanico] 6:,/PUNCT->7:punct[,] 7:mandada/VERB->4:acl[mandar] 8:por/ADP->10:case[por] 9:el/DET->10:det[el] 10:almirante/NOUN->7:obl[almirante] 11:Horatio/PROPN->10:appos[horatio] 12:Nelson/PROPN->11:flat[nelson] 13:,/PUNCT->16:punct[,] 14:con/ADP->16:case[con] 15:la/DET->16:det[el] 16:escuadra/NOUN->1:obl[escuadra] 17:combinada/ADJ->16:amod[combinado] 18:de/ADP->19:case[de] 19:Francia/PROPN->17:obl[francia] 20:y/CCONJ->21:cc[y] 21:España/PROPN->19:conj[espana] 22:,/PUNCT->25:punct[,] 23:a/ADP->25:case[a] 24:el/DET->25:det[el] 25:mando/NOUN->1:obl[mando] 26:de/ADP->28:case[de] 27:el/DET->28:det[el] 28:almirante/NOUN->25:nmod[almirante] 29:francés/ADJ->28:amod[frances] 30:Pierre/PROPN->28:appos[pierre] 31:de/ADP->32:case[de] 32:Villeneuve/PROPN->30:nmod[villeneuve] 33:./PUNCT->1:punct[.]
+   => HORATIO_NELSON ES ALMIRANTE
+   => FLOTA MANDAR_POR HORATIO_NELSON
+
+El conflicto formaba parte de las guerras napoleónicas.
+   1:El/DET->2:det[el] 2:conflicto/NOUN->3:nsubj[conflicto] 3:formaba/VERB->0:root[formar] 4:parte/NOUN->3:obj[parte] 5:de/ADP->7:case[de] 6:las/DET->7:det[el] 7:guerras/NOUN->4:nmod[guerra] 8:napoleónicas/ADJ->7:amod[napoleonico] 9:./PUNCT->3:punct[.]
+   => PARTE_DE_GUERRA ES PARTE
+   => CONFLICTO FORMAR PARTE_DE_GUERRA
+
+Napoleón Bonaparte pretendía invadir Inglaterra y necesitaba controlar el canal de la Mancha, por lo que ordenó a Villeneuve reunir todas las naves disponibles.
+   1:Napoleón/PROPN->3:nsubj[napoleon] 2:Bonaparte/PROPN->1:flat[bonaparte] 3:pretendía/VERB->0:root[pretender] 4:invadir/VERB->3:xcomp[invadir] 5:Inglaterra/PROPN->4:obj[inglaterra] 6:y/CCONJ->7:cc[y] 7:necesitaba/VERB->3:conj[necesitar] 8:controlar/VERB->7:xcomp[controlar] 9:el/DET->10:det[el] 10:canal/NOUN->8:obj[canal] 11:de/ADP->13:case[de] 12:la/DET->13:det[el] 13:Mancha/PROPN->10:nmod[mancha] 14:,/PUNCT->18:punct[,] 15:por/ADP->18:mark[por] 16:lo/PRON->18:det[el] 17:que/PRON->18:obl[que] 18:ordenó/VERB->10:acl[ordenar] 19:a/ADP->20:case[a] 20:Villeneuve/PROPN->18:obl[villeneuve] 21:reunir/VERB->18:xcomp[reunir] 22:todas/DET->24:det[todo] 23:las/DET->24:det[el] 24:naves/NOUN->21:obj[nave] 25:disponibles/ADJ->24:amod[disponible] 26:./PUNCT->3:punct[.]
+   => NAPOLEON_BONAPARTE INVADIR INGLATERRA
+   => CANAL_DE_MANCHA ES CANAL
+   => NAPOLEON_BONAPARTE CONTROLAR CANAL_DE_MANCHA
+   => CANAL_DE_MANCHA ORDENAR_A VILLENEUVE
+   => NAVE_DISPONIBLE ES NAVE
+   => CANAL_DE_MANCHA REUNIR NAVE_DISPONIBLE
+
+La flota aliada zarpó de Cádiz el 20 de octubre, aunque el almirante francés dudaba de la victoria porque conocía la superioridad de los marinos británicos.
+   1:La/DET->2:det[el] 2:flota/NOUN->4:nsubj[flota] 3:aliada/ADJ->2:amod[aliado] 4:zarpó/VERB->0:root[zarpar] 5:de/ADP->6:case[de] 6:Cádiz/PROPN->4:obl[cadiz] 7:el/DET->8:det[el] 8:20/NUM->4:obl[20] 9:de/ADP->10:case[de] 10:octubre/NOUN->8:nmod[octubre] 11:,/PUNCT->16:punct[,] 12:aunque/SCONJ->16:mark[aunque] 13:el/DET->14:det[el] 14:almirante/NOUN->16:nsubj[almirante] 15:francés/ADJ->14:amod[frances] 16:dudaba/VERB->4:advcl[dudar] 17:de/ADP->19:case[de] 18:la/DET->19:det[el] 19:victoria/NOUN->16:obl[victoria] 20:porque/SCONJ->21:mark[porque] 21:conocía/VERB->16:advcl[conocer] 22:la/DET->23:det[el] 23:superioridad/NOUN->21:obj[superioridad] 24:de/ADP->26:case[de] 25:los/DET->26:det[el] 26:marinos/NOUN->23:nmod[marino] 27:británicos/ADJ->26:amod[britanico] 28:./PUNCT->4:punct[.]
+   => FLOTA ZARPAR_DE CADIZ
+
+Nelson dividió su escuadra en dos columnas y atacó las líneas enemigas por el centro, una maniobra que rompió la formación aliada.
+   1:Nelson/PROPN->2:nsubj[nelson] 2:dividió/VERB->0:root[dividir] 3:su/DET->4:det[su] 4:escuadra/NOUN->2:obj[escuadra] 5:en/ADP->7:case[en] 6:dos/NUM->7:nummod[dos] 7:columnas/NOUN->2:obl[columna] 8:y/CCONJ->9:cc[y] 9:atacó/VERB->2:conj[atacar] 10:las/DET->11:det[el] 11:líneas/NOUN->9:obj[linea] 12:enemigas/ADJ->11:amod[enemigo] 13:por/ADP->15:case[por] 14:el/DET->15:det[el] 15:centro/NOUN->12:obl[centro] 16:,/PUNCT->18:punct[,] 17:una/DET->18:det[uno] 18:maniobra/NOUN->15:appos[maniobra] 19:que/PRON->20:nsubj[que] 20:rompió/VERB->18:acl[romper] 21:la/DET->22:det[el] 22:formación/NOUN->20:obj[formacion] 23:aliada/ADJ->22:amod[aliado] 24:./PUNCT->2:punct[.]
+   => ESCUADRA_DE_FLOTA ES ESCUADRA
+   => NELSON DIVIDIR ESCUADRA_DE_FLOTA
+   => DOS_COLUMNA ES COLUMNA
+   => NELSON DIVIDIR_EN DOS_COLUMNA
+   => LINEA_ENEMIGO ES LINEA
+   => NELSON ATACAR LINEA_ENEMIGO
+   => MANIOBRA ROMPER FORMACION
+
+La flota británica estaba compuesta por 27 navíos de línea; la combinada, por 33.
+   1:La/DET->2:det[el] 2:flota/NOUN->5:nsubj[flota] 3:británica/ADJ->2:amod[britanico] 4:estaba/AUX->5:cop[estar] 5:compuesta/VERB->0:root[componer] 6:por/ADP->8:case[por] 7:27/NUM->8:nummod[27] 8:navíos/NOUN->5:obl[navio] 9:de/ADP->10:case[de] 10:línea/NOUN->8:nmod[linea] 11:;/PUNCT->13:punct[;] 12:la/DET->13:det[el] 13:combinada/NOUN->5:conj[combinado] 14:,/PUNCT->13:punct[,] 15:por/ADP->16:case[por] 16:33/NUM->13:obl[33] 17:./PUNCT->5:punct[.]
+   => FLOTA_BRITANICO ES FLOTA
+   => FLOTA_BRITANICO ESTAR COMPUESTA
+   => 27_NAVIO ES NAVIO
+   => 27_NAVIO_DE_LINEA ES 27_NAVIO
+   => FLOTA_BRITANICO COMPUESTA_POR 27_NAVIO_DE_LINEA
+
+Pese a ser inferior en número, la escuadra de Nelson destruyó o capturó 22 navíos del enemigo y no perdió ninguno.
+   1:Pese/NOUN->6:case[pese] 2:a/ADP->1:fixed[a] 3:ser/AUX->4:cop[ser] 4:inferior/ADJ->12:advcl[inferior] 5:en/ADP->6:case[en] 6:número/NOUN->4:nmod[numero] 7:,/PUNCT->6:punct[,] 8:la/DET->9:det[el] 9:escuadra/NOUN->12:nsubj[escuadra] 10:de/ADP->11:case[de] 11:Nelson/PROPN->9:nmod[nelson] 12:destruyó/VERB->0:root[destruir] 13:o/CCONJ->14:cc[o] 14:capturó/VERB->12:conj[capturar] 15:22/NUM->16:nummod[22] 16:navíos/NOUN->14:obj[navio] 17:de/ADP->19:case[de] 18:el/DET->19:det[el] 19:enemigo/NOUN->16:nmod[enemigo] 20:y/CCONJ->22:cc[y] 21:no/ADV->22:advmod[no] 22:perdió/VERB->14:conj[perder] 23:ninguno/PRON->22:obj[ninguno] 24:./PUNCT->12:punct[.]
+   => ESCUADRA_DE_NELSON ES ESCUADRA
+   => ESCUADRA_DE_NELSON SER INFERIOR
+   => ESCUADRA_DE_NELSON INFERIOR_PESE NUMERO
+   => ESCUADRA_DE_NELSON DESTRUIR _
+   => 22_NAVIO ES NAVIO
+   => 22_NAVIO_DE_ENEMIGO ES 22_NAVIO
+   => ESCUADRA_DE_NELSON CAPTURAR 22_NAVIO_DE_ENEMIGO
+
+Durante el combate un francotirador disparó contra Nelson desde el palo mayor del navío francés Redoutable.
+   1:Durante/ADP->3:case[durante] 2:el/DET->3:det[el] 3:combate/NOUN->6:obl[combate] 4:un/DET->5:det[uno] 5:francotirador/NOUN->6:nsubj[francotirador] 6:disparó/ADJ->5:amod[disparo] 7:contra/ADP->8:case[contra] 8:Nelson/PROPN->6:obl[nelson] 9:desde/ADP->11:case[desde] 10:el/DET->11:det[el] 11:palo/NOUN->6:obl[palo] 12:mayor/ADJ->11:amod[mayor] 13:de/ADP->16:case[de] 14:el/DET->16:det[el] 15:navío/ADJ->16:amod[navio] 16:francés/NOUN->11:amod[frances] 17:Redoutable/PROPN->16:amod[redoutable] 18:./PUNCT->6:punct[.]
+
+La bala le atravesó el pulmón y la columna vertebral, y el almirante murió unas tres horas después, cuando ya se conocía que había ganado la batalla.
+   1:La/DET->2:det[el] 2:bala/NOUN->4:nsubj[bala] 3:le/PRON->4:obl[el] 4:atravesó/VERB->0:root[atravesar] 5:el/DET->6:det[el] 6:pulmón/NOUN->4:nsubj[pulmon] 7:y/CCONJ->9:cc[y] 8:la/DET->9:det[el] 9:columna/NOUN->6:conj[columna] 10:vertebral/ADJ->9:amod[vertebral] 11:,/PUNCT->15:punct[,] 12:y/CCONJ->15:cc[y] 13:el/DET->14:det[el] 14:almirante/NOUN->15:nsubj[almirante] 15:murió/VERB->4:conj[morir] 16:unas/DET->17:nmod[uno] 17:tres/NUM->18:nummod[tres] 18:horas/NOUN->15:obl[hora] 19:después/ADV->15:advmod[despues] 20:,/PUNCT->24:punct[,] 21:cuando/SCONJ->24:mark[cuando] 22:ya/ADV->24:advmod[ya] 23:se/PRON->24:expl[el] 24:conocía/VERB->15:advcl[conocer] 25:que/SCONJ->27:mark[que] 26:había/AUX->27:aux[haber] 27:ganado/VERB->24:ccomp[ganar] 28:la/DET->29:det[el] 29:batalla/NOUN->27:obj[batalla] 30:./PUNCT->4:punct[.]
+   => COLUMNA_VERTEBRAL ES COLUMNA
+
+Su buque insignia era el Victory, que hoy se conserva como museo en Portsmouth.
+   1:Su/DET->2:det[su] 2:buque/NOUN->3:nsubj[buque] 3:insignia/X->2:compound[insigniar] 4:era/AUX->6:cop[ser] 5:el/DET->6:det[el] 6:Victory/PROPN->3:nsubj[victory] 7:,/PUNCT->11:punct[,] 8:que/PRON->11:nsubj[que] 9:hoy/ADV->11:advmod[hoy] 10:se/PRON->11:expl[el] 11:conserva/VERB->6:acl[conservar] 12:como/ADP->13:case[como] 13:museo/NOUN->11:obl[museo] 14:en/ADP->15:case[en] 15:Portsmouth/PROPN->11:obl[portsmouth] 16:./PUNCT->6:punct[.]
+   => BALA ES VICTORY
+   => VICTORY CONSERVAR_COMO MUSEO
+   => VICTORY CONSERVAR_EN PORTSMOUTH
+
+Por parte española destacó el almirante Federico Gravina, que resultó herido y murió meses más tarde en Cádiz.
+   1:Por/ADP->2:case[por] 2:parte/NOUN->4:obl[parte] 3:española/ADJ->2:amod[espanol] 4:destacó/VERB->0:root[destacar] 5:el/DET->6:det[el] 6:almirante/NOUN->4:nsubj[almirante] 7:Federico/PROPN->6:appos[federico] 8:Gravina/PROPN->7:flat[gravina] 9:,/PUNCT->11:punct[,] 10:que/PRON->11:nsubj[que] 11:resultó/VERB->6:acl[resultar] 12:herido/ADJ->11:xcomp[herido] 13:y/CCONJ->14:cc[y] 14:murió/VERB->4:conj[morir] 15:meses/NOUN->14:obj[mes] 16:más/ADV->17:advmod[mas] 17:tarde/ADV->14:advmod[tarde] 18:en/ADP->19:case[en] 19:Cádiz/PROPN->14:obl[cadiz] 20:./PUNCT->4:punct[.]
+   => FEDERICO_GRAVINA ES ALMIRANTE
+   => FEDERICO_GRAVINA MORIR MES
+   => FEDERICO_GRAVINA MORIR_EN CADIZ
+
+También murió Cosme Damián Churruca, comandante del San Juan Nepomuceno, que combatió hasta el final contra varios barcos ingleses.
+   1:También/ADV->2:advmod[tambien] 2:murió/VERB->0:root[morir] 3:Cosme/PROPN->2:nsubj[cosme] 4:Damián/PROPN->3:flat[damian] 5:Churruca/PROPN->3:flat[churruca] 6:,/PUNCT->7:punct[,] 7:comandante/NOUN->3:appos[comandante] 8:de/ADP->11:case[de] 9:el/DET->11:det[el] 10:San/ADJ->11:amod[santo] 11:Juan/PROPN->7:nmod[juan] 12:Nepomuceno/PROPN->11:flat[nepomuceno] 13:,/PUNCT->15:punct[,] 14:que/PRON->15:nsubj[que] 15:combatió/VERB->11:acl[combatir] 16:hasta/ADP->18:case[hasta] 17:el/DET->18:det[el] 18:final/NOUN->15:obl[final] 19:contra/ADP->21:case[contra] 20:varios/DET->21:det[varios] 21:barcos/NOUN->15:obl[barco] 22:ingleses/ADJ->21:amod[ingles] 23:./PUNCT->2:punct[.]
+   => COSME_DAMIAN_CHURRUCA ES COMANDANTE
+   => COSME_DAMIAN_CHURRUCA MORIR _
+   => JUAN_NEPOMUCENO COMBATIR_HASTA FINAL
+   => BARCO_INGLES ES BARCO
+   => JUAN_NEPOMUCENO COMBATIR_CONTRA BARCO_INGLES
+
+El navío más grande de la armada española era el Santísima Trinidad, con 136 cañones, que se hundió días después de la batalla a causa de una tormenta.
+   1:El/DET->2:det[el] 2:navío/NOUN->4:advmod[navio] 3:más/ADV->4:advmod[mas] 4:grande/ADJ->2:amod[grande] 5:de/ADP->7:case[de] 6:la/DET->7:det[el] 7:armada/NOUN->4:nmod[armada] 8:española/ADJ->7:amod[espanol] 9:era/AUX->12:cop[ser] 10:el/DET->12:det[el] 11:Santísima/ADJ->12:amod[santisima] 12:Trinidad/PROPN->11:flat[trinidad] 13:,/PUNCT->16:punct[,] 14:con/ADP->16:case[con] 15:136/NUM->16:nummod[136] 16:cañones/NOUN->12:nmod[canon] 17:,/PUNCT->20:punct[,] 18:que/PRON->20:mark[que] 19:se/PRON->20:expl[el] 20:hundió/VERB->16:acl[hunder] 21:días/NOUN->20:obl[dia] 22:después/ADV->20:advmod[despues] 23:de/ADP->25:case[de] 24:la/DET->25:det[el] 25:batalla/NOUN->20:obl[batalla] 26:a/ADP->30:case[a] 27:causa/NOUN->26:fixed[causa] 28:de/ADP->26:fixed[de] 29:una/DET->30:det[uno] 30:tormenta/NOUN->25:nmod[tormenta] 31:./PUNCT->12:punct[.]
+   => COSME_DAMIAN_CHURRUCA ES COMANDANTE
+   => COSME_DAMIAN_CHURRUCA ES TRINIDAD
+   => 136_CANON ES CANON
+   => COSME_DAMIAN_CHURRUCA TENER 136_CANON
+   => 136_CANON HUNDER_DE BATALLA
+
+La derrota obligó a Napoleón a renunciar a la invasión de Inglaterra y aseguró el dominio británico de los mares durante todo el siglo XIX.
+   1:La/DET->2:det[el] 2:derrota/NOUN->3:nsubj[derrota] 3:obligó/VERB->0:root[obligar] 4:a/ADP->5:case[a] 5:Napoleón/PROPN->3:obl[napoleon] 6:a/ADP->7:mark[a] 7:renunciar/VERB->3:xcomp[renunciar] 8:a/ADP->10:case[a] 9:la/DET->10:det[el] 10:invasión/NOUN->7:obj[invasion] 11:de/ADP->12:case[de] 12:Inglaterra/PROPN->10:nmod[inglaterra] 13:y/CCONJ->14:cc[y] 14:aseguró/VERB->3:conj[asegurar] 15:el/DET->16:det[el] 16:dominio/NOUN->14:obj[dominio] 17:británico/ADJ->16:amod[britanico] 18:de/ADP->20:case[de] 19:los/DET->20:det[el] 20:mares/NOUN->16:nmod[mare] 21:durante/ADP->24:case[durante] 22:todo/DET->24:det[todo] 23:el/DET->24:det[el] 24:siglo/NOUN->14:obl[siglo] 25:XIX/NUM->24:nummod[xix] 26:./PUNCT->3:punct[.]
+   => DERROTA OBLIGAR_A NAPOLEON
+   => INVASION_DE_INGLATERRA ES INVASION
+   => DERROTA RENUNCIAR INVASION_DE_INGLATERRA
+   => DOMINIO_BRITANICO ES DOMINIO
+   => DOMINIO_BRITANICO_DE_MARE ES DOMINIO_BRITANICO
+   => DERROTA ASEGURAR DOMINIO_BRITANICO_DE_MARE
+   => XIX_SIGLO ES SIGLO
+   => DERROTA ASEGURAR_DURANTE XIX_SIGLO
+
+España perdió buena parte de su flota, lo que aceleró la decadencia de su poder naval.
+   1:España/PROPN->2:nsubj[espana] 2:perdió/VERB->0:root[perder] 3:buena/ADJ->4:amod[buen] 4:parte/NOUN->2:obj[parte] 5:de/ADP->7:case[de] 6:su/DET->7:det[su] 7:flota/NOUN->4:nmod[flota] 8:,/PUNCT->11:punct[,] 9:lo/PRON->11:det[el] 10:que/PRON->11:nsubj[que] 11:aceleró/VERB->2:advcl[acelerar] 12:la/DET->13:det[el] 13:decadencia/NOUN->11:obj[decadencia] 14:de/ADP->16:case[de] 15:su/DET->16:det[su] 16:poder/NOUN->13:nmod[poder] 17:naval/ADJ->16:amod[naval] 18:./PUNCT->2:punct[.]
+   => PARTE_DE_FLOTA_DE_DERROTA ES PARTE
+   => FLOTA_DE_DERROTA ES FLOTA
+   => ESPANA PERDER PARTE_DE_FLOTA_DE_DERROTA
+
+CONCEPTOS: entidad=9, conocido=37, dudoso=0, nuevo=15
+   nuevo     136_CANON (provisional)
+   nuevo     22_NAVIO_DE_ENEMIGO (provisional)
+   nuevo     27_NAVIO_DE_LINEA (provisional)
+   conocido  ALMIRANTE  [oficial naval > oficial > militar > especialista] ajuste=0.18
+   conocido  BALA  [proyectil > arma > instrumento > dispositivo] ajuste=0.065
+   conocido  BARCO  [nave > vehículo > medio > instrumental] ajuste=0.011
+   nuevo     BARCO_INGLES
+   conocido  BATALLA  [acción > evento > rasgo psicológico] ajuste=0.508
+   conocido  BATALLA_DE_TRAFALGAR  [acción > evento > rasgo psicológico] ajuste=0.508
+   conocido  CADIZ  [ciudad > municipio > región > lugar] ajuste=0.012
+   conocido  CANAL  [instalación > facility > artifact] ajuste=0.125
+   conocido  CANAL_DE_MANCHA  [instalación > facility > artifact] ajuste=0.125
+   conocido  COLUMNA  [formación > agrupación] ajuste=0.173
+   conocido  COLUMNA_VERTEBRAL  [estructura > parte del cuerpo > parte] ajuste=0.01
+   conocido  COMANDANTE  [oficial > militar > especialista > trabajador] ajuste=0.023
+   conocido  COMBATE  [acción > evento > rasgo psicológico] ajuste=0.508
+   nuevo     COMPUESTA (provisional)
+   conocido  CONFLICTO  [estado > atributo] ajuste=0.134
+   nuevo     COSME_DAMIAN_CHURRUCA
+   conocido  DERROTA  [conclusión > acontecimiento > evento > rasgo psicológico] ajuste=0.062
+   conocido  DOMINIO  [región > lugar] ajuste=0.126
+   conocido  DOMINIO_BRITANICO  [región > lugar] ajuste=0.125
+   conocido  DOMINIO_BRITANICO_DE_MARE  [región > lugar] ajuste=0.125
+   nuevo     DOS_COLUMNA
+   nuevo     ESCUADRA (provisional)
+   nuevo     ESCUADRA_DE_FLOTA
+   nuevo     ESCUADRA_DE_NELSON
+   conocido  ESPANA  [estado > distrito administrativo > distrito > región] ajuste=0.071
+   entidad   FEDERICO_GRAVINA
+   conocido  FINAL  [extremo > parte > lugar] ajuste=0.027
+   conocido  FLOTA  [acumulación > agrupación] ajuste=0.032
+   nuevo     FLOTA_BRITANICO
+   conocido  FLOTA_DE_DERROTA  [acumulación > agrupación] ajuste=0.069
+   conocido  FORMACION  [agrupación > arrangement > group] ajuste=0.346
+   entidad   HORATIO_NELSON
+   nuevo     INFERIOR (provisional)
+   entidad   INGLATERRA
+   conocido  INVASION  [entrada > desplazamiento > movimiento > acontecimiento] ajuste=0.055
+   conocido  INVASION_DE_INGLATERRA  [entrada > desplazamiento > movimiento > acontecimiento] ajuste=0.055
+   entidad   JUAN_NEPOMUCENO
+   conocido  LINEA  [columna > formación > agrupación] ajuste=0.207
+   nuevo     LINEA_ENEMIGO
+   conocido  MANIOBRA  [actividad > acción > evento > rasgo psicológico] ajuste=0.162
+   conocido  MES  [etapa > cantidad] ajuste=0.006
+   conocido  MUSEO  [depósito > instalación] ajuste=0.076
+   conocido  NAPOLEON  [general > oficial > militar > especialista] ajuste=0.018
+   conocido  NAPOLEON_BONAPARTE  [general > oficial > militar > especialista] ajuste=0.027
+   conocido  NAVAL  [color > propiedad > atributo] ajuste=0.019
+   conocido  NAVE  [zona > construcción] ajuste=0.12
+   nuevo     NAVE_DISPONIBLE
+   entidad   NELSON
+   conocido  NUMERO  [cantidad > magnitud > propiedad > atributo]
+   conocido  PARTE  [relación > relation] ajuste=0.071
+   conocido  PARTE_DE_FLOTA_DE_DERROTA  [relación > relation] ajuste=0.07
+   conocido  PARTE_DE_GUERRA  [relación > relation] ajuste=0.074
+   entidad   PORTSMOUTH
+   conocido  SIGLO  [etapa > cantidad] ajuste=0.026
+   entidad   TRINIDAD
+   entidad   VICTORY
+   entidad   VILLENEUVE
+   nuevo     XIX_SIGLO
+
+SIN ENTENDER: Durante el combate un francotirador disparó contra Nelson desde el palo mayor del navío francés Redoutable.  (no encuentro una relación clara entre conceptos)
