@@ -35,6 +35,30 @@ DEMOSTRATIVOS = {"este", "esta", "estos", "estas", "ese", "esa", "esos", "esas",
 POSESIVOS = {"su", "sus"}
 PRON_ANAF = {"él", "el", "ella", "ellos", "ellas", "esto", "eso", "ello", "lo", "se"}
 PRON_REL = {"que", "quien", "quienes", "cual", "cuales", "donde", "cuyo", "cuya", "cuyos", "cuyas"}
+# unidades de medida (clase cerrada: sistema internacional y usuales): un numero + unidad es una CANTIDAD, no un concepto (parche-126)
+UNIDADES = set("""km kilometro kilometros m metro metros cm centimetro centimetros mm milimetro milimetros kg kilogramo kilogramos g gramo gramos tonelada toneladas
+litro litros hora horas minuto minutos segundo segundos dia dias semana semanas mes meses ano anos siglo siglos decada decadas milenio milenios euro euros dolar dolares
+grado grados hectarea hectareas milla millas pie pies hab habitante habitantes km2 m2 m3 hm hm3 kw hz mhz ghz kelvin pascal newton julio julios vatio vatios
+bit bits byte bytes mb gb ua pc h""".split())
+NUM_ES = set("""trece catorce quince dieciseis diecisiete dieciocho diecinueve veintiun veintiuno veintiuna veintidos veintitres veinticuatro veinticinco veintiseis veintisiete veintiocho veintinueve
+sesenta setenta ochenta noventa doscientos doscientas trescientos trescientas cuatrocientos cuatrocientas quinientos quinientas seiscientos seiscientas setecientos setecientas
+ochocientos ochocientas novecientos novecientas""".split())
+ESCALAS = {"millon", "millones", "mil", "miles", "billon", "billones", "docena", "docenas", "decena", "decenas", "centenar", "centenares"}
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+# locuciones (expresiones fijas que no nombran cosas del mundo): «al principio», «en realidad», «de cara a», «con el objetivo de»…  (preposicion, nucleo)
+LOCUCIONES = {("a", "principio"), ("en", "realidad"), ("de", "nuevo"), ("en", "lugar"), ("en", "instancia"), ("en", "general"), ("en", "particular"), ("en", "definitiva"),
+              ("a", "menudo"), ("de", "manera"), ("de", "forma"), ("de", "modo"), ("en", "resumen"), ("en", "total"), ("a", "veces"), ("en", "ocasiones"), ("en", "cambio"),
+              ("de", "hecho"), ("en", "efecto"), ("por", "cierto"), ("por", "fin"), ("de", "cara"), ("en", "vez"), ("a", "cabo"), ("con", "proposito"), ("con", "objetivo"),
+              ("con", "fin"), ("con", "intencion"), ("con", "finalidad"), ("a", "partir"), ("en", "torno"), ("por", "tanto"), ("por", "ello"), ("a", "pesar"), ("a", "causa"),
+              ("en", "base"), ("en", "funcion"), ("con", "respecto"), ("con", "relacion"), ("en", "relacion"), ("a", "traves"), ("en", "medio"), ("por", "ejemplo"),
+              ("a", "raiz"), ("por", "vez"), ("a", "vez"), ("con", "tiempo"), ("de", "vez"), ("por", "primero"), ("en", "primer"), ("en", "segundo"), ("en", "ultimo"), ("por", "lo"), ("a", "lo"), ("en", "caso"), ("por", "parte"), ("en", "parte"), ("a", "tiempo"),
+              ("de", "inmediato"), ("a", "continuacion"), ("al", "principio"), ("al", "respecto"), ("de", "momento"), ("en", "adelante"), ("por", "completo")}
+FINALES = {"objetivo", "proposito", "fin", "finalidad", "intencion", "meta", "idea"}      # «con el objetivo de ayudar»: el que ayuda es el sujeto de la oracion principal
+ASPECTUALES = {"llegar", "empezar", "comenzar", "seguir", "continuar", "volver", "dejar", "terminar", "acabar", "ir", "soler", "poder", "deber", "tratar", "intentar", "pretender",
+               "querer", "lograr", "conseguir", "necesitar", "tender", "proceder", "pasar"}                                 # verbo + infinitivo: lo afirmado es del infinitivo
+MODAL_COND = {"podria", "podrian", "podriamos", "pudiera", "pudieran", "pudiese", "pudiesen", "deberia", "deberian", "debiera", "debieran"}     # «podria dar»: posibilidad, no hecho
+ORDINALES = {"PRIMERO", "SEGUNDO", "TERCERO", "CUARTO", "QUINTO", "ULTIMO", "PENULTIMO", "ANTERIOR", "SIGUIENTE", "MISMO", "OTRO", "UNO"}         # «los primeros de cada grupo»: no es un concepto
+REL_BASURA = re.compile(r"(^|_)(CUAL|CUALES|QUE|QUIEN|QUIENES|CUYO|CUYA|CUYOS|CUYAS|DONDE)(_|$)")
 NUM_PAL = {"un", "uno", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "veinte", "treinta", "cuarenta", "cincuenta", "cien", "mil", "millón", "millones"}
 
 
@@ -136,6 +160,9 @@ class ExtractorUD:
         self.principal: Optional[C] = None          # sujeto de la oracion principal anterior (sujeto omitido, «él», «Su X»)
         self.clases: Dict[str, Set[str]] = {}       # clave -> claves de sus clases (para «este animal» = el tema)
         self.motivo = ""
+        self._cants: Dict[str, str] = {}             # clave de concepto -> cantidad con que aparece en esta oracion (parche-126)
+        self._en_sujeto = False
+        self._clave_cant: Dict[str, str] = {}
 
     # ---------- conceptos ----------
     def _nombre(self, A: Arbol, i: int) -> Tuple[List[int], bool]:
@@ -147,7 +174,14 @@ class ExtractorUD:
         u = A.u(i)
         if u == "PRON":
             return self.pronombre(A, i)
-        if u not in ("NOUN", "PROPN", "X"):
+        if u not in ("NOUN", "PROPN", "X") and not (u == "SYM" and nrm(A.f(i)) in UNIDADES):
+            return None
+        m_ = self._medida(A, i, califica, prof)
+        if m_ is not None:
+            return m_
+        if nrm(A.f(i)) in ESCALAS and i + 2 < A.n and nrm(A.f(i + 1)) == "de" and nrm(A.f(i + 2)) in UNIDADES:
+            return None                                              # «715 millones de años»: la cantidad se guarda en «años», no es un concepto «715_MILLON»
+        if u == "SYM":
             return None
         partes, propio = self._nombre(A, i)
         if propio:
@@ -189,6 +223,16 @@ class ExtractorUD:
             for j in A.hijos(i, "nmod"):
                 if self._prep(A, j) == "de" and A.u(j) in ("NOUN", "PROPN", "X"):
                     s = self.concepto(A, j, califica=False, prof=prof + 1)
+                    if s is not None and s.cant and s is not self.principal:
+                        if self._en_sujeto:                                # «los menores de 12 años»: la edad califica al sujeto, no es su cantidad
+                            k5 = c.key + "_DE_" + self._clave_cant.get(s.key, clave(s.cant))
+                            d5 = c.disp + " de " + s.cant
+                            c.extra.append(_ud(k5, "ES", c.key, d5, c.disp))
+                            c = _sub(c, k5, d5, propio)
+                        else:
+                            c = _sub(c, c.key, c.disp, propio)             # «una distancia de 39 541 578 kilómetros»: DISTANCIA con su cantidad
+                            self._cants[c.key] = s.cant
+                        break
                     if s is not None and s is not self.principal:
                         det = ""
                         if propio and s.propio:
@@ -212,6 +256,64 @@ class ExtractorUD:
                 return a
         return c
 
+    # ---------- cantidades con unidad (parche-126) ----------
+    @staticmethod
+    def _es_cifra(f: str) -> bool:
+        return bool(re.fullmatch(r"~?\d[\d.,]*", f)) or nrm(f) in NUM_PAL or nrm(f) in NUM_ES
+
+    def _cantidad_izq(self, A: Arbol, i: int) -> Optional[int]:
+        """Posicion donde empieza la cifra que precede a la unidad i: «11,68 km», «39 514 827 kilómetros», «715 millones de años», «cuarenta y dos días»."""
+        j = i - 1
+        if j >= 1 and nrm(A.f(j)) == "de" and nrm(A.f(j - 1)) in ESCALAS:
+            j -= 1
+        ini = None
+        while j >= 0:
+            w = nrm(A.f(j))
+            if self._es_cifra(A.f(j)) or w in ESCALAS or (w == "y" and 1 <= j < i - 1 and self._es_cifra(A.f(j - 1)) and self._es_cifra(A.f(j + 1))):
+                ini = j
+                j -= 1
+            else:
+                break
+        if ini is None or all(nrm(A.f(x)) in ESCALAS | {"de"} for x in range(ini, i)):
+            return None
+        return ini
+
+    def _medida(self, A: Arbol, i: int, califica: bool, prof: int) -> Optional["C"]:
+        """«11,68 km² de superficie», «3 000 km de radio», «715 millones de años», «un valor de 39 514 827 kilómetros»: la cifra con su unidad es una CANTIDAD (q)
+        de un concepto limpio (SUPERFICIE, RADIO, ANO); no se crea el concepto «11_68_KM»."""
+        f = nrm(A.f(i)).replace("²", "2").replace("³", "3")
+        if f not in UNIDADES and nrm(A.l(i)) not in UNIDADES:
+            return None
+        ini = self._cantidad_izq(A, i)
+        if ini is None:
+            return None
+        fin = i
+        while fin + 1 < A.n:
+            s = A.f(fin + 1)
+            if s in ("²", "³"):
+                fin += 1
+            elif s == "/" and fin + 2 < A.n and nrm(A.f(fin + 2)) in UNIDADES:
+                fin += 2
+            else:
+                break
+        cant = " ".join(A.f(x) for x in range(ini, fin + 1)).replace(" ²", "²").replace(" ³", "³").replace(" / ", "/")
+        c: Optional[C] = None
+        if prof < 1:
+            for j in A.hijos(i, "nmod"):
+                if self._prep(A, j) == "de" and A.u(j) in ("NOUN", "PROPN", "X") and nrm(A.f(j)) not in UNIDADES:
+                    c = self.concepto(A, j, califica=False, prof=prof + 1)
+                    break
+        if c is None:
+            lem = nrm(A.l(i))
+            base = lem if lem in UNIDADES and len(lem) > 2 else nrm(A.f(i))
+            c = C(clave(base), base.upper() if len(base) <= 3 else base, False, i)
+        else:
+            c = _sub(c, c.key, c.disp)
+        c.cant = cant
+        self._cants[c.key] = cant
+        self._clave_cant[c.key] = clave(" ".join(A.f(x) for x in range(ini, i))) + "_" + clave(A.l(i) if nrm(A.l(i)) in UNIDADES else A.f(i))
+        return c
+
     def pronombre(self, A: Arbol, i: int) -> Optional[C]:
         l = A.l(i)
         if l in PRON_ANAF:
@@ -221,6 +323,21 @@ class ExtractorUD:
     @staticmethod
     def _grado(A: Arbol, j: int) -> bool:
         return any(A.l(x) in COMPARATIVO for x in A.hijos(j, "advmod"))
+
+    BARE = {("en", "lugar"), ("en", "parte"), ("en", "caso"), ("en", "medio"), ("en", "vez"), ("a", "tiempo"), ("en", "base"), ("en", "funcion"), ("en", "general"), ("en", "particular")}
+
+    def _locucion(self, A: Arbol, j: int) -> bool:
+        """«al principio», «en realidad», «de cara a», «con el objetivo de», «en primer lugar»: expresiones fijas, no cosas del mundo (no se guardan como complemento)."""
+        cs = A.hijos(j, "case")
+        if not cs:
+            return False
+        par = (nrm(A.l(cs[0])), nrm(A.l(j)))
+        if par not in LOCUCIONES:
+            return False
+        dets = A.hijos(j, "det")
+        if par != ("por", "parte") and any(A.l(x) in DEMOSTRATIVOS or A.l(x) in POSESIVOS for x in dets):      # «por su parte»
+            return False
+        return not (par in self.BARE and dets)
 
     @staticmethod
     def _prep(A: Arbol, j: int) -> str:
@@ -239,6 +356,39 @@ class ExtractorUD:
         return sorted(out)
 
     # ---------- fechas ----------
+    @staticmethod
+    def _cuando(A: Arbol, i: int) -> str:
+        """Fecha de un complemento temporal: «el 16 de diciembre de 1850» -> abs:1850-12-16/1850-12-16, «agosto de 1999» -> el mes entero, «el 17 de mayo» -> 17_mayo,
+        «en 1850» -> 1850. Sin fecha reconocible, ''."""
+        import calendar
+        sub = A.sub(i)
+        for m in sub:
+            w = nrm(A.f(m))
+            if w not in MESES:
+                continue
+            mes = MESES.index(w) + 1
+            dia = None
+            d_ = m - 2 - (1 if m >= 3 and A.f(m - 2) in ("º", "ª", "o") else 0)
+            if m >= 2 and nrm(A.f(m - 1)) == "de" and d_ >= 0 and re.fullmatch(r"\d{1,2}", A.f(d_)) and 1 <= int(A.f(d_)) <= 31:
+                dia = int(A.f(d_))
+            elif m >= 2 and nrm(A.f(m - 1)) == "de" and nrm(A.f(m - 2)) == "primero":
+                dia = 1
+            ano = None
+            k_ = m + 2 + (2 if m + 4 < A.n and nrm(A.f(m + 2)) == "el" and nrm(A.f(m + 3)) == "ano" else 0)
+            if k_ < A.n and nrm(A.f(m + 1)) == "de" and re.fullmatch(r"\d{3,4}", A.f(k_)):
+                ano = int(A.f(k_))
+            elif m + 1 < A.n and re.fullmatch(r"(1\d{3}|20\d{2})", A.f(m + 1)):
+                ano = int(A.f(m + 1))
+            if ano and 100 <= ano <= 2100:
+                if dia and dia <= calendar.monthrange(ano, mes)[1]:
+                    d_ = f"{ano:04d}-{mes:02d}-{dia:02d}"
+                    return f"abs:{d_}/{d_}"
+                if not dia:
+                    return f"abs:{ano:04d}-{mes:02d}-01/{ano:04d}-{mes:02d}-{calendar.monthrange(ano, mes)[1]:02d}"
+            if dia and not ano:
+                return f"{dia}_{w}"
+        return ExtractorUD._año(A, i)
+
     @staticmethod
     def _año(A: Arbol, i: int) -> str:
         for j in A.sub(i):
@@ -265,10 +415,14 @@ class ExtractorUD:
                     if ant:
                         cs += ant
                     continue
-                for e in self.expandir(A, n_):
-                    c = self._cuantificado(A, e) or self.concepto(A, e)
-                    if c is not None:
-                        cs.append(c)
+                self._en_sujeto = True
+                try:
+                    for e in self.expandir(A, n_):
+                        c = self._cuantificado(A, e) or self.concepto(A, e)
+                        if c is not None:
+                            cs.append(c)
+                finally:
+                    self._en_sujeto = False
             res = cs or None
         else:
             res = self._refleja(A, p) or self._heredado(A, p, memo)
@@ -332,6 +486,15 @@ class ExtractorUD:
             s = self.sujeto(A, h, memo)
             if s and d in ("conj", "xcomp", "advcl"):
                 return s
+        if d == "acl" and h >= 0 and nrm(A.l(h)) in FINALES:      # «con el objetivo de ayudar»: ayuda el sujeto de la oracion principal, no el «objetivo»
+            g = A.h[h]
+            for _ in range(3):
+                if g < 0 or A.u(g) in ("VERB", "AUX") or A.hijos(g, "cop"):
+                    break
+                g = A.h[g]
+            if g >= 0 and g != p:
+                return self.sujeto(A, g, memo)
+            return None
         if d == "acl":
             return self.antecedente(A, p)
         if A.hijos(p, "expl") and not A.hijos(p, "nsubj"):
@@ -397,7 +560,11 @@ class ExtractorUD:
             if ns:
                 c = self.concepto(A, ns[0])
                 return [c] if c is not None else None
-        c = self.concepto(A, h, califica=False)
+        self._en_sujeto = True                                       # el antecedente es el sujeto de la relativa
+        try:
+            c = self.concepto(A, h, califica=False)
+        finally:
+            self._en_sujeto = False
         return [c] if c is not None else None
 
     # ---------- una oracion ----------
@@ -406,6 +573,7 @@ class ExtractorUD:
             return []
         A = Arbol(rows)
         self.motivo = ""
+        self._cants = {}
         if self._meta(A):
             self.motivo = "es texto sobre el propio documento (avisos, enlaces), no conocimiento"
             return []
@@ -443,9 +611,15 @@ class ExtractorUD:
                             h["q"] = S_.cant
                     if h["p"] == "ES" and h.get("q"):
                         h["q"] = ""
+                    cq = self._cants.get(h["o"])
+                    estructura = h["p"] == "ES" and (h["s"].startswith(h["o"] + "_") or h["s"].endswith("_" + h["o"]))      # «NINO_DE_ONCE_ANO ES NINO»: no es un hecho con cantidad
+                    if cq and not h.get("q") and not estructura:             # «tiene 11,68 km² de superficie»: SUPERFICIE con su cantidad
+                        h["q"] = cq
+                        if h["p"] in ("ES", "SER", "SER_DE"):
+                            h["p"] = "TENER"
             except Exception:                                    # noqa
                 continue
-            if principal_nuevo is None and p == raiz and A.hijos(p, "nsubj") and len(out) > antes and not (self.principal is not None and sujs[0].key.endswith("_DE_" + self.principal.key)):
+            if principal_nuevo is None and (p == raiz and A.hijos(p, "nsubj") or A.d(p) == "xcomp" and A.h[p] == raiz and A.l(raiz) in ASPECTUALES and A.hijos(raiz, "nsubj")) and len(out) > antes and not (self.principal is not None and sujs[0].key.endswith("_DE_" + self.principal.key)):
                 principal_nuevo = sujs[0]
         self.principal_edad += 1
         if principal_nuevo is not None:
@@ -486,6 +660,9 @@ class ExtractorUD:
         """Oraciones que no afirman: condicionales, concesivas, creencias (ccomp), epistémicos."""
         if A.d(p) in ("ccomp", "csubj", "parataxis"):
             return True
+        if any(A.l(j) in ("poder", "deber") and nrm(A.f(j)) in MODAL_COND for j in A.hijos(p, "aux")) or \
+                (A.d(p) == "xcomp" and A.h[p] >= 0 and A.l(A.h[p]) in ("poder", "deber") and nrm(A.f(A.h[p])) in MODAL_COND):
+            return True                                           # «podría dar un paso»: posibilidad, no hecho
         for m in A.hijos(p, "mark"):
             if A.l(m) == "que" and not any(A.d(x) == "fixed" for x in A.k[m]) and A.h[p] >= 0 and A.d(p) != "conj" and (A.u(A.h[p]) in ("VERB", "AUX") or A.hijos(A.h[p], "cop")):
                 return True                                       # «dijo que…», «se demostró que…»: contenido citado o creído, no afirmado
@@ -503,7 +680,7 @@ class ExtractorUD:
         out: List[dict] = []
         cop = A.l(A.hijos(p, "cop")[0])
         pred_cop = "ESTAR" if cop == "estar" else "SER"
-        when = self._año(A, p) if A.hijos(p, "case") else ""
+        when = self._cuando(A, p) if A.hijos(p, "case") else ""
         u = A.u(p)
         prep = self._prep(A, p)
         for S in sujs:
@@ -529,7 +706,7 @@ class ExtractorUD:
                     out.append(_ud(S.key, pred_cop, ad, S.disp, A.l(e), neg=neg))
                     for o in A.hijos(e, "obl", "nmod"):
                         pr = self._prep(A, o)
-                        if pr and A.u(o) in ("NOUN", "PROPN", "X") and not self._año(A, o):
+                        if pr and A.u(o) in ("NOUN", "PROPN", "X") and not self._cuando(A, o) and not self._locucion(A, o):
                             O = self.concepto(A, o)
                             if O is not None:
                                 out += _extra(O)
@@ -571,6 +748,8 @@ class ExtractorUD:
             return out
         if lema == "haber":
             return out
+        if lema in ASPECTUALES and any(A.d(x) == "xcomp" and A.u(x) in ("VERB", "AUX") for x in A.k[p]):
+            return out                                       # «llegó a firmar», «intenta aprovechar»: lo afirmado es del infinitivo (parche-126)
         form = A.f(p)
         auxs = [A.l(j) for j in A.hijos(p, "aux")]
         pasiva = any(a in ("ser", "estar") for a in auxs) and _es_participio(form, lema) and not A.hijos(p, "obj")
@@ -579,7 +758,11 @@ class ExtractorUD:
         when = ""
         # complementos
         comp: List[Tuple[str, int, str]] = []
-        for j in A.k[p]:
+        src = list(A.k[p])
+        hh = A.h[p]
+        if A.d(p) == "xcomp" and hh >= 0 and A.l(hh) in ASPECTUALES:                  # «llegó a firmar como X»: la escuela cuelga «como X» del verbo auxiliar
+            src += [j for j in A.k[hh] if A.d(j) == "obl" and j > p and j not in src]
+        for j in src:
             d = A.d(j)
             if d == "obj":
                 comp.append(("", j, "obj"))
@@ -587,11 +770,11 @@ class ExtractorUD:
                 comp.append(("a", j, "iobj"))
             elif d == "obl":
                 pr = self._prep(A, j)
-                y = self._año(A, j)
+                y = self._cuando(A, j)
                 if y and pr in ("en", "durante", "desde", "hasta", "a", ""):
                     when = when or y
                     continue
-                if pr and not A.hijos(A.hijos(j, "case")[0], "fixed") and A.u(j) in ("NOUN", "PROPN", "X"):
+                if pr and not A.hijos(A.hijos(j, "case")[0], "fixed") and A.u(j) in ("NOUN", "PROPN", "X") and not self._locucion(A, j):
                     comp.append((pr, j, "obl"))
             elif d == "xcomp" and A.u(j) in ("NOUN", "ADJ") and lema in ATRIBUTIVOS:
                 comp.append(("@attr", j, "xcomp"))
@@ -672,8 +855,27 @@ def _tpl_activa(form: str, lema: str) -> str:
     return lema
 
 
+def _cuando_disp(w: str) -> str:
+    if w.startswith("abs:"):
+        a, _, b = w[4:].partition("/")
+        b = b or a
+        try:
+            y, m, d = a.split("-")
+            if a == b:
+                return f"el {int(d)} de {MESES[int(m) - 1]} de {int(y)}"
+            if a[:7] == b[:7] and a.endswith("-01"):
+                return f"en {MESES[int(m) - 1]} de {int(y)}"
+        except (ValueError, IndexError):
+            pass
+        return f"entre {a} y {b}"
+    m_ = re.fullmatch(r"(\d{1,2})_([a-z]+)", w)
+    if m_:
+        return f"el {m_.group(1)} de {m_.group(2)}"
+    return "en " + w
+
+
 def _ud(s, p, o, s_disp, o_disp, neg=False, when="", tpl=""):
-    h = _h(s, p, o, s_disp, o_disp, tpl=tpl, neg=neg, when=when, when_disp=("en " + when) if when else "")
+    h = _h(s, p, o, s_disp, o_disp, tpl=tpl, neg=neg, when=when, when_disp=_cuando_disp(when) if when else "")
     h["_extra"] = False
     return h
 
@@ -686,10 +888,24 @@ def _desde_hecho(h: dict) -> C:
     return C(h["s"], h.get("s_disp") or h["s"].title(), False)
 
 
+def _basura(k: str) -> bool:
+    """Concepto que no lo es: pronombre relativo dentro («AGUA_DE_CUAL»), solo cifras («3_C»), o una palabra repetida («ALBEDO_DE_ALBEDO_BOLOMETRICO»)."""
+    if not k or k == "_":
+        return False
+    if k in ORDINALES:
+        return True
+    if REL_BASURA.search(k) or re.fullmatch(r"\d+(?:_\d+)*(?:_[A-Z])?", k):
+        return True
+    toks = [x for x in k.split("_") if len(x) > 3]
+    return len(toks) != len(set(toks))
+
+
 def _limpiar(hs: List[dict]) -> List[dict]:
     vistos, out = set(), []
     for h in hs:
         if not h["s"] or not h["o"] or h["s"] == h["o"] or len(h["p"]) < 2:
+            continue
+        if _basura(h["s"]) or _basura(h["o"]) or h["s"].lower() in UNIDADES:      # «7.12 km² corresponden a tierra firme»: el sujeto no es «KM»
             continue
         k = (h["s"], h["p"], h["o"], bool(h.get("neg")))
         if k in vistos:
@@ -708,12 +924,42 @@ class LectorUD(Lector):
         super().__init__(mem, None, lex)
         self.parser = parser
         self.ud = ExtractorUD()
+        self._fichas: List[Tuple[str, str]] = []
         self.traza: List[dict] = []
+
+    def ficha(self, k: str, v: str, rep: dict) -> bool:
+        """«Radio medio: 6051,8 km» -> (tema, TENER, RADIO_MEDIO) con la cantidad «6051,8 km». Hasta saber de que se habla se guardan en espera."""
+        if self.ud.principal is None:
+            self._fichas.append((k, v))
+            return True
+        self._volcar_fichas(rep)
+        self._guardar_ficha(k, v, rep)
+        return True
+
+    def _guardar_ficha(self, k: str, v: str, rep: dict):
+        tema, kc = self.ud.principal, clave(k)
+        if tema is None or not kc or len(kc) > 40:
+            return
+        h = _ud(tema.key, "TENER", kc, tema.disp, k.strip().lower())
+        h["q"] = v.strip()
+        self._guardar_ud(h, f"{k}: {v}", rep)
+
+    def _volcar_fichas(self, rep: dict):
+        pend, self._fichas = self._fichas, []
+        for k, v in pend:
+            self._guardar_ficha(k, v, rep)
 
     def leer(self, texto: str, progreso=None) -> dict:
         self.traza = []
+        self._fichas = []
+        self._doc = 1 + max([t.get("d", 0) for t in getattr(self.mem, "textos", [])] or [0])
+        self._k = 0
+        self._p = 0
         n0 = len(self.mem.facts)
         rep = super().leer(texto, progreso)
+        if self._fichas and self.ud.principal is not None:
+            self._volcar_fichas(rep)
+            rep["nuevos"] = sum(1 for h in rep["hechos"] if h["nuevo"])
         rep["traza"] = self.traza
         try:
             from src.language.anclaje import anclar
@@ -722,7 +968,7 @@ class LectorUD(Lector):
             pass
         return rep
 
-    # trocea una frase larga en tramos que la escuela pueda analizar (max 40 formas)
+    # trocea una frase larga en tramos que la escuela pueda analizar (max 40 formas: lo que pasa de ahi se perdia sin avisar, parche-127)
     def _tramos(self, f: str) -> List[str]:
         if len(re.findall(r"\w+|[^\w\s]", f)) <= self.MAX_FORMAS:
             return [f]
@@ -736,15 +982,76 @@ class LectorUD(Lector):
                 cur = (cur + " " + p).strip()
         if cur:
             tramos.append(cur)
-        return tramos
+        out = []
+        for t in tramos:
+            out.extend(self._trocear(t))
+        return out
+
+    def _trocear(self, t: str) -> List[str]:
+        """Un tramo que aun pasa del maximo se corta por una coma, una raya o antes de «y / que / quien / donde...»; si no hay, por palabras."""
+        sal = []
+        while True:
+            toks = [m for m in re.finditer(r"\w+|[^\w\s]", t)]
+            if len(toks) <= self.MAX_FORMAS:
+                sal.append(t)
+                return sal
+            tope = toks[self.MAX_FORMAS - 1].end()
+            mejor = None
+            for m in re.finditer(r"[,;:—–]\s+|\s+(?=(?:y|e|que|quien|quienes|donde|cuando|pero|aunque|mientras)\b)", t[:tope + 1]):
+                if m.end() <= tope + 1 and m.start() >= 20:
+                    mejor = m
+            cut = mejor.end() if mejor is not None else (t.rfind(" ", 0, tope) + 1 or tope)
+            sal.append(t[:cut].strip(" ,;:—–"))
+            t = t[cut:].strip(" ,;:—–")
+            if not t:
+                return sal
+
+    FICHA_RX = re.compile(r"^(?P<nom>[A-ZÁÉÍÓÚÑ][^\s(),]*(?:\s+(?:de|del|la|las|los|y|von|van|da|di|[A-ZÁÉÍÓÚÑ][^\s(),]*)){0,5})\s*\((?P<in>[^()]{6,140})\)")
+    FECHA_RX = re.compile(r"(?:\d{1,2}\s+de\s+[a-záéíóúñ]+\s+de\s+\d{3,4}|[a-záéíóúñ]+\s+de\s+\d{3,4}|\d{3,4})")
+
+    def _ficha(self, f: str) -> List[str]:
+        """«Marie Curie (Varsovia, 7 de noviembre de 1867 - Passy, 4 de julio de 1934) fue ...»: nacimiento y muerte dichos entre parentesis, como frases normales."""
+        m = self.FICHA_RX.match(f)
+        if not m or not re.search(r"\d{3,4}", m.group("in")):
+            return []
+        partes = re.split(r"\s+[-–—]\s+|(?<=\d)\s*[-–—]\s*(?=[A-ZÁÉÍÓÚÑ\d])", m.group("in"), maxsplit=1)
+        out = []
+        for verbo, parte in zip(("nació", "falleció"), partes):
+            fm = self.FECHA_RX.search(parte)
+            if not fm:
+                continue
+            lugar = re.sub(r"^(?:n\.|m\.|\*|†|\+)\s*", "", parte[:fm.start()].strip(" ,;"))
+            lugar = lugar if (lugar and len(lugar.split()) <= 5 and lugar[:1].isupper() and not re.search(r"\d", lugar)) else ""
+            fecha = fm.group(0)
+            cuando = ("el " + fecha) if re.match(r"\d{1,2}\s+de", fecha) else ("en " + fecha)
+            out.append(f"{m.group('nom')} {verbo}" + (f" en {lugar}" if lugar else "") + f" {cuando}.")
+        return out
+
+    @staticmethod
+    def _incisos(f: str) -> List[str]:
+        out = [m.group(1).strip(" ,;") for m in re.finditer(r"—([^—]{12,220})—", f)]
+        saltar = None
+        fm = re.match(r"^[^(]{1,60}\((?P<in>[^()]{6,140})\)", f)
+        if fm and re.search(r"\d{3,4}\s*[-–—]|\d{3,4}\s+de\s+\w+\s*[-–—]", fm.group("in") + " "):
+            saltar = fm.group("in")
+        for m in re.finditer(r"\(([^()]{12,160})\)", f):
+            c = m.group(1)
+            if c == saltar:
+                continue
+            if len(re.findall(r"[^\W\d_]{3,}", c)) >= 3:
+                out.append(c.strip())
+        return out[:4]
 
     def frase(self, f: str, rep: dict, inicio_parrafo=False):
         orig = f
+        if inicio_parrafo:
+            self._p = getattr(self, "_p", 0) + 1
         g = re.sub(r"\([^)]{0,80}\)", "", f)                                      # incisos entre paréntesis: ruido para la sintaxis
         g = re.sub(r"\s+—[^—]{0,200}—", ",", g)
         g = re.sub(r"\s+", " ", g).strip()
         n0 = len(rep["hechos"])
         motivo = ""
+        arboles = []
         for tr in self._tramos(g):
             try:
                 rows = self.parser.tree(tr)
@@ -752,21 +1059,59 @@ class LectorUD(Lector):
                 rows = []
             if not rows:
                 continue
+            arboles.append("\n".join("\t".join(str(x) for x in r[:5]) for r in rows))
             try:
                 hs = self.ud.oracion(rows, inicio=inicio_parrafo)
             except RecursionError:                                                # noqa  (árbol raro: se salta ese tramo, no se cuelga)
                 hs = []
             motivo = motivo or self.ud.motivo
+            nums = sum(1 for r in rows if r[1] == "NUM" or str(r[0]).replace(",", "").replace(".", "").isdigit())
+            if rows and nums > 0.4 * len([r for r in rows if r[1] != "PUNCT"]):          # filas de tabla («Infantil A: 1 0 0»): no son afirmaciones
+                hs = []
             if len(self.traza) < 600:
                 self.traza.append({"tramo": tr, "arbol": rows, "hechos": [(h["s"], h["p"], h["o"], bool(h.get("neg"))) for h in hs]})
             for h in hs:
                 self._guardar_ud(h, orig, rep)
         if len(rep["hechos"]) == n0:
             rep["sin_entender"].append({"frase": orig, "motivo": motivo or "no encuentro una relación clara entre conceptos"})
+        if not getattr(self, "_en_ficha", False):                                 # nacimiento y muerte del parentesis de una biografia, como frases propias
+            self._en_ficha = True
+            try:
+                for fs_ in self._ficha(orig):
+                    self.frase(fs_, rep, False)
+            finally:
+                self._en_ficha = False
+        for inc in self._incisos(orig):                                           # parche-127: lo dicho entre rayas o parentesis tambien se guarda para contestar, aparte de los hechos
+            for tr in self._tramos(inc):
+                try:
+                    rows = self.parser.tree(tr)
+                except Exception:                                                 # noqa
+                    rows = []
+                if rows:
+                    arboles.append("@\n" + "\n".join("\t".join(str(x) for x in r[:5]) for r in rows))
+        try:                                                                      # parche-127: la frase queda guardada para poder contestar sobre ella
+            self._k = getattr(self, "_k", 0) + 1
+            if self.mem.add_texto(orig, arboles, (rep.get("titulos") or [""])[-1], getattr(self, "_doc", 1), self._k, getattr(self, "_p", 0)) is not False:
+                rep["memorizadas"] = rep.get("memorizadas", 0) + 1
+        except Exception:                                                         # noqa
+            pass
+
+    @staticmethod
+    def _basura(tr) -> bool:
+        """Hechos que no dicen nada: siglas sueltas («F»), numeros como sujeto («9_GOL ES GOL») y nombres kilometricos."""
+        s_, p_, o_ = tr
+        if len(s_) == 1 or len(o_) == 1 or s_[:1].isdigit():
+            return True
+        if s_.count("_DE_") + s_.count("_DEL_") > 3 or o_.count("_DE_") + o_.count("_DEL_") > 3 or len(s_) > 70 or len(o_) > 70:
+            return True
+        return False
 
     def _guardar_ud(self, h: dict, frase: str, rep: dict):
         tr = (h["s"], h["p"], h["o"])
         if not all(tr) or tr[0] == tr[2]:
+            return
+        if self._basura(tr):
+            rep["descartados"] = rep.get("descartados", 0) + 1
             return
         if self.mem.contradicts(tr, bool(h.get("neg"))):                           # lo que ya sé manda: se avisa, no se pisa
             rep.setdefault("conflictos", []).append({"hecho": f"{tr[0]} {'NO ' if h.get('neg') else ''}{tr[1]} {tr[2]}", "frase": frase})

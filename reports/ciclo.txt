@@ -1,40 +1,27 @@
-CICLO 20261108-000740-019233
-      escrito src/language/lector_ud.py
-      escrito tests/test_parche122.py
-    parche-125 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261108-000740-176364
-  parche parche-125.py: aplicado
-  TESTS UNITARIOS: 267 passed in 9.31s
+CICLO 20261108-103555-534489
+  TESTS UNITARIOS: 291 passed in 9.28s
   RESUMEN: TODO CUMPLE
-    texto_solar6_40: 100.0% -> 97.5%  EMPEORA
-  [OK] reproducibilidad/manifiesto.json: 230 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+  [OK] reproducibilidad/manifiesto.json: 233 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
      metricas de referencia: 47 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M .DS_Store
- M cartuchos/reflexion.json
- D parche-113.py
- D parche-114.py
- D parche-115.py
- D parche-116.py
- D parche-117-2.py
- D parche-117.py
- M reports/.DS_Store
+M cartuchos/reflexion.json
  M reports/ciclo.txt
  M reports/historial.json
- M reports/lector_bench.json
  M reports/razonamiento.json
  M reports/ultima_lectura.txt
  M reproducibilidad/manifiesto.json
+ M src/language/dialogue.py
  M src/language/lector.py
  M src/language/lector_ud.py
  M src/language/school_parser.py
-?? parche-124.py
-?? parche-125.py
-?? src/language/anclaje.py
-?? tests/test_parche118.py
-?? tests/test_parche120.py
-?? tests/test_parche122.py
+ M src/memory/store.py
+?? parche-126.py
+?? parche-127.py
+?? src/language/lectura_ent.py
+?? tests/test_parche126.py
+?? tests/test_parche127.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

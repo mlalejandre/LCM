@@ -170,13 +170,32 @@ ADV = set("actualmente ademas tambien asimismo solo solamente incluso casi muy m
 CLASE_ENVOLTURA = {"especie": "ESPECIE", "tipo": "TIPO", "clase": "CLASE", "genero": "GENERO", "forma": "FORMA", "grupo": "GRUPO", "familia": "FAMILIA", "orden": "ORDEN", "subespecie": "SUBESPECIE",
                    "variedad": "VARIEDAD", "conjunto": "CONJUNTO", "tipos": "TIPO", "clases": "CLASE", "especies": "ESPECIE", "miembro": "MIEMBRO", "ejemplo": "EJEMPLO"}
 TAXON = {"familia", "genero", "orden", "clase", "especie", "subespecie", "reino", "filo", "tribu", "superfamilia", "suborden", "infraorden", "division"}
-ABREV = set("sr sra srta dr dra prof lic ing aprox ej etc vs cf pag pags num nº tel fig ed vol cap art av avda cia dpto ee uu a.c d.c s ss pp p.ej e.g i.e".split())
+ABREV = set("sr sra srta sres dr dra prof lic ing aprox ej etc vs cf pag pags págs pág num núm nº nª mª tel fig ed vol cap art av avda cia cía dpto ee uu a.c d.c s ss pp p.ej e.g i.e "
+            "sta sto gral cnel pdte ud uds ntra ntro ltda inc jr mr mrs st vda admón máx mín dña excmo excma ilmo ilma fdo atte".split())
 SUBORD = re.compile(r"^(?:ya que|puesto que|debido a que|porque|aunque|si bien|mientras que|mientras|pero|sin embargo|por lo que|de modo que|de forma que|cuando|donde|como|tras lo cual|llegando|siendo|aunque)\b", re.I)
 RELATIVO = re.compile(r"^(?:que|quien|quienes|el cual|la cual|los cuales|las cuales|donde|cuyo|cuya|cuyos|cuyas)\b", re.I)
 
 
 # ====================================================== limpieza y segmentación ===========================================================
-CITAS = re.compile(r"\[(?:\d+|nota \d+|cita requerida|[a-z])\]|\[\d+\]|\^\d+")
+CITAS = re.compile(r"\[[^\[\]]{0,30}\]|\^\d+")                          # [5], [n. 1], [nota 3], [cita requerida], [editar]
+VINETA = re.compile(r"^\s*(?:[•·▪●○◦►‣*]|[-–—](?=\s)|\d{1,2}[.)](?=\s))\s*")
+FICHA = re.compile(r"^([A-ZÁÉÍÓÚÑ][^:\t.;!?]{1,44}?)\s*(?::\s+|\t+|\s{3,})(\S.{0,119})$")
+_VERBO_FINITO = re.compile(r"\b(?:es|son|fue|fueron|era|eran|está|están|tiene|tienen|hay|ha|han|puede|pueden|se)\b", re.I)
+
+
+def _ficha(l: str):
+    """«Radio medio: 6051,8 km», «Familia: Felidae»: dato de ficha (clave y valor cortos, sin verbo). -> (clave, valor) o None."""
+    m = FICHA.match(l)
+    if not m:
+        return None
+    k, v = m.group(1).strip(), m.group(2).strip()
+    if len(k.split()) > 5 or len(v.split()) > 14 or _VERBO_FINITO.search(k) or _VERBO_FINITO.search(v):
+        return None
+    if v.endswith(".") and not re.search(r"\d", v):
+        return None
+    if not (re.search(r"\d", v) or v[:1].isupper() or len(v.split()) == 1):         # «Importante: no lo olvides» es una frase, no un dato
+        return None
+    return k, v
 
 
 def limpiar(texto: str) -> List[Tuple[str, str]]:
@@ -184,11 +203,16 @@ def limpiar(texto: str) -> List[Tuple[str, str]]:
     out = []
     texto = texto.replace("\r", "\n").replace(" ", " ").replace("​", "")
     for linea in texto.split("\n"):
-        l = CITAS.sub("", linea).strip()
-        l = re.sub(r"\s+", " ", l)
+        l = re.sub(r"(?<=[.!?»”\"])(?:\[[^\[\]]{0,30}\])+(?=[A-ZÁÉÍÓÚÑ¿¡«])", " ", linea)            # parche-127: «médica.[33]De la Fuente» -> dos frases
+        l = CITAS.sub("", l)
+        f_ = _ficha(re.sub(r"[ ]{2,}", "   ", VINETA.sub("", l.strip())).strip()) if ("\t" in l or ":" in l or "   " in l.strip()) else None
+        l = re.sub(r"\s+", " ", l).strip()
         if not l or l.startswith("#") and len(l) < 3 or re.fullmatch(r"[\W_]+", l):
             continue
-        l = l.lstrip("#").strip()
+        l = VINETA.sub("", l.lstrip("#").strip()).strip()
+        if f_ and l:
+            out.append(("ficha", f_[0] + "\t" + f_[1]))
+            continue
         if len(l.split()) <= 9 and not re.search(r"[.!?:;]$", l) and l[:1].isupper() and not re.search(r"\b(?:es|son|fue|fueron|era|tiene|tienen)\b", l):
             out.append(("titulo", l))
         else:
@@ -198,7 +222,7 @@ def limpiar(texto: str) -> List[Tuple[str, str]]:
 
 def _abrev_antes(txt: str, i: int) -> bool:
     j = i
-    while j > 0 and (txt[j - 1].isalpha() or txt[j - 1] == "."):
+    while j > 0 and (txt[j - 1].isalpha() or txt[j - 1] in ".ªº"):
         j -= 1
     w = txt[j:i].lower().rstrip(".")
     return w in ABREV or (len(w) == 1 and w.isalpha() and txt[j:i][:1].isupper()) or bool(re.fullmatch(r"(?:[a-z]\.)+[a-z]", txt[j:i].lower()))
@@ -1259,6 +1283,10 @@ class Lector:
             h = _h(x["s"].upper(), x["p"].upper(), x["o"].upper(), x.get("s_disp") or "", x.get("o_disp") or "", tpl=x.get("template") or "", neg=bool(x.get("neg")), when=x.get("when", ""), when_disp=x.get("when_disp", ""))
             self._guardar(h, orig, "escuela", rep)
 
+    def ficha(self, clave_: str, valor: str, rep: dict) -> bool:
+        """Dato de ficha «Clave: valor». El lector de patrones no lo aprovecha (lo trata como titulo); el lector con escuela lo guarda."""
+        return False
+
     def leer(self, texto: str, progreso: Optional[Callable] = None) -> dict:
         texto = (texto or "")[:MAX_TEXTO]
         for t_ in re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]{3,}", texto):
@@ -1273,6 +1301,11 @@ class Lector:
         for tipo, par in limpiar(texto):
             if tipo == "titulo":
                 rep["titulos"].append(par)
+                continue
+            if tipo == "ficha":
+                k_, _, v_ = par.partition("\t")
+                if not self.ficha(k_, v_, rep):
+                    rep["titulos"].append(k_ + ": " + v_)
                 continue
             for k, f in enumerate(frases(par)):
                 rep["frases"] += 1
@@ -1291,8 +1324,12 @@ def resumen(rep: dict, maximo=8) -> str:
     for h in rep["hechos"]:
         if h["nuevo"]:
             por.setdefault(h["sd"], []).append(h)
+    mem_ = rep.get("memorizadas", 0)
     L = [f"He leído {rep['frases']} frases y he aprendido {rep['nuevos']} hechos nuevos"
-         + (f" (sobre {len(por)} temas)" if por else "") + f"; {len(rep['sin_entender'])} frases no las he podido aprovechar" + (f" y he descartado {rep['descartados']} datos poco fiables" if rep.get("descartados") else "") + "."]
+         + (f" (sobre {len(por)} temas)" if por else "")
+         + (f"; he memorizado {mem_} frases completas para poder responder preguntas sobre lo que dicen" if mem_ else "")
+         + (f"; en {len(rep['sin_entender'])} no he podido sacar hechos sueltos" + (", pero quedan memorizadas" if mem_ else "") if rep["sin_entender"] else "")
+         + (f" y he descartado {rep['descartados']} datos poco fiables" if rep.get("descartados") else "") + "."]
     n = 0
     for sd, hs in por.items():
         L.append(f"· {sd}: " + "; ".join(f"{h['p'].lower().replace('_', ' ')} {h['od']}" for h in hs[:6]) + ("…" if len(hs) > 6 else ""))

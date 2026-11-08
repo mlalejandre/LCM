@@ -19,7 +19,7 @@ class SchoolParser:
     def _forms(sentence: str):
         text = re.sub(r"\bdel\b", "de el", sentence, flags=re.I)
         text = re.sub(r"\bal\b", "a el", text, flags=re.I)
-        forms = re.findall(r"\w+|[^\w\s]", text)
+        forms = re.findall(r"\d+(?:[.,]\d+)+|\w+|[^\w\s]", text)           # «3.2», «11,68», «243.187»: un numero es UN token (como en el corpus de entrenamiento)
         if forms and forms[-1] not in ".!?;:":
             forms.append(".")                      # el entrenamiento siempre veia la frase cerrada con signo de puntuacion
         return forms

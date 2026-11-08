@@ -32,6 +32,8 @@ class MemoryStore:
         self.surface: Dict[str, str] = {}   # predicado -> plantilla "{s} vive en {o}" (como lo dijo la persona)
         self.display: Dict[str, str] = {}   # entidad -> como se escribia ("el perro", "Marta")
         self.tick = 0  # reloj de mantenimiento: sube una unidad por cada ciclo de sueno
+        self.textos: List[dict] = []            # parche-127: frases leidas (texto + arbol de la escuela) para contestar preguntas sobre lo leido
+        self._textos_vistos: set = set()
         if os.path.exists(path):
             self.load()
 
@@ -42,7 +44,7 @@ class MemoryStore:
         own_pairs = [p for d in getattr(self, "cart_own", {}).values() for p in d.get("opposites", [])]
         data = {"concepts": self.concepts, "facts": [f for f in self.facts if not f.get("cart")], "past": self.past, "alias": self.alias,
                 "opposites": [p for p in self.opposites if list(p) not in own_pairs], "verb_isa": self.verb_isa, "defs": self.defs, "lessons": self.lessons,
-                "tick": self.tick, "surface": self.surface, "display": self.display}
+                "tick": self.tick, "surface": self.surface, "display": self.display, "textos": self.textos}
         for sec in ("alias", "verb_isa", "defs", "surface", "display"):
             own = duenos(self, sec)
             if own:
@@ -71,6 +73,16 @@ class MemoryStore:
         self.tick = int(data.get("tick", 0))
         self.surface = data.get("surface", {})
         self.display = data.get("display", {})
+        self.textos = data.get("textos", [])
+        self._textos_vistos = {t.get("t") for t in self.textos}
+
+    def add_texto(self, txt: str, arboles: List[str], sec: str = "", doc: int = 0, k: int = 0, par: int = 0) -> bool:
+        """parche-127: guarda una frase leida con su arbol (una cadena por tramo: cada token «forma TAB upos TAB cabeza TAB relacion TAB lema», uno por linea)."""
+        if not txt or txt in self._textos_vistos:
+            return False
+        self._textos_vistos.add(txt)
+        self.textos.append({"t": txt, "r": list(arboles), "sec": sec, "d": doc, "k": k, "p": par})
+        return True
 
     # ---- conceptos ----------------------------------------------------
     def add_concept(self, name: str, features: Optional[dict] = None, kind: str = "entity") -> None:

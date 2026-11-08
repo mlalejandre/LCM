@@ -935,7 +935,23 @@ class Conversation:
             if sp_:
                 self.d.last = sp_
                 return sp_
-        if self.d.pending or not (is_question(raw) or is_question(consultas.canonical(raw))):
+            if getattr(self.m, "textos", None):                                     # parche-127: preguntas sobre lo leido en un texto (entidades, tipo de pregunta, arbol de la frase)
+                try:
+                    from src.language import lectura_ent
+                    lec_ = lectura_ent.responder(self, raw) if (is_question(raw) or lectura_ent.parece_pregunta(raw) or lectura_ent.es_peticion(raw)) else None
+                except Exception:                                                  # noqa
+                    lec_ = None
+                if lec_:
+                    self.d.last, self.d.last_question = lec_, raw
+                    return lec_
+        pq_ = False
+        if getattr(self.m, "textos", None) and not self.d.pending:                  # parche-127: «donde nacio» sin signos, con un texto leido, es una pregunta
+            try:
+                from src.language import lectura_ent
+                pq_ = lectura_ent.parece_pregunta(raw)
+            except Exception:                                                       # noqa
+                pq_ = False
+        if self.d.pending or not (is_question(raw) or is_question(consultas.canonical(raw)) or pq_):
             if not self.d.pending:
                 try:                                                                # parche-105: "Dime cinco frutas", "gato es a felino como perro es a ?"
                     from src.language import conceptos
@@ -945,7 +961,17 @@ class Conversation:
                 if ord_:
                     self.d.last, self.d.pending = ord_, None
                     return ord_
-            return self._say1(raw)
+            out_ = self._say1(raw)
+            if getattr(self.m, "textos", None) and not self.d.pending and len(raw.split()) <= 12 and consultas.es_fallo(out_):
+                try:                                                                # parche-127: «tuvo hermanos» (sin signos) que nadie entendio: se prueba como pregunta sobre lo leido
+                    from src.language import lectura_ent
+                    lec3_ = lectura_ent.responder(self, raw, final=True)
+                except Exception:                                                   # noqa
+                    lec3_ = None
+                if lec3_ and not lec3_.startswith(("No he leído nada que conteste", "De ")):
+                    self.d.last = lec3_
+                    return lec3_
+            return out_
         try:
             from src.language import conceptos                                      # parche-99: "que es un X" (la memoria solo conoce ejemplares) y "en que se parecen A y B"
             pre_ = conceptos.antes(raw, self.m) or conceptos.antes(consultas.canonical(raw), self.m)
@@ -994,6 +1020,15 @@ class Conversation:
             if lx:
                 self.d.last, self.d.pending = lx, None
                 return lx
+            if getattr(self.m, "textos", None):                                    # parche-127: lo ultimo que se intenta es lo leido (o decir que no se leyo)
+                try:
+                    from src.language import lectura_ent
+                    lec2_ = lectura_ent.responder(self, raw, final=True)
+                except Exception:                                                  # noqa
+                    lec2_ = None
+                if lec2_:
+                    self.d.last, self.d.pending = lec2_, None
+                    return lec2_
         return out
 
     def _say1(self, raw: str) -> str:
