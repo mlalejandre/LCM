@@ -1,26 +1,22 @@
-CICLO 20261108-140704-459464
-      escrito src/language/marcos.py
-      escrito src/reasoning/lessons.py
-      escrito scripts/recursos.py
-      escrito tests/test_parche130.py
-    parche-130 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261108-140704-638411
-  parche parche-130.py: aplicado
-  TESTS UNITARIOS: 358 passed in 20.11s
+CICLO 20261108-164514-117130
+      escrito src/language/dialogue.py
+      escrito tests/test_parche131.py
+    parche-131 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261108-164514-261519
+  parche parche-131.py: aplicado
+  TESTS UNITARIOS: 362 passed in 20.41s
   RESUMEN: TODO CUMPLE
-    texto_solar6_40: 97.5% -> 100.0%  MEJORA
-  [OK] reproducibilidad/manifiesto.json: 239 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+  [OK] reproducibilidad/manifiesto.json: 240 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
      metricas de referencia: 47 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M reports/historial.json
+M cartuchos/reflexion.json
+ M reports/historial.json
  M reports/razonamiento.json
  M reproducibilidad/manifiesto.json
- M src/language/marcos.py
- M src/reasoning/lessons.py
-?? parche-130.py
-?? scripts/recursos.py
-?? tests/test_parche130.py
+ M src/language/dialogue.py
+?? parche-131.py
+?? tests/test_parche131.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

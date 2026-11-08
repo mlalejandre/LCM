@@ -920,6 +920,8 @@ class Conversation:
     def say(self, raw: str) -> str:
         """parche-95: si la respuesta es un fallo y la pregunta tiene una errata corregible, reintenta con la pregunta corregida."""
         from src.language import consultas
+        if self.d.pending and self.d.pending[0] == "define" and is_question(raw):          # parche-131: tras «No conozco X: ¿me lo explicas?» una PREGUNTA nueva no es la explicacion: se contesta como cualquier pregunta
+            self.d.pending = None
         if not self.d.pending:
             txt_ = self.es_texto_para_aprender(raw)
             if txt_:

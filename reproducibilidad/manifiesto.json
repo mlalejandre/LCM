@@ -1,5 +1,5 @@
 {
- "creado": "2026-11-08 14:08",
+ "creado": "2026-11-08 16:46",
  "entorno": {
   "python": "3.11.16",
   "plataforma": "macOS-26.5.2-arm64-arm-64bit",
@@ -198,7 +198,7 @@
   "src/language/consultas.py": "d7a1e034e73d88f17c477d37ee3a50f6b8b20a18e2192ac5f778f04dc7ef409e",
   "src/language/corpus.py": "1d2832df3fd82708f3e315f7a34c8ebfac5c5bbcfc7f035dc16173b511638441",
   "src/language/definiciones.py": "66c32539808b44738e941c86369676f63b385fbef7fd3968383d5fad8e1ae8b7",
-  "src/language/dialogue.py": "4898b800b1b9a60cd98e3ddb939c6e058ef6fbb4437224db5abf48ccc2641970",
+  "src/language/dialogue.py": "3fc221c558f36dd32429eb41fccc375ab996b6d95d8d7868d8c0d01b7ba2c71c",
   "src/language/discourse.py": "a1ceed6ff3afcf8da16495ec82281e674615e9c45164bac13d52b2b1a1a8ae0a",
   "src/language/ear.py": "50a03a90a3a9598b5445145e8d041e48da5dcca76fc269617f6ccbce5f1fd18b",
   "src/language/extract.py": "6be4da0d662fa143c490497d37cb18f03f50ece2b13ee318a07cb5abe30f9ab5",
@@ -283,6 +283,7 @@
   "tests/test_parche127.py": "91d87d60cbcf8ad5d98ad0255dced54047369fe779681e692e0662904c504700",
   "tests/test_parche129.py": "c2df7c8c17c1b67290727cacd36a598333052c4ca3532737ab939b029d3cea3c",
   "tests/test_parche130.py": "604aaee719b24bb1c8d79964a5e19690cb66c0a33eb789672388a2223733bcb2",
+  "tests/test_parche131.py": "34a627c90b3f6e877a49a4d7a5936d450c26bc99dc36ebff97d14878bf21e767",
   "tests/test_parche71.py": "74e5bb3c746b824378b75829422eb26f6455b3c34f5742e1379e1c8b7ee17f1e",
   "tests/test_parche72.py": "b4b6fce8ae4b96aaa467acb277e3820b64605d7971c096ac23cf28e898d6a9b2",
   "tests/test_parche74.py": "e2aceee7881989796dc2bdc78af086ba8c07fc83a41bf4e32ed38bd12a5fc7d7",

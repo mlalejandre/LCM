@@ -32102,7 +32102,7 @@
  "display": {},
  "opposites": [],
  "nombre": "reflexion",
- "creado": "2026-11-08 13:07",
+ "creado": "2026-11-08 14:13",
  "version": 1,
  "fuente": "reflexión sobre los conceptos de la memoria",
  "descripcion": "Nexos descubiertos entre conceptos (parecidos, definiciones, partes, contrarios)",
@@ -32110,7 +32110,7 @@
   "conceptos": 1762,
   "sin_sentido_claro": 15,
   "nexos": 1716,
-  "segundos": 0.25,
+  "segundos": 0.26,
   "por_tipo": {
    "CONTRARIO_DE": 9,
    "HECHO_DE": 27,
@@ -32400,6 +32400,6 @@
     "diccionario": "es deidad > convicción > contenido mental"
    }
   ],
-  "fecha": "2026-11-08 13:07"
+  "fecha": "2026-11-08 14:13"
  }
 }
