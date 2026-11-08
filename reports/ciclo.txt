@@ -1,39 +1,26 @@
-CICLO 20261108-133659-314642
-      escrito src/language/dialogue.py
-      escrito src/language/fechas.py
-      escrito src/language/lector.py
-      escrito src/language/lectura_ent.py
-      escrito src/language/relaciones.py
-      escrito src/language/vida.py
-      escrito tests/test_parche129.py
-      escrito tests/fixtures/parche129.json
-    parche-129 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261108-133659-442088
-  parche parche-129.py: aplicado
-  TESTS UNITARIOS: 339 passed in 20.07s
+CICLO 20261108-140704-459464
+      escrito src/language/marcos.py
+      escrito src/reasoning/lessons.py
+      escrito scripts/recursos.py
+      escrito tests/test_parche130.py
+    parche-130 instalado. Copias en /Users/mlalejandre/Desktop/LCM/.parche_backups/20261108-140704-638411
+  parche parche-130.py: aplicado
+  TESTS UNITARIOS: 358 passed in 20.11s
   RESUMEN: TODO CUMPLE
-    texto_solar6_40: 100.0% -> 97.5%  EMPEORA
-  [OK] reproducibilidad/manifiesto.json: 237 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
+    texto_solar6_40: 97.5% -> 100.0%  MEJORA
+  [OK] reproducibilidad/manifiesto.json: 239 archivos, UD: {'UD_Spanish-GSD': '267f3530d4f122ee85d1891800211a06dfb79347', 'UD_Spanish-AnCora': '20adddbfcdd773c6dc97ba48ea11ca9364e74185'}
      metricas de referencia: 47 (de reports/historial.json)
 RESULTADO: TODO CUMPLE. Cambios conservados y manifiesto guardado.
 
 Archivos cambiados (git status --short):
-M .DS_Store
- M cartuchos/reflexion.json
- M reports/ciclo.txt
- M reports/historial.json
+M reports/historial.json
  M reports/razonamiento.json
- M reports/ultima_lectura.txt
  M reproducibilidad/manifiesto.json
- M src/language/dialogue.py
- M src/language/fechas.py
- M src/language/lector.py
- M src/language/lectura_ent.py
-?? parche-128.py
-?? parche-129.py
-?? src/language/relaciones.py
-?? src/language/vida.py
-?? tests/fixtures/
-?? tests/test_parche129.py
+ M src/language/marcos.py
+ M src/reasoning/lessons.py
+?? parche-130.py
+?? scripts/recursos.py
+?? tests/test_parche130.py
 
 Para publicarlo (lo haces tu; revisa antes que no entra nada no deseado):
   git add -A && git commit -m "<mensaje>" && git push

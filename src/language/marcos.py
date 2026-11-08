@@ -2,6 +2,7 @@
 Cubren familias enteras (no frases): si/no de clase/propiedad/posesion/composicion/giro, "que/quien/cual + verbo + X" (sujeto buscado), "que es/como es/que tipo de.. es X",
 "de que color", "cuantas Y tiene X", "que lugar ocupa X". Solo contestan cuando hay un hecho que lo sostiene; nunca inventan un "no"."""
 import re
+from functools import lru_cache
 
 from src.language.lexicon import norm
 from src.reasoning.lessons import canon
@@ -17,6 +18,20 @@ VERBS = {"es": "ser", "son": "ser", "esta": "estar", "estan": "estar", "tiene": 
 def st(w):
     w = SYN.get(w, w)
     return re.sub(r"(os|as|es|o|a|e|s)$", "", w) if len(w) > 3 else w
+
+
+@lru_cache(maxsize=1 << 18)
+def _clave(name):
+    """parche-130: la clave normalizada de un nombre se calcula UNA vez (antes se recalculaba por cada hecho y pregunta: coste cuadratico con la memoria)."""
+    return " ".join(st(w) for w in norm(name.replace("_", " ")).split())
+
+
+@lru_cache(maxsize=1 << 18)
+def _palabras(obj, pred):
+    ws = {st(w) for w in norm(obj.replace("_", " ")).split()}
+    if pred.upper().startswith("SER_EL_"):
+        ws |= {st(w) for w in pred.lower().split("_")[2:]}
+    return frozenset(ws)
 
 
 def _fam(p, kind):
@@ -38,7 +53,10 @@ class Marcos:
     def __init__(self, qa):
         self.qa = qa
         self.facts = [f for f in qa.m.facts if not f.get("neg")]
-        self.key = lambda name: " ".join(st(w) for w in norm(name.replace("_", " ")).split())
+        self.key = _clave
+        self.por_sujeto = {}                                            # parche-130: indice sujeto -> hechos (en el orden de la memoria)
+        for f in self.facts:
+            self.por_sujeto.setdefault(_clave(f["s"]), []).append(f)
         self.names = {}
         for f in self.facts:
             for x in (f["s"], f["o"]):
@@ -50,10 +68,7 @@ class Marcos:
 
     # ---- utilidades ----
     def fw(self, f):
-        ws = {st(w) for w in norm(f["o"].replace("_", " ")).split()}
-        if f["p"].upper().startswith("SER_EL_"):
-            ws |= {st(w) for w in f["p"].lower().split("_")[2:]}
-        return ws
+        return _palabras(f["o"], f["p"])
 
     def ents(self, tk):
         """Entidades conocidas en tk: lista de (i, j, clave), las mas largas primero y sin solaparse."""
@@ -69,7 +84,7 @@ class Marcos:
         return sorted(out)
 
     def of(self, key, kind=None):
-        return [f for f in self.facts if self.key(f["s"]) == key and (kind is None or _fam(f["p"], kind))]
+        return [f for f in self.por_sujeto.get(key, ()) if kind is None or _fam(f["p"], kind)]
 
     def cover(self, f, q):
         return bool(q) and set(q) <= self.fw(f)

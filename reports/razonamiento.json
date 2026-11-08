@@ -5,8 +5,8 @@
   "prueba_valida": 1.0,
   "falsa_certeza": 0.0,
   "abstencion_indebida": 0.0,
-  "ms_medio": 0.21,
-  "ms_p95": 1.714
+  "ms_medio": 0.207,
+  "ms_p95": 1.672
  },
  "por_nivel": {
   "1": {
@@ -16,7 +16,7 @@
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
    "ms_medio": 0.009,
-   "ms_p95": 0.02
+   "ms_p95": 0.021
   },
   "2": {
    "n": 107,
@@ -25,7 +25,7 @@
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
    "ms_medio": 0.007,
-   "ms_p95": 0.02
+   "ms_p95": 0.019
   },
   "3": {
    "n": 161,
@@ -34,7 +34,7 @@
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
    "ms_medio": 0.035,
-   "ms_p95": 0.119
+   "ms_p95": 0.122
   },
   "4": {
    "n": 119,
@@ -43,7 +43,7 @@
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
    "ms_medio": 0.089,
-   "ms_p95": 0.395
+   "ms_p95": 0.387
   },
   "5": {
    "n": 178,
@@ -51,8 +51,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.633,
-   "ms_p95": 1.78
+   "ms_medio": 0.624,
+   "ms_p95": 1.806
   },
   "6": {
    "n": 324,
@@ -69,8 +69,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.194,
-   "ms_p95": 0.954
+   "ms_medio": 0.182,
+   "ms_p95": 0.95
   },
   "8": {
    "n": 58,
@@ -78,8 +78,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 1.533,
-   "ms_p95": 2.594
+   "ms_medio": 1.51,
+   "ms_p95": 2.661
   }
  },
  "por_dominio": {
@@ -89,7 +89,7 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.048,
+   "ms_medio": 0.049,
    "ms_p95": 0.145
   },
   "taxonomia": {
@@ -98,8 +98,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.023,
-   "ms_p95": 0.039
+   "ms_medio": 0.021,
+   "ms_p95": 0.044
   },
   "geografia": {
    "n": 153,
@@ -107,8 +107,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.034,
-   "ms_p95": 0.096
+   "ms_medio": 0.032,
+   "ms_p95": 0.088
   },
   "organizacion": {
    "n": 177,
@@ -116,8 +116,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.054,
-   "ms_p95": 0.144
+   "ms_medio": 0.057,
+   "ms_p95": 0.143
   },
   "tiempo": {
    "n": 91,
@@ -126,7 +126,7 @@
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
    "ms_medio": 0.019,
-   "ms_p95": 0.034
+   "ms_p95": 0.032
   },
   "medidas": {
    "n": 109,
@@ -134,8 +134,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 0.057,
-   "ms_p95": 0.317
+   "ms_medio": 0.059,
+   "ms_p95": 0.328
   },
   "logica": {
    "n": 160,
@@ -143,8 +143,8 @@
    "prueba_valida": 1.0,
    "falsa_certeza": 0.0,
    "abstencion_indebida": 0.0,
-   "ms_medio": 1.261,
-   "ms_p95": 2.564
+   "ms_medio": 1.238,
+   "ms_p95": 2.498
   }
  },
  "fallos": [],
@@ -153,32 +153,32 @@
    "n": 60,
    "preguntas": 343,
    "exactitud": 1.0,
-   "ms_medio": 0.051,
-   "ms_p95": 0.137,
+   "ms_medio": 0.05,
+   "ms_p95": 0.135,
    "prueba_valida": 1.0
   },
   {
    "n": 240,
    "preguntas": 357,
    "exactitud": 1.0,
-   "ms_medio": 0.206,
-   "ms_p95": 0.586,
+   "ms_medio": 0.207,
+   "ms_p95": 0.612,
    "prueba_valida": 1.0
   },
   {
    "n": 960,
    "preguntas": 364,
    "exactitud": 1.0,
-   "ms_medio": 1.822,
-   "ms_p95": 2.162,
+   "ms_medio": 1.895,
+   "ms_p95": 2.282,
    "prueba_valida": 1.0
   },
   {
    "n": 3840,
    "preguntas": 349,
    "exactitud": 1.0,
-   "ms_medio": 30.848,
-   "ms_p95": 9.945,
+   "ms_medio": 29.856,
+   "ms_p95": 10.245,
    "prueba_valida": 1.0
   }
  ]

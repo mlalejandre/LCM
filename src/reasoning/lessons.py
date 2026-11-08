@@ -26,12 +26,29 @@ def generalize(lesson: dict, is_var: Callable[[str], bool] = lambda n: True):
     return prem, concl
 
 
+class _Indice:
+    """parche-130: hechos ordenados + indice por predicado y por (predicado, sujeto). Evita recorrer toda la memoria en cada premisa (coste cuadratico)."""
+
+    def __init__(self, hechos):
+        self.por_pred, self.por_ps = {}, {}
+        for f in hechos:
+            self.por_pred.setdefault(f[1], []).append(f)
+            self.por_ps.setdefault((f[1], f[0]), []).append(f)
+
+    def candidatos(self, p, s, libre):
+        return self.por_pred.get(p, ()) if libre else self.por_ps.get((p, s), ())
+
+
 def _matches(prem: Sequence[Triple], known: Sequence[Triple], bind: Dict[str, str], used: List[Triple]):
     if not prem:
         yield dict(bind), list(used)
         return
     s, p, o = prem[0]
-    for f in known:
+    if isinstance(known, _Indice):                                          # parche-130: con indice solo se recorren los hechos que pueden encajar (mismo orden que antes)
+        cand = known.candidatos(p, bind.get(s, s) if s.startswith("?") else s, s.startswith("?") and s not in bind)
+    else:
+        cand = known
+    for f in cand:
         if f[1] != p:
             continue
         new, ok = dict(bind), True
@@ -86,8 +103,9 @@ def apply_lessons(facts: Iterable[Triple], lessons: Sequence[dict], is_var: Call
     derived: Dict[Triple, List[Triple]] = {}
     for _ in range(rounds):
         new = {}
+        ind = _Indice(sorted(known))                                        # parche-130: ordenar e indexar UNA vez por ronda (antes: una por regla)
         for prem, concl in rules:
-            for bind, used in _matches(prem, sorted(known), {}, []):
+            for bind, used in _matches(prem, ind, {}, []):
                 out = tuple(bind.get(x, x) for x in concl)
                 if any(x.startswith("?") for x in out) or out in known or out in derived or out in new:
                     continue
