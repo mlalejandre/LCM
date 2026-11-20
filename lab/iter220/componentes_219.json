@@ -1,0 +1,25 @@
+{
+ "nota": "quién contesta en las dos medidas a ciegas de la 2.19 (test3 ciega + test4, texto pegado, 125 preguntas)",
+ "componentes": {
+  "nucleo": {
+   "n": 51,
+   "ok": 46,
+   "falsas": 5
+  },
+  "exposicion": {
+   "n": 26,
+   "ok": 25,
+   "falsas": 1
+  },
+  "cita": {
+   "n": 24,
+   "ok": 21,
+   "falsas": 3
+  },
+  "abstencion": {
+   "n": 24,
+   "ok": 11,
+   "falsas": 0
+  }
+ }
+}

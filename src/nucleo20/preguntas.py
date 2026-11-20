@@ -436,7 +436,9 @@ class Preguntador:
                 return None
             # «¿En qué ciudad vive X?» = dónde; «¿En qué año / qué día ...?» = cuándo (salvo «¿Qué día es hoy?»)
             verbo_ser = i < len(T) and T[i].n in ("es", "son", "era", "fue", "sera")
+            self._preg_que_lugar = False
             if tipo == "que" and sust in ("ciudad", "lugar", "sitio", "pais", "pueblo", "calle", "barrio", "empresa", "zona", "parte", "localidad", "provincia", "region") and not verbo_ser:
+                self._preg_que_lugar = not prep           # 2.20: «¿qué país cruza X?»: el sitio puede ser el objeto del verbo («cruza Rusia»)
                 tipo, sust = "donde", ""
                 prep = "" if prep == "en" else prep
             elif tipo == "que" and sust in ("año", "dia", "mes", "momento", "fecha", "hora", "epoca", "semana") and not verbo_ser and not (sust == "año" and i < len(T) and T[i].n in ("tiene", "tengo", "tienes", "cumple", "cumplo")):
@@ -1905,6 +1907,11 @@ class Preguntador:
             if viejos:
                 f = viejos[-1]
                 return self._abst(self._fin("No sé dónde " + M.conjugar(v, "pres", self._persona_de(s)) + " ahora. " + _cap(self.frase(f, tiempo="imp", antes=True))))
+            if getattr(self, "_preg_que_lugar", False):
+                con_obj = [f for f in self.marcos(v=v, s=s, vig=True, neg=False) if f.get("obj") or f.get("obj_cls")]
+                if con_obj:
+                    self.ult_just = {"dicho": [con_obj[-1]["src"]]}
+                    return self._ok(self._fin(_cap(self.frase(con_obj[-1]))))
             return nada(f"no me has dicho dónde {M.conjugar(v, 'pres' if not pasado else 'pret', self._persona_de(s))}{'' if s == 'U' else ' ' + self.disp(s)}")
         if tipo == "que" and C.xinf and isinstance(s, str) and not s.startswith("?"):
             inf_ = sa(C.xinf.split()[0])
@@ -2182,7 +2189,11 @@ class Preguntador:
                 x = con_nombre[0]["x"]
                 if x.startswith("K:"):
                     quien = ("tu " + nom) if dueno == "U" else contrae(f"{'la' if M.genero_sust(nom) == 'f' else 'el'} {nom} de {self.disp(dueno)}")
-                    return self._ok(self._fin(f"{quien} es {self.disp(x)}"))
+                    d_x = self.disp(x)
+                    if self.E.get(x, {}).get("pl") and not self.E.get(x, {}).get("sinart"):
+                        cl_x = self.E[x].get("clase") or x[2:]   # 2.20: «el fruto es la aceituna»: una clase, dicha en singular aunque luego se hable de «las aceitunas»
+                        d_x = f"{'la' if self.gen(x) == 'f' else 'el'} {self._acento(cl_x)}"
+                    return self._ok(self._fin(f"{quien} es {d_x}"))
                 txt = frs[0]
             else:
                 noms = self._lista([self.disp(r["x"]) for r in con_nombre])

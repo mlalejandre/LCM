@@ -256,6 +256,14 @@ class Conversador(Nucleo):
                         if isinstance(r_c, dict) and r_c.get("estado") == "ok":
                             r = r_c
                             break
+                    else:                                # 2.20: y si no, por el sentido: la palabra aprendida más cercana (vectores del léxico)
+                        for cand, cambios in _S.por_sentido(self, texto):
+                            r_c = self._procesar_charla(cand)
+                            if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("respuesta") and _S.casa_tiempo(cambios, r_c["respuesta"]):
+                                r = dict(r_c)
+                                r["respuesta"] = _S.aviso(cambios, r["respuesta"])
+                                r["por_sentido"] = cambios
+                                break
                 except Exception:                        # noqa
                     pass
                 finally:
@@ -301,6 +309,17 @@ class Conversador(Nucleo):
         if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))) \
                 and (self.usuario.get("leido") or []):
             c = lectura.cita(self, texto)                # el núcleo no lo sabe: ¿lo dice el texto leído?
+            if not c:
+                try:                                     # 2.20: ¿lo dice con otras palabras?
+                    from . import sinonimia as _S
+                    for cand, cambios in _S.por_sentido(self, texto):
+                        c = lectura.cita(self, cand)
+                        if c and _S.casa_tiempo(cambios, c):
+                            c = _S.aviso(cambios, c)
+                            break
+                        c = None
+                except Exception:                        # noqa
+                    c = None
             if c:
                 self.ult_just = {"dicho": [c]}
                 self.pend = None

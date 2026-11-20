@@ -1,0 +1,1071 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 8,
+    "ok": 8,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 83,
+    "ok": 59,
+    "falsas": 5,
+    "acierto": 71.1
+   },
+   "L": {
+    "n": 20,
+    "ok": 13,
+    "falsas": 1,
+    "acierto": 65.0
+   },
+   "D": {
+    "n": 3,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 66.7
+   },
+   "I": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 66.7
+   },
+   "P": {
+    "n": 16,
+    "ok": 6,
+    "falsas": 2,
+    "acierto": 37.5
+   },
+   "M": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 12,
+    "ok": 12,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   }
+  },
+  "frases_cubiertas": [
+   24,
+   30
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "El vidrio es un material duro y transparente que se rompe con facilidad.",
+   "r": "Entendido: Vidrio es Material; Vidrio es duro.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Se fabrica con arena, que se calienta en un horno hasta que se funde.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Se fabrica con arena, que se calienta en un horno hasta que se funde».",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "El horno alcanza más de mil grados.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El horno alcanza más de mil grados».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Cuando el vidrio está fundido parece miel espesa.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Cuando el vidrio está fundido parece miel espesa».",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Los sopladores son los artesanos que dan forma al vidrio soplando por un tubo largo.",
+   "r": "Entendido: los sopladores son artesanos; los artesanos dan forma al vidrio soplando por un tubo largo.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "El tubo se llama caña.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Al enfriarse, el vidrio se vuelve duro.",
+   "r": "Entendido: A el enfriarse el vidrio se vuelve duro.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Con vidrio se hacen botellas, vasos, ventanas y espejos.",
+   "r": "Entendido: Botellas hacer con el vidrio; Vasos hacer con el vidrio; Ventanas hacer con el vidrio.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Un espejo es un vidrio con una capa de plata por detrás.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "El vidrio se puede reciclar muchas veces sin perder calidad.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El vidrio se puede reciclar muchas veces sin perder calidad».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Las botellas usadas se echan al contenedor verde.",
+   "r": "Entendido: la botellausado es una botella; las botellas usadas se echan al contenedor verde.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "En la fábrica las botellas viejas se trituran y se funden otra vez.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En la fábrica las botellas viejas se trituran y se funden otra vez».",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Los romanos ya usaban vasos de vidrio.",
+   "r": "Entendido: los romanos usaban vasos de vidrio.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "Murano es una isla de Italia famosa por sus sopladores.",
+   "r": "Entendido: Murano es famosa y una isla por sus sopladores.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "el vidrio",
+   "t": "-",
+   "q": "El vidrio de las gafas se llama lente.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "el vidrio",
+   "t": "V",
+   "q": "¿qué es el vidrio?",
+   "crit": "material",
+   "r": "El vidrio es un material. El vidrio es transparente y se rompe con facilidad.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿cómo es el vidrio?",
+   "crit": "duro|transparente",
+   "r": "El vidrio es transparente.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿con qué se fabrica el vidrio?",
+   "crit": "arena",
+   "r": "En el texto pone, hablando del horno: «Cuando el vidrio está fundido parece miel espesa».",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿cuántos grados alcanza el horno?",
+   "crit": "mil|1000",
+   "r": "En el texto pone: «El horno alcanza más de mil grados».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el vidrio",
+   "t": "D",
+   "q": "¿qué parece el vidrio cuando está fundido?",
+   "crit": "miel",
+   "r": "En el texto pone, hablando del horno: «Cuando el vidrio está fundido parece miel espesa».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el vidrio",
+   "t": "V",
+   "q": "¿qué son los sopladores?",
+   "crit": "artesanos",
+   "r": "Los sopladores son artesanos.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el vidrio",
+   "t": "I",
+   "q": "¿quiénes dan forma al vidrio?",
+   "crit": "sopladores|artesanos",
+   "r": "Los artesanos dan forma al vidrio soplando por un tubo largo.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el vidrio",
+   "t": "I",
+   "q": "¿cómo se llama el tubo?",
+   "crit": "cana",
+   "r": "Caña. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿cuándo se vuelve duro el vidrio?",
+   "crit": "enfriarse|enfria*",
+   "r": "No lo sé: sé que A el enfriarse el vidrio se vuelve duro, pero no cuándo.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿qué se hace con vidrio?",
+   "crit": "botellas|vasos|ventanas|espejos",
+   "r": "Suelen ser de vidrio, por ejemplo, las botellas, las copas, los espejos, las jarras, los tarros y los vasos.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el vidrio",
+   "t": "V",
+   "q": "¿qué es un espejo?",
+   "crit": "vidrio|plata",
+   "r": "Un espejo es un objeto de aseo. Además, según lo que he aprendido, el espejo es un vidrio con una capa de plata por detrás.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿el vidrio se puede reciclar?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El vidrio se puede reciclar muchas veces sin perder calidad».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿dónde se echan las botellas usadas?",
+   "crit": "contenedor|verde",
+   "r": "En el texto pone: «Las botellas usadas se echan al contenedor verde».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿dónde se trituran las botellas viejas?",
+   "crit": "fabrica",
+   "r": "En el texto pone, hablando de las botellas usadas: «En la fábrica las botellas viejas se trituran y se funden otra vez».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿quiénes usaban ya vasos de vidrio?",
+   "crit": "romanos",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "el vidrio",
+   "t": "V",
+   "q": "¿qué es Murano?",
+   "crit": "isla",
+   "r": "Murano es famosa y una isla por sus sopladores.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el vidrio",
+   "t": "L",
+   "q": "¿por qué es famosa Murano?",
+   "crit": "sopladores",
+   "r": "Murano es famosa y una isla por sus sopladores.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el vidrio",
+   "t": "I",
+   "q": "¿cómo se llama el vidrio de las gafas?",
+   "crit": "lente",
+   "r": "Lente. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "el vidrio",
+   "t": "H",
+   "q": "¿un soplador es un artesano?",
+   "crit": "^si",
+   "r": "Sí, los sopladores son artesanos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "H",
+   "q": "¿un espejo es un vidrio?",
+   "crit": "^si",
+   "r": "No lo sé seguro: de fábrica sé que un espejo es un objeto de aseo, pero no si es un vidrio.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "H",
+   "q": "¿un soplador es una persona?",
+   "crit": "^si|artesano",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿con qué se elabora el vidrio?",
+   "crit": "arena",
+   "r": "Entiendo «elaborar» como «fabricar». En el texto pone, hablando del horno: «Cuando el vidrio está fundido parece miel espesa».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿quiénes moldean el vidrio?",
+   "crit": "sopladores|artesanos",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿dónde se tiran las botellas usadas?",
+   "crit": "contenedor|verde",
+   "r": "Entiendo «tirar» como «echar». En el texto pone: «Las botellas usadas se echan al contenedor verde».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿quiénes utilizaban ya vasos de vidrio?",
+   "crit": "romanos",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿cuándo se endurece el vidrio?",
+   "crit": "enfria*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿qué se fabrica con vidrio?",
+   "crit": "botellas|vasos|ventanas|espejos",
+   "r": "En el texto pone, hablando del horno: «Cuando el vidrio está fundido parece miel espesa».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿dónde se muelen las botellas viejas?",
+   "crit": "fabrica",
+   "r": "Entiendo «moler» como «triturar». En el texto pone, hablando de las botellas usadas: «En la fábrica las botellas viejas se trituran y se funden otra vez».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "P",
+   "q": "¿el vidrio se quiebra con facilidad?",
+   "crit": "^si|rompe",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "D",
+   "q": "¿una botella se puede reciclar?",
+   "crit": "^si|vidrio",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "M",
+   "q": "¿de qué país es la isla famosa por sus sopladores?",
+   "crit": "italia",
+   "r": "Murano es famosa y una isla por sus sopladores.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿quién inventó el vidrio?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿cuánto cuesta un espejo?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿quién limpia las ventanas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿dónde se venden las botellas?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿quién pinta los vasos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "N",
+   "q": "¿cuánto pesa una botella?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "C",
+   "q": "mi primo es soplador",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu primo es soplador.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "C",
+   "q": "¿mi primo da forma al vidrio?",
+   "crit": "^si|forma",
+   "r": "Sí, los artesanos dan forma al vidrio soplando por un tubo largo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "G",
+   "q": "dime dos cosas que se hacen con vidrio",
+   "crit": "botellas|vasos|ventanas|espejos",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dime dos cosas que se hacen con vidrio».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "G",
+   "q": "descríbeme el vidrio",
+   "crit": "material|duro|transparente|arena",
+   "r": "Un vidrio es un material. Sirve para fabricar cosas. Suele ser de arena. El vidrio es transparente. El vidrio se rompe con facilidad.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el vidrio",
+   "t": "K",
+   "q": "las botellas usadas se echan al contenedor azul",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|verde",
+   "r": "Sí, eso ya me lo habías dicho. Pero ojo: en lo que leí ponía «Las botellas usadas se echan al contenedor verde». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "El correo es el servicio que lleva cartas y paquetes de un lugar a otro.",
+   "r": "Entendido: el correo es servicio; el servicio lleva cartas a otro; el servicio lleva paquetes de un lugar a otro.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "La persona que reparte las cartas se llama cartero.",
+   "r": "Entendido: el cartero es una persona; el cartero reparte las cartas.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Para enviar una carta hay que meterla en un sobre y pegarle un sello.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Para enviar una carta hay que meterla en un sobre y pegarle un sello».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "El sello es una estampa pequeña que demuestra que el envío está pagado.",
+   "r": "Entendido: el sello es una estampa pequeño.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "En el sobre se escribe la dirección del destinatario, que es la persona que recibe la carta.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En el sobre se escribe la dirección del destinatario, que es la persona que recibe la carta».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "La persona que envía la carta se llama remitente.",
+   "r": "Entendido: el remitente es una persona; el remitente envia la carta. Pero ojo: en lo que leí ponía «En el sobre se escribe la dirección del destinatario, que es la persona que recibe la carta». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Las cartas se echan al buzón, que en España es amarillo.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Las cartas se echan al buzón, que en España es amarillo».",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Los carteros recogen las cartas de los buzones cada mañana.",
+   "r": "Entendido: los carteros recogen las cartas de los buzones cada mañana.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Después las cartas se clasifican en una oficina según su código postal.",
+   "r": "Entendido: las cartas se clasifican en una oficina según su código postal después.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "El código postal es un número que indica la zona de destino.",
+   "r": "Entendido: el código postal es un número; el código postal indica la zona de destino.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Antiguamente el correo viajaba a caballo y tardaba semanas.",
+   "r": "Entendido: el correo viajaba a caballo antiguamente; el correo tardaba semanas.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Hoy las cartas viajan en furgonetas, trenes y aviones.",
+   "r": "Entendido: las cartas viajan en furgonetas, trenes y aviones hoy.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Las palomas mensajeras llevaban mensajes atados a una pata.",
+   "r": "Entendido: las palomas mensajeras son palomas; las palomas mensajeras llevaban mensajes atados a una pata.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Un paquete urgente llega en un solo día.",
+   "r": "Entendido: el paquete urgente es un paquete; el paquete urgente llega en un día.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "el correo",
+   "t": "-",
+   "q": "Las personas que coleccionan sellos se llaman filatélicos.",
+   "r": "Entendido: los filatélicos son personas; los filatélicos coleccionan sellos.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "el correo",
+   "t": "V",
+   "q": "¿qué es el correo?",
+   "crit": "servicio",
+   "r": "Un correo es un servicio, como me dijiste; de fábrica sé además que es un medio de comunicación. Además, según lo que he aprendido, el correo es el servicio que lleva cartas y paquetes de un lugar a otro.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿qué lleva el correo?",
+   "crit": "cartas|paquetes",
+   "r": "El servicio lleva cartas y paquetes de un lugar a otro.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el correo",
+   "t": "I",
+   "q": "¿cómo se llama la persona que reparte las cartas?",
+   "crit": "cartero",
+   "r": "Cartero. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿qué hay que pegarle al sobre?",
+   "crit": "sello",
+   "r": "En el texto pone, hablando de la persona: «Para enviar una carta hay que meterla en un sobre y pegarle un sello».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el correo",
+   "t": "V",
+   "q": "¿qué es un sello?",
+   "crit": "estampa",
+   "r": "Un sello es una estampa, como me dijiste; de fábrica sé además que es un material de oficina. Además, según lo que he aprendido, el sello es una estampa pequeña que demuestra que el envío está pagado.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el correo",
+   "t": "V",
+   "q": "¿quién es el destinatario?",
+   "crit": "recibe|persona",
+   "r": "En el texto pone, hablando del sello: «En el sobre se escribe la dirección del destinatario, que es la persona que recibe la carta».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el correo",
+   "t": "I",
+   "q": "¿cómo se llama la persona que envía la carta?",
+   "crit": "remitente",
+   "r": "Remitente. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿dónde se echan las cartas?",
+   "crit": "buzon",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Las cartas se echan al buzón, que en España es amarillo».",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿de qué color es el buzón en España?",
+   "crit": "amarillo",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Las cartas se echan al buzón, que en España es amarillo».",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿cuándo recogen las cartas los carteros?",
+   "crit": "manana",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿dónde se clasifican las cartas?",
+   "crit": "oficina",
+   "r": "Las cartas se clasifican en una oficina según su código postal después.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el correo",
+   "t": "V",
+   "q": "¿qué es el código postal?",
+   "crit": "numero",
+   "r": "El código postal es un número. Además, según lo que he aprendido, el código postal es un número que indica la zona de destino.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿cómo viajaba el correo antiguamente?",
+   "crit": "caballo",
+   "r": "El correo viajaba a caballo antiguamente.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿en qué viajan hoy las cartas?",
+   "crit": "furgonetas|trenes|aviones",
+   "r": "Las cartas viajan en furgonetas, trenes y aviones hoy.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿qué llevaban las palomas mensajeras?",
+   "crit": "mensajes",
+   "r": "Las palomas mensajeras llevaban mensajes atados a una pata.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el correo",
+   "t": "L",
+   "q": "¿cuánto tarda en llegar un paquete urgente?",
+   "crit": "un solo dia|un dia|1",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "el correo",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que coleccionan sellos?",
+   "crit": "filatelico*",
+   "r": "Filatélicos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "el correo",
+   "t": "H",
+   "q": "¿un cartero es una persona?",
+   "crit": "^si",
+   "r": "Sí, un cartero es una persona. Lo deduzco porque un cartero es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "H",
+   "q": "¿el destinatario es una persona?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «En el sobre se escribe la dirección del destinatario, que es la persona que recibe la carta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "H",
+   "q": "¿un filatélico es una persona?",
+   "crit": "^si",
+   "r": "Sí, los filatélicos son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿quién entrega las cartas?",
+   "crit": "cartero*",
+   "r": "Entiendo «entregar» como «repartir». Los carteros reparten las cartas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿dónde se depositan las cartas?",
+   "crit": "buzon",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿dónde se ordenan las cartas?",
+   "crit": "oficina",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿qué transportaban las palomas mensajeras?",
+   "crit": "mensajes",
+   "r": "Las palomas mensajeras llevaban mensajes atados a una pata.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿quiénes juntan sellos?",
+   "crit": "filatelico*",
+   "r": "Entiendo «juntar» como «coleccionar». Los filatélicos coleccionan sellos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿cuánto demoraba el correo antiguamente?",
+   "crit": "semanas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿cuánto demora un paquete urgente?",
+   "crit": "dia",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "P",
+   "q": "¿qué transporta el correo?",
+   "crit": "cartas|paquetes",
+   "r": "El servicio lleva cartas y paquetes de un lugar a otro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "D",
+   "q": "¿un cartero recoge cartas?",
+   "crit": "^si|recoge*",
+   "r": "Sí, los carteros recogen las cartas de los buzones cada mañana.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "M",
+   "q": "¿cómo se llama la persona que recibe la carta?",
+   "crit": "destinatario",
+   "r": "Cartero. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿quién inventó el sello?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿cuánto cuesta un sello?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿quién fabrica los buzones?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿quién lee las cartas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿dónde duermen las palomas mensajeras?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "N",
+   "q": "¿cuánto pesa un paquete urgente?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "C",
+   "q": "mi vecina es cartera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecina es cartera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "C",
+   "q": "¿mi vecina reparte cartas?",
+   "crit": "^si|reparte*",
+   "r": "Sí, los carteros reparten las cartas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "G",
+   "q": "dime en qué viajan hoy las cartas",
+   "crit": "furgonetas|trenes|aviones",
+   "r": "Las cartas viajan en furgonetas, trenes y aviones hoy.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "G",
+   "q": "descríbeme el correo",
+   "crit": "servicio|cartas|paquetes",
+   "r": "El correo es el servicio que lleva cartas y paquetes de un lugar a otro. El correo es servicio. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el correo",
+   "t": "K",
+   "q": "el buzón en España es rojo",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|amarillo",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El buzón en España es rojo».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  }
+ ]
+}

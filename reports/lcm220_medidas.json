@@ -1,0 +1,243 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.20 · preguntar por el sentido: vectores de sinonimia aprendidos del léxico",
+ "analisis_previo_componentes_219": {
+  "nucleo": {
+   "n": 51,
+   "ok": 46,
+   "falsas": 5
+  },
+  "exposicion": {
+   "n": 26,
+   "ok": 25,
+   "falsas": 1
+  },
+  "cita": {
+   "n": 24,
+   "ok": 21,
+   "falsas": 3
+  },
+  "abstencion": {
+   "n": 24,
+   "ok": 11,
+   "falsas": 0
+  }
+ },
+ "primera_medida_limpia_test5_83": {
+  "texto": {
+   "2.19": {
+    "acierto": 72.3,
+    "falsas": 4
+   },
+   "2.20_ciega": {
+    "acierto": 79.5,
+    "falsas": 5
+   },
+   "2.20_auditado": {
+    "acierto": 80.7,
+    "falsas": 4
+   },
+   "2.20_final_no_ciego": {
+    "acierto": 80.7,
+    "falsas": 4
+   }
+  },
+  "frases": {
+   "2.19": {
+    "acierto": 66.3,
+    "falsas": 5
+   },
+   "2.20_ciega": {
+    "acierto": 71.1,
+    "falsas": 5
+   }
+  },
+  "base": {
+   "2.19": 24.1,
+   "2.20": 24.1
+  },
+  "parafrasis_texto": {
+   "2.19": 12,
+   "2.20_ciega": 50,
+   "2.20_auditado": 56
+  },
+  "trampas": {
+   "2.19": 100,
+   "2.20": 100
+  },
+  "respuestas_por_sentido": {
+   "n": 8,
+   "correctas_auditado": 7,
+   "falsas": 1,
+   "falsa": "«ordenar» entendido como «recoger»"
+  }
+ },
+ "segunda_medida_limpia_test6_38": {
+  "texto": {
+   "2.19": {
+    "acierto": 76.3,
+    "falsas": 1
+   },
+   "2.20": {
+    "acierto": 81.6,
+    "falsas": 1
+   }
+  },
+  "frases": {
+   "2.19": {
+    "acierto": 65.8,
+    "falsas": 3
+   },
+   "2.20": {
+    "acierto": 68.4,
+    "falsas": 3
+   }
+  },
+  "parafrasis_texto": {
+   "2.19": 25,
+   "2.20": 37
+  },
+  "trampas": {
+   "2.19": 100,
+   "2.20": 100
+  }
+ },
+ "banco_parafrasis_desarrollo_pdev_68": {
+  "2.19": {
+   "parafrasis": 33,
+   "trampas": 100
+  },
+  "2.20": {
+   "parafrasis": 72,
+   "trampas": 100
+  },
+  "2.20_sin_tabla_a_mano": {
+   "parafrasis": 70,
+   "trampas": 100
+  },
+  "2.20_sin_vectores": {
+   "parafrasis": 33,
+   "trampas": 100
+  },
+  "2.20_sin_ninguna": {
+   "parafrasis": 29,
+   "trampas": 100
+  }
+ },
+ "ablacion_test5_no_ciego_parafrasis": {
+  "las_dos": 56,
+  "sin_tabla": 43,
+  "sin_vectores": 12,
+  "sin_ninguna": 0
+ },
+ "estabilidad": {
+  "otras_semillas_pdev_parafrasis": [
+   75,
+   75
+  ],
+  "otras_semillas_test5_acierto": [
+   80.7,
+   80.7
+  ],
+  "dif_max_vectores_python311": 0.0002
+ },
+ "calibracion_lexico": {
+  "vectores_con_ancestros_nombres_umbral_0.6": {
+   "sinonimos_pasan": 0.63,
+   "hermanos_pasan": 0.5
+  },
+  "solo_vectores_pares_sin_relacion_directa_ni_a_dos_pasos": "33-45 %"
+ },
+ "temas_ya_conocidos_texto_219_220": {
+  "dev": [
+   96.0,
+   96.0
+  ],
+  "test": [
+   88.4,
+   88.4
+  ],
+  "test2": [
+   94.8,
+   94.8
+  ],
+  "test3": [
+   93.3,
+   93.3
+  ],
+  "test4": [
+   83.1,
+   86.2
+  ],
+  "setas": [
+   72.9,
+   72.9
+  ]
+ },
+ "temas_ya_conocidos_frases_219_220": {
+  "dev": [
+   89.1,
+   89.1
+  ],
+  "test": [
+   85.3,
+   85.3
+  ],
+  "test2": [
+   79.3,
+   79.3
+  ],
+  "test3": [
+   81.7,
+   81.7
+  ],
+  "test4": [
+   75.4,
+   75.4
+  ]
+ },
+ "controles_219_220": {
+  "autor": [
+   89.9,
+   89.9
+  ],
+  "ciego2": [
+   94.68,
+   94.68
+  ],
+  "ciego6": [
+   82.09,
+   82.09
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "16b": [
+   96.48,
+   96.48
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas (iter26 t11, iter28 t23, iter210 t01, iter214 t05); iter220 t01 = 100 % (163 sondas)",
+ "pytest": "906 pasan, 3 fallos de entorno, 1 omitido"
+}

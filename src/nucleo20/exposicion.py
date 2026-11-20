@@ -233,6 +233,10 @@ def desdobla(f, hilo, ex, reg=True):
     """Lista de frases sencillas para el núcleo. Lo que no es un hecho simple se guarda en `ex` (si reg)."""
     f = f.strip().rstrip(".!").strip()
     out = []
+    m_alli = re.match(r"^(?:Allí|Ahí|Allá|En ese lugar|En ese sitio),?\s+(.+)$", f)
+    if m_alli and ex.get("_lugar"):                      # 2.20: «Allí…» es el lugar que se acaba de nombrar; vale para cada cosa que se dice que pasa allí
+        return [x if re.search(r"\b(?:en|sobre|dentro de)\s+(?:el|la|los|las|un|una)\b", x) else x.rstrip(".") + " en " + ex["_lugar"] + "."
+                for x in desdobla(_may(m_alli.group(1)), hilo, ex, reg)]
 
     def anota(clave, dato):
         if reg and dato not in ex[clave]:
@@ -299,6 +303,16 @@ def desdobla(f, hilo, ex, reg=True):
         anota("defs", {"t": sa(_sing(x.lower())), "disp": x, "d": f"{m.group(1).lower()} {cls} que {m.group(3)}", "pl": plq})
         hilo.pon(_may(_el(x, pl=plq)))
         return [f"{_may(_un(_sing(x)))} es {_un(_sing(cls))}.", f"{_may(_el(x, pl=plq))} {m.group(3)}."]
+    m = re.match(r"^(El|La|Los|Las)\s+([a-záéíóúñü]+)\s+(?:donde|en\s+(?:el|la|los|las)\s+que|en\s+que)\s+(.+?)\s+se\s+llama(?:n|ba|ban)?\s+(.+)$", f)
+    if m and len(m.group(4).split()) <= 3:               # 2.20: «El lugar donde se fabrica el aceite se llama almazara»: es un lugar y allí pasa eso
+        plq = m.group(1) in ("Los", "Las")
+        x, cls, p_ = m.group(4).strip(), m.group(2), m.group(3).strip()
+        anota("defs", {"t": sa(_sing(x.lower())), "disp": x, "d": f"{m.group(1).lower()} {cls} donde {p_}", "pl": plq})
+        suj = re.match(r"^(se\s+[a-záéíóúñü]+)\s+((?:el|la|los|las)\s+.+)$", p_)
+        hecho = f"{_may(suj.group(2))} {suj.group(1)} en {_el(x, pl=plq)}." if suj else f"{_may(p_)} en {_el(x, pl=plq)}."
+        if reg:
+            ex["_lugar"] = _el(x, pl=plq)
+        return [f"{_may(_un(_sing(x)))} es {_un(_sing(cls))}.", hecho]
     m = re.match(r"^A\s+(.+?)\s+se\s+(?:les?|los|las|la|lo)\s+llaman?\s+(.+)$", f)
     if m:
         anota("defs", {"t": sa(_sing(m.group(2).lower())), "disp": m.group(2), "d": m.group(1), "pl": True})

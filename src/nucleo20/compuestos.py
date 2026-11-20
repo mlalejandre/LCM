@@ -95,6 +95,8 @@ def aprende_clase(nuc, sn):
         return None
     if sa(adj).endswith("mente") or re.fullmatch(r"\d+", adj):
         return None
+    if sa(adj) in ("donde", "cuando", "como", "que", "cuyo", "cuya", "quien", "adonde", "mientras", "aunque", "porque", "segun", "para", "entre", "sobre", "hasta", "desde", "hacia", "ante", "bajo", "tras"):
+        return None                                      # 2.20: «el lugar donde…» no es el nombre de una clase
     pl = det in ("los", "las", "unos", "unas")
     n1 = M.singular(n) if pl and len(n) > 3 else n
     a1 = M.singular(adj) if pl and len(adj) > 3 and not sa(adj).endswith(("oides", "is", "us")) else adj

@@ -86,7 +86,7 @@ def leer(nuc, texto):
             w_ini = f2.split()[0] if f2.split() else ""
             sin_suj = sn_x is None and (X._fin3(w_ini) or w_ini in ("Su", "Sus", "Es", "Son", "Está", "Están")) and w_ini != "Hay"
             expositiva = (sn_x is not None and re.fullmatch(X._DET, sa(sn_x.split()[0].lower())) is not None) \
-                or re.match(r"^(?:Algun[oa]s|Cuando|Si|Siempre que|A los|A las|Al|Después de|Antes de|En (?:un|una|el|la|los|las) [a-záéíóúñü]+ hay|Hay)\b", f2) is not None \
+                or (fresco and re.match(r"^(?:Allí|Ahí|Allá),?\s", f2) is not None) or re.match(r"^(?:Algun[oa]s|Cuando|Si|Siempre que|A los|A las|Al|Después de|Antes de|En (?:un|una|el|la|los|las) [a-záéíóúñü]+ hay|Hay)\b", f2) is not None \
                 or (sin_suj and fresco and hilo.ult is not None) or (fresco and re.search(r"\bse llaman?\b", f2) is not None) or re.search(r",\s+(?:y\s+)?por eso\b", f2) is not None \
                 or (re.match(r"^Por (?:eso|ello|esa razón|ese motivo)\b", f2) is not None and bool(hilo.previa)) \
                 or (sn_x is not None and re.search(r"\b(?:es|son|fue|era|fueron)\s+(?:el|la|los|las)\s+(?:únic[oa]s?|primer[oa]?s?|últim[oa]s?|[a-záéíóúñü]+\s+(?:más|menos)\s+[a-záéíóúñü]+)\b", f2) is not None) \
