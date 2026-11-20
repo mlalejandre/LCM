@@ -1,0 +1,16 @@
+D = [{"id": "p02", "cat": "espacio", "turnos": [
+ ("hola", "hola"),
+ ("el gato duerme encima del armario", "gato;!no lo he entendido"),
+ ("¿dónde duerme el gato?", "armario"),
+ ("¿qué hay encima del armario?", "gato"),
+ ("las zapatillas están debajo del sofá", "zapatillas;!no lo he entendido"),
+ ("¿qué hay debajo del sofá?", "zapatillas"),
+ ("¿el sofá está encima de las zapatillas?", "^si"),
+ ("¿las zapatillas están encima del sofá?", "^no"),
+ ("la panadería está delante del banco", "panaderia;!no lo he entendido"),
+ ("¿qué hay detrás de la panadería?", "banco"),
+ ("¿el banco está detrás de la panadería?", "^si"),
+ ("¿qué hay detrás del banco?", "ABST"),
+ ("mi casa está lejos de la playa", "playa;!no lo he entendido"),
+ ("¿mi casa está cerca de la playa?", "^no"),
+]}]

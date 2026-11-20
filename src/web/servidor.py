@@ -52,6 +52,20 @@ def crear_servidor(motor, puerto=8765, host="127.0.0.1"):
                 if r in ("/", "/index.html"):
                     with open(os.path.join(STATIC, "index.html"), "rb") as fh:
                         return self._bytes(fh.read(), "text/html; charset=utf-8")
+                # LCM_VISION_01_API_CHAT_INTEGRADO: PNG generados, sin URLs externas.
+                if r == "/api/vision/muestra":
+                    from src.vision.sample import muestra_png
+                    try:
+                        png = muestra_png(q.get("color", ""))
+                    except ValueError as exc:
+                        return self._json({"error": str(exc)}, 400)
+                    return self._bytes(png, "image/png")
+                if r == "/vision":
+                    self.send_response(302)
+                    self.send_header("Location", "/#chat")
+                    self.send_header("Content-Length", "0")
+                    self.end_headers()
+                    return
                 if r == "/api/estado":
                     return self._json(motor.estado())
                 if r == "/api/sugerencias":
@@ -104,8 +118,35 @@ def crear_servidor(motor, puerto=8765, host="127.0.0.1"):
                 return self._json({"error": "JSON no válido."}, 400)
             r = urllib.parse.urlparse(self.path).path
             try:
+                # LCM_VISION_01_API_POST: compatibilidad con la ruta anterior.
+                if r == "/api/vision":
+                    import base64
+                    import binascii
+                    b64 = d.get("imagen_base64", "")
+                    if not isinstance(b64, str) or not b64 or len(b64) > 10_800_000:
+                        return self._json({"error": "Imagen ausente o demasiado grande."}, 413)
+                    try:
+                        contenido = base64.b64decode(b64, validate=True)
+                    except (binascii.Error, ValueError):
+                        return self._json({"error": "Imagen codificada incorrectamente."}, 400)
+                    resultado = motor.vision_analizar(contenido, d.get("nombre", "imagen"))
+                    return self._json(resultado, 400 if resultado.get("error") else 200)
                 if r == "/api/chat":
-                    return self._json(motor.chat(d.get("texto", "")))
+                    import base64
+                    import binascii
+                    imagen = None
+                    if "imagen_base64" in d:
+                        b64 = d["imagen_base64"]
+                        if not isinstance(b64, str) or not b64 or len(b64) > 10_800_000:
+                            return self._json({"error": "Imagen ausente o demasiado grande."}, 413)
+                        try:
+                            imagen = base64.b64decode(b64, validate=True)
+                        except (binascii.Error, ValueError):
+                            return self._json({"error": "Imagen codificada incorrectamente."}, 400)
+                    nombre = d.get("nombre", "imagen")
+                    if not isinstance(nombre, str):
+                        nombre = "imagen"
+                    return self._json(motor.chat(d.get("texto", ""), imagen=imagen, nombre=nombre[:120]))
                 if r == "/api/aprender":
                     return self._json(motor.aprender(d.get("texto", "")))
                 if r == "/api/chat/nueva":

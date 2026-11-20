@@ -1,0 +1,137 @@
+{
+ "1": {
+  "n": 8,
+  "acierto": 37.5,
+  "falsas": 4
+ },
+ "2": {
+  "n": 10,
+  "acierto": 50.0,
+  "falsas": 0
+ },
+ "3": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 0
+ },
+ "4": {
+  "n": 10,
+  "acierto": 80.0,
+  "falsas": 1,
+  "nota": "corregido a mano: 'me opera el doctor Ruiz, que es muy bueno' aprob\u00f3 por contener 'Ruiz' pero acab\u00f3 en \u00ab\u00bfA qui\u00e9n te refieres?\u00bb"
+ },
+ "5": {
+  "n": 10,
+  "acierto": 50.0,
+  "falsas": 2
+ },
+ "6": {
+  "n": 9,
+  "acierto": 66.67,
+  "falsas": 1
+ },
+ "7": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 0
+ },
+ "8": {
+  "n": 10,
+  "acierto": 40.0,
+  "falsas": 2
+ },
+ "9": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 0
+ },
+ "10": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 1
+ },
+ "11": {
+  "n": 8,
+  "acierto": 37.5,
+  "falsas": 0,
+  "nota": "corregido a mano: '\u00bfme ha gustado a m\u00ed?' aprob\u00f3 '^no' con \u00abNo lo tengo del todo claro\u2026\u00bb; el juez ya no lo acepta"
+ },
+ "12": {
+  "n": 10,
+  "acierto": 40.0,
+  "falsas": 1,
+  "nota": "corregido a mano: 'se llaman Paula y Marta' -> \u00abPaula llamar; Marta llamar\u00bb (capas antiguas) y 'las voy a llevar al zoo' -> \u00abvas a tus sobrinas a llevar al zoo\u00bb aprobaron por contener las palabras"
+ },
+ "13": {
+  "n": 9,
+  "acierto": 88.89,
+  "falsas": 1,
+  "nota": "\u00abhizo mucho fr\u00edo\u00bb (sin puntuar) dio \u00abSergio hizo fr\u00edo mucho\u00bb; \u00abvisitamos\u00bb se guard\u00f3 en presente (aprob\u00f3 por contener la palabra)"
+ },
+ "14": {
+  "n": 10,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "15": {
+  "n": 8,
+  "acierto": 62.5,
+  "falsas": 0
+ },
+ "16": {
+  "n": 9,
+  "acierto": 66.67,
+  "falsas": 1
+ },
+ "17": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 0
+ },
+ "18": {
+  "n": 8,
+  "acierto": 62.5,
+  "falsas": 1
+ },
+ "19": {
+  "n": 10,
+  "acierto": 100.0,
+  "falsas": 0,
+  "nota": "\u00ab\u00bfde qu\u00e9 color son los globos?\u00bb lo contestaron las capas antiguas (\u00abTus globos es azul\u00bb): aprobado pero con error de concordancia"
+ },
+ "20": {
+  "n": 9,
+  "acierto": 88.89,
+  "falsas": 0
+ },
+ "21": {
+  "n": 9,
+  "acierto": 66.67,
+  "falsas": 0
+ },
+ "22": {
+  "n": 9,
+  "acierto": 55.56,
+  "falsas": 1
+ },
+ "23": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 0
+ },
+ "24": {
+  "n": 9,
+  "acierto": 66.67,
+  "falsas": 0
+ },
+ "25": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 0
+ },
+ "26": {
+  "n": 10,
+  "acierto": 60.0,
+  "falsas": 0
+ }
+}

@@ -1,0 +1,382 @@
+{
+ "resumen": {
+  "n": 38,
+  "ok": 16,
+  "acierto": 42.11,
+  "falsas": 9,
+  "tasa_falsas": 23.68,
+  "abst_indebida": 13,
+  "error": 0,
+  "por_cat": {
+   "aritmetica": {
+    "n": 12,
+    "acierto": 66.7,
+    "falsas": 0
+   },
+   "calculo_memoria": {
+    "n": 6,
+    "acierto": 66.7,
+    "falsas": 1
+   },
+   "dibujo": {
+    "n": 7,
+    "acierto": 14.3,
+    "falsas": 5
+   },
+   "problemas": {
+    "n": 7,
+    "acierto": 14.3,
+    "falsas": 1
+   },
+   "suposiciones": {
+    "n": 6,
+    "acierto": 33.3,
+    "falsas": 2
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 1,
+   "q": "¿cuánto es 48 más 52?",
+   "crit": "100",
+   "r": "48 + 52 = 100.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 2,
+   "q": "¿y 48 menos 52?",
+   "crit": "-4|−4|menos 4",
+   "r": "48 − 52 = -4.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 3,
+   "q": "multiplica 25 por 4",
+   "crit": "100",
+   "r": "25 × 4 = 100.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 4,
+   "q": "¿cuánto da 81 dividido entre 9?",
+   "crit": "9",
+   "r": "81 ÷ 9 = 9.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 5,
+   "q": "¿cuál es el triple de 15?",
+   "crit": "45",
+   "r": "No lo sé. No conozco «triple»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 6,
+   "q": "¿cuánto es el 25 por ciento de 200?",
+   "crit": "50",
+   "r": "El 25 % de 200 es 50.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 7,
+   "q": "¿cuánto es la raíz de 49?",
+   "crit": "7",
+   "r": "La raíz cuadrada de 49 es 7.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 8,
+   "q": "¿cuánto es 10 menos 2 por 3?",
+   "crit": "4",
+   "r": "10 − 2 × 3 = 4.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 9,
+   "q": "¿cuánto suman 15, 25 y 35?",
+   "crit": "75",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 10,
+   "q": "resta 18 a 50",
+   "crit": "32",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Resta 18 a 50».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-arit",
+   "cat": "aritmetica",
+   "i": 11,
+   "q": "¿cuánto es mil menos uno?",
+   "crit": "999",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 1,
+   "q": "tenía 50 cromos y he perdido 13, ¿cuántos me quedan?",
+   "crit": "37",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 2,
+   "q": "en clase hay 14 chicos y 13 chicas, ¿cuántos alumnos hay?",
+   "crit": "27",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 3,
+   "q": "compro 3 libros de 12 euros, ¿cuánto pago?",
+   "crit": "36",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 4,
+   "q": "tenemos 60 caramelos para 4 niños, ¿cuántos le damos a cada uno?",
+   "crit": "15",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 5,
+   "q": "un autobús lleva 40 personas, bajan 15 y suben 8, ¿cuántas personas lleva ahora?",
+   "crit": "33",
+   "r": "Entendido: Autobus llevar 40 Personas. 1: 40 Personas.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-prob",
+   "cat": "problemas",
+   "i": 6,
+   "q": "María tiene 8 años y su padre tiene 30 más, ¿cuántos años tiene su padre?",
+   "crit": "38",
+   "r": "Entendido: Maria tiene 8 Anos; Padre tiene. Sé cosas de Padre, pero no sé cuándo nació, así que no puedo contestar a eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 1,
+   "q": "si un elefante es más pesado que un caballo, ¿el caballo es más ligero que el elefante?",
+   "crit": "^si",
+   "r": "En ese caso, sí, el caballo es más ligero que el elefante.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 2,
+   "q": "si Rosa es más alta que Paula, ¿quién es más baja?",
+   "crit": "paula",
+   "r": "En ese caso, paula es más baja que Rosa.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 3,
+   "q": "si hoy es viernes, ¿qué día fue ayer?",
+   "crit": "jueves",
+   "r": "No sé responder a eso con esa suposición: «si hoy es viernes».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 4,
+   "q": "si un perro es más pequeño que un caballo, ¿el caballo es más grande o más pequeño que el perro?",
+   "crit": "grande",
+   "r": "No sé responder a eso con esa suposición: «si un perro es más pequeño que un caballo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-sup",
+   "cat": "suposiciones",
+   "i": 5,
+   "q": "si tengo 15 años, ¿cuántos años tenía hace 3 años?",
+   "crit": "12",
+   "r": "En ese caso, tienes 15 años.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 1,
+   "q": "dibuja un triángulo",
+   "crit": "triangulo;!entendido",
+   "r": "Entendido: Dibuja un triángulo.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 2,
+   "q": "pinta un círculo verde",
+   "crit": "circulo",
+   "r": "He creado una muestra del color verde.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 3,
+   "q": "¿me dibujas un rectángulo?",
+   "crit": "rectangulo",
+   "r": "Eso no me consta; solo sé Dibuja un triángulo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 4,
+   "q": "enséñame el color naranja",
+   "crit": "naranja",
+   "r": "Entendido: Enséñame un color.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 5,
+   "q": "dibuja un gato",
+   "crit": "ABST|no puedo|solo",
+   "r": "Entendido: Dibuja un color.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-dib",
+   "cat": "dibujo",
+   "i": 6,
+   "q": "muéstrame un cuadrado y un triángulo",
+   "crit": "cuadrado;triangulo",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 1,
+   "q": "tengo 4 primos y 3 primas",
+   "crit": "primos|primas;!no lo he entendido",
+   "r": "Entendido: tienes 4 primos y 3 primas.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 2,
+   "q": "¿cuántos primos tengo en total?",
+   "crit": "7|siete",
+   "r": "Tienes 3 primas.",
+   "v": "MAL"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 3,
+   "q": "mi hermano tiene 12 años y yo 9",
+   "crit": "12|9;!no lo he entendido",
+   "r": "Entendido: tu hermano tiene 12 años; tienes 9 años.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 4,
+   "q": "¿cuántos años nos llevamos?",
+   "crit": "3|tres",
+   "r": "Tres años.",
+   "v": "OK"
+  },
+  {
+   "id": "c13-mem",
+   "cat": "calculo_memoria",
+   "i": 5,
+   "q": "¿cuánto suman nuestras edades?",
+   "crit": "21",
+   "r": "No sé nada de tu edad: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

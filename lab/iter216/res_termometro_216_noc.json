@@ -1,0 +1,1905 @@
+{
+ "resumen": {
+  "n": 205,
+  "ok": 198,
+  "acierto": 96.59,
+  "falsas": 1,
+  "tasa_falsas": 0.49,
+  "abst_indebida": 6,
+  "error": 0,
+  "por_cat": {
+   "A_memoria": {
+    "n": 25,
+    "acierto": 88.0,
+    "falsas": 0
+   },
+   "B_conceptos": {
+    "n": 24,
+    "acierto": 87.5,
+    "falsas": 1
+   },
+   "C_razonar": {
+    "n": 37,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "D_lectura": {
+    "n": 33,
+    "acierto": 97.0,
+    "falsas": 0
+   },
+   "E_aprender": {
+    "n": 23,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "F_crear": {
+    "n": 16,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "G_calculo": {
+    "n": 14,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "H_social": {
+    "n": 14,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "I_robustez": {
+    "n": 19,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 0,
+   "q": "me llamo Irene y vivo en Cuenca",
+   "crit": "irene|cuenca;!no lo he entendido",
+   "r": "Encantado, Irene. Entendido: vives en Cuenca.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 1,
+   "q": "¿cómo me llamo?",
+   "crit": "irene",
+   "r": "Te llamas Irene.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 2,
+   "q": "¿dónde vivo?",
+   "crit": "cuenca",
+   "r": "Vives en Cuenca.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 3,
+   "q": "tengo dos hijos, Hugo y Vera",
+   "crit": "hugo|vera;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tengo dos hijos. Hugo y Vera».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 4,
+   "q": "¿cuántos hijos tengo?",
+   "crit": "dos|2",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Tengo dos hijos. Hugo y Vera».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 5,
+   "q": "¿cómo se llaman mis hijos?",
+   "crit": "hugo;vera",
+   "r": "No sé nada de tu hijo: no me has hablado de él.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 6,
+   "q": "Hugo tiene 8 años y Vera tiene 5",
+   "crit": "8|5|ocho|cinco;!no lo he entendido",
+   "r": "Entendido: Hugo tiene 8 años; Vera tiene 5 años.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 7,
+   "q": "¿quién es mayor, Hugo o Vera?",
+   "crit": "hugo",
+   "r": "Hugo es mayor que Vera.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 8,
+   "q": "¿cuántos años tiene Vera?",
+   "crit": "5|cinco",
+   "r": "Vera tiene 5 años.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 9,
+   "q": "trabajo en una panadería",
+   "crit": "panaderia;!no lo he entendido",
+   "r": "Entendido: trabajas en una panadería.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 10,
+   "q": "no, perdona, trabajo en una librería",
+   "crit": "libreria;!no lo he entendido",
+   "r": "Corregido: trabajas en una librería (antes me dijiste que trabajabas en una panadería).",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 11,
+   "q": "¿dónde trabajo?",
+   "crit": "libreria;!panaderia",
+   "r": "Trabajas en una librería.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A1",
+   "cat": "A_memoria",
+   "i": 12,
+   "q": "¿qué sabes de mí?",
+   "crit": "irene|cuenca|libreria",
+   "r": "Te llamas Irene. Vives en Cuenca. Trabajas en una librería.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 0,
+   "q": "mi madre se llama Lola y mi padre Andrés",
+   "crit": "lola|andres;!no lo he entendido",
+   "r": "Entendido: tu madre se llama Lola; tu padre se llama Andrés.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 1,
+   "q": "¿cómo se llama mi padre?",
+   "crit": "andres",
+   "r": "Tu padre se llama Andrés.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 2,
+   "q": "a mi madre le gusta el jazz",
+   "crit": "jazz;!no lo he entendido",
+   "r": "Entendido: a Lola le gusta el jazz.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 3,
+   "q": "¿qué le gusta a mi madre?",
+   "crit": "jazz",
+   "r": "A Lola le gusta el jazz.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 4,
+   "q": "¿a quién le gusta el jazz?",
+   "crit": "lola|madre",
+   "r": "A Lola le gusta el jazz.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 5,
+   "q": "el martes voy al dentista",
+   "crit": "martes|dentista;!no lo he entendido",
+   "r": "Entendido: vas al dentista el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 6,
+   "q": "¿cuándo voy al dentista?",
+   "crit": "martes",
+   "r": "Vas al dentista el martes (martes 24 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 7,
+   "q": "¿qué hago el martes?",
+   "crit": "dentista",
+   "r": "Vas al dentista el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 8,
+   "q": "mi hermano vive en Lisboa desde 2020",
+   "crit": "lisboa|2020;!no lo he entendido",
+   "r": "Entendido: tu hermano vive en Lisboa desde 2020.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 9,
+   "q": "¿desde cuándo vive mi hermano en Lisboa?",
+   "crit": "2020",
+   "r": "Tu hermano vive en Lisboa desde 2020.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 10,
+   "q": "¿quién vive en Lisboa?",
+   "crit": "hermano",
+   "r": "Tu hermano vive en Lisboa desde 2020.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-A2",
+   "cat": "A_memoria",
+   "i": 11,
+   "q": "¿mi hermano vive en Madrid?",
+   "crit": "^no",
+   "r": "No, tu hermano vive en Lisboa desde 2020.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 0,
+   "q": "¿un delfín es un pez?",
+   "crit": "^no",
+   "r": "No, un delfín es un mamífero, no un pez.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 1,
+   "q": "¿qué es un delfín?",
+   "crit": "mamifero|animal",
+   "r": "Un delfín es un mamífero. Los delfines viven en el mar y nadan.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 2,
+   "q": "¿qué es lo contrario de ancho?",
+   "crit": "estrecho",
+   "r": "Lo contrario de ancho es estrecho.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 3,
+   "q": "¿qué partes tiene un árbol?",
+   "crit": "tronco|ramas|raiz|raices|hojas",
+   "r": "Un árbol tiene tronco, ramas, hojas y raíces.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 4,
+   "q": "¿para qué sirve un cepillo de dientes?",
+   "crit": "dientes",
+   "r": "Un cepillo de dientes sirve para lavarse los dientes.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 5,
+   "q": "¿dónde suele estar un horno?",
+   "crit": "cocina",
+   "r": "Un horno suele estar en la cocina.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 6,
+   "q": "¿en qué se parecen un tren y un autobús?",
+   "crit": "vehiculo*|transport*|pasajer*|ruedas",
+   "r": "Los dos son vehículos; los dos tienen asientos, sirven para viajar, se mueven y tienen ruedas; los dos sirven para transportar pasajeros.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 7,
+   "q": "¿en qué se diferencian un pájaro y un pez?",
+   "crit": "vol*|plumas|agua|nad*|alas|escamas",
+   "r": "Los pájaros cantan, hacen nidos y tienen patas; los peces nadan, viven en el agua y tienen escamas.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 8,
+   "q": "¿una ballena vive en el agua?",
+   "crit": "^si",
+   "r": "Sí, las ballenas viven en el mar.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 9,
+   "q": "¿los gatos ladran?",
+   "crit": "^no",
+   "r": "No, los gatos maúllan.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 10,
+   "q": "¿qué animal ladra?",
+   "crit": "perro*",
+   "r": "El perro.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 11,
+   "q": "¿qué come una vaca?",
+   "crit": "hierba|pasto|plantas",
+   "r": "Las vacas comen hierba.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 12,
+   "q": "¿de qué color es la nieve?",
+   "crit": "blanc*",
+   "r": "La nieve es blanca.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 13,
+   "q": "¿qué es más grande, un elefante o un ratón?",
+   "crit": "elefante",
+   "r": "Un elefante: un elefante suele ser más grande que un ratón.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 14,
+   "q": "¿el hielo está frío o caliente?",
+   "crit": "frio",
+   "r": "Los hielos son frios.",
+   "v": "MAL"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 15,
+   "q": "dime tres frutas",
+   "crit": "manzana*|pera*|platano*|naranja*|fresa*|uva*|melon*|sandia*|limon*|cereza*",
+   "r": "Manzana, pera y naranja.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 16,
+   "q": "dime un animal que vuele",
+   "crit": "pajaro*|aguila*|paloma*|murcielago*|mosca*|abeja*|mariposa*|ave*|gaviota*|loro*|buho*|golondrina*|canario*|gorrion*",
+   "r": "Un murciélago, por ejemplo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 17,
+   "q": "¿qué estación viene después del verano?",
+   "crit": "otoño",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 18,
+   "q": "¿qué día viene antes del jueves?",
+   "crit": "miercoles",
+   "r": "Antes del jueves viene el miércoles.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 19,
+   "q": "¿cuántos días tiene una semana?",
+   "crit": "siete|7",
+   "r": "Una semana tiene siete días.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 20,
+   "q": "¿qué hace un panadero?",
+   "crit": "pan",
+   "r": "Los panaderos hacen pan y hacen el pan.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 21,
+   "q": "¿quién apaga los fuegos?",
+   "crit": "bombero*",
+   "r": "Los bomberos apagan fuegos.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 22,
+   "q": "¿un coche tiene alas?",
+   "crit": "^no",
+   "r": "No me consta. Solo sé que el coche tiene cuatro ruedas, motor, volante, puertas, maletero y frenos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-B",
+   "cat": "B_conceptos",
+   "i": 23,
+   "q": "¿qué se usa para barrer?",
+   "crit": "escoba*",
+   "r": "Para barrer sirve una escoba.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 0,
+   "q": "todos los flamencos son aves",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: los flamencos son aves.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 1,
+   "q": "Pinky es un flamenco",
+   "crit": "pinky|flamenco;!no lo he entendido",
+   "r": "Entendido: Pinky es un flamenco.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 2,
+   "q": "¿Pinky es un ave?",
+   "crit": "^si",
+   "r": "Sí, Pinky es una ave. Lo deduzco porque Pinky es un flamenco y un flamenco es un ave.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 3,
+   "q": "¿Pinky tiene plumas?",
+   "crit": "^si",
+   "r": "Sí, las aves tienen plumas.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 4,
+   "q": "¿Pinky es un mamífero?",
+   "crit": "^no",
+   "r": "No, Pinky es un flamenco.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 5,
+   "q": "¿Pinky sabe cantar ópera?",
+   "crit": "ABST|^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Pinky sé que es un flamenco.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 6,
+   "q": "ningún reptil tiene pelo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: los reptiles no tienen pelo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 7,
+   "q": "Rex es un lagarto",
+   "crit": "rex|lagarto;!no lo he entendido",
+   "r": "Entendido: Rex es un lagarto.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C1",
+   "cat": "C_razonar",
+   "i": 8,
+   "q": "¿Rex tiene pelo?",
+   "crit": "^no",
+   "r": "No, los reptiles no tienen pelo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 0,
+   "q": "Marta es más alta que Julia",
+   "crit": "marta|julia;!no lo he entendido",
+   "r": "Entendido: Marta es más alta que Julia.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 1,
+   "q": "Julia es más alta que Noa",
+   "crit": "julia|noa;!no lo he entendido",
+   "r": "Entendido: Julia es más alta que Noa.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 2,
+   "q": "¿quién es la más alta?",
+   "crit": "marta",
+   "r": "Marta es la más alta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 3,
+   "q": "¿Noa es más baja que Marta?",
+   "crit": "^si",
+   "r": "Sí, Noa es más baja que Marta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 4,
+   "q": "¿quién es la más baja?",
+   "crit": "noa",
+   "r": "Noa es la más baja.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 5,
+   "q": "Eva y Sara tienen la misma edad",
+   "crit": "eva|sara;!no lo he entendido",
+   "r": "Entendido: Eva y Sara tienen la misma edad.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 6,
+   "q": "Eva tiene 30 años",
+   "crit": "30|treinta;!no lo he entendido",
+   "r": "Entendido: Eva tiene 30 años.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C2",
+   "cat": "C_razonar",
+   "i": 7,
+   "q": "¿cuántos años tiene Sara?",
+   "crit": "30|treinta",
+   "r": "Sara tiene 30 años.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 0,
+   "q": "si llueve, me quedo en casa",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: si llueve, te quedas en casa. Lo tendré en cuenta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 1,
+   "q": "hoy llueve",
+   "crit": "!no lo he entendido",
+   "r": "Vale, lo apunto: «Hoy llueve». Entonces te quedas en casa hoy: lo deduzco porque me dijiste que si llueve, te quedas en casa.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 2,
+   "q": "¿me quedo en casa hoy?",
+   "crit": "^si",
+   "r": "Sí, te quedas en casa hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 3,
+   "q": "las llaves están en el bolso o en el coche",
+   "crit": "bolso|coche;!no lo he entendido",
+   "r": "Entendido: las llaves están en el bolso o en el coche; lo apunto como una de esas posibilidades.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 4,
+   "q": "no están en el bolso",
+   "crit": "!no lo he entendido",
+   "r": "Entendido, lo actualizo: las llaves no están en el bolso. Entonces las llaves están en el coche: lo deduzco porque me dijiste que las llaves están en el bolso o en el coche.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 5,
+   "q": "¿dónde están las llaves?",
+   "crit": "coche",
+   "r": "Las llaves están en el coche.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 6,
+   "q": "llegué tarde porque perdí el autobús",
+   "crit": "tarde|autobus;!no lo he entendido",
+   "r": "Entendido: llegaste tarde.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C3",
+   "cat": "C_razonar",
+   "i": 7,
+   "q": "¿por qué llegué tarde?",
+   "crit": "autobus",
+   "r": "Porque perdí el autobús.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 0,
+   "q": "primero desayuné, después me duché y luego salí a correr",
+   "crit": "!no lo he entendido",
+   "r": "Entendido, por orden: primero desayuné, después te duchaste, por último saliste a correr.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 1,
+   "q": "¿qué hice después de desayunar?",
+   "crit": "duch*",
+   "r": "Te duchaste.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 2,
+   "q": "¿qué hice antes de salir a correr?",
+   "crit": "duch*",
+   "r": "Te duchaste.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 3,
+   "q": "¿qué hice primero?",
+   "crit": "desayun*",
+   "r": "Desayuné.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 4,
+   "q": "el libro está dentro de la caja y la caja está en el armario",
+   "crit": "libro|caja;!no lo he entendido",
+   "r": "Entendido: el libro está dentro de la caja; la caja está en el armario.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 5,
+   "q": "¿dónde está el libro?",
+   "crit": "caja|armario",
+   "r": "El libro está dentro de la caja.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 6,
+   "q": "¿el libro está en el armario?",
+   "crit": "^si",
+   "r": "Sí: el libro está dentro de la caja y la caja está en el armario.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 7,
+   "q": "Carlos es el padre de Lucía y Lucía es la madre de Teo",
+   "crit": "carlos|lucia|teo;!no lo he entendido",
+   "r": "Entendido: Carlos es el padre de Lucía; Lucía es la madre de Teo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 8,
+   "q": "¿quién es el abuelo de Teo?",
+   "crit": "carlos",
+   "r": "Carlos es el abuelo de Teo. Lo deduzco porque Carlos es el padre de Lucía y Lucía es la madre de Teo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 9,
+   "q": "¿Teo es nieto de Carlos?",
+   "crit": "^si",
+   "r": "Sí, Teo es el nieto de Carlos. Lo deduzco porque Carlos es el padre de Lucía y Lucía es la madre de Teo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 10,
+   "q": "tenía 10 euros, gasté 4 y luego me dieron 2",
+   "crit": "!no lo he entendido",
+   "r": "Entendido. Echo la cuenta: 10 − 4 + 2 = 8 euros.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-C4",
+   "cat": "C_razonar",
+   "i": 11,
+   "q": "¿cuánto dinero tengo ahora?",
+   "crit": "8|ocho",
+   "r": "8 euros: 10 − 4 + 2 = 8.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 0,
+   "q": "Te voy a leer un texto. Ayer por la tarde Clara fue al mercado con su abuelo. Compraron tomates, queso y una barra de pan. Después merendaron en una cafetería de la plaza. Clara pidió un chocolate caliente y su abuelo un café. Volvieron a casa en autobús porque empezó a llover.",
+   "crit": "!no lo he entendido",
+   "r": "He leído el texto (5 frases). He entendido bien 3; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 1,
+   "q": "¿con quién fue Clara al mercado?",
+   "crit": "abuelo",
+   "r": "Clara fue al mercado con su abuelo ayer por la tarde.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 2,
+   "q": "¿qué compraron?",
+   "crit": "tomates;queso",
+   "r": "Clara compró tomates, queso y una barra de pan.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 3,
+   "q": "¿dónde merendaron?",
+   "crit": "cafeteria",
+   "r": "Clara merendó en una cafetería de la plaza.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 4,
+   "q": "¿qué pidió Clara?",
+   "crit": "chocolate",
+   "r": "En el texto pone: «Clara pidió un chocolate caliente y su abuelo un café».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 5,
+   "q": "¿qué pidió el abuelo?",
+   "crit": "cafe",
+   "r": "En el texto pone: «Clara pidió un chocolate caliente y su abuelo un café».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 6,
+   "q": "¿cómo volvieron a casa?",
+   "crit": "autobus",
+   "r": "En el texto pone: «Volvieron a casa en autobús porque empezó a llover».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 7,
+   "q": "¿por qué volvieron en autobús?",
+   "crit": "llov*|lluvia|llover",
+   "r": "Porque empezó a llover. Lo dice el texto: «Volvieron a casa en autobús porque empezó a llover».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 8,
+   "q": "¿cuándo fue Clara al mercado?",
+   "crit": "ayer|tarde",
+   "r": "En el texto pone: «Ayer por la tarde Clara fue al mercado con su abuelo».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 9,
+   "q": "¿compraron algún alimento?",
+   "crit": "^si",
+   "r": "Sí, Clara compró tomates.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 10,
+   "q": "¿Clara pidió una bebida?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Clara sé que fue al mercado con su abuelo ayer por la tarde y compró tomates.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tm-D1",
+   "cat": "D_lectura",
+   "i": 11,
+   "q": "¿fueron al cine?",
+   "crit": "^no|ABST",
+   "r": "No lo sé. Solo sé que Clara fue al mercado con su abuelo ayer por la tarde.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 0,
+   "q": "Lee esto: El lince es un felino que vive en el monte. Tiene las orejas puntiagudas y la cola corta. Caza conejos al anochecer. Es un animal solitario y muy silencioso.",
+   "crit": "!no lo he entendido",
+   "r": "He leído el texto (4 frases). He entendido bien 3; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 1,
+   "q": "¿qué es un lince?",
+   "crit": "felino",
+   "r": "Un lince es un felino, como me dijiste; de fábrica sé además que es un mamífero.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 2,
+   "q": "¿dónde vive el lince?",
+   "crit": "monte",
+   "r": "El lince vive en el monte.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 3,
+   "q": "¿cómo tiene las orejas el lince?",
+   "crit": "puntiagudas",
+   "r": "En el texto pone: «Tiene las orejas puntiagudas y la cola corta».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 4,
+   "q": "¿qué caza el lince?",
+   "crit": "conejos",
+   "r": "El lince caza conejos al anochecer.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 5,
+   "q": "¿cuándo caza?",
+   "crit": "anochecer",
+   "r": "El lince caza conejos al anochecer.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 6,
+   "q": "¿el lince es un animal?",
+   "crit": "^si",
+   "r": "Sí, un lince es un animal. Lo deduzco porque un lince es un mamífero y un mamífero es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 7,
+   "q": "¿cómo es el lince?",
+   "crit": "solitario|silencioso",
+   "r": "En el texto pone: «Es un animal solitario y muy silencioso».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D2",
+   "cat": "D_lectura",
+   "i": 8,
+   "q": "¿el lince tiene la cola larga?",
+   "crit": "^no",
+   "r": "No, el lince tiene la cola corta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 0,
+   "q": "Escucha: Mi amiga Paula trabaja de enfermera en Bilbao. Tiene un hijo que se llama Leo y una perra que se llama Kira. Los sábados lleva a Leo a natación y los domingos pasea con Kira por la playa. El mes que viene se muda a Vitoria porque ha encontrado un trabajo mejor.",
+   "crit": "!no lo he entendido",
+   "r": "He leído el texto (4 frases). Pregúntame lo que quieras sobre él.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 1,
+   "q": "¿a qué se dedica Paula?",
+   "crit": "enfermera",
+   "r": "Paula trabaja de enfermera en Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 2,
+   "q": "¿dónde trabaja Paula?",
+   "crit": "bilbao",
+   "r": "Paula trabaja de enfermera en Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 3,
+   "q": "¿cómo se llama el hijo de Paula?",
+   "crit": "leo",
+   "r": "El hijo de Paula se llama Leo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 4,
+   "q": "¿quién es Kira?",
+   "crit": "perra",
+   "r": "Kira es la perra de Paula.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 5,
+   "q": "¿qué hace Paula los sábados?",
+   "crit": "natacion",
+   "r": "Paula lleva a Leo a natación los sábados.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 6,
+   "q": "¿con quién pasea Paula los domingos?",
+   "crit": "kira",
+   "r": "Paula pasea con Kira por la playa los domingos.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 7,
+   "q": "¿dónde pasea Paula?",
+   "crit": "playa",
+   "r": "En el texto pone: «Los sábados lleva a Leo a natación y los domingos pasea con Kira por la playa».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 8,
+   "q": "¿adónde se muda Paula?",
+   "crit": "vitoria",
+   "r": "Paula se muda a Vitoria.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 9,
+   "q": "¿por qué se muda?",
+   "crit": "trabajo",
+   "r": "Porque ha encontrado un trabajo mejor el próximo mes.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 10,
+   "q": "¿Paula tiene un animal?",
+   "crit": "^si",
+   "r": "Sí, Paula tiene una perra.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-D3",
+   "cat": "D_lectura",
+   "i": 11,
+   "q": "¿cuándo se muda?",
+   "crit": "mes",
+   "r": "En el texto pone: «El mes que viene se muda a Vitoria porque ha encontrado un trabajo mejor».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 0,
+   "q": "un zorb es un animal que vive en las cuevas",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: el zorb es un animal; el zorb vive en las cuevas.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 1,
+   "q": "¿qué es un zorb?",
+   "crit": "animal",
+   "r": "El zorb es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 2,
+   "q": "¿dónde vive un zorb?",
+   "crit": "cueva*",
+   "r": "El zorb vive en las cuevas.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 3,
+   "q": "¿un zorb es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí, un zorb es un ser vivo. Lo deduzco porque el zorb es un animal y un animal es un ser vivo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 4,
+   "q": "¿un zorb es un objeto?",
+   "crit": "^no",
+   "r": "No, el zorb es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 5,
+   "q": "los zorbs comen musgo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: los zorbes comen musgo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 6,
+   "q": "¿qué comen los zorbs?",
+   "crit": "musgo",
+   "r": "Los zorbes comen musgo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 7,
+   "q": "tengo un zorb",
+   "crit": "zorb;!no lo he entendido",
+   "r": "Entendido: tienes un zorb.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 8,
+   "q": "¿tengo un animal?",
+   "crit": "^si",
+   "r": "Sí, tienes un zorb.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 9,
+   "q": "una trinca es una herramienta que sirve para pelar cables",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: la trinca es una herramienta; una trinca sirve para pelar cables.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 10,
+   "q": "¿para qué sirve una trinca?",
+   "crit": "pelar|cables",
+   "r": "Una trinca sirve para pelar cables.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 11,
+   "q": "¿una trinca es una herramienta?",
+   "crit": "^si",
+   "r": "Sí, la trinca es una herramienta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 12,
+   "q": "¿qué sirve para pelar cables?",
+   "crit": "trinca*",
+   "r": "Para pelar cables sirven, por ejemplo, las trincas y los peladores.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 13,
+   "q": "¿una trinca es un animal?",
+   "crit": "^no",
+   "r": "No, una trinca es una herramienta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 14,
+   "q": "lo contrario de fleco es brumo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: lo contrario de fleco es brumo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 15,
+   "q": "¿qué es lo contrario de fleco?",
+   "crit": "brumo",
+   "r": "Lo contrario de fleco es brumo: me lo enseñaste tú.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 16,
+   "q": "¿qué es lo contrario de brumo?",
+   "crit": "fleco",
+   "r": "Lo contrario de brumo es fleco: me lo enseñaste tú.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 17,
+   "q": "birlar significa robar",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: «birlar» significa robar.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 18,
+   "q": "¿qué significa birlar?",
+   "crit": "robar",
+   "r": "«birlar» significa robar: me lo enseñaste tú.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 19,
+   "q": "un glomo tiene tres partes: la base, el eje y la tapa",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: un glomo tiene 3 partes: base, eje y tapa.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 20,
+   "q": "¿qué partes tiene un glomo?",
+   "crit": "base;eje;tapa",
+   "r": "Base, eje y tapa: me lo enseñaste tú.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 21,
+   "q": "¿un glomo tiene eje?",
+   "crit": "^si",
+   "r": "Sí: me dijiste que tiene base, eje y tapa.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-E",
+   "cat": "E_aprender",
+   "i": 22,
+   "q": "¿qué es un plucto?",
+   "crit": "ABST",
+   "r": "No sé qué es un plucto. ¿Me lo explicas?",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 0,
+   "q": "escribe un poema sobre el mar",
+   "crit": "mar|olas;!no lo he entendido",
+   "r": "Entre ballenas y barcos te encuentro,\nasí es el mar.\nSi no existieras, habría que inventarte\ny me dan ganas de recordar.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 1,
+   "q": "invéntate un cuento corto sobre un gato",
+   "crit": "gato;!no lo he entendido",
+   "r": "Había una vez un gato que se llamaba Pelusa y vivía en la casa. Ya se sabe que los gatos maúllan, pero lo que más le gustaba a Pelusa era contar nubes. Un día apareció una pantera que se llamaba Lila, muy triste, porque había perdido un abrigo. Buscaron juntos por todas partes y al final lo encontraron en el armario. Desde aquel día Pelusa y Lila fueron inseparables. Y colorín colorado, este cuento se ha acabado.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 2,
+   "q": "escribe una frase con la palabra ventana",
+   "crit": "ventana",
+   "r": "La ventana tiene marco y cristal.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 3,
+   "q": "dime una palabra que rime con canción",
+   "crit": "corazon|emocion|estacion|ilusion|razon|leon|camion|avion|melon|raton|balon|pasion|nacion|accion|leccion|habitacion|oracion|cancion",
+   "r": "Con «canción» riman, por ejemplo: corazón, ilusión, emoción, razón y estación.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 4,
+   "q": "invéntate una adivinanza",
+   "crit": "que es|adivina|quien soy|que soy;!no lo he entendido",
+   "r": "Adivina, adivinanza: tengo pantalla, teclado y ratón, sirvo para trabajar y suelo estar en el despacho. ¿Qué soy?",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 5,
+   "q": "cuéntame un chiste",
+   "crit": "!no lo he entendido;!no se;!no puedo",
+   "r": "¿Qué le dice una pared a otra pared? Nos vemos en la esquina.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 6,
+   "q": "descríbeme un bosque",
+   "crit": "arbol*",
+   "r": "Un bosque es un paisaje. En un bosque suele haber árboles, ardillas, búhos y ciervos. Los paisajes están al aire libres.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 7,
+   "q": "ponle un título a un cuento sobre un dragón",
+   "crit": "dragon",
+   "r": "«El día que el dragón aprendió a volar»",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 8,
+   "q": "dime un sinónimo de bonito",
+   "crit": "hermoso|bello|lindo|precioso|guapo",
+   "r": "Otras palabras para «bonito», según mi léxico: bello, cautivador, encantador, hermoso y precioso.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 9,
+   "q": "mi hija se llama Vera y le encantan los caballos",
+   "crit": "vera|caballos;!no lo he entendido",
+   "r": "Entendido: tu hija se llama Vera; a Vera le encantan los caballos.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 10,
+   "q": "escribe un poema para mi hija",
+   "crit": "vera|caballo*",
+   "r": "Para Vera van estos versos,\nque disfruta con los caballos,\ncuando sonríe se nota\ny el día amanece mejor.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 11,
+   "q": "dame tres ideas para regalarle",
+   "crit": "caballo*|libro|juguete|peluche",
+   "r": "Como a Vera le gustan los caballos, se me ocurre: un libro sobre caballos, un póster o un puzle de caballos, o una excursión para ver caballos de cerca.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 12,
+   "q": "invéntate un nombre para un perro",
+   "crit": "!no lo he entendido;!no se;!no puedo;!no lo se",
+   "r": "Para un perro se me ocurre Bruno. Si no te convence, también Toby o Luna.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 13,
+   "q": "ayer escribí un poema",
+   "crit": "!mar;!olas;!no lo he entendido",
+   "r": "Entendido: escribiste un poema ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 14,
+   "q": "¿qué escribí ayer?",
+   "crit": "poema",
+   "r": "Escribiste un poema ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-F",
+   "cat": "F_crear",
+   "i": 15,
+   "q": "termina la frase: el sol salió y",
+   "crit": "!no lo he entendido;!no se;!no lo se",
+   "r": "El sol salió y dio luz hasta que se hizo de noche.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 0,
+   "q": "¿cuánto es 37 más 48?",
+   "crit": "85",
+   "r": "37 + 48 = 85.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 1,
+   "q": "¿cuánto es el 20 % de 150?",
+   "crit": "30",
+   "r": "El 20 % de 150 es 30.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 2,
+   "q": "tengo 15 cromos y regalo 6, ¿cuántos me quedan?",
+   "crit": "9",
+   "r": "9 cromos: 15 − 6 = 9.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 3,
+   "q": "¿cuánto es 9 por 7 menos 3?",
+   "crit": "60",
+   "r": "9 × 7 − 3 = 60.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 4,
+   "q": "¿cuál es la mitad de 250?",
+   "crit": "125",
+   "r": "La mitad de 250 es 125.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 5,
+   "q": "si un café cuesta 2 euros, ¿cuánto cuestan 5 cafés?",
+   "crit": "10",
+   "r": "10 euros: 5 × 2 = 10.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 6,
+   "q": "¿cuánto es mil dividido entre 8?",
+   "crit": "125",
+   "r": "1000 ÷ 8 = 125.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 7,
+   "q": "dibuja un cuadrado rojo",
+   "crit": "cuadrado",
+   "r": "Aquí tienes un cuadrado rojo, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 8,
+   "q": "¿qué día será mañana si hoy es sábado?",
+   "crit": "domingo",
+   "r": "Mañana será domingo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 9,
+   "q": "¿cuántos minutos son dos horas?",
+   "crit": "120",
+   "r": "2 horas son 120 minutos.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 10,
+   "q": "¿cuántos días hay en tres semanas?",
+   "crit": "21|veintiun*",
+   "r": "3 semanas son 21 días.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 11,
+   "q": "somos 4 y pagamos 60 euros a medias, ¿cuánto paga cada uno?",
+   "crit": "15",
+   "r": "15 euros: 60 ÷ 4 = 15.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 12,
+   "q": "¿cuánto es 12 al cuadrado?",
+   "crit": "144",
+   "r": "12^2 = 144.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-G",
+   "cat": "G_calculo",
+   "i": 13,
+   "q": "¿cuál es mayor, 0,5 o 0,25?",
+   "crit": "0,5|0.5",
+   "r": "El mayor de 0,5 y 0,25 es 0,5.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 0,
+   "q": "hola, ¿qué tal?",
+   "crit": "hola|bien|que tal",
+   "r": "¡Hola! Bien, gracias. ¿Y tú qué tal?",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 1,
+   "q": "¿quién eres?",
+   "crit": "lcm|modelo|asistente|programa",
+   "r": "Soy el LCM (Large Conceptual Model): aprendo español y razono con lo que me cuentas, sin ningún LLM.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 2,
+   "q": "¿qué sabes hacer?",
+   "crit": "conversar|recordar|calcul*|dibuj*|aprend*|record*|hablar",
+   "r": "Puedo conversar y recordar lo que me cuentes, contestar preguntas y deducir con ello; leer un texto que me pegues y responder sobre él; aprender conceptos nuevos que me enseñes; hacer cuentas y dibujar figuras con mis aplicaciones; y, si me lo pides, crear un poema, un cuento, una adivinanza o una rima. Prueba: «Te voy a leer un texto…», «Invéntate una adivinanza» o «¿Cuánto es 12 por 15?».",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 3,
+   "q": "¿eres una persona?",
+   "crit": "^no",
+   "r": "No soy una persona: soy el LCM, un modelo conceptual que aprende de lo que me cuentas.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 4,
+   "q": "estoy un poco triste hoy",
+   "crit": "siento|animo|pasa|quieres|contar*;!no lo he entendido",
+   "r": "Lo siento. Si te apetece, cuéntame por qué estás triste.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 5,
+   "q": "es que he discutido con mi hermana",
+   "crit": "hermana|siento|discut*;!no lo he entendido",
+   "r": "Entendido: estás un poco triste hoy porque he discutido con tu hermana.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 6,
+   "q": "¿por qué estoy triste?",
+   "crit": "discut*|hermana",
+   "r": "Porque he discutido con tu hermana.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 7,
+   "q": "gracias por escucharme",
+   "crit": "nada|gracias|gusto|aqui",
+   "r": "De nada, para eso estoy.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 8,
+   "q": "¿en qué año estamos?",
+   "crit": "2026",
+   "r": "Hoy es miércoles, 18 de noviembre de 2026.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 9,
+   "q": "¿qué opinas del fútbol?",
+   "crit": "!no lo he entendido",
+   "r": "No tengo opiniones propias: solo conozco lo que me cuentas. ¿Qué opinas tú?",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 10,
+   "q": "no he entendido lo último",
+   "crit": "!no lo he entendido",
+   "r": "Te decía esto: No tengo opiniones propias: solo conozco lo que me cuentas. ¿Qué opinas tú?",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 11,
+   "q": "cuéntame algo interesante",
+   "crit": "!no lo he entendido;!no se;!no lo se",
+   "r": "Te cuento lo que recuerdo de ti. Estás un poco triste hoy. Discutiste con tu hermana.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 12,
+   "q": "¿de qué hemos hablado?",
+   "crit": "hermana|triste|futbol|discut*",
+   "r": "Me has contado que estás un poco triste hoy y discutiste con tu hermana.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-H",
+   "cat": "H_social",
+   "i": 13,
+   "q": "me voy a dormir, buenas noches",
+   "crit": "noches|descansa|hasta|adios",
+   "r": "Entendido: te dormirás buenas noches.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 0,
+   "q": "ola me yamo pedro",
+   "crit": "pedro",
+   "r": "Encantado, Pedro.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 1,
+   "q": "komo me yamo",
+   "crit": "pedro",
+   "r": "Te llamas Pedro.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 2,
+   "q": "oye q tengo un perro q se llama Rufo",
+   "crit": "rufo;!no lo he entendido",
+   "r": "Entendido: tienes un perro; tu perro se llama Rufo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 3,
+   "q": "como se llama mi perro",
+   "crit": "rufo",
+   "r": "Tu perro se llama Rufo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 4,
+   "q": "mi hermana, que vive en Roma y trabaja de arquitecta, viene el viernes",
+   "crit": "roma|arquitecta|viernes;!no lo he entendido",
+   "r": "Entendido: tu hermana vive en Roma; tu hermana trabaja de arquitecta; tu hermana viene el viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 5,
+   "q": "¿dónde vive mi hermana?",
+   "crit": "roma",
+   "r": "Tu hermana vive en Roma.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 6,
+   "q": "¿a qué se dedica?",
+   "crit": "arquitecta",
+   "r": "Tu hermana trabaja de arquitecta.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 7,
+   "q": "¿cuándo viene?",
+   "crit": "viernes",
+   "r": "Tu hermana viene el viernes (viernes 20 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 8,
+   "q": "pues eso, que al final no voy a ir a la boda de mi primo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: no irás a la boda de tu primo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 9,
+   "q": "¿voy a ir a la boda?",
+   "crit": "^no",
+   "r": "No, no irás a la boda de tu primo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 10,
+   "q": "la verdad es que me encanta el queso azul",
+   "crit": "queso;!no lo he entendido",
+   "r": "Entendido: te encanta el queso azul.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 11,
+   "q": "q me gusta?",
+   "crit": "queso",
+   "r": "Te encanta el queso azul.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 12,
+   "q": "mñn tengo examen de mates",
+   "crit": "examen;!no lo he entendido",
+   "r": "Entendido: tienes examen de mates mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 13,
+   "q": "cuando tengo el examen",
+   "crit": "mañana",
+   "r": "Tienes examen de mates mañana (jueves 19 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 14,
+   "q": "mi coche, el rojo, está en el taller",
+   "crit": "taller|coche;!no lo he entendido",
+   "r": "Entendido: tu coche está en el taller; tu coche es rojo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 15,
+   "q": "donde esta mi coche",
+   "crit": "taller",
+   "r": "Tu coche está en el taller.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 16,
+   "q": "de que color es mi coche",
+   "crit": "rojo",
+   "r": "Tu coche es rojo.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 17,
+   "q": "NO ME GUSTA NADA MADRUGAR",
+   "crit": "madrugar;!no lo he entendido",
+   "r": "Entendido: no te gusta madrugar.",
+   "v": "OK"
+  },
+  {
+   "id": "tm-I",
+   "cat": "I_robustez",
+   "i": 18,
+   "q": "¿me gusta madrugar?",
+   "crit": "^no",
+   "r": "No, no te gusta madrugar.",
+   "v": "OK"
+  }
+ ]
+}

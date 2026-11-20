@@ -1,0 +1,9 @@
+{
+ "fecha": "2026-11-18",
+ "banco_generado_dev": {"n": 12335, "v21": {"acierto": 99.93, "falsas": 7}, "v22": {"acierto": 100.0, "falsas": 0}},
+ "banco_generado_validacion": {"n": 12331, "v21": {"acierto": 98.98, "falsas_pct": 0.32}, "v22": {"acierto": 99.01, "falsas_pct": 0.27}},
+ "examen_ciego_3": {"n": 173, "nota": "escrito con el codigo congelado, una sola pasada", "v21": {"acierto": 68.21, "falsas_pct": 4.05}, "v22": {"acierto": 94.22, "falsas_pct": 1.16}},
+ "examen_ciego_2": {"n": 301, "nota": "tercera pasada, solo agregados; mismo autor que las tandas", "v19": {"acierto": 48.17, "falsas_pct": 7.31}, "v20": {"acierto": 80.40, "falsas_pct": 4.98}, "v21": {"acierto": 91.36, "falsas_pct": 3.99}, "v22": {"acierto": 93.02, "falsas_pct": 3.32}},
+ "examenes_del_autor": {"n": 703, "v19": 72.40, "v20": 85.06, "v21": 85.78, "v22": 87.48},
+ "tandas_desarrollo_1_a_8": {"n": 958, "v22": {"acierto": 100.0, "falsas": 0}, "nota": "tandas 7 y 8 nuevas: 55.6 % y 82.2 % al primer intento"}
+}

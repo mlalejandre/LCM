@@ -577,8 +577,9 @@ class Dialogue:
         if re.fullmatch(r"(quien eres|que eres|como te llamas|cual es tu nombre|presentate|quien eres tu|que eres tu)", t):
             return "Soy el LCM (Large Conceptual Model): aprendo español y razono con lo que me cuentas, sin ningún LLM."
         if re.fullmatch(r"(que sabes hacer|que puedes hacer|en que me puedes ayudar|para que sirves|que haces|que sabes hacer tu|ayudame)", t):
-            return ("Puedo aprender los hechos y reglas que me cuentes, contestar preguntas (quién, qué, dónde, cuándo, sí o no), "
-                    "deducir con lo aprendido y recordar fechas. Prueba: «Pedro compró pan ayer» y luego «¿Cuándo compró Pedro pan?».")
+            return ("Puedo conversar y recordar lo que me cuentes, contestar preguntas y deducir con ello; leer un texto que me pegues y responder sobre él; "
+                    "aprender conceptos nuevos que me enseñes; hacer cuentas y dibujar figuras con mis aplicaciones; y, si me lo pides, crear un poema, "
+                    "un cuento, una adivinanza o una rima. Prueba: «Te voy a leer un texto…», «Invéntate una adivinanza» o «¿Cuánto es 12 por 15?».")
         if re.fullmatch(r"(que dia es hoy|que fecha es hoy|en que fecha estamos|a que dia estamos|que dia es|que fecha es|a cuantos estamos)", t):
             d = self._today()
             return f"Hoy es {DAYS[d.weekday()]}, {d.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][d.month-1]} de {d.year}."

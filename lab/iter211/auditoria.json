@@ -1,0 +1,96 @@
+{
+ "criterio": "Auditoría DESPUÉS de la medida única, mismo criterio para 2.10 y 2.11: un acierto del juez pasa a fallo si es falso (ALUCINA), está roto, es un eco sin entender o es incompleto; una negativa o respuesta incompleta marcada MAL por el juez es fallo pero no falsa.",
+ "charla50f": {
+  "2.10": {
+   "juez": [
+    63.27,
+    3
+   ],
+   "auditado": {
+    "acierto": 42.86,
+    "falsas": 2
+   },
+   "cambios": [
+    "«El padre es un médico» (tanto… como): fallo",
+    "«…Lugo o en Ourense no te acuerdo» (acuse y 1.ª pregunta): frase rota, fallo",
+    "«Sí, Pablo vive en Lugo o en Ourense…»: ALUCINA (afirma una de dos)",
+    "«¿dónde vive Pablo?» tras «no vive en Lugo» (2 veces): no deduce Ourense, fallo",
+    "«El té me gusta más que el café» (eco): fallo",
+    "«Vale, lo apunto: Si mañana llueve…» (eco): fallo",
+    "«Pablo llevó pan en la compra…»: ALUCINA",
+    "«Sara y tú irán al cine» (falta Pablo): fallo",
+    "3 MAL del juez son negativas o incompletas: no falsas"
+   ]
+  },
+  "2.11": {
+   "juez": [
+    81.63,
+    2
+   ],
+   "auditado": {
+    "acierto": 75.51,
+    "falsas": 0
+   },
+   "cambios": [
+    "«¿dónde vive Pablo?» tras «no vive en Lugo» (2 veces): no entendió la negación con «ahora me acuerdo:», fallo",
+    "«Sara y tú irán al cine» (falta Pablo): fallo",
+    "2 MAL del juez son negativa/incompleta: no falsas"
+   ]
+  },
+  "2.11_tras_arreglos_no_ciega": {
+   "juez": [
+    97.96,
+    1
+   ],
+   "auditado": {
+    "acierto": 95.92,
+    "falsas": 0
+   },
+   "nota": "el MAL («Sara irá… e irás», falta Pablo) y su acuse son incompletos, no falsos"
+  }
+ },
+ "ciego11": {
+  "2.10": {
+   "juez": [
+    63.64,
+    1
+   ],
+   "auditado": {
+    "acierto": 63.64,
+    "falsas": 0
+   },
+   "cambios": [
+    "«¿cuántos años tendré en 2030?» -> «Tienes 26 años»: no responde, fallo pero no falsa"
+   ]
+  },
+  "2.11": {
+   "juez": [
+    93.18,
+    0
+   ],
+   "auditado": {
+    "acierto": 93.18,
+    "falsas": 0
+   },
+   "cambios": []
+  },
+  "2.11_tras_arreglos_no_ciega": {
+   "juez": [
+    95.45,
+    0
+   ],
+   "auditado": {
+    "acierto": 95.45,
+    "falsas": 0
+   }
+  }
+ },
+ "arreglos_no_ciegos": [
+  "introductores («ya me acuerdo:»)",
+  "«como» inicial = comer",
+  "verbo sobrentendido («y yo veintiocho»)",
+  "regla con una palabra («si estudio, apruebo»)",
+  "«¿quién corre más rápido, X o Y?»",
+  "la edad usa el dato más reciente (edad dicha o fecha de nacimiento)"
+ ]
+}

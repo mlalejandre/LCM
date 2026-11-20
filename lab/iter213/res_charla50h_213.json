@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 50,
+  "ok": 50,
+  "acierto": 100.0,
+  "falsas": 0,
+  "tasa_falsas": 0.0,
+  "abst_indebida": 0,
+  "error": 0,
+  "por_cat": {
+   "aritmetica": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "dibujo": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "formatos": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "problemas": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "suposiciones": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 1,
+   "q": "¿cuánto es 2 más 5?",
+   "crit": "7;!no lo s*",
+   "r": "2 + 5 = 7.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 2,
+   "q": "cuánto es el resultado de la suma entre 230 y 420",
+   "crit": "650",
+   "r": "230 + 420 = 650.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 3,
+   "q": "¿y si le resto 50?",
+   "crit": "600",
+   "r": "650 − 50 = 600.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 4,
+   "q": "¿cuánto es 12 por 15?",
+   "crit": "180",
+   "r": "12 × 15 = 180.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 5,
+   "q": "divide 144 entre 12",
+   "crit": "12",
+   "r": "144 ÷ 12 = 12.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 6,
+   "q": "¿cuál es la raíz cuadrada de 225?",
+   "crit": "15",
+   "r": "La raíz cuadrada de 225 es 15.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 7,
+   "q": "¿cuánto es el 15 % de 80?",
+   "crit": "12",
+   "r": "El 15 % de 80 es 12.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 8,
+   "q": "calcula 3 más 4 por 5",
+   "crit": "23",
+   "r": "3 + 4 × 5 = 23.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-a",
+   "cat": "aritmetica",
+   "i": 9,
+   "q": "¿cuánto es (3 más 4) por 5?",
+   "crit": "35",
+   "r": "(3 + 4) × 5 = 35.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 0,
+   "q": "¿cuánto es doscientos treinta más ciento veinte?",
+   "crit": "350",
+   "r": "230 + 120 = 350.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 1,
+   "q": "¿cuánto es el doble de 37?",
+   "crit": "74",
+   "r": "El doble de 37 es 74.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 2,
+   "q": "¿y la mitad de 90?",
+   "crit": "45",
+   "r": "La mitad de 90 es 45.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 3,
+   "q": "¿cuánto es 7 al cuadrado?",
+   "crit": "49",
+   "r": "7^2 = 49.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 4,
+   "q": "¿cuánto es 2 elevado a 10?",
+   "crit": "1024|1.024",
+   "r": "2^10 = 1024.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 5,
+   "q": "¿cuál es la media de 4, 8 y 12?",
+   "crit": "8",
+   "r": "La media de 4, 8 y 12 es 8.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 6,
+   "q": "¿cuánto es 10 entre 4?",
+   "crit": "2,5|2.5",
+   "r": "10 ÷ 4 = 2,5.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 7,
+   "q": "¿cuánto es 5 menos 9?",
+   "crit": "-4|−4|menos 4",
+   "r": "5 − 9 = -4.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 8,
+   "q": "¿cuánto es 1 entre 0?",
+   "crit": "ABST|cero",
+   "r": "No se puede dividir entre cero.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-b",
+   "cat": "formatos",
+   "i": 9,
+   "q": "¿cuánto es 3,5 más 1,25?",
+   "crit": "4,75|4.75",
+   "r": "3,5 + 1,25 = 4,75.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 0,
+   "q": "tengo 12 caramelos y me dan 5 más, ¿cuántos caramelos tengo?",
+   "crit": "17",
+   "r": "17 caramelos: 12 + 5 = 17.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 1,
+   "q": "Ana tenía 30 euros y se gastó 12, ¿cuánto dinero le queda?",
+   "crit": "18",
+   "r": "18 euros: 30 − 12 = 18.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 2,
+   "q": "en una caja hay 6 filas de 8 huevos, ¿cuántos huevos hay?",
+   "crit": "48",
+   "r": "48 huevos: 6 × 8 = 48.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 3,
+   "q": "repartimos 45 cromos entre 5 niños, ¿cuántos le tocan a cada uno?",
+   "crit": "9",
+   "r": "9 cromos: 45 ÷ 5 = 9.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 4,
+   "q": "un tren sale con 120 pasajeros, bajan 35 y suben 20, ¿cuántos pasajeros lleva?",
+   "crit": "105",
+   "r": "105 pasajeros: 120 − 35 + 20 = 105.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 5,
+   "q": "tengo 3 hermanos y 2 hermanas",
+   "crit": "hermanos|hermanas;!no lo he entendido",
+   "r": "Entendido: tienes 3 hermanos y 2 hermanas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 6,
+   "q": "¿cuántos hermanos tengo en total?",
+   "crit": "5|cinco",
+   "r": "Cinco en total: 3 hermanos y 2 hermanas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 7,
+   "q": "una camiseta cuesta 15 euros, ¿cuánto cuestan 4 camisetas?",
+   "crit": "60",
+   "r": "60 euros: 4 × 15 = 60.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 8,
+   "q": "si un kilo de manzanas cuesta 2 euros, ¿cuánto cuestan 3 kilos?",
+   "crit": "6",
+   "r": "6 euros: 3 × 2 = 6.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-c",
+   "cat": "problemas",
+   "i": 9,
+   "q": "¿cómo lo has calculado?",
+   "crit": "multiplic*|por|×|aplicacion",
+   "r": "No lo saco de memoria: lo ha calculado la aplicación de multiplicación (v1.0). Pasos: 3 × 2 = 6.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 0,
+   "q": "si un conejo es más grande que una liebre, ¿la liebre será más pequeña o más grande que el conejo?",
+   "crit": "pequeña",
+   "r": "Más pequeña: si el conejo es más grande que la liebre, la liebre es más pequeña que el conejo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 1,
+   "q": "si Ana es mayor que Luis y Luis es mayor que Eva, ¿quién es la menor?",
+   "crit": "eva",
+   "r": "Eva.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 2,
+   "q": "si un coche es más rápido que una bici, ¿la bici es más lenta que el coche?",
+   "crit": "^si",
+   "r": "Sí: si el coche es más rápido que la bici, la bici es más lenta que el coche.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 3,
+   "q": "si mi casa es más grande que la tuya, ¿la tuya es más pequeña?",
+   "crit": "^si",
+   "r": "Sí: si mi casa es más grande que la tuya, la tuya es más pequeña que mi casa.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 4,
+   "q": "si Pedro tiene más años que Juan, ¿Juan es más joven que Pedro?",
+   "crit": "^si",
+   "r": "Sí: si Pedro es mayor que Juan, Juan es más joven que Pedro.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 5,
+   "q": "si hoy es lunes, ¿qué día será mañana?",
+   "crit": "martes",
+   "r": "Mañana será martes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 6,
+   "q": "si tengo 20 años, ¿cuántos años tendré dentro de 5 años?",
+   "crit": "25",
+   "r": "25 años: 20 + 5 = 25.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 7,
+   "q": "¿un conejo es más grande que una liebre?",
+   "crit": "ABST",
+   "r": "No lo sé: no tengo datos para comparar al conejo con la liebre en eso.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 8,
+   "q": "si el tren sale a las 10 y tarda 3 horas, ¿a qué hora llega?",
+   "crit": "13|una",
+   "r": "Llega a las 13:00.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-d",
+   "cat": "suposiciones",
+   "i": 9,
+   "q": "si un lápiz cuesta 2 euros y una goma 1, ¿cuánto cuestan los dos juntos?",
+   "crit": "3|tres",
+   "r": "3 euros: 2 + 1 = 3.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 0,
+   "q": "dibuja un círculo",
+   "crit": "circulo;!entendido",
+   "r": "Aquí tienes un círculo, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 1,
+   "q": "quiero que dibujes un cuadrado",
+   "crit": "cuadrado;!no lo he entendido",
+   "r": "Aquí tienes un cuadrado, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 2,
+   "q": "pinta un triángulo rojo",
+   "crit": "triangulo",
+   "r": "Aquí tienes un triángulo rojo, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 3,
+   "q": "muéstrame una estrella azul",
+   "crit": "estrella",
+   "r": "Aquí tienes una estrella azul, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 4,
+   "q": "dibuja el color verde",
+   "crit": "verde",
+   "r": "He creado una muestra del color verde.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 5,
+   "q": "¿qué has dibujado antes?",
+   "crit": "estrella|verde",
+   "r": "He dibujado un círculo, un cuadrado, un triángulo rojo, una estrella azul y una muestra del color verde.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 6,
+   "q": "dibuja dos círculos",
+   "crit": "circulo*",
+   "r": "Aquí tienes dos círculos, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 7,
+   "q": "¿puedes dibujar un perro?",
+   "crit": "ABST|no puedo|solo",
+   "r": "No sé dibujar «un perro»: solo dibujo figuras geométricas (corazón, cuadrado, círculo, estrella, hexágono, rectángulo, rombo, triángulo…), con color si quieres, y muestras de color.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 8,
+   "q": "dibuja un cuadrado azul y un círculo amarillo",
+   "crit": "cuadrado;circulo",
+   "r": "Aquí tienes un cuadrado azul y un círculo amarillo, hecho con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50h-e",
+   "cat": "dibujo",
+   "i": 9,
+   "q": "gracias",
+   "crit": "nada|gracias",
+   "r": "De nada.",
+   "v": "OK"
+  }
+ ]
+}

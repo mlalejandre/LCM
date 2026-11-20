@@ -1,0 +1,128 @@
+{
+ "1": {
+  "n": 10,
+  "acierto": 80.0,
+  "falsas": 1
+ },
+ "2": {
+  "n": 8,
+  "acierto": 37.5,
+  "falsas": 0
+ },
+ "3": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 1
+ },
+ "4": {
+  "n": 9,
+  "acierto": 66.67,
+  "falsas": 0
+ },
+ "5": {
+  "n": 10,
+  "acierto": 70.0,
+  "falsas": 1,
+  "nota": "corregido a mano: 2 respuestas aprobadas por criterios demasiado laxos ('si' dentro de 'Si me cuentas'; 'Entendido: tu azul es el azul')"
+ },
+ "6": {
+  "n": 8,
+  "acierto": 75.0,
+  "falsas": 0
+ },
+ "7": {
+  "n": 9,
+  "acierto": 11.11,
+  "falsas": 3,
+  "nota": "corregido a mano: 'Entendido: est\u00e1s ingresado', 'te ca\u00edste', 'sabes recuperar\u00e1' aprobaban con el criterio laxo 'entendid*'"
+ },
+ "8": {
+  "n": 9,
+  "acierto": 55.56,
+  "falsas": 2
+ },
+ "9": {
+  "n": 8,
+  "acierto": 75.0,
+  "falsas": 1
+ },
+ "10": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 0
+ },
+ "11": {
+  "n": 10,
+  "acierto": 40.0,
+  "falsas": 1,
+  "nota": "corregido a mano: 'los ni\u00f1os de tu clase vendr\u00e1n' (pierde 'ocho' y 'su' mal resuelto) aprob\u00f3 por contener 'ni\u00f1os'"
+ },
+ "12": {
+  "n": 8,
+  "acierto": 87.5,
+  "falsas": 1,
+  "nota": "revisado a mano: fech\u00f3 'se casa en junio' en junio de 2026 (ya pasado)"
+ },
+ "13": {
+  "n": 9,
+  "acierto": 22.22,
+  "falsas": 1,
+  "nota": "corregido a mano: 'No he entendido bien' aprob\u00f3 por 'bien'; 'Encantado, Ernesto' (nombre del vecino tomado por el de la persona)"
+ },
+ "14": {
+  "n": 8,
+  "acierto": 50.0,
+  "falsas": 0
+ },
+ "15": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 0
+ },
+ "16": {
+  "n": 10,
+  "acierto": 50.0,
+  "falsas": 1,
+  "nota": "corregido a mano: 'Aqu\u00ed estudia para las oposiciones' aprob\u00f3 por contener 'estudi*'"
+ },
+ "17": {
+  "n": 8,
+  "acierto": 75.0,
+  "falsas": 2,
+  "nota": "corregido a mano: 'ves muy bueno una serie' (dos turnos) aprobaba por contener 'serie'"
+ },
+ "18": {
+  "n": 8,
+  "acierto": 25.0,
+  "falsas": 2,
+  "nota": "corregido a mano: 'llevas mi problema al taller' aprob\u00f3 por contener 'taller'"
+ },
+ "19": {
+  "n": 10,
+  "acierto": 60.0,
+  "falsas": 2,
+  "nota": "corregido a mano: 'les ha encantado' ten\u00eda criterio ANY y dio 'te encant\u00f3 una paella' (falso)"
+ },
+ "20": {
+  "n": 10,
+  "acierto": 60.0,
+  "falsas": 0,
+  "nota": "corregido a mano: '\u00bfpor qu\u00e9 estoy agobiado?' aprob\u00f3 citando literalmente la nota; el juez ya corta en \u00abpero me dijiste\u00bb"
+ },
+ "21": {
+  "n": 9,
+  "acierto": 88.89,
+  "falsas": 1,
+  "nota": "corregido a mano: 'tus gatas se llaman Luna y Sol' (el usuario dijo gatos) aprob\u00f3 por contener los nombres"
+ },
+ "22": {
+  "n": 9,
+  "acierto": 88.89,
+  "falsas": 0
+ },
+ "23": {
+  "n": 9,
+  "acierto": 55.56,
+  "falsas": 0
+ }
+}

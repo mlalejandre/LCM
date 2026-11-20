@@ -1,0 +1,8 @@
+ch50-b ABST_INDEBIDA | ¿Cómo se llama mi marido? | iñaki|inaki | No sé nada de tu marido: no me has hablado de él.
+ch50-b ABST_INDEBIDA | ¿Qué enseña Iñaki? | musica | No sé quién es Iñaki: todavía no me has hablado de él.
+ch50-b ABST_INDEBIDA | Tenemos dos niños, Leo y Alba | entendid*|apunto | No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tenemos dos niños, Leo y Alba».
+ch50-b ABST_INDEBIDA | ¿Cuántos hijos tengo? | dos|2 | No lo sé: no me has dicho cuántos hijos tienes. De ti sé que te llamas Sonia y tienes 38 años.
+ch50-b ABST_INDEBIDA | ¿Cómo se llama mi hija? | alba | No sé nada de tu hija: no me has hablado de ella.
+ch50-b ABST_INDEBIDA | ¿Quién es mayor, Leo o Alba? | leo | No lo tengo del todo claro, pero me dijiste: «Tenemos dos niños, Leo y Alba».
+ch50-b ABST_INDEBIDA | ¿Quién es el padre de Alba? | iñaki|inaki | No sé quién es Alba: todavía no me has hablado de ella.
+ch50-d ABST_INDEBIDA | [IMG foto.png] Mira, este es el color de la cafetera que quiero | roj*|ANY | No lo sé: no me has dicho de qué color es la cafetera que quiero.

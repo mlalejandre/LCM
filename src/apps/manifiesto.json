@@ -1,0 +1,715 @@
+{
+ "apps": {
+  "dia_semana": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación de calendario",
+   "ejemplos": [
+    [
+     "si hoy es lunes, ¿qué día será mañana?",
+     "martes"
+    ],
+    [
+     "si hoy es viernes, ¿qué día fue ayer?",
+     "jueves"
+    ]
+   ],
+   "familia": "calendario",
+   "lexico": {
+    "relativo": {
+     "anteayer": -2,
+     "antes de ayer": -2,
+     "ayer": -1,
+     "hoy": 0,
+     "mañana": 1,
+     "pasado mañana": 2
+    }
+   },
+   "nombre": "dia_semana",
+   "precedencia": 0,
+   "simbolo": "día+",
+   "version": "1.0"
+  },
+  "dibujo": {
+   "aridad": [
+    1,
+    1
+   ],
+   "concepto": "aplicación de dibujo",
+   "ejemplos": [
+    [
+     "dibuja un círculo",
+     "círculo"
+    ],
+    [
+     "pinta un triángulo rojo",
+     "triángulo"
+    ],
+    [
+     "dibuja dos círculos",
+     "círculos"
+    ]
+   ],
+   "familia": "dibujo",
+   "lexico": {
+    "figuras": [
+     "corazón",
+     "cuadrado",
+     "círculo",
+     "elipse",
+     "estrella",
+     "hexágono",
+     "línea",
+     "pentágono",
+     "rectángulo",
+     "rombo",
+     "triángulo",
+     "óvalo"
+    ],
+    "verbo": [
+     "dibuja",
+     "dibújame",
+     "dibujame",
+     "dibujes",
+     "dibujar",
+     "pinta",
+     "píntame",
+     "pintame",
+     "pintes",
+     "pintar",
+     "muestra",
+     "muéstrame",
+     "muestrame",
+     "enseña",
+     "enséñame",
+     "enseñame",
+     "haz",
+     "hazme",
+     "traza",
+     "trázame",
+     "dibújalo",
+     "me dibujas",
+     "me pintas"
+    ]
+   },
+   "nombre": "dibujo",
+   "precedencia": 0,
+   "simbolo": "svg",
+   "version": "1.0"
+  },
+  "diferencia": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es la diferencia entre 12 y 9?",
+     "3"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "la diferencia entre",
+     "la diferencia de"
+    ],
+    "pregunta": [
+     "cuánto se llevan",
+     "cuántos años nos llevamos",
+     "cuántos años se llevan"
+    ]
+   },
+   "nombre": "diferencia",
+   "precedencia": 1,
+   "simbolo": "|−|",
+   "version": "1.0"
+  },
+  "division": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "divide 144 entre 12",
+     "12"
+    ],
+    [
+     "¿cuánto es 10 entre 4?",
+     "2,5"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "operador": [
+     "entre",
+     "dividido entre",
+     "dividido por",
+     "/",
+     "÷",
+     ":"
+    ],
+    "problema_reparto": [
+     "reparte",
+     "repartimos",
+     "repartir",
+     "repartió",
+     "reparto",
+     "para",
+     "entre",
+     "a cada uno",
+     "cada uno"
+    ],
+    "sustantivo": [
+     "cociente",
+     "división"
+    ],
+    "verbo": [
+     "dividir",
+     "divide",
+     "divídelo",
+     "dividelo",
+     "reparte",
+     "repartir"
+    ]
+   },
+   "nombre": "division",
+   "precedencia": 2,
+   "simbolo": "÷",
+   "version": "1.0"
+  },
+  "doble": {
+   "aridad": [
+    1,
+    1
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es el doble de 37?",
+     "74"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "el doble de",
+     "doble de"
+    ]
+   },
+   "nombre": "doble",
+   "precedencia": 4,
+   "simbolo": "2×",
+   "version": "1.0"
+  },
+  "hora_mas": {
+   "aridad": [
+    3,
+    4
+   ],
+   "concepto": "operación de calendario",
+   "ejemplos": [
+    [
+     "si el tren sale a las 10 y tarda 3 horas, ¿a qué hora llega?",
+     "13"
+    ]
+   ],
+   "familia": "calendario",
+   "lexico": {
+    "duracion": [
+     "tarda",
+     "dura",
+     "tardo",
+     "tardamos",
+     "durará",
+     "tardará"
+    ]
+   },
+   "nombre": "hora_mas",
+   "precedencia": 0,
+   "simbolo": "h+",
+   "version": "1.0"
+  },
+  "maximo": {
+   "aridad": [
+    2,
+    null
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es el mayor de 3, 9 y 4?",
+     "9"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "el mayor de",
+     "el máximo de",
+     "el número mayor de"
+    ]
+   },
+   "nombre": "maximo",
+   "precedencia": 4,
+   "simbolo": "máx",
+   "version": "1.0"
+  },
+  "media": {
+   "aridad": [
+    1,
+    null
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es la media de 4, 8 y 12?",
+     "8"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "la media de",
+     "la media entre",
+     "el promedio de",
+     "la media aritmética de",
+     "el valor medio de"
+    ],
+    "sustantivo": [
+     "media",
+     "promedio"
+    ]
+   },
+   "nombre": "media",
+   "precedencia": 4,
+   "simbolo": "media",
+   "version": "1.0"
+  },
+  "minimo": {
+   "aridad": [
+    2,
+    null
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es el menor de 3, 9 y 4?",
+     "3"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "el menor de",
+     "el mínimo de",
+     "el número menor de"
+    ]
+   },
+   "nombre": "minimo",
+   "precedencia": 4,
+   "simbolo": "mín",
+   "version": "1.0"
+  },
+  "mitad": {
+   "aridad": [
+    1,
+    1
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es la mitad de 90?",
+     "45"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "la mitad de",
+     "mitad de"
+    ]
+   },
+   "nombre": "mitad",
+   "precedencia": 4,
+   "simbolo": "½",
+   "version": "1.0"
+  },
+  "multiplicacion": {
+   "aridad": [
+    2,
+    null
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es 12 por 15?",
+     "180"
+    ],
+    [
+     "multiplica 25 por 4",
+     "100"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "operador": [
+     "por",
+     "x",
+     "×",
+     "*",
+     "multiplicado por"
+    ],
+    "sustantivo": [
+     "producto",
+     "multiplicación"
+    ],
+    "verbo": [
+     "multiplicar",
+     "multiplica",
+     "multiplícalo",
+     "multiplicalo"
+    ]
+   },
+   "nombre": "multiplicacion",
+   "precedencia": 2,
+   "simbolo": "×",
+   "version": "1.0"
+  },
+  "porcentaje": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es el 15 % de 80?",
+     "12"
+    ],
+    [
+     "¿cuánto es el 25 por ciento de 200?",
+     "50"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "patron": [
+     "el N % de X",
+     "el N por ciento de X"
+    ],
+    "sustantivo": [
+     "porcentaje",
+     "tanto por ciento"
+    ]
+   },
+   "nombre": "porcentaje",
+   "precedencia": 4,
+   "simbolo": "%",
+   "version": "1.0"
+  },
+  "potencia": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es 7 al cuadrado?",
+     "49"
+    ],
+    [
+     "¿cuánto es 2 elevado a 10?",
+     "1024"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "operador": [
+     "elevado a",
+     "elevado al",
+     "^",
+     "**"
+    ],
+    "sufijo": {
+     "al cuadrado": 2,
+     "al cubo": 3
+    },
+    "sustantivo": [
+     "potencia"
+    ]
+   },
+   "nombre": "potencia",
+   "precedencia": 3,
+   "simbolo": "^",
+   "version": "1.0"
+  },
+  "raiz": {
+   "aridad": [
+    1,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es la raíz cuadrada de 225?",
+     "15"
+    ],
+    [
+     "¿cuánto es la raíz de 49?",
+     "7"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "la raíz cuadrada de",
+     "la raiz cuadrada de",
+     "raíz cuadrada de",
+     "raiz cuadrada de",
+     "la raíz de",
+     "la raiz de",
+     "raíz de",
+     "raiz de"
+    ],
+    "sustantivo": [
+     "raíz",
+     "raíz cuadrada"
+    ]
+   },
+   "nombre": "raiz",
+   "precedencia": 4,
+   "simbolo": "√",
+   "version": "1.0"
+  },
+  "resta": {
+   "aridad": [
+    2,
+    2
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es 5 menos 9?",
+     "-4"
+    ],
+    [
+     "resta 18 a 50",
+     "32"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "operador": [
+     "menos",
+     "-",
+     "−"
+    ],
+    "problema_menos": [
+     "faltaron",
+     "faltan",
+     "se me rompieron",
+     "se rompieron",
+     "se me rompió",
+     "se rompió",
+     "rompí",
+     "se me cayeron",
+     "se cayeron",
+     "se me perdieron",
+     "se perdieron",
+     "se estropearon",
+     "se escaparon",
+     "devolví",
+     "tiré",
+     "gasta",
+     "gastó",
+     "gasté",
+     "se gastó",
+     "se gasta",
+     "pierde",
+     "perdió",
+     "he perdido",
+     "perdí",
+     "come",
+     "comió",
+     "me comí",
+     "me como",
+     "regala",
+     "regaló",
+     "regalé",
+     "bajan",
+     "bajaron",
+     "baja",
+     "quita",
+     "quitó",
+     "vende",
+     "vendió",
+     "vendí",
+     "rompe",
+     "rompió",
+     "salen",
+     "salieron",
+     "se van",
+     "se fueron",
+     "presta",
+     "prestó",
+     "presté",
+     "da",
+     "di",
+     "doy",
+     "menos",
+     "usa",
+     "usó",
+     "usé"
+    ],
+    "sustantivo": [
+     "resta",
+     "diferencia"
+    ],
+    "verbo": [
+     "restar",
+     "resta",
+     "réstale",
+     "restale",
+     "quita",
+     "quitar",
+     "le resto",
+     "le quito",
+     "resto"
+    ]
+   },
+   "nombre": "resta",
+   "precedencia": 1,
+   "simbolo": "−",
+   "version": "1.0"
+  },
+  "suma": {
+   "aridad": [
+    2,
+    null
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuánto es 2 más 5?",
+     "7"
+    ],
+    [
+     "la suma de 230 y 420",
+     "650"
+    ],
+    [
+     "¿cuánto suman 15, 25 y 35?",
+     "75"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "operador": [
+     "más",
+     "mas",
+     "+",
+     "sumado a",
+     "sumado con"
+    ],
+    "pregunta": [
+     "cuánto suman",
+     "cuanto suman"
+    ],
+    "problema_mas": [
+     "me dan",
+     "me dio",
+     "me dieron",
+     "me das",
+     "me da",
+     "me diste",
+     "me regalan",
+     "me regala",
+     "me regalas",
+     "me regalaron",
+     "nos dan",
+     "nos dieron",
+     "te dan",
+     "le regalan",
+     "le regalaron",
+     "le dan",
+     "le dieron",
+     "gana",
+     "ganó",
+     "gano",
+     "recibe",
+     "recibo",
+     "recibió",
+     "suben",
+     "subieron",
+     "sube",
+     "compra",
+     "compro",
+     "compró",
+     "encuentra",
+     "encuentro",
+     "encontró",
+     "añade",
+     "añado",
+     "llegan",
+     "llegaron",
+     "entran",
+     "entraron",
+     "más"
+    ],
+    "sustantivo": [
+     "suma",
+     "total"
+    ],
+    "verbo": [
+     "sumar",
+     "suma",
+     "súmale",
+     "sumale",
+     "añade",
+     "añadir",
+     "suman",
+     "sumo",
+     "le sumo",
+     "le añado"
+    ]
+   },
+   "nombre": "suma",
+   "precedencia": 1,
+   "simbolo": "+",
+   "version": "1.0"
+  },
+  "triple": {
+   "aridad": [
+    1,
+    1
+   ],
+   "concepto": "operación matemática",
+   "ejemplos": [
+    [
+     "¿cuál es el triple de 15?",
+     "45"
+    ]
+   ],
+   "familia": "aritmetica",
+   "lexico": {
+    "prefijo": [
+     "el triple de",
+     "triple de"
+    ]
+   },
+   "nombre": "triple",
+   "precedencia": 4,
+   "simbolo": "3×",
+   "version": "1.0"
+  }
+ },
+ "huella": "3e7656ed209eb8e1",
+ "version_registro": "2.13.0"
+}

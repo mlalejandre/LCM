@@ -1,0 +1,18 @@
+D = [{"id": "p05", "cat": "mezcla_papeles", "turnos": [
+ ("buenas", "hola|buenas"),
+ ("mi hija va al colegio con su amiga Noa", "colegio;!no lo he entendido"),
+ ("¿con quién va mi hija al colegio?", "noa|amiga"),
+ ("¿adónde va mi hija?", "colegio"),
+ ("el colegio está al lado del polideportivo", "polideportivo;!no lo he entendido"),
+ ("¿qué hay al lado del polideportivo?", "colegio"),
+ ("mi hermano trabaja para una empresa de Bilbao", "empresa;!no lo he entendido"),
+ ("¿para quién trabaja mi hermano?", "empresa"),
+ ("ayer jugamos contra los vecinos al fútbol", "vecinos|futbol;!juegas;!no lo he entendido"),
+ ("¿contra quién jugamos ayer?", "vecinos;!juegas"),
+ ("según mi madre, mañana va a llover", "ANY"),
+ ("mi abuelo hizo esta silla con sus manos", "silla;!no lo he entendido"),
+ ("¿con qué hizo mi abuelo la silla?", "manos"),
+ ("la silla es de roble", "roble;!no lo he entendido"),
+ ("¿de qué es la silla?", "roble;!ser de"),
+ ("¿con quién juega mi hermano?", "ABST"),
+]}]

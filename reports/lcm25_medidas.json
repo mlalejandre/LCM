@@ -1,0 +1,76 @@
+{
+ "fecha": "2026-11-18",
+ "evaluador": "estricto (el de la 2.4); 2.4 y 2.5 medidas con el mismo",
+ "examen_ciego_7_conversacion_libre": {
+  "n": 43,
+  "nota": "escrito con la 2.5 congelada, una sola pasada, transcripciones no leidas",
+  "lcm24": {
+   "acierto": 62.79,
+   "falsas_pct": 2.33,
+   "falsas": 1
+  },
+  "lcm25": {
+   "acierto": 76.74,
+   "falsas_pct": 4.65,
+   "falsas": 2
+  }
+ },
+ "examen_ciego_6_coloquial": {
+  "n": 67,
+  "nota": "escrito con la 2.4 congelada antes de las conversaciones libres",
+  "lcm24": {
+   "acierto": 73.13,
+   "falsas_pct": 2.99
+  },
+  "lcm25": {
+   "acierto": 83.58,
+   "falsas_pct": 2.99
+  }
+ },
+ "examen_ciego_2_control": {
+  "n": 301,
+  "lcm24": {
+   "acierto": 93.02,
+   "falsas_pct": 2.99
+  },
+  "lcm25": {
+   "acierto": 94.35,
+   "falsas_pct": 2.33
+  }
+ },
+ "conversaciones_libres_tanda15": {
+  "n": 77,
+  "lcm25": 100.0,
+  "nota": "desarrollo: son las conversaciones con las que se corrigio"
+ },
+ "ciego_5_ahora_tanda14": {
+  "n": 134,
+  "lcm24_ciego": 94.03,
+  "lcm25_como_tanda": 100.0
+ },
+ "banco_generado": {
+  "dev": {
+   "lcm25": 100.0
+  },
+  "validacion": {
+   "n": 12331,
+   "lcm24": {
+    "acierto": 98.49,
+    "falsas_pct": 0.27
+   },
+   "lcm25": {
+    "acierto": 98.49,
+    "falsas_pct": 0.27
+   }
+  }
+ },
+ "examenes_del_autor": {
+  "n": 703,
+  "lcm24": 87.48,
+  "lcm25": 88.05
+ },
+ "tandas_1_a_15": {
+  "n": 1570,
+  "lcm25": 100.0
+ }
+}

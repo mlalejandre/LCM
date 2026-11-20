@@ -1,0 +1,449 @@
+{
+ "resumen": {
+  "n": 46,
+  "ok": 38,
+  "acierto": 82.61,
+  "falsas": 1,
+  "tasa_falsas": 2.17,
+  "abst_indebida": 7,
+  "error": 0,
+  "por_cat": {
+   "direccion": {
+    "n": 12,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "lugar": {
+    "n": 12,
+    "acierto": 83.3,
+    "falsas": 0
+   },
+   "materia_imagen": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 0
+   },
+   "papeles": {
+    "n": 14,
+    "acierto": 78.6,
+    "falsas": 1
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 1,
+   "q": "las llaves están dentro del cajón",
+   "crit": "llaves;!no lo he entendido",
+   "r": "Entendido: las llaves están dentro del cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 2,
+   "q": "¿dónde están las llaves?",
+   "crit": "cajon",
+   "r": "Las llaves están dentro del cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 3,
+   "q": "¿qué hay dentro del cajón?",
+   "crit": "llaves",
+   "r": "Las llaves están dentro del cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 4,
+   "q": "el coche está aparcado delante de la farmacia",
+   "crit": "coche;!no lo he entendido",
+   "r": "Entendido: el coche está aparcado delante de la farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 5,
+   "q": "¿dónde está el coche?",
+   "crit": "farmacia",
+   "r": "El coche está aparcado delante de la farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 6,
+   "q": "¿qué hay detrás del coche?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 7,
+   "q": "¿la farmacia está detrás del coche?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 8,
+   "q": "el parque está cerca de mi casa",
+   "crit": "parque;!no lo he entendido",
+   "r": "Entendido: el parque está cerca de tu casa.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 9,
+   "q": "¿mi casa está lejos del parque?",
+   "crit": "^no|cerca",
+   "r": "No lo sé: no me has dicho nada sobre eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 10,
+   "q": "el colegio está entre la iglesia y el mercado",
+   "crit": "colegio;!no lo he entendido",
+   "r": "Entendido: el colegio está entre la iglesia y el mercado.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-lugar",
+   "cat": "lugar",
+   "i": 11,
+   "q": "¿dónde está el colegio?",
+   "crit": "iglesia;mercado",
+   "r": "El colegio está entre la iglesia y el mercado.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 0,
+   "q": "buenas",
+   "crit": "hola|buenas",
+   "r": "¡Buenas! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 1,
+   "q": "mañana viajo a Granada con mi hermana Eva",
+   "crit": "granada;!no lo he entendido",
+   "r": "Entendido: viajas a Granada con tu hermana Eva mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 2,
+   "q": "¿adónde viajo mañana?",
+   "crit": "granada",
+   "r": "Viajas a Granada con tu hermana Eva mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 3,
+   "q": "¿con quién viajo?",
+   "crit": "eva|hermana",
+   "r": "Viajas a Granada con tu hermana Eva mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 4,
+   "q": "pasaremos por Jaén",
+   "crit": "jaen;!no lo he entendido",
+   "r": "Entendido: pasarás por Jaén.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 5,
+   "q": "¿por dónde pasaremos?",
+   "crit": "jaen",
+   "r": "Pasarás por Jaén.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 6,
+   "q": "nos quedaremos hasta el domingo",
+   "crit": "domingo;!no lo he entendido",
+   "r": "Entendido: te quedarás hasta el domingo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 7,
+   "q": "¿hasta cuándo nos quedaremos?",
+   "crit": "domingo",
+   "r": "Te quedarás hasta el domingo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 8,
+   "q": "volvemos en tren",
+   "crit": "tren;!no lo he entendido",
+   "r": "Entendido: vuelves en tren.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 9,
+   "q": "¿cómo volvemos?",
+   "crit": "tren",
+   "r": "Vuelves en tren.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 10,
+   "q": "salimos desde la estación del norte",
+   "crit": "estacion;!no lo he entendido",
+   "r": "Entendido: sales desde la estación del norte.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-viaje",
+   "cat": "direccion",
+   "i": 11,
+   "q": "¿desde dónde salimos?",
+   "crit": "estacion",
+   "r": "Sales desde la estación del norte.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 1,
+   "q": "mi vecino no vino a la reunión por la lluvia",
+   "crit": "lluvia|reunion;!no lo he entendido",
+   "r": "Entendido: tu vecino no vino a la reunión por la lluvia.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 2,
+   "q": "¿por qué no vino mi vecino a la reunión?",
+   "crit": "lluvia",
+   "r": "No me has dicho por qué. Solo sé que tu vecino no vino a la reunión por la lluvia.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 3,
+   "q": "escribo un libro sobre mi abuelo",
+   "crit": "libro;!no lo he entendido",
+   "r": "Entendido: escribes un libro sobre tu abuelo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 4,
+   "q": "¿sobre qué escribo?",
+   "crit": "abuelo",
+   "r": "Escribes un libro sobre tu abuelo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 5,
+   "q": "tomo el café sin azúcar",
+   "crit": "cafe;!no lo he entendido",
+   "r": "Entendido: tomas el café sin azúcar.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 6,
+   "q": "¿cómo tomo el café?",
+   "crit": "sin azucar",
+   "r": "Tomas el café sin azúcar.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 7,
+   "q": "mi hermano juega contra el equipo de Toni",
+   "crit": "toni|equipo;!no lo he entendido",
+   "r": "Entendido: tu hermano juega contra el equipo de Toni.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 8,
+   "q": "¿contra quién juega mi hermano?",
+   "crit": "toni",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 9,
+   "q": "corto el pan con un cuchillo",
+   "crit": "pan;!no lo he entendido",
+   "r": "Entendido: cortas el pan con un cuchillo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 10,
+   "q": "¿con qué corto el pan?",
+   "crit": "cuchillo",
+   "r": "Cortas el pan con un cuchillo.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 11,
+   "q": "estudio por las noches para el examen de conducir",
+   "crit": "examen;!no lo he entendido",
+   "r": "Entendido: estudias para el examen de conducir por las noches.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 12,
+   "q": "¿para qué estudio?",
+   "crit": "examen;conducir",
+   "r": "Para el examen.",
+   "v": "MAL"
+  },
+  {
+   "id": "c10-papeles",
+   "cat": "papeles",
+   "i": 13,
+   "q": "¿cuándo estudio?",
+   "crit": "noche*",
+   "r": "Estudias para el examen de conducir por las noches.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 1,
+   "q": "tengo un anillo de plata",
+   "crit": "anillo;!no lo he entendido",
+   "r": "Entendido: tienes un anillo de plata.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 2,
+   "q": "¿de qué es mi anillo?",
+   "crit": "plata",
+   "r": "No lo sé: no me has dicho cuál es tu anillo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 3,
+   "q": "el anillo era de mi abuela",
+   "crit": "abuela;!no lo he entendido",
+   "r": "Entendido: tu abuela tiene un anillo de plata.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 4,
+   "q": "¿de quién era el anillo?",
+   "crit": "abuela",
+   "r": "El anillo de plata de tu abuela es de tu abuela.",
+   "v": "OK"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 5,
+   "q": "[IMG foto.png] mira este dibujo: ¿qué hay debajo del cuadrado?",
+   "crit": "triangulo",
+   "r": "Entendido: Mira el dibujo. No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 6,
+   "q": "¿de qué color es la figura de arriba?",
+   "crit": "roj*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c10-materia",
+   "cat": "materia_imagen",
+   "i": 7,
+   "q": "¿con quién vive mi abuela?",
+   "crit": "ABST",
+   "r": "No lo sé. De tu abuela sé que tiene un anillo de plata.",
+   "v": "OK"
+  }
+ ]
+}

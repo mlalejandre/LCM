@@ -25,3 +25,15 @@ LCM_PROYECTO_COMPLETO.txt
 reports/paquete.zip
 reports/arboles.json
 reports/replay_informe.txt
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+.lcm*_respaldo/
+parche_lcm*.py
+lab/res_*.json
+lab/historial.jsonl
+lab/_dbg.py
+memory/
+checkpoints/

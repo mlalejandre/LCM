@@ -1,0 +1,122 @@
+{
+ "fecha": "2026-11-19",
+ "conceptos_fabrica": {
+  "formas_211": 1122,
+  "formas_212": 2686,
+  "nuevas": 1564
+ },
+ "charla50g": {
+  "automatico": {
+   "lcm211": [
+    60.0,
+    2
+   ],
+   "lcm212": [
+    86.0,
+    0
+   ]
+  },
+  "auditado": {
+   "lcm211": {
+    "acierto": 44.0,
+    "falsas": 6
+   },
+   "lcm212": {
+    "acierto": 84.0,
+    "falsas": 0
+   }
+  }
+ },
+ "examen_ciego12": {
+  "automatico": {
+   "lcm211": [
+    48.78,
+    2
+   ],
+   "lcm212": [
+    85.37,
+    1
+   ]
+  },
+  "auditado": {
+   "lcm211": {
+    "acierto": 41.46,
+    "falsas": 1
+   },
+   "lcm212": {
+    "acierto": 82.93,
+    "falsas": 0
+   }
+  }
+ },
+ "examen_conceptos212": {
+  "2.11": {
+   "A_definicion": [
+    90.0,
+    3
+   ],
+   "B_jerarquia": [
+    0.0,
+    0
+   ]
+  },
+  "2.12": {
+   "A_definicion": [
+    90.0,
+    3
+   ],
+   "B_jerarquia": [
+    27.45,
+    0
+   ]
+  },
+  "nota": "La parte A la contesta en ambas versiones el léxico MCR de la capa antigua (no mide la base de fábrica); en la 2.12, 8 de esas definiciones salen ya de la base. La B (herencia) solo la puede contestar la base: 0 → 14 de 51, sin falsas."
+ },
+ "controles": {
+  "examenes_autor": 88.05,
+  "examen_ciego2": 94.35,
+  "examen_ciego6": 80.6,
+  "examen_ciego7": 76.74,
+  "nota": "iguales en 2.11 y 2.12"
+ },
+ "curva_primer_intento": {
+  "total": {
+   "n": 58,
+   "acierto": 44.83,
+   "falsas": 2
+  },
+  "por_tanda": {
+   "1": {
+    "n": 13,
+    "acierto": 23.08,
+    "falsas": 2,
+    "nota": "corregido a mano: «Nerea Iker y tú van…» (dos personas fundidas en un nombre) y su respuesta aprobaron por contener los nombres; son falsas"
+   },
+   "2": {
+    "n": 15,
+    "acierto": 60.0,
+    "falsas": 0,
+    "nota": "corregido a mano: «hablas español catalán e inglés» (dos idiomas fundidos) aprobó por contener las palabras"
+   },
+   "3": {
+    "n": 15,
+    "acierto": 26.67,
+    "falsas": 0,
+    "nota": "corregido a mano: «tu padre nunca bebe alcohol ni tu madre» no guarda lo de la madre (fallo); los 2 MAL del juez («¡Hasta luego!» y «Hay dos cláusulas…») no son datos falsos"
+   },
+   "4": {
+    "n": 15,
+    "acierto": 66.67,
+    "falsas": 0
+   }
+  }
+ },
+ "pytest": {
+  "passed": 783,
+  "failed_entorno": [
+   "test_parche106 (red)",
+   "test_reproducibilidad (empaquetado)",
+   "test_vision_chat (html ausente)"
+  ]
+ }
+}

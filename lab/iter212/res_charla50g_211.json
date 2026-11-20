@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 50,
+  "ok": 30,
+  "acierto": 60.0,
+  "falsas": 2,
+  "tasa_falsas": 4.0,
+  "abst_indebida": 18,
+  "error": 0,
+  "por_cat": {
+   "listas_complementos": {
+    "n": 10,
+    "acierto": 70.0,
+    "falsas": 1
+   },
+   "repaso": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0
+   },
+   "sujetos_yo": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0
+   },
+   "tambien_ni_lista": {
+    "n": 10,
+    "acierto": 50.0,
+    "falsas": 1
+   },
+   "verbos_adjetivos": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 0,
+   "q": "hola, me llamo Marina",
+   "crit": "marina;!no lo he entendido",
+   "r": "Encantado, Marina.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 1,
+   "q": "Sara, Pablo y yo iremos al cine el viernes",
+   "crit": "sara;pablo;cine;!no lo he entendido",
+   "r": "Entendido: Sara Pablo y tú irán al cine el viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 2,
+   "q": "¿quién irá al cine?",
+   "crit": "sara;pablo;tu|iras",
+   "r": "Sara Pablo irá al cine el viernes e irás al cine el viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 3,
+   "q": "¿Pablo irá al cine?",
+   "crit": "^si",
+   "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 4,
+   "q": "¿iré yo al cine?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que irás al cine el viernes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 5,
+   "q": "mi hermano, mi cuñada y yo vivimos en Murcia",
+   "crit": "murcia;!no lo he entendido",
+   "r": "Entendido: Hermano vivir en Murcia.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 6,
+   "q": "¿dónde vive mi cuñada?",
+   "crit": "murcia",
+   "r": "No sé nada de tu cuñada: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 7,
+   "q": "¿dónde vivo?",
+   "crit": "murcia",
+   "r": "No lo sé: no me has dicho dónde vives. De ti sé que te llamas Marina e irás al cine el viernes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 8,
+   "q": "Ana y yo somos primas",
+   "crit": "ana|prima*;!no lo he entendido",
+   "r": "Entendido: Ana y tú son primos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-a",
+   "cat": "sujetos_yo",
+   "i": 9,
+   "q": "¿quién es Ana?",
+   "crit": "prima",
+   "r": "Ana es tu prima.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 0,
+   "q": "he estado en Francia, Italia y Grecia",
+   "crit": "francia|italia|grecia;!no lo he entendido",
+   "r": "Entendido: estuviste en Francia y Italia y Grecia.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 1,
+   "q": "¿he estado en Grecia?",
+   "crit": "^si",
+   "r": "Sí, estuviste en Francia y Italia y Grecia.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 2,
+   "q": "¿he estado en Japón?",
+   "crit": "ABST|^no",
+   "r": "No lo sé. Solo sé que estuviste en Francia y Italia y Grecia.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 3,
+   "q": "tengo amigos en Madrid, Sevilla y Bilbao",
+   "crit": "madrid|sevilla|bilbao;!no lo he entendido",
+   "r": "Entendido: tienes amigos en Madrid y Sevilla y Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 4,
+   "q": "¿tengo amigos en Sevilla?",
+   "crit": "^si",
+   "r": "Sí, tienes amigos en Madrid y Sevilla y Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 5,
+   "q": "¿dónde tengo amigos?",
+   "crit": "madrid;sevilla;bilbao",
+   "r": "Tienes amigos en Madrid y Sevilla y Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 6,
+   "q": "en la reunión había gente de Vigo, de Lugo y de León",
+   "crit": "vigo|lugo|leon;!no lo he entendido",
+   "r": "Entendido: Hermano haber en Reunion; Hermano haber Gente.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 7,
+   "q": "¿había gente de León en la reunión?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que estuviste en Francia y Italia y Grecia.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 8,
+   "q": "hablo inglés, francés y un poco de alemán",
+   "crit": "ingles|frances|aleman;!no lo he entendido",
+   "r": "Entendido: Hermano hablar Ingles; Hermano hablar Frances.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-b",
+   "cat": "listas_complementos",
+   "i": 9,
+   "q": "¿hablo francés?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marina e irás al cine el viernes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 0,
+   "q": "me levanto, desayuno y salgo a correr",
+   "crit": "correr|desayun*;!no lo he entendido",
+   "r": "Entendido: Desayuno levantar.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 1,
+   "q": "¿desayuno?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marina e irás al cine el viernes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 2,
+   "q": "mi casa es grande, luminosa y barata",
+   "crit": "grande|luminosa|barata;!no lo he entendido",
+   "r": "Entendido: tu casa es grande, luminosa y barata.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 3,
+   "q": "¿mi casa es luminosa?",
+   "crit": "^si",
+   "r": "Sí, tu casa es grande, luminosa y barata.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 4,
+   "q": "¿cómo es mi casa?",
+   "crit": "grande;luminosa;barata",
+   "r": "Tu casa es grande, luminosa y barata.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 5,
+   "q": "Pablo canta y baila muy bien",
+   "crit": "canta|baila;!no lo he entendido",
+   "r": "Entendido: Pablo canta; Pablo baila muy bien.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 6,
+   "q": "¿Pablo baila?",
+   "crit": "^si",
+   "r": "Sí, Pablo baila muy bien.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 7,
+   "q": "tengo un perro negro, una gata blanca y dos peces",
+   "crit": "perro|gata|peces;!no lo he entendido",
+   "r": "La solicitud visual es ambigua; necesito que precises una sola acción y un solo color.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 8,
+   "q": "¿de qué color es mi gata?",
+   "crit": "blanca",
+   "r": "No sé nada de tu gata: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-c",
+   "cat": "verbos_adjetivos",
+   "i": 9,
+   "q": "¿cuántos peces tengo?",
+   "crit": "dos|2",
+   "r": "No lo sé. Solo sé que tienes amigos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 0,
+   "q": "Sara es enfermera y yo también",
+   "crit": "enfermera;!no lo he entendido",
+   "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 1,
+   "q": "¿soy enfermera?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho eso de ti.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 2,
+   "q": "Pablo no fuma y yo tampoco",
+   "crit": "fum*;!no lo he entendido",
+   "r": "Entendido: No es cierto que pablo fumar.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 3,
+   "q": "¿fumo?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marina e irás al cine el viernes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 4,
+   "q": "ni Sara ni Pablo ni yo tenemos coche",
+   "crit": "coche;!no lo he entendido",
+   "r": "Entendido: Sara tiene un coche; Pablo tiene un coche; Marina tiene un coche.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 5,
+   "q": "¿Sara tiene coche?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho qué tiene Sara Pablo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 6,
+   "q": "¿tengo coche?",
+   "crit": "^no",
+   "r": "No me consta. Solo sé que tienes amigos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 7,
+   "q": "tengo tres sobrinos: Leo, Hugo y Mía",
+   "crit": "leo|hugo|mia;!no lo he entendido",
+   "r": "Entendido: tienes tres sobrinos; tus sobrinos se llaman Leo, Hugo y Mía.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 8,
+   "q": "¿cómo se llaman mis sobrinos?",
+   "crit": "leo;hugo;mia",
+   "r": "Tus sobrinos se llaman Leo, Hugo y Mía.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-d",
+   "cat": "tambien_ni_lista",
+   "i": 9,
+   "q": "¿cuántos sobrinos tengo?",
+   "crit": "tres|3",
+   "r": "Tienes tres sobrinos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 0,
+   "q": "¿quién irá al cine?",
+   "crit": "sara;pablo",
+   "r": "Sara Pablo irá al cine el viernes e irás al cine el viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 1,
+   "q": "¿dónde vive mi hermano?",
+   "crit": "murcia",
+   "r": "No lo sé: no me has dicho dónde vive tu hermano.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 2,
+   "q": "¿he estado en Italia?",
+   "crit": "^si",
+   "r": "Sí, estuviste en Francia y Italia y Grecia.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 3,
+   "q": "¿dónde tengo amigos?",
+   "crit": "madrid;sevilla;bilbao",
+   "r": "Tienes amigos en Madrid y Sevilla y Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 4,
+   "q": "¿cómo es mi casa?",
+   "crit": "grande;luminosa;barata",
+   "r": "Tu casa es grande, luminosa y barata.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 5,
+   "q": "¿quién es enfermera?",
+   "crit": "sara;tu|eres",
+   "r": "No lo sé: nadie que yo conozca, por lo que me has contado.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 6,
+   "q": "¿Pablo fuma?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Pablo sé que canta y baila muy bien.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 7,
+   "q": "¿cuántos peces tengo?",
+   "crit": "dos|2",
+   "r": "No lo sé. Solo sé que tienes amigos y tres sobrinos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 8,
+   "q": "¿Leo es mi sobrino?",
+   "crit": "^si",
+   "r": "Sí, Leo es tu sobrino.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50g-e",
+   "cat": "repaso",
+   "i": 9,
+   "q": "gracias, hasta mañana",
+   "crit": "hasta|adios|nada",
+   "r": "De nada, para eso estoy. ¡Hasta luego!",
+   "v": "OK"
+  }
+ ]
+}

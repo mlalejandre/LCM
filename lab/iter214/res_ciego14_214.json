@@ -1,0 +1,1327 @@
+{
+ "resumen": {
+  "n": 143,
+  "ok": 115,
+  "acierto": 80.42,
+  "falsas": 6,
+  "tasa_falsas": 4.2,
+  "abst_indebida": 22,
+  "error": 0,
+  "por_cat": {
+   "A_jerarquia": {
+    "n": 56,
+    "acierto": 82.1,
+    "falsas": 3
+   },
+   "B_contrarios": {
+    "n": 35,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "C_partes": {
+    "n": 12,
+    "acierto": 91.7,
+    "falsas": 1
+   },
+   "D_propiedades": {
+    "n": 23,
+    "acierto": 39.1,
+    "falsas": 2
+   },
+   "E_charla": {
+    "n": 17,
+    "acierto": 82.4,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 0,
+   "q": "¿un asesinato es un delito?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un asesinato es un delito.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 1,
+   "q": "¿un asesinato es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, un asesinato es un delito.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 2,
+   "q": "¿una mejora es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, una mejora es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 3,
+   "q": "¿una compañera es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, una compañera es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 4,
+   "q": "¿una creencia es una idea?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, una creencia es una idea.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 5,
+   "q": "¿una creencia es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, una creencia es una idea.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 6,
+   "q": "¿el matrimonio es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, un matrimonio es una relación.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 7,
+   "q": "¿qué es el matrimonio?",
+   "crit": "union|relacion|pareja|sacramento|institucion|vinculo|casamiento|boda|contrato;!no conozco",
+   "r": "Un matrimonio es una relación.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 8,
+   "q": "¿una adquisición es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una adquisición es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 9,
+   "q": "¿un novio es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un novio es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 10,
+   "q": "¿un tiro es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, un tiro es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 11,
+   "q": "¿qué es un tiro?",
+   "crit": "disparo|lanzamiento|golpe;!no conozco",
+   "r": "Un tiro es una acción.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 12,
+   "q": "¿la seguridad es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, una seguridad es una cualidad.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 13,
+   "q": "¿una reserva es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No, una reserva es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 14,
+   "q": "¿un pasajero es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un pasajero es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 15,
+   "q": "¿un pasajero es un vehículo?",
+   "crit": "^no;!no conozco",
+   "r": "No, un pasajero es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 16,
+   "q": "¿un insulto es una ofensa?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un insulto es una ofensa.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 17,
+   "q": "¿un concejal es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un concejal es una persona. Lo deduzco porque un concejal es un político y un político es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 18,
+   "q": "¿qué es un concejal?",
+   "crit": "persona|cargo|politico|miembro|representante|ayuntamiento;!no conozco",
+   "r": "Un concejal es un político.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 19,
+   "q": "¿un avance es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, un avance es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 20,
+   "q": "¿una nación es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una nación es un grupo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 21,
+   "q": "¿qué es una nación?",
+   "crit": "pais|estado|pueblo|comunidad|territorio;!no conozco",
+   "r": "Una nación es un grupo.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 22,
+   "q": "¿un trato es un acuerdo?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un trato es un acuerdo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 23,
+   "q": "¿un símbolo es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, un símbolo es un signo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 24,
+   "q": "¿qué es un símbolo?",
+   "crit": "signo|señal|representacion|imagen|figura;!no conozco",
+   "r": "Un símbolo es un signo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 25,
+   "q": "¿la luna es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una luna es un astro.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 26,
+   "q": "¿qué es la luna?",
+   "crit": "satelite|astro|cuerpo celeste;!no conozco",
+   "r": "Una luna es un astro.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 27,
+   "q": "¿un juego es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, un juego es una actividad.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 28,
+   "q": "¿qué es un juego?",
+   "crit": "actividad|entretenimiento|diversion|pasatiempo;!no conozco",
+   "r": "Un juego es una actividad.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 29,
+   "q": "¿un respaldo es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No, un respaldo es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 30,
+   "q": "¿el origen es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 31,
+   "q": "¿un capítulo es parte de un libro?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé. No conozco «capítulo»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 32,
+   "q": "¿un capítulo es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, un capítulo es un texto.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 33,
+   "q": "¿una sigla es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, una sigla es un signo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 34,
+   "q": "¿un recuerdo es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No, un recuerdo es una idea.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 35,
+   "q": "¿la determinación es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 36,
+   "q": "¿una pérdida es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una pérdida es un resultado.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 37,
+   "q": "¿la razón es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, una razón es una idea.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 38,
+   "q": "¿una órbita es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 39,
+   "q": "¿qué es una órbita?",
+   "crit": "trayectoria|camino|recorrido;!no conozco",
+   "r": "Según mi diccionario de conceptos: «órbita» es un tipo de «entorno», «situación» y «estado» (y, más en general, «atributo»). Dominio: estado. Otras palabras para el mismo concepto: campo, dominio, esfera y terreno. En inglés: sphere, domain y area. En su definición aparecen, entre otras: especial y vida. Algunos tipos: atribución. (La palabra también puede referirse a otros conceptos, como un tipo de «camino» y «estructura».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 40,
+   "q": "¿un ministro es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un ministro es una persona. Lo deduzco porque un ministro es un político y un político es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 41,
+   "q": "¿qué es un ministro?",
+   "crit": "persona|cargo|politico|miembro del gobierno|gobierno;!no conozco",
+   "r": "Un ministro es un político.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 42,
+   "q": "¿una fuga es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, una fuga es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 43,
+   "q": "¿una parroquia es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una parroquia es un lugar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 44,
+   "q": "¿qué es una parroquia?",
+   "crit": "iglesia|comunidad|territorio|templo|lugar;!no conozco",
+   "r": "Una parroquia es un lugar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 45,
+   "q": "¿la pobreza es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No, una pobreza es una cualidad.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 46,
+   "q": "¿un agente es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un agente es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 47,
+   "q": "¿un triunfo es un éxito?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un triunfo es un éxito.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 48,
+   "q": "¿un judío es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "Sí, un judío es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 49,
+   "q": "¿una nacionalidad es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 50,
+   "q": "¿un testimonio es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 51,
+   "q": "¿qué es un testimonio?",
+   "crit": "declaracion|prueba|evidencia;!no conozco",
+   "r": "Según mi diccionario de conceptos: «testimonio» es un tipo de «evidencia», «información» y «contenido» (y, más en general, «comunicación»). Dominio: comunicación. En inglés: testimony. En su definición aparecen, entre otras: formal, afirmación y blasfemia. Algunos tipos: declaración y acta notarial. (La palabra también puede referirse a otros conceptos, como un tipo de «evidencia» y «afirmación».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 52,
+   "q": "¿una investigación es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No, una investigación es una acción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 53,
+   "q": "¿qué es una investigación?",
+   "crit": "estudio|trabajo|busqueda|indagacion|actividad|proceso;!no conozco",
+   "r": "Una investigación es una acción.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 54,
+   "q": "¿qué es una hoja?",
+   "crit": "parte|papel|lamina|planta|pagina|organo;!no conozco",
+   "r": "Hoja: Órgano vegetal que normalmente participa en la fotosíntesis.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-A",
+   "cat": "A_jerarquia",
+   "i": 55,
+   "q": "¿el destino es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 0,
+   "q": "¿qué es lo contrario de triste?",
+   "crit": "alegre|contento|feliz",
+   "r": "Lo contrario de triste es feliz o contento.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 1,
+   "q": "¿cuál es el contrario de mejor?",
+   "crit": "peor",
+   "r": "Lo contrario de mejor es peor.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 2,
+   "q": "¿qué es lo contrario de barato?",
+   "crit": "caro|costoso",
+   "r": "Lo contrario de barato es caro.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 3,
+   "q": "dime lo opuesto de poderoso",
+   "crit": "debil|impotente|flojo",
+   "r": "Lo contrario de poderoso es débil.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 4,
+   "q": "¿qué es lo contrario de médico?",
+   "crit": "ABST",
+   "r": "No lo sé: no tengo anotado el contrario de «medico».",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 5,
+   "q": "¿qué es lo contrario de máximo?",
+   "crit": "minimo",
+   "r": "Lo contrario de máximo es mínimo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 6,
+   "q": "¿qué es lo contrario de sencillo?",
+   "crit": "complicado|complejo|dificil|elaborado|sofisticado",
+   "r": "Lo contrario de sencillo es complicado.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 7,
+   "q": "¿qué es lo contrario de orgulloso?",
+   "crit": "humilde|avergonzado",
+   "r": "Lo contrario de orgulloso es humilde.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 8,
+   "q": "¿qué es lo contrario de operativo?",
+   "crit": "inoperativo|inoperante|ABST",
+   "r": "Lo contrario de operativo es inoperativo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 9,
+   "q": "¿cuál es el contrario de futuro?",
+   "crit": "pasado|presente",
+   "r": "Lo contrario de futuro es pasado.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 10,
+   "q": "¿qué es lo contrario de suave?",
+   "crit": "duro|aspero|fuerte|rugoso|brusco",
+   "r": "Lo contrario de suave es áspero o picante.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 11,
+   "q": "¿qué es lo contrario de temporal?",
+   "crit": "permanente|fijo|estable|definitivo|eterno",
+   "r": "Lo contrario de temporal es permanente.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 12,
+   "q": "¿qué es lo contrario de horizontal?",
+   "crit": "vertical",
+   "r": "Lo contrario de horizontal es vertical.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 13,
+   "q": "¿qué es lo contrario de previo?",
+   "crit": "posterior|siguiente|ulterior",
+   "r": "Lo contrario de previo es posterior.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 14,
+   "q": "dime lo contrario de extenso",
+   "crit": "breve|corto|reducido|pequeño|limitado",
+   "r": "Lo contrario de extenso es breve.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 15,
+   "q": "¿qué es lo contrario de artificial?",
+   "crit": "natural",
+   "r": "Lo contrario de artificial es natural.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 16,
+   "q": "¿qué es lo contrario de adecuado?",
+   "crit": "inadecuado|inapropiado",
+   "r": "Lo contrario de adecuado es inadecuado.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 17,
+   "q": "¿qué es lo contrario de atento?",
+   "crit": "distraido|despistado|descuidado|desatento",
+   "r": "Lo contrario de atento es distraído.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 18,
+   "q": "¿qué es lo contrario de lleno?",
+   "crit": "vacio",
+   "r": "Lo contrario de lleno es vacío.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 19,
+   "q": "¿cuál es el opuesto de positivo?",
+   "crit": "negativo",
+   "r": "Lo contrario de positivo es negativo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 20,
+   "q": "¿qué es lo contrario de satisfecho?",
+   "crit": "insatisfecho|disgustado|descontento",
+   "r": "Lo contrario de satisfecho es insatisfecho.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 21,
+   "q": "¿qué es lo contrario de grande?",
+   "crit": "pequeño|chico",
+   "r": "Lo contrario de grande es pequeño.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 22,
+   "q": "¿qué es lo contrario de desconocido?",
+   "crit": "conocido|famoso|familiar",
+   "r": "Lo contrario de desconocido es conocido o famoso.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 23,
+   "q": "¿qué es lo contrario de importante?",
+   "crit": "insignificante|irrelevante|secundario",
+   "r": "Lo contrario de importante es insignificante.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 24,
+   "q": "¿qué es lo contrario de perfecto?",
+   "crit": "imperfecto|defectuoso",
+   "r": "Lo contrario de perfecto es imperfecto.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 25,
+   "q": "¿qué es lo contrario de ir?",
+   "crit": "venir|volver|quedarse|llegar",
+   "r": "Lo contrario de ir es venir.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 26,
+   "q": "¿qué es lo contrario de unir?",
+   "crit": "separar|desunir|dividir",
+   "r": "Lo contrario de unir es separar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 27,
+   "q": "¿qué es lo contrario de pasar?",
+   "crit": "ABST|suspender|quedarse|parar",
+   "r": "No lo sé: no tengo anotado el contrario de «pasar».",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 28,
+   "q": "¿qué es lo contrario de eliminar?",
+   "crit": "crear|añadir|incluir|establecer|anadir|poner|mantener",
+   "r": "Lo contrario de eliminar es crear o añadir.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 29,
+   "q": "¿qué es lo contrario de fundar?",
+   "crit": "cerrar|disolver|abolir|eliminar|destruir",
+   "r": "Lo contrario de fundar es disolver.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 30,
+   "q": "¿qué es lo contrario de separar?",
+   "crit": "unir|juntar",
+   "r": "Lo contrario de separar es unir o juntar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 31,
+   "q": "¿qué es lo contrario de levantar?",
+   "crit": "bajar|acostar|tumbar|sentar|derribar",
+   "r": "Lo contrario de levantar es bajar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 32,
+   "q": "¿qué es lo contrario de colaborar?",
+   "crit": "ABST|rechazar|resistir|obstaculizar|oponer*|entorpecer",
+   "r": "Lo contrario de colaborar es obstaculizar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 33,
+   "q": "¿qué es lo contrario de devolver?",
+   "crit": "ABST|quedarse|prestar|pedir|tomar|coger|quitar",
+   "r": "Lo contrario de devolver es prestar o alquilar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-B",
+   "cat": "B_contrarios",
+   "i": 34,
+   "q": "¿qué es lo contrario de guardar?",
+   "crit": "perder|tirar|sacar|gastar",
+   "r": "Lo contrario de guardar es tirar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 0,
+   "q": "¿qué partes tiene una mesa?",
+   "crit": "patas|tablero|superficie|pata",
+   "r": "Una mesa tiene patas y tablero.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 1,
+   "q": "¿qué partes tiene una caja?",
+   "crit": "tapa|fondo|lados|paredes|base",
+   "r": "Una caja tiene tapa, fondo y lados.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 2,
+   "q": "¿qué partes tiene una habitación?",
+   "crit": "paredes|puerta|ventana|techo|suelo",
+   "r": "Una habitación tiene paredes, techo, suelo, puerta y ventana.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 3,
+   "q": "¿qué partes tiene un barrio?",
+   "crit": "calles|casas|plazas|edificios",
+   "r": "Un barrio tiene calles, casas, plazas y edificios.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 4,
+   "q": "¿qué partes tiene una región?",
+   "crit": "ABST|provincias|pueblos|ciudades|municipios|comarcas",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 5,
+   "q": "¿de qué partes se compone un vehículo?",
+   "crit": "ruedas|motor|puertas|asientos",
+   "r": "Un vehículo tiene ruedas, motor, asientos y puertas.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 6,
+   "q": "¿qué partes tiene una puerta?",
+   "crit": "pomo|picaporte|manilla|bisagras|cerradura|marco|hoja",
+   "r": "Una puerta tiene marco, bisagras, cerradura, pomo y manilla.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 7,
+   "q": "¿qué partes tiene una montaña?",
+   "crit": "cima|cumbre|ladera|falda|pico|base",
+   "r": "Una montaña tiene cima, laderas y falda.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 8,
+   "q": "¿qué partes tiene una entrada?",
+   "crit": "ABST|puerta|recibidor",
+   "r": "(Entiendo «partes» como «parte».) (Entiendo «entrada» como «boca».) Lo deduzco: Una cabeza tiene una boca (porque Una boca es parte de una cabeza). El cuerpo tiene una boca (porque Una boca es parte del cuerpo).",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 9,
+   "q": "¿qué partes tiene un contrato?",
+   "crit": "ABST|clausulas|firma|partes",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 10,
+   "q": "¿qué partes tiene una fábrica?",
+   "crit": "maquinas|naves|almacen|oficinas|maquinaria|taller",
+   "r": "Una fábrica tiene máquinas, naves, almacén y oficinas.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-C",
+   "cat": "C_partes",
+   "i": 11,
+   "q": "¿qué partes tiene una medalla?",
+   "crit": "ABST|cinta|anverso|reverso",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 0,
+   "q": "¿una hiena es un animal salvaje?",
+   "crit": "^si",
+   "r": "Sí, una hiena es un animal. Lo deduzco porque una hiena es un mamífero y un mamífero es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 1,
+   "q": "¿las hienas vuelan?",
+   "crit": "^no",
+   "r": "No, los mamíferos no vuelan.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 2,
+   "q": "¿el tenedor sirve para comer?",
+   "crit": "^si|para comer|pinchar",
+   "r": "Sí, los tenedores sirven para comer. Lo sé porque los tenedores son cubiertos.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 3,
+   "q": "¿un tenedor tiene púas?",
+   "crit": "^si|dientes",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 4,
+   "q": "¿un galápago tiene caparazón?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 5,
+   "q": "¿los galápagos tienen plumas?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 6,
+   "q": "¿un girasol necesita sol?",
+   "crit": "^si|luz",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 7,
+   "q": "¿un girasol tiene pétalos?",
+   "crit": "^si",
+   "r": "Sí, las flores tienen pétalos.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 8,
+   "q": "¿un estadio es un edificio?",
+   "crit": "^si|recinto|instalacion",
+   "r": "Sí, un estadio es un edificio.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 9,
+   "q": "¿en un estadio se hacen partidos?",
+   "crit": "^si",
+   "r": "No lo sé. No conozco «partidos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 10,
+   "q": "¿un banjo es un instrumento?",
+   "crit": "^si",
+   "r": "Sí, un banjo es un instrumento.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 11,
+   "q": "¿un banjo tiene cuerdas?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 12,
+   "q": "¿un contenedor sirve para guardar cosas?",
+   "crit": "^si|basura|guardar",
+   "r": "No lo sé. No conozco «contenedor»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 13,
+   "q": "¿el suavizante se usa para lavar la ropa?",
+   "crit": "^si|ropa|lavar",
+   "r": "No lo sé. No conozco «suavizante»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 14,
+   "q": "¿un banquero trabaja en un banco?",
+   "crit": "^si|banco",
+   "r": "No lo sé. No conozco «banquero»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 15,
+   "q": "¿los científicos investigan?",
+   "crit": "^si",
+   "r": "No lo sé. No conozco «científicos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 16,
+   "q": "¿una ensaladera es un recipiente?",
+   "crit": "^si|recipiente|cuenco",
+   "r": "No, una ensaladera es una vajilla.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 17,
+   "q": "¿el estómago sirve para digerir?",
+   "crit": "^si|digerir|digestion",
+   "r": "No lo sé. No conozco «estómago»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 18,
+   "q": "¿una riñonera se lleva en la cintura?",
+   "crit": "^si|cintura",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 19,
+   "q": "¿un matadero es un lugar?",
+   "crit": "^si",
+   "r": "Sí, un matadero es un lugar. Lo deduzco porque un matadero es un edificio y un edificio es un lugar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 20,
+   "q": "¿el gris es un color?",
+   "crit": "^si",
+   "r": "Sí, un gris es un color.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 21,
+   "q": "¿un gallinero es para las gallinas?",
+   "crit": "^si|gallina*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-D",
+   "cat": "D_propiedades",
+   "i": 22,
+   "q": "¿una americana es una prenda?",
+   "crit": "^si",
+   "r": "Sí, una americana es una prenda.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 1,
+   "q": "tengo un loro",
+   "crit": "loro;!no lo he entendido",
+   "r": "Entendido: tienes un loro.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 2,
+   "q": "¿tengo un pájaro?",
+   "crit": "^si",
+   "r": "No me consta. Solo sé que tienes un loro.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 3,
+   "q": "¿mi loro tiene plumas?",
+   "crit": "^si",
+   "r": "Sí, las aves tienen plumas.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 4,
+   "q": "me he comprado unos vaqueros",
+   "crit": "vaqueros;!no lo he entendido",
+   "r": "Entendido: te compraste unos vaqueros.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 5,
+   "q": "¿me he comprado ropa?",
+   "crit": "^si|prenda",
+   "r": "No lo sé. Solo sé que te compraste unos vaqueros.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 6,
+   "q": "he comprado un sofá",
+   "crit": "sofa;!no lo he entendido",
+   "r": "Entendido: compraste un sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 7,
+   "q": "¿he comprado un mueble?",
+   "crit": "^si",
+   "r": "Sí, compraste un sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 8,
+   "q": "mi coche es viejo",
+   "crit": "viejo;!no lo he entendido",
+   "r": "Entendido: tu coche es viejo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 9,
+   "q": "¿mi coche es nuevo?",
+   "crit": "^no",
+   "r": "No, tu coche es viejo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 10,
+   "q": "la sopa está fría",
+   "crit": "fria;!no lo he entendido",
+   "r": "Entendido: la sopa está fría.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 11,
+   "q": "¿la sopa está caliente?",
+   "crit": "^no",
+   "r": "No, la sopa está fría.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 12,
+   "q": "el examen fue fácil",
+   "crit": "facil;!no lo he entendido",
+   "r": "Entendido: el examen fue fácil.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 13,
+   "q": "¿el examen fue difícil?",
+   "crit": "^no",
+   "r": "No, el examen fue fácil.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 14,
+   "q": "mi novia es enfermera",
+   "crit": "enfermera;!no lo he entendido",
+   "r": "Entendido: tu novia es enfermera.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 15,
+   "q": "¿a qué se dedica mi novia?",
+   "crit": "enfermera",
+   "r": "Tu novia es enfermera.",
+   "v": "OK"
+  },
+  {
+   "id": "c14-E",
+   "cat": "E_charla",
+   "i": 16,
+   "q": "¿mi novia es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

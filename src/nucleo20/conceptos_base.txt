@@ -1,0 +1,1382 @@
+# LCM 2.2 · CONCEPTOS DE FÁBRICA DEL NÚCLEO
+# No son hechos del mundo (capitales, fechas, personas): son conceptos cotidianos, cómo se agrupan y qué es típico de cada clase.
+# Capas de abstracción: cada clase hereda de las que tiene encima (gorrión < pájaro < ave < animal < ser vivo).
+# Una propiedad dicha en una capa vale para las de abajo, salvo EXCEPCIÓN declarada más cerca («los pingüinos no vuelan»).
+# Formato:
+#   [taxonomia]    clase: miembro, miembro/f, ...        (/m o /f fija el género cuando no se deduce de la terminación)
+#   [propiedades]  clase: verbo complemento; no verbo complemento
+#   [partes]       todo: partes, tal como se dicen (ruedas, motor)
+#   [contrarios]   a/b, c/d
+#   [grupos]       nombre: relación, relación             (capas de abstracción sobre relaciones entre personas)
+#   [efectos]      verbo: estado en que queda lo que recibe la acción («romper» -> «roto»)
+
+[taxonomia]
+ser vivo/m: animal, planta, persona/f, hongo
+persona/f: profesional/m
+animal: mamífero, ave/f, pez/m, reptil/m, insecto, anfibio, molusco, arácnido
+mamífero: perro, gato, caballo, vaca, cerdo, oveja, conejo, ratón/m, hámster/m, león/m, tigre/m, elefante/m, oso, lobo, zorro, mono, delfín/m, ballena, murciélago, cabra, burro, ciervo, jirafa, canguro, ardilla, foca, camello, cebra, hipopótamo, rinoceronte/m, gorila/m, nutria, erizo, topo
+ave/f: pájaro, gallina, pato, águila/f, loro, pingüino, búho, paloma, cisne/m, avestruz/m, gallo, pavo, cuervo, gaviota, cigüeña, halcón/m, flamenco, buitre/m
+pájaro: gorrión/m, canario, colibrí/m, golondrina, jilguero, periquito, ruiseñor/m, mirlo
+pez/m: salmón/m, atún/m, sardina, tiburón/m, trucha, merluza, bacalao, anguila
+reptil/m: tortuga, serpiente/f, lagarto, cocodrilo, iguana, camaleón/m, lagartija
+insecto: mosca, hormiga, abeja, mariposa, mosquito, escarabajo, grillo, avispa, libélula, saltamontes/m, cucaracha, mariquita
+anfibio: rana, sapo, salamandra, tritón/m
+molusco: caracol/m, pulpo, calamar/m, almeja, mejillón/m, ostra
+arácnido: araña, escorpión/m, garrapata
+planta: árbol/m, flor/f, arbusto, hierba, hortaliza, cactus/m, helecho, alga/f
+árbol/m: roble/m, pino, olivo, manzano, naranjo, palmera, abeto, encina, haya/f, chopo, sauce/m, almendro, limonero, higuera, castaño
+flor/f: rosa, margarita, tulipán/m, girasol/m, amapola, clavel/m, lirio, orquídea, violeta, jazmín/m
+hongo: seta, champiñón/m, moho, levadura
+alimento: plato, fruta, verdura, carne/f, pescado, cereal/m, lácteo, dulce/m, legumbre/f, pan/m, huevo, pasta, marisco, embutido, salsa, condimento/m
+fruta: manzana, pera, naranja, plátano, fresa, uva, melón/m, sandía, limón/m, cereza, melocotón/m, piña, kiwi/m, mango, ciruela, higo, mandarina, frambuesa, albaricoque/m, granada
+verdura: tomate/m, lechuga, zanahoria, cebolla, pimiento, pepino, espinaca, calabaza, brócoli/m, berenjena, calabacín/m, coliflor/f, ajo, puerro, alcachofa, acelga, patata
+legumbre/f: lenteja, garbanzo, judía, guisante/m, haba/f, soja
+cereal/m: trigo, arroz/m, maíz/m, avena, cebada, centeno
+lácteo: leche/f, queso, yogur/m, mantequilla, nata
+dulce/m: chocolate/m, galleta, tarta, helado, caramelo, bizcocho, pastel/m, turrón/m, mermelada, miel/f
+embutido: chorizo, jamón/m, salchichón/m, salchicha, morcilla
+plato: paella, tortilla, ensalada, sopa, pizza, hamburguesa, bocadillo, cocido, lasaña, gazpacho, croqueta, filete, macarrones/m, espagueti/m, puré/m, potaje/m, guiso
+bebida: agua/f, zumo, café/m, té/m, vino, cerveza, refresco, batido, infusión/f, limonada
+condimento/m: azúcar/m, sal/f, aceite/m, vinagre/m, pimienta, harina, sacarina, edulcorante/m, canela, orégano
+objeto: mueble/m, herramienta, vehículo, prenda, instrumento, juguete/m, aparato, recipiente/m, utensilio, calzado, joya, libro, accesorio/m, elemento/m, documento
+accesorio/m: mochila, bolso, cartera, maleta, paraguas/m, gafas/f, reloj/m, llave/f, llavero, monedero, gorra, mascarilla
+elemento/m: ventana, terraza, balcón/m, trastero, recibidor/m, puerta, pared/f, suelo, techo, escalera, grifo, enchufe/m, persiana, cajón/m, estante/m, chimenea, radiador/m
+documento: carta, tarjeta, carnet/m, pasaporte/m, factura, entrada, billete/m, ticket/m, receta, contrato, informe/m, examen/m, revista, periódico, cuaderno, novela
+mueble/m: silla, mesa, cama, sofá/m, armario, estantería, sillón/m, cómoda, escritorio, taburete/m, mesilla, banco, cuna, butaca
+herramienta: martillo, destornillador/m, sierra, alicate/m, taladro, llave inglesa, pala, rastrillo, hacha/f, lima, tijera, manga pastelera, regla, pincel/m, brocha, aguja, cuerda, escoba, fregona, cinta, pegamento, clavo, tornillo, llave fija
+utensilio: tenedor/m, cuchillo, cuchara, sartén/f, olla, cazo, colador/m, abrelatas/m, espátula
+recipiente/m: vaso, taza, botella, jarra, cubo, caja, bolsa, tarro, cesta, copa
+vehículo: coche/m, bicicleta, bici/f, moto/f, autobús/m, tren/m, avión/m, barco, camión/m, furgoneta, tranvía/m, helicóptero, patinete/m, taxi/m, metro, tractor/m, ambulancia
+barco: yate/m, velero, lancha, canoa, ferry/m, submarino
+prenda: camisa, pantalón/m, falda, vestido, abrigo, chaqueta, jersey/m, camiseta, bufanda, gorro, guante/m, calcetín/m, pijama/m, corbata, cinturón/m, sudadera, chaleco, bañador/m
+calzado: zapato, bota, sandalia, zapatilla, chancla
+instrumento: guitarra, piano, violín/m, flauta, tambor/m, trompeta, batería, arpa/f, saxofón/m, violonchelo, acordeón/m, clarinete/m
+juguete/m: pelota, muñeca, peluche/m, puzle/m, cometa, peonza, canica
+aparato: ordenador/m, móvil/m, televisor/m, lavadora, nevera, horno, microondas/m, radio/f, tablet/f, impresora, aspiradora, secador/m, lavavajillas/m, tostadora, batidora, cámara, teléfono, portátil/m, lámpara, flexo, ventilador/m, calefactor/m, cafetera, auricular/m
+joya: anillo, collar/m, pulsera, pendiente/m, broche/m
+lugar: edificio, ciudad/f, país/m, pueblo, habitación/f, paisaje/m, parque/m, plaza, calle/f, barrio, jardín/m, patio, campo, huerto, aparcamiento, avenida, carretera, puerto, centro/m, aldea, urbanización/f
+edificio: casa, hospital/m, escuela, colegio, iglesia, museo, biblioteca, tienda, hotel/m, teatro, cine/m, restaurante/m, fábrica, castillo, gimnasio, universidad/f, farmacia, supermercado, ayuntamiento, banco, panadería, taller/m, oficina, bar/m, mercado, estación/f, aeropuerto, comisaría, cafetería, piscina, estadio, polideportivo, peluquería, librería, frutería, carnicería, pescadería, guardería, residencia, piso, apartamento, cárcel/f, ambulatorio, academia, discoteca, centro comercial/m, oficina de correos/f, estudio, almacén/m, granja
+habitación/f: cocina, salón/m, dormitorio, baño, comedor/m, despacho, garaje/m, sótano, desván/m, pasillo, cuarto, aseo
+paisaje/m: montaña, playa, río, mar/m, lago, bosque/m, desierto, isla, valle/m, selva, pradera, volcán/m, cueva
+material/m: madera, metal/m, plástico, vidrio, papel/m, tela, piedra, cuero, lana, algodón/m, cartón/m, goma, cemento, arcilla
+metal/m: hierro, oro, plata, cobre/m, aluminio, acero, bronce/m, plomo
+madera: roble/m, pino, nogal/m, haya/f, cerezo, castaño, abeto, encina, olivo, haya, bambú/m, caoba, ébano
+profesional/m: médico, profesor, abogado, ingeniero, enfermero, cocinero, camarero, arquitecto, maestro, veterinario, fontanero, carpintero, bombero, panadero, peluquero, mecánico, electricista/m, periodista/m, dentista/m, policía/m, piloto, agricultor/m, pintor/m, escritor/m, músico, actor/m, juez/m, fotógrafo, farmacéutico, albañil/m, conductor/m, pescador/m, cartero, jardinero, científico, programador/m, traductor/m, psicólogo
+deporte/m: fútbol/m, baloncesto, tenis/m, natación/f, ciclismo, atletismo, balonmano, voleibol/m, golf/m, esquí/m, boxeo, judo, rugby/m, pádel/m, senderismo, escalada, surf/m, gimnasia, ajedrez/m
+emoción/f: alegría, tristeza, miedo, enfado, sorpresa, asco, vergüenza, amor/m, envidia, orgullo, ilusión/f, nostalgia, calma, ansiedad/f, esperanza
+color/m: rojo, azul, verde, amarillo, blanco, negro, naranja, gris, rosa, morado, marrón, violeta, dorado, plateado, turquesa, beige
+forma: círculo, polígono, óvalo, estrella, esfera, cubo, cilindro, pirámide/f
+polígono: cuadrado, triángulo, rectángulo, rombo, pentágono, hexágono
+estación/f: primavera, verano, otoño, invierno
+arte/m: pintura, música, escultura, literatura, danza, cine/m, teatro, fotografía, arquitectura
+asignatura: matemáticas/f, historia, geografía, física, química, biología, lengua, inglés/m, filosofía, dibujo
+idioma/m: español, inglés/m, francés/m, portugués/m, alemán/m, italiano, chino, japonés/m, árabe/m, ruso, catalán/m, gallego, euskera/m, griego, latín/m
+sentido: vista, oído, olfato, gusto, tacto
+fenómeno: lluvia, nieve/f, viento, tormenta, niebla, granizo, trueno, relámpago, arcoíris/m, terremoto, calor/m, frío, tráfico, atasco, ruido, incendio, inundación/f, apagón/m, huelga
+evento/m: viaje, examen/m, reunión/f, cena, comida, boda, fiesta, cumpleaños/m, partido, concierto, entrevista, clase/f, excursión/f, mudanza, cita, entierro, bautizo, comunión/f, congreso, curso, competición/f, torneo, operación/f, consulta, vacaciones/f, carrera, obra, función/f, espectáculo, feria, misa, ensayo, oposición/f, graduación/f, despedida, cumple/m
+tiempo/m: momento, día de la semana/m, día/m, noche, tarde, madrugada, semana, mes/m, año, hora, minuto, segundo, siglo, temporada, mediodía/m, fin de semana/m, rato, época
+día de la semana/m: lunes/m, martes/m, miércoles/m, jueves/m, viernes/m, sábado, domingo
+mes/m: enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+actitud/f: cuidado, prisa, cariño, paciencia, atención/f, tranquilidad/f, delicadeza, esmero, ganas/f, energía, respeto, rapidez/f, interés/m, entusiasmo, desgana, mimo, gusto, fuerza
+enfermedad/f: fiebre/f, gripe/f, resfriado, catarro, tos/f, dolor/m, alergia, infección/f, lesión/f, herida, migraña, covid/m, virus/m, varicela, anginas/f
+actividad/f: trabajo, estudio, deberes/m, tarea, reforma, compra, limpieza, entrenamiento, paseo, lectura
+organización/f: equipo, empresa, club/m, grupo, banda, asociación/f, compañía, partido político/m, coro, orquesta, ayuntamiento
+medio de comunicación/m: teléfono, correo, carta, mensaje, email/m, internet/m, videollamada, whatsapp/m, fax/m
+
+# ---- LCM 2.12 · ampliación de conceptos de fábrica (categorías cotidianas; no son hechos del mundo)
+mamífero: jabalí/m, liebre/f, mapache, puma/m, pantera, leopardo, guepardo, hiena, chacal/m, coyote, bisonte, búfalo, alce, reno, gamo, carnero, cordero, ternero, potro, yegua, mula, asno, lechón/m, hurón/m, cobaya, chinchilla, marmota, castor/m, comadreja, tejón/m, lince/m, armadillo, perezoso, koala/m, panda/m, chimpancé/m, orangután/m, babuino, mandril/m, lémur/m, morsa, manatí/m, orca, cachalote, dromedario, llama, alpaca, vicuña, antílope, gacela, ñu/m, corzo, rata, musaraña, hipopótamo, cebú/m
+ave/f: lechuza, cernícalo, milano, gavilán/m, cóndor/m, garza, grulla, ibis/m, pelícano, cormorán/m, albatros/m, ganso, codorniz/f, perdiz/f, faisán/m, urraca, estornino, abubilla, petirrojo, pinzón/m, tucán/m, guacamayo, cacatúa, avutarda, tórtola, vencejo, golondrina, gorrión/m, canario, ruiseñor/m, mirlo, búho, avestruz/m, pavo real/m
+pez/m: carpa, lucio, rodaballo, lenguado, dorada, lubina, besugo, boquerón/m, anchoa, caballa, jurel/m, mero, rape, pescadilla, perca, piraña, barracuda, salmonete, pez espada/m
+insecto: cigarra, pulga, piojo, termita, polilla, luciérnaga, mantis/f, abejorro, tábano, oruga, chinche/f
+animal: gusano, crustáceo
+gusano: lombriz/f, sanguijuela
+crustáceo: cangrejo, gamba, langosta, langostino, cigala, bogavante/m, centollo, percebe/m, cochinilla
+molusco: sepia, berberecho, vieira, babosa, chipirón/m, caracola
+reptil/m: víbora, culebra, pitón/f, cobra, boa, anaconda, caimán/m, galápago, geco
+arácnido: tarántula, ácaro
+árbol/m: arce/m, fresno, olmo, álamo, abedul/m, ciprés/m, cedro, eucalipto, acacia, magnolio, laurel/m, tilo, secuoya, baobab/m, alcornoque/m, avellano, peral/m, ciruelo, melocotonero, cerezo, granado, nogal/m, caoba
+flor/f: azucena, geranio, petunia, hortensia, dalia, gardenia, camelia, crisantemo, narciso, jacinto, azahar/m, lavanda, buganvilla, nenúfar/m, loto, begonia, gladiolo, malva, lila, peonía
+planta: musgo, liquen/m, hiedra, enredadera, junco, caña, trébol/m, ortiga, cardo, césped/m, hierba aromática/f, bambú/m
+hierba aromática/f: romero, tomillo, albahaca, perejil/m, cilantro, menta, hierbabuena, salvia, eneldo, estragón/m, manzanilla, orégano
+fruta: aguacate/m, coco, papaya, maracuyá/m, lima, pomelo, níspero, membrillo, caqui/m, chirimoya, guayaba, arándano, mora, grosella, dátil/m, higo, frambuesa
+alimento: fruto seco/m
+fruto seco/m: almendra, nuez/f, avellana, cacahuete/m, pistacho, castaña, piñón/m, anacardo
+verdura: apio, rábano, nabo, remolacha, espárrago, col/f, repollo, lombarda, endibia, rúcula, canónigo, chirivía, boniato, guindilla, jengibre/m, calabaza
+carne/f: ternera, pollo, solomillo, chuleta, costilla, lomo, entrecot/m, albóndiga, panceta, morcilla, conejo
+lácteo: requesón/m, cuajada, kéfir/m, batido
+dulce/m: magdalena, cruasán/m, rosquilla, churro, buñuelo, bombón/m, piruleta, chicle/m, regaliz/m, gominola, flan/m, natillas/f, torrija, polvorón/m, mazapán/m, crepe/m, gofre/m, tiramisú/m, palmera, ensaimada, napolitana, donut/m, sobao, mantecado
+plato: fabada, salmorejo, ensaladilla, pisto, migas/f, empanada, canelones/m, tallarines/m, fideos/m, ravioli/m, tacos/m, sushi/m, kebab/m, sándwich/m, tostada, revuelto, pincho, estofado, asado, parrillada, menestra, escalivada, porra, pochas/f, callos/m, marmitako/m
+pan/m: barra, chapata, hogaza, bollo, panecillo, picatoste/m, colín/m, rosca
+bebida: horchata, granizado, sidra, champán/m, cava/m, licor/m, whisky/m, ron/m, ginebra, vodka/m, tequila/m, vermú/m, mosto, gaseosa, tónica, chocolate caliente/m, agua con gas/f, café con leche/m, cortado, poleo, tila, caña de cerveza/f, tinto, mojito
+condimento/m: mostaza, kétchup/m, mayonesa, alioli/m, comino, pimentón/m, azafrán/m, curry/m, vainilla, canela, sal/f, aceite/m, vinagre/m
+salsa: bechamel/f, vinagreta, pesto, mayonesa, alioli/m, salsa de tomate/f
+cereal/m: mijo, quinoa, espelta
+mueble/m: perchero, zapatero, aparador/m, vitrina, biombo, litera, hamaca, puf/m, cajonera, diván/m, banqueta, mecedora, tocador/m, mesita, sofá cama/m, cabecero, somier/m, colchón/m
+objeto: ropa de casa/f, objeto de aseo/m, producto de limpieza/m, material de oficina/m, instrumento de escritura/m, vajilla, cubierto, arma, elemento urbano/m
+ropa de casa/f: sábana, manta, edredón/m, almohada, cojín/m, colcha, toalla, alfombra, cortina, mantel/m, servilleta, felpudo, funda, nórdico
+utensilio: bandeja, cacerola, tetera, cucharón/m, rallador/m, pelador/m, sacacorchos/m, abrebotellas/m, mortero, batidor/m, rodillo, molde/m, embudo, pinzas/f, termo, fiambrera, escurridor/m, espumadera, cazuela, puchero, wok/m, paellera, tenazas/f, cuchilla
+vajilla: plato llano/m, plato hondo/m, plato de postre/m, cuenco, bol/m, sopera, ensaladera, taza, copa, vaso, jarra, platillo, fuente de horno/f
+cubierto: tenedor/m, cuchillo, cuchara, cucharilla, palillo
+objeto de aseo/m: cepillo de dientes/m, pasta de dientes/f, jabón/m, champú/m, gel/m, esponja, peine/m, cepillo, maquinilla, desodorante/m, colonia, perfume/m, crema, maquillaje/m, pintalabios/m, laca, espejo, toallita, pañuelo, pañal/m, bastoncillo, cortaúñas/m, hilo dental/m, acondicionador/m, rímel/m, esmalte/m
+producto de limpieza/m: lejía, detergente/m, suavizante/m, estropajo, bayeta, plumero, recogedor/m, ambientador/m, insecticida/m, friegasuelos/m, quitamanchas/m, limpiacristales/m, amoniaco
+aparato: altavoz/m, cargador/m, pantalla, monitor/m, router/m, mando, consola, videoconsola, reproductor/m, proyector/m, calculadora, despertador/m, termómetro, báscula, plancha, aire acondicionado/m, estufa, frigorífico, congelador/m, vitrocerámica, exprimidor/m, licuadora, freidora, sandwichera, hervidor/m, secadora, televisión/f, escáner/m, linterna, bombilla, pila, cable/m, mando a distancia/m, enchufe/m, ratón/m, auriculares/m, tostadora, alarma, timbre/m, contestador/m, deshumidificador/m, purificador/m, humidificador/m, caldera, termo eléctrico/m, ventilador/m, radiador/m
+herramienta: pico, azada, hoz/f, guadaña, carretilla, regadera, manguera, cincel/m, lija, andamio, soldador/m, grapadora, cúter/m, navaja, serrucho, tenaza, llave inglesa/f, destornillador/m, alicates/m, martillo, broca, nivel/m, escuadra, compás/m, paleta, rastrillo, pala, tijeras de podar/f
+material de oficina/m: carpeta, archivador/m, folio, agenda, calendario, libreta, grapadora, clip/m, celo, chincheta, grapa, sacapuntas/m, goma de borrar/f, tijeras/f, pegamento, regla, cuaderno, post-it/m, subrayador/m, típex/m, perforadora, sello, tampón/m
+instrumento de escritura/m: bolígrafo, lápiz/m, rotulador/m, pluma, tiza, subrayador/m, carboncillo, ceras/f, portaminas/m
+juguete/m: yoyó/m, muñeco, marioneta, títere/m, sonajero, balón/m, globo, rompecabezas/m, dado, cromo, comba, aro, cometa, peonza, canica, puzle/m, peluche/m, pelota, juego de mesa/m, juego de cartas/m, triciclo, columpio, tobogán/m, cubo de arena/m
+juego de mesa/m: parchís/m, dominó/m, ajedrez/m, bingo, damas/f, trivial/m, monopoly/m, scrabble/m
+juego de cartas/m: mus/m, tute/m, póquer/m, solitario, brisca, chinchón/m
+prenda: blusa, vaqueros/m, chándal/m, traje/m, esmoquin/m, uniforme/m, bata, delantal/m, albornoz/m, camisón/m, sujetador/m, calzoncillos/m, medias/f, leotardos/m, bikini/m, sombrero, boina, chal/m, poncho, capa, anorak/m, plumífero, cazadora, gabardina, impermeable/m, chubasquero, americana, rebeca, mallas/f, peto, minifalda, top/m, body/m, kimono, guantes/m
+calzado: mocasín/m, zueco, alpargata, tacón/m, botín/m, pantufla, deportiva, chancla, katiuska
+joya: medalla, colgante/m, gargantilla, diadema, tiara, corona, alfiler/m, brazalete/m, tobillera, sortija, alianza
+accesorio/m: pajarita, tirantes/m, abanico, bastón/m, sombrilla, riñonera, neceser/m, maletín/m, billetera, lentillas/f, horquilla, coletero, peineta, bufanda, guante/m, cinturón/m, corbata, mochila, bolso, cartera, paraguas/m, gafas de sol/f, llavero, monedero, reloj/m
+edificio: catedral/f, ermita, mezquita, sinagoga, templo, palacio, torre/f, rascacielos/m, chalé/m, cabaña, caseta, choza, iglú/m, granja, establo, cuadra, gallinero, gasolinera, cuartel/m, prisión/f, juzgado, embajada, consulado, ministerio, parlamento, observatorio, planetario, acuario, zoológico, zoo/m, galería, auditorio, pabellón/m, frontón/m, velódromo, hipódromo, circo, casino, hostal/m, pensión/f, albergue/m, motel/m, parador/m, balneario, clínica, consultorio, instituto, facultad/f, autoescuela, sauna, barbería, floristería, ferretería, droguería, perfumería, papelería, juguetería, zapatería, joyería, relojería, óptica, quiosco, estanco, lavandería, tintorería, pastelería, bodega, taberna, cervecería, pizzería, hamburguesería, heladería, churrería, chocolatería, hipermercado, astillero, mina, cantera, faro, polideportivo, ayuntamiento, biblioteca, museo, teatro, cine/m, hospital/m, colegio, escuela, universidad/f, iglesia, guardería, residencia, comisaría, aeropuerto, estación/f, puerto, mercado, tienda, fábrica, oficina, hotel/m, restaurante/m, cafetería, bar/m, supermercado, gimnasio, piscina, peluquería, librería, farmacia, panadería, carnicería, frutería, pescadería, banco, castillo, casa, edificio de oficinas/m, centro de salud/m, tanatorio, cementerio, mercadillo, lonja, matadero, vivero, invernadero, almacén/m, nave industrial/f, garaje/m
+lugar: paseo, bulevar/m, callejón/m, glorieta, rotonda, autopista, autovía, camino, sendero, puente/m, túnel/m, acera, plazoleta, parque infantil/m, jardín botánico/m, parada de autobús/f, división territorial/f, vivienda
+elemento urbano/m: semáforo, farola, papelera, contenedor/m, buzón/m, fuente/f, estatua, monumento, marquesina, parquímetro, banco de parque/m, paso de cebra/m, bordillo, alcantarilla, columpio, quiosco
+paisaje/m: colina, monte/m, cordillera, meseta, llanura, acantilado, golfo, bahía, península, archipiélago, oasis/m, glaciar/m, cascada, catarata, arroyo, riachuelo, charca, estanque/m, laguna, pantano, embalse/m, marisma, delta/m, duna, costa, orilla, ribera, prado, campiña, viñedo, olivar/m, huerta, dehesa, pinar/m, encinar/m, jungla, tundra, estepa, gruta, barranco, desfiladero, cumbre/f, cima, ladera, cala, isla, playa, río, lago, montaña, bosque/m, valle/m, cueva, selva, desierto, volcán/m, pradera
+división territorial/f: provincia, región/f, comarca, municipio, comunidad/f, continente/m, distrito, villa, aldea, barrio, pueblo, ciudad/f, país/m
+vivienda: piso, apartamento, chalé/m, ático, estudio, dúplex/m, mansión/f, cortijo, caserío, masía, cabaña, adosado, casa
+elemento/m: tejado, azotea, ascensor/m, portal/m, rellano, baldosa, azulejo, tabique/m, viga, columna, ventanal/m, tragaluz/m, cerradura, pomo, bisagra, interruptor/m, lavabo, bañera, ducha, váter/m, inodoro, bidé/m, fregadero, encimera, barandilla, chimenea, persiana, puerta, ventana, escalera, grifo, enchufe/m, radiador/m, buzón/m, felpudo, timbre/m
+habitación/f: buhardilla, vestidor/m, lavadero, salita, cuarto de baño/m, cuarto de estar/m, despensa, recibidor/m
+vehículo: autocar/m, microbús/m, monovolumen/m, todoterreno, descapotable/m, caravana, autocaravana, remolque/m, grúa, excavadora, apisonadora, cosechadora, quad/m, ciclomotor/m, triciclo, monopatín/m, patín/m, tándem/m, carro, carreta, carruaje/m, trineo, teleférico, funicular/m, locomotora, vagón/m, avioneta, jet/m, hidroavión/m, dirigible/m, cohete/m, globo aerostático/m, bicicleta eléctrica/f, patinete eléctrico/m, furgoneta, camión/m, ambulancia, coche de bomberos/m, coche patrulla/m, tractor/m, taxi/m, autobús/m, tranvía/m, metro, tren/m, avión/m, helicóptero, moto/f, coche/m, bicicleta, barco
+barco: kayak/m, piragua, barca, bote/m, catamarán/m, transatlántico, petrolero, pesquero, buque/m, fragata, galeón/m, balsa, góndola, lancha, velero, yate/m, canoa, ferry/m, submarino, crucero
+profesional/m: azafato, auxiliar/m, bibliotecario, cajero, carnicero, pescadero, frutero, conserje/m, portero, socorrista/m, guía/m, intérprete/m, notario, procurador/m, fiscal/m, guardia/m, militar/m, soldado, marinero, capitán/m, sargento, cirujano, pediatra/m, ginecólogo, oculista/m, oftalmólogo, dermatólogo, cardiólogo, fisioterapeuta/m, matrona, celador/m, químico, biólogo, matemático, astrónomo, geólogo, economista/m, contable/m, administrativo, secretario, recepcionista/m, comercial/m, dependiente/m, vendedor/m, repartidor/m, mensajero, camionero, taxista/m, chófer/m, maquinista/m, revisor/m, ganadero, pastor/m, minero, leñador/m, ebanista/m, herrero, cerrajero, escultor/m, alfarero, sastre/m, costurero, modisto, joyero, relojero, barbero, esteticista/m, pastelero, sumiller/m, cantante/m, bailarín/m, director/m, productor/m, guionista/m, locutor/m, presentador/m, diseñador/m, informático, catedrático, investigador/m, psiquiatra/m, logopeda/m, terapeuta/m, cuidador/m, niñero, limpiador/m, empresario, banquero, funcionario, abogado, médico, enfermero, profesor/m, maestro, ingeniero, arquitecto, policía/m, bombero, cocinero, camarero, panadero, peluquero, mecánico, electricista/m, fontanero, carpintero, albañil/m, jardinero, agricultor/m, pescador/m, cartero, periodista/m, fotógrafo, actor/m, músico, pintor/m, escritor/m, juez/m, veterinario, dentista/m, farmacéutico, psicólogo, programador/m, traductor/m, científico, piloto, conductor/m, entrenador/m, árbitro, deportista/m, futbolista/m, tenista/m, ciclista/m, nadador/m, atleta/m
+persona/f: bebé/m, niño, adolescente/m, joven/m, adulto, anciano, vecino, amigo, compañero, desconocido, cliente/m, paciente/m, alumno, estudiante/m, jubilado, turista/m, viajero, peatón/m, conductor/m, invitado, voluntario, ciudadano
+parte del cuerpo/f: cabeza, cara, frente/f, ojo, oreja, nariz/f, boca, labio, diente/m, muela, cuello, hombro, brazo, codo, mano/f, dedo, uña, pecho, espalda, cintura, cadera, barriga, ombligo, pierna, rodilla, tobillo, pie/m, talón/m, pelo, ceja, pestaña, mejilla, barbilla, mandíbula, garganta, nuca, hueso, músculo, corazón/m, pulmón/m, hígado, riñón/m, estómago, cerebro, intestino, vejiga, piel/f, sangre/f, columna vertebral/f, muslo, pantorrilla, antebrazo, axila, pulgar/m, meñique/m, párpado, encía, paladar/m
+evento/m: festival/m, exposición/f, desfile/m, procesión/f, verbena, romería, carnaval/m, cabalgata, mitin/m, manifestación/f, conferencia, charla, seminario, máster/m, maratón/m, campeonato, liga, olimpiada, mundial/m, sorteo, subasta, rifa, nacimiento, funeral/m, velatorio, banquete/m, merienda, desayuno, almuerzo, aperitivo, brindis/m, visita, acampada, vuelo, revisión/f, concierto, fiesta, boda, cena, comida, examen/m, viaje, cumpleaños/m, reunión/f, cita, entrevista, partido, carrera, excursión/f, mudanza, bautizo, comunión/f, entierro, graduación/f, despedida, obra de teatro/f, partida, competición/f, torneo, gira, inauguración/f, congreso, jornada, recital/m, estreno
+tiempo/m: amanecer/m, atardecer/m, anochecer/m, medianoche/f, ocaso, trimestre/m, semestre/m, década, milenio, quincena, víspera, madrugada, mañana, tarde/f, noche/f, siglo, temporada, rato
+festividad/f: navidad/f, nochebuena, nochevieja, pascua, carnaval/m, fin de año/m, puente festivo/m
+emoción/f: felicidad/f, rabia, ira, odio, ternura, celos/m, culpa, pena, angustia, pánico, terror/m, euforia, gratitud/f, soledad/f, aburrimiento, satisfacción/f, decepción/f, frustración/f, alivio, admiración/f, desprecio, compasión/f, timidez/f, confianza, inseguridad/f, orgullo, envidia, vergüenza, cariño, sorpresa
+enfermedad/f: diabetes/f, asma/m, bronquitis/f, neumonía, otitis/f, faringitis/f, conjuntivitis/f, gastroenteritis/f, cistitis/f, artritis/f, artrosis/f, hipertensión/f, anemia, cáncer/m, infarto, ictus/m, sarampión/m, paperas/f, rubéola, hepatitis/f, insomnio, depresión/f, estrés/m, jaqueca, mareo, diarrea, estreñimiento, quemadura, fractura, esguince/m, contractura, tendinitis/f, lumbago, ciática, caries/f, sinusitis/f, dermatitis/f, alergia, gripe/f, resfriado, catarro, tos/f, fiebre/f, migraña, varicela, infección/f, lesión/f, herida, apendicitis/f, colesterol/m, obesidad/f, intoxicación/f, insolación/f, picadura, ampolla, moratón/m, chichón/m, torcedura
+medicamento: paracetamol/m, ibuprofeno, antibiótico, jarabe/m, pastilla, comprimido, cápsula, pomada, vacuna, vitamina, analgésico, antiinflamatorio, antihistamínico, colirio, tirita, venda, gasa, inhalador/m, aspirina, supositorio, crema solar/f, antiácido, tranquilizante/m, laxante/m
+deporte/m: hockey/m, béisbol/m, waterpolo/m, remo, piragüismo, buceo, submarinismo, alpinismo, montañismo, esgrima, kárate/m, taekwondo/m, lucha, halterofilia, triatlón/m, motociclismo, automovilismo, hípica, equitación/f, patinaje/m, snowboard/m, parapente/m, petanca, billar/m, bolos/m, dardos/m, squash/m, bádminton/m, tenis de mesa/m, yoga/m, pilates/m, aeróbic/m, fútbol sala/m, balonmano, voleibol/m, baloncesto, atletismo, natación/f, ciclismo, tenis/m, golf/m, esquí/m, boxeo, judo, rugby/m, pádel/m, senderismo, escalada, surf/m, gimnasia, ajedrez/m, salto de longitud/m, jabalina, lanzamiento de peso/m, vela deportiva/f, windsurf/m, kitesurf/m, rafting/m, espeleología, orientación/f
+asignatura: economía, tecnología, informática, plástica, religión/f, ciencias naturales/f, ciencias sociales/f, educación física/f, música, lengua, matemáticas/f, historia, geografía, física, química, biología, inglés/m, filosofía, dibujo, latín/m, griego, francés/m, alemán/m, literatura
+estilo musical/m: rock/m, pop/m, jazz/m, tango, blues/m, ópera, zarzuela, rap/m, bolero, rumba, jota, sardana, sevillanas/f, bachata, merengue/m, reguetón/m, cumbia, ranchera, fado, heavy/m, punk/m, góspel/m
+arte/m: estilo musical/m, cerámica, grabado, artesanía, poesía, novela, teatro, cine/m, danza, ópera
+instrumento: oboe/m, fagot/m, trombón/m, tuba, contrabajo, viola, ukelele/m, mandolina, laúd/m, banjo, castañuelas/f, pandereta, xilófono, armónica, gaita, bandurria, bongó/m, timbal/m, platillos/m, sintetizador/m, guitarra eléctrica/f, bajo eléctrico/m, acordeón/m, saxofón/m, clarinete/m, flauta, trompeta, piano, violín/m, violonchelo, arpa/f, tambor/m, batería, guitarra
+idioma/m: holandés/m, sueco, noruego, danés/m, finés/m, polaco, checo, húngaro, rumano, búlgaro, turco, hebreo, hindi/m, coreano, vietnamita/m, tailandés/m, persa/m, valenciano, asturiano, esperanto, suajili/m, latín/m, griego, árabe/m, ruso, chino, japonés/m, portugués/m, italiano, alemán/m, francés/m, inglés/m, español, catalán/m, gallego, euskera/m
+documento: enciclopedia, diccionario, atlas/m, cómic/m, tebeo, manual/m, folleto, catálogo, diario, cuento, poema/m, biografía, relato, certificado, diploma/m, título, permiso, licencia, multa, recibo, presupuesto, nómina, testamento, póliza, solicitud/f, instancia, currículum/m, postal/f, telegrama/m, invitación/f, nota, contrato, factura, receta, entrada, billete/m, ticket/m, pasaporte/m, carnet/m, DNI/m, libro de familia/m, mapa/m, plano, partitura, guion/m, horario, menú/m, carta, revista, periódico, cuaderno, novela, informe/m, examen/m, tarjeta
+color/m: granate/m, burdeos/m, ocre/m, añil/m, índigo, magenta/m, cian/m, fucsia/m, celeste/m, carmesí/m, escarlata/m, marfil/m, lila/m, coral/m, crema/m, mostaza/m, caqui/m, salmón/m, verde oliva/m, azul marino/m
+forma: trapecio, octógono, elipse/f, espiral/f, cono, prisma/m, semicírculo, cruz/f, flecha, media luna/f, rombo, pentágono, hexágono, óvalo, esfera, cubo, cilindro, pirámide/f, cuadrado, triángulo, rectángulo, círculo, estrella
+material/m: seda, lino, terciopelo, pana, mimbre/m, corcho, bambú/m, porcelana, cerámica, barro, mármol/m, granito, yeso, ladrillo, hormigón/m, asfalto, cristal/m, nailon/m, poliéster/m, caucho, látex/m, resina, cera, carbón/m, titanio, estaño, níquel/m, cinc/m, platino, fieltro, lona, encaje/m, punto, ante/m, charol/m, piel/f, arena, arcilla, cemento, goma, cartón/m, algodón/m, lana, cuero, piedra, tela, papel/m, vidrio, plástico, metal/m, madera
+fenómeno: sequía, helada, escarcha, rocío, chubasco, llovizna, aguacero, tornado, huracán/m, tifón/m, ciclón/m, ventisca, nevada, granizada, eclipse/m, marea, ola, tsunami/m, avalancha, alud/m, rayo, calima, neblina, arcoíris/m, relámpago, trueno, tormenta, niebla, granizo, viento, nieve/f, lluvia, terremoto, frío, calor/m, humedad/f, sombra, brisa, bochorno, temporal/m, ola de calor/f, ola de frío/f
+astro: planeta/m, satélite/m, asteroide/m, meteorito, galaxia, constelación/f, nebulosa
+elemento natural/m: fuego, aire, roca, arena, barro, polvo, hielo, vapor/m, humo, ceniza, lava, agua/f, tierra, piedra, carbón/m, sal/f, oro, plata
+dinero/m: moneda, euro, céntimo, cheque/m, préstamo, hipoteca, sueldo, salario, beca, impuesto, deuda, multa, propina, paga, ahorros/m, transferencia, recibo, billete/m, tarjeta de crédito/f, cuenta bancaria/f
+medio de comunicación/m: radio/f, televisión/f, prensa, llamada, periódico, revista, carta, correo, mensaje, email/m, internet/m, videollamada, whatsapp/m, fax/m, teléfono
+recipiente/m: lata, frasco, garrafa, barril/m, cesto, palangana, barreño, cántaro, jarrón/m, florero, maceta, hucha, estuche/m, botella, caja, bolsa, tarro, cesta, cubo, taza, vaso, jarra, copa, termo, bidón/m, tupper/m, cartón de leche/m, bote/m
+arma: espada, pistola, escopeta, rifle/m, arco, flecha, lanza, cuchillo, puñal/m, daga, escudo, tirachinas/m, cañón/m, ballesta
+actividad/f: compra, limpieza, entrenamiento, paseo, lectura, cocina, jardinería, costura, bricolaje/m, colada, plancha, siesta, ducha, baño, desayuno, deberes/m, tarea, trabajo, estudio, reforma, mudanza, recado, gestión/f, trámite/m, voluntariado, deporte/m
+organización/f: empresa, club/m, grupo, banda, asociación/f, compañía, coro, orquesta, ayuntamiento, sindicato, partido político/m, ONG/f, fundación/f, cooperativa, equipo, gobierno, ejército, escuela de idiomas/f, comunidad de vecinos/f, peña
+
+# 2.13: las aplicaciones deterministas (src/apps) entran como conceptos: el LCM sabe QUÉ es una suma; la cuenta la hace la aplicación
+cálculo/m: operación matemática/f, operación de calendario/f
+operación matemática/f: suma, resta, multiplicación/f, división/f, potencia, raíz/f, porcentaje/m, media, mitad/f, diferencia, máximo, mínimo
+programa/m: aplicación de dibujo/f
+
+[propiedades]
+ser vivo: nacer; crecer; morir; no ser un objeto
+animal: moverse; comer; respirar; no ser una planta; no hablar
+persona: hablar
+planta: no moverse; necesitar agua; necesitar luz; crecer; no ser un animal; no hablar; no pensar; no andar
+mamífero: tener pelo; respirar aire; no poner huevos; no volar; no tener plumas; no tener alas; no tener escamas
+murciélago: volar; tener alas
+delfín: vivir en el mar; nadar; no tener pelo
+ballena: vivir en el mar; nadar; no tener pelo
+ave: tener alas; tener plumas; tener pico; poner huevos; volar
+pingüino: no volar; nadar
+avestruz: no volar; correr
+gallina: no volar
+pez: nadar; vivir en el agua; tener escamas; tener aletas; respirar bajo el agua; no tener patas; no volar; no tener pelo; no tener plumas
+reptil: tener escamas; poner huevos; no tener pelo; no volar
+serpiente: no tener patas; reptar
+tortuga: tener caparazón; andar despacio
+insecto: tener seis patas; no tener huesos
+abeja: volar; hacer miel; picar
+mariposa: volar; tener alas
+hormiga: no volar; vivir en hormigueros
+mosca: volar
+mosquito: volar; picar
+anfibio: vivir en el agua y en la tierra; poner huevos
+rana: saltar; croar
+arácnido: tener ocho patas
+araña: tejer telarañas; no volar
+perro: ladrar; tener cuatro patas; mover la cola; necesitar pasear
+gato: maullar; tener cuatro patas; cazar ratones
+caballo: relinchar; correr; tener cuatro patas; comer hierba
+vaca: mugir; dar leche; comer hierba; tener cuatro patas
+oveja: balar; dar lana; comer hierba
+cerdo: gruñir; tener cuatro patas
+conejo: saltar; comer zanahorias; tener orejas largas
+león: rugir; comer carne; cazar
+lobo: aullar; comer carne; cazar
+elefante: tener trompa; ser muy grande
+jirafa: tener el cuello largo
+canguro: saltar
+gallo: cantar
+loro: hablar; volar
+búho: cazar de noche; volar
+árbol: tener tronco; tener ramas; tener hojas; tener raíces; dar sombra
+flor: tener pétalos; oler bien
+cactus: tener espinas; necesitar poca agua
+manzano: dar manzanas
+naranjo: dar naranjas
+olivo: dar aceitunas
+fruta: ser comestible; crecer en plantas
+paella: llevar arroz
+tortilla: llevar huevo
+gazpacho: llevar tomate
+pizza: llevar queso; llevar masa
+ensalada: llevar lechuga
+bocadillo: llevar pan
+cocido: llevar garbanzos
+lasaña: llevar pasta
+fresa: ser roja
+cereza: ser roja
+tomate: ser rojo
+plátano: ser amarillo
+limón: ser amarillo
+lechuga: ser verde
+hierba: ser verde
+zanahoria: ser naranja
+nieve: ser blanca
+leche: ser blanca
+cuervo: ser negro
+verdura: ser comestible
+alimento: ser comestible; no ser un ser vivo
+bebida: ser líquida; beberse
+objeto: no estar vivo; no comer; no respirar; no pensar; no hablar
+material: no estar vivo; no comer; no respirar
+alimento: no hablar; no pensar
+vehículo: servir para viajar; moverse
+coche: tener cuatro ruedas; tener motor; circular por la carretera
+bicicleta: tener dos ruedas; tener pedales; no tener motor
+bici: tener dos ruedas; tener pedales; no tener motor
+moto: tener dos ruedas; tener motor
+avión: volar; tener alas; tener motor
+helicóptero: volar
+barco: flotar; navegar por el agua
+tren: circular por vías
+submarino: navegar bajo el agua
+mueble: estar en las casas
+herramienta: servir para trabajar
+instrumento: sonar; servir para tocar música
+prenda: servir para vestirse
+calzado: ponerse en los pies
+aparato: funcionar con electricidad
+edificio: tener paredes; tener techo; tener puertas
+metal: ser duro; conducir la electricidad
+madera: venir de los árboles; flotar
+piedra: ser dura; no flotar
+vidrio: ser transparente; romperse con facilidad
+deporte: practicarse; ser bueno para la salud
+emoción: sentirse
+persona: hablar; pensar; tener dos piernas; tener dos brazos; no volar
+color: verse
+fenómeno: ocurrir en la naturaleza
+triángulo: tener tres lados
+cuadrado: tener cuatro lados
+rectángulo: tener cuatro lados
+rombo: tener cuatro lados
+pentágono: tener cinco lados
+hexágono: tener seis lados
+círculo: no tener lados
+
+[partes]
+coche: ruedas, motor, volante, puertas, maletero, frenos
+bicicleta: ruedas, pedales, manillar, sillín, cadena
+casa: puertas, ventanas, tejado, paredes, cocina, baño, dormitorios
+árbol: tronco, ramas, hojas, raíces
+flor: pétalos, tallo
+cuerpo: cabeza, brazos, piernas, manos, pies, espalda, pecho, cuello
+cabeza: ojos, nariz, boca, orejas, pelo, frente
+mano: dedos, uñas, palma
+ave: alas, pico, plumas
+pez: aletas, escamas, cola
+ordenador: pantalla, teclado, ratón
+libro: páginas, portada, capítulos
+semana: días
+año: meses
+día: horas
+hora: minutos
+
+[contrarios]
+grande/pequeño, alto/bajo, gordo/delgado, rápido/lento, nuevo/viejo, joven/viejo, bueno/malo, caro/barato, largo/corto, feliz/triste, contento/triste, abierto/cerrado, lleno/vacío
+limpio/sucio, frío/caliente, fácil/difícil, fuerte/débil, rico/pobre, simpático/antipático, guapo/feo, bonito/feo, claro/oscuro, ancho/estrecho, duro/blando, seco/mojado, encendido/apagado
+vivo/muerto, sano/enfermo, soltero/casado, despierto/dormido, tranquilo/nervioso, ordenado/desordenado, pesado/ligero, dulce/salado, alegre/triste, ocupado/libre, divertido/aburrido
+listo/tonto, trabajador/vago, valiente/cobarde, moderno/antiguo, ruidoso/silencioso, cercano/lejano, grueso/fino, verdadero/falso, posible/imposible, seguro/peligroso, útil/inútil
+primero/último, dentro/fuera, arriba/abajo, delante/detrás, cerca/lejos, mucho/poco, todo/nada, siempre/nunca, antes/después, pronto/tarde, bien/mal, más/menos, día/noche
+subir/bajar, entrar/salir, abrir/cerrar, comprar/vender, dar/recibir, empezar/terminar, encender/apagar, ganar/perder, reír/llorar, dormir/despertar, llegar/irse, recordar/olvidar
+amar/odiar, preguntar/responder, construir/destruir, llenar/vaciar, acertar/fallar, aceptar/rechazar, permitir/prohibir, nacer/morir, verano/invierno, amigo/enemigo, guerra/paz
+
+[grupos]
+familia: padre, hijo, hermano, abuelo, nieto, tio, sobrino, primo, esposo, suegro, cuñado, yerno, bisabuelo
+pareja: esposo, novio
+conocido: amigo, vecino, compañero, socio, colega, jefe, empleado, profesor, alumno, mejor amigo
+
+[efectos]
+abrir: abierto
+cerrar: cerrado
+romper: roto
+encender: encendido
+apagar: apagado
+llenar: lleno
+vaciar: vacío
+limpiar: limpio
+lavar: limpio
+ensuciar: sucio
+manchar: sucio
+mojar: mojado
+secar: seco
+arreglar: arreglado
+reparar: arreglado
+pintar: pintado
+terminar: terminado
+acabar: terminado
+ordenar: ordenado
+desordenar: desordenado
+calentar: caliente
+enfriar: frío
+quemar: quemado
+cortar: cortado
+despertar: despierto
+vender: vendido
+perder: perdido
+
+# ======================================================================================================
+# 2.14 · NUEVA TANDA DE CONCEPTOS: sustantivos frecuentes de UD que faltaban (clasificados a mano, con el léxico MCR como pista),
+#        categorías abstractas (acción, idea, cualidad, situación, norma…), contrarios, partes, propiedades de clase y efectos.
+#        Sin hechos del mundo: solo qué es cada cosa, sus partes, lo típico de su clase y su contrario.
+# ======================================================================================================
+[taxonomia]
+# ---- personas
+persona/f: hombre/m, mujer/f, chico, señor/m, señora, caballero, dama, individuo, habitante/m, residente/m, extranjero, inmigrante/m, emigrante/m, refugiado, pasajero, espectador/m, visitante/m, usuario, consumidor/m, lector/m, oyente/m, aficionado, seguidor/m, fan/m, socio, miembro, militante/m, ganador/m, perdedor/m, campeón/m, rival/m, adversario, enemigo, aliado, víctima/f, testigo/m, culpable/m, sospechoso, acusado, detenido, preso, prisionero, delincuente/m, héroe/m, heroína, protagonista/m, personaje/m, autor/m, creador/m, fundador/m, inventor/m, propietario, dueño, líder/m, responsable/m, representante/m, portavoz/m, experto, especialista/m, aprendiz/m, principiante/m, novato, veterano, huérfano, viudo, amante/m, extraño, anfitrión/m, huésped/m, trabajador/m, obrero, parado, desempleado, campesino, esclavo, mendigo, vagabundo, millonario, heredero, descendiente/m, antepasado, ancestro, compatriota/m, ser humano/m, humano, agente/m, colega/m, judío, musulmán/m, cristiano, católico, protestante/m, budista/m, ateo, creyente/m, ciudadano, político, noble/m, criminal/m, deportista/m, militar/m, religioso, voluntario
+político: presidente/m, vicepresidente/m, ministro, concejal/m, alcalde/m, diputado, senador/m, gobernador/m, candidato, dirigente/m, mandatario, embajador/m, diplomático
+noble/m: rey/m, reina, príncipe/m, princesa, duque/m, duquesa, conde/m, condesa, marqués/m, marquesa, emperador/m, emperatriz/f, monarca/m
+criminal/m: ladrón/m, asesino, terrorista/m, estafador/m, secuestrador/m, traficante/m, atracador/m
+deportista/m: jugador/m, delantero, centrocampista/m, goleador/m, corredor/m, boxeador/m, esquiador/m, jinete/m, gimnasta/m, nadador/m, ciclista/m, tenista/m, futbolista/m, atleta/m
+militar/m: comandante/m, coronel/m, teniente/m, general/m, cabo/m
+religioso: sacerdote/m, obispo, monja, monje/m, fraile/m, papa/m, rabino
+profesional/m: técnico, analista/m, asesor/m, consejero, gerente/m, directivo, ejecutivo, editor/m, historiador/m, poeta/m, compositor/m, artista/m, magistrado, comerciante/m, fabricante/m, cazador/m, doctor/m, astronauta/m, detective/m, espía/m, payaso, mago, torero, granjero, zapatero, reportero, novelista/m, filósofo, arqueólogo, peluquero, agente inmobiliario/m, guardia civil/m, socorrista/m, entrenador/m
+# ---- seres imaginarios
+ser imaginario/m: gigante/m, monstruo, fantasma/m, dragón/m, hada, bruja, duende/m, ogro, sirena, unicornio, vampiro, zombi/m, extraterrestre/m, elfo, troll/m
+# ---- astros
+astro: sol/m, luna, estrella, satélite/m, galaxia, meteorito, asteroide/m, cometa/m, planeta/m
+# ---- grupos de personas
+grupo/m: gente/f, público, multitud/f, nación/f, población/f, sociedad/f, comunidad/f, generación/f, tribu, pandilla, tripulación/f, tropa, audiencia, jurado, comité/m, asamblea, comisión/f, junta, plantilla, selección/f, humanidad/f, colectivo, clan/m, delegación/f
+# ---- acciones
+acción/f: ayuda, ataque, defensa, apoyo, respaldo, cambio, mejora, avance, progreso, aumento, subida, bajada, caída, llegada, salida, regreso, retorno, venta, pago, gasto, ahorro, inversión/f, búsqueda, elección/f, decisión/f, adquisición/f, construcción/f, destrucción/f, creación/f, producción/f, fabricación/f, reparación/f, escritura, conversación/f, discusión/f, pelea, lucha, golpe/m, tiro, disparo, salto, intento, esfuerzo, preparación/f, protesta, queja, amenaza, promesa, saludo, beso, abrazo, caricia, sonrisa, risa, llanto, grito, mirada, gesto, movimiento, fuga, huida, rescate/m, detención/f, castigo, venganza, perdón/m, petición/f, pregunta, respuesta, explicación/f, descripción/f, felicitación/f, agradecimiento, despido, traslado, envío, entrega, reserva, alquiler/m, delito/m, ofensa, broma, colaboración/f, cooperación/f, participación/f, negociación/f, investigación/f, prueba, experimento, observación/f, análisis/m, medición/f, tratamiento, operación quirúrgica/f, vacunación/f, alimentación/f, aprendizaje/m, uso, consumo, cultivo
+delito/m: asesinato, crimen/m, fraude/m, secuestro, estafa, atraco, agresión/f, violación/f, corrupción/f, terrorismo, contrabando, soborno, chantaje/m, robo, hurto, homicidio, vandalismo
+ofensa: insulto, burla, humillación/f
+juego/m: juego de mesa/m, juego de cartas/m, videojuego, escondite/m, adivinanza, crucigrama/m
+# ---- ideas y pensamiento
+idea/f: creencia, opinión/f, pensamiento, teoría, hipótesis/f, plan/m, proyecto, propuesta, intención/f, propósito, objetivo, meta, sueño, deseo, duda, sospecha, recuerdo, concepto, argumento, conclusión/f, fantasía, mentira, verdad/f, secreto, rumor/m, consejo, sugerencia, recomendación/f, razón/f, motivo, causa, excusa, imaginación/f, conocimiento, opción/f, alternativa, estrategia, método, sistema/m, fe/f, ideología, doctrina, religión/f, filosofía, criterio, prejuicio, principio, ideal/m
+información/f: dato, noticia, aviso, anuncio, comentario, rumor/m, novedad/f, pista, instrucción/f, dirección/f
+# ---- cualidades y magnitudes
+cualidad/f: belleza, bondad/f, maldad/f, inteligencia, habilidad/f, talento, debilidad/f, honestidad/f, sinceridad/f, humildad/f, dignidad/f, virtud/f, defecto, calidad/f, importancia, seguridad/f, libertad/f, igualdad/f, justicia, injusticia, responsabilidad/f, puntualidad/f, generosidad/f, egoísmo, valentía, cobardía, simpatía, elegancia, sencillez/f, claridad/f, lentitud/f, suerte/f, salud/f, fama, prestigio, riqueza, pobreza, personalidad/f, carácter/m, humor/m, sabiduría, experiencia
+magnitud/f: tamaño, peso, altura, longitud/f, anchura, profundidad/f, velocidad/f, temperatura, distancia, volumen/m, superficie/f, duración/f, edad/f, precio, coste/m, valor/m, cantidad/f, intensidad/f, frecuencia
+# ---- situaciones y resultados
+situación/f: problema/m, crisis/f, conflicto, peligro, riesgo, dificultad/f, emergencia, desgracia, desastre/m, catástrofe/f, tragedia, miseria, paz/f, caos/m, dilema/m, obstáculo, apuro, lío
+resultado/m: éxito, fracaso, empate/m, ganancia, pérdida, beneficio, consecuencia, efecto, daño, mejora, solución/f
+éxito: triunfo, victoria, logro, acierto, conquista
+fracaso: derrota, fallo, error/m, equivocación/f, despiste/m
+# ---- relaciones
+relación/f: amistad/f, matrimonio, noviazgo, parentesco, enemistad/f, compañerismo, convivencia, vínculo, contacto
+acuerdo: trato, pacto, contrato, tratado, convenio, compromiso, alianza, tregua
+# ---- normas, cargos, unidades, cantidades, signos
+norma/f: ley/f, regla, reglamento, decreto, prohibición/f, obligación/f, costumbre/f, tradición/f, orden/f, mandamiento, estatuto, constitución/f, multa, sanción/f, permiso, derecho
+cargo/m: presidencia, alcaldía, jefatura, puesto, empleo, oficio, profesión/f, carrera profesional/f
+unidad de medida/f: kilo, kilogramo, gramo, tonelada, litro, mililitro, centímetro, milímetro, kilómetro, hectárea, grado, metro cuadrado/m, caloría
+cantidad/f: docena, decena, centenar/m, millar/m, millón/m, billón/m, par/m, mitad/f, mayoría, minoría, montón/m, puñado, porción/f, trozo, pedazo, total/m, resto
+signo/m: símbolo, señal/f, letra, número, cifra, sigla, marca, logotipo, firma, código, emoticono, nota musical/f, palabra, frase, nombre/m, apellido
+# ---- obras, textos e imágenes
+obra artística/f: película, canción/f, poema/m, cuento, novela, poesía, serie de televisión/f, documental/m, obra de teatro/f, escultura, cuadro, álbum/m, disco, chiste/m, leyenda, mito, fábula, ópera, sinfonía, videoclip/m
+texto/m: capítulo, artículo, párrafo, frase, discurso, declaración/f, resumen/m, crítica, redacción/f, apunte/m, índice/m, prólogo
+imagen/f: foto/f, fotografía, retrato, ilustración/f, póster/m, cartel/m, vídeo, selfi/m, radiografía
+# ---- momentos y periodos
+tiempo: vez/f, momento, instante/m, rato, ocasión/f, época, período, periodo, etapa, fase, siglo, década, temporada, plazo, fecha, infancia, niñez/f, juventud/f, adolescencia, vejez/f, madurez/f, pasado, futuro, presente/m, actualidad/f, comienzo, inicio, principio, final/m, fin/m, víspera, aniversario, fin de semana/m, puente/m, madrugada, amanecer/m, atardecer/m, mediodía/m, medianoche/f
+# ---- sucesos y eventos
+evento/m: accidente/m, incidente/m, explosión/f, naufragio, atentado, suceso, acontecimiento, ceremonia, homenaje/m, celebración/f, elecciones/f, votación/f, referéndum/m, manifestación/f, batalla, combate/m, debate/m, juicio, sesión/f, encuentro, semifinal/f, maratón/m, campeonato, concurso, gala, exposición/f, festival/m, desfile/m, estreno, inauguración/f, entrevista, funeral/m, velatorio, nacimiento, muerte/f, guerra, revolución/f, invasión/f
+# ---- actividades
+actividad/f: turismo, comercio, negocio, industria, agricultura, ganadería, pesca, caza, educación/f, enseñanza, periodismo, publicidad/f, política, ocio, afición/f, hobby/m, deporte/m, juego/m, bricolaje/m, jardinería, costura, senderismo, lectura, escritura, compra, limpieza, cocina, voluntariado, oración/f, meditación/f
+# ---- fenómenos y sustancias
+fenómeno/m: luz/f, sonido, ruido, calor/m, frío, sombra, eco, electricidad/f, energía, gravedad/f, magnetismo, eclipse/m, arcoíris/m, marea, ola, corriente/f, chispa, rayo, trueno, relámpago
+sustancia/f: ácido, droga, alcohol/m, gas/m, líquido, combustible/m, gasolina, petróleo, veneno, proteína, grasa, almidón/m, mineral/m, residuo, basura, tinta, oxígeno, hidrógeno, carbono, nitrógeno
+# ---- organizaciones
+organización/f: empresa, partido político/m, sindicato, asociación/f, federación/f, fundación/f, institución/f, agencia, corporación/f, aerolínea, ONG/f, club/m, ayuntamiento, ministerio, parlamento, tribunal/m, policía/f, iglesia, editorial/f, cadena de televisión/f, emisora
+# ---- lugares
+lugar/m: zona, área/f, sitio, territorio, región/f, espacio, sede/f, terreno, finca, campamento, recinto, rincón/m, esquina, frontera, interior/m, exterior/m, horizonte/m, cielo, mundo, universo, infierno, paraíso, extranjero, centro, alrededores/m, afueras/f, lado, costa, orilla, cumbre/f, cima, valle/m, desierto, selva, bosque, campo, pradera, cueva, isla, península, continente/m, océano, mar/m, lago, río, playa, montaña, colina, volcán/m, puerto, aeropuerto, estación/f, parroquia, municipio, comarca, provincia, barrio, pueblo, aldea, ciudad/f, capital/f, país/m, estado
+# ---- objetos
+objeto: regalo, máquina, dispositivo, artefacto, pieza, rueda, motor/m, bola, cuerda, hilo, cadena, llave/f, cerradura, candado, paquete/m, bulto, pancarta, bandera, placa, trofeo, premio, globo, linterna, vela, explosivo, mercancía, producto, artículo, recuerdo de viaje/m, souvenir/m, tesoro, joya, billete/m, tarjeta, sobre/m, etiqueta, caja, cajón/m, palo, vara, tabla, tubo, cable/m, enchufe/m, pila, batería, bombilla, interruptor/m, botón/m, tornillo, clavo, muelle/m, espejo, chupete/m, biberón/m, pañal/m, cuna
+documento/m: expediente/m, certificado, factura, recibo, licencia, pasaporte/m, billete/m, entrada, ticket/m, testamento, manifiesto, tesis/f, encuesta, formulario, currículum/m, diploma/m, receta médica/f, denuncia, solicitud/f, acta
+arma/f: pistola, rifle/m, fusil/m, escopeta, cañón/m, espada, cuchillo, lanza, flecha, arco, bomba, misil/m, granada, proyectil/m, metralleta, revólver/m, puñal/m, navaja
+vehículo: coche, automóvil/m, camión/m, furgoneta, ambulancia, taxi/m, tractor/m, nave espacial/f, cohete/m, tanque/m, patinete/m, monopatín/m, carro, carroza, trineo
+
+[contrarios]
+# adjetivos
+mayor/menor, mejor/peor, máximo/mínimo, superior/inferior, anterior/posterior, previo/posterior, interior/exterior, interno/externo, positivo/negativo, horizontal/vertical, natural/artificial, público/privado
+sencillo/complicado, simple/complejo, fácil/complicado, cómodo/incómodo, agradable/desagradable, amable/grosero, educado/maleducado, generoso/tacaño, honesto/deshonesto, sincero/mentiroso
+humilde/orgulloso, modesto/presumido, tímido/extrovertido, serio/gracioso, prudente/imprudente, responsable/irresponsable, paciente/impaciente, puntual/impuntual, optimista/pesimista, activo/pasivo
+atento/distraído, cuidadoso/descuidado, obediente/desobediente, maduro/inmaduro, sensato/insensato, justo/injusto, legal/ilegal, correcto/incorrecto, adecuado/inadecuado, perfecto/imperfecto
+completo/incompleto, exacto/inexacto, preciso/impreciso, capaz/incapaz, hábil/torpe, conocido/desconocido, famoso/desconocido, importante/insignificante, necesario/innecesario, normal/raro
+común/raro, frecuente/raro, habitual/excepcional, general/particular, igual/diferente, parecido/distinto, similar/diferente, propio/ajeno, único/múltiple
+temporal/permanente, provisional/definitivo, fijo/móvil, estable/inestable, constante/variable, continuo/discontinuo, firme/inestable, seguro/inseguro, cierto/incierto, real/imaginario
+concreto/abstracto, físico/mental, material/espiritual, presente/ausente, actual/pasado, futuro/pasado, reciente/antiguo, moderno/anticuado, joven/mayor, nuevo/usado
+temprano/tardío, rápido/despacio, veloz/lento, puntiagudo/romo, afilado/desafilado, liso/rugoso, suave/áspero, blando/duro, tierno/duro, flexible/rígido
+recto/curvo, plano/abultado, profundo/superficial, hondo/llano, alto/bajo, largo/breve, extenso/breve, amplio/estrecho, espacioso/estrecho
+grueso/delgado, gordo/flaco, obeso/delgado, pesado/liviano, denso/ligero, espeso/líquido, sólido/líquido, mojado/seco, húmedo/seco, lleno/vacío
+caliente/frío, cálido/frío, templado/frío, tibio/frío, caluroso/fresco, soleado/nublado, despejado/nublado, luminoso/oscuro, brillante/opaco, transparente/opaco
+blanco/negro, claro/oscuro, limpio/sucio, ordenado/desordenado, arreglado/desarreglado, bonito/feo, hermoso/feo, guapo/feo, atractivo/repulsivo, elegante/vulgar
+dulce/amargo, sabroso/insípido, rico/soso, picante/suave, crudo/cocido, fresco/podrido, sano/insano, saludable/perjudicial, nutritivo/dañino
+sano/enfermo, fuerte/débil, poderoso/débil, valiente/miedoso, atrevido/cobarde, tranquilo/inquieto, sereno/alterado, relajado/tenso, calmado/nervioso, descansado/cansado
+feliz/infeliz, triste/alegre, contento/descontento, satisfecho/insatisfecho, animado/desanimado, optimista/derrotista, afortunado/desafortunado, rico/pobre, barato/caro, gratuito/de pago
+abundante/escaso, mucho/poco, suficiente/insuficiente, entero/roto, intacto/dañado, nuevo/viejo, joven/viejo, vivo/muerto, despierto/dormido
+encendido/apagado, abierto/cerrado, conectado/desconectado, visible/invisible, posible/imposible, probable/improbable, útil/inútil, eficaz/ineficaz, eficiente/ineficiente, productivo/improductivo
+correcto/erróneo, verdadero/falso, auténtico/falso, original/copiado, legítimo/ilegítimo, oficial/extraoficial, formal/informal, educativo/perjudicial, divertido/aburrido, interesante/aburrido
+entretenido/aburrido, emocionante/aburrido, alegre/triste, gracioso/serio, amistoso/hostil, simpático/antipático, cariñoso/frío, amable/antipático, pacífico/violento, cercano/lejano
+próximo/lejano, urbano/rural, nacional/internacional, local/global, individual/colectivo, personal/impersonal, femenino/masculino, macho/hembra, masculino/femenino
+inteligente/tonto, listo/tonto, sabio/ignorante, culto/inculto, ignorante/sabio, rápido/lento, ágil/torpe, sano/enfermo, limpio/contaminado
+legal/ilegal, permitido/prohibido, obligatorio/opcional, voluntario/obligatorio, libre/ocupado, disponible/ocupado, vacante/ocupado, soltero/casado, junto/separado
+# verbos
+ir/venir, venir/ir, traer/llevar, unir/separar, juntar/separar, atar/desatar, montar/desmontar, armar/desarmar, hacer/deshacer, crear/destruir
+construir/derribar, levantar/bajar, subir/bajar, levantarse/acostarse, sentarse/levantarse, poner/quitar, meter/sacar, añadir/quitar, sumar/restar, multiplicar/dividir
+aumentar/disminuir, crecer/menguar, subir/descender, ascender/descender, acelerar/frenar, adelantar/retrasar, avanzar/retroceder, empujar/tirar, atraer/repeler, acercar/alejar
+aparecer/desaparecer, mostrar/ocultar, enseñar/esconder, esconder/encontrar, buscar/encontrar, perder/encontrar, guardar/tirar, conservar/tirar, ahorrar/gastar, cobrar/pagar
+prestar/devolver, pedir/dar, dar/quitar, regalar/recibir, enviar/recibir, mandar/obedecer, ordenar/desordenar, permitir/impedir, prohibir/autorizar, aprobar/suspender
+aprobar/rechazar, aceptar/negar, admitir/negar, afirmar/negar, confirmar/desmentir, decir/callar, hablar/callar, gritar/susurrar, preguntar/contestar, llamar/colgar
+empezar/acabar, comenzar/terminar, iniciar/finalizar, abrir/clausurar, fundar/disolver, nacer/fallecer, vivir/morir, crear/eliminar, eliminar/añadir, incluir/excluir
+sumar/quitar, ganar/perder, vencer/perder, triunfar/fracasar, acertar/equivocarse, aprender/olvidar, saber/ignorar, entender/confundir, recordar/olvidar, memorizar/olvidar
+amar/odiar, querer/odiar, gustar/disgustar, alabar/criticar, premiar/castigar, ayudar/perjudicar, colaborar/obstaculizar, defender/atacar, proteger/atacar, cuidar/descuidar
+reír/llorar, sonreír/llorar, alegrar/entristecer, animar/desanimar, calmar/alterar, tranquilizar/preocupar, dormir/despertarse, acostarse/levantarse, descansar/trabajar, entrar/salir
+llegar/partir, salir/llegar, quedarse/irse, aparcar/arrancar, encender/apagar, conectar/desconectar, cargar/descargar, llenar/vaciar, mojar/secar, ensuciar/limpiar
+calentar/enfriar, congelar/descongelar, atar/soltar, agarrar/soltar, coger/soltar, tomar/dejar, comprar/vender, alquilar/devolver, importar/exportar
+vestirse/desnudarse, ponerse/quitarse, peinar/despeinar, maquillarse/desmaquillarse, abrocharse/desabrocharse, enchufar/desenchufar, bloquear/desbloquear, activar/desactivar, cubrir/descubrir, tapar/destapar
+# sustantivos
+principio/final, comienzo/fin, inicio/final, entrada/salida, ida/vuelta, llegada/salida, éxito/fracaso, victoria/derrota, triunfo/derrota, ganancia/pérdida
+verdad/mentira, paz/guerra, amor/odio, alegría/tristeza, risa/llanto, salud/enfermedad, vida/muerte, nacimiento/muerte, riqueza/pobreza, luz/oscuridad
+calor/frío, cielo/tierra, norte/sur, izquierda/derecha, ventaja/desventaja, acierto/error, orden/desorden, mañana/tarde, amanecer/anochecer
+frente/espalda, cara/cruz, pregunta/respuesta, ataque/defensa, compra/venta, oferta/demanda, máximo/mínimo, mayoría/minoría, ganador/perdedor, amigo/enemigo
+hombre/mujer, macho/hembra, padre/madre, hijo/hija, rey/reina, cielo/infierno, bien/mal, ángel/demonio, héroe/villano, juventud/vejez
+# adverbios
+aquí/allí, encima/debajo, dentro/fuera, delante/detrás, temprano/tarde, despacio/deprisa, siempre/jamás, todavía/ya
+# antónimos con prefijo negativo sacados del léxico MCR (regla mecánica sobre los adjetivos y verbos frecuentes de UD)
+activo/inactivo, directo/indirecto, debido/indebido, independiente/dependiente, religioso/irreligioso, constitucional/inconstitucional, consciente/inconsciente, operativo/inoperativo, cubierto/descubierto
+favorable/desfavorable, móvil/inmóvil, fiel/infiel, irregular/regular, regular/irregular, digno/indigno, ocupado/desocupado, definido/indefinido, compatible/incompatible, indefinido/definido
+dependiente/independiente, coherente/incoherente, oportuno/inoportuno, infinito/finito, satisfactorio/insatisfactorio, indebido/debido, indiscutible/discutible, infiel/fiel
+aceptable/inaceptable, flexible/inflexible, indirecto/directo, inconsciente/consciente, comprensible/incomprensible, incondicional/condicional, descubierto/cubierto, inolvidable/olvidable
+incompatible/compatible, conocer/desconocer, organizar/desorganizar, confiar/desconfiar, desconocer/conocer, movilizar/desmovilizar, alentar/desalentar
+
+[partes]
+mesa: patas, tablero
+silla: patas, asiento, respaldo
+sofá: cojines, respaldo, brazos, asiento
+cama: colchón, somier, cabecero, patas
+armario: puertas, cajones, estantes, perchas
+estantería: estantes, baldas
+puerta: marco, bisagras, cerradura, pomo, manilla
+ventana: marco, cristal, persiana, alféizar
+habitación: paredes, techo, suelo, puerta, ventana
+cocina: fogones, horno, fregadero, nevera, armarios, encimera
+baño: lavabo, váter, ducha, bañera, espejo
+edificio: plantas, paredes, tejado, ventanas, puertas, escaleras, fachada
+escalera: escalones, barandilla
+jardín: plantas, césped, flores, árboles
+ciudad: barrios, calles, plazas, parques, edificios
+pueblo: calles, casas, plaza, iglesia
+barrio: calles, casas, plazas, edificios
+calle: aceras, calzada, farolas
+montaña: cima, laderas, falda
+río: nacimiento, cauce, orillas, desembocadura
+vehículo: ruedas, motor, asientos, puertas
+avión: alas, motores, cabina, cola, ruedas
+barco: casco, proa, popa, cubierta, mástil
+tren: vagones, locomotora, asientos
+autobús: ruedas, motor, asientos, puertas, volante
+moto: ruedas, motor, manillar, asiento, frenos
+camisa: cuello, mangas, botones, puños
+pantalón: perneras, bolsillos, cintura, cremallera
+chaqueta: mangas, cuello, bolsillos, botones, cremallera
+zapato: suela, cordones, tacón, puntera
+gafas: cristales, montura, patillas
+reloj: esfera, agujas, correa
+teléfono: pantalla, botones, batería, altavoz, micrófono
+móvil: pantalla, batería, cámara, altavoz, micrófono
+televisión: pantalla, altavoces, botones
+lámpara: bombilla, pantalla, cable, interruptor
+paraguas: varillas, tela, mango
+mochila: asas, bolsillos, cremallera
+botella: cuello, tapón, base
+taza: asa
+olla: tapa, asas
+sartén: mango
+cuchillo: hoja, mango, filo
+tijeras: hojas, mango
+lápiz: mina, goma
+bolígrafo: punta, tinta, capuchón
+guitarra: cuerdas, mástil, caja, clavijas
+piano: teclas, pedales, cuerdas, tapa
+caja: tapa, fondo, lados
+periódico: páginas, titulares, noticias, secciones
+carta: remitente, destinatario, saludo, firma
+pierna: muslo, rodilla, pantorrilla, tobillo
+brazo: hombro, codo, muñeca, antebrazo
+pie: dedos, talón, planta, tobillo
+ojo: párpados, pestañas, pupila, iris
+boca: labios, dientes, lengua, encías
+cara: frente, ojos, nariz, boca, mejillas, barbilla
+mamífero: cabeza, patas, cola, pelo
+perro: cabeza, patas, cola, hocico, orejas
+gato: cabeza, patas, cola, bigotes, uñas
+caballo: cabeza, patas, cola, crin, cascos
+insecto: cabeza, tórax, abdomen, patas, antenas
+planta: raíz, tallo, hojas
+fruta: piel, pulpa
+huevo: cáscara, clara, yema
+pan: corteza, miga
+mes: semanas, días
+siglo: años
+década: años
+colegio: aulas, patio, gimnasio, biblioteca
+hospital: habitaciones, quirófanos, urgencias, consultas
+iglesia: altar, campanario, bancos, nave
+castillo: torres, murallas, foso
+fábrica: máquinas, naves, almacén, oficinas
+
+[propiedades]
+persona: pensar; sentir; tener nombre; no tener plumas; no volar
+bebé: llorar; dormir mucho; no hablar todavía; no andar todavía
+anciano: tener muchos años
+animal: tener patas
+mamífero: tener crías vivas; dar de mamar
+reptil: tener sangre fría
+pájaro: cantar; hacer nidos
+insecto: tener antenas
+hongo: no tener hojas; no hacer la fotosíntesis
+seta: crecer en el bosque
+árbol: ser alto; tener madera
+hortaliza: ser comestible
+verdura: ser comestible; ser sana
+alimento: ser comestible
+dulce: tener azúcar; saber dulce
+bebida: beberse; ser líquida
+lácteo: venir de la leche
+fruto seco: ser seco; tener cáscara
+objeto: no estar vivo; no respirar
+herramienta: servir para trabajar
+utensilio: servir para hacer tareas
+instrumento: servir para hacer música; sonar
+recipiente: servir para guardar cosas; tener hueco
+vajilla: servir para comer
+cubierto: servir para comer
+mueble: estar en las casas
+aparato: funcionar con electricidad
+vehículo: servir para transportar; moverse
+coche: tener cuatro ruedas; tener motor; necesitar gasolina
+bicicleta: tener dos ruedas; tener pedales
+moto: tener dos ruedas; tener motor
+avión: volar; tener alas
+barco: flotar; navegar
+tren: ir por las vías
+prenda: servir para vestirse
+calzado: ponerse en los pies
+juguete: servir para jugar
+joya: servir para adornar; ser valiosa
+arma: servir para atacar; ser peligrosa
+documento: tener información
+libro: tener páginas; servir para leer
+medicamento: servir para curar
+objeto de aseo: servir para la higiene
+producto de limpieza: servir para limpiar
+material de oficina: servir para trabajar en la oficina
+instrumento de escritura: servir para escribir
+material: servir para fabricar cosas
+madera: venir de los árboles
+dinero: servir para comprar
+moneda: ser redonda; ser de metal
+lugar: no estar vivo
+edificio: tener paredes; tener puertas
+vivienda: servir para vivir
+habitación: estar dentro de una casa
+tienda: vender cosas
+restaurante: servir comidas
+hospital: atender enfermos
+colegio: servir para estudiar
+biblioteca: tener libros
+museo: tener obras de arte
+estadio: servir para hacer deporte
+paisaje: estar al aire libre
+evento: ocurrir; tener fecha
+fiesta: ser divertida
+deporte: hacer ejercicio; tener reglas
+enfermedad: hacer daño; necesitar cuidados
+emoción: sentirse
+color: verse con los ojos
+idioma: servir para hablar
+asignatura: estudiarse
+actividad: hacerse
+acción: hacerse
+idea: pensarse
+delito: estar prohibido; castigarse
+norma: cumplirse
+tiempo: pasar
+astro: estar en el cielo
+sol: dar luz; dar calor
+ser imaginario: no existir de verdad
+sustancia: ser materia
+fenómeno: ocurrir
+organización: tener miembros
+grupo: tener miembros
+obra artística: tener autor
+canción: tener música; cantarse
+película: verse; tener actores
+unidad de medida: servir para medir
+
+[efectos]
+congelar: congelado
+cocinar: cocinado
+cocer: cocido
+freír: frito
+cansar: cansado
+asustar: asustado
+enfadar: enfadado
+alegrar: contento
+entristecer: triste
+preocupar: preocupado
+dormir: dormido
+matar: muerto
+herir: herido
+curar: curado
+vestir: vestido
+desnudar: desnudo
+atar: atado
+soltar: suelto
+doblar: doblado
+partir: partido
+dividir: dividido
+juntar: junto
+mezclar: mezclado
+cargar: cargado
+descargar: descargado
+bloquear: bloqueado
+
+
+# ======================================================================================================
+# 2.15 · VARIAS CLASES A LA VEZ, ALIAS DE CLASE Y RELACIONES ENTRE CONCEPTOS (función, material, lugar habitual, usuario).
+#        Las relaciones se heredan por la taxonomía (manda la clase más cercana) y se consultan en los dos sentidos.
+# ======================================================================================================
+[taxonomia]
+alimento: comida
+comida: desayuno, almuerzo, cena, merienda, aperitivo, tentempié/m, postre/m
+recipiente: tetera, cafetera, olla, cazo, cacerola, cazuela, puchero, cuenco, bol/m, sopera, ensaladera, fiambrera, plato hondo, regadera, bañera, fregadero, lavabo, cubo de basura/m, papelera, contenedor/m, depósito, cisterna, pecera, jaula, cajón/m, maleta, mochila, bolso, cartera, monedero, estuche/m, neceser/m
+pájaro: loro, paloma
+ave/f: pollo
+herramienta: tijeras/f, cuchillo, llave/f
+material de oficina: tijera, bolígrafo, lápiz/m
+mueble: lámpara de pie/f, espejo
+aparato: reloj/m, despertador/m
+prenda: bufanda, guante, cinturón/m, corbata, gorra
+instrumento: guitarra, piano, violín/m, flauta, tambor/m, trompeta, batería
+
+[sinonimos]
+prenda: ropa, prenda de vestir, vestimenta
+mueble: mobiliario
+vehículo: medio de transporte
+instrumento: instrumento musical
+
+[funcion]
+# clase o concepto: para qué sirve (infinitivos; el primero es el uso principal)
+herramienta: trabajar
+martillo: clavar, golpear
+destornillador: atornillar, desatornillar
+sierra: cortar madera, serrar
+serrucho: cortar madera, serrar
+alicate: sujetar, cortar alambre
+alicates: sujetar, cortar alambre
+taladro: taladrar, hacer agujeros
+llave inglesa: apretar tuercas, aflojar tuercas
+pala: cavar
+rastrillo: recoger hojas
+hacha: cortar leña
+lima: limar
+tijera: cortar
+tijeras: cortar papel, cortar tela, cortar
+tijeras de podar: podar
+regla: medir, trazar líneas
+pincel: pintar
+brocha: pintar
+aguja: coser
+cuerda: atar
+escoba: barrer
+fregona: fregar el suelo
+pegamento: pegar
+clavo: sujetar
+tornillo: sujetar
+pico: cavar
+azada: cavar
+regadera: regar
+manguera: regar
+lija: lijar
+grapadora: grapar
+cúter: cortar papel, cortar cartón
+navaja: cortar
+carretilla: transportar carga
+utensilio: cocinar
+tenedor: pinchar la comida, comer
+cuchillo: cortar
+cuchara: comer sopa, comer
+cucharilla: remover
+sartén: freír
+olla: cocer, cocinar
+cazo: calentar líquidos
+cacerola: cocinar
+colador: colar
+abrelatas: abrir latas
+espátula: dar la vuelta a la comida
+bandeja: llevar cosas
+tetera: preparar té, calentar agua
+cucharón: servir sopa
+rallador: rallar
+pelador: pelar
+sacacorchos: abrir botellas, descorchar
+abrebotellas: abrir botellas
+mortero: machacar
+batidor: batir
+rodillo: amasar
+molde: dar forma
+embudo: trasvasar líquidos
+termo: mantener caliente la bebida
+fiambrera: llevar comida
+escurridor: escurrir
+recipiente: guardar cosas, contener
+vaso: beber
+taza: beber
+copa: beber
+botella: guardar líquidos
+jarra: servir bebidas
+cubo: llevar agua
+caja: guardar cosas
+bolsa: llevar cosas
+tarro: guardar alimentos
+cesta: llevar cosas
+lata: conservar alimentos
+jarrón: poner flores
+florero: poner flores
+maceta: plantar
+hucha: ahorrar dinero
+estuche: guardar lápices
+tupper: guardar comida
+papelera: tirar papeles
+cubo de basura: tirar la basura
+aparato: hacer tareas
+ordenador: trabajar, escribir, navegar por internet
+portátil: trabajar, escribir
+móvil: llamar, enviar mensajes
+teléfono: llamar
+televisor: ver programas
+televisión: ver programas
+lavadora: lavar la ropa
+secadora: secar la ropa
+nevera: conservar alimentos, enfriar
+frigorífico: conservar alimentos, enfriar
+congelador: congelar alimentos
+horno: asar, hornear
+microondas: calentar comida
+radio: escuchar música, escuchar noticias
+impresora: imprimir
+aspiradora: aspirar, limpiar el suelo
+secador: secar el pelo
+lavavajillas: lavar los platos
+tostadora: tostar pan
+batidora: batir, triturar
+cámara: hacer fotos
+lámpara: dar luz, iluminar
+flexo: dar luz
+bombilla: dar luz
+linterna: dar luz, iluminar
+ventilador: dar aire, refrescar
+calefactor: calentar
+estufa: calentar
+radiador: calentar
+cafetera: hacer café
+auricular: escuchar
+auriculares: escuchar música
+altavoz: escuchar música
+cargador: cargar la batería
+calculadora: calcular, hacer cuentas
+despertador: despertar
+reloj: saber la hora
+termómetro: medir la temperatura
+báscula: pesar
+plancha: planchar la ropa
+aire acondicionado: enfriar
+vitrocerámica: cocinar
+exprimidor: hacer zumo, exprimir
+hervidor: hervir agua
+escáner: escanear
+mando: cambiar de canal
+timbre: llamar a la puerta
+alarma: avisar
+mueble: amueblar
+silla: sentarse
+sillón: sentarse
+sofá: sentarse, descansar
+taburete: sentarse
+banco: sentarse
+butaca: sentarse
+mesa: comer, trabajar, apoyar cosas
+escritorio: trabajar, estudiar
+cama: dormir, descansar
+cuna: dormir
+litera: dormir
+hamaca: descansar
+armario: guardar ropa
+cómoda: guardar ropa
+estantería: colocar libros
+perchero: colgar abrigos
+zapatero: guardar zapatos
+vitrina: exponer cosas
+mesilla: apoyar cosas
+colchón: dormir
+espejo: mirarse
+prenda: vestirse
+abrigo: abrigarse
+bufanda: abrigar el cuello
+guante: abrigar las manos
+gorro: abrigar la cabeza
+gorra: proteger del sol
+bañador: bañarse
+pijama: dormir
+calzado: calzarse, andar
+zapatilla: hacer deporte, andar
+bota: andar
+paraguas: protegerse de la lluvia
+sombrilla: protegerse del sol
+gafas: ver bien
+gafas de sol: protegerse del sol
+mochila: llevar cosas
+bolso: llevar cosas
+maleta: llevar ropa, viajar
+cartera: llevar dinero
+monedero: llevar monedas
+llave: abrir puertas, cerrar puertas
+cinturón: sujetar el pantalón
+mascarilla: protegerse
+bastón: apoyarse
+abanico: darse aire
+objeto de aseo: asearse
+cepillo de dientes: lavarse los dientes
+pasta de dientes: lavarse los dientes
+jabón: lavarse
+champú: lavarse el pelo
+gel: ducharse
+esponja: frotar, lavarse
+peine: peinarse
+cepillo: peinarse, cepillar
+maquinilla: afeitarse
+desodorante: oler bien
+toalla: secarse
+pañuelo: sonarse
+cortaúñas: cortar las uñas
+producto de limpieza: limpiar
+lejía: desinfectar
+detergente: lavar la ropa
+estropajo: fregar
+bayeta: limpiar
+plumero: quitar el polvo
+recogedor: recoger la basura
+instrumento de escritura: escribir
+bolígrafo: escribir
+lápiz: escribir, dibujar
+rotulador: escribir, pintar
+tiza: escribir en la pizarra
+goma de borrar: borrar
+sacapuntas: afilar lápices
+carpeta: guardar papeles
+archivador: guardar papeles
+agenda: apuntar citas
+calendario: saber la fecha
+libreta: apuntar
+cuaderno: apuntar, tomar notas
+clip: sujetar papeles
+celo: pegar
+ropa de casa: vestir la casa
+sábana: cubrir la cama
+manta: abrigarse
+almohada: apoyar la cabeza
+cortina: tapar la ventana
+mantel: cubrir la mesa
+servilleta: limpiarse
+alfombra: cubrir el suelo
+vehículo: transportar
+tractor: arar, trabajar el campo
+grúa: levantar cargas
+excavadora: excavar
+cosechadora: cosechar
+tren: viajar, transportar pasajeros
+taxi: llevar pasajeros
+moto: desplazarse
+furgoneta: transportar mercancías
+hoz: segar
+guadaña: segar
+coche: viajar, desplazarse
+bicicleta: desplazarse, hacer deporte
+ambulancia: llevar enfermos
+camión: transportar mercancías
+autobús: transportar pasajeros
+barco: navegar
+avión: volar, viajar
+instrumento: hacer música, tocar música
+juguete: jugar
+balón: jugar
+pelota: jugar
+libro: leer
+periódico: informarse, leer noticias
+mapa: orientarse
+dinero: comprar, pagar
+medicamento: curar
+arma: atacar, defenderse
+cocina: cocinar
+dormitorio: dormir
+baño: asearse, ducharse
+comedor: comer
+salón: descansar, estar
+despacho: trabajar
+garaje: guardar el coche
+despensa: guardar alimentos
+colegio: estudiar, aprender
+escuela: estudiar, aprender
+hospital: curar enfermos
+tienda: comprar
+supermercado: comprar comida
+restaurante: comer
+biblioteca: leer, estudiar
+farmacia: comprar medicinas
+gimnasio: hacer deporte
+piscina: nadar
+cine: ver películas
+banco: guardar dinero
+hotel: alojarse
+parque: pasear, jugar
+
+[material]
+# de qué suele estar hecho
+mueble: madera
+mesa: madera
+silla: madera
+sofá: tela, cuero
+colchón: espuma, muelles
+espejo: vidrio
+herramienta: metal
+martillo: metal, madera
+cuerda: fibra
+escoba: madera, plástico
+utensilio: metal
+cubierto: metal
+sartén: metal
+olla: metal
+cuchillo: metal
+vajilla: cerámica, porcelana, vidrio
+plato llano: cerámica
+vaso: vidrio, plástico
+taza: cerámica
+copa: vidrio
+botella: vidrio, plástico
+jarra: vidrio, cerámica
+tarro: vidrio
+lata: metal
+caja: cartón, madera
+bolsa: plástico, tela, papel
+cesta: mimbre
+barril: madera
+maceta: barro, plástico
+jarrón: cerámica, vidrio
+prenda: tela
+jersey: lana
+bufanda: lana
+abrigo: lana, tela
+camisa: algodón
+camiseta: algodón
+vaqueros: tela vaquera, algodón
+pantalón: tela
+chaqueta: tela, cuero
+calzado: cuero, goma
+zapato: cuero
+bota: cuero, goma
+zapatilla: tela, goma
+cinturón: cuero
+bolso: cuero, tela
+cartera: cuero
+guante: lana, cuero
+ropa de casa: tela
+sábana: algodón
+manta: lana
+toalla: algodón
+libro: papel
+cuaderno: papel
+periódico: papel
+folio: papel
+carta: papel
+lápiz: madera, grafito
+ventana: vidrio
+puerta: madera
+edificio: ladrillo, cemento
+casa: ladrillo, cemento
+pared: ladrillo
+puente: piedra, hierro, hormigón
+moneda: metal
+billete: papel
+joya: oro, plata
+anillo: oro, plata
+llave: metal
+clavo: metal
+tornillo: metal
+neumático: goma
+rueda: goma, metal
+pan: harina
+queso: leche
+yogur: leche
+mantequilla: leche
+vino: uva
+tortilla: huevo
+papel: madera
+vidrio: arena
+vela: cera
+pelota: goma, cuero
+balón: cuero
+
+[lugar]
+# dónde suele estar o encontrarse
+nevera: cocina
+frigorífico: cocina
+horno: cocina
+microondas: cocina
+lavavajillas: cocina
+fregadero: cocina
+vitrocerámica: cocina
+tostadora: cocina
+cafetera: cocina
+utensilio: cocina
+vajilla: cocina
+cubierto: cocina
+sartén: cocina
+olla: cocina
+cama: dormitorio
+armario: dormitorio
+mesilla: dormitorio
+almohada: dormitorio, cama
+colchón: cama
+sábana: cama
+despertador: dormitorio
+cuna: dormitorio
+sofá: salón
+sillón: salón
+televisor: salón
+televisión: salón
+alfombra: salón
+objeto de aseo: baño
+lavabo: baño
+ducha: baño
+bañera: baño
+váter: baño
+toalla: baño
+escritorio: despacho
+ordenador: despacho, oficina
+impresora: oficina, despacho
+material de oficina: oficina
+lavadora: lavadero, cocina
+coche: garaje, calle
+bicicleta: garaje
+herramienta: taller, caja de herramientas
+mesa: comedor, cocina
+silla: comedor, cocina
+libro: biblioteca, estantería
+medicamento: farmacia, botiquín
+pan: panadería
+carne: carnicería
+pescado: pescadería
+fruta: frutería
+flor: jardín
+árbol: bosque, jardín, parque
+pez: agua, mar, río
+barco: mar, puerto
+avión: aeropuerto, cielo
+tren: estación, vía
+alumno: colegio, clase
+profesor: colegio, clase
+médico: hospital, consulta
+enfermero: hospital
+paciente: hospital
+cocinero: cocina, restaurante
+camarero: restaurante, bar
+pizarra: clase
+pupitre: clase
+dinero: banco, cartera
+cuadro: pared, museo
+columpio: parque
+tobogán: parque
+semáforo: calle
+farola: calle
+arena: playa, desierto
+prenda: armario
+calzado: zapatero
+alimento: cocina, nevera, despensa
+planta: jardín, maceta
+
+[usuario]
+# quién lo usa típicamente
+martillo: carpintero, albañil
+sierra: carpintero
+serrucho: carpintero
+taladro: carpintero, albañil
+destornillador: mecánico, electricista
+llave inglesa: mecánico, fontanero
+pala: albañil, jardinero
+rastrillo: jardinero
+regadera: jardinero
+tijeras de podar: jardinero
+pincel: pintor
+brocha: pintor
+aguja: sastre, costurero
+tijeras: peluquero, sastre
+peine: peluquero
+secador: peluquero
+sartén: cocinero
+olla: cocinero
+cuchillo: cocinero, carnicero
+bandeja: camarero
+manguera: bombero, jardinero
+ambulancia: médico, enfermero
+termómetro: médico, enfermero
+tiza: profesor, maestro
+pizarra: profesor, maestro
+cámara: fotógrafo
+guitarra: músico
+piano: músico
+instrumento: músico
+ordenador: programador, informático
+tractor: agricultor
+azada: agricultor
+red: pescador
+caña de pescar: pescador
+taxi: taxista
+camión: camionero
+avión: piloto
+autobús: conductor
+balón: futbolista
+raqueta: tenista
+bicicleta: ciclista
+libro: lector, estudiante
+juguete: niño
+biberón: bebé
+chupete: bebé
+bastón: anciano
+escoba: limpiador
+fregona: limpiador
+horno: panadero, cocinero
+arma: soldado, policía
+pluma: escritor
+micrófono: cantante
+
+[propiedades]
+# lo que hace cada oficio (2.15: las preguntas de «¿quién…?» ya separan lo de fábrica de lo dicho por la persona)
+profesional: trabajar
+médico: curar enfermos
+enfermero: cuidar enfermos
+profesor: enseñar
+maestro: enseñar
+cocinero: cocinar
+camarero: servir mesas
+bombero: apagar fuegos
+policía: proteger a la gente
+piloto: pilotar aviones
+conductor: conducir
+taxista: conducir
+camionero: conducir
+chófer: conducir
+nadador: nadar
+ciclista: montar en bicicleta
+futbolista: jugar al fútbol
+traductor: traducir
+programador: programar
+actor: actuar
+bailarín: bailar
+limpiador: limpiar
+cartero: repartir cartas
+juez: juzgar
+abogado: defender a sus clientes
+arquitecto: diseñar edificios
+panadero: hacer pan
+científico: investigar
+cantante: cantar
+pintor: pintar
+escritor: escribir
+músico: tocar música
+estudiante: estudiar
+alumno: estudiar
+jardinero: cuidar jardines
+carpintero: trabajar la madera
+peluquero: cortar el pelo
+agricultor: cultivar la tierra
+pescador: pescar
+fontanero: arreglar tuberías
+mecánico: arreglar coches
+albañil: construir casas
+veterinario: curar animales
+dentista: cuidar los dientes
+periodista: informar
+fotógrafo: hacer fotos
+deportista: hacer deporte
+jugador: jugar
+niño: jugar
+
+# ======================================================================================================
+# 2.16 · TAMAÑO TÍPICO de un concepto, en una escala de 1 (diminuto) a 10 (inmenso). Se hereda por la taxonomía; manda la clase más cercana.
+#        Sirve para comparar por tamaño o por peso sin que nadie lo diga («¿qué es más grande, un elefante o un ratón?»).
+# ======================================================================================================
+[tamano]
+insecto: 1
+hormiga: 1
+mosca: 1
+aguja: 1
+joya: 1
+ave: 2
+pájaro: 2
+ratón: 2
+rana: 2
+pluma: 2
+llave: 2
+moneda: 2
+huevo: 2
+lápiz: 2
+flor: 2
+cubierto: 2
+utensilio: 2
+vajilla: 2
+instrumento de escritura: 2
+objeto de aseo: 2
+alimento: 2
+pez: 3
+reptil: 3
+gato: 3
+conejo: 3
+gallina: 3
+objeto: 3
+libro: 3
+fruta: 3
+verdura: 3
+planta: 3
+herramienta: 3
+recipiente: 3
+prenda: 3
+calzado: 3
+juguete: 3
+balón: 3
+animal: 4
+perro: 4
+oveja: 4
+silla: 4
+mochila: 4
+aparato: 4
+instrumento: 4
+mamífero: 5
+persona: 5
+mueble: 5
+cerdo: 5
+bicicleta: 5
+nevera: 5
+puerta: 5
+caballo: 6
+vaca: 6
+oso: 6
+león: 6
+tigre: 6
+moto: 6
+piano: 6
+vehículo: 7
+coche: 7
+jirafa: 7
+árbol: 8
+elefante: 8
+camión: 8
+autobús: 8
+casa: 8
+tiburón: 6
+delfín: 6
+ballena: 9
+avión: 9
+barco: 9
+tren: 9
+edificio: 9
+lugar: 10
+astro: 10
+
+# ---------------------------------------------------------------- LCM 2.17: iniciativa
+# [huecos]  «verbo» o «verbo clase»: hueco | pregunta       lo que una persona querría saber cuando le cuentan eso y falta el dato.
+#           La clase se hereda («tener animal» vale para un gato). «familiar» = cualquier parentesco; huecos: destino, con, causa, nombre, cual, quien.
+[huecos]
+ir viaje: destino | ¿Adónde vas?
+ir vacaciones: destino | ¿Adónde vas?
+ir vacacion: destino | ¿Adónde vas?
+ir puente: destino | ¿Adónde vas?
+ir escapada: destino | ¿Adónde vas?
+ir excursion: destino | ¿Adónde vas?
+viajar: destino | ¿Adónde?
+mudar: destino | ¿Adónde te mudas?
+discutir: causa | ¿Qué pasó?
+pelear: causa | ¿Qué pasó?
+enfadar: causa | ¿Qué pasó?
+reñir: causa | ¿Qué pasó?
+conocer alguien: quien | ¿Quién es? ¿Cómo se llama?
+tener animal: nombre | ¿Cómo se llama?
+adoptar animal: nombre | ¿Cómo se llama?
+comprar animal: nombre | ¿Cómo se llama?
+tener familiar: nombre | ¿Cómo se llama?
+tener novio: nombre | ¿Cómo se llama?
+tener amigo: nombre | ¿Cómo se llama?
+tener comida: con | ¿Con quién?
+tener quedada: con | ¿Con quién?
+tener pareja: nombre | ¿Cómo se llama?
+tener marido: nombre | ¿Cómo se llama?
+tener mujer: nombre | ¿Cómo se llama?
+tener mascota: nombre | ¿Cómo se llama?
+tener cena: con | ¿Con quién?
+tener cita: con | ¿Con quién?
+tener fiesta: quien | ¿Qué se celebra?
+tener boda: quien | ¿Quién se casa?
+ir boda: quien | ¿Quién se casa?
+comprar libro: cual | ¿Qué libro es?
+leer libro: cual | ¿Qué libro es?
+ver pelicula: cual | ¿Qué película es?
+ver serie: cual | ¿Qué serie es?
+tener examen: resultado | ¿Qué tal te fue?
+tener entrevista: resultado | ¿Qué tal te fue?
+tener prueba: resultado | ¿Qué tal te fue?
+tener partido: resultado | ¿Qué tal fue?
+tener reunion: resultado | ¿Qué tal fue?
+ir medico: causa | ¿Te encuentras bien?
+ir hospital: causa | ¿Ha pasado algo?
+
+# [tono]  cómo se recibe: verbos, «verbo clase», adjetivos o clases (se heredan)
+[tono]
+logro: recibir beca, recibir premio, recibir ascenso, recibir plaza, ascender, aprobar, graduar, licenciar, casar, tener bebe, tener hijo, ganar loteria, ganar premio, ganar partido, ganar concurso, ganar carrera, contratar, sacar carne, conseguir trabajo, conseguir beca, conseguir plaza, encontrar trabajo, embarazado, sacar sobresaliente, sacar matricula, sacar diez
+bueno: curar, recuperar, premio, regalo
+felicidades: cumplir año, cumpleaños
+malo: torcer, fracturar, quemar, ingresado, hospitalizado, lesionado, grave, recibir multa, recibir sancion, multa, esguince, suspender, despedir, echar, romper, estropear, averiar, enfermo, doler, robar, accidente, lesionar, atropellar, multar, enfermedad, lesion, averia, perder trabajo, perder partido, perder cartera, perder llave, perder movil, ingresar, catear
+duelo: morir, fallecer, entierro, funeral
+reto: examen, entrevista, operacion, operar, oposicion, competicion, juicio, audicion, examinar, presentar examen, final, prueba
+
+# [acciones]  evento: acción que es. «Tengo una cena con Ana» y «ceno con Ana» son el mismo hecho.
+[acciones]
+cena: cenar
+comida: comer
+desayuno: desayunar
+merienda: merendar
+reunion: reunir
+viaje: viajar
+partido: jugar
+entrenamiento: entrenar
+ensayo: ensayar
+examen: examinar
+paseo: pasear
+clase: estudiar
+

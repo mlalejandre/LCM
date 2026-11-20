@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 50,
+  "ok": 41,
+  "acierto": 82.0,
+  "falsas": 0,
+  "tasa_falsas": 0.0,
+  "abst_indebida": 9,
+  "error": 0,
+  "por_cat": {
+   "espacio": {
+    "n": 10,
+    "acierto": 70.0,
+    "falsas": 0
+   },
+   "origen_lugar": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "papeles": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 0
+   },
+   "repaso": {
+    "n": 10,
+    "acierto": 70.0,
+    "falsas": 0
+   },
+   "tiempo_tema_imagen": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 0,
+   "q": "hola, me llamo Tomás",
+   "crit": "tomas;!no lo he entendido",
+   "r": "Encantado, Tomás.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 1,
+   "q": "soy de Zamora pero vivo en Valencia desde hace tres años",
+   "crit": "zamora|valencia;!no lo he entendido",
+   "r": "Entendido: eres de Zamora; vives en Valencia desde hace tres años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 2,
+   "q": "¿de dónde soy?",
+   "crit": "zamora;!valencia",
+   "r": "Eres de Zamora.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 3,
+   "q": "¿dónde vivo?",
+   "crit": "valencia;!zamora",
+   "r": "Vives en Valencia desde hace tres años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 4,
+   "q": "¿desde cuándo vivo en Valencia?",
+   "crit": "tres|3",
+   "r": "Vives en Valencia desde hace tres años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 5,
+   "q": "trabajo en un taller de bicicletas con mi primo Luis",
+   "crit": "taller;!no lo he entendido",
+   "r": "Entendido: trabajas en un taller de bicicletas con tu primo Luis.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 6,
+   "q": "¿con quién trabajo?",
+   "crit": "luis|primo",
+   "r": "Trabajas en un taller de bicicletas con tu primo Luis.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 7,
+   "q": "¿dónde trabajo?",
+   "crit": "taller",
+   "r": "Trabajas en un taller de bicicletas con tu primo Luis.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 8,
+   "q": "voy al taller en bici",
+   "crit": "bici;!no lo he entendido",
+   "r": "Entendido: vas al taller en bici.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-a",
+   "cat": "origen_lugar",
+   "i": 9,
+   "q": "¿cómo voy al taller?",
+   "crit": "bici",
+   "r": "Vas al taller en bici.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 0,
+   "q": "en mi habitación hay una mesa y encima de la mesa tengo un flexo",
+   "crit": "flexo|mesa;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En mi habitación hay una mesa y encima de la mesa tengo un flexo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 1,
+   "q": "¿dónde está el flexo?",
+   "crit": "mesa",
+   "r": "No lo tengo del todo claro, pero me dijiste: «En mi habitación hay una mesa y encima de la mesa tengo un flexo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 2,
+   "q": "¿qué hay encima de la mesa?",
+   "crit": "flexo",
+   "r": "No lo tengo del todo claro, pero me dijiste: «En mi habitación hay una mesa y encima de la mesa tengo un flexo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 3,
+   "q": "mi mochila está debajo de la cama",
+   "crit": "mochila;!no lo he entendido",
+   "r": "Entendido: tu mochila está debajo de la cama.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 4,
+   "q": "¿dónde está mi mochila?",
+   "crit": "cama",
+   "r": "Tu mochila está debajo de la cama.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 5,
+   "q": "¿qué hay debajo de la cama?",
+   "crit": "mochila",
+   "r": "Tu mochila está debajo de la cama.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 6,
+   "q": "¿la cama está encima de la mochila?",
+   "crit": "^si",
+   "r": "Sí: lo deduzco porque tu mochila está debajo de la cama.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 7,
+   "q": "la estantería está al lado de la ventana",
+   "crit": "estanteria;!no lo he entendido",
+   "r": "Entendido: la estantería está al lado de la ventana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 8,
+   "q": "¿qué hay al lado de la ventana?",
+   "crit": "estanteria",
+   "r": "La estantería está al lado de la ventana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-b",
+   "cat": "espacio",
+   "i": 9,
+   "q": "¿la ventana está al lado de la estantería?",
+   "crit": "^si",
+   "r": "Sí: lo deduzco porque la estantería está al lado de la ventana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 0,
+   "q": "estoy cansado por el trabajo",
+   "crit": "cansado;!no lo he entendido",
+   "r": "Entendido: estás cansado por el trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 1,
+   "q": "¿por qué estoy cansado?",
+   "crit": "trabajo",
+   "r": "Por lo que me dijiste, por el trabajo: estás cansado por el trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 2,
+   "q": "he comprado un regalo para mi madre",
+   "crit": "regalo;!no lo he entendido",
+   "r": "Entendido: compraste un regalo para tu madre.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 3,
+   "q": "¿para quién es el regalo?",
+   "crit": "madre",
+   "r": "Compraste un regalo para tu madre.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 4,
+   "q": "ahorro para un viaje a Lisboa",
+   "crit": "viaje|lisboa;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Ahorro para un viaje a Lisboa».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 5,
+   "q": "¿para qué ahorro?",
+   "crit": "viaje",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Ahorro para un viaje a Lisboa».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 6,
+   "q": "arreglo las ruedas con una llave inglesa",
+   "crit": "llave;!no lo he entendido",
+   "r": "Entendido: arreglas las ruedas con una llave inglesa.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 7,
+   "q": "¿con qué arreglo las ruedas?",
+   "crit": "llave",
+   "r": "Arreglas las ruedas con una llave inglesa.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 8,
+   "q": "Luis trabaja con mucho cuidado",
+   "crit": "cuidado;!no lo he entendido",
+   "r": "Entendido: Luis trabaja con mucho cuidado.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-c",
+   "cat": "papeles",
+   "i": 9,
+   "q": "¿cómo trabaja Luis?",
+   "crit": "cuidado",
+   "r": "Luis trabaja con mucho cuidado.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 0,
+   "q": "el taller abre de nueve a dos",
+   "crit": "nueve|9;!no lo he entendido",
+   "r": "Entendido: el taller abre de nueve a dos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 1,
+   "q": "¿hasta qué hora abre el taller?",
+   "crit": "dos|2",
+   "r": "El taller abre de nueve a dos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 2,
+   "q": "ayer estuve en el gimnasio durante dos horas",
+   "crit": "gimnasio;!no lo he entendido",
+   "r": "Entendido: estuviste en el gimnasio durante dos horas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 3,
+   "q": "¿cuánto tiempo estuve en el gimnasio?",
+   "crit": "dos|2",
+   "r": "Estuviste en el gimnasio durante dos horas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 4,
+   "q": "antes de la cena siempre llamo a mi madre",
+   "crit": "madre|cena;!no lo he entendido",
+   "r": "Entendido: llamas a tu madre antes de la cena siempre.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 5,
+   "q": "¿cuándo llamo a mi madre?",
+   "crit": "antes;cena",
+   "r": "Llamas a tu madre antes de la cena siempre.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 6,
+   "q": "mi primo y yo hablamos mucho de ciclismo",
+   "crit": "ciclismo;!no lo he entendido",
+   "r": "Entendido: Luis y tú hablan de ciclismo mucho.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 7,
+   "q": "¿de qué hablamos mi primo y yo?",
+   "crit": "ciclismo",
+   "r": "No lo sé. No conozco «primo»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 8,
+   "q": "[IMG foto.png] en este dibujo, ¿qué figura está encima?",
+   "crit": "estrella",
+   "r": "La estrella amarilla está arriba.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-d",
+   "cat": "tiempo_tema_imagen",
+   "i": 9,
+   "q": "¿y qué figura está debajo?",
+   "crit": "circulo",
+   "r": "El círculo azul está abajo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 0,
+   "q": "¿de dónde soy?",
+   "crit": "zamora",
+   "r": "Eres de Zamora.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 1,
+   "q": "¿con qué arreglo las ruedas?",
+   "crit": "llave",
+   "r": "Arreglas las ruedas con una llave inglesa.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 2,
+   "q": "¿qué hay debajo de la cama?",
+   "crit": "mochila",
+   "r": "No sé a qué figura te refieres. Veo dos figuras: una estrella amarilla arriba y un círculo azul abajo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 3,
+   "q": "¿dónde está la estantería?",
+   "crit": "ventana",
+   "r": "La estantería está al lado de la ventana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 4,
+   "q": "¿para qué ahorro?",
+   "crit": "viaje",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Ahorro para un viaje a Lisboa».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 5,
+   "q": "¿con quién viajo a Lisboa?",
+   "crit": "ABST",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Ahorro para un viaje a Lisboa».",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 6,
+   "q": "¿qué hay encima del flexo?",
+   "crit": "ABST",
+   "r": "No lo tengo del todo claro, pero me dijiste: «En mi habitación hay una mesa y encima de la mesa tengo un flexo».",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 7,
+   "q": "¿por qué está cansado Luis?",
+   "crit": "ABST",
+   "r": "No lo sé: no me consta eso.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 8,
+   "q": "tengo una mesa de madera en el salón",
+   "crit": "madera|mesa;!no lo he entendido",
+   "r": "Entendido: tienes una mesa de madera en el salón.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50e-e",
+   "cat": "repaso",
+   "i": 9,
+   "q": "¿de qué es la mesa del salón?",
+   "crit": "madera",
+   "r": "No lo sé: no me has dicho cuál es la mesa del salón.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

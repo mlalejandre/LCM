@@ -1,0 +1,404 @@
+{
+ "resumen": {
+  "n": 41,
+  "ok": 35,
+  "acierto": 85.37,
+  "falsas": 1,
+  "tasa_falsas": 2.44,
+  "abst_indebida": 5,
+  "error": 0,
+  "por_cat": {
+   "listas": {
+    "n": 15,
+    "acierto": 86.7,
+    "falsas": 0
+   },
+   "ni_dos_puntos": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 0
+   },
+   "sujetos_yo": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "verbos_adjetivos": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 1
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 1,
+   "q": "mi padre, mi madre y yo comemos juntos los domingos",
+   "crit": "domingo*|comemos|com*;!no lo he entendido",
+   "r": "Entendido: tu padre, tu madre y tú comen juntos los domingos.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 2,
+   "q": "¿mi madre come los domingos?",
+   "crit": "^si",
+   "r": "Sí, tu madre come juntos los domingos.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 3,
+   "q": "¿quién come los domingos?",
+   "crit": "padre;madre",
+   "r": "Tu padre, tu madre y tú comen juntos los domingos.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 4,
+   "q": "Lucía, Marcos, Elena y yo trabajamos en la misma oficina",
+   "crit": "oficina;!no lo he entendido",
+   "r": "Entendido: Lucía, Marcos, Elena y tú trabajan en la misma oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 5,
+   "q": "¿dónde trabaja Elena?",
+   "crit": "oficina",
+   "r": "Elena trabaja en la misma oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 6,
+   "q": "¿Marcos trabaja en la oficina?",
+   "crit": "^si",
+   "r": "Sí, Marcos trabaja en la misma oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-suj",
+   "cat": "sujetos_yo",
+   "i": 7,
+   "q": "¿dónde trabajo?",
+   "crit": "oficina",
+   "r": "Trabajas en la misma oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 0,
+   "q": "buenas",
+   "crit": "hola|buenas",
+   "r": "¡Buenas! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 1,
+   "q": "he vivido en Toledo, Cuenca y Ávila",
+   "crit": "toledo|cuenca|avila;!no lo he entendido",
+   "r": "Entendido: viviste en Toledo, Cuenca y Ávila.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 2,
+   "q": "¿he vivido en Cuenca?",
+   "crit": "^si",
+   "r": "Sí, viviste en Toledo, Cuenca y Ávila.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 3,
+   "q": "¿dónde he vivido?",
+   "crit": "toledo;cuenca;avila",
+   "r": "Viviste en Toledo, Cuenca y Ávila.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 4,
+   "q": "en mi barrio hay una farmacia, dos bares y un mercado",
+   "crit": "farmacia|bares|mercado;!no lo he entendido",
+   "r": "Entendido: en tu barrio hay una farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 5,
+   "q": "¿hay un mercado en mi barrio?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que viviste en Toledo, Cuenca y Ávila.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 6,
+   "q": "¿cuántos bares hay en mi barrio?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 7,
+   "q": "compro la fruta en el mercado, el pan en la panadería y la carne en la carnicería",
+   "crit": "fruta|pan|carne;!no lo he entendido",
+   "r": "Entendido: compras la fruta en el mercado; compras el pan en la panadería; compras la carne en la carnicería.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-listas",
+   "cat": "listas",
+   "i": 8,
+   "q": "¿dónde compro el pan?",
+   "crit": "panaderia",
+   "r": "Compras el pan en la panadería.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 1,
+   "q": "mi abuelo es alto, delgado y muy simpático",
+   "crit": "alto|delgado|simpatico;!no lo he entendido",
+   "r": "Entendido: tu abuelo es alto; tu abuelo es delgado; tu abuelo es muy simpático.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 2,
+   "q": "¿mi abuelo es delgado?",
+   "crit": "^si",
+   "r": "Sí, tu abuelo es delgado.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 3,
+   "q": "¿mi abuelo es bajo?",
+   "crit": "^no",
+   "r": "No, tu abuelo es alto.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 4,
+   "q": "Teresa estudia, trabaja y cuida de su madre",
+   "crit": "estudia|trabaja|cuida;!no lo he entendido",
+   "r": "Entendido: Teresa estudiar.",
+   "v": "MAL"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 5,
+   "q": "¿Teresa trabaja?",
+   "crit": "^si",
+   "r": "No sé quién es Teresa: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 6,
+   "q": "mi tía es abogada y mi tío también",
+   "crit": "abogad*;!no lo he entendido",
+   "r": "Entendido: tu tía es abogada; tu tío es abogado.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 7,
+   "q": "¿a qué se dedica mi tío?",
+   "crit": "abogado",
+   "r": "Tu tío es abogado.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 8,
+   "q": "mi primo no come carne y mi prima tampoco",
+   "crit": "carne;!no lo he entendido",
+   "r": "Entendido: tu primo no come carne; tu prima no come carne.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-pred",
+   "cat": "verbos_adjetivos",
+   "i": 9,
+   "q": "¿mi prima come carne?",
+   "crit": "^no",
+   "r": "No, tu prima no come carne.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 1,
+   "q": "tengo cuatro gatos: Nube, Tizón, Canela y Rayo",
+   "crit": "nube|tizon|canela|rayo;!no lo he entendido",
+   "r": "Entendido: tienes cuatro gatos; tus gatos se llaman Nube, Tizón, Canela y Rayo.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 2,
+   "q": "¿cuántos gatos tengo?",
+   "crit": "cuatro|4",
+   "r": "Tienes cuatro gatos.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 3,
+   "q": "¿Canela es mi gata?",
+   "crit": "^si",
+   "r": "Sí, Canela es tu gata.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 4,
+   "q": "ni mi hermano ni mi hermana ni yo sabemos nadar",
+   "crit": "nadar;!no lo he entendido",
+   "r": "Entendido: tu hermano no sabe nadar; tu hermana no sabe nadar; no sabes nadar.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 5,
+   "q": "¿mi hermana sabe nadar?",
+   "crit": "^no",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 6,
+   "q": "¿sé nadar?",
+   "crit": "^no",
+   "r": "No, no sabes nadar.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-ni",
+   "cat": "ni_dos_puntos",
+   "i": 7,
+   "q": "¿mi hermano sabe nadar?",
+   "crit": "^no",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 1,
+   "q": "me gustan el cine, el teatro y la música",
+   "crit": "cine|teatro|musica;!no lo he entendido",
+   "r": "Entendido: te gustan el cine, el teatro y la música.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 2,
+   "q": "¿me gusta el teatro?",
+   "crit": "^si",
+   "r": "Sí, te gusta el teatro.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 3,
+   "q": "¿qué me gusta?",
+   "crit": "cine;teatro;musica",
+   "r": "Te gustan el cine, el teatro y la música.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 4,
+   "q": "hoy he ido al banco, a correos y al médico",
+   "crit": "banco|correos|medico;!no lo he entendido",
+   "r": "Entendido: fuiste al banco, a correos y al médico hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "c12-varios",
+   "cat": "listas",
+   "i": 5,
+   "q": "¿he ido al médico hoy?",
+   "crit": "^si",
+   "r": "Sí, fuiste al banco, a correos y al médico hoy.",
+   "v": "OK"
+  }
+ ]
+}

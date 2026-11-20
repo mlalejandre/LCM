@@ -1,0 +1,12 @@
+{
+ "fecha": "2026-11-18",
+ "evaluador": "estricto (2.4): una abstencion no aprueba aunque mencione la palabra esperada; ambas versiones medidas con el",
+ "examen_ciego_5_charla_larga": {"n": 134, "nota": "escrito con la 2.3 congelada antes de mirar fallos; dos pasadas, solo agregados",
+   "lcm23": {"acierto": 89.55, "falsas_pct": 2.24, "acierto_evaluador_anterior": 91.04}, "lcm24": {"acierto": 94.03, "falsas_pct": 0.75}},
+ "examen_ciego_2": {"n": 301, "lcm23": {"acierto": 92.69, "falsas_pct": 2.99}, "lcm24": {"acierto": 93.02, "falsas_pct": 2.99}},
+ "examen_ciego_4_ahora_tanda11": {"n": 60, "ciego_lcm23": {"acierto": 90.0, "falsas_pct": 3.33}, "lcm24_como_tanda": {"acierto": 100.0}},
+ "tanda12_charla_larga": {"n": 72, "primer_intento": {"acierto": 77.78, "falsas": 5, "evaluador": "anterior"}, "lcm24": {"acierto": 100.0}},
+ "banco_generado": {"dev": {"lcm23": 100.0, "lcm24": 100.0}, "validacion": {"n": 12331, "lcm23": {"acierto": 98.08, "falsas_pct": 0.27}, "lcm24": {"acierto": 98.49, "falsas_pct": 0.27}}},
+ "examenes_del_autor": {"n": 703, "lcm23": 87.34, "lcm24": 87.48},
+ "tandas_1_a_13": {"n": 1359, "lcm24": 100.0}
+}

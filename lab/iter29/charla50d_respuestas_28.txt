@@ -1,0 +1,100 @@
+[OK] > buenos días
+    ¡Buenos días! ¿En qué puedo ayudarte?
+[OK] > me llamo Begoña y soy farmacéutica
+    Encantado, Begoña. Entendido: eres farmacéutica.
+[-] > trabajo en una farmacia del barrio, estoy cansada, hoy abrimos a las ocho
+    Entendido: trabajas en una farmacia del barrio; estás cansada y abrima a las ocho hoy.
+[MAL] > ¿a qué me dedico?
+    Trabajas en una farmacia del barrio.
+[ABST_INDEBIDA] > ¿a qué hora abrimos hoy?
+    No lo sé. De ti sé que te llamas Begoña y eres farmacéutica.
+[OK] > mi jefa, que es la dueña, se llama Pilar
+    Entendido: tu jefa es la dueña; dueña se llama Pilar.
+[ABST_INDEBIDA] > ¿cómo se llama mi jefa?
+    No lo sé.
+[OK] > ¿qué es Pilar?
+    Pilar es una dueña.
+[MAL] > el jueves es mi cumpleaños
+    Entendido: Pilar es tu cumpleaños.
+[ABST_INDEBIDA] > ¿cuándo es mi cumpleaños?
+    No lo sé. De Pilar sé que es tu cumpleaños.
+[ABST_INDEBIDA] > vivo con mi pareja y dos gatos, Lupe y Nube
+    Entendido: vives con tu pareja y dos gatos. No tengo claro de quién hablas. ¿A quién te refieres?
+[ABST_INDEBIDA] > ¿cuántos gatos tengo?
+    No lo sé: no me has dicho cuántos gatos tienes. De ti sé que te llamas Begoña y eres farmacéutica.
+[ABST_INDEBIDA] > ¿cómo se llaman mis gatos?
+    No lo sé.
+[-] > Lupe es negra y Nube blanca
+    Entendido: Lupe es negro; Nube es blanco.
+[MAL] > ¿de qué color es Nube?
+    Nube es blanco.
+[OK] > a Nube le encanta dormir en el sofá
+    Entendido: a Nube le encanta dormir en el sofá.
+[OK] > ¿qué le encanta a Nube?
+    A Nube le encanta dormir en el sofá.
+[MAL] > mi pareja se llama Íñigo y es bombero
+    Entendido: tu pareja se llama Íñigo; Íñigo es bombera.
+[MAL] > ¿a qué se dedica Íñigo?
+    Íñigo es bombera.
+[OK] > ¿Íñigo es mi pareja?
+    Sí, Íñigo es tu pareja.
+[OK] > a Íñigo le duele el hombro desde el último incendio
+    Entendido: A Íñigo le duele el hombro desde el último incendio.
+[ABST_INDEBIDA] > ¿qué le duele a Íñigo?
+    No lo sé: no me has dicho qué le duele a Íñigo.
+[OK] > mañana va al fisioterapeuta
+    Entendido: Íñigo va al fisioterapeuta mañana.
+[OK] > ¿adónde va Íñigo mañana?
+    Íñigo va al fisioterapeuta mañana.
+[-] > se le ha olvidado la tarjeta sanitaria en casa
+    Entendido: Íñigo se olvidó la tarjeta sanitaria en casa.
+[OK] > yo le llevaré la tarjeta
+    Entendido: llevarás la tarjeta a Íñigo.
+[OK] > ¿quién le llevará la tarjeta?
+    Llevarás la tarjeta a Íñigo.
+[-] > el fisio le ha dicho que no coja peso
+    Entendido: el fisio dice que no cojas peso. Lo apunto como algo que dice él, no como un hecho.
+[OK] > ¿qué le ha dicho el fisio?
+    El fisio dice que no cojas peso.
+[OK] > ¿el hombro es una parte del cuerpo?
+    Eso no me consta; solo sé Un ojo es parte del cuerpo; Una mano es parte del cuerpo; Un pie es parte del cuerpo.
+[OK] > estamos pensando en comprar un sofá nuevo
+    Entendido: piensas en comprar un sofá nuevo.
+[MAL] > [IMG foto.png] nos gusta este color
+    Entendido: te gusta este color.
+[MAL] > ¿qué color nos gusta?
+    Te gusta este color.
+[-] > el viejo es marrón y está roto
+    Entendido: el viejo es marrón; el viejo está roto.
+[OK] > ¿de qué color es el sofá viejo?
+    El viejo es marron.
+[OK] > lo compraremos en una tienda del centro
+    Entendido: comprarás Nube en una tienda del centro.
+[ABST_INDEBIDA] > ¿dónde compraremos el sofá?
+    No lo sé: no me has dicho dónde compras. De ti sé que te llamas Begoña y eres farmacéutica.
+[MAL] > el sábado es el día de las rebajas
+    Entendido: Nube es el día de la rebaja.
+[ABST_INDEBIDA] > ¿cuándo son las rebajas?
+    No lo sé.
+[OK] > ¿un sofá es un mueble?
+    Sí, un sofá es un mueble.
+[OK] > ¿cómo me llamo?
+    Te llamas Begoña.
+[ABST_INDEBIDA] > ¿cuántos gatos tengo?
+    No lo sé: no me has dicho cuántos gatos tienes. De ti sé que te llamas Begoña y eres farmacéutica.
+[OK] > ¿Lupe es blanca?
+    No, Lupe es negro.
+[MAL] > ¿quién es Pilar?
+    Pilar es tu cumpleaños.
+[MAL] > ¿qué le pasa a Íñigo?
+    Íñigo va al fisioterapeuta mañana e Íñigo se olvidó la tarjeta sanitaria en casa.
+[OK] > ¿qué sabes de Nube?
+    Nube es el día de la rebaja. Nube es blanco. A Nube le encanta dormir en el sofá.
+[OK] > ¿tengo hijos?
+    No lo sé: no me has dicho qué tienes.
+[ABST_INDEBIDA] > ¿qué te he contado del sofá?
+    No lo sé: no me has dicho qué contaste. De ti sé que te llamas Begoña y eres farmacéutica.
+[-] > bueno, me voy a trabajar
+    ¡Hasta luego! Mucho ánimo.
+[OK] > hasta luego
+    ¡Hasta luego, Begoña! Aquí estaré cuando quieras.

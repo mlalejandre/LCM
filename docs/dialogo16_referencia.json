@@ -1,0 +1,33 @@
+{
+  "version": "1.6",
+  "entorno": "reconstrucción de archivos proporcionados, sin school.pt",
+  "ejercicios_controlados": {
+    "desarrollo": {
+      "total": 2000,
+      "aciertos": 2000,
+      "tandas": 200,
+      "tandas_aprobadas": 200,
+      "minimo_tanda": 10,
+      "semilla": 1745
+    },
+    "reserva": {
+      "total": 2000,
+      "aciertos": 2000,
+      "tandas": 200,
+      "tandas_aprobadas": 200,
+      "minimo_tanda": 10,
+      "semilla": 918271
+    }
+  },
+  "regresion": {
+    "aprobadas": 123,
+    "total": 123
+  },
+  "advertencia": "No es un porcentaje de comprensión general del español; cobertura de gramática controlada.",
+  "oraculo_externo_40": {
+    "estructuras_persistentes": 3,
+    "total": 40,
+    "hechos_indebidos_desde_afirmaciones_no_confirmadas": 0,
+    "nota": "módulo aislado sin Escuela; no es un porcentaje de comprensión"
+  }
+}

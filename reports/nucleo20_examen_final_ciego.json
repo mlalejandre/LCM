@@ -1,0 +1,2495 @@
+{
+ "resumen": {
+  "n": 265,
+  "ok": 225,
+  "acierto": 84.91,
+  "falsas": 7,
+  "tasa_falsas": 2.64,
+  "abst_indebida": 33,
+  "error": 0,
+  "por_cat": {
+   "acciones": {
+    "n": 18,
+    "acierto": 94.4,
+    "falsas": 0
+   },
+   "clases": {
+    "n": 19,
+    "acierto": 89.5,
+    "falsas": 1
+   },
+   "comparativos": {
+    "n": 16,
+    "acierto": 62.5,
+    "falsas": 1
+   },
+   "correcciones": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "desconocido": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "estados": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "familia": {
+    "n": 19,
+    "acierto": 73.7,
+    "falsas": 0
+   },
+   "gustos": {
+    "n": 17,
+    "acierto": 82.4,
+    "falsas": 0
+   },
+   "larga": {
+    "n": 22,
+    "acierto": 86.4,
+    "falsas": 1
+   },
+   "lugar": {
+    "n": 16,
+    "acierto": 81.2,
+    "falsas": 1
+   },
+   "mascotas": {
+    "n": 18,
+    "acierto": 88.9,
+    "falsas": 0
+   },
+   "modal": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   },
+   "multimodal": {
+    "n": 7,
+    "acierto": 85.7,
+    "falsas": 0
+   },
+   "negacion": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   },
+   "objetos": {
+    "n": 17,
+    "acierto": 94.1,
+    "falsas": 1
+   },
+   "persona": {
+    "n": 16,
+    "acierto": 56.2,
+    "falsas": 0
+   },
+   "sin_tildes": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "social": {
+    "n": 18,
+    "acierto": 83.3,
+    "falsas": 1
+   },
+   "tiempo": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 0,
+   "q": "Buenas, me llamo Noelia.",
+   "crit": "noelia",
+   "r": "Encantado, Noelia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 1,
+   "q": "Soy de Salamanca pero vivo en Lugo.",
+   "crit": "ACK",
+   "r": "Entendido: eres de Salamanca; vives en Lugo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 2,
+   "q": "Trabajo como fisioterapeuta.",
+   "crit": "ACK",
+   "r": "No he entendido «Trabajo como fisioterapeuta.». ¿Puedes decirlo con una frase más simple, por ejemplo «Ana ama a Luis»?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 3,
+   "q": "¿Me puedes decir dónde vivo?",
+   "crit": "lugo",
+   "r": "Vives en Lugo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 4,
+   "q": "¿De dónde soy?",
+   "crit": "salamanca",
+   "r": "Eres de Salamanca.",
+   "v": "OK"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 5,
+   "q": "¿En qué trabajo?",
+   "crit": "fisioterapeuta",
+   "r": "No lo sé: no me has dicho a qué te dedicas. De ti sé que te llamas Noelia y eres de Salamanca.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 6,
+   "q": "¿Recuerdas cómo me llamo?",
+   "crit": "noelia",
+   "r": "Te llamas Noelia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-01",
+   "cat": "persona",
+   "i": 7,
+   "q": "¿Vivo en Salamanca?",
+   "crit": "^no;lugo",
+   "r": "No, vives en Lugo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 0,
+   "q": "Tengo 45 años.",
+   "crit": "ACK",
+   "r": "Entendido: tienes 45 años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 1,
+   "q": "Mi marido tiene 47.",
+   "crit": "ACK",
+   "r": "¿Cómo te llamas? Así sabré a quién te refieres con «mi» o «yo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 2,
+   "q": "Se llama Gonzalo.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 3,
+   "q": "¿Qué edad tiene mi marido?",
+   "crit": "47",
+   "r": "¿Cómo te llamas? Así sabré a quién te refieres con «mi» o «yo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 4,
+   "q": "¿Cómo se llama?",
+   "crit": "gonzalo",
+   "r": "No he entendido la pregunta. Creo que preguntas por Se: puedes probar «¿Qué sabes de Se?».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 5,
+   "q": "¿Quién es mayor, Gonzalo o yo?",
+   "crit": "gonzalo",
+   "r": "No sé quién es Gonzalo: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 6,
+   "q": "¿Cuántos años nos llevamos?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho cuántos anos llevas. De ti sé que tienes 45 años.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-02",
+   "cat": "persona",
+   "i": 7,
+   "q": "¿Tengo marido?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho qué tienes.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 0,
+   "q": "Beatriz es la madre de Tomás.",
+   "crit": "ACK",
+   "r": "Entendido: Beatriz es la madre de Tomás.",
+   "v": "OK"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 1,
+   "q": "Tomás es el padre de Adriana y de Emilio.",
+   "crit": "ACK",
+   "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+   "v": "OK"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 2,
+   "q": "¿Quién es la abuela de Emilio?",
+   "crit": "beatriz",
+   "r": "No sé quién es Emilio: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 3,
+   "q": "¿Adriana y Emilio son hermanos?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 4,
+   "q": "¿Cuántos nietos tiene Beatriz?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho cuántos nietos tiene Beatriz. De Beatriz sé que es la madre de Tomás.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 5,
+   "q": "¿Quiénes son los hijos de Tomás?",
+   "crit": "adriana;emilio",
+   "r": "No lo sé: no me has dicho quién es el hijo de Tomás.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 6,
+   "q": "¿Es Beatriz la abuela de Adriana?",
+   "crit": "^si",
+   "r": "No sé quién es Adriana: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 7,
+   "q": "¿Quién es el abuelo de Adriana?",
+   "crit": "ABST",
+   "r": "No sé quién es Adriana: todavía no me has hablado de ella.",
+   "v": "OK"
+  },
+  {
+   "id": "f-03",
+   "cat": "familia",
+   "i": 8,
+   "q": "¿Tiene hijos Adriana?",
+   "crit": "ABST",
+   "r": "No sé quién es Adriana: todavía no me has hablado de ella.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 0,
+   "q": "Lorena y Fabián son primos.",
+   "crit": "ACK",
+   "r": "Entendido: Lorena y Fabián son primos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 1,
+   "q": "Olga es la madre de Lorena.",
+   "crit": "ACK",
+   "r": "Entendido: Olga es la madre de Lorena.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 2,
+   "q": "¿Quién es el primo de Lorena?",
+   "crit": "fabian",
+   "r": "Fabián es el primo de Lorena. Lo deduzco porque Lorena es la prima de Fabián.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 3,
+   "q": "¿Es Fabián primo de Lorena?",
+   "crit": "^si",
+   "r": "Sí, Fabián es el primo de Lorena. Lo deduzco porque Lorena es la prima de Fabián.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 4,
+   "q": "¿Quién es la tía de Fabián?",
+   "crit": "olga|ABST_OK",
+   "r": "No lo sé: no me has dicho quién es la tia de Fabián.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 5,
+   "q": "¿Cómo se llama la madre de Lorena?",
+   "crit": "olga",
+   "r": "Se llama Olga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 6,
+   "q": "¿Quién es el hermano de Lorena?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho quién es el hermano de Lorena.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 7,
+   "q": "Mateo es el marido de Olga.",
+   "crit": "ACK",
+   "r": "Entendido: Mateo es el marido de Olga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 8,
+   "q": "¿Quién es la mujer de Mateo?",
+   "crit": "olga",
+   "r": "Olga es la mujer de Mateo. Lo deduzco porque Mateo es el marido de Olga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-04",
+   "cat": "familia",
+   "i": 9,
+   "q": "¿Con quién está casada Olga?",
+   "crit": "mateo",
+   "r": "No lo sé. De Olga sé que es la madre de Lorena y Mateo es el marido de Olga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 0,
+   "q": "Emilio tiene una tortuga.",
+   "crit": "ACK",
+   "r": "Entendido: Emilio tiene una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 1,
+   "q": "La tortuga se llama Manuelita.",
+   "crit": "ACK",
+   "r": "Entendido: la tortuga de Emilio se llama Manuelita.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 2,
+   "q": "Es muy lenta.",
+   "crit": "ACK",
+   "r": "Entendido: Emilio es muy lento.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 3,
+   "q": "¿Qué mascota tiene Emilio?",
+   "crit": "tortuga",
+   "r": "No lo sé: no me has dicho qué tiene Emilio. De Emilio sé que tiene una tortuga y es muy lento.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 4,
+   "q": "¿Cuál es el nombre de la tortuga?",
+   "crit": "manuelita",
+   "r": "Se llama Manuelita.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 5,
+   "q": "¿Cómo es Manuelita?",
+   "crit": "lent*",
+   "r": "No lo sé: no me has dicho cómo es Manuelita. De Manuelita sé que es la tortuga de Emilio.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 6,
+   "q": "¿Es rápida Manuelita?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho eso de Manuelita.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 7,
+   "q": "¿De quién es Manuelita?",
+   "crit": "emilio",
+   "r": "Manuelita es de Emilio.",
+   "v": "OK"
+  },
+  {
+   "id": "f-05",
+   "cat": "mascotas",
+   "i": 8,
+   "q": "¿Tiene Emilio un conejo?",
+   "crit": "ABST",
+   "r": "No me consta. Solo sé que Emilio tiene una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 0,
+   "q": "Tengo dos conejos y un hámster.",
+   "crit": "ACK",
+   "r": "Entendido: tienes dos conejos y un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 1,
+   "q": "¿Cuántos conejos tengo?",
+   "crit": "dos|2",
+   "r": "Tienes dos conejos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 2,
+   "q": "¿Cuántos animales tengo en total?",
+   "crit": "tres|3",
+   "r": "No lo sé. Solo sé que tienes dos conejos y un hámster.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 3,
+   "q": "Un conejo es un animal.",
+   "crit": "ACK",
+   "r": "Entendido: el conejo es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 4,
+   "q": "Un hámster es un animal.",
+   "crit": "ACK",
+   "r": "Entendido: el hámster es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 5,
+   "q": "¿Cuántos animales tengo?",
+   "crit": "tres|3",
+   "r": "Tres: dos conejos y un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 6,
+   "q": "¿Tengo algún hámster?",
+   "crit": "^si",
+   "r": "Sí, tienes un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 7,
+   "q": "¿Qué animales tengo?",
+   "crit": "conejos;hamster",
+   "r": "Tienes dos conejos y un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "f-06",
+   "cat": "mascotas",
+   "i": 8,
+   "q": "¿Tengo gatos?",
+   "crit": "ABST",
+   "r": "No me consta. Solo sé que tienes dos conejos y un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 0,
+   "q": "La mochila de Olga es morada.",
+   "crit": "ACK",
+   "r": "Entendido: la mochila de Olga es morada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 1,
+   "q": "¿Qué color tiene la mochila de Olga?",
+   "crit": "morad*",
+   "r": "La mochila de Olga es morada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 2,
+   "q": "¿Es gris la mochila de Olga?",
+   "crit": "^no;morad*",
+   "r": "No, la mochila de Olga es morada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 3,
+   "q": "Mi paraguas es gris.",
+   "crit": "ACK",
+   "r": "Entendido: tu paragua es gris.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 4,
+   "q": "¿De qué color es mi paraguas?",
+   "crit": "gris",
+   "r": "Tu paragua es gris.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 5,
+   "q": "¿Y la mochila de Olga?",
+   "crit": "morad*",
+   "r": "La mochila de Olga es morada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 6,
+   "q": "¿Quién tiene una mochila?",
+   "crit": "olga",
+   "r": "Olga tiene una mochila.",
+   "v": "OK"
+  },
+  {
+   "id": "f-07",
+   "cat": "objetos",
+   "i": 7,
+   "q": "¿De qué color es la mochila de Mateo?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 0,
+   "q": "He dejado la tablet encima del sofá.",
+   "crit": "ACK",
+   "r": "Entendido: dejaste la tablet encima del sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 1,
+   "q": "¿Dónde está la tablet?",
+   "crit": "sofa",
+   "r": "La tablet está encima del sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 2,
+   "q": "Las gafas están en el cajón.",
+   "crit": "ACK",
+   "r": "Entendido: las gafas están en el cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 3,
+   "q": "¿Dónde he dejado la tablet?",
+   "crit": "sofa",
+   "r": "Dejaste la tablet encima del sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 4,
+   "q": "¿Dónde están las gafas?",
+   "crit": "cajon",
+   "r": "Las gafas están en el cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 5,
+   "q": "¿Qué hay en el cajón?",
+   "crit": "gafas",
+   "r": "Las gafas están en el cajón.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 6,
+   "q": "Ahora las gafas están en la mesilla.",
+   "crit": "ACK",
+   "r": "Entendido: las gafas están en la mesilla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 7,
+   "q": "¿Dónde están las gafas?",
+   "crit": "mesilla;!cajon",
+   "r": "Las gafas están en el cajón.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-08",
+   "cat": "objetos",
+   "i": 8,
+   "q": "¿Dónde están las llaves?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 0,
+   "q": "Fabián residía en Almería.",
+   "crit": "ACK",
+   "r": "Entendido: Fabián residía en Almería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 1,
+   "q": "Hace un mes se mudó a Pamplona.",
+   "crit": "ACK",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "OK"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 2,
+   "q": "¿Dónde vive Fabián actualmente?",
+   "crit": "pamplona",
+   "r": "Fabián residía en Almería.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 3,
+   "q": "¿Dónde vivía antes Fabián?",
+   "crit": "almeria",
+   "r": "Fabián residía en Almería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 4,
+   "q": "¿Sigue viviendo Fabián en Almería?",
+   "crit": "^no|ya no",
+   "r": "No lo sé. No conozco «Viviendo»: ¿me lo explicas?",
+   "v": "OK"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 5,
+   "q": "¿Fabián vive en Pamplona?",
+   "crit": "^si",
+   "r": "No lo sé. No conozco «Pamplona»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 6,
+   "q": "¿Cuándo se mudó Fabián?",
+   "crit": "mes",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-09",
+   "cat": "lugar",
+   "i": 7,
+   "q": "¿Dónde trabaja?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho dónde trabaja Fabián. De Fabián sé que residía en Almería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 0,
+   "q": "Adriana estudia en la universidad de Tarragona.",
+   "crit": "ACK",
+   "r": "Entendido: Adriana estudia en la universidad de Tarragona.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 1,
+   "q": "¿Dónde estudia Adriana?",
+   "crit": "tarragona|universidad",
+   "r": "Adriana estudia en la universidad de Tarragona.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 2,
+   "q": "¿Qué hace Adriana?",
+   "crit": "estudia",
+   "r": "Adriana estudia en la universidad de Tarragona.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 3,
+   "q": "Adriana está en Huelva esta semana.",
+   "crit": "ACK",
+   "r": "Entendido: Adriana está en Huelva esta semana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 4,
+   "q": "¿Dónde se encuentra Adriana?",
+   "crit": "huelva",
+   "r": "No lo sé: no me has dicho dónde encuentra Adriana. De Adriana sé que estudia en la universidad de Tarragona y está en Huelva esta semana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 5,
+   "q": "¿Está Adriana en Tarragona?",
+   "crit": "^no;huelva",
+   "r": "No, Adriana está en Huelva esta semana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 6,
+   "q": "¿Quién está en Huelva?",
+   "crit": "adriana",
+   "r": "Adriana está en Huelva esta semana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-10",
+   "cat": "lugar",
+   "i": 7,
+   "q": "¿Dónde está Tomás?",
+   "crit": "ABST",
+   "r": "No sé quién es Tomás: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 0,
+   "q": "Mateo alquiló un camión el martes.",
+   "crit": "ACK",
+   "r": "Entendido: Mateo alquiló un camión el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 1,
+   "q": "¿Qué alquiló Mateo?",
+   "crit": "camion",
+   "r": "Mateo alquiló un camión el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 2,
+   "q": "¿Qué día alquiló Mateo el camión?",
+   "crit": "martes",
+   "r": "Mateo alquiló un camión el martes (martes 17 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 3,
+   "q": "¿Quién alquiló un camión?",
+   "crit": "mateo",
+   "r": "Mateo alquiló un camión el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 4,
+   "q": "Lorena perdió su paraguas ayer.",
+   "crit": "ACK",
+   "r": "Entendido: Lorena perdió su paraguas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 5,
+   "q": "¿Qué perdió Lorena?",
+   "crit": "paraguas",
+   "r": "Lorena perdió su paraguas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 6,
+   "q": "¿Tiene Lorena su paraguas?",
+   "crit": "^no|ya no",
+   "r": "No lo sé: no me has dicho qué tiene Lorena.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 7,
+   "q": "¿Qué hizo Lorena ayer?",
+   "crit": "perdi*;paraguas",
+   "r": "Lorena perdió su paraguas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "f-11",
+   "cat": "acciones",
+   "i": 8,
+   "q": "¿Qué hizo Mateo el martes?",
+   "crit": "alquil*;camion",
+   "r": "Mateo alquiló un camión el martes.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 0,
+   "q": "Olga le envió una carta a Beatriz.",
+   "crit": "ACK",
+   "r": "Entendido: Olga envió una carta a Beatriz.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 1,
+   "q": "¿Quién tiene la carta?",
+   "crit": "beatriz",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 2,
+   "q": "¿A quién le envió Olga la carta?",
+   "crit": "beatriz",
+   "r": "Olga envió una carta a Beatriz.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 3,
+   "q": "¿Qué le envió Olga a Beatriz?",
+   "crit": "carta",
+   "r": "Olga envió una carta a Beatriz.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 4,
+   "q": "Beatriz le prestó un libro a Tomás.",
+   "crit": "ACK",
+   "r": "Entendido: Beatriz prestó un libro a Tomás.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 5,
+   "q": "¿Quién tiene el libro ahora?",
+   "crit": "tomas",
+   "r": "Tomás tiene un libro.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 6,
+   "q": "¿Tiene Beatriz el libro?",
+   "crit": "^no|ya no",
+   "r": "No, ya no: Beatriz prestó un libro a Tomás.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 7,
+   "q": "¿Qué tiene Tomás?",
+   "crit": "libro",
+   "r": "Tomás tiene un libro.",
+   "v": "OK"
+  },
+  {
+   "id": "f-12",
+   "cat": "acciones",
+   "i": 8,
+   "q": "¿Qué tiene Olga?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué tiene Olga. De Olga sé que envió una carta a Beatriz.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 0,
+   "q": "A Gonzalo le apasiona el ajedrez.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 1,
+   "q": "A Noelia le gusta la escalada pero no le gusta la jardinería.",
+   "crit": "ACK",
+   "r": "Entendido: a Noelia le gusta la escalada; a Noelia no le gusta la jardinería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 2,
+   "q": "¿Qué le apasiona a Gonzalo?",
+   "crit": "ajedrez",
+   "r": "No he entendido la pregunta. Creo que preguntas por Gonzalo: puedes probar «¿Qué sabes de Gonzalo?».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 3,
+   "q": "¿Le gusta a Noelia la jardinería?",
+   "crit": "^no",
+   "r": "No, a Noelia no le gusta la jardinería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 4,
+   "q": "¿A Noelia le gusta la escalada?",
+   "crit": "^si",
+   "r": "Sí, a Noelia le gusta la escalada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 5,
+   "q": "¿A quién le gusta la escalada?",
+   "crit": "noelia",
+   "r": "A Noelia le gusta la escalada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 6,
+   "q": "¿Le gusta el ajedrez a Noelia?",
+   "crit": "ABST",
+   "r": "No lo sé. Solo sé que a Noelia le gusta la escalada y a Noelia no le gusta la jardinería.",
+   "v": "OK"
+  },
+  {
+   "id": "f-13",
+   "cat": "gustos",
+   "i": 7,
+   "q": "¿Cuáles son las aficiones de Gonzalo?",
+   "crit": "ajedrez",
+   "r": "No sé quién es Gonzalo: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 0,
+   "q": "Me encanta la tortilla.",
+   "crit": "ACK",
+   "r": "Entendido: te encanta la tortilla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 1,
+   "q": "Odio las lentejas.",
+   "crit": "ACK",
+   "r": "Entendido: odias las lentejas.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 2,
+   "q": "No me gusta el yogur.",
+   "crit": "ACK",
+   "r": "Entendido: no te gusta el yogur.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 3,
+   "q": "¿Qué comida me encanta?",
+   "crit": "tortilla",
+   "r": "No lo sé: no me has dicho qué te encanta.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 4,
+   "q": "¿Me gustan las lentejas?",
+   "crit": "^no|odi*",
+   "r": "No lo sé. Solo sé que te encanta la tortilla y no te gusta el yogur.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 5,
+   "q": "¿Qué odio?",
+   "crit": "lentejas",
+   "r": "Odias las lentejas.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 6,
+   "q": "¿Me gusta el yogur?",
+   "crit": "^no",
+   "r": "No, no te gusta el yogur.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 7,
+   "q": "¿Me gusta la ensalada?",
+   "crit": "ABST",
+   "r": "No lo sé. Solo sé que te encanta la tortilla y no te gusta el yogur.",
+   "v": "OK"
+  },
+  {
+   "id": "f-14",
+   "cat": "gustos",
+   "i": 8,
+   "q": "¿Qué me gusta?",
+   "crit": "tortilla;!lentejas me gust",
+   "r": "Te encanta la tortilla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 0,
+   "q": "El sofá es más ancho que la mesa.",
+   "crit": "ACK",
+   "r": "Entendido: el sofá es más ancho que la mesa.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 1,
+   "q": "La mesa es más ancha que la silla.",
+   "crit": "ACK",
+   "r": "Entendido: la mesa es más ancha que la silla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 2,
+   "q": "¿Qué es más ancho, el sofá o la silla?",
+   "crit": "sofa",
+   "r": "Una silla es un mueble.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 3,
+   "q": "¿Es la silla más ancha que el sofá?",
+   "crit": "^no",
+   "r": "No, el sofá es más ancho que la silla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 4,
+   "q": "¿Es el sofá más ancho que la silla?",
+   "crit": "^si",
+   "r": "Sí, el sofá es más ancho que la silla.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 5,
+   "q": "¿Cuál es el más ancho?",
+   "crit": "sofa",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 6,
+   "q": "¿Es la mesa más estrecha que el sofá?",
+   "crit": "^si",
+   "r": "Sí, la mesa es más estrecha que el sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "f-15",
+   "cat": "comparativos",
+   "i": 7,
+   "q": "¿Es la mesa más ancha que la lámpara?",
+   "crit": "ABST",
+   "r": "No lo sé: no tengo datos para comparar a la mesa con la lamparar en eso.",
+   "v": "OK"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 0,
+   "q": "Emilio tiene 12 años y Adriana tiene 15.",
+   "crit": "ACK",
+   "r": "He registrado dos proposiciones conectadas por «y» y he conservado sus sujetos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 1,
+   "q": "¿Quién es el mayor de los dos?",
+   "crit": "adriana",
+   "r": "No lo sé. No conozco «grande»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 2,
+   "q": "¿Quién es menor, Emilio o Adriana?",
+   "crit": "emilio",
+   "r": "No sé cuándo nació Emilio ni cuándo nació Adriana, así que no puedo compararlos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 3,
+   "q": "¿Cuántos años tiene Emilio?",
+   "crit": "12",
+   "r": "Sé cosas de Emilio, pero no sé cuándo nació, así que no puedo contestar a eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 4,
+   "q": "¿Es Emilio mayor que Adriana?",
+   "crit": "^no",
+   "r": "No sé quién es Emilio: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 5,
+   "q": "¿Cuántos años le saca Adriana a Emilio?",
+   "crit": "tres|3",
+   "r": "No sé quién es Adriana: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 6,
+   "q": "Tomás es más alto que Emilio.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-16",
+   "cat": "comparativos",
+   "i": 7,
+   "q": "¿Quién es más bajo, Tomás o Emilio?",
+   "crit": "emilio",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 0,
+   "q": "Kira es una tortuga.",
+   "crit": "ACK",
+   "r": "Entendido: Kira es una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 1,
+   "q": "Las tortugas son reptiles.",
+   "crit": "ACK",
+   "r": "Entendido: las tortugas son reptiles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 2,
+   "q": "Los reptiles son animales.",
+   "crit": "ACK",
+   "r": "Entendido: los reptiles son animales.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 3,
+   "q": "¿Kira es un reptil?",
+   "crit": "^si",
+   "r": "Sí, Kira es un reptil. Lo deduzco porque Kira es una tortuga y las tortugas son reptiles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 4,
+   "q": "¿Es Kira un animal?",
+   "crit": "^si",
+   "r": "Sí, Kira es un animal. Lo deduzco porque Kira es una tortuga, las tortugas son reptiles y los reptiles son animales.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 5,
+   "q": "¿Por qué?",
+   "crit": "tortuga;reptil*",
+   "r": "Lo deduzco porque Kira es una tortuga, las tortugas son reptiles y los reptiles son animales.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 6,
+   "q": "Las tortugas viven muchos años.",
+   "crit": "ACK",
+   "r": "Entendido: las tortugas viven muchos años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 7,
+   "q": "¿Vive Kira muchos años?",
+   "crit": "^si",
+   "r": "Sí, las tortugas viven muchos años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 8,
+   "q": "¿Es Kira un mamífero?",
+   "crit": "^no|ABST_OK",
+   "r": "No, Kira es una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-17",
+   "cat": "clases",
+   "i": 9,
+   "q": "¿Es un reptil una tortuga?",
+   "crit": "!^si",
+   "r": "Sí. Las tortugas son los reptiles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 0,
+   "q": "Un yate es un barco.",
+   "crit": "ACK",
+   "r": "Entendido: el yate es un barco.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 1,
+   "q": "Un barco es un vehículo.",
+   "crit": "ACK",
+   "r": "Entendido: el barco es un vehículo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 2,
+   "q": "¿Es un yate un vehículo?",
+   "crit": "^si",
+   "r": "Sí, un yate es un vehículo. Lo deduzco porque el yate es un barco y el barco es un vehículo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 3,
+   "q": "El Albatros es un yate.",
+   "crit": "!no he entendido",
+   "r": "Entendido: los albatros son yates.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 4,
+   "q": "¿Qué es el Albatros?",
+   "crit": "yate",
+   "r": "Los albatros son yates.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 5,
+   "q": "Los barcos flotan.",
+   "crit": "ACK",
+   "r": "Entendido: los barcos flotan.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 6,
+   "q": "¿Flota un yate?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que los barcos flotan.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 7,
+   "q": "¿Es un coche un barco?",
+   "crit": "^no",
+   "r": "No, un coche es un vehículo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-18",
+   "cat": "clases",
+   "i": 8,
+   "q": "¿Es un yate un coche?",
+   "crit": "^no",
+   "r": "No, un yate es un barco.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 0,
+   "q": "Tomás no fuma.",
+   "crit": "ACK",
+   "r": "Entendido: No es cierto que tomás fuma.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 1,
+   "q": "¿Fuma Tomás?",
+   "crit": "^no",
+   "r": "No. No es cierto que tomás fuma.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 2,
+   "q": "Tomás no tiene coche.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 3,
+   "q": "¿Tiene coche Tomás?",
+   "crit": "^no",
+   "r": "No sé quién es Tomás: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 4,
+   "q": "Tomás tampoco bebe alcohol.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 5,
+   "q": "¿Bebe alcohol Tomás?",
+   "crit": "^no",
+   "r": "No sé quién es Tomás: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 6,
+   "q": "¿Qué no hace Tomás?",
+   "crit": "fum*",
+   "r": "No sé quién es Tomás: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-19",
+   "cat": "negacion",
+   "i": 7,
+   "q": "¿Bebe Tomás café?",
+   "crit": "ABST",
+   "r": "No sé quién es Tomás: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 0,
+   "q": "Lorena vive en Huelva.",
+   "crit": "ACK",
+   "r": "Entendido: Lorena vive en Huelva.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 1,
+   "q": "Perdona, me he confundido: Lorena vive en Lugo.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 2,
+   "q": "¿Dónde vive Lorena?",
+   "crit": "lugo;!huelva",
+   "r": "Lorena vive en Huelva.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 3,
+   "q": "Mi tablet es negra.",
+   "crit": "ACK",
+   "r": "Entendido: tu tablet es negro.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 4,
+   "q": "No, es blanca.",
+   "crit": "ACK",
+   "r": "Corregido: tu tablet es blanco (antes me dijiste que era negro).",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 5,
+   "q": "¿De qué color es mi tablet?",
+   "crit": "blanc*;!negr*",
+   "r": "Tu tablet es blanco.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 6,
+   "q": "Olga tiene tres hijos.",
+   "crit": "ACK",
+   "r": "Entendido: Olga tiene tres hijos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 7,
+   "q": "Rectifico: Olga tiene cuatro hijos.",
+   "crit": "ACK",
+   "r": "Corregido: Olga tiene cuatro hijos (antes me dijiste que tenía tres hijos).",
+   "v": "OK"
+  },
+  {
+   "id": "f-20",
+   "cat": "correcciones",
+   "i": 8,
+   "q": "¿Cuántos hijos tiene Olga?",
+   "crit": "cuatro|4;!tres",
+   "r": "Olga tiene cuatro hijos.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 0,
+   "q": "Gonzalo está resfriado.",
+   "crit": "ACK",
+   "r": "Entendido: Gonzalo está resfriado.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 1,
+   "q": "¿Cómo se encuentra Gonzalo?",
+   "crit": "resfriad*",
+   "r": "No lo sé. De Gonzalo sé que está resfriado.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 2,
+   "q": "¿Está enfermo Gonzalo?",
+   "crit": "ABST|resfriad*",
+   "r": "No lo sé. Solo sé que Gonzalo está resfriado.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 3,
+   "q": "La ventana está abierta.",
+   "crit": "ACK",
+   "r": "Entendido: la ventana está abierta.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 4,
+   "q": "¿Está cerrada la ventana?",
+   "crit": "^no",
+   "r": "No, la ventana está abierta.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 5,
+   "q": "Ya está cerrada.",
+   "crit": "!no he entendido",
+   "r": "Entendido: la ventana está cerrada (antes me dijiste que estaba abierta).",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 6,
+   "q": "¿Cómo está la ventana?",
+   "crit": "cerrad*",
+   "r": "La ventana está cerrada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 7,
+   "q": "Beatriz está de vacaciones.",
+   "crit": "ACK",
+   "r": "Entendido: Beatriz está de vacaciones.",
+   "v": "OK"
+  },
+  {
+   "id": "f-21",
+   "cat": "estados",
+   "i": 8,
+   "q": "¿Dónde está Beatriz?",
+   "crit": "ABST|vacaciones",
+   "r": "No lo sé: no me has dicho dónde está Beatriz. De Beatriz sé que está de vacaciones.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 0,
+   "q": "Mateo va a clase de inglés los miércoles.",
+   "crit": "ACK",
+   "r": "Entendido: Mateo va a clase de inglés los miércoles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 1,
+   "q": "¿Qué hace Mateo los miércoles?",
+   "crit": "ingles",
+   "r": "Mateo va a clase de inglés los miércoles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 2,
+   "q": "¿Cuándo va Mateo a clase de inglés?",
+   "crit": "miercoles",
+   "r": "Mateo va a clase de inglés los miércoles.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 3,
+   "q": "Noelia nació en 1990.",
+   "crit": "ACK",
+   "r": "Entendido: Noelia nació en 1990.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 4,
+   "q": "¿Qué edad tiene Noelia?",
+   "crit": "36|35",
+   "r": "Noelia tiene 36 años (o uno menos, según el día de su cumpleaños).",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 5,
+   "q": "¿En qué año nació Noelia?",
+   "crit": "1990",
+   "r": "No lo sé: no me has dicho qué nació Noelia. De Noelia sé que nació en 1990.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 6,
+   "q": "Mañana Noelia tiene una reunión.",
+   "crit": "ACK",
+   "r": "Entendido: Noelia tiene una reunión Mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 7,
+   "q": "¿Qué tiene Noelia mañana?",
+   "crit": "reunion",
+   "r": "Noelia tiene una reunión.",
+   "v": "OK"
+  },
+  {
+   "id": "f-22",
+   "cat": "tiempo",
+   "i": 8,
+   "q": "¿Cuándo tiene Noelia la reunión?",
+   "crit": "mañana|jueves",
+   "r": "Noelia tiene una reunión Mañana (jueves 19 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 0,
+   "q": "¡Hola! ¿Qué tal todo?",
+   "crit": "bien|hola",
+   "r": "¡Hola! Estoy bien, gracias. ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 1,
+   "q": "Yo estoy agotada.",
+   "crit": "siento|vaya|descans*",
+   "r": "Lo siento. Si te apetece, cuéntame por qué estás agotada.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 2,
+   "q": "¿Tú te cansas?",
+   "crit": "no",
+   "r": "No: no tengo cuerpo. Solo trabajo con conceptos y con lo que me cuentas.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 3,
+   "q": "¿Eres una máquina?",
+   "crit": "lcm|programa|modelo",
+   "r": "Algo así: soy el LCM, un modelo conceptual que aprende de lo que me cuentas. No soy una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 4,
+   "q": "¿Qué opinas de la política?",
+   "crit": "no tengo",
+   "r": "No tengo opiniones propias: solo conozco lo que me cuentas. ¿Qué opinas tú?",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 5,
+   "q": "¿Te caigo bien?",
+   "crit": "!no conozco;!no he entendido",
+   "r": "De mí hay poco que contar: soy el LCM y solo sé lo que me enseñas. Si me cuentas algo, lo recordaré.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 6,
+   "q": "Eres muy amable.",
+   "crit": "gracias",
+   "r": "¡Gracias! Hago lo que puedo con lo que me enseñas.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 7,
+   "q": "Bueno, me tengo que ir.",
+   "crit": "!no he entendido;!no conozco",
+   "r": "Entendido: te tienes que ir.",
+   "v": "OK"
+  },
+  {
+   "id": "f-23",
+   "cat": "social",
+   "i": 8,
+   "q": "Hasta pronto.",
+   "crit": "hasta|adios",
+   "r": "¡Hasta luego! Aquí estaré cuando quieras.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 0,
+   "q": "Me siento muy feliz hoy.",
+   "crit": "alegr*|que bien",
+   "r": "¡Qué bien! Me alegra saber que estás feliz.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 1,
+   "q": "¿Cómo estoy?",
+   "crit": "feliz",
+   "r": "No lo sé: no me has dicho cómo estás. De ti sé que te sientes muy feliz hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 2,
+   "q": "¿Por qué lo sabes?",
+   "crit": "dijiste|me siento",
+   "r": "No tengo nada que explicar ahora mismo: mi última respuesta no afirmaba ningún hecho.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 3,
+   "q": "¿Sabes cocinar?",
+   "crit": "!no conozco",
+   "r": "Eso no sé hacerlo. Puedo aprender lo que me cuentes, contestar sobre ello y sobre los textos que he leído, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 4,
+   "q": "¿Cuál es tu comida favorita?",
+   "crit": "no tengo",
+   "r": "No tengo favoritos: no tengo gustos propios. ¿Cuál es el tuyo?",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 5,
+   "q": "¿Qué día fue ayer?",
+   "crit": "martes",
+   "r": "Ayer fue martes, 17 de noviembre de 2026.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 6,
+   "q": "¿Qué mes va antes de agosto?",
+   "crit": "julio",
+   "r": "Antes de agosto viene julio.",
+   "v": "OK"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 7,
+   "q": "Jajaja",
+   "crit": "!no he entendido",
+   "r": "No he entendido «Jajaja». ¿Puedes decirlo con una frase más simple, por ejemplo «Ana ama a Luis»?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-24",
+   "cat": "social",
+   "i": 8,
+   "q": "Gracias por la charla.",
+   "crit": "de nada|placer|gusto",
+   "r": "No he entendido «Gracias por la charla.». ¿Puedes decirlo con una frase más simple, por ejemplo «Ana ama a Luis»?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 0,
+   "q": "Adriana trabaja en una farmacia.",
+   "crit": "ACK",
+   "r": "Entendido: Adriana trabaja en una farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 1,
+   "q": "¿Dónde vive Adriana?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho dónde vive Adriana. De Adriana sé que trabaja en una farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 2,
+   "q": "¿Cuántos años tiene Adriana?",
+   "crit": "ABST",
+   "r": "No sé cuántos años tiene Adriana: no me lo has dicho.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 3,
+   "q": "¿Quién es el jefe de Adriana?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho quién es el jefe de Adriana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 4,
+   "q": "¿Qué le gusta a Adriana?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué le gusta a Adriana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 5,
+   "q": "¿Quién es Bartolomé?",
+   "crit": "ABST",
+   "r": "No sé quién es Bartolomé: todavía no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 6,
+   "q": "¿De qué color es el coche de Adriana?",
+   "crit": "ABST",
+   "r": "No sé nada de el coche de Adriana: no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 7,
+   "q": "¿Tiene Adriana hermanos?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué tiene Adriana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 8,
+   "q": "¿Dónde trabaja Adriana?",
+   "crit": "farmacia",
+   "r": "Adriana trabaja en una farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-25",
+   "cat": "desconocido",
+   "i": 9,
+   "q": "¿Trabaja Adriana en un banco?",
+   "crit": "^no;farmacia",
+   "r": "No, Adriana trabaja en una farmacia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 0,
+   "q": "Me llamo Emilio y tengo una hermana pequeña.",
+   "crit": "emilio",
+   "r": "Encantado, Emilio. Entendido: tienes una hermana pequeña; tu hermano pequeña es pequeña.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 1,
+   "q": "Mi hermana se llama Lorena y tiene diez años.",
+   "crit": "ACK",
+   "r": "Entendido: tu hermana se llama Lorena; tienes diez años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 2,
+   "q": "A ella le encanta dibujar.",
+   "crit": "ACK",
+   "r": "Entendido: a Lorena le encanta dibujar.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 3,
+   "q": "Vivimos en Pamplona con nuestros padres.",
+   "crit": "ACK",
+   "r": "Entendido: vives en Pamplona con vuestros padres.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 4,
+   "q": "Mi padre es carpintero.",
+   "crit": "ACK",
+   "r": "Entendido: tus padres son carpinteros.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 5,
+   "q": "¿Cuántos años tiene mi hermana?",
+   "crit": "diez|10",
+   "r": "No sé cuántos años tiene Lorena: no me lo has dicho.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 6,
+   "q": "¿Qué le encanta a Lorena?",
+   "crit": "dibujar",
+   "r": "A Lorena le encanta dibujar.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 7,
+   "q": "¿Dónde vivimos?",
+   "crit": "pamplona",
+   "r": "Vives en Pamplona con vuestros padres.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 8,
+   "q": "¿A qué se dedica mi padre?",
+   "crit": "carpinter*",
+   "r": "Tus padres son carpinteros.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 9,
+   "q": "¿Cómo se llama mi hermana?",
+   "crit": "lorena",
+   "r": "Tu hermana se llama Lorena.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 10,
+   "q": "¿Tengo hermanos?",
+   "crit": "^si|lorena",
+   "r": "Sí, Lorena es tu hermana.",
+   "v": "OK"
+  },
+  {
+   "id": "f-26",
+   "cat": "larga",
+   "i": 11,
+   "q": "¿Quién es carpintero?",
+   "crit": "padre",
+   "r": "Tus padres es Carpintero.",
+   "v": "MAL"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 0,
+   "q": "Ayer fui al cine con Fabián.",
+   "crit": "ACK",
+   "r": "Entendido: fuiste al cine con Fabián ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 1,
+   "q": "Vimos una película de miedo.",
+   "crit": "ACK",
+   "r": "Entendido: viste una película de miedo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 2,
+   "q": "A Fabián no le gustó.",
+   "crit": "ACK",
+   "r": "Creo que hablas de Fabian, pero no he entendido qué quieres decirme. ¿Puedes usar una frase más simple, por ejemplo «Fabian compra pan»?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 3,
+   "q": "¿Con quién fui al cine?",
+   "crit": "fabian",
+   "r": "Fuiste al cine con Fabián ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 4,
+   "q": "¿Qué vimos?",
+   "crit": "pelicula",
+   "r": "Viste una película de miedo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 5,
+   "q": "¿Le gustó la película a Fabián?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho qué le gusta a Fabián.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 6,
+   "q": "¿Cuándo fui al cine?",
+   "crit": "ayer",
+   "r": "Fuiste al cine con Fabián ayer (martes 17 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 7,
+   "q": "¿Adónde fui ayer?",
+   "crit": "cine",
+   "r": "No lo sé: no me has dicho dónde fuiste. De ti sé que fuiste al cine con Fabián ayer y viste una película de miedo.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 8,
+   "q": "Después cenamos en un restaurante italiano.",
+   "crit": "ACK",
+   "r": "Entendido: cenas en un restaurante italiano después.",
+   "v": "OK"
+  },
+  {
+   "id": "f-27",
+   "cat": "larga",
+   "i": 9,
+   "q": "¿Dónde cenamos?",
+   "crit": "restaurante",
+   "r": "Cenas en un restaurante italiano después.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 0,
+   "q": "olga vive en almeria",
+   "crit": "ACK",
+   "r": "Entendido: Olga vive en almeria.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 1,
+   "q": "donde vive olga?",
+   "crit": "almeria",
+   "r": "Olga vive en almeria.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 2,
+   "q": "olga tiene una hija",
+   "crit": "ACK",
+   "r": "Entendido: Olga tiene una hija.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 3,
+   "q": "la hija de olga se llama irene",
+   "crit": "ACK",
+   "r": "Entendido: la hija de Olga se llama Irene.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 4,
+   "q": "como se llama la hija de olga?",
+   "crit": "irene",
+   "r": "La hija de Olga se llama Irene.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 5,
+   "q": "irene tiene 8 años",
+   "crit": "ACK",
+   "r": "Entendido: Irene tiene 8 años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 6,
+   "q": "cuantos años tiene irene?",
+   "crit": "8|ocho",
+   "r": "Irene tiene 8 años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 7,
+   "q": "quien es la madre de irene?",
+   "crit": "olga",
+   "r": "Olga es la madre de Irene. Lo deduzco porque Irene es la hija de Olga.",
+   "v": "OK"
+  },
+  {
+   "id": "f-28",
+   "cat": "sin_tildes",
+   "i": 8,
+   "q": "donde vive irene?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho dónde vive Irene. De Irene sé que es la hija de Olga y tiene 8 años.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 0,
+   "q": "Gonzalo quiere aprender japonés.",
+   "crit": "ACK",
+   "r": "Entendido: Gonzalo quiere aprender japonés.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 1,
+   "q": "¿Qué quiere aprender Gonzalo?",
+   "crit": "japones",
+   "r": "Gonzalo quiere aprender japonés.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 2,
+   "q": "Beatriz necesita comprar pan.",
+   "crit": "ACK",
+   "r": "Entendido: Beatriz necesita comprar pan.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 3,
+   "q": "¿Qué necesita Beatriz?",
+   "crit": "pan",
+   "r": "Beatriz necesita comprar pan.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 4,
+   "q": "Tomás sabe tocar la guitarra.",
+   "crit": "ACK",
+   "r": "He registrado ese hecho con su procedencia.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 5,
+   "q": "¿Sabe Tomás tocar la guitarra?",
+   "crit": "^si",
+   "r": "Sí. Tomas saber tocar Guitarra.",
+   "v": "OK"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 6,
+   "q": "¿Quién sabe tocar la guitarra?",
+   "crit": "tomas",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "f-29",
+   "cat": "modal",
+   "i": 7,
+   "q": "¿Sabe Gonzalo japonés?",
+   "crit": "ABST|quiere aprender",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Gonzalo sé que quiere aprender japonés.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 0,
+   "q": "[IMG x.png] ¿Qué color es?",
+   "crit": "rojo",
+   "r": "La imagen es de color rojo. Lo he identificado al analizar sus píxeles y lo he vinculado con ese concepto en la memoria del LCM.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 1,
+   "q": "¿De qué color es?",
+   "crit": "rojo",
+   "r": "La imagen es de color rojo. Lo he identificado al analizar sus píxeles y lo he vinculado con ese concepto en la memoria del LCM.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 2,
+   "q": "[IMG y.png] ",
+   "crit": "azul",
+   "r": "He observado una imagen de color azul. Lo vinculo con el concepto AZUL.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 3,
+   "q": "¿De qué color es?",
+   "crit": "azul;!rojo",
+   "r": "La imagen es de color azul. Lo he identificado al analizar sus píxeles y lo he vinculado con ese concepto en la memoria del LCM.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 4,
+   "q": "[IMG z.png] ¿Es de color verde?",
+   "crit": "!^si",
+   "r": "Sí. Verde es un color.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 5,
+   "q": "Mi coche es de ese color.",
+   "crit": "!no he entendido",
+   "r": "Entendido: tu coche es de ese color.",
+   "v": "OK"
+  },
+  {
+   "id": "f-30",
+   "cat": "multimodal",
+   "i": 6,
+   "q": "¿De qué color es mi coche?",
+   "crit": "azul",
+   "r": "No lo sé: no me has dicho de qué color es tu coche.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

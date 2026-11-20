@@ -1,0 +1,254 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.18 · aprender de un texto (iteraciones 1 y 2 del plan)",
+ "regla": "mejoras por la forma de la frase, nunca por el tema; desarrollo con abejas/volcanes/ajedrez; medida con temas escritos después",
+ "medida_final_limpia_test2_58": {
+  "temas": [
+   "faros",
+   "la Luna"
+  ],
+  "nota": "escrita con el código definitivo congelado (9a52b96); medida una vez; sin arreglos después",
+  "sin_texto_218": [
+   17.2,
+   12
+  ],
+  "texto": {
+   "lcm217": [
+    58.6,
+    17
+   ],
+   "lcm218": [
+    74.1,
+    6
+   ]
+  },
+  "frases": {
+   "lcm217": [
+    43.1,
+    8
+   ],
+   "lcm218": [
+    58.6,
+    6
+   ]
+  },
+  "por_tipo_texto_217_218": {
+   "uso": [
+    0,
+    75
+   ],
+   "no_dicho": [
+    0,
+    83
+   ],
+   "contradiccion": [
+    0,
+    50
+   ],
+   "literal": [
+    81,
+    81
+   ],
+   "deduccion": [
+    66,
+    66
+   ],
+   "herencia": [
+    100,
+    100
+   ],
+   "inversa": [
+    85,
+    85
+   ],
+   "vocabulario": [
+    60,
+    60
+   ],
+   "charla": [
+    50,
+    50
+   ],
+   "combinar": [
+    0,
+    0
+   ]
+  },
+  "auditoria": "sin aprobados laxos relevantes en ninguna versión; falsas reales 2.18: 2 citas que no responden a «¿dónde está la Torre de Hércules?», 1 hecho mal atribuido (nombre propio compuesto), 2 respuestas del diccionario o cita en vez de la definición leída, 1 cita con número que no responde"
+ },
+ "primera_medida_limpia_test_95": {
+  "temas": [
+   "murciélagos",
+   "café",
+   "nurbos (inventado)"
+  ],
+  "nota": "escrita con el código congelado (fa66085); primer intento a ciegas",
+  "texto": {
+   "lcm217": [
+    63.2,
+    23
+   ],
+   "lcm218_ciega": [
+    76.8,
+    10
+   ],
+   "lcm218_final_no_ciega": [
+    81.1,
+    7
+   ],
+   "auditado_217": 61.0,
+   "auditado_218_ciega": 67.4
+  },
+  "frases": {
+   "lcm217": [
+    30.5,
+    16
+   ],
+   "lcm218_ciega": [
+    63.2,
+    15
+   ],
+   "lcm218_final_no_ciega": [
+    72.6,
+    8
+   ]
+  },
+  "sin_texto_218": [
+   16.8,
+   8
+  ],
+  "auditoria_218": "10 aprobados con defecto contados como fallo: 7 citas con etiqueta de tema equivocada, 3 respuestas embarulladas; 1 fallo del corrector que era acierto"
+ },
+ "desarrollo_dev_101": {
+  "temas": [
+   "abejas",
+   "volcanes",
+   "ajedrez"
+  ],
+  "nota": "no es medida limpia",
+  "texto": {
+   "lcm217": [
+    58.4,
+    30
+   ],
+   "it1": [
+    84.2,
+    6
+   ],
+   "it2": [
+    92.1,
+    1
+   ],
+   "final": [
+    94.1,
+    0
+   ]
+  },
+  "frases_cubiertas_texto": {
+   "lcm217": "42/56",
+   "final": "53/56"
+  },
+  "frases": {
+   "lcm217": [
+    34.7,
+    22
+   ],
+   "it2": [
+    73.3,
+    11
+   ],
+   "final": [
+    84.2,
+    8
+   ]
+  },
+  "sin_texto": [
+   15.8,
+   19
+  ]
+ },
+ "setas_59": {
+  "nota": "tema del diagnóstico: conocido, no se desarrolló contra él",
+  "texto": {
+   "lcm217": [
+    47.5,
+    17
+   ],
+   "lcm218": [
+    67.8,
+    5
+   ]
+  }
+ },
+ "controles_217_218": {
+  "examenes_autor": [
+   89.76,
+   89.9
+  ],
+  "examen_ciego2": [
+   94.68,
+   94.68
+  ],
+  "examen_ciego6": [
+   80.6,
+   82.09
+  ],
+  "examen_ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "limpio_16b": [
+   96.48,
+   96.48
+  ],
+  "limpio_16c": [
+   100.0,
+   100.0
+  ],
+  "limpio_17b": [
+   99.26,
+   99.26
+  ],
+  "limpio_17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas de rondas anteriores",
+ "curva_primer_intento": {
+  "nota": "primer intento de cada paso sobre los 3 temas de desarrollo (texto pegado)",
+  "base_217": {
+   "acierto": 58.4,
+   "falsas": 30,
+   "frases_cubiertas": "42/56"
+  },
+  "it1_lectura_y_cita": {
+   "acierto": 78.2,
+   "falsas": 9,
+   "frases_cubiertas": "49/56"
+  },
+  "setas_no_desarrollado": {
+   "antes": [
+    47.5,
+    17
+   ],
+   "tras_it1": [
+    62.7,
+    7
+   ]
+  },
+  "1": {
+   "n": 104,
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ }
+}

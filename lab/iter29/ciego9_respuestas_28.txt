@@ -1,0 +1,100 @@
+[OK] > hola
+    ¡Hola! ¿En qué puedo ayudarte?
+[OK] > juego en un equipo de balonmano
+    Entendido: juegas en un equipo de balonmano.
+[ABST_INDEBIDA] > mi amiga Celia, que es la capitana, se ha roto un dedo
+    No lo he entendido del todo, pero me lo apunto tal como lo dices: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».
+[ABST_INDEBIDA] > ¿qué es Celia?
+    No lo tengo del todo claro, pero me dijiste: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».
+[ABST_INDEBIDA] > ¿qué se ha roto Celia?
+    No lo tengo del todo claro, pero me dijiste: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».
+[ABST_INDEBIDA] > el sábado es la final
+    No tengo claro de quién hablas. ¿A quién te refieres?
+[ABST_INDEBIDA] > ¿cuándo es la final?
+    No lo sé.
+[-] > estoy nerviosa, llevo toda la semana entrenando
+    No lo he entendido del todo, pero me lo apunto tal como lo dices: «Estoy nerviosa, llevo toda la semana entrenando».
+[ABST_INDEBIDA] > ¿cómo estoy?
+    No lo sé: no me has dicho cómo estás. De ti sé que juegas en un equipo de balonmano.
+[ABST_INDEBIDA] > ¿en qué equipo juego?
+    No lo sé: no me has dicho qué equipas. De ti sé que juegas en un equipo de balonmano.
+[OK] > buenas
+    ¡Buenas! ¿En qué puedo ayudarte?
+[OK] > me mudo a un piso con dos compañeros, Óscar y Nacho
+    Entendido: te mudas a un piso con dos compañeros; te mudas a un piso con Óscar y te mudas a un piso con Nacho.
+[OK] > ¿con quién me mudo?
+    Te mudas a un piso con Óscar.
+[ABST_INDEBIDA] > ¿cuántos compañeros tengo?
+    No lo sé: no me has dicho cuántos companeros tienes. De ti sé que te mudas a un piso con dos compañeros y te mudas a un piso con Óscar.
+[-] > Óscar es de Valencia y Nacho de Bilbao
+    Entendido: Óscar es de Valencia; Nacho es de Bilbao.
+[OK] > ¿de dónde es Nacho?
+    Nacho es de Bilbao.
+[OK] > hemos alquilado una casa amarilla cerca del río
+    Entendido: alquilaste una casa amarilla cerca del río.
+[ABST_INDEBIDA] > ¿de qué color es la casa?
+    No lo sé.
+[OK] > el lunes es la mudanza
+    Entendido: la casa es mudanza el lunes.
+[ABST_INDEBIDA] > ¿cuándo es la mudanza?
+    No lo sé.
+[OK] > hola
+    ¡Hola! ¿En qué puedo ayudarte?
+[OK] > mi hija Alma tiene un año
+    Entendido: Alma tiene un año.
+[OK] > le está saliendo el primer diente
+    Entendido: el diente primero sale.
+[ABST_INDEBIDA] > ¿qué le está saliendo a Alma?
+    No lo sé.
+[ABST_INDEBIDA] > a mi marido le duele la espalda de cogerla en brazos
+    No lo he entendido del todo, pero me lo apunto tal como lo dices: «A mi marido le duele la espalda de coger en brazos».
+[ABST_INDEBIDA] > ¿qué le duele a mi marido?
+    No lo tengo del todo claro, pero me dijiste: «A mi marido le duele la espalda de coger en brazos».
+[OK] > ¿cuántos años tiene Alma?
+    Alma tiene 1 años.
+[-] > hoy no ha dormido la siesta, está muy cansada
+    Entendido: Alma no durmió la siesta hoy; Alma está muy cansada.
+[OK] > ¿cómo está Alma?
+    Alma está muy cansada.
+[OK] > ¿Alma es mi hija?
+    Sí, Alma es tu hija.
+[ABST_INDEBIDA] > mañana es el santo de mi abuela
+    No tengo claro de quién hablas. ¿A quién te refieres?
+[ABST_INDEBIDA] > se llama Dolores y fue maestra muchos años
+    No tengo claro de quién hablas. ¿A quién te refieres? No tengo claro de quién hablas. ¿A quién te refieres?
+[ABST_INDEBIDA] > ¿a qué se dedicaba mi abuela?
+    No sé nada de tu abuela: no me has hablado de ella.
+[ABST_INDEBIDA] > ¿cuándo es el santo de mi abuela?
+    No sé nada de el santo de abuelo: no me has hablado de él.
+[OK] > le vamos a regalar un pañuelo verde
+    Entendido: regalarás un pañuelo verde.
+[ABST_INDEBIDA] > ¿de qué color es el pañuelo?
+    No lo sé.
+[OK] > ¿qué le vamos a regalar?
+    Regalarás un pañuelo verde.
+[OK] > mi tío Félix, que es el hijo mayor, organiza la comida
+    Entendido: Félix es hijo mayor; Félix organiza la comida.
+[OK] > ¿quién organiza la comida?
+    Félix organiza la comida.
+[OK] > ¿Félix es mi tío?
+    Sí, Félix es tu tío.
+[-] > qué rabia
+    Vaya, lo siento.
+[OK] > se me ha roto el móvil, se me cayó al suelo
+    Entendido: Se me ha roto el móvil se me cayó al suelo.
+[ABST_INDEBIDA] > ¿qué se me ha roto?
+    No lo sé.
+[ABST_INDEBIDA] > ¿dónde se me cayó?
+    No he entendido bien la pregunta. ¿Me la dices de otra forma?
+[-] > tengo que comprar otro, el viejo tenía cinco años
+    Entendido: tienes que comprar otro el viejo tenía cinco años.
+[OK] > ¿qué tengo que comprar?
+    Tienes que comprar otro el viejo tenía cinco años.
+[MAL] > [IMG foto.png] me gusta este color para el nuevo
+    Entendido: Me gusta un color para.
+[ABST_INDEBIDA] > ¿qué color me gusta para el nuevo?
+    No lo sé: no me has dicho qué te gusta.
+[OK] > ¿un móvil es un objeto?
+    Sí, un móvil es un objeto. Lo deduzco porque un móvil es un aparato y un aparato es un objeto.
+[OK] > gracias
+    De nada.

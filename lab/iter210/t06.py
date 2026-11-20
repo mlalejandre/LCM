@@ -1,0 +1,18 @@
+D = [{"id": "p06", "cat": "no_confundir", "turnos": [
+ ("hola", "hola"),
+ ("todas las mañanas paso por el parque", "parque;!no lo he entendido"),
+ ("¿por dónde paso todas las mañanas?", "parque"),
+ ("¿por qué paso por el parque?", "ABST"),
+ ("corto la madera con una sierra", "sierra;!no lo he entendido"),
+ ("¿con quién corto la madera?", "ABST"),
+ ("¿con qué corto la madera?", "sierra"),
+ ("mi tía trabaja para un hotel", "hotel;!no lo he entendido"),
+ ("¿para qué trabaja mi tía?", "ABST"),
+ ("¿para quién trabaja mi tía?", "hotel"),
+ ("vengo de la playa", "playa;!no lo he entendido"),
+ ("¿de dónde vengo?", "playa"),
+ ("¿hasta dónde vengo?", "ABST"),
+ ("el gato está en la terraza", "terraza;!no lo he entendido"),
+ ("¿qué hay debajo de la terraza?", "ABST"),
+ ("¿el gato está encima de la terraza?", "ABST|terraza"),
+]}]

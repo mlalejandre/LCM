@@ -1,0 +1,192 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.17 · iniciativa: curiosidad por huecos, tono, contención e hilo de la charla (autónomo)",
+ "nota_graves": "error grave = afirmación falsa o pregunta donde no toca (y, en el corrector, también la reacción o la pregunta que debía estar y falta)",
+ "conversa17_150": {
+  "nota": "termómetro escrito antes de construir nada; he desarrollado contra él: no es una medida limpia",
+  "lcm216": {
+   "auto": [
+    51.33,
+    31
+   ]
+  },
+  "lcm217": {
+   "auto": [
+    99.33,
+    0
+   ]
+  },
+  "por_categoria_216": {
+   "P_preguntar": 32.3,
+   "Q_callar": 89.3,
+   "R_integrar": 28.6,
+   "S_tono": 33.3,
+   "T_hilo": 46.4,
+   "U_pertinencia": 68.8,
+   "V_verde216": 50.0
+  }
+ },
+ "limpio_17b_136": {
+  "nota": "escrito con el código congelado (9f2acbb), sin probar sus frases; medido una vez",
+  "lcm216": {
+   "auto": [
+    41.18,
+    36
+   ],
+   "auditado": 34.6
+  },
+  "lcm217_ciega": {
+   "auto": [
+    83.09,
+    10
+   ],
+   "auditado": 77.2
+  },
+  "lcm217_final_no_ciega": {
+   "auto": [
+    99.26,
+    0
+   ]
+  },
+  "auditoria_217": "8 aprobados laxos contados como fallo: fusión mal hecha («con mis hermanos, en casa de mi madre»), causa contada en primera persona (2), «Nico Alba» como un solo nombre (2), «Maider fue un día rarísimo» (2), «pusiste una multa» (1)",
+  "auditoria_216": "9 aprobados laxos contados como fallo"
+ },
+ "limpio_17c_109": {
+  "nota": "medida FINAL: escrito con el código definitivo congelado (9d85a3b), medido una vez en cada versión, sin arreglos posteriores",
+  "lcm216": {
+   "auto": [
+    44.95,
+    23
+   ],
+   "auditado": 39.4
+  },
+  "lcm217": {
+   "auto": [
+    94.5,
+    2
+   ],
+   "auditado": 94.5,
+   "afirmaciones_falsas_reales": 0,
+   "preguntas_indebidas": 0
+  },
+  "por_categoria_216_217": {
+   "P_preguntar": [
+    14.3,
+    100.0
+   ],
+   "Q_callar": [
+    73.3,
+    100.0
+   ],
+   "R_integrar": [
+    20.0,
+    86.7
+   ],
+   "S_tono": [
+    46.7,
+    93.3
+   ],
+   "T_hilo": [
+    56.2,
+    87.5
+   ],
+   "U_pertinencia": [
+    42.9,
+    92.9
+   ],
+   "V_verde": [
+    55.0,
+    100.0
+   ]
+  },
+  "fallos_217": [
+   "«me han concedido la hipoteca»: sin reacción",
+   "«uno de aventuras» (respuesta a «¿Qué libro es?»): no la integra",
+   "«anoche discutí con mi padre» justo después de otra pregunta suya: no pregunta (contención)",
+   "«pregúntame lo que quieras»: lo toma como permiso y no pregunta",
+   "«pues nada, hasta luego»: no lo entiende",
+   "«¿una peluquera es una persona?»: no lo sabe"
+  ],
+  "auditoria_216": "6 aprobados laxos contados como fallo (p. ej. «200 + 60 = 260», «regalaste unos patines a Encarna», «tú y tu tío subiste el alquiler»)"
+ },
+ "preguntas_en_examenes_antiguos": {
+  "nota": "afirmaciones de termómetro 2.16, 16b, ciego 2, 6 y 7 en las que la respuesta lleva una pregunta",
+  "lcm216": [
+   9,
+   293
+  ],
+  "lcm217": [
+   15,
+   293
+  ],
+  "nuevas": 6,
+  "indebidas": [
+   "«NO ME GUSTA NADA MADRUGAR» -> «¿Qué es un madrugar?»"
+  ],
+  "mejorables": [
+   "«tengo una hermana y dos hermanos» -> pregunta en singular"
+  ]
+ },
+ "controles_216_217": {
+  "examenes_autor": [
+   89.76,
+   89.76
+  ],
+  "examen_ciego2": [
+   94.68,
+   94.68
+  ],
+  "examen_ciego6": [
+   80.6,
+   80.6
+  ],
+  "examen_ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro_216": [
+   96.59,
+   96.59
+  ],
+  "limpio_16b": [
+   96.48,
+   96.48
+  ],
+  "limpio_16c": [
+   94.57,
+   100.0
+  ],
+  "nota_16c": "sube porque esta ronda arregla sus fallos, que eran la lista de pendientes: ya no es una medida ciega"
+ },
+ "regresiones": "solo las 4 conocidas de rondas anteriores (iter26 t11, iter28 t23, iter210 t01, iter214 t05)",
+ "escuela": {
+  "cartillas": 2,
+  "frases": 314,
+  "aprendidas": 312,
+  "tasa": 99.4,
+  "datos_nuevos": 325
+ },
+ "pytest": "884 pasan (3 archivos de entorno fallan como siempre)",
+ "curva_primer_intento": {
+  "1": {
+   "n": 42,
+   "acierto": 92.86,
+   "falsas": 1
+  },
+  "2": {
+   "n": 34,
+   "acierto": 97.06,
+   "falsas": 0
+  },
+  "3": {
+   "n": 45,
+   "acierto": 86.67,
+   "falsas": 0
+  },
+  "4": {
+   "n": 56,
+   "acierto": 98.21,
+   "falsas": 0
+  }
+ }
+}

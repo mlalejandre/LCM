@@ -1,0 +1,238 @@
+{
+ "fecha": "2026-11-18",
+ "evaluador": "estricto; en 2.6 además una nota literal no aprueba, y en una abstención se corta en «pero me dijiste». 2.5 y 2.6 medidas con el mismo juez",
+ "charla50": {
+  "n_puntuados": 40,
+  "interacciones": 50,
+  "medida_preregistrada": {
+   "modo": "cinco bloques con memoria separada (error de diseño: debía ser una sola conversación)",
+   "lcm25": 77.5,
+   "lcm26": 77.5,
+   "falsas": {
+    "lcm25": 0,
+    "lcm26": 0
+   },
+   "nota": "veredictos idénticos turno a turno"
+  },
+  "medida_corregida": {
+   "modo": "una sola conversación (los bloques comparten memoria)",
+   "lcm25": 80.0,
+   "lcm26": 85.0,
+   "falsas": {
+    "lcm25": 0,
+    "lcm26": 0
+   },
+   "abst_indebida": {
+    "lcm25": 8,
+    "lcm26": 6
+   },
+   "nota": "el fallo del arnés se vio al leer las transcripciones DESPUÉS de la medida preregistrada; se repitió con ambas versiones sin tocar el código"
+  }
+ },
+ "curva_aprendizaje_primer_intento": {
+  "T01-08": {
+   "n": 72,
+   "acierto_primer_intento": 59.72,
+   "falsas": 8
+  },
+  "T09-16": {
+   "n": 72,
+   "acierto_primer_intento": 61.11,
+   "falsas": 5
+  },
+  "T17-23": {
+   "n": 63,
+   "acierto_primer_intento": 65.08,
+   "falsas": 7
+  },
+  "por_tanda": {
+   "1": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 1
+   },
+   "2": {
+    "n": 8,
+    "acierto": 37.5,
+    "falsas": 0
+   },
+   "3": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 1
+   },
+   "4": {
+    "n": 9,
+    "acierto": 66.67,
+    "falsas": 0
+   },
+   "5": {
+    "n": 10,
+    "acierto": 70.0,
+    "falsas": 1,
+    "nota": "corregido a mano: 2 respuestas aprobadas por criterios demasiado laxos ('si' dentro de 'Si me cuentas'; 'Entendido: tu azul es el azul')"
+   },
+   "6": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 0
+   },
+   "7": {
+    "n": 9,
+    "acierto": 11.11,
+    "falsas": 3,
+    "nota": "corregido a mano: 'Entendido: estás ingresado', 'te caíste', 'sabes recuperará' aprobaban con el criterio laxo 'entendid*'"
+   },
+   "8": {
+    "n": 9,
+    "acierto": 55.56,
+    "falsas": 2
+   },
+   "9": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 1
+   },
+   "10": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 0
+   },
+   "11": {
+    "n": 10,
+    "acierto": 40.0,
+    "falsas": 1,
+    "nota": "corregido a mano: 'los niños de tu clase vendrán' (pierde 'ocho' y 'su' mal resuelto) aprobó por contener 'niños'"
+   },
+   "12": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 1,
+    "nota": "revisado a mano: fechó 'se casa en junio' en junio de 2026 (ya pasado)"
+   },
+   "13": {
+    "n": 9,
+    "acierto": 22.22,
+    "falsas": 1,
+    "nota": "corregido a mano: 'No he entendido bien' aprobó por 'bien'; 'Encantado, Ernesto' (nombre del vecino tomado por el de la persona)"
+   },
+   "14": {
+    "n": 8,
+    "acierto": 50.0,
+    "falsas": 0
+   },
+   "15": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "16": {
+    "n": 10,
+    "acierto": 50.0,
+    "falsas": 1,
+    "nota": "corregido a mano: 'Aquí estudia para las oposiciones' aprobó por contener 'estudi*'"
+   },
+   "17": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 2,
+    "nota": "corregido a mano: 'ves muy bueno una serie' (dos turnos) aprobaba por contener 'serie'"
+   },
+   "18": {
+    "n": 8,
+    "acierto": 25.0,
+    "falsas": 2,
+    "nota": "corregido a mano: 'llevas mi problema al taller' aprobó por contener 'taller'"
+   },
+   "19": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 2,
+    "nota": "corregido a mano: 'les ha encantado' tenía criterio ANY y dio 'te encantó una paella' (falso)"
+   },
+   "20": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0,
+    "nota": "corregido a mano: '¿por qué estoy agobiado?' aprobó citando literalmente la nota; el juez ya corta en «pero me dijiste»"
+   },
+   "21": {
+    "n": 9,
+    "acierto": 88.89,
+    "falsas": 1,
+    "nota": "corregido a mano: 'tus gatas se llaman Luna y Sol' (el usuario dijo gatos) aprobó por contener los nombres"
+   },
+   "22": {
+    "n": 9,
+    "acierto": 88.89,
+    "falsas": 0
+   },
+   "23": {
+    "n": 9,
+    "acierto": 55.56,
+    "falsas": 0
+   }
+  }
+ },
+ "tandas_iter26": {
+  "tandas": 23,
+  "interacciones": 230,
+  "final": "22 de 23 al 100%; T11 al 90% (inferencia «¿cuándo es la fiesta?» que no se resuelve)"
+ },
+ "tandas_1_a_15": {
+  "n": 1570,
+  "lcm26": 100.0
+ },
+ "control": {
+  "examen_ciego_2": {
+   "n": 301,
+   "lcm25": {
+    "acierto": 93.02,
+    "falsas": 7
+   },
+   "lcm26": {
+    "acierto": 93.36,
+    "falsas": 6
+   }
+  },
+  "examen_ciego_6": {
+   "n": 67,
+   "lcm25": {
+    "acierto": 76.12,
+    "falsas": 2
+   },
+   "lcm26": {
+    "acierto": 77.61,
+    "falsas": 2
+   }
+  },
+  "examen_ciego_7": {
+   "n": 43,
+   "lcm25": {
+    "acierto": 69.77,
+    "falsas": 1
+   },
+   "lcm26": {
+    "acierto": 69.77,
+    "falsas": 1
+   }
+  },
+  "examenes_del_autor": {
+   "n": 703,
+   "lcm25": 88.05,
+   "lcm26": 88.05
+  },
+  "banco_generado_validacion": {
+   "n": 12331,
+   "lcm25": {
+    "acierto": 98.49,
+    "falsas_pct": 0.27
+   },
+   "lcm26": {
+    "acierto": 98.49,
+    "falsas_pct": 0.27
+   }
+  }
+ },
+ "pytest": "735 passed, 1 skipped, 3 fallos solo de este entorno (test_parche106, test_reproducibilidad, test_vision_chat)"
+}

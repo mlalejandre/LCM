@@ -1,0 +1,24 @@
+{
+ "1": {
+  "n": 18,
+  "acierto": 83.33,
+  "falsas": 3,
+  "nota": "los 3 fallos eran del criterio (pedía «pintor»/«cama» y la respuesta natural va en plural): corregido a mano -> 18/18"
+ },
+ "2": {
+  "n": 11,
+  "acierto": 90.91,
+  "falsas": 0,
+  "nota": "fallo real: «se ha comprado un taladro» y se pregunta con «tiene» (comprar implica tener)"
+ },
+ "3": {
+  "n": 18,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "4": {
+  "n": 14,
+  "acierto": 100.0,
+  "falsas": 0
+ }
+}

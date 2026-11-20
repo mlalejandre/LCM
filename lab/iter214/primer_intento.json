@@ -1,0 +1,29 @@
+{
+ "1": {
+  "n": 18,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "2": {
+  "n": 14,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "3": {
+  "n": 13,
+  "acierto": 76.92,
+  "falsas": 0,
+  "nota": "fallos reales: «sirve para» no llegaba a la base (iba a la capa antigua) y «¿los bomberos apagan fuegos?» (propiedad de oficio retirada a propósito: interfería con «¿quién sabe…?»)."
+ },
+ "4": {
+  "n": 14,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "5": {
+  "n": 15,
+  "acierto": 73.33,
+  "falsas": 1,
+  "nota": "«mi hermano es concejal / ¿qué es mi hermano?» y «una mujer muy simpática» fallaban ya en la 2.13; arreglados. «los saco a pasear» sin antecedente: apuntarlo literal es razonable (criterio mal escrito, corregido)."
+ }
+}

@@ -1,0 +1,600 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 5,
+    "ok": 0,
+    "falsas": 5,
+    "acierto": 0.0
+   },
+   "TOTAL": {
+    "n": 58,
+    "ok": 10,
+    "falsas": 12,
+    "acierto": 17.2
+   },
+   "L": {
+    "n": 16,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   },
+   "D": {
+    "n": 6,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "I": {
+    "n": 7,
+    "ok": 0,
+    "falsas": 3,
+    "acierto": 0.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 2,
+    "falsas": 1,
+    "acierto": 33.3
+   },
+   "M": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   }
+  },
+  "frases_cubiertas": [
+   0,
+   28
+  ]
+ },
+ "filas": [
+  {
+   "tema": "faros",
+   "t": "V",
+   "q": "¿qué es un faro?",
+   "crit": "torre",
+   "r": "Un faro es un edificio.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde se construyen los faros?",
+   "crit": "costa|rocas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿para qué sirven los faros?",
+   "crit": "guiar|barcos",
+   "r": "No lo sé. No conozco «faros»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿desde dónde se ve la luz de un faro?",
+   "crit": "lejos",
+   "r": "No sé nada de la luz del faro: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿cómo saben los marineros dónde están?",
+   "crit": "ritmo|destellos",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿qué hace el faro cuando hay niebla?",
+   "crit": "sirena",
+   "r": "No lo sé. No conozco «faro»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿con qué funcionaban los faros antiguamente?",
+   "crit": "fuego|aceite",
+   "r": "No lo sé. No conozco «faros»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿cómo se llamaba la persona que cuidaba un faro?",
+   "crit": "farero",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde vivía el farero?",
+   "crit": "faro",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿cuándo encendía la luz el farero?",
+   "crit": "tarde",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿cuál es el faro más antiguo del mundo?",
+   "crit": "hercules",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde está la Torre de Hércules?",
+   "crit": "coruna",
+   "r": "No sé quién es Torre: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿quién construyó la Torre de Hércules?",
+   "crit": "romanos",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿en qué se han convertido algunos faros viejos?",
+   "crit": "hotel*|museo*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿qué faros se distinguen mejor de día?",
+   "crit": "rayas|pintados",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿un faro es una torre?",
+   "crit": "^si",
+   "r": "No, un faro es un edificio.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿la Torre de Hércules es un faro?",
+   "crit": "^si",
+   "r": "No lo sé. No conozco «Torre»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿un faro es un animal?",
+   "crit": "^no",
+   "r": "No, un faro es un edificio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "M",
+   "q": "¿dónde está el faro más antiguo del mundo?",
+   "crit": "coruna",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿qué faro está en La Coruña?",
+   "crit": "hercules",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿cuántos faros hay en España?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿cuánto mide la Torre de Hércules?",
+   "crit": "ABST",
+   "r": "No sé quién es Torre: todavía no me has hablado de él.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién inventó el faro?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "C",
+   "q": "mi bisabuelo era farero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu bisabuelo era farero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "C",
+   "q": "¿mi bisabuelo cuidaba un faro?",
+   "crit": "^si|cuidaba|faro",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu bisabuelo sé que era farero.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "G",
+   "q": "dime un faro",
+   "crit": "hercules",
+   "r": "No conozco ningún ejemplo de «faro» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "G",
+   "q": "descríbeme la Torre de Hércules",
+   "crit": "faro|antiguo|coruna|romanos",
+   "r": "No sé lo bastante de «hercules» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "K",
+   "q": "la Torre de Hércules está en Cádiz",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|coruna",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La Torre de Hércules está en Cádiz».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué es la Luna?",
+   "crit": "satelite",
+   "r": "Una luna es un astro.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿cuánto tarda la Luna en dar una vuelta a la Tierra?",
+   "crit": "veintisiete|27",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿por qué brilla la Luna?",
+   "crit": "refleja|sol",
+   "r": "No sé quién es Luna: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿la Luna tiene luz propia?",
+   "crit": "^no",
+   "r": "No sé quién es Luna: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿hay aire en la Luna?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿por qué no puede vivir ningún ser vivo en la Luna?",
+   "crit": "aire|agua",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿de qué está cubierta la superficie de la Luna?",
+   "crit": "polvo|crater*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son los cráteres?",
+   "crit": "agujero*",
+   "r": "Según mi diccionario de conceptos: «Crater» es un tipo de «constelación» y «constellation». Dominio: objeto natural. En inglés: Crater. En su definición aparecen, entre otras: débil, meridional, hemisferio y cercano.",
+   "v": "MAL",
+   "k": 6
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son las fases de la Luna?",
+   "crit": "formas",
+   "r": "Lunes es un día.",
+   "v": "MAL",
+   "k": 8
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llama la Luna cuando la vemos entera?",
+   "crit": "llena",
+   "r": "Lunes es un día.",
+   "v": "MAL",
+   "k": 9
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llama la Luna cuando no se ve?",
+   "crit": "nueva",
+   "r": "Lunes es un día.",
+   "v": "MAL",
+   "k": 10
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son las mareas?",
+   "crit": "subidas|bajadas|mar",
+   "r": "La marea es un fenómeno.",
+   "v": "MAL",
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿qué provoca la Luna?",
+   "crit": "marea*",
+   "r": "No sé quién es Luna: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿quién fue la primera persona que pisó la Luna?",
+   "crit": "armstrong",
+   "r": "Un médico es una persona. Un profesor es una persona.",
+   "v": "MAL",
+   "k": 12
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿en qué año llegó Armstrong a la Luna?",
+   "crit": "1969",
+   "r": "No sé quién es Armstrong: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿cuánto pesan las cosas en la Luna?",
+   "crit": "seis|menos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que viajan al espacio?",
+   "crit": "astronauta*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿la Luna es un satélite?",
+   "crit": "^si",
+   "r": "No sé quién es Luna: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿Neil Armstrong era una persona?",
+   "crit": "^si",
+   "r": "No sé quién es Neil Armstrong: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿un astronauta es una persona?",
+   "crit": "^si",
+   "r": "Sí, un astronauta es una persona. Lo deduzco porque un astronauta es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿hay vida en la Luna?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "M",
+   "q": "¿en qué nave llegó la primera persona que pisó la Luna?",
+   "crit": "apolo",
+   "r": "No lo sé. No conozco «Luna nave»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿cuánto pesa la Luna?",
+   "crit": "ABST",
+   "r": "No lo sé. No conozco «Luna»: ¿me lo explicas?",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿a qué distancia está la Luna?",
+   "crit": "ABST",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿quién descubrió las mareas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "C",
+   "q": "mi vecina es astronauta",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecina es astronauto.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "C",
+   "q": "¿mi vecina viaja al espacio?",
+   "crit": "^si|viaja*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu vecina sé que es astronauto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "G",
+   "q": "dime las fases de la Luna",
+   "crit": "llena|nueva",
+   "r": "No conozco ningún ejemplo de «fases» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "G",
+   "q": "descríbeme la Luna",
+   "crit": "satelite|polvo|crater*|tierra",
+   "r": "Una luna es un astro. Los astros están en el cielos.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "K",
+   "q": "la Luna tiene luz propia",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|no tiene|refleja",
+   "r": "Entendido: Luna tiene luz propia.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

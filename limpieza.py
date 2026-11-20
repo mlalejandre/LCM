@@ -1,36 +1,30 @@
-"""limpieza.py: deja el proyecto en TABULA RASA y, si quieres, lo vuelve a levantar y a entrenar TODO, con un solo comando.
+"""limpieza.py: deja el proyecto en TABULA RASA para probar LCM_construir_desde_cero.py.
 
-  python limpieza.py                          # ENSAYO: muestra que se quitaria y que se conserva (no toca nada)
-  python limpieza.py --aplicar                # limpia (MUEVE todo a ../LCM_antes_de_tabula_rasa_<fecha>/, recuperable)
-  python limpieza.py --aplicar --reconstruir  # limpia y RECONSTRUYE + REENTRENA todo automaticamente (venv, dependencias, tests,
-                                              # verificacion, reproduce, comparacion de metricas). No hace falta ningun otro comando.
-
-Que hace, en orden (si algo falla, se para ANTES de quitar nada):
-  1. Regenera LCM_construir_desde_cero.py y reproducibilidad/manifiesto.json DESDE TU PROYECTO ACTUAL (para que la reconstruccion
-     sea fiel a tu copia, no a otra). Desactivable con --no-refrescar.
-  2. Ensayo de reconstruccion: escribe el constructor en una carpeta temporal y comprueba que cada archivo sale IDENTICO al tuyo.
-  3. Te pide confirmacion (escribe TABULA RASA).
-  4. Mueve (o borra, con --borrar) todo lo del proyecto. Se conserva: limpieza.py, LCM_construir_desde_cero.py, reproducibilidad/,
-     .git/, .venv/ y venv/, regenta.* / libro.*, y cualquier archivo de la raiz que no sea del proyecto (tus textos, parche-N.py...).
-  5. Con --reconstruir: ejecuta el constructor (modo todo: entorno, tests, verificacion, reentrenamiento y comparacion con la referencia).
-
+Uso (desde la raiz del proyecto):
+  python limpieza.py                      # ENSAYO: solo muestra que se quitaria y que se conserva
+  python limpieza.py --aplicar            # lo hace: MUEVE todo a ../LCM_antes_de_tabula_rasa_<fecha>/ (recuperable) tras pedirte confirmacion
+  python limpieza.py --aplicar --borrar   # lo BORRA de verdad (sin copia), tambien con confirmacion
 Opciones:
-  --borrar                 borrar de verdad en vez de mover (sin copia)
-  --reconstruir [MODO]     MODO = todo (por defecto) | menu | archivos (solo escribe los archivos)
-  --libro RUTA             texto en espanol para el oido (por defecto regenta.rtf/.txt de la raiz)
-  --rapido, --semilla N    se pasan al reentrenamiento
-  --conservar-ud           no toca data/ud/ (los corpus se pueden bajar de nuevo con scripts.get_data, fijados al commit del manifiesto)
-  --conservar ARCHIVO      (repetible) conserva ese archivo o carpeta de la raiz
-  --no-refrescar           no regenera el constructor ni el manifiesto (usa los que hay)
-  --sin-manifiesto         permite limpiar sin reproducibilidad/manifiesto.json (no recomendado)
+  --conservar-ud        no toca data/ud/ (los corpus UD pesan y se pueden bajar de nuevo con scripts.get_data)
+  --conservar ARCHIVO   (repetible) conserva ese archivo o carpeta de la raiz (p. ej. tu texto: --conservar mi_texto.txt)
+  --sin-manifiesto      permite limpiar aunque no exista reproducibilidad/manifiesto.json (no recomendado)
+
+Solo se quita lo que es del proyecto (lo que trae el constructor + lo que genera el uso: checkpoints, memory, reports, data...).
+Cualquier otro archivo de la raiz (tus textos, parche-N.py, notas...) se conserva y se avisa.
+SIEMPRE se conservan: este archivo, LCM_construir_desde_cero.py, reproducibilidad/ (manifiesto: fija las versiones de UD y las metricas
+de referencia), .git/, .venv/ y venv/ (tu entorno de Python), y los textos de libro de la raiz (regenta.rtf/.txt, libro.*).
+Se quita TODO lo demas: codigo, tests, datos, pesos (checkpoints), memoria, informes, copias de parches...
+
+Despues de limpiar:
+  python LCM_construir_desde_cero.py
+  source .venv/bin/activate && pip install -r requirements.txt
+  python -m pytest -q tests && python -m scripts.reproduce --libro tu_texto.txt && python -m scripts.manifiesto --verificar --metricas
 """
 import argparse
 import datetime
 import os
 import shutil
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 GENERADOS = {"checkpoints", "memory", "reports", "data", "_archivo", ".parche_backups", ".pytest_cache", "__pycache__", ".vscode", ".github",
@@ -38,7 +32,6 @@ GENERADOS = {"checkpoints", "memory", "reports", "data", "_archivo", ".parche_ba
 SIEMPRE = {"limpieza.py", "LCM_construir_desde_cero.py", "reproducibilidad", ".git", ".venv", "venv", "env", ".env"}
 LIBROS = ("regenta.rtf", "regenta.txt", "libro.txt", "libro.rtf")
 FRASE = "TABULA RASA"
-BUILDER = "LCM_construir_desde_cero.py"
 
 
 def tam(p: Path) -> int:
@@ -58,80 +51,45 @@ def mb(n: int) -> str:
     return f"{n / 1e6:,.1f} MB"
 
 
-def leer_constructor(path: Path) -> dict:
+def comprobar_constructor(path: Path) -> int:
     src = path.read_text(encoding="utf-8")
     compile(src, str(path), "exec")
     ns = {}
-    exec(src[: src.rindex("\ndef main")] if "\ndef main" in src else src, ns)      # solo el diccionario FILES (no ejecuta main)
-    files = ns.get("FILES")
-    if not isinstance(files, dict):
-        raise ValueError("no encuentro el diccionario FILES")
-    return files
-
-
-def run(cmd, cwd):
-    return subprocess.run(cmd, cwd=cwd).returncode == 0
-
-
-def refrescar(root: Path) -> None:
-    """Regenera constructor + manifiesto desde el proyecto actual y comprueba una reconstruccion en una carpeta temporal."""
-    if not (root / "scripts" / "empaquetar_todo.py").exists() or not (root / "scripts" / "manifiesto.py").exists():
-        sys.exit("[!] Falta scripts/empaquetar_todo.py o scripts/manifiesto.py (instala el parche de reproducibilidad). "
-                 "Usa --no-refrescar para limpiar con el constructor que ya tienes.")
-    print("1/2 Regenerando el constructor y el manifiesto desde tu proyecto actual ...")
-    if not run([sys.executable, "-m", "scripts.empaquetar_todo"], root) or not run([sys.executable, "-m", "scripts.manifiesto", "--guardar"], root):
-        sys.exit("[!] No se pudo regenerar el constructor/manifiesto. No se ha tocado nada.")
-    print("2/2 Ensayo de reconstruccion en una carpeta temporal ...")
-    sys.path.insert(0, str(root))
-    from scripts.manifiesto import tracked
-    mios = [f for f in tracked(str(root)) if (root / f).is_file()]
-    tmp = Path(tempfile.mkdtemp(prefix="lcm_ensayo_"))
-    try:
-        shutil.copy(root / BUILDER, tmp / BUILDER)
-        r = subprocess.run([sys.executable, BUILDER, "--sin-menu"], cwd=tmp, capture_output=True, text=True)
-        if r.returncode != 0:
-            sys.exit(f"[!] El constructor no se ejecuta en limpio:\n{r.stderr[-800:]}\nNo se ha tocado nada.")
-        malos = [f for f in mios if f != BUILDER and (not (tmp / f).is_file() or (tmp / f).read_bytes() != (root / f).read_bytes())]
-        if malos:
-            sys.exit("[!] La reconstruccion NO es identica a tu proyecto en estos archivos (no se limpia nada):\n   " + "\n   ".join(malos[:20]))
-        print(f"    OK: {len(mios)} archivos se reconstruyen identicos.")
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+    # solo se lee el diccionario FILES (sin ejecutar main): se evalua el trozo hasta 'def main'
+    head = src[: src.rindex("\ndef main")]
+    exec(head, ns)
+    return ns["FILES"]
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Tabula rasa del proyecto LCM (y reconstruccion opcional)")
+    ap = argparse.ArgumentParser(description="Tabula rasa del proyecto LCM")
     ap.add_argument("--aplicar", action="store_true")
     ap.add_argument("--borrar", action="store_true", help="borrar de verdad en vez de mover a ../LCM_antes_de_tabula_rasa_<fecha>")
-    ap.add_argument("--reconstruir", nargs="?", const="todo", choices=["todo", "menu", "archivos"])
-    ap.add_argument("--libro")
-    ap.add_argument("--rapido", action="store_true")
-    ap.add_argument("--semilla", type=int)
     ap.add_argument("--conservar-ud", action="store_true")
     ap.add_argument("--conservar", action="append", default=[])
-    ap.add_argument("--no-refrescar", action="store_true")
     ap.add_argument("--sin-manifiesto", action="store_true")
     a = ap.parse_args()
 
     root = Path.cwd()
     if not (root / "src").is_dir() or not (root / "scripts").is_dir():
         sys.exit("[!] Ejecuta esto desde la raiz del proyecto LCM (donde estan src/ y scripts/).")
-    builder = root / BUILDER
-    if a.aplicar and not a.no_refrescar:
-        refrescar(root)                          # antes de quitar NADA; si falla, se para aqui
+    builder = root / "LCM_construir_desde_cero.py"
     if not builder.exists():
-        sys.exit(f"[!] Falta {BUILDER} en la raiz: sin el no podrias reconstruir nada. Crealo con:  python -m scripts.empaquetar_todo")
+        sys.exit("[!] Falta LCM_construir_desde_cero.py en la raiz: sin el no podrias reconstruir nada.\n"
+                 "    Crealo antes con:  python -m scripts.empaquetar_todo")
     try:
-        files = leer_constructor(builder)
+        files = comprobar_constructor(builder)
+        n_files = len(files)
     except Exception as exc:
-        sys.exit(f"[!] {BUILDER} no es valido ({type(exc).__name__}: {exc}). Regeneralo con scripts.empaquetar_todo.")
-    if len(files) < 50:
-        sys.exit(f"[!] {BUILDER} solo contiene {len(files)} archivos: parece incompleto. Regeneralo con scripts.empaquetar_todo.")
+        sys.exit(f"[!] LCM_construir_desde_cero.py no es valido ({type(exc).__name__}: {exc}). Regeneralo con scripts.empaquetar_todo.")
+    if n_files < 50:
+        sys.exit(f"[!] LCM_construir_desde_cero.py solo contiene {n_files} archivos: parece incompleto. Regeneralo con scripts.empaquetar_todo.")
     if not (root / "reproducibilidad" / "manifiesto.json").exists() and not a.sin_manifiesto:
-        sys.exit("[!] Falta reproducibilidad/manifiesto.json. Crealo con:  python -m scripts.manifiesto --guardar     (o usa --sin-manifiesto)")
+        sys.exit("[!] Falta reproducibilidad/manifiesto.json (guarda los commits de UD y las metricas de referencia).\n"
+                 "    Crealo antes con:  python -m scripts.manifiesto --guardar     (o usa --sin-manifiesto)")
 
     keep_names = set(SIEMPRE) | set(LIBROS) | set(a.conservar)
-    del_names = {rel.split("/")[0] for rel in files} | GENERADOS
+    del_names = {rel.split("/")[0] for rel in files} | GENERADOS            # lo que es del proyecto (lo trae el constructor o lo genera el uso)
     keep, remove = [], []
     for p in sorted(root.iterdir(), key=lambda x: x.name):
         if p.name in keep_names:
@@ -140,12 +98,14 @@ def main():
             keep.append((p, "se conserva: no es del proyecto (tuyo)"))
         elif p.name == "data" and a.conservar_ud and (p / "ud").exists():
             keep.append((p / "ud", "se conserva (corpus UD)"))
-            remove += [q for q in sorted(p.iterdir()) if q.name != "ud"]
+            for q in sorted(p.iterdir()):
+                if q.name != "ud":
+                    remove.append(q)
         else:
             remove.append(p)
 
-    print(f"\nProyecto: {root}")
-    print(f"Constructor valido: {BUILDER} ({len(files)} archivos)\n")
+    print(f"Proyecto: {root}")
+    print(f"Constructor valido: {builder.name} ({n_files} archivos)\n")
     print("SE CONSERVA:")
     for p, why in keep:
         print(f"   = {p.relative_to(root)}{'/' if p.is_dir() else ''}   ({why})")
@@ -162,44 +122,27 @@ def main():
         print(f"Destino (recuperable): {destino}")
     else:
         print("MODO BORRAR: sin copia, no se puede deshacer.")
-    if a.reconstruir:
-        print(f"Despues se reconstruye en modo '{a.reconstruir}'" + (" y se reentrena TODO." if a.reconstruir == "todo" else "."))
     if not a.aplicar:
-        print("\n[ENSAYO] No se ha tocado nada. Para hacerlo:  python limpieza.py --aplicar" + (" --borrar" if a.borrar else "")
-              + " --reconstruir" * (not a.reconstruir) + "   (con --reconstruir se vuelve a levantar y entrenar todo solo)")
+        print("\n[ENSAYO] No se ha tocado nada. Para hacerlo:  python limpieza.py --aplicar" + (" --borrar" if a.borrar else ""))
         return
     if not remove:
         print("[OK] Ya esta en tabula rasa.")
-    else:
-        print(f"\nEscribe exactamente  {FRASE}  para continuar (cualquier otra cosa cancela): ", end="")
-        if input().strip() != FRASE:
-            sys.exit("\n[CANCELADO] No se ha tocado nada.")
-        if destino:
-            destino.mkdir(parents=True, exist_ok=False)
-        for p in remove:
-            if destino:
-                shutil.move(str(p), str(destino / p.name))
-            elif p.is_dir() and not p.is_symlink():
-                shutil.rmtree(p)
-            else:
-                p.unlink()
-        print(f"\n[HECHO] {len(remove)} elementos {'movidos a ' + str(destino) if destino else 'borrados'}.")
-    if not a.reconstruir:
-        print("Ahora:  python LCM_construir_desde_cero.py        (escribe todo y abre el menu; la opcion 7 lo hace todo en orden)")
         return
-    cmd = [sys.executable, BUILDER]
-    if a.reconstruir == "archivos":
-        cmd.append("--sin-menu")
-    elif a.reconstruir == "todo":
-        cmd.append("--todo")
-        if a.libro:
-            cmd += ["--libro", a.libro]
-        if a.rapido:
-            cmd.append("--rapido")
-        if a.semilla is not None:
-            cmd += ["--semilla", str(a.semilla)]
-    print("\n=== Reconstruyendo: " + " ".join(os.path.basename(c) if i == 0 else c for i, c in enumerate(cmd)) + " ===\n", flush=True)
-    sys.exit(subprocess.run(cmd, cwd=root).returncode)
+    print(f"\nEscribe exactamente  {FRASE}  para continuar (cualquier otra cosa cancela): ", end="")
+    if input().strip() != FRASE:
+        sys.exit("\n[CANCELADO] No se ha tocado nada.")
+    if destino:
+        destino.mkdir(parents=True, exist_ok=False)
+    for p in remove:
+        if destino:
+            shutil.move(str(p), str(destino / p.name))
+        elif p.is_dir() and not p.is_symlink():
+            shutil.rmtree(p)
+        else:
+            p.unlink()
+    print(f"\n[HECHO] {len(remove)} elementos {'movidos a ' + str(destino) if destino else 'borrados'}.")
+    print("Ahora:\n  python LCM_construir_desde_cero.py\n  source .venv/bin/activate && pip install -r requirements.txt\n"
+          "  python -m pytest -q tests\n  python -m scripts.reproduce --libro tu_texto.txt\n  python -m scripts.manifiesto --verificar --metricas")
 
 
 if __name__ == "__main__":

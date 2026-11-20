@@ -1,0 +1,2 @@
+# LCM_VISION_01_GENERATED
+Pillow>=10

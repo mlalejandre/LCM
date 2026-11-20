@@ -1,0 +1,993 @@
+{
+ "resumen": {
+  "tipos": {
+   "L": {
+    "n": 35,
+    "ok": 1,
+    "falsas": 3,
+    "acierto": 2.9
+   },
+   "TOTAL": {
+    "n": 101,
+    "ok": 16,
+    "falsas": 19,
+    "acierto": 15.8
+   },
+   "V": {
+    "n": 8,
+    "ok": 1,
+    "falsas": 7,
+    "acierto": 12.5
+   },
+   "D": {
+    "n": 12,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   },
+   "I": {
+    "n": 9,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "P": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   },
+   "H": {
+    "n": 7,
+    "ok": 2,
+    "falsas": 1,
+    "acierto": 28.6
+   },
+   "M": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 9,
+    "ok": 9,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "G": {
+    "n": 6,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   },
+   "K": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 3,
+    "acierto": 0.0
+   }
+  },
+  "frases_cubiertas": [
+   1,
+   56
+  ]
+ },
+ "filas": [
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué son las abejas?",
+   "crit": "insecto*",
+   "r": "Una abeja es un insecto. Las abejas vuelan y hacen miel.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿dónde vive una colonia?",
+   "crit": "colmena",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué tipos de abejas hay en una colmena?",
+   "crit": "reina;obrera*;zangano*",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿quién pone los huevos?",
+   "crit": "reina",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿quién hace el trabajo en la colmena?",
+   "crit": "obrera*",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿los zánganos tienen aguijón?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué recogen las obreras?",
+   "crit": "nectar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿dónde se guarda la miel?",
+   "crit": "panal",
+   "r": "Una miel suele estar en la cocina, la nevera o la despensa. Lo sé porque una miel es un alimento.",
+   "v": "MAL",
+   "k": 7
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es el panal?",
+   "crit": "estructura|celdas|cera",
+   "r": "Según mi diccionario de conceptos: «panal» es un tipo de «contenedor» y «instrumental». Dominio: objeto fabricado. Otras palabras para el mismo concepto: colmena. En inglés: beehive y hive. En su definición aparecen, entre otras: sintético, casa, enjambre y abeja. (La palabra también puede referirse a otros conceptos, como un tipo de «construcción».)",
+   "v": "MAL",
+   "k": 7
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuántos lados tienen las celdas?",
+   "crit": "seis|6",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿qué hace una abeja cuando encuentra flores?",
+   "crit": "baile|avisa",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿por qué son importantes las abejas para las plantas?",
+   "crit": "polen",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es la polinización?",
+   "crit": "polen|flor*",
+   "r": "Según mi diccionario de conceptos: «polinización» es un tipo de «concepción», «comienzo» y «acontecimiento» (y, más en general, «evento» y «rasgo psicológico»). Dominio: suceso. En inglés: pollination y pollenation. Acción asociada: fertilizar. En su definición aparecen, entre otras: transferencia, estigma y planta.",
+   "v": "MAL",
+   "k": 11
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuándo pica una abeja?",
+   "crit": "amenazada",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué le pasa a la abeja obrera después de picar?",
+   "crit": "muere|morir",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "abejas",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que cuidan las colmenas?",
+   "crit": "apicultor*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es un apicultor?",
+   "crit": "persona|cuida*",
+   "r": "Según mi diccionario de conceptos: «apicultor» es un tipo de «agricultor», «creador» y «alguien» (y, más en general, «organismo»). Dominio: persona. Otras palabras para el mismo concepto: abejero y colmenero. En inglés: beekeeper, apiarist y apiculturist. En su definición aparecen, entre otras: abeja y amado.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿para qué usa humo el apicultor?",
+   "crit": "calmar",
+   "r": "No lo sé. No conozco «apicultor»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué lleva el apicultor?",
+   "crit": "traje|velo",
+   "r": "No lo sé. No conozco «apicultor»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿de qué se alimentan las abejas en invierno?",
+   "crit": "miel",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA",
+   "k": 17
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué come la reina?",
+   "crit": "jalea",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 18
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuánto puede vivir una reina?",
+   "crit": "cinco|5",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 19
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿una obrera es un insecto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿un zángano es un animal?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿las abejas son plantas?",
+   "crit": "^no",
+   "r": "No, una abeja es un animal, no una planta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "I",
+   "q": "¿quién no tiene aguijón?",
+   "crit": "zangano*",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿una obrera puede poner huevos?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "M",
+   "q": "¿qué come la que pone los huevos?",
+   "crit": "jalea",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿cuántas abejas hay en una colmena?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿de qué color es la reina?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién inventó la colmena?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "C",
+   "q": "mi tío es apicultor",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tío es apicultor.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "C",
+   "q": "¿mi tío cuida colmenas?",
+   "crit": "^si|colmena*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu tío sé que es apicultor.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "G",
+   "q": "dime los tipos de abejas",
+   "crit": "reina|obrera*|zangano*",
+   "r": "Entendido: tu tío dime los tipos de abejas.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "G",
+   "q": "descríbeme un zángano",
+   "crit": "macho|aguijon",
+   "r": "No sé lo bastante de «zangano» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "K",
+   "q": "los zánganos tienen aguijón",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|no tienen",
+   "r": "Entendido: los zánganos tienen aguijón.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es un volcán?",
+   "crit": "abertura",
+   "r": "Un volcán es un paisaje.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es el magma?",
+   "crit": "roca",
+   "r": "Según mi diccionario de conceptos: «magma» es un tipo de «piedra», «materia» y «sustancia». Dominio: sustancia. En inglés: magma. En su definición aparecen, entre otras: líquido y tierra.",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿cómo se llama el magma cuando sale al exterior?",
+   "crit": "lava",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿por dónde sale la lava?",
+   "crit": "crater",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es el cráter?",
+   "crit": "boca",
+   "r": "Según mi diccionario de conceptos: «cráter» es un tipo de «constelación» y «constellation». Dominio: objeto natural. En inglés: Crater. En su definición aparecen, entre otras: débil, meridional, hemisferio y cercano.",
+   "v": "MAL",
+   "k": 3
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es una erupción?",
+   "crit": "salida|lava",
+   "r": "Según mi diccionario de conceptos: «erupción» es un tipo de «acontecimiento», «evento» y «rasgo psicológico». Dominio: suceso. Otras palabras para el mismo concepto: brote, comienzo, estallido y irrupción. En inglés: outbreak, eruption y irruption. Acción asociada: estallar. En su definición aparecen, entre otras: repentino, violento y espontáneo. Algunos tipos: epidemia. (La palabra también puede referirse a otros conceptos, como un tipo de «comienzo» y «acceso».)",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿todos los volcanes están activos?",
+   "crit": "^no|algunos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿un volcán dormido puede despertar?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿los volcanes extinguidos entran en erupción?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué temperatura puede alcanzar la lava?",
+   "crit": "mil|1000",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "MAL",
+   "k": 8
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿en qué se convierte la lava al enfriarse?",
+   "crit": "roca",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿por qué cultiva la gente cerca de los volcanes?",
+   "crit": "fertil|ceniza",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que estudian los volcanes?",
+   "crit": "vulcanologo*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es un sismógrafo?",
+   "crit": "aparato|mide*",
+   "r": "Según mi diccionario de conceptos: «sismógrafo» es un tipo de «instrumento de medición», «instrumento» y «dispositivo» (y, más en general, «instrumental»). Dominio: objeto fabricado. En inglés: seismograph. En su definición aparecen, entre otras: medición, fuerza, camino, continuación y movimiento.",
+   "v": "MAL",
+   "k": 12
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿qué pasa antes de una erupción?",
+   "crit": "tiembla|temblar",
+   "r": "No lo sé. No conozco «erupción»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿cuál es el volcán más alto de España?",
+   "crit": "teide",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿dónde está el Teide?",
+   "crit": "tenerife",
+   "r": "No sé quién es Teide: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿cuánto mide el Teide?",
+   "crit": "3715",
+   "r": "No sé quién es Teide: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿de dónde es el Krakatoa?",
+   "crit": "indonesia",
+   "r": "No sé quién es Krakatoa: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿en qué año fue la erupción del Krakatoa?",
+   "crit": "1883",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 17
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿qué puede formar un volcán submarino?",
+   "crit": "isla",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 18
+  },
+  {
+   "tema": "volcanes",
+   "t": "H",
+   "q": "¿el Teide es un volcán?",
+   "crit": "^si",
+   "r": "No sé quién es Teide: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "H",
+   "q": "¿el Krakatoa es un lugar?",
+   "crit": "^si",
+   "r": "No sé quién es Krakatoa: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "M",
+   "q": "¿dónde está el volcán más alto de España?",
+   "crit": "tenerife",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿qué volcán está en Tenerife?",
+   "crit": "teide",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿el Teide tiene cráter?",
+   "crit": "^si",
+   "r": "No sé quién es Teide: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuántos volcanes hay en el mundo?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién subió primero al Teide?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuánto mide el Krakatoa?",
+   "crit": "ABST",
+   "r": "No sé quién es Krakatoa: todavía no me has hablado de ella.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "C",
+   "q": "el verano pasado subí al Teide",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: subiste al Teide el verano pasado.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "C",
+   "q": "¿en qué isla estuve?",
+   "crit": "tenerife",
+   "r": "No lo sé. No conozco «isla»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "G",
+   "q": "dime un volcán",
+   "crit": "teide|krakatoa",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "G",
+   "q": "descríbeme el Teide",
+   "crit": "tenerife|3715|alto",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "K",
+   "q": "el Teide está en Mallorca",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|tenerife",
+   "r": "Entendido: Teide está en Mallorca.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántos jugadores juegan al ajedrez?",
+   "crit": "dos|2",
+   "r": "No lo sé. No conozco «cuántos jugadores»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántas casillas tiene el tablero?",
+   "crit": "64|sesenta y cuatro",
+   "r": "No lo sé. No conozco «tablero»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿con cuántas piezas empieza cada jugador?",
+   "crit": "16|dieciseis",
+   "r": "No lo sé. No conozco «cada jugador»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿qué tipos de piezas hay?",
+   "crit": "rey;dama;torre;alfil;caballo;peon",
+   "r": "Según mi diccionario de conceptos, algunos tipos de «piezas» son: canción, movimiento, pasaje, adaptación, trío, quinteto, sexteto, fantasía, mezcla y duette.",
+   "v": "MAL",
+   "k": 3
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿quién mueve primero?",
+   "crit": "blancas",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿cuál es la pieza más poderosa?",
+   "crit": "dama",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿por qué es la dama la pieza más poderosa?",
+   "crit": "direccion|moverse",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cómo se mueve la torre?",
+   "crit": "recta",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cómo se mueve el alfil?",
+   "crit": "diagonal",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿qué pieza puede saltar sobre las demás?",
+   "crit": "caballo",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿qué le pasa al peón si llega al otro lado del tablero?",
+   "crit": "dama",
+   "r": "No sé responder a eso con esa suposición: «si llega al otro lado del tablero».",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántas casillas puede moverse el rey?",
+   "crit": "una|1",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿cuál es el objetivo del ajedrez?",
+   "crit": "rey|atrapar",
+   "r": "(Entiendo «objetivo» como «blanco».) La nieve es blanca.",
+   "v": "MAL",
+   "k": 12
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿cuándo está el rey en jaque?",
+   "crit": "amenazado",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿qué pasa si el rey no puede escapar?",
+   "crit": "jaque mate|termina",
+   "r": "En ese caso, ¡Hola! Aquí estoy. ¿Qué tal?",
+   "v": "MAL",
+   "k": 14
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿cuándo acaba la partida en tablas?",
+   "crit": "ningun*|ganar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿para qué usan un reloj los jugadores profesionales?",
+   "crit": "tiempo|medir",
+   "r": "No lo sé. No conozco «reloj»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿cómo se llama a los mejores jugadores del mundo?",
+   "crit": "maestro*",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA",
+   "k": 17
+  },
+  {
+   "tema": "ajedrez",
+   "t": "H",
+   "q": "¿la torre es una pieza?",
+   "crit": "^si",
+   "r": "No, una torre es un edificio.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "H",
+   "q": "¿el ajedrez es un juego?",
+   "crit": "^si",
+   "r": "Sí, un ajedrez es un juego. Lo deduzco porque un ajedrez es un juego de mesa y un juego de mesa es un juego.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿qué pieza se mueve en diagonal?",
+   "crit": "alfil",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "M",
+   "q": "¿en qué se convierte la pieza menos valiosa?",
+   "crit": "dama",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿el alfil puede saltar sobre las demás piezas?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿quién inventó el ajedrez?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿cuánto dura una partida?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿de qué material son las piezas?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "C",
+   "q": "mi hijo juega con las blancas",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hijo juega con las blancas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "C",
+   "q": "¿mi hijo mueve primero?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que tu hijo juega con las blancas.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "G",
+   "q": "dime tres piezas de ajedrez",
+   "crit": "rey|dama|torre|alfil|caballo|peon",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dime tres piezas de ajedrez».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "G",
+   "q": "descríbeme la dama",
+   "crit": "poderosa|direccion|pieza",
+   "r": "Una dama es una persona. Las personas hablan. Las personas hablan. Las personas piensan.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "K",
+   "q": "el alfil se mueve en línea recta",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|diagonal",
+   "r": "Entendido: el alfil se mueve en línea recta.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "fecha": "2026-11-19",
+ "aplicaciones": {
+  "registro": "2.13.0",
+  "n": 17,
+  "familias": {
+   "aritmetica": 14,
+   "calendario": 2,
+   "dibujo": 1
+  },
+  "huella_manifiesto": "21eb19ed163d5019"
+ },
+ "charla50h": {
+  "automatico": {
+   "lcm212": [
+    46.0,
+    8
+   ],
+   "lcm213": [
+    100.0,
+    0
+   ]
+  },
+  "auditado": {
+   "lcm212": {
+    "acierto": 44.0,
+    "falsas": 8,
+    "nota": "2 aprobados laxos pasan a fallo («Es una condición…» contenía «una»; «Una camiseta dibujar Dos Circulos») y 1 criterio demasiado estricto pasa a acierto («En ese caso, sí, la bici es más lenta»)"
+   },
+   "lcm213": {
+    "acierto": 100.0,
+    "falsas": 0,
+    "nota": "las 50 respuestas leídas una a una: todas correctas; defecto de concordancia «una estrella azul, hecho» (no cuenta como fallo)"
+   }
+  }
+ },
+ "examen_ciego13": {
+  "automatico": {
+   "lcm212": [
+    42.11,
+    9
+   ],
+   "lcm213": [
+    97.37,
+    1
+   ]
+  },
+  "auditado": {
+   "lcm212": {
+    "acierto": 44.74,
+    "falsas": 8,
+    "nota": "1 criterio demasiado estricto pasa a acierto («En ese caso, sí, el caballo es más ligero»)"
+   },
+   "lcm213": {
+    "acierto": 97.37,
+    "falsas": 1,
+    "nota": "fallo real: «¿cuántos primos tengo en total?» -> «Tienes 3 primas»"
+   }
+  },
+  "no_ciega_tras_arreglo": {
+   "lcm213": [
+    100.0,
+    0
+   ],
+   "nota": "arreglado el género inferido de «primas»; medida NO ciega"
+  }
+ },
+ "banco_mates213": {
+  "nota": "banco de entrenamiento, escrito durante el desarrollo (no ciego); resultado calculado por el corrector, no por el LCM",
+  "n_por_plantilla_4": {
+   "semilla_2113": 100.0,
+   "semilla_7": 100.0,
+   "semilla_99": 100.0,
+   "semilla_5": 100.0,
+   "n": 204
+  },
+  "primera_pasada": {
+   "n": 153,
+   "acierto": 95.42,
+   "falsas": 3,
+   "causas": "numerales con puntuación pegada (paréntesis perdido: respuesta falsa), «sesenta y veinte» leído 80, corrector demasiado estricto con decimales periódicos"
+  }
+ },
+ "controles": {
+  "examenes_autor": 88.05,
+  "examen_ciego2": 94.35,
+  "examen_ciego6": 80.6,
+  "examen_ciego7": 76.74,
+  "nota": "iguales en 2.12 y 2.13"
+ },
+ "regresiones": {
+  "iter26_t11": 90.0,
+  "iter28_t23": 88.89,
+  "iter210_t01": 90.91,
+  "nota": "fallan igual con el código 2.12 congelado (comprobado): no los provoca esta ronda; pendiente de investigar"
+ },
+ "curva_primer_intento": {
+  "1": {
+   "n": 22,
+   "acierto": 90.91,
+   "falsas": 1,
+   "nota": "corregido a mano: «√2 = 1,414214» era correcto (el criterio exigía «1,414» como palabra) -> 21/22, 0 falsas. El otro fallo, la suma de edades, era real."
+  },
+  "2": {
+   "n": 11,
+   "acierto": 100.0,
+   "falsas": 0
+  },
+  "3": {
+   "n": 11,
+   "acierto": 100.0,
+   "falsas": 0
+  },
+  "4": {
+   "n": 11,
+   "acierto": 100.0,
+   "falsas": 0
+  },
+  "5": {
+   "n": 12,
+   "acierto": 91.67,
+   "falsas": 0,
+   "nota": "fallo real: «me das 3» no estaba en el léxico de la aplicación suma."
+  },
+  "_aviso": "Las tandas de la 2.13 se escribieron con buena parte del enrutador ya hecho: su primer intento informa menos que en rondas anteriores. La medida que cuenta es la ciega (charla50h, ciego13)."
+ }
+}

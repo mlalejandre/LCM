@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 50,
+  "ok": 31,
+  "acierto": 62.0,
+  "falsas": 3,
+  "tasa_falsas": 6.0,
+  "abst_indebida": 16,
+  "error": 0,
+  "por_cat": {
+   "fabrica_y_dicho": {
+    "n": 12,
+    "acierto": 75.0,
+    "falsas": 1
+   },
+   "herencia_charla": {
+    "n": 13,
+    "acierto": 84.6,
+    "falsas": 0
+   },
+   "personas": {
+    "n": 8,
+    "acierto": 37.5,
+    "falsas": 0
+   },
+   "relaciones": {
+    "n": 9,
+    "acierto": 33.3,
+    "falsas": 1
+   },
+   "varias_clases": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 1
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 1,
+   "q": "tengo un canario y una tortuga",
+   "crit": "canario|tortuga;!no lo he entendido",
+   "r": "Entendido: tienes un canario y una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 2,
+   "q": "¿tengo un pájaro?",
+   "crit": "^si",
+   "r": "Sí, tienes un canario.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 3,
+   "q": "¿tengo un ave?",
+   "crit": "^si",
+   "r": "Sí, tienes un canario.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 4,
+   "q": "¿tengo un reptil?",
+   "crit": "^si",
+   "r": "Sí, tienes una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 5,
+   "q": "¿tengo un mamífero?",
+   "crit": "^no|ABST",
+   "r": "No me consta. Solo sé que tienes un canario y una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 6,
+   "q": "¿qué animales tengo?",
+   "crit": "canario;tortuga",
+   "r": "Tienes un canario y una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 7,
+   "q": "¿mi canario tiene plumas?",
+   "crit": "^si",
+   "r": "Sí, las aves tienen plumas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 8,
+   "q": "¿mi tortuga vuela?",
+   "crit": "^no",
+   "r": "No, los reptiles no vuelan.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 9,
+   "q": "me he comprado una chaqueta y unas botas",
+   "crit": "chaqueta|botas;!no lo he entendido",
+   "r": "Entendido: te compraste una chaqueta y unas botas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 10,
+   "q": "¿me he comprado ropa?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que te compraste una chaqueta y te compraste unas botas.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 11,
+   "q": "¿me he comprado calzado?",
+   "crit": "^si",
+   "r": "Sí, te compraste unas botas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-a",
+   "cat": "herencia_charla",
+   "i": 12,
+   "q": "¿qué prenda me he comprado?",
+   "crit": "chaqueta",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 0,
+   "q": "mi tía Carmen es enfermera",
+   "crit": "enfermera;!no lo he entendido",
+   "r": "Entendido: Carmen es enfermera.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 1,
+   "q": "¿mi tía es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 2,
+   "q": "¿Carmen es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 3,
+   "q": "¿Carmen trabaja?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Carmen sé que es tu tía y es enfermera.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 4,
+   "q": "¿Carmen es una profesional?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 5,
+   "q": "mi vecino es alcalde",
+   "crit": "alcalde;!no lo he entendido",
+   "r": "Entendido: tu vecino es alcalde.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 6,
+   "q": "¿mi vecino es un político?",
+   "crit": "^si",
+   "r": "Sí, tu vecino es un político. Lo deduzco porque tu vecino es alcalde y un alcalde es un político.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-b",
+   "cat": "personas",
+   "i": 7,
+   "q": "¿quién es político?",
+   "crit": "vecino",
+   "r": "No lo sé: nadie que yo conozca, por lo que me has contado.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 0,
+   "q": "¿la cena es una comida?",
+   "crit": "^si",
+   "r": "No, una cena es un evento.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 1,
+   "q": "¿la cena es un evento?",
+   "crit": "^si",
+   "r": "Sí, una cena es un evento.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 2,
+   "q": "¿una tetera es un recipiente?",
+   "crit": "^si",
+   "r": "No lo sé seguro: de fábrica sé que una tetera es un utensilio, pero no si es un recipiente.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 3,
+   "q": "¿una naranja es una fruta?",
+   "crit": "^si",
+   "r": "Sí, una naranja es una fruta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 4,
+   "q": "¿el naranja es un color?",
+   "crit": "^si",
+   "r": "Sí, un naranja es un color.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 5,
+   "q": "¿un cuchillo es un cubierto?",
+   "crit": "^si",
+   "r": "Sí, un cuchillo es un cubierto.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 6,
+   "q": "¿un cuchillo puede ser un arma?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-c",
+   "cat": "varias_clases",
+   "i": 7,
+   "q": "¿un cuchillo es un animal?",
+   "crit": "^no",
+   "r": "No, un cuchillo es un utensilio.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 0,
+   "q": "¿para qué sirve una nevera?",
+   "crit": "enfriar|conservar|guardar|frio|fria",
+   "r": "Según mi diccionario de conceptos, «nevera» sirve para conservar fríos los alimentos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 1,
+   "q": "¿de qué está hecha una botella?",
+   "crit": "vidrio|cristal|plastico",
+   "r": "Una botella tiene cuello, tapón y base.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 2,
+   "q": "¿dónde suele estar una nevera?",
+   "crit": "cocina",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 3,
+   "q": "¿quién usa un martillo?",
+   "crit": "carpintero|albañil",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 4,
+   "q": "¿qué sirve para cortar?",
+   "crit": "cuchillo|tijeras|sierra",
+   "r": "El cuchillo sirve para cortar.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 5,
+   "q": "¿qué hay en una cocina?",
+   "crit": "nevera|horno|fregadero|fogones|encimera",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 6,
+   "q": "¿con qué se escribe?",
+   "crit": "boligrafo|lapiz|pluma|teclado|rotulador",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 7,
+   "q": "tengo unas tijeras",
+   "crit": "tijeras;!no lo he entendido",
+   "r": "Entendido: tienes unas tijeras.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-d",
+   "cat": "relaciones",
+   "i": 8,
+   "q": "¿tengo algo para cortar?",
+   "crit": "^si|tijeras",
+   "r": "No lo sé. Solo sé que tienes un canario, tienes una tortuga y tienes una chaqueta.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 0,
+   "q": "mi canario no canta",
+   "crit": "canta;!no lo he entendido",
+   "r": "Entendido: tu canario no canta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 1,
+   "q": "¿mi canario canta?",
+   "crit": "^no",
+   "r": "No, tu canario no canta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 2,
+   "q": "¿los pájaros cantan?",
+   "crit": "^si",
+   "r": "Sí, los pájaros cantan.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 3,
+   "q": "Luis sabe conducir",
+   "crit": "luis;!no lo he entendido",
+   "r": "Entendido: Luis sabe conducir.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 4,
+   "q": "¿quién sabe conducir?",
+   "crit": "luis",
+   "r": "Luis sabe conducir.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 5,
+   "q": "¿los conductores conducen?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 6,
+   "q": "¿cómo lo sabes?",
+   "crit": "fabrica",
+   "r": "No tengo nada que explicar ahora mismo: mi última respuesta no afirmaba ningún hecho.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 7,
+   "q": "el perro de Luis no ladra",
+   "crit": "ladra;!no lo he entendido",
+   "r": "Entendido: el perro de Luis no ladra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 8,
+   "q": "¿el perro de Luis ladra?",
+   "crit": "^no",
+   "r": "No, el perro de Luis no ladra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 9,
+   "q": "¿los perros ladran?",
+   "crit": "^si",
+   "r": "Sí, los perros ladran.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 10,
+   "q": "¿Luis tiene un animal?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho qué tiene Luis.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50i-e",
+   "cat": "fabrica_y_dicho",
+   "i": 11,
+   "q": "gracias",
+   "crit": "nada|gracias",
+   "r": "De nada.",
+   "v": "OK"
+  }
+ ]
+}

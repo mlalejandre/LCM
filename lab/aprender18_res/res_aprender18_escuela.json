@@ -1,0 +1,614 @@
+{
+ "resumen": {
+  "n": 66,
+  "ok": 24,
+  "acierto": 36.36,
+  "falsas": 7,
+  "tasa_falsas": 10.61,
+  "abst_indebida": 35,
+  "error": 0,
+  "por_cat": {
+   "aprender": {
+    "n": 66,
+    "acierto": 36.4,
+    "falsas": 7
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 0,
+   "q": "hola, soy Marcos",
+   "crit": "",
+   "r": "Encantado, Marcos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 1,
+   "q": "hoy quiero aprender cosas sobre las setas",
+   "crit": "",
+   "r": "Entendido: quieres aprender cosas sobre las setas hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 2,
+   "q": "¿qué es el micelio?",
+   "crit": "red|hilos",
+   "r": "Según mi diccionario de conceptos: «micelio» es un tipo de «parte» y «plant part». Dominio: planta. En inglés: mycelium. En su definición aparecen, entre otras: vegetal, fungi, masa y hebroso.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 3,
+   "q": "¿qué partes tiene una seta?",
+   "crit": "sombrero;pie;laminas",
+   "r": "Una seta tiene sombrero, pie y láminas.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 4,
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 5,
+   "q": "¿los hongos son plantas?",
+   "crit": "^no",
+   "r": "No, un hongo es un hongo, no una planta.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 6,
+   "q": "¿pueden los hongos fabricar su propia comida?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 7,
+   "q": "¿de qué se alimentan los hongos?",
+   "crit": "restos|hojas|madera",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 8,
+   "q": "¿cuándo salen las setas?",
+   "crit": "otono",
+   "r": "Las setas salen sobre todo en otoño, después de las lluvias.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 9,
+   "q": "¿qué necesitan las setas para salir?",
+   "crit": "humedad|sombra|lluvia*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 10,
+   "q": "¿por qué abundan las setas en los bosques?",
+   "crit": "humedad|sombra",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 11,
+   "q": "¿qué pasa cuando una espora cae en un sitio húmedo?",
+   "crit": "micelio",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 12,
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 13,
+   "q": "¿de qué color es la seta más venenosa?",
+   "crit": "verde",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 14,
+   "q": "¿qué le pasa a quien se come una amanita faloides?",
+   "crit": "higado|muerte|morir|muere",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 15,
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 16,
+   "q": "¿el boletus es comestible?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que los boletus son seta comestible muy apreciada en la cocinas.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 17,
+   "q": "¿qué seta tiene el sombrero marrón?",
+   "crit": "boletus",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 18,
+   "q": "¿el boletus es una seta?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 19,
+   "q": "¿el boletus tiene pie?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 20,
+   "q": "¿la trufa es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí, una trufa es un ser vivo. Lo deduzco porque una trufa es un hongo y un hongo es un ser vivo.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 21,
+   "q": "¿la trufa es un alimento?",
+   "crit": "^si",
+   "r": "No, una trufa es un hongo.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 22,
+   "q": "¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "Una trufa es un hongo. Las trufas crecen bajo tierra, junto a las raíces de las encinas y son uno de los alimentos más caros del mundas.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 23,
+   "q": "¿de qué color es la trufa?",
+   "crit": "negra",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 24,
+   "q": "¿qué hongo crece junto a las encinas?",
+   "crit": "trufa",
+   "r": "La trufa.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 25,
+   "q": "¿cómo se encuentra una trufa?",
+   "crit": "perro*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 26,
+   "q": "¿qué hongo encuentran los perros?",
+   "crit": "trufa",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 27,
+   "q": "¿es cara la trufa?",
+   "crit": "^si|cara*|caro*",
+   "r": "No lo sé. Solo sé que las trufas son uno de los alimentos más caros del mundas.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 28,
+   "q": "¿dónde crece el alimento más caro del mundo?",
+   "crit": "encina*|bajo tierra",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 29,
+   "q": "¿la levadura es un hongo?",
+   "crit": "^si",
+   "r": "Sí, una levadura es un hongo.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 30,
+   "q": "¿qué hongo sirve para hacer pan?",
+   "crit": "levadura",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 31,
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "No lo sé. No conozco «levadura»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 32,
+   "q": "¿el moho es un animal?",
+   "crit": "^no",
+   "r": "No, un moho es un hongo, no un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 33,
+   "q": "¿qué se descubrió gracias al moho?",
+   "crit": "penicilina",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 34,
+   "q": "¿qué es la penicilina?",
+   "crit": "medicamento",
+   "r": "Según mi diccionario de conceptos: «penicilina» es un tipo de «antibiótico», «bactericida» y «fármaco» (y, más en general, «droga» y «agente»). Dominio: objeto fabricado. En inglés: penicillin. En su definición aparecen, entre otras: respectivo, tratamiento, infección y afección. Algunos tipos: amoxicilina, ampicilina, bencilpenicilina y piperacilina.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 35,
+   "q": "¿cómo se llaman las personas que recogen setas?",
+   "crit": "setero*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 36,
+   "q": "¿qué es un micólogo?",
+   "crit": "persona*|estudia*",
+   "r": "Según mi diccionario de conceptos: «micólogo» es un tipo de «biólogo», «científico» y «alguien» (y, más en general, «organismo»). Dominio: persona. En inglés: mycologist. En su definición aparecen, entre otras: estudio.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 37,
+   "q": "¿por qué no hay que llevar bolsas de plástico?",
+   "crit": "estropea*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 38,
+   "q": "¿por qué son importantes los hongos para el bosque?",
+   "crit": "descompon*|nutrientes",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 39,
+   "q": "¿una amanita tiene esporas?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 40,
+   "q": "¿cuántas especies de hongos hay?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 41,
+   "q": "¿cuánto cuesta un kilo de trufa?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 42,
+   "q": "¿quién descubrió la penicilina?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 43,
+   "q": "¿de qué color es el pie de la amanita?",
+   "crit": "ABST",
+   "r": "No sé nada de el pie de la amanita: no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 44,
+   "q": "ayer encontré un boletus en el monte",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: encontraste un boletus en el monte ayer. ¿Qué es un boletus? Es la primera vez que oigo esa palabra.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 45,
+   "q": "¿me lo puedo comer?",
+   "crit": "^si|comestible",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 46,
+   "q": "mi vecino ha cogido una amanita faloides",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecino cogió una amanita faloides.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 47,
+   "q": "¿es peligrosa la seta de mi vecino?",
+   "crit": "^si|venenos*|peligros*",
+   "r": "No sé nada de la seta de tu vecino: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 48,
+   "q": "quiero salir a buscar setas, ¿qué me llevo?",
+   "crit": "cesta",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 49,
+   "q": "¿en qué época del año salgo a buscarlas?",
+   "crit": "otono",
+   "r": "No lo sé. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 50,
+   "q": "dime una seta comestible",
+   "crit": "boletus",
+   "r": "Entendido: tu vecino dime una seta comestible.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 51,
+   "q": "dime una seta venenosa",
+   "crit": "amanita",
+   "r": "Sí, ya lo sabía.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 52,
+   "q": "dime tres hongos",
+   "crit": "trufa|levadura|moho|boletus|amanita",
+   "r": "Seta, champiñón y moho.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 53,
+   "q": "descríbeme una trufa",
+   "crit": "negra|bola|huele|olor|tierra|encina*",
+   "r": "Una trufa es un hongo. Las trufas crecen bajo tierra, junto a las raíces de las encinas. Las trufas son uno de los alimentos más caros del mundas. Los hongos son muy importantes para el bosque, porque descomponen la materia muerta y devuelven los nutrientes a la tierros.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 54,
+   "q": "invéntate una adivinanza sobre la trufa",
+   "crit": "negra|bola|huel*|tierra|encina*",
+   "r": "Adivina, adivinanza: tengo tapa y asas, sirvo para cocer y suelo estar en la cocina. ¿Qué soy?",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 55,
+   "q": "la amanita faloides se puede comer",
+   "crit": "venenos*|no se puede|contradic*|pero|segun|texto",
+   "r": "Entendido: la amanita de tu vecino se puede comer.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 56,
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no|texto|segun|pero",
+   "r": "No lo sé. Solo sé que la amanita de tu vecino se puede comer.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 57,
+   "q": "cambiando de tema, mi hermana se llama Lucía",
+   "crit": "",
+   "r": "Entendido: tu hermana se llama Lucía.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 58,
+   "q": "¿cuánto es 7 por 6?",
+   "crit": "42",
+   "r": "7 × 6 = 42.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 59,
+   "q": "mañana tengo una reunión",
+   "crit": "",
+   "r": "Entendido: tienes una reunión mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 60,
+   "q": "Lucía vive en Burgos",
+   "crit": "",
+   "r": "Entendido: Lucía vive en Burgos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 61,
+   "q": "¿dónde vive Lucía?",
+   "crit": "burgos",
+   "r": "Lucía vive en Burgos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 62,
+   "q": "volviendo a las setas, ¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 63,
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 64,
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-base",
+   "cat": "aprender",
+   "i": 65,
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "No lo sé. No conozco «levadura»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

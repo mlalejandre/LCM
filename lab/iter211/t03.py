@@ -1,0 +1,17 @@
+D = [{"id": "q03", "cat": "comparativas", "turnos": [
+ ("hola", "hola"),
+ ("Luisa es más rápida que Pepa", "luisa|pepa;!no lo he entendido"),
+ ("Pepa es más rápida que Nuria", "pepa|nuria;!no lo he entendido"),
+ ("¿quién es la más rápida?", "luisa"),
+ ("¿quién es la más lenta?", "nuria"),
+ ("¿Nuria es más rápida que Luisa?", "^no"),
+ ("¿Luisa es más lenta que Nuria?", "^no"),
+ ("¿quién es más rápida, Pepa o Nuria?", "pepa"),
+ ("mi piso es menos caro que el de mi hermana", "piso;!no lo he entendido"),
+ ("¿el piso de mi hermana es más caro que el mío?", "^si"),
+ ("Nuria es tan alta como Pepa", "nuria|pepa;!no lo he entendido"),
+ ("¿Pepa es más alta que Nuria?", "^no|igual|tan"),
+ ("me gusta más el mar que la montaña", "mar|montaña;!me gusta;!no lo he entendido"),
+ ("¿qué me gusta más, el mar o la montaña?", "^el mar|te gusta mas el mar|prefieres el mar"),
+ ("¿quién es más alta, Luisa o Pepa?", "ABST"),
+]}]

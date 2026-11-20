@@ -1,0 +1,230 @@
+{
+ "nota": "Solo cifras agregadas: las transcripciones no se han leído ni se guardan, para que el examen siga sirviendo.",
+ "lcm_2.0": {
+  "n": 301,
+  "ok": 242,
+  "acierto": 80.4,
+  "falsas": 15,
+  "tasa_falsas": 4.98,
+  "abst_indebida": 44,
+  "error": 0,
+  "por_cat": {
+   "acciones": {
+    "n": 17,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "atributos": {
+    "n": 16,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "cantidad": {
+    "n": 8,
+    "acierto": 50.0,
+    "falsas": 0
+   },
+   "clases": {
+    "n": 18,
+    "acierto": 83.3,
+    "falsas": 0
+   },
+   "comparativos": {
+    "n": 33,
+    "acierto": 66.7,
+    "falsas": 0
+   },
+   "correcciones": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "desconocido": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "estados": {
+    "n": 9,
+    "acierto": 77.8,
+    "falsas": 1
+   },
+   "familia": {
+    "n": 32,
+    "acierto": 81.2,
+    "falsas": 2
+   },
+   "gustos": {
+    "n": 17,
+    "acierto": 88.2,
+    "falsas": 0
+   },
+   "larga": {
+    "n": 19,
+    "acierto": 68.4,
+    "falsas": 2
+   },
+   "lugar": {
+    "n": 16,
+    "acierto": 93.8,
+    "falsas": 1
+   },
+   "mascotas": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "modal": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 1
+   },
+   "multimodal": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 1
+   },
+   "negacion": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "persona": {
+    "n": 33,
+    "acierto": 66.7,
+    "falsas": 2
+   },
+   "sin_tildes": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 0
+   },
+   "social": {
+    "n": 16,
+    "acierto": 62.5,
+    "falsas": 3
+   },
+   "tiempo": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   }
+  }
+ },
+ "lcm_2.1": {
+  "n": 301,
+  "ok": 275,
+  "acierto": 91.36,
+  "falsas": 12,
+  "tasa_falsas": 3.99,
+  "abst_indebida": 14,
+  "error": 0,
+  "por_cat": {
+   "acciones": {
+    "n": 17,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "atributos": {
+    "n": 16,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "cantidad": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "clases": {
+    "n": 18,
+    "acierto": 83.3,
+    "falsas": 0
+   },
+   "comparativos": {
+    "n": 33,
+    "acierto": 97.0,
+    "falsas": 0
+   },
+   "correcciones": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "desconocido": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "estados": {
+    "n": 9,
+    "acierto": 88.9,
+    "falsas": 1
+   },
+   "familia": {
+    "n": 32,
+    "acierto": 90.6,
+    "falsas": 2
+   },
+   "gustos": {
+    "n": 17,
+    "acierto": 94.1,
+    "falsas": 0
+   },
+   "larga": {
+    "n": 19,
+    "acierto": 84.2,
+    "falsas": 0
+   },
+   "lugar": {
+    "n": 16,
+    "acierto": 93.8,
+    "falsas": 1
+   },
+   "mascotas": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "modal": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 1
+   },
+   "multimodal": {
+    "n": 8,
+    "acierto": 75.0,
+    "falsas": 1
+   },
+   "negacion": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "persona": {
+    "n": 33,
+    "acierto": 84.8,
+    "falsas": 2
+   },
+   "sin_tildes": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "social": {
+    "n": 16,
+    "acierto": 87.5,
+    "falsas": 2
+   },
+   "tiempo": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   }
+  }
+ },
+ "lcm_1.9": {
+  "n": 301,
+  "acierto": 48.17,
+  "tasa_falsas": 7.31
+ }
+}

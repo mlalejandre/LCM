@@ -1,0 +1,164 @@
+{
+ "fecha": "2026-11-18",
+ "evaluador": "estricto 2.7: además, una respuesta que empieza por «No sé…» no aprueba ningún criterio positivo aunque nombre la palabra esperada; 2.6 y 2.7 medidas con el mismo juez",
+ "charla50b": {
+  "n_puntuados": 40,
+  "interacciones": 50,
+  "modo": "una sola conversación, escrita con la 2.6 congelada; transcripciones no leídas hasta después de la medida final",
+  "automatico": {
+   "lcm26": 77.5,
+   "lcm27": 95.0,
+   "falsas": {
+    "lcm26": 1,
+    "lcm27": 1
+   }
+  },
+  "auditoria_manual": {
+   "lcm26": {
+    "acierto": 70.0,
+    "turnos_con_afirmacion_falsa": 4
+   },
+   "lcm27": {
+    "acierto": 90.0,
+    "turnos_con_afirmacion_falsa": 3
+   },
+   "nota": "se suspenden a mano los turnos que el juez aprobó con contenido falso: «el médico dice que descansaste» (era «que descanse»), el resumen que lo repite y, en 2.6, «Pablo nerear Doce»"
+  },
+  "advertencia": "la charla contiene a propósito los fenómenos que se atacaron en esta ronda (relativas, elipsis, listas de nombres, imagen con frase): la mejora en ella es esperable y no prueba generalización por sí sola"
+ },
+ "charla50_anterior": {
+  "nota": "ya gastada (leída en 2.6), solo orientativa",
+  "lcm26": 85.0,
+  "lcm27": 92.5
+ },
+ "curva_primer_intento": {
+  "T01-07": {
+   "n": 65,
+   "acierto_primer_intento": 60.0,
+   "falsas": 1
+  },
+  "T08-14": {
+   "n": 58,
+   "acierto_primer_intento": 77.59,
+   "falsas": 3
+  },
+  "por_tanda": {
+   "1": {
+    "n": 10,
+    "acierto": 20.0,
+    "falsas": 1,
+    "nota": "corregido a mano: dos 'OK' eran paráfrasis rotas de las capas antiguas; una daba 'viene el viernes (13 de noviembre)', fecha pasada"
+   },
+   "2": {
+    "n": 8,
+    "acierto": 12.5,
+    "falsas": 0,
+    "nota": "criterio de '¿cómo se llama mi sobrina?' cambiado a 'ane|ABST': que Ane es nombre de chica no se puede saber sin datos del mundo; el registro no cambia (seguía fallando)"
+   },
+   "3": {
+    "n": 9,
+    "acierto": 44.44,
+    "falsas": 0
+   },
+   "4": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 0,
+    "nota": "corregido a mano: 'Lola invitó a su boda' perdió a quién invitó (me) y aprobó por contener 'boda'"
+   },
+   "5": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "6": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 0
+   },
+   "7": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "8": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 1,
+    "nota": "corregido a mano: '¿cuándo quiero ir a Italia?' dio 'del 21 de junio de 2026' (verano ya pasado) y aprobó por contener 'verano'"
+   },
+   "9": {
+    "n": 9,
+    "acierto": 44.44,
+    "falsas": 1,
+    "nota": "corregido a mano: 'sacas dos años a pasear' aprobó por contener 'pasear'"
+   },
+   "10": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   },
+   "11": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 1
+   },
+   "12": {
+    "n": 6,
+    "acierto": 100.0,
+    "falsas": 0,
+    "nota": "tres turnos sin puntuar (ANY) eran notas literales (opinión, «su padre dice que sí», «tienen uno»); «¿qué dice el padre de Mario?» aprobó como abstención pero decía «qué dice tú»"
+   },
+   "13": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "14": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   }
+  }
+ },
+ "tandas_iter27": {
+  "tandas": 14,
+  "interacciones": 140,
+  "final": "14 de 14 al 100%"
+ },
+ "control": {
+  "examen_ciego_2": {
+   "n": 301,
+   "lcm26": 93.36,
+   "lcm27": 93.69,
+   "falsas": {
+    "lcm26": 6,
+    "lcm27": 6
+   }
+  },
+  "examen_ciego_6": {
+   "n": 67,
+   "lcm26": 77.61,
+   "lcm27": 79.1
+  },
+  "examen_ciego_7": {
+   "n": 43,
+   "lcm26": 69.77,
+   "lcm27": 69.77
+  },
+  "examenes_del_autor": {
+   "n": 703,
+   "lcm26": 88.05,
+   "lcm27": 88.05
+  },
+  "banco_generado_validacion": {
+   "n": 12331,
+   "lcm26": 98.49,
+   "lcm27": 98.49,
+   "falsas_pct": 0.27,
+   "nota": "una caída a 98,45 en «familia» se localizó con agregados y se corrigió"
+  },
+  "tandas_1_15_e_iter26": "todas al 100 % salvo iter26 T11 (90 %, igual que en 2.6)"
+ },
+ "pytest": "745 passed, 1 skipped, 3 fallos solo de este entorno"
+}

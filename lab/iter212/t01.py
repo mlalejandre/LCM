@@ -1,0 +1,15 @@
+D = [{"id": "r01", "cat": "sujetos_yo", "turnos": [
+ ("hola", "hola"),
+ ("Nerea, Iker y yo vamos a la piscina los martes", "nerea|iker|piscina;!nerea iker;!no lo he entendido"),
+ ("¿quién va a la piscina los martes?", "nerea;iker;!nerea iker"),
+ ("¿Iker va a la piscina?", "^si"),
+ ("¿voy yo a la piscina?", "^si"),
+ ("mi suegra, mi mujer y yo cenamos fuera los viernes", "viernes|fuera|cena*;!no lo he entendido"),
+ ("¿mi suegra cena fuera los viernes?", "^si"),
+ ("tú y yo somos amigos", "amigos;!no lo he entendido"),
+ ("Raquel y yo somos vecinas", "raquel|vecina*;!no lo he entendido"),
+ ("¿quién es Raquel?", "vecina"),
+ ("mi primo Dani, su novia y yo trabajamos en una tienda", "tienda;!no lo he entendido"),
+ ("¿dónde trabaja Dani?", "tienda"),
+ ("¿dónde trabajo?", "tienda"),
+]}]

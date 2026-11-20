@@ -1,0 +1,36 @@
+{
+ "1": {
+  "n": 14,
+  "acierto": 57.14,
+  "falsas": 1,
+  "nota": "corregido a mano: 'para la cena compro tomates\u2026' -> \u00abIv\u00e1n compr\u00f3 tomates\u2026\u00bb (sujeto falso, faltan los ajos) aprob\u00f3 por contener 'tomates'"
+ },
+ "2": {
+  "n": 14,
+  "acierto": 28.57,
+  "falsas": 3,
+  "nota": "corregido a mano: \u00abS\u00ed, Lola vive en Teruel o en Huesca\u00bb (afirma sin saber), \u00abhar\u00e1s pizza y pasta\u00bb (la \u00abo\u00bb como \u00aby\u00bb, 2 turnos) son falsas; tras \u00abno vive en Huesca\u00bb no deduce Teruel (fallo) \u2014 el juez las aprob\u00f3"
+ },
+ "3": {
+  "n": 15,
+  "acierto": 80.0,
+  "falsas": 0,
+  "nota": "corregido a mano: \u00abEntendido: Me gusta m\u00e1s el mar que la monta\u00f1a\u00bb es un eco sin entender (persona sin cambiar), aprob\u00f3 por contener 'mar'"
+ },
+ "4": {
+  "n": 13,
+  "acierto": 30.77,
+  "falsas": 0,
+  "nota": "corregido a mano: \u00abVale, lo apunto: \u2026\u00bb (2 turnos) es un eco sin entender; \u00abTienes 38 a\u00f1os (o uno menos\u2026)\u00bb es correcto aunque el juez lo marc\u00f3 MAL; \u00abno registrar\u00e9 el contenido\u00bb es fallo, no falsa"
+ },
+ "5": {
+  "n": 14,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "6": {
+  "n": 12,
+  "acierto": 83.33,
+  "falsas": 0
+ }
+}

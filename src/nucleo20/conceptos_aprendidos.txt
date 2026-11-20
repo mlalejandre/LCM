@@ -1,0 +1,218 @@
+# CONCEPTOS APRENDIDOS EN LA ESCUELA (generado por python -m src.nucleo20.escuela; no editar a mano: edita las cartillas)
+# Cartillas leídas: 01_mundo_cercano.txt, 02_vida_y_conversacion.txt
+
+[taxonomia]
+edificio: convento
+lugar: domicilio, gimnasio, piscina
+acción: aplauso, maniobra
+norma: protocolo
+situación: tensión/f
+actividad: afición/f, yoga/m, pilate
+resultado: efecto
+objetivo: meta
+idea: objetivo
+grupo: colección/f, departamento
+texto: definición/f
+ayuda: subvención/f
+accidente: choque
+signo: cifra
+bebida: chocolate, caldo, batido
+emoción: alegría, tristeza, miedo, rabia, sorpresa, vergüenza, envidia
+sentimiento: cariño, amor, amistad/f, nostalgia, ilusión/f, orgullo
+deporte: fútbol, baloncesto, tenis, pádel, natación/f, ciclismo, atletismo, balonmano, voleibol, golf, esquí, judo, boxeo, senderismo
+afición: pesca, jardinería, fotografía, lectura, costura
+juego: ajedrez, parchís, dominó, carta, lotería, escondite, bingo
+baile: val, tango, salsa, flamenco, jota
+tipo de música: rock, jazz, pop
+libro: novela, cuento, cómic, diccionario
+publicación: periódico, revista
+película: comedia, drama/m, documental
+celebración: boda, cumpleaños, bautizo, comunión/f, aniversario, graduación/f
+fiesta: navidad/f, carnaval, verbena, feria
+comida: desayuno, almuerzo, merienda, cena
+ceremonia: funeral, entierro, misa
+tienda: farmacia, panadería, frutería, carnicería, pescadería, librería, ferretería, zapatería, floristería, juguetería, estanco
+reptil: dinosaurio, iguana
+mamífero: hámster, cobaya, hurón
+pájaro: periquito, canario
+prueba: entrevista, examen, oposición/f
+documento: nómina, contrato, currículum
+asignatura: matemática, lengua, historia, geografía, física, química, biología
+idioma: inglés, francés, alemán, italiano, chino, español
+enfermedad: gripe/f, catarro, alergia, migraña
+síntoma: fiebre/f, tos/f, dolor
+medicina: pastilla, jarabe, pomada
+objeto: trasto, cacharro, chisme
+vehículo: patinete, monopatín, furgoneta
+
+[contrarios]
+alegría/tristeza
+amor/odio
+calma/nervios
+ilusionado/desilusionado
+animado/desanimado
+relajado/estresado
+orgulloso/avergonzado
+acompañado/solo
+sano/enfermo
+descansado/cansado
+
+[propiedades]
+nieve: ser fría
+hielo: ser frío
+fuego: ser caliente
+sol: ser caliente
+invierno: ser frío
+verano: ser caluroso
+sopa: ser caliente
+helado: ser frío
+azúcar: ser dulce
+miel: ser dulce
+limón: ser ácido
+sal: ser salada
+café: ser amargo
+algodón: ser blando
+piedra: ser dura
+hierro: ser duro
+pluma: ser ligera
+plomo: ser pesado
+noche: ser oscura
+día: ser claro; tener veinticuatro horas
+mar: ser salado
+agua: ser líquida
+cristal: ser transparente
+lana: ser suave
+papel de lija: ser áspero
+minuto: tener sesenta segundos
+hora: tener sesenta minutos
+semana: tener siete días
+año: tener doce meses; tener cuatro estaciones
+siglo: tener cien años
+médico: curar a los enfermos
+veterinario: curar a los animales
+bombero: apagar los fuegos
+profesor: enseñar a los alumnos
+juez: juzgar los delitos
+cartero: repartir las cartas
+agricultor: cultivar el campo
+pastor: cuidar las ovejas
+marinero: navegar por el mar
+cocinero: preparar la comida
+camarero: servir las mesas
+panadero: hacer el pan
+pintor: pintar los cuadros
+albañil: construir las casas
+periodista: contar las noticias
+actor: actuar en las películas
+cantante: cantar canciones
+escritor: escribir libros
+policía: proteger a la gente
+vaca: comer hierba
+oveja: comer hierba
+caballo: comer hierba y heno
+conejo: comer zanahorias y hierba
+león: comer carne
+lobo: comer carne
+gato: comer pescado y ratones
+oso: comer miel y peces
+mono: comer plátanos y fruta
+ardilla: comer nueces y bellotas
+gallina: comer grano
+panda: comer bambú
+jirafa: comer hojas
+dinosaurio: ser enorme
+sueldo: ser dinero
+
+[partes]
+edificio: fachada
+
+[funcion]
+convento: rezar
+gimnasio: hacer ejercicio
+piscina: nadar
+biblioteca: leer, estudiar
+supermercado: comprar comida
+farmacia: comprar medicinas
+hospital: curar a los enfermos
+colegio: aprender
+universidad: estudiar una carrera
+guardería: cuidar a los niños pequeños
+cine: ver películas
+teatro: ver obras
+museo: ver arte
+restaurante: comer
+bar: tomar algo
+peluquería: cortarse el pelo
+banco: guardar el dinero
+gasolinera: echar gasolina
+aeropuerto: coger aviones
+estación: coger trenes
+parque: pasear, jugar
+oficina: trabajar
+taller: arreglar coches
+fábrica: fabricar cosas
+obra: construir edificios
+jarabe: calmar la tos
+tirita: tapar heridas
+venda: sujetar una herida
+termómetro: medir la fiebre
+muleta: andar
+gafas: ver bien
+audífono: oír bien
+wifi: conectarse a internet
+router: dar wifi
+tableta: leer, ver vídeos
+cargador: cargar el móvil
+auricular: escuchar música
+mando: cambiar de canal
+altavoz: escuchar música
+impresora: imprimir
+ratón: manejar el ordenador
+teclado: escribir
+
+[lugar]
+ballena: mar
+delfín: mar
+tiburón: mar
+pulpo: mar
+medusa: mar
+pingüino: hielo, mar
+foca: hielo, mar
+rana: charca
+pato: estanque, río
+cocodrilo: río
+trucha: río
+oso: bosque
+lobo: bosque
+ciervo: bosque
+ardilla: bosque
+búho: bosque
+jabalí: bosque
+león: sabana
+jirafa: sabana
+cebra: sabana
+elefante: sabana, selva
+mono: selva
+tigre: selva
+loro: selva
+camello: desierto
+vaca: granja, prado
+oveja: granja, prado
+cerdo: granja
+gallina: granja, gallinero
+caballo: cuadra, prado
+perro: casas
+gato: casas
+abeja: colmena
+hormiga: hormiguero
+águila: montaña
+topo: tierra
+pan: panadería
+fruta: frutería
+carne: carnicería
+libro: librería, biblioteca
+flor: floristería
+hámster: casas
+periquito: casas
+canario: casas
+pez: agua

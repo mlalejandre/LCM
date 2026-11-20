@@ -34,6 +34,7 @@ class Motor:
         self.conv = self._nueva_conv()
         self.inicio = time.time()
         self.fabrica = fabrica or {}
+        self._vision_reciente = None  # último adjunto de esta sesión
 
     # ---- construccion ------------------------------------------------------------------------------------------------
     @staticmethod
@@ -58,6 +59,13 @@ class Motor:
         if n_sem:
             mem.save()
         return m
+
+    def _capas20(self):
+        from src.semantics.ud19 import respuesta_http as c19
+        from src.semantics.narrativa18 import respuesta_http as c18
+        from src.semantics.discourse17 import respuesta_http as c17
+        from src.semantics.dialogue16 import respuesta_http as c16
+        return (c19, c18, c17, c16)
 
     def _nueva_conv(self):
         from src.language.dialogue import Conversation
@@ -101,19 +109,312 @@ class Motor:
             return False
 
     # ---- conversacion -------------------------------------------------------------------------------------------------
-    def chat(self, texto):
+    # LCM_NUCLEO_20: el núcleo conversacional unificado responde primero; lo que no entiende por
+    # completo se delega en las capas 1.4-1.9 y, si estas tampoco saben, se emite su abstención.
+    def _nucleo20(self):
+        n = getattr(self, '_n20', None)
+        if n is None:
+            from src.nucleo20 import Nucleo20, activo
+            if not activo(getattr(self, 'parser', None)):
+                self._n20 = False
+                return None
+            from pathlib import Path
+            n = Nucleo20(self.mem, self.parser, str(Path(self.mem.path).with_name('lcm_nucleo20.json')))
+            self._n20 = n
+        return n or None
+
+    def chat(self, texto, imagen=None, nombre='imagen'):
+        if imagen is not None:
+            return self._chat_imagen(texto, imagen, nombre)
+        n20 = self._nucleo20()
+        if n20 is None:
+            return self._chat_capas(texto, imagen, nombre)
+        from src.quality.arbitraje20 import es_abstencion, respuesta_vacia, limpia_eco
+        t0 = time.time()
+        # una pregunta pendiente del diálogo de base («¿Lo olvido?», «¿Cómo te llamas?») la contesta él
+        if getattr(getattr(self.conv, 'd', None), 'pending', None) and getattr(self, '_fuente20', '') != 'capas':
+            try:
+                self.conv.d.pending = None          # la pregunta pendiente no llegó a mostrarse: no cuenta
+            except Exception:                       # noqa
+                pass
+        if getattr(getattr(self.conv, 'd', None), 'pending', None):
+            # respuesta corta («Sí», «Marcos»): es para la pregunta pendiente. Una frase completa que el núcleo entiende no lo es.
+            r_p = None
+            if len((texto or '').split()) > 2 and not getattr(n20, 'pend_olvido', False):
+                with self.lock:
+                    antes = self._claves(); n0 = len(self.mem.facts)
+                    n20._ult_texto = (texto or '').strip()
+                    r_p = n20.procesar((texto or '').strip())
+                    if r_p is not None and not (r_p.get('estado') == 'abst' and r_p.get('consultar', True)):
+                        try:
+                            self.conv.d.pending = None
+                        except Exception:              # noqa
+                            pass
+                        self._fuente20 = 'nucleo'
+                        return self._salida20(n20, r_p, antes, n0, t0)
+            self._fuente20 = 'capas'
+            out = self._chat_capas(texto, imagen, nombre)
+            n20.turno_delegado(texto or '', '?' in (texto or ''))
+            self._olvido20(n20, texto, out)
+            return out
+        try:                                   # multimodal: «mi coche es de ese color» -> el color de la última imagen vista
+            import re as _re
+            vr = self._vision_reciente or {}
+            col = str(vr.get('concepto') or '').lower()
+            if col and texto and '?' not in texto and getattr(n20, 'vista', None) is None and _re.search(r"\b(?:de|del)\s+(?:ese|este|el)\s+(?:mismo\s+)?(?:color|tono)\b", texto, _re.I):
+                texto = _re.sub(r"\b(?:de|del)\s+(?:ese|este|el)\s+(?:mismo\s+)?(?:color|tono)\b", col, texto, flags=_re.I)
+        except Exception:                      # noqa
+            pass
+        with self.lock:
+            antes = self._claves()
+            n0 = len(self.mem.facts)
+            n20._ult_texto = (texto or '').strip()
+            r20 = n20.procesar((texto or '').strip())
+            if r20 is not None and r20.get('estado') == 'abst' and ('?' in (texto or '') or getattr(n20, '_ult_era_preg', False)):
+                try:                               # antes de decir «no lo sé»: ¿lo dijo la persona con otras palabras?
+                    from src.nucleo20 import coloquial as _Q
+                    cita = _Q.recuerda(n20, _Q.normaliza((texto or '').strip()))
+                    if cita:
+                        r20 = {'respuesta': f"No lo tengo del todo claro, pero me dijiste: «{cita.rstrip('.')}».", 'estado': 'ok', 'consultar': False, 'tipo': 'resp'}
+                except Exception:                  # noqa
+                    pass
+            if r20 is not None and not (r20.get('estado') == 'abst' and r20.get('consultar')):
+                self._fuente20 = 'nucleo'
+                return self._salida20(n20, r20, antes, n0, t0)
+        out = self._chat_capas(texto, imagen, nombre)
+        resp = out.get('respuesta') if isinstance(out, dict) else None
+        if r20 is not None and (out.get('error') or out.get('fallo') or respuesta_vacia(resp) or es_abstencion(resp)):
+            from src.quality.arbitraje20 import abstencion_util
+            if not (r20['respuesta'] == 'No lo sé.' and abstencion_util(resp)):
+                with self.lock:
+                    self._fuente20 = 'nucleo'
+                    return self._salida20(n20, r20, antes, n0, t0)
+        # LCM 2.5: si ninguna capa lo ha entendido de verdad, se guarda literal (para poder citarlo) o se cita lo guardado
+        try:
+            alt = self._memoria_literal(n20, texto, out, r20)
+            if alt is not None:
+                self._fuente20 = 'nucleo'
+                return self._salida20(n20, alt, antes, n0, t0)
+        except Exception:                      # noqa
+            pass
+        self._fuente20 = 'capas' 
+        if isinstance(resp, str):
+            out['respuesta'] = limpia_eco(resp, out.get('aprendido'))
+            n20.ult_resp = out['respuesta']
+            n20.ult_just = None
+        if r20 is None:
+            n20.turno_delegado(texto or '', '?' in (texto or '') or '¿' in (texto or ''))
+            self._olvido20(n20, texto, out)
+        return out
+
+    _MAL_ENTENDIDO = ("he registrado ese hecho con su procedencia", "no he entendido", "asi sabre a quien te refieres", "pero no he entendido que quieres decirme",
+                      "detecto una creencia o posibilidad", "es una condicion, no un hecho", "no consta una relacion de ese tipo", "no consta informacion suficiente")
+
+    def _memoria_literal(self, n20, texto, out, r20):
+        from src.nucleo20 import coloquial as Q
+        from src.nucleo20.morfo import sa as _sa
+        from src.quality.arbitraje20 import es_abstencion
+        t = Q.normaliza((texto or '').strip())
+        if not t or len(t.split()) < 2:
+            return None
+        resp = _sa(str((out or {}).get('respuesta') or ''))
+        flojo = any(x in resp for x in self._MAL_ENTENDIDO) or es_abstencion((out or {}).get('respuesta')) or (r20 is not None and r20.get('estado') == 'abst')
+        if not flojo:
+            return None
+        if '?' in t or '¿' in t:
+            cita = Q.recuerda(n20, t)
+            if cita:
+                return {'respuesta': f"No lo tengo del todo claro, pero me dijiste: «{cita.rstrip('.')}».", 'estado': 'ok', 'consultar': False, 'tipo': 'resp'}
+            if r20 is not None:
+                return None
+            if 'asi sabre a quien te refieres' in resp or 'no he entendido' in resp or 'no consta' in resp:
+                return {'respuesta': "No he entendido bien la pregunta. ¿Me la dices de otra forma?", 'estado': 'abst', 'consultar': False, 'tipo': 'abst'}
+            return None
+        if (out or {}).get('aprendido') or (out or {}).get('delta'):
+            if r20 is None:
+                Q.anota(n20, t)                    # las capas anteriores sí aprendieron algo: se respeta, y queda además la cita literal
+            return None
+        if r20 is None and Q.anota(n20, t):
+            return {'respuesta': f"No lo he entendido del todo, pero me lo apunto tal como lo dices: «{t.rstrip('.')}».", 'estado': 'ok', 'consultar': False, 'tipo': 'nota'}
+        return None
+
+    def _olvido20(self, n20, texto, out):
+        """El grafo del núcleo olvida lo mismo que la memoria clásica (y solo cuando esta lo ha olvidado de verdad)."""
+        try:
+            import re as _re
+            from src.nucleo20.morfo import sa as _sa
+            r = _sa(str((out or {}).get('respuesta') or ''))
+            t = _sa(texto or '').strip(' .!')
+            with self.lock:
+                if getattr(n20, 'pend_olvido', False):
+                    n20.pend_olvido = False
+                    if _re.search(r"\b(olvidado|borrado|he olvidado|ya no recuerdo|memoria (?:vacia|borrada)|hecho)\b", r) and not _re.match(r"^(no|cancela|mejor no|dejalo)\b", t):
+                        n20.olvidar_todo()
+                    return
+                if _re.match(r"^(olvida|olvidate de|borra) (todo|todo lo que sabes|todo lo anterior)$|^olvidalo todo$|^borra la memoria$", t):
+                    if 'seguro' in r:
+                        n20.pend_olvido = True
+                    elif _re.search(r"\b(olvidado|borrado)\b", r):
+                        n20.olvidar_todo()
+                elif _re.match(r"^(olvida|borra|elimina|quita)\b", t):
+                    if n20.olvida(texto) and isinstance(out, dict) and not _re.search(r"\b(olvid|borr|elimin)", r):
+                        # la memoria clásica no lo encontró, pero el núcleo sí lo tenía y lo ha olvidado
+                        m_ = _re.match(r"^(?:olvida|borra|elimina|quita)\s+(?:que\s+|lo de que\s+)?(.+)$", (texto or '').strip(' .!'), _re.I)
+                        out['respuesta'] = "De acuerdo, he olvidado que " + (m_.group(1) if m_ else "eso") + "."
+        except Exception:                      # noqa
+            pass
+
+    def _chat_imagen(self, texto, imagen, nombre='imagen'):
+        """LCM 2.3: la imagen pasa a ser un referente del núcleo (color y forma) y el texto que la acompaña se interpreta con ella."""
+        n20 = self._nucleo20()
+        if n20 is None:
+            return self._chat_capas(texto, imagen, nombre)
+        from src.vision.perception import procesar_imagen
+        from src.nucleo20 import vista as V
+        t0 = time.time()
+        with self.lock:
+            visto = procesar_imagen(self.mem, imagen, nombre)
+            if visto.get("error"):
+                return {"error": visto["error"]}
+            self._vision_reciente = visto
+            self._registrar_vision_episodica(visto)
+            try:
+                from src.vision.formas import analizar_forma
+                forma = analizar_forma(imagen)
+            except Exception:                                                  # noqa
+                forma = {}
+            escena = {}
+            if not forma.get("forma"):                                         # 2.10: varias figuras y cómo están colocadas
+                try:
+                    from src.vision.formas import analizar_escena
+                    escena = analizar_escena(imagen)
+                except Exception:                                              # noqa
+                    escena = {}
+            desc = V.ver(n20, visto, forma, escena)
+        extra = {"episodio": visto.get("episodio"), "aviso_episodio": visto.get("aviso_episodio")}
+        import re as _re                      # «Te paso una foto.» solo anuncia la imagen: no es un hecho que guardar
+        texto = _re.sub(r"^\s*(?:(?:te|os) )?(?:paso|mando|env[ií]o|enseño|adjunto|pongo|subo|dejo)(?: aqu[ií])? (?:una|esta|la|otra) (?:foto(?:graf[ií]a)?|imagen|captura)(?: (?:que he hecho|m[ií]a))?\s*[.,:;!]*\s*", "", texto or "", flags=_re.I)
+        if not (texto or '').strip():
+            return dict({"respuesta": desc, "aprendido": visto.get("aprendido", []), "imagen": None, "fallo": not (visto.get("concepto") or forma.get("forma")),
+                         "ms": int((time.time() - t0) * 1000), "hechos": len(self.mem.facts), "delta": len(visto.get("aprendido", [])), "nucleo20": "vista"}, **extra)
+        out = self.chat(texto)
+        if isinstance(out, dict):
+            out = dict(out, **extra)
+        return out
+
+    def _salida20(self, n20, r20, antes, n0, t0):
+        nuevos = [self._fila(f) for f in self.mem.facts if (f["s"], f["p"], f["o"], bool(f.get("neg"))) not in antes][:40]
+        try:
+            self.mem.save()
+        except OSError:
+            pass
+        n20.ult_resp = r20['respuesta']
+        if r20.get('tipo') == 'ack':
+            n20.ult_dicho = getattr(n20, '_ult_texto', '') or getattr(n20, 'ult_dicho', '')
+        try:                                   # el diálogo de base comparte el nombre de la persona
+            nom = n20.usuario.get('nombre')
+            if nom and getattr(self.conv.d, 'user', None) != nom:
+                self.conv.d.user = nom
+        except Exception:                      # noqa
+            pass
+        return {'respuesta': r20['respuesta'], 'aprendido': nuevos, 'imagen': r20.get('imagen'), 'fallo': r20.get('estado') == 'abst', 'ms': int((time.time() - t0) * 1000),
+                'hechos': len(self.mem.facts), 'delta': len(self.mem.facts) - n0, 'nucleo20': r20.get('estado')}
+
+    def _chat_capas(self, texto, imagen=None, nombre='imagen'):
         texto = (texto or "").strip()
-        if not texto:
-            return {"error": "Escribe algo."}
+        if not texto and imagen is None:
+            return {"error": "Escribe algo o adjunta una imagen."}
         from src.language.lector import MAX_TEXTO
         if len(texto) > MAX_TEXTO:
             return {"error": f"Texto demasiado largo (máx. {MAX_TEXTO:,} caracteres): pártelo en dos.".replace(",", ".")}
+        # LCM_CALIDAD14_PRE
+        from src.quality.grounding import pre_respuesta
+        _respuesta_fundamentada = pre_respuesta(texto, self.mem, getattr(self, '_calidad_flags', None))
+        if _respuesta_fundamentada is not None:
+            return {'respuesta': _respuesta_fundamentada, 'aprendido': [], 'imagen': None,
+                    'fallo': False, 'ms': 0, 'hechos': len(self.mem.facts), 'delta': 0}
+        # LCM_EVIDENCIA15_PRE: hechos de nacimiento, no coincidencias textuales.
+        from src.quality.evidencia15 import pre_respuesta as pre_evidencia15
+        _evidencia15 = pre_evidencia15(texto, self.mem)
+        if _evidencia15 is not None:
+            return {'respuesta': _evidencia15, 'aprendido': [], 'imagen': None,
+                    'fallo': False, 'ms': 0, 'hechos': len(self.mem.facts), 'delta': 0}
+        # LCM_VISION_01_CHAT_INTEGRADO: texto e imagen llegan al mismo método.
+        from src.vision.concept_alignment import (responder_pregunta_visual,
+            es_pregunta_color_visual, color_solicitado)
+        from src.vision.sample import datos_muestra
+        with self.lock:
+            if imagen is not None:
+                from src.vision.perception import procesar_imagen
+                visto = procesar_imagen(self.mem, imagen, nombre)
+                if visto.get("error"):
+                    return {"error": visto["error"]}
+                self._vision_reciente = visto
+                self._registrar_vision_episodica(visto)
+                if not texto or es_pregunta_color_visual(texto):
+                    if visto.get("concepto") and texto:
+                        respuesta = responder_pregunta_visual(self.mem, texto, visto)
+                    else:
+                        respuesta = visto.get("respuesta") or visto.get("mensaje")
+                    return {"respuesta": respuesta, "aprendido": visto.get("aprendido", []),
+                            "imagen": None, "fallo": not bool(visto.get("concepto")),
+                            "ms": 0, "hechos": len(self.mem.facts), "delta": len(visto.get("aprendido", [])), "episodio": visto.get("episodio"), "aviso_episodio": visto.get("aviso_episodio")}
+                # Una imagen ambigua no debe hacer que respondamos sobre otra previa.
+                if not visto.get("concepto"):
+                    return {"respuesta": visto.get("respuesta"), "aprendido": [],
+                            "fallo": True, "ms": 0, "hechos": len(self.mem.facts), "delta": 0, "episodio": visto.get("episodio"), "aviso_episodio": visto.get("aviso_episodio")}
+
+            # LCM_ARBITRAJE_20: las capas 1.6-1.9 responden por orden, pero una ABSTENCIÓN
+            # («No consta...») no cierra el turno: se retiene y se consulta al resto de capas.
+            # Solo si ninguna aporta una respuesta fundada se devuelve la abstención retenida.
+            from src.quality.arbitraje20 import es_abstencion
+            _retenida = None
+            for _capa in self._capas20():
+                _r = _capa(texto, self.mem, self.parser, self)
+                if _r is None:
+                    continue
+                if es_abstencion(_r.get('respuesta')) and ('?' in texto or '¿' in texto):
+                    _retenida = _retenida or _r
+                    continue
+                return _r
+            # LCM_SEMANTICA_V1_INICIO
+            # La forma lingüística se resuelve por conceptos, no por regex de órdenes.
+            from src.semantics.bridge import PuenteSemantico
+            if getattr(self, '_puente_semantico', None) is None:
+                self._puente_semantico = PuenteSemantico()
+            respuesta_semantica = self._puente_semantico.responder(texto, self.mem)
+            if respuesta_semantica is not None:
+                respuesta_semantica.setdefault('ms', 0)
+                respuesta_semantica.setdefault('hechos', len(self.mem.facts))
+                respuesta_semantica.setdefault('delta', len(respuesta_semantica.get('aprendido', [])))
+                return respuesta_semantica
+            # LCM_SEMANTICA_V1_FIN
+            # LCM_EVIDENCIA15_NEGACION: composición vectorial, no verbos rígidos.
+            from src.quality.evidencia15 import confirmacion_negacion_visual
+            _confirmacion = confirmacion_negacion_visual(texto, self._puente_semantico.lex)
+            if _confirmacion is not None:
+                return {'respuesta': _confirmacion, 'imagen': None, 'aprendido': [],
+                        'fallo': False, 'ms': 0, 'hechos': len(self.mem.facts), 'delta': 0}
+            respuesta_visual = responder_pregunta_visual(self.mem, texto, self._vision_reciente)
+            if respuesta_visual is not None:
+                return {"respuesta": respuesta_visual, "aprendido": [],
+                        "fallo": self._vision_reciente is not None and not bool(self._vision_reciente.get("concepto")),
+                        "ms": 0, "hechos": len(self.mem.facts), "delta": 0}
+        # Fuera del caso visual, el texto sigue el flujo conversacional original.
         with self.lock:
             antes = self._claves()
             n0 = len(self.mem.facts)
             t0 = time.time()
             try:
                 resp = self.conv.say(texto)
+                # Mantener referentes entre turnos procesados por el diálogo legado.
+                if getattr(self, '_dialogo16', None) is not None:
+                    self._dialogo16.observar_turno(texto)
+                # LCM_CALIDAD14_POST
+                from src.quality.grounding import post_respuesta
+                resp = post_respuesta(texto, resp, getattr(self, '_calidad_flags', None), mem=self.mem)
+                from src.quality.evidencia15 import post_respuesta as post_evidencia15
+                resp = post_evidencia15(texto, resp, mem=self.mem)
             except Exception as e:                                             # noqa
                 return {"error": f"No he podido procesar eso ({type(e).__name__})."}
             nuevos = [self._fila(f) for f in self.mem.facts if (f["s"], f["p"], f["o"], bool(f.get("neg"))) not in antes][:40]
@@ -122,7 +423,40 @@ class Motor:
             except OSError:
                 pass
             from src.language.consultas import es_fallo
+            from src.quality.arbitraje20 import respuesta_vacia
+            if _retenida is not None and not nuevos and (es_fallo(resp) or respuesta_vacia(resp)):
+                return _retenida
             return {"respuesta": resp, "aprendido": nuevos, "fallo": bool(es_fallo(resp)), "ms": int((time.time() - t0) * 1000), "hechos": len(self.mem.facts), "delta": len(self.mem.facts) - n0}
+
+    # LCM_VISION_01_METHOD: API legacy también actualiza el contexto del chat.
+    # LCM_EPISODIOS_13_PUENTE
+    def _registrar_vision_episodica(self, visto):
+        """Conserva procedencia visual sin cambiar la respuesta de conversación."""
+        observacion = visto.get('observacion')
+        if not observacion:
+            return
+        try:
+            from pathlib import Path
+            from src.multimodal.episodic_memory import MemoriaEpisodica
+            registro = getattr(self, '_episodios', None)
+            if registro is None:
+                ruta = Path(self.mem.path).with_name('lcm_episodios.json')
+                registro = MemoriaEpisodica(ruta)
+                self._episodios = registro
+            visto['episodio'] = registro.observar(observacion, contexto='IMAGEN_CHAT')
+        except (OSError, ValueError, TypeError) as exc:
+            # El registro episódico es adicional: no romper una respuesta válida
+            # ni ocultar el diagnóstico para el usuario o la interfaz.
+            visto['aviso_episodio'] = type(exc).__name__ + ': ' + str(exc)[:180]
+
+    def vision_analizar(self, contenido, nombre="imagen"):
+        from src.vision.perception import procesar_imagen
+        with self.lock:
+            res = procesar_imagen(self.mem, contenido, nombre)
+            if not res.get("error"):
+                self._vision_reciente = res
+                self._registrar_vision_episodica(res)
+            return res
 
     def aprender(self, texto):
         """parche-113: aprende de un texto largo (pegado o subido). Devuelve el informe completo: hechos con su frase de origen y frases no entendidas."""
@@ -157,6 +491,14 @@ class Motor:
     def nueva_conversacion(self):
         with self.lock:
             self.conv = self._nueva_conv()
+            self._vision_reciente = None
+            if getattr(self, '_narrativa18', None) is not None:
+                self._narrativa18.ultimo_tema = None
+            if getattr(self, '_dialogo16', None) is not None:
+                self._dialogo16.ultimo = None
+                self._dialogo16.ultima_prueba = None
+            if getattr(self, '_puente_semantico', None) is not None:
+                self._puente_semantico.pendiente = None
         return {"ok": True}
 
     # ---- estado / memoria ---------------------------------------------------------------------------------------------

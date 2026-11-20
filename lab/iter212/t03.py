@@ -1,0 +1,17 @@
+D = [{"id": "r03", "cat": "predicados", "turnos": [
+ ("hola", "hola"),
+ ("me ducho, me visto y me voy a trabajar", "trabaj*|duchas|vistes;!hasta luego;!no lo he entendido"),
+ ("¿me visto?", "^si"),
+ ("mi piso es pequeño, antiguo y muy tranquilo", "pequeño|antiguo|tranquilo;!no lo he entendido"),
+ ("¿mi piso es tranquilo?", "^si"),
+ ("¿cómo es mi piso?", "pequeño;antiguo;tranquilo"),
+ ("Clara pinta y escribe poesía", "pinta|escribe;!no lo he entendido"),
+ ("¿Clara escribe poesía?", "^si"),
+ ("mi hermana es dentista y mi cuñado también", "dentista;!no lo he entendido"),
+ ("¿a qué se dedica mi cuñado?", "dentista"),
+ ("mi padre no bebe alcohol y mi madre tampoco", "alcohol;!no lo he entendido"),
+ ("¿mi madre bebe alcohol?", "^no"),
+ ("ni Clara ni Rubén ni yo tenemos perro", "perro;!no lo he entendido"),
+ ("¿Rubén tiene perro?", "^no"),
+ ("¿tengo perro?", "^no"),
+]}]

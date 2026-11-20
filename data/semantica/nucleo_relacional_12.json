@@ -1,0 +1,2730 @@
+{
+  "schema": "lcm-nucleo-relacional-1.2",
+  "version": "1.2.0",
+  "aviso": "Curación asistida inicial; cada afirmación requiere revisión humana y evaluación con ejemplos externos. No derivar hechos por proximidad coseno.",
+  "nuevos": [
+    {
+      "id": "concepto.ser_vivo",
+      "lema": "ser vivo",
+      "tipo": "concepto",
+      "familia": "naturaleza",
+      "subfamilia": "naturaleza",
+      "definicion": "Entidad que realiza procesos vitales.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:naturaleza": 1.15,
+        "identidad:concepto.ser_vivo": 0.48,
+        "rasgo:naturaleza": 0.6
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.objeto_fisico",
+      "lema": "objeto físico",
+      "tipo": "concepto",
+      "familia": "objeto",
+      "subfamilia": "objeto",
+      "definicion": "Entidad material que ocupa espacio.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:objeto": 1.15,
+        "identidad:concepto.objeto_fisico": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.fenomeno_acustico",
+      "lema": "fenómeno acústico",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Evento perceptible mediante sonido.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.fenomeno_acustico": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.sonido",
+      "lema": "sonido",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Vibración perceptible mediante la audición.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.sonido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.canto",
+      "lema": "canto",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emisión organizada de sonidos vocales.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.canto": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.pio",
+      "lema": "pío",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Onomatopeya de un sonido breve que emiten algunas aves.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.pio": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.ladrido",
+      "lema": "ladrido",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido vocal característico de los perros.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.ladrido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.maullido",
+      "lema": "maullido",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido vocal característico de los gatos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.maullido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.mugido",
+      "lema": "mugido",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido vocal característico de las vacas y otros bóvidos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.mugido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.cacareo",
+      "lema": "cacareo",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido vocal característico de las gallinas.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.cacareo": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.rugido",
+      "lema": "rugido",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido grave y fuerte de ciertos animales.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.rugido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.audio",
+      "lema": "audio",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Representación o señal que transporta información sonora.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.audio": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.vision",
+      "lema": "visión",
+      "tipo": "concepto",
+      "familia": "percepcion",
+      "subfamilia": "percepcion",
+      "definicion": "Capacidad sensorial de percibir luz e imágenes.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:percepcion": 1.15,
+        "identidad:concepto.vision": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.audicion",
+      "lema": "audición",
+      "tipo": "concepto",
+      "familia": "percepcion",
+      "subfamilia": "percepcion",
+      "definicion": "Capacidad sensorial de percibir sonidos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:percepcion": 1.15,
+        "identidad:concepto.audicion": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.percepcion",
+      "lema": "percepción",
+      "tipo": "concepto",
+      "familia": "percepcion",
+      "subfamilia": "percepcion",
+      "definicion": "Proceso por el que se capta información mediante sentidos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:percepcion": 1.15,
+        "identidad:concepto.percepcion": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.revista",
+      "lema": "revista",
+      "tipo": "concepto",
+      "familia": "lenguaje",
+      "subfamilia": "lenguaje",
+      "definicion": "Publicación periódica que reúne artículos, imágenes o información.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:lenguaje": 1.15,
+        "identidad:concepto.revista": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.periodico",
+      "lema": "periódico",
+      "tipo": "concepto",
+      "familia": "lenguaje",
+      "subfamilia": "lenguaje",
+      "definicion": "Publicación informativa de aparición periódica.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:lenguaje": 1.15,
+        "identidad:concepto.periodico": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.mueble",
+      "lema": "mueble",
+      "tipo": "concepto",
+      "familia": "objeto",
+      "subfamilia": "objeto",
+      "definicion": "Objeto de mobiliario destinado a equipar un espacio.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:objeto": 1.15,
+        "identidad:concepto.mueble": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.dispositivo_electronico",
+      "lema": "dispositivo electrónico",
+      "tipo": "concepto",
+      "familia": "informatica",
+      "subfamilia": "informatica",
+      "definicion": "Aparato que funciona mediante circuitos electrónicos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:informatica": 1.15,
+        "identidad:concepto.dispositivo_electronico": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.publicacion",
+      "lema": "publicación",
+      "tipo": "concepto",
+      "familia": "lenguaje",
+      "subfamilia": "lenguaje",
+      "definicion": "Obra difundida para ser leída o consultada.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:lenguaje": 1.15,
+        "identidad:concepto.publicacion": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.unidad_linguistica",
+      "lema": "unidad lingüística",
+      "tipo": "concepto",
+      "familia": "lenguaje",
+      "subfamilia": "lenguaje",
+      "definicion": "Unidad de organización del lenguaje.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:lenguaje": 1.15,
+        "identidad:concepto.unidad_linguistica": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.intercambio_comunicativo",
+      "lema": "intercambio comunicativo",
+      "tipo": "concepto",
+      "familia": "lenguaje",
+      "subfamilia": "lenguaje",
+      "definicion": "Interacción en la que se intercambia información.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:lenguaje": 1.15,
+        "identidad:concepto.intercambio_comunicativo": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.figura_geometrica",
+      "lema": "figura geométrica",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Forma definida mediante propiedades geométricas.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.figura_geometrica": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.figura_plana",
+      "lema": "figura plana",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Figura geométrica de dos dimensiones.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.figura_plana": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.solido_geometrico",
+      "lema": "sólido geométrico",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Figura geométrica tridimensional.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.solido_geometrico": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.representacion_visual",
+      "lema": "representación visual",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Información expresada mediante elementos visibles.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.representacion_visual": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.representacion_audiovisual",
+      "lema": "representación audiovisual",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Representación que combina elementos visuales y sonoros.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.representacion_audiovisual": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.propiedad_visual",
+      "lema": "propiedad visual",
+      "tipo": "concepto",
+      "familia": "visual",
+      "subfamilia": "visual",
+      "definicion": "Característica perceptible visualmente de un objeto o escena.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:visual": 1.15,
+        "identidad:concepto.propiedad_visual": 0.48,
+        "rasgo:visual": 0.85
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.aracnido",
+      "lema": "arácnido",
+      "tipo": "concepto",
+      "familia": "naturaleza",
+      "subfamilia": "naturaleza",
+      "definicion": "Artrópodo invertebrado como las arañas.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:naturaleza": 1.15,
+        "identidad:concepto.aracnido": 0.48,
+        "rasgo:naturaleza": 0.6
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.molusco",
+      "lema": "molusco",
+      "tipo": "concepto",
+      "familia": "naturaleza",
+      "subfamilia": "naturaleza",
+      "definicion": "Invertebrado de cuerpo blando, como el pulpo.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:naturaleza": 1.15,
+        "identidad:concepto.molusco": 0.48,
+        "rasgo:naturaleza": 0.6
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.crustaceo",
+      "lema": "crustáceo",
+      "tipo": "concepto",
+      "familia": "naturaleza",
+      "subfamilia": "naturaleza",
+      "definicion": "Artrópodo que incluye a los cangrejos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:naturaleza": 1.15,
+        "identidad:concepto.crustaceo": 0.48,
+        "rasgo:naturaleza": 0.6
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.prenda",
+      "lema": "prenda",
+      "tipo": "concepto",
+      "familia": "objeto",
+      "subfamilia": "objeto",
+      "definicion": "Pieza de ropa utilizada para vestir.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:objeto": 1.15,
+        "identidad:concepto.prenda": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.transporte",
+      "lema": "transporte",
+      "tipo": "concepto",
+      "familia": "actividad",
+      "subfamilia": "actividad",
+      "definicion": "Actividad de desplazar personas o cosas.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:actividad": 1.15,
+        "identidad:concepto.transporte": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.evento",
+      "lema": "evento",
+      "tipo": "concepto",
+      "familia": "tiempo",
+      "subfamilia": "tiempo",
+      "definicion": "Suceso que ocurre en un momento o intervalo.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:tiempo": 1.15,
+        "identidad:concepto.evento": 0.48
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "concepto.ave_sonido",
+      "lema": "vocalización de ave",
+      "tipo": "concepto",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Sonido producido por la vocalización de un ave.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:concepto": 1.0,
+        "familia:audio": 1.15,
+        "identidad:concepto.ave_sonido": 0.48,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.piar",
+      "lema": "piar",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir sonidos breves característicos de algunas aves.",
+      "alias": [],
+      "formas": [
+        "pía",
+        "pia",
+        "pían",
+        "pian",
+        "piando",
+        "pió",
+        "pio"
+      ],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.piar": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.ladrar",
+      "lema": "ladrar",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir un ladrido.",
+      "alias": [],
+      "formas": [
+        "ladra",
+        "ladrando",
+        "ladró",
+        "ladro"
+      ],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.ladrar": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.maullar",
+      "lema": "maullar",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir un maullido.",
+      "alias": [],
+      "formas": [
+        "maúlla",
+        "maulla",
+        "maullando"
+      ],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.maullar": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.mugir",
+      "lema": "mugir",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir un mugido.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.mugir": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.cacarear",
+      "lema": "cacarear",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir cacareos.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.cacarear": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.rugir",
+      "lema": "rugir",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Emitir un rugido.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.rugir": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.emitir_sonido",
+      "lema": "emitir sonido",
+      "tipo": "accion",
+      "familia": "audio",
+      "subfamilia": "audio",
+      "definicion": "Producir un fenómeno acústico.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:audio": 1.15,
+        "identidad:accion.emitir_sonido": 0.48,
+        "rasgo:accion": 0.8,
+        "rasgo:sonoro": 0.95
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    },
+    {
+      "id": "accion.volar",
+      "lema": "volar",
+      "tipo": "accion",
+      "familia": "espacio",
+      "subfamilia": "espacio",
+      "definicion": "Desplazarse por el aire.",
+      "alias": [],
+      "formas": [],
+      "padres": [],
+      "rasgos": {
+        "tipo:accion": 1.0,
+        "familia:espacio": 1.15,
+        "identidad:accion.volar": 0.48,
+        "rasgo:accion": 0.8
+      },
+      "operacion": null,
+      "evidencia": "curacion_asistida"
+    }
+  ],
+  "definiciones": {
+    "concepto.vehiculo": "Medio de transporte de personas o cosas.",
+    "concepto.alimento": "Sustancia que los seres vivos pueden ingerir para nutrirse.",
+    "concepto.fruta": "Fruto comestible de ciertas plantas.",
+    "concepto.herramienta": "Objeto empleado para facilitar una tarea manual o técnica.",
+    "concepto.accion": "Acto realizado por un agente o proceso.",
+    "concepto.senal": "Variación que transporta o indica información.",
+    "concepto.propiedad": "Característica atribuida a una entidad.",
+    "concepto.animal": "Ser vivo que obtiene energía alimentándose de materia orgánica y presenta un sistema de organización animal.",
+    "concepto.mamifero": "Vertebrado que posee glándulas mamarias; suele tener pelo en alguna etapa de su vida.",
+    "concepto.ave": "Vertebrado con plumas, pico y reproducción por huevos; no todas las aves vuelan.",
+    "concepto.pajaro": "Ave; término de uso común que suele aplicarse especialmente a aves pequeñas.",
+    "concepto.vertebrado": "Animal que posee columna vertebral o una estructura axial vertebral durante su desarrollo.",
+    "concepto.invertebrado": "Animal que no posee columna vertebral.",
+    "concepto.reptil": "Vertebrado de un grupo que incluye serpientes, lagartos y tortugas.",
+    "concepto.anfibio": "Vertebrado que pertenece al grupo de ranas, sapos y otros anfibios.",
+    "concepto.insecto": "Invertebrado artrópodo que, en su fase adulta típica, presenta seis patas.",
+    "concepto.perro": "Mamífero doméstico de la familia de los cánidos.",
+    "concepto.gato": "Mamífero felino, frecuentemente doméstico.",
+    "concepto.gallina": "Ave doméstica, hembra del gallo.",
+    "concepto.gallo": "Ave doméstica, macho adulto de la gallina.",
+    "concepto.pato": "Ave acuática de pico generalmente aplanado.",
+    "concepto.pinguino": "Ave marina adaptada a nadar y que no vuela.",
+    "concepto.pez": "Vertebrado acuático que, en general, respira mediante branquias.",
+    "concepto.tiburon": "Pez cartilaginoso marino.",
+    "concepto.arana": "Arácnido de ocho patas, frecuentemente capaz de producir seda.",
+    "concepto.arbol": "Planta leñosa que suele presentar un tronco principal.",
+    "concepto.planta": "Ser vivo del reino de las plantas, habitualmente capaz de fotosíntesis.",
+    "concepto.hoja": "Órgano vegetal que normalmente participa en la fotosíntesis.",
+    "concepto.raiz": "Órgano vegetal que suele fijar la planta y absorber agua y minerales.",
+    "concepto.flor": "Órgano reproductor de las plantas con flor.",
+    "concepto.tallo": "Estructura vegetal que soporta hojas y otros órganos.",
+    "concepto.fruto": "Estructura vegetal derivada del ovario de una flor, que generalmente contiene semillas.",
+    "concepto.semilla": "Estructura de propagación vegetal que contiene un embrión.",
+    "concepto.persona": "Ser humano considerado como individuo.",
+    "concepto.nino": "Persona en la etapa de la niñez.",
+    "concepto.nina": "Persona en la etapa de la niñez.",
+    "concepto.adulto": "Persona que ha alcanzado la etapa adulta.",
+    "concepto.profesor": "Persona que enseña en un contexto educativo.",
+    "concepto.profesora": "Persona que enseña en un contexto educativo.",
+    "concepto.medico": "Profesional que ejerce la medicina.",
+    "concepto.medica": "Profesional que ejerce la medicina.",
+    "concepto.coche": "Vehículo automóvil que sirve principalmente para transportar personas.",
+    "concepto.bicicleta": "Vehículo de dos ruedas que suele impulsarse con pedales.",
+    "concepto.mesa": "Mueble con una superficie elevada que se apoya sobre una estructura.",
+    "concepto.silla": "Mueble diseñado para sentarse, habitualmente para una persona.",
+    "concepto.cama": "Mueble destinado a acostarse o dormir.",
+    "concepto.puerta": "Elemento móvil que permite o impide el paso por una abertura.",
+    "concepto.ventana": "Abertura o elemento de cerramiento que permite habitualmente el paso de la luz.",
+    "concepto.ordenador": "Dispositivo electrónico programable para procesar información.",
+    "concepto.telefono": "Dispositivo utilizado para comunicarse a distancia.",
+    "concepto.libro": "Obra escrita o gráfica publicada en soporte físico o digital.",
+    "concepto.fotografia": "Imagen obtenida mediante un proceso fotográfico.",
+    "concepto.dibujo": "Representación visual obtenida mediante trazos.",
+    "concepto.color": "Propiedad perceptiva visual relacionada con la composición espectral de la luz.",
+    "concepto.luz": "Radiación electromagnética perceptible por el sistema visual humano.",
+    "concepto.sombra": "Región de menor iluminación causada por un obstáculo a la luz.",
+    "concepto.rosa": "Término que puede designar un color o una flor; requiere contexto para elegir sentido.",
+    "concepto.aguila": "Ave rapaz de tamaño y especies diversos.",
+    "concepto.ballena": "Mamífero marino del grupo de los cetáceos.",
+    "concepto.delfin": "Mamífero acuático del grupo de los cetáceos.",
+    "concepto.mariposa": "Insecto lepidóptero que suele presentar alas con escamas.",
+    "concepto.abeja": "Insecto himenóptero, muchas especies polinizadoras.",
+    "concepto.hormiga": "Insecto social de la familia de los formícidos.",
+    "concepto.manzana": "Fruto comestible del manzano.",
+    "concepto.naranja": "Fruto comestible del naranjo; no debe confundirse con el sentido cromático.",
+    "concepto.pan": "Alimento preparado generalmente mediante cocción de una masa de harina y agua.",
+    "concepto.agua": "Sustancia química H2O, esencial para muchos procesos biológicos.",
+    "concepto.ropa": "Conjunto de prendas utilizadas para vestir.",
+    "concepto.camisa": "Prenda que cubre el torso y suele tener mangas y abertura delantera.",
+    "concepto.zapato": "Calzado que cubre y protege el pie.",
+    "concepto.reloj": "Instrumento que sirve para medir e indicar el tiempo.",
+    "concepto.hora": "Unidad temporal equivalente a sesenta minutos.",
+    "concepto.dia": "Intervalo temporal comúnmente asociado a un ciclo de rotación terrestre.",
+    "concepto.semana": "Período formado convencionalmente por siete días.",
+    "concepto.mes": "Unidad del calendario que abarca de 28 a 31 días en el gregoriano.",
+    "concepto.numero": "Entidad matemática abstracta utilizada para contar, ordenar o medir.",
+    "concepto.cantidad": "Propiedad cuantitativa de un conjunto o magnitud."
+  },
+  "relaciones": [
+    {
+      "s": "concepto.animal",
+      "p": "ES_UN",
+      "o": "concepto.ser_vivo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.planta",
+      "p": "ES_UN",
+      "o": "concepto.ser_vivo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.persona",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.vertebrado",
+      "p": "ES_UN",
+      "o": "concepto.animal",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.invertebrado",
+      "p": "ES_UN",
+      "o": "concepto.animal",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mamifero",
+      "p": "ES_UN",
+      "o": "concepto.vertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ave",
+      "p": "ES_UN",
+      "o": "concepto.vertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pez",
+      "p": "ES_UN",
+      "o": "concepto.vertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.reptil",
+      "p": "ES_UN",
+      "o": "concepto.vertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.anfibio",
+      "p": "ES_UN",
+      "o": "concepto.vertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.insecto",
+      "p": "ES_UN",
+      "o": "concepto.invertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.aracnido",
+      "p": "ES_UN",
+      "o": "concepto.invertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.molusco",
+      "p": "ES_UN",
+      "o": "concepto.invertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.crustaceo",
+      "p": "ES_UN",
+      "o": "concepto.invertebrado",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.perro",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.gato",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.caballo",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.vaca",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.oveja",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cerdo",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.conejo",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.raton",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.rata",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.elefante",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.jirafa",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.leon",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.tigre",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.oso",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.lobo",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.zorro",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mono",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.gorila",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ballena",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.delfin",
+      "p": "ES_UN",
+      "o": "concepto.mamifero",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pajaro",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.gallina",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.gallo",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pato",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ganso",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.aguila",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.paloma",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.loro",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.buho",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pinguino",
+      "p": "ES_UN",
+      "o": "concepto.ave",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.tiburon",
+      "p": "ES_UN",
+      "o": "concepto.pez",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mariposa",
+      "p": "ES_UN",
+      "o": "concepto.insecto",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.abeja",
+      "p": "ES_UN",
+      "o": "concepto.insecto",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hormiga",
+      "p": "ES_UN",
+      "o": "concepto.insecto",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mosquito",
+      "p": "ES_UN",
+      "o": "concepto.insecto",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mosca",
+      "p": "ES_UN",
+      "o": "concepto.insecto",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.arana",
+      "p": "ES_UN",
+      "o": "concepto.aracnido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pulpo",
+      "p": "ES_UN",
+      "o": "concepto.molusco",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cangrejo",
+      "p": "ES_UN",
+      "o": "concepto.crustaceo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.tortuga",
+      "p": "ES_UN",
+      "o": "concepto.reptil",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.serpiente",
+      "p": "ES_UN",
+      "o": "concepto.reptil",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.lagarto",
+      "p": "ES_UN",
+      "o": "concepto.reptil",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.rana",
+      "p": "ES_UN",
+      "o": "concepto.anfibio",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.sapo",
+      "p": "ES_UN",
+      "o": "concepto.anfibio",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.arbol",
+      "p": "ES_UN",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hierba",
+      "p": "ES_UN",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cesped",
+      "p": "ES_UN",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.nino",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.nina",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.adulto",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.anciano",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.joven",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hombre",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mujer",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.madre",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.padre",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hijo",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hija",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hermano",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hermana",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.profesor",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.profesora",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.medico",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.medica",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ingeniero",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ingeniera",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.abogado",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.abogada",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.amigo",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.amiga",
+      "p": "ES_UN",
+      "o": "concepto.persona",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mueble",
+      "p": "ES_UN",
+      "o": "concepto.objeto_fisico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.vehiculo",
+      "p": "ES_UN",
+      "o": "concepto.objeto_fisico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.dispositivo_electronico",
+      "p": "ES_UN",
+      "o": "concepto.objeto_fisico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.herramienta",
+      "p": "ES_UN",
+      "o": "concepto.objeto_fisico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.prenda",
+      "p": "ES_UN",
+      "o": "concepto.objeto_fisico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mesa",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.silla",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.sofa",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.sillon",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cama",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.armario",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.escritorio",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.estanteria",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.perchero",
+      "p": "ES_UN",
+      "o": "concepto.mueble",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.coche",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.bicicleta",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.tren",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.avion",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.barco",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.autobus",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.camion",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.moto",
+      "p": "ES_UN",
+      "o": "concepto.vehiculo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ordenador",
+      "p": "ES_UN",
+      "o": "concepto.dispositivo_electronico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.telefono",
+      "p": "ES_UN",
+      "o": "concepto.dispositivo_electronico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.televisor",
+      "p": "ES_UN",
+      "o": "concepto.dispositivo_electronico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.camara",
+      "p": "ES_UN",
+      "o": "concepto.dispositivo_electronico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.camisa",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.camiseta",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pantalon",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.falda",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.vestido",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.abrigo",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.chaqueta",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.jersey",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.calcetin",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.zapato",
+      "p": "ES_UN",
+      "o": "concepto.prenda",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.libro",
+      "p": "ES_UN",
+      "o": "concepto.publicacion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.revista",
+      "p": "ES_UN",
+      "o": "concepto.publicacion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.periodico",
+      "p": "ES_UN",
+      "o": "concepto.publicacion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pan",
+      "p": "ES_UN",
+      "o": "concepto.alimento",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.queso",
+      "p": "ES_UN",
+      "o": "concepto.alimento",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.arroz",
+      "p": "ES_UN",
+      "o": "concepto.alimento",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.leche",
+      "p": "ES_UN",
+      "o": "concepto.alimento",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.manzana",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pera",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.platano",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.naranja",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.uva",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.limon",
+      "p": "ES_UN",
+      "o": "concepto.fruta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.fruta",
+      "p": "ES_UN",
+      "o": "concepto.alimento",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.palabra",
+      "p": "ES_UN",
+      "o": "concepto.unidad_linguistica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.frase",
+      "p": "ES_UN",
+      "o": "concepto.unidad_linguistica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.oracion",
+      "p": "ES_UN",
+      "o": "concepto.unidad_linguistica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.texto",
+      "p": "ES_UN",
+      "o": "concepto.unidad_linguistica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.parrafo",
+      "p": "ES_UN",
+      "o": "concepto.unidad_linguistica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.conversacion",
+      "p": "ES_UN",
+      "o": "concepto.intercambio_comunicativo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.representacion_visual",
+      "p": "ES_UN",
+      "o": "concepto.senal",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.imagen",
+      "p": "ES_UN",
+      "o": "concepto.representacion_visual",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.fotografia",
+      "p": "ES_UN",
+      "o": "concepto.imagen",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.dibujo",
+      "p": "ES_UN",
+      "o": "concepto.imagen",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.figura_plana",
+      "p": "ES_UN",
+      "o": "concepto.figura_geometrica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.solido_geometrico",
+      "p": "ES_UN",
+      "o": "concepto.figura_geometrica",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.circulo",
+      "p": "ES_UN",
+      "o": "concepto.figura_plana",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.rectangulo",
+      "p": "ES_UN",
+      "o": "concepto.figura_plana",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.triangulo",
+      "p": "ES_UN",
+      "o": "concepto.figura_plana",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ovalo",
+      "p": "ES_UN",
+      "o": "concepto.figura_plana",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cuadrado",
+      "p": "ES_UN",
+      "o": "concepto.rectangulo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.esfera",
+      "p": "ES_UN",
+      "o": "concepto.solido_geometrico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cubo",
+      "p": "ES_UN",
+      "o": "concepto.solido_geometrico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cono",
+      "p": "ES_UN",
+      "o": "concepto.solido_geometrico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cilindro",
+      "p": "ES_UN",
+      "o": "concepto.solido_geometrico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "COLOR",
+      "p": "ES_UN",
+      "o": "concepto.propiedad_visual",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "ROJO",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "AZUL",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "VERDE",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "AMARILLO",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "NEGRO",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "BLANCO",
+      "p": "ES_UN",
+      "o": "COLOR",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.sonido",
+      "p": "ES_UN",
+      "o": "concepto.fenomeno_acustico",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.canto",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pio",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ladrido",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.maullido",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mugido",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.cacareo",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.rugido",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.audio",
+      "p": "ES_UN",
+      "o": "concepto.senal",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.vision",
+      "p": "ES_UN",
+      "o": "concepto.percepcion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.audicion",
+      "p": "ES_UN",
+      "o": "concepto.percepcion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.luz",
+      "p": "SE_PERCIBE_POR",
+      "o": "concepto.vision",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "COLOR",
+      "p": "SE_PERCIBE_POR",
+      "o": "concepto.vision",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.sonido",
+      "p": "SE_PERCIBE_POR",
+      "o": "concepto.audicion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.imagen",
+      "p": "SE_PERCIBE_POR",
+      "o": "concepto.vision",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.audio",
+      "p": "CONTIENE_TIPO_DE_SENAL",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.hoja",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.tallo",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.raiz",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.flor",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.fruto",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.rama",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.semilla",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.planta",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las plantas presentan esta parte en todas las etapas."
+    },
+    {
+      "s": "concepto.puerta",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.casa",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Estructura habitual, no necesaria en cada ejemplar."
+    },
+    {
+      "s": "concepto.ventana",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.casa",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Estructura habitual, no necesaria en cada ejemplar."
+    },
+    {
+      "s": "concepto.pared",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.casa",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Estructura habitual, no necesaria en cada ejemplar."
+    },
+    {
+      "s": "concepto.techo",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.casa",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Estructura habitual, no necesaria en cada ejemplar."
+    },
+    {
+      "s": "concepto.motor",
+      "p": "PARTE_TIPICA_DE",
+      "o": "concepto.coche",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.piar",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.piar",
+      "p": "PRODUCE",
+      "o": "concepto.pio",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.ladrar",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.ladrar",
+      "p": "PRODUCE",
+      "o": "concepto.ladrido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.maullar",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.maullar",
+      "p": "PRODUCE",
+      "o": "concepto.maullido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.mugir",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.mugir",
+      "p": "PRODUCE",
+      "o": "concepto.mugido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.cacarear",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.cacarear",
+      "p": "PRODUCE",
+      "o": "concepto.cacareo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.rugir",
+      "p": "ES_UN",
+      "o": "accion.emitir_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.rugir",
+      "p": "PRODUCE",
+      "o": "concepto.rugido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.pajaro",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.piar",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.perro",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.ladrar",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.gato",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.maullar",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.vaca",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.mugir",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.gallina",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.cacarear",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.leon",
+      "p": "PUEDE_REALIZAR",
+      "o": "accion.rugir",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "Capacidad posible; no significa que lo esté realizando ahora."
+    },
+    {
+      "s": "concepto.pio",
+      "p": "ES_UN",
+      "o": "concepto.ave_sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ave_sonido",
+      "p": "ES_UN",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.volar",
+      "p": "ES_UN",
+      "o": "concepto.accion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.ave",
+      "p": "ALGUNOS_PUEDEN_REALIZAR",
+      "o": "accion.volar",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": "No todas las aves vuelan: p. ej., pingüinos."
+    },
+    {
+      "s": "accion.escuchar",
+      "p": "SE_REALIZA_CON",
+      "o": "concepto.audicion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.mirar",
+      "p": "SE_REALIZA_CON",
+      "o": "concepto.vision",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.oir",
+      "p": "SE_REALIZA_CON",
+      "o": "concepto.audicion",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.hablar",
+      "p": "PRODUCE",
+      "o": "concepto.sonido",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.dibujar",
+      "p": "PUEDE_PRODUCIR",
+      "o": "concepto.dibujo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.mostrar",
+      "p": "PUEDE_PRESENTAR",
+      "o": "concepto.imagen",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.crear",
+      "p": "PUEDE_PRODUCIR",
+      "o": "concepto.imagen",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.arriba",
+      "p": "OPUESTO_DE",
+      "o": "concepto.abajo",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.izquierda",
+      "p": "OPUESTO_DE",
+      "o": "concepto.derecha",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.entrada",
+      "p": "OPUESTO_DE",
+      "o": "concepto.salida",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.mayor",
+      "p": "OPUESTO_DE",
+      "o": "concepto.menor",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.piar",
+      "p": "RELACIONADO_CON",
+      "o": "concepto.pajaro",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "concepto.imagen",
+      "p": "RELACIONADO_CON",
+      "o": "concepto.audio",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    },
+    {
+      "s": "accion.escuchar",
+      "p": "RELACIONADO_CON",
+      "o": "accion.oir",
+      "evidencia": "curacion_asistida",
+      "alcance": "tipo",
+      "nota": ""
+    }
+  ],
+  "reglas": {
+    "ES_UN": "transitiva",
+    "OPUESTO_DE": "simetrica",
+    "RELACIONADO_CON": "simetrica",
+    "otras": "solo_directas"
+  },
+  "metodologia": "Núcleo pequeño de conceptos de uso común y anclajes multimodales. No se sobreescriben los vectores del catálogo inicial."
+}

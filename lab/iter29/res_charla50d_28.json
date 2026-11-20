@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 44,
+  "ok": 23,
+  "acierto": 52.27,
+  "falsas": 10,
+  "tasa_falsas": 22.73,
+  "abst_indebida": 11,
+  "error": 0,
+  "por_cat": {
+   "familia": {
+    "n": 9,
+    "acierto": 33.3,
+    "falsas": 3
+   },
+   "mezcla": {
+    "n": 9,
+    "acierto": 44.4,
+    "falsas": 3
+   },
+   "presentacion": {
+    "n": 9,
+    "acierto": 44.4,
+    "falsas": 2
+   },
+   "repaso": {
+    "n": 9,
+    "acierto": 55.6,
+    "falsas": 2
+   },
+   "salud": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 0,
+   "q": "buenos días",
+   "crit": "buenos dias|hola",
+   "r": "¡Buenos días! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 1,
+   "q": "me llamo Begoña y soy farmacéutica",
+   "crit": "begoña|begona;farmaceutica;!no lo he entendido",
+   "r": "Encantado, Begoña. Entendido: eres farmacéutica.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 2,
+   "q": "trabajo en una farmacia del barrio, estoy cansada, hoy abrimos a las ocho",
+   "crit": "ANY",
+   "r": "Entendido: trabajas en una farmacia del barrio; estás cansada y abrima a las ocho hoy.",
+   "v": null
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 3,
+   "q": "¿a qué me dedico?",
+   "crit": "farmaceutica",
+   "r": "Trabajas en una farmacia del barrio.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 4,
+   "q": "¿a qué hora abrimos hoy?",
+   "crit": "ocho|8",
+   "r": "No lo sé. De ti sé que te llamas Begoña y eres farmacéutica.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 5,
+   "q": "mi jefa, que es la dueña, se llama Pilar",
+   "crit": "pilar;!no lo he entendido",
+   "r": "Entendido: tu jefa es la dueña; dueña se llama Pilar.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 6,
+   "q": "¿cómo se llama mi jefa?",
+   "crit": "pilar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 7,
+   "q": "¿qué es Pilar?",
+   "crit": "dueña|duena|jefa",
+   "r": "Pilar es una dueña.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 8,
+   "q": "el jueves es mi cumpleaños",
+   "crit": "jueves;!no lo he entendido",
+   "r": "Entendido: Pilar es tu cumpleaños.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-a",
+   "cat": "presentacion",
+   "i": 9,
+   "q": "¿cuándo es mi cumpleaños?",
+   "crit": "jueves",
+   "r": "No lo sé. De Pilar sé que es tu cumpleaños.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 0,
+   "q": "vivo con mi pareja y dos gatos, Lupe y Nube",
+   "crit": "lupe;nube;!no lo he entendido",
+   "r": "Entendido: vives con tu pareja y dos gatos. No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 1,
+   "q": "¿cuántos gatos tengo?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho cuántos gatos tienes. De ti sé que te llamas Begoña y eres farmacéutica.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 2,
+   "q": "¿cómo se llaman mis gatos?",
+   "crit": "lupe;nube",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 3,
+   "q": "Lupe es negra y Nube blanca",
+   "crit": "ANY",
+   "r": "Entendido: Lupe es negro; Nube es blanco.",
+   "v": null
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 4,
+   "q": "¿de qué color es Nube?",
+   "crit": "blanca",
+   "r": "Nube es blanco.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 5,
+   "q": "a Nube le encanta dormir en el sofá",
+   "crit": "sofa;!no lo he entendido",
+   "r": "Entendido: a Nube le encanta dormir en el sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 6,
+   "q": "¿qué le encanta a Nube?",
+   "crit": "dormir",
+   "r": "A Nube le encanta dormir en el sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 7,
+   "q": "mi pareja se llama Íñigo y es bombero",
+   "crit": "iñigo|inigo;bombero;!no lo he entendido",
+   "r": "Entendido: tu pareja se llama Íñigo; Íñigo es bombera.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 8,
+   "q": "¿a qué se dedica Íñigo?",
+   "crit": "bombero",
+   "r": "Íñigo es bombera.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-b",
+   "cat": "familia",
+   "i": 9,
+   "q": "¿Íñigo es mi pareja?",
+   "crit": "^si",
+   "r": "Sí, Íñigo es tu pareja.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 0,
+   "q": "a Íñigo le duele el hombro desde el último incendio",
+   "crit": "hombro;!no lo he entendido",
+   "r": "Entendido: A Íñigo le duele el hombro desde el último incendio.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 1,
+   "q": "¿qué le duele a Íñigo?",
+   "crit": "hombro",
+   "r": "No lo sé: no me has dicho qué le duele a Íñigo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 2,
+   "q": "mañana va al fisioterapeuta",
+   "crit": "fisio*;!no lo he entendido",
+   "r": "Entendido: Íñigo va al fisioterapeuta mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 3,
+   "q": "¿adónde va Íñigo mañana?",
+   "crit": "fisio*",
+   "r": "Íñigo va al fisioterapeuta mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 4,
+   "q": "se le ha olvidado la tarjeta sanitaria en casa",
+   "crit": "ANY",
+   "r": "Entendido: Íñigo se olvidó la tarjeta sanitaria en casa.",
+   "v": null
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 5,
+   "q": "yo le llevaré la tarjeta",
+   "crit": "tarjeta;!no lo he entendido",
+   "r": "Entendido: llevarás la tarjeta a Íñigo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 6,
+   "q": "¿quién le llevará la tarjeta?",
+   "crit": "tu|tú|llevaras",
+   "r": "Llevarás la tarjeta a Íñigo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 7,
+   "q": "el fisio le ha dicho que no coja peso",
+   "crit": "ANY",
+   "r": "Entendido: el fisio dice que no cojas peso. Lo apunto como algo que dice él, no como un hecho.",
+   "v": null
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 8,
+   "q": "¿qué le ha dicho el fisio?",
+   "crit": "peso",
+   "r": "El fisio dice que no cojas peso.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-c",
+   "cat": "salud",
+   "i": 9,
+   "q": "¿el hombro es una parte del cuerpo?",
+   "crit": "^si|ABST",
+   "r": "Eso no me consta; solo sé Un ojo es parte del cuerpo; Una mano es parte del cuerpo; Un pie es parte del cuerpo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 0,
+   "q": "estamos pensando en comprar un sofá nuevo",
+   "crit": "sofa;!no lo he entendido",
+   "r": "Entendido: piensas en comprar un sofá nuevo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 1,
+   "q": "[IMG foto.png] nos gusta este color",
+   "crit": "gris;!no lo he entendido",
+   "r": "Entendido: te gusta este color.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 2,
+   "q": "¿qué color nos gusta?",
+   "crit": "gris",
+   "r": "Te gusta este color.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 3,
+   "q": "el viejo es marrón y está roto",
+   "crit": "ANY",
+   "r": "Entendido: el viejo es marrón; el viejo está roto.",
+   "v": null
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 4,
+   "q": "¿de qué color es el sofá viejo?",
+   "crit": "marron",
+   "r": "El viejo es marron.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 5,
+   "q": "lo compraremos en una tienda del centro",
+   "crit": "tienda;!no lo he entendido",
+   "r": "Entendido: comprarás Nube en una tienda del centro.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 6,
+   "q": "¿dónde compraremos el sofá?",
+   "crit": "tienda",
+   "r": "No lo sé: no me has dicho dónde compras. De ti sé que te llamas Begoña y eres farmacéutica.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 7,
+   "q": "el sábado es el día de las rebajas",
+   "crit": "sabado;!no lo he entendido",
+   "r": "Entendido: Nube es el día de la rebaja.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 8,
+   "q": "¿cuándo son las rebajas?",
+   "crit": "sabado",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-d",
+   "cat": "mezcla",
+   "i": 9,
+   "q": "¿un sofá es un mueble?",
+   "crit": "^si",
+   "r": "Sí, un sofá es un mueble.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 0,
+   "q": "¿cómo me llamo?",
+   "crit": "begoña|begona",
+   "r": "Te llamas Begoña.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 1,
+   "q": "¿cuántos gatos tengo?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho cuántos gatos tienes. De ti sé que te llamas Begoña y eres farmacéutica.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 2,
+   "q": "¿Lupe es blanca?",
+   "crit": "^no|negra",
+   "r": "No, Lupe es negro.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 3,
+   "q": "¿quién es Pilar?",
+   "crit": "jefa|dueña|duena",
+   "r": "Pilar es tu cumpleaños.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 4,
+   "q": "¿qué le pasa a Íñigo?",
+   "crit": "hombro|duele",
+   "r": "Íñigo va al fisioterapeuta mañana e Íñigo se olvidó la tarjeta sanitaria en casa.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 5,
+   "q": "¿qué sabes de Nube?",
+   "crit": "gat*|blanca|sofa",
+   "r": "Nube es el día de la rebaja. Nube es blanco. A Nube le encanta dormir en el sofá.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 6,
+   "q": "¿tengo hijos?",
+   "crit": "ABST|^no",
+   "r": "No lo sé: no me has dicho qué tienes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 7,
+   "q": "¿qué te he contado del sofá?",
+   "crit": "sofa",
+   "r": "No lo sé: no me has dicho qué contaste. De ti sé que te llamas Begoña y eres farmacéutica.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 8,
+   "q": "bueno, me voy a trabajar",
+   "crit": "ANY",
+   "r": "¡Hasta luego! Mucho ánimo.",
+   "v": null
+  },
+  {
+   "id": "ch50d-e",
+   "cat": "repaso",
+   "i": 9,
+   "q": "hasta luego",
+   "crit": "hasta|adios",
+   "r": "¡Hasta luego, Begoña! Aquí estaré cuando quieras.",
+   "v": "OK"
+  }
+ ]
+}

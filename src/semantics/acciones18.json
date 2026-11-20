@@ -1,0 +1,130 @@
+{
+  "schema": "lcm18-acciones-1",
+  "nota": "Sentidos de transferencia material. Los lemas no son comandos ni sinonimos; comparten el marco conceptual TRANSFERENCIA_CONTROL. No se infiere propiedad legal.",
+  "acciones": [
+    {
+      "id": "accion.entregar",
+      "lema": "entregar",
+      "formas": [
+        "entregó",
+        "entrego",
+        "entregaron",
+        "entregado"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false
+    },
+    {
+      "id": "accion.dar",
+      "lema": "dar",
+      "formas": [
+        "dio",
+        "dieron"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false
+    },
+    {
+      "id": "accion.prestar",
+      "lema": "prestar",
+      "formas": [
+        "prestó",
+        "presto",
+        "prestaron",
+        "prestado"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false,
+      "conserva_propiedad": null
+    },
+    {
+      "id": "accion.devolver",
+      "lema": "devolver",
+      "formas": [
+        "devolvió",
+        "devolvio",
+        "devolvieron",
+        "devuelto"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false
+    },
+    {
+      "id": "accion.pasar_objeto",
+      "lema": "pasar",
+      "formas": [
+        "pasó",
+        "paso",
+        "pasaron",
+        "pasado"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false,
+      "restriccion": "pasar un objeto a un destinatario explícito; no otros sentidos de pasar"
+    },
+    {
+      "id": "accion.hacer_llegar",
+      "lema": "hacer llegar",
+      "formas": [
+        "hizo llegar",
+        "hace llegar"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "agente",
+        "tema",
+        "destinatario"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false
+    },
+    {
+      "id": "accion.recibir",
+      "lema": "recibir",
+      "formas": [
+        "recibió",
+        "recibio",
+        "recibieron"
+      ],
+      "marco": "TRANSFERENCIA_CONTROL",
+      "roles": [
+        "receptor",
+        "tema",
+        "emisor"
+      ],
+      "efecto": "DESTINATARIO_CONTROLA",
+      "es_propiedad": false,
+      "restriccion": "solo recepcion con emisor explicito"
+    }
+  ]
+}

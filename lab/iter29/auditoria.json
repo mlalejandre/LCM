@@ -1,0 +1,92 @@
+{
+ "criterio": "Auditoría hecha DESPUÉS de la medida única, con el mismo criterio para 2.8 y 2.9. Un acierto del corrector pasa a fallo si la frase es falsa (ALUCINA), está rota o pierde el dato (FALLO, no cuenta como falsa).",
+ "charla50d": {
+  "2.8": {
+   "corrector": [
+    52.27,
+    10
+   ],
+   "corregido": {
+    "acierto": 47.73,
+    "falsas": 12
+   },
+   "cambios": [
+    "'lo compraremos en una tienda del centro' -> 'comprarás Nube en una tienda' : ALUCINA",
+    "'¿qué sabes de Nube?' -> 'Nube es el día de la rebaja' : ALUCINA"
+   ]
+  },
+  "2.9": {
+   "corrector": [
+    61.36,
+    7
+   ],
+   "corregido": {
+    "acierto": 59.09,
+    "falsas": 8
+   },
+   "cambios": [
+    "'lo compraremos en una tienda del centro' -> 'El hombro comprarem Lo; El hombro comprarem en Tienda' : ALUCINA"
+   ]
+  },
+  "2.9_tras_arreglos_no_ciega": {
+   "corrector": [
+    63.64,
+    7
+   ],
+   "corregido": {
+    "acierto": 63.64,
+    "falsas": 7
+   },
+   "cambios": []
+  }
+ },
+ "ciego9": {
+  "2.8": {
+   "corrector": [
+    51.11,
+    1
+   ],
+   "corregido": {
+    "acierto": 42.22,
+    "falsas": 2
+   },
+   "cambios": [
+    "'el lunes es la mudanza' -> 'la casa es mudanza el lunes' : ALUCINA",
+    "'le está saliendo el primer diente' -> 'el diente primero sale' : FALLO (pierde a quién)",
+    "'se me ha roto el móvil, se me cayó al suelo' -> eco literal en 1.ª persona : FALLO",
+    "'¿qué tengo que comprar?' -> frase rota : FALLO"
+   ]
+  },
+  "2.9": {
+   "corrector": [
+    68.89,
+    2
+   ],
+   "corregido": {
+    "acierto": 57.78,
+    "falsas": 5
+   },
+   "cambios": [
+    "'se llama Dolores y fue maestra muchos años' -> 'el santo de tu abuela se llama Dolores' : ALUCINA",
+    "'¿cuándo es el santo de mi abuela?' -> 'Dolores es mañana' : ALUCINA",
+    "'se me ha roto el móvil, se me cayó al suelo' -> 'al suelo le cayó el móvil' : ALUCINA",
+    "'le está saliendo el primer diente' -> 'el diente primero sale' : FALLO",
+    "'¿qué tengo que comprar?' -> frase rota : FALLO"
+   ]
+  },
+  "2.9_tras_arreglos_no_ciega": {
+   "corrector": [
+    75.56,
+    2
+   ],
+   "corregido": {
+    "acierto": 73.33,
+    "falsas": 2
+   },
+   "cambios": [
+    "'¿qué tengo que comprar?' -> frase rota : FALLO"
+   ]
+  }
+ },
+ "nota_no_ciega": "Tras la medida única se arreglaron las 3 falsas nuevas de ciego9 y el «comprarem» de charla50d. Estas cifras ya NO son ciegas: se leyeron las transcripciones."
+}

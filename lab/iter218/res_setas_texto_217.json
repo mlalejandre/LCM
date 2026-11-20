@@ -1,0 +1,647 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 59,
+    "ok": 28,
+    "falsas": 17,
+    "acierto": 47.5
+   },
+   "L": {
+    "n": 7,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 85.7
+   },
+   "P": {
+    "n": 6,
+    "ok": 1,
+    "falsas": 2,
+    "acierto": 16.7
+   },
+   "D": {
+    "n": 7,
+    "ok": 4,
+    "falsas": 1,
+    "acierto": 57.1
+   },
+   "I": {
+    "n": 6,
+    "ok": 2,
+    "falsas": 4,
+    "acierto": 33.3
+   },
+   "M": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 5,
+    "falsas": 1,
+    "acierto": 83.3
+   },
+   "N": {
+    "n": 4,
+    "ok": 2,
+    "falsas": 2,
+    "acierto": 50.0
+   },
+   "C": {
+    "n": 6,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 33.3
+   },
+   "G": {
+    "n": 5,
+    "ok": 1,
+    "falsas": 3,
+    "acierto": 20.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   },
+   "R": {
+    "n": 4,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 25.0
+   }
+  },
+  "frases_cubiertas": [
+   0,
+   0
+  ]
+ },
+ "filas": [
+  {
+   "tema": "setas",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (32 frases). He entendido bien 14; las otras 18 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "V",
+   "q": "¿qué es el micelio?",
+   "crit": "red|hilos",
+   "r": "En el texto pone: «La parte más importante de un hongo es el micelio, una red de hilos muy finos que crece bajo la tierra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿qué partes tiene una seta?",
+   "crit": "sombrero;pie;laminas",
+   "r": "Sombrero, pie y laminas: me lo enseñaste tú.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "Las láminas se forman las esporas en las láminas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿los hongos son plantas?",
+   "crit": "^no",
+   "r": "No, un hongo es un hongo, no una planta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿pueden los hongos fabricar su propia comida?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De los hongos sé que no tienen clorofila y no pueden fabricar su propio alimento.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿de qué se alimentan los hongos?",
+   "crit": "restos|hojas|madera",
+   "r": "Los hongos se alimentan de restos y otros seres vivos como hojas muertas y madera podrida.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿cuándo salen las setas?",
+   "crit": "otono",
+   "r": "Las setas salen después de las lluvias en otoño (del 23 de septiembre de 2026 al 20 de diciembre de 2026).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿qué necesitan las setas para salir?",
+   "crit": "humedad|sombra|lluvia*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿por qué abundan las setas en los bosques?",
+   "crit": "humedad|sombra",
+   "r": "Porque las setas se estropean. Lo dice el texto: «Nunca usa bolsas de plástico, porque las setas se estropean».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿qué pasa cuando una espora cae en un sitio húmedo?",
+   "crit": "micelio",
+   "r": "En el texto pone: «Cuando una espora cae en un sitio húmedo, nace un nuevo micelio».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "M",
+   "q": "¿de qué color es la seta más venenosa?",
+   "crit": "verde",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿qué le pasa a quien se come una amanita faloides?",
+   "crit": "higado|muerte|morir|muere",
+   "r": "En el texto pone: «La amanita faloides es la seta más venenosa que existe».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿el boletus es comestible?",
+   "crit": "^si",
+   "r": "Sí, el boletus es muy apreciado y una seta comestible en la cocina.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿qué seta tiene el sombrero marrón?",
+   "crit": "boletus",
+   "r": "En el texto pone: «Una seta tiene tres partes: el sombrero, el pie y las láminas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿el boletus es una seta?",
+   "crit": "^si",
+   "r": "Sí, el boletus es muy apreciado y una seta comestible en la cocina.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿el boletus tiene pie?",
+   "crit": "^si",
+   "r": "Sí, el boletus tiene el pie grueso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿la trufa es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí, una trufa es un ser vivo. Lo deduzco porque la trufa es un hongo y un hongo es un ser vivo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿la trufa es un alimento?",
+   "crit": "^si",
+   "r": "No, una trufa es un hongo.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "V",
+   "q": "¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "La trufa es un hongo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿de qué color es la trufa?",
+   "crit": "negra",
+   "r": "La trufa es negra.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿qué hongo crece junto a las encinas?",
+   "crit": "trufa",
+   "r": "En el texto pone: «La trufa es un hongo que crece bajo tierra, junto a las raíces de las encinas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿cómo se encuentra una trufa?",
+   "crit": "perro*",
+   "r": "En el texto pone: «La trufa es un hongo que crece bajo tierra, junto a las raíces de las encinas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿qué hongo encuentran los perros?",
+   "crit": "trufa",
+   "r": "En el texto pone: «Para encontrarla se usan perros entrenados».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "P",
+   "q": "¿es cara la trufa?",
+   "crit": "^si|cara*|caro*",
+   "r": "No lo sé. Solo sé que la trufa es un hongo y la trufa es negra.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "M",
+   "q": "¿dónde crece el alimento más caro del mundo?",
+   "crit": "encina*|bajo tierra",
+   "r": "En el texto pone: «La trufa es uno de los alimentos más caros del mundo».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿la levadura es un hongo?",
+   "crit": "^si",
+   "r": "Sí, una levadura es un hongo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿qué hongo sirve para hacer pan?",
+   "crit": "levadura",
+   "r": "En el texto pone: «Sirve para hacer pan y cerveza».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "En el texto pone: «La levadura también es un hongo, aunque es tan pequeña que no se ve a simple vista».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "H",
+   "q": "¿el moho es un animal?",
+   "crit": "^no",
+   "r": "No, un moho es un hongo, no un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "L",
+   "q": "¿qué se descubrió gracias al moho?",
+   "crit": "penicilina",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "V",
+   "q": "¿qué es la penicilina?",
+   "crit": "medicamento",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que recogen setas?",
+   "crit": "setero*",
+   "r": "En el texto pone: «Las que salen al monte a recoger setas se llaman seteros».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "V",
+   "q": "¿qué es un micólogo?",
+   "crit": "persona*|estudia*",
+   "r": "En el texto pone: «Las personas que estudian los hongos se llaman micólogos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿por qué no hay que llevar bolsas de plástico?",
+   "crit": "estropea*",
+   "r": "Porque las setas se estropean. Lo dice el texto: «Nunca usa bolsas de plástico, porque las setas se estropean».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿por qué son importantes los hongos para el bosque?",
+   "crit": "descompon*|nutrientes",
+   "r": "Porque descomponen la materia muerta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "D",
+   "q": "¿una amanita tiene esporas?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "N",
+   "q": "¿cuántas especies de hongos hay?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Los hongos no son plantas ni animales: forman un reino propio».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "N",
+   "q": "¿cuánto cuesta un kilo de trufa?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "N",
+   "q": "¿quién descubrió la penicilina?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "N",
+   "q": "¿de qué color es el pie de la amanita?",
+   "crit": "ABST",
+   "r": "No sé nada de el pie de la amanita: no me has hablado de él.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "ayer encontré un boletus en el monte",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: encontraste un boletus en el monte ayer.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "¿me lo puedo comer?",
+   "crit": "^si|comestible",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "mi vecino ha cogido una amanita faloides",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecino cogió una amanita faloides.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "¿es peligrosa la seta de mi vecino?",
+   "crit": "^si|venenos*|peligros*",
+   "r": "No sé nada de la seta de tu vecino: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "quiero salir a buscar setas, ¿qué me llevo?",
+   "crit": "cesta",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "C",
+   "q": "¿en qué época del año salgo a buscarlas?",
+   "crit": "otono",
+   "r": "No lo sé. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "G",
+   "q": "dime una seta comestible",
+   "crit": "boletus",
+   "r": "Entendido: tu vecino dime una seta comestible.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "G",
+   "q": "dime una seta venenosa",
+   "crit": "amanita",
+   "r": "Sí, eso ya me lo habías dicho.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "G",
+   "q": "dime tres hongos",
+   "crit": "trufa|levadura|moho|boletus|amanita",
+   "r": "Seta, champiñón y moho.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "G",
+   "q": "descríbeme una trufa",
+   "crit": "negra|bola|huele|olor|tierra|encina*",
+   "r": "No sé lo bastante de «trufa» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "G",
+   "q": "invéntate una adivinanza sobre la trufa",
+   "crit": "negra|bola|huel*|tierra|encina*",
+   "r": "Adivina, adivinanza: tengo lavabo, váter y ducha y sirvo para asearse. ¿Qué soy?",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "K",
+   "q": "la amanita faloides se puede comer",
+   "crit": "venenos*|no se puede|contradic*|pero|segun|texto",
+   "r": "Entendido: la amanita de tu vecino se puede comer.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "K",
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no|texto|segun|pero",
+   "r": "No lo sé. Solo sé que la amanita de tu vecino se puede comer.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "-",
+   "q": "¿cuánto es 7 por 6?",
+   "crit": "42",
+   "r": "7 × 6 = 42.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "-",
+   "q": "¿dónde vive Lucía?",
+   "crit": "burgos",
+   "r": "No sé quién es Lucía: todavía no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "R",
+   "q": "volviendo a las setas, ¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "R",
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "Las láminas se forman las esporas en las láminas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "R",
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "setas",
+   "t": "R",
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "En el texto pone: «La levadura también es un hongo, aunque es tan pequeña que no se ve a simple vista».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  }
+ ]
+}

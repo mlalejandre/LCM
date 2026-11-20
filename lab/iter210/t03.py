@@ -1,0 +1,17 @@
+D = [{"id": "p03", "cat": "tiempo_medio", "turnos": [
+ ("hola", "hola"),
+ ("la biblioteca abre de diez a ocho", "biblioteca;!no lo he entendido"),
+ ("¿hasta qué hora abre la biblioteca?", "ocho|8"),
+ ("¿desde qué hora abre la biblioteca?", "diez|10"),
+ ("trabajo en el hospital desde marzo", "hospital;!no lo he entendido"),
+ ("¿desde cuándo trabajo en el hospital?", "marzo"),
+ ("voy al hospital en metro", "metro;!no lo he entendido"),
+ ("¿cómo voy al hospital?", "metro"),
+ ("después del turno ceno con mis compañeras", "ceno|compañeras;!no lo he entendido"),
+ ("¿con quién ceno?", "compañeras"),
+ ("¿cuándo ceno con mis compañeras?", "despues;turno"),
+ ("anoche dormí durante diez horas", "diez|10;!no lo he entendido"),
+ ("¿cuánto tiempo dormí anoche?", "diez|10"),
+ ("tengo una bufanda de lana", "bufanda;!no lo he entendido"),
+ ("¿de qué es mi bufanda?", "lana"),
+]}]

@@ -1,0 +1,16 @@
+D = [{"id": "q06", "cat": "no_confundir", "turnos": [
+ ("hola", "hola"),
+ ("tengo dos o tres primos en Cádiz", "primos|cadiz;!no lo he entendido"),
+ ("¿cuántos primos tengo?", "dos;tres|ABST"),
+ ("no sé si iré a la boda", "ANY"),
+ ("¿iré a la boda?", "ABST"),
+ ("si llueve el domingo, no saldremos", "llueve|domingo;!no lo he entendido"),
+ ("hoy llueve", "ANY"),
+ ("¿saldremos el domingo?", "ABST"),
+ ("mi amigo Rubén es mayor que yo", "ruben;!no lo he entendido"),
+ ("¿Rubén es mayor que mi primo?", "ABST"),
+ ("Bea vive en Jaca o en Sabiñánigo", "jaca|sabiñanigo|sabinanigo;!no lo he entendido"),
+ ("¿Bea vive en Jaca?", "sabiñanigo|sabinanigo;!si, bea"),
+ ("¿Bea vive en Zaragoza?", "^no"),
+ ("¿Bea vive en Jaca o en Sabiñánigo?", "jaca;sabiñanigo|sabinanigo"),
+]}]

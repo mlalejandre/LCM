@@ -1,0 +1,28 @@
+{
+ "nota": "primer intento de cada paso sobre los 3 temas de desarrollo (texto pegado)",
+ "base_217": {
+  "acierto": 58.4,
+  "falsas": 30,
+  "frases_cubiertas": "42/56"
+ },
+ "it1_lectura_y_cita": {
+  "acierto": 78.2,
+  "falsas": 9,
+  "frases_cubiertas": "49/56"
+ },
+ "setas_no_desarrollado": {
+  "antes": [
+   47.5,
+   17
+  ],
+  "tras_it1": [
+   62.7,
+   7
+  ]
+ },
+ "1": {
+  "n": 104,
+  "acierto": 100.0,
+  "falsas": 0
+ }
+}

@@ -1,0 +1,490 @@
+{
+ "resumen": {
+  "n": 49,
+  "ok": 48,
+  "acierto": 97.96,
+  "falsas": 1,
+  "tasa_falsas": 2.04,
+  "abst_indebida": 0,
+  "error": 0,
+  "por_cat": {
+   "comas_repaso": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 1
+   },
+   "comparativas": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "condicionales": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "copulativas": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "disyuntivas": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 0,
+   "q": "hola, soy Irene",
+   "crit": "irene;!no lo he entendido",
+   "r": "Encantado, Irene.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 1,
+   "q": "tengo un perro y dos gatos",
+   "crit": "perro;gato*;!no lo he entendido",
+   "r": "Entendido: tienes un perro y dos gatos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 2,
+   "q": "¿tengo perro?",
+   "crit": "^si",
+   "r": "Sí, tienes un perro.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 3,
+   "q": "¿cuántos gatos tengo?",
+   "crit": "dos|2",
+   "r": "Tienes dos gatos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 4,
+   "q": "no tengo ni coche ni moto",
+   "crit": "coche|moto;!no lo he entendido",
+   "r": "Entendido: no tienes coche ni moto.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 5,
+   "q": "¿tengo coche?",
+   "crit": "^no",
+   "r": "No, no tienes coche.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 6,
+   "q": "¿tengo moto?",
+   "crit": "^no",
+   "r": "No, no tienes moto.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 7,
+   "q": "tanto mi padre como mi madre son médicos",
+   "crit": "medic*;!no lo he entendido",
+   "r": "Entendido: tu padre y tu madre son médicos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 8,
+   "q": "¿mi madre es médica?",
+   "crit": "^si",
+   "r": "Sí, tu madre es médica.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-a",
+   "cat": "copulativas",
+   "i": 9,
+   "q": "¿a qué se dedica mi padre?",
+   "crit": "medico",
+   "r": "Tu padre es médico.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 0,
+   "q": "mi hermano Pablo vive en Lugo o en Ourense, no me acuerdo",
+   "crit": "lugo|ourense;!no lo he entendido",
+   "r": "Entendido: Pablo vive en Lugo o en Ourense; lo apunto como una de esas posibilidades.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 1,
+   "q": "¿dónde vive Pablo?",
+   "crit": "lugo;ourense",
+   "r": "Pablo vive en Lugo o en Ourense.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 2,
+   "q": "¿Pablo vive en Lugo?",
+   "crit": "ourense",
+   "r": "Puede ser: me dijiste que Pablo vive en Lugo o en Ourense, pero no cuál.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 3,
+   "q": "ahora me acuerdo: no vive en Lugo",
+   "crit": "lugo|ourense;!no lo he entendido",
+   "r": "Entendido, lo actualizo: Pablo no vive en Lugo. Entonces Pablo vive en Ourense: lo deduzco porque me dijiste que Pablo vive en Lugo o en Ourense.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 4,
+   "q": "¿dónde vive Pablo?",
+   "crit": "ourense;!no lo s*",
+   "r": "Pablo vive en Ourense.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 5,
+   "q": "los domingos como pescado o carne",
+   "crit": "pescado|carne;!no lo he entendido",
+   "r": "Entendido: comes pescado o carne los domingos; lo apunto como una de esas posibilidades.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 6,
+   "q": "¿qué como los domingos?",
+   "crit": "pescado;carne",
+   "r": "Comes pescado o carne los domingos.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 7,
+   "q": "¿Pablo es mayor o menor que yo?",
+   "crit": "ABST",
+   "r": "No lo sé. No conozco «mayor»: ¿me lo explicas?",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 8,
+   "q": "Pablo tiene treinta años y yo veintiocho",
+   "crit": "treinta|30|veintiocho|28;!no lo he entendido",
+   "r": "Entendido: Pablo tiene treinta años; tienes veintiocho años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-b",
+   "cat": "disyuntivas",
+   "i": 9,
+   "q": "¿quién es mayor, Pablo o yo?",
+   "crit": "pablo",
+   "r": "Pablo es mayor que tú.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 0,
+   "q": "¿soy mayor que Pablo?",
+   "crit": "^no",
+   "r": "No, Pablo es mayor que tú.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 1,
+   "q": "mi prima Sara es más alta que yo",
+   "crit": "sara;!no lo he entendido",
+   "r": "Entendido: Sara es más alta que tú.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 2,
+   "q": "yo soy más alta que Pablo",
+   "crit": "pablo|alta;!no lo he entendido",
+   "r": "Entendido: eres más alta que Pablo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 3,
+   "q": "¿quién es la más alta de los tres?",
+   "crit": "sara",
+   "r": "Sara es la más alta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 4,
+   "q": "¿Pablo es más alto que Sara?",
+   "crit": "^no",
+   "r": "No, Sara es más alta que Pablo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 5,
+   "q": "¿soy más baja que Sara?",
+   "crit": "^si",
+   "r": "Sí, tú es más baja que Sara.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 6,
+   "q": "el té me gusta más que el café",
+   "crit": "te|cafe;!no lo he entendido",
+   "r": "Entendido: prefieres el té al café.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 7,
+   "q": "¿qué me gusta más, el té o el café?",
+   "crit": "^el te|te gusta mas el te|prefieres el te",
+   "r": "Prefieres el té al café.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 8,
+   "q": "¿me gusta menos el café que el té?",
+   "crit": "^si",
+   "r": "Sí, prefieres el té al café.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-c",
+   "cat": "comparativas",
+   "i": 9,
+   "q": "¿Pablo es más bajo que yo?",
+   "crit": "^si",
+   "r": "Sí, Pablo es más bajo que tú.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 0,
+   "q": "nací en 1995",
+   "crit": "1995;!no lo he entendido",
+   "r": "Entendido: naciste en 1995.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 1,
+   "q": "si nací el 5 de diciembre, ¿qué edad tengo?",
+   "crit": "30;!31",
+   "r": "En ese caso, tienes 30 años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 2,
+   "q": "y si nací el 5 de marzo, ¿qué edad tengo?",
+   "crit": "31;!30",
+   "r": "En ese caso, tienes 31 años.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 3,
+   "q": "si nací el día 5, ¿qué edad tengo?",
+   "crit": "30;31",
+   "r": "En ese caso, tienes 30 o 31 años: depende de si ya has cumplido este año (no sé el mes).",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 4,
+   "q": "si mañana llueve, no iré a la playa",
+   "crit": "llueve|llover|playa;!no lo he entendido",
+   "r": "Entendido: si mañana llueve, no irás a la playa. Lo tendré en cuenta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 5,
+   "q": "mañana va a llover",
+   "crit": "ANY",
+   "r": "Vale, lo apunto: «Mañana va a llover». Entonces no irás a la playa mañana: lo deduzco porque me dijiste que si mañana llueve, no irás a la playa.",
+   "v": null
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 6,
+   "q": "¿iré mañana a la playa?",
+   "crit": "^no",
+   "r": "No, no irás a la playa mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 7,
+   "q": "si estudio, apruebo",
+   "crit": "estudi*|aprueb*;!no lo he entendido",
+   "r": "Entendido: si estudias, apruebas. Lo tendré en cuenta.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 8,
+   "q": "¿qué pasa si estudio?",
+   "crit": "aprueb*",
+   "r": "Me dijiste que si estudias, apruebas.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-d",
+   "cat": "condicionales",
+   "i": 9,
+   "q": "¿he aprobado?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Irene y tienes un perro.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 0,
+   "q": "en la compra llevo pan, leche, huevos y fruta",
+   "crit": "pan|leche;!no lo he entendido",
+   "r": "Entendido: llevas pan, leche, huevos y fruta en la compra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 1,
+   "q": "¿llevo leche?",
+   "crit": "^si",
+   "r": "Sí, llevas leche en la compra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 2,
+   "q": "¿llevo queso?",
+   "crit": "ABST|^no",
+   "r": "No lo sé. Solo sé que llevas pan en la compra, llevas leche en la compra y llevas huevos en la compra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 3,
+   "q": "¿qué llevo en la compra?",
+   "crit": "pan;leche;huevos;fruta",
+   "r": "Llevas pan, leche, huevos y fruta en la compra.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 4,
+   "q": "Sara, Pablo y yo iremos al cine el viernes",
+   "crit": "cine;!no lo he entendido",
+   "r": "Entendido: Sara y tú irán al cine el viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 5,
+   "q": "¿quién va a ir al cine?",
+   "crit": "sara;pablo",
+   "r": "Sara irá al cine el viernes e irás al cine el viernes.",
+   "v": "MAL"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 6,
+   "q": "¿tengo moto?",
+   "crit": "^no",
+   "r": "No, no tienes moto.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 7,
+   "q": "¿dónde vive Pablo?",
+   "crit": "ourense",
+   "r": "Pablo vive en Ourense.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 8,
+   "q": "¿quién es más alto, Sara o Pablo?",
+   "crit": "sara",
+   "r": "Sara es más alta que Pablo.",
+   "v": "OK"
+  },
+  {
+   "id": "ch50f-e",
+   "cat": "comas_repaso",
+   "i": 9,
+   "q": "gracias, hasta luego",
+   "crit": "hasta|adios|nada",
+   "r": "De nada, para eso estoy. ¡Hasta luego!",
+   "v": "OK"
+  }
+ ]
+}

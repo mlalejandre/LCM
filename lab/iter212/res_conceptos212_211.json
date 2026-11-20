@@ -1,0 +1,844 @@
+{
+ "resumen": {
+  "n": 91,
+  "ok": 36,
+  "acierto": 39.56,
+  "falsas": 3,
+  "tasa_falsas": 3.3,
+  "abst_indebida": 52,
+  "error": 0,
+  "por_cat": {
+   "concepto": {
+    "n": 40,
+    "acierto": 90.0,
+    "falsas": 3
+   },
+   "taxonomia": {
+    "n": 51,
+    "acierto": 0.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "cpt00",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un bote?",
+   "crit": "recipiente|barco|embarcacion|vehiculo;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «bote» es un tipo de «nave», «vehículo» y «medio» (y, más en general, «instrumental»). Dominio: objeto fabricado. Otras palabras para el mismo concepto: barco y embarcación. En inglés: boat. Sirve para navegar. En su definición aparecen, entre otras: menudo y agua. Algunos tipos: gabarra, vapor, remolcador, transbordador, góndola y paquebote. (La palabra también puede referirse a otros conceptos, como un tipo de «contenedor» y «salto».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt01",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es una mezcla?",
+   "crit": "combinacion|sustancia|accion|union|conjunto;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «mezcla» es un tipo de «sustancia» y «materia». Dominio: sustancia. En inglés: mixture. Acción asociada: combinar. En su definición aparecen, entre otras: diverso. Algunos tipos: disolución, suspensión, mortero, composición y aleación. (La palabra también puede referirse a otros conceptos, como un tipo de «combinación» y «comida».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt02",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un emisor?",
+   "crit": "aparato|persona|emisora|transmisor|dispositivo;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «emisor» es un tipo de «conductor», «dispositivo» y «instrumental». Dominio: objeto fabricado. En inglés: emitter. Acción asociada: despedir. En su definición aparecen, entre otras: transistor y electrón. (La palabra también puede referirse a otros conceptos, como un tipo de «aparato» y «institución».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt03",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un educador?",
+   "crit": "persona|profesional|profesor|maestro|educa*;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «educador» es un tipo de «profesional», «adulta» y «alguien» (y, más en general, «organismo»). Dominio: persona. En inglés: educator, pedagogue y pedagog. Su actividad: educar cría. En su definición aparecen, entre otras: joven. Algunos tipos: maestro, director y lector.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt04",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un proyectil?",
+   "crit": "arma|objeto|bala|misil|municion;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «proyectil» es un tipo de «armamento» y «instrumental». Dominio: objeto fabricado. Otras palabras para el mismo concepto: granada. En inglés: shell. En su definición aparecen, entre otras: metal, caja, explosivo, carga y proyectil. (La palabra también puede referirse a otros conceptos, como un tipo de «arma».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt05",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un apoyo?",
+   "crit": "ayuda|soporte|sosten|respaldo;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «apoyo» es un tipo de «actividad», «acción» y «evento» (y, más en general, «rasgo psicológico»). Dominio: acción. Otras palabras para el mismo concepto: ayuda. En inglés: support. Acción asociada: cubrir. En su definición aparecen, entre otras: abastecimiento y dinero. Algunos tipos: mantenimiento. (La palabra también puede referirse a otros conceptos, como un tipo de «asistencia» y «dádiva».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt06",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un bulto?",
+   "crit": "paquete|objeto|bolsa|carga|equipaje|volumen;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «bulto» es un tipo de «acumulación» y «agrupación». Dominio: grupo. Otras palabras para el mismo concepto: lío y paquete. En inglés: package, bundle y packet. Acción asociada: empaquetar, agrupar y enrollar. En su definición aparecen, entre otras: caja. (La palabra también puede referirse a otros conceptos, como un tipo de «aglomeración» y «paquete».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt07",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué son las medias?",
+   "crit": "prenda*|ropa|calcetin*;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «medias» es un tipo de «calzado», «ropa» y «cubierta». Dominio: objeto fabricado. En inglés: stocking. En su definición aparecen, entre otras: pie, pierna y par.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt08",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un menú?",
+   "crit": "lista|carta|documento|comida|platos|opciones;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «menú» es un tipo de «lista», «banco de datos» y «información» (y, más en general, «contenido» y «comunicación»). Dominio: comunicación. Otras palabras para el mismo concepto: carta. En inglés: menu, card y carte. Sirve para comunicarse por escrito. En su definición aparecen, entre otras: fuente, disponible y restaurante. (La palabra también puede referirse a otros conceptos, como un tipo de «lista» y «alimentación».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt09",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es el almidón?",
+   "crit": "sustancia|hidrato*|carbohidrato|alimento|polisacarido|compuesto;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «almidón» es un tipo de «azúcar» y «molécula». Dominio: sustancia. En inglés: starch y amylum. Acción asociada: almidonar. En su definición aparecen, entre otras: complejo, pepita, fruto, raíz y radical.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt10",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un mineral?",
+   "crit": "sustancia|material|roca|elemento|compuesto;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «mineral» es un tipo de «materia» y «sustancia». Dominio: sustancia. En inglés: mineral. En su definición aparecen, entre otras: sólido, homogéneo, calaña, definido y composición. Algunos tipos: mena, aragonito, arsenopirita, asfalto, borax y bornita.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt11",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un fondo?",
+   "crit": "parte|dinero|capital|base;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «fondo» es un tipo de «parte del cuerpo» y «parte». Dominio: parte del cuerpo. Otras palabras para el mismo concepto: ancas, ano, asentaderas y asiento. En inglés: buttocks, nates y arse. En su definición aparecen, entre otras: carnoso, humano y cuerpo. (La palabra también puede referirse a otros conceptos, como un tipo de «cara» y «panorama».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt12",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué son las vísperas?",
+   "crit": "dia anterior|tiempo|momento|antes|oracion;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «víspera» es un tipo de «día» y «cantidad». Dominio: tiempo. En inglés: eve. (La palabra también puede referirse a otros conceptos, como un tipo de «oficio».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt13",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un estilo?",
+   "crit": "manera|forma|modo|caracter;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «estilo» es un tipo de «propiedad» y «atributo». Dominio: cualidad. Otras palabras para el mismo concepto: forma. En inglés: manner, mode y style. Algunos tipos: toque, talle, estilo de vida y manera. (La palabra también puede referirse a otros conceptos, como un tipo de «clase» y «comunicación».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt14",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un palo?",
+   "crit": "objeto|madera|vara|baston|herramienta;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «palo» es un tipo de «herramienta» y «instrumental». Dominio: objeto fabricado. Otras palabras para el mismo concepto: stick y vara. En inglés: stick. En su definición aparecen, entre otras: longitud y madera. Algunos tipos: arco y bastón. (La palabra también puede referirse a otros conceptos, como un tipo de «barra» y «equipamiento».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt15",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un culé?",
+   "crit": "aficionado|seguidor|hincha|persona|barcelon*;!no lo s*;!no conozco",
+   "r": "No sé qué es un cule. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "cpt16",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un rancho?",
+   "crit": "granja|finca|comida|vivienda|casa|campamento|lugar;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «rancho» es un tipo de «cortijo», «curro» y «punto» (y, más en general, «lugar»). Dominio: objeto fabricado. En inglés: ranch, spread y cattle ranch. En su definición aparecen, entre otras: gran, parcela, finca, instalación y necesario. (La palabra también puede referirse a otros conceptos, como un tipo de «comida».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt17",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es una vara?",
+   "crit": "palo|rama|objeto|baston|medida;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «vara» es un tipo de «herramienta» y «instrumental». Dominio: objeto fabricado. Otras palabras para el mismo concepto: palo y stick. En inglés: stick. En su definición aparecen, entre otras: longitud y madera. Algunos tipos: arco y bastón. (La palabra también puede referirse a otros conceptos, como un tipo de «barra» y «vara».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt18",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un bufete?",
+   "crit": "despacho|oficina|abogad*|establecimiento;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «bufete» es una palabra en portugués que nombra el concepto «aparador». «aparador» es un tipo de «mueble» y «instrumental». Dominio: objeto fabricado. En inglés: buffet, counter y sideboard. Partes: cajón y estante. En su definición aparecen, entre otras: pedazo, lado, cena, aposento y estante. Algunos tipos: minibar.",
+   "v": "MAL"
+  },
+  {
+   "id": "cpt19",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un proceso?",
+   "crit": "serie|conjunto|procedimiento|accion|juicio|etapa*;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «proceso» es un tipo de «actividad», «acción» y «evento» (y, más en general, «rasgo psicológico»). Dominio: acción. Otras palabras para el mismo concepto: procedimiento. En inglés: procedure y process. Acción asociada: procesar y acudir. En su definición aparecen, entre otras: especial, asignatura, acción y consecuencia. Algunos tipos: cálculo, rutina, procedimiento operativo, procedimiento médico y galimatías. (La palabra también puede referirse a otros conceptos, como un tipo de «caso» y «cognición».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt20",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un asiento?",
+   "crit": "mueble|silla|lugar|plaza|objeto;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «asiento» es un tipo de «parte del cuerpo» y «parte». Dominio: parte del cuerpo. Otras palabras para el mismo concepto: ancas, ano, asentaderas y cachas. En inglés: buttocks, nates y arse. En su definición aparecen, entre otras: carnoso, humano y cuerpo. (La palabra también puede referirse a otros conceptos, como un tipo de «espacio» y «apoyo».)",
+   "v": "MAL"
+  },
+  {
+   "id": "cpt21",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es una presa?",
+   "crit": "embalse|construccion|muro|animal|captura;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «presa» es un tipo de «animal» y «organismo». Dominio: animal. Otras palabras para el mismo concepto: caza. En inglés: game. En su definición aparecen, entre otras: alimento y deporte. Algunos tipos: caza mayor. (La palabra también puede referirse a otros conceptos, como un tipo de «traspaso» y «animal».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt22",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es una recta?",
+   "crit": "linea|forma|tramo;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «recta» es un tipo de «parte», «straightaway» y «section» (y, más en general, «part»). Dominio: objeto fabricado. Otras palabras para el mismo concepto: tramo. En inglés: stretch. En su definición aparecen, entre otras: apartado y circuito.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt23",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la luz?",
+   "crit": "energia|radiacion|claridad|fenomeno|lampara|iluminacion|onda;!no lo s*;!no conozco",
+   "r": "Luz: Radiación electromagnética perceptible por el sistema visual humano.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt24",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es el lomo?",
+   "crit": "carne|espalda|parte|alimento;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «lomo» es un tipo de «parte del cuerpo» y «parte». Dominio: animal. En inglés: loin y lumbus. En su definición aparecen, entre otras: lado, agallas, hombre y pozo. (La palabra también puede referirse a otros conceptos, como un tipo de «carne» y «carne».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt25",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la seda?",
+   "crit": "tela|tejido|material|fibra;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «seda» es un tipo de «paño», «fabric» y «artifact». Dominio: objeto fabricado. En inglés: silk. En su definición aparecen, entre otras: bien, cierto y insecto. (La palabra también puede referirse a otros conceptos, como un tipo de «fibra».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt26",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un ancestro?",
+   "crit": "antepasado|persona|pariente|familiar;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «ancestro» es un tipo de «pariente», «alguien» y «organismo». Dominio: persona. Otras palabras para el mismo concepto: antepasado y ascendente. En inglés: ancestor, ascendant y ascendent. Algunos tipos: antepasado.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt27",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un campamento?",
+   "crit": "lugar|asentamiento|instalacion|acampada;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «campamento» es un tipo de «habitación», «alquiler» y «residencia» (y, más en general, «acción» y «evento»). Dominio: acción. Otras palabras para el mismo concepto: acampada. En inglés: camping, encampment y bivouacking. Acción asociada: acampar. En su definición aparecen, entre otras: existencia, tienda y cantón. (La palabra también puede referirse a otros conceptos, como un tipo de «colectividad» y «cantón».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt28",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un residuo?",
+   "crit": "resto|basura|desecho|sustancia|material;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «residuo» es un tipo de «materia» y «sustancia». Dominio: sustancia. Otras palabras para el mismo concepto: basura y desecho. En inglés: waste, waste material y waste matter. Acción asociada: expulsar y derrochar. En su definición aparecen, entre otras: fresco, bajo y indeseable. Algunos tipos: alcantarillado y deyección.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt29",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un gigante?",
+   "crit": "persona|ser|criatura|personaje;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «gigante» es un tipo de «animal» y «organismo». Dominio: animal. En inglés: giant. En su definición aparecen, entre otras: excepcional y medida. (La palabra también puede referirse a otros conceptos, como un tipo de «empresa» y «alguien».)",
+   "v": "MAL"
+  },
+  {
+   "id": "cpt30",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un rifle?",
+   "crit": "arma|fusil|escopeta;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «rifle» es un tipo de «arma», «arma de fuego» y «instrumento» (y, más en general, «dispositivo» y «instrumental»). Dominio: objeto fabricado. Otras palabras para el mismo concepto: fusil. En inglés: rifle. Partes: culata de rifle. En su definición aparecen, entre otras: hombro, extenso y cañón. Algunos tipos: fusil Garand.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt31",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la colonización?",
+   "crit": "proceso|accion|ocupacion|asentamiento|establecimiento;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «colonización» es un tipo de «constitución», «apertura» y «cambio de estado» (y, más en general, «cambio» y «acción»). Dominio: acción. En inglés: colonization, colonisation y settlement. Acción asociada: poblar y colonizar. En su definición aparecen, entre otras: colonia. Algunos tipos: población.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt32",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la alimentación?",
+   "crit": "accion|proceso|nutricion|comida|alimento*;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «alimentación» es un tipo de «consumo», «función corporal» y «proceso». Dominio: acción. En inglés: eating y feeding. Partes: masticación. Acción asociada: comer. En su definición aparecen, entre otras: gran y alimento. Algunos tipos: cena, almuerzo y necrofagia. (La palabra también puede referirse a otros conceptos, como un tipo de «alimentación» y «abastecimiento».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt33",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un hombre?",
+   "crit": "persona|ser humano|varon|adulto|ser vivo|mamifero;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «hombre» es un tipo de «masculino», «alguien» y «organismo». Dominio: persona. Otras palabras para el mismo concepto: varón. En inglés: man y adult male. Lo contrario: mujer. Algunos tipos: muchacho, abuelo, tipo, viejo, caballero y compañero. (La palabra también puede referirse a otros conceptos, como un tipo de «alguien» y «pariente».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt34",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la basura?",
+   "crit": "residuo*|desecho*|resto*|suciedad;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «basura» es un tipo de «materia» y «sustancia». Dominio: sustancia. Otras palabras para el mismo concepto: desecho y residuo. En inglés: waste, waste material y waste matter. Acción asociada: expulsar y derrochar. En su definición aparecen, entre otras: fresco, bajo y indeseable. Algunos tipos: alcantarillado y deyección. (La palabra también puede referirse a otros conceptos, como un tipo de «parcela» y «basura».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt35",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la confección?",
+   "crit": "elaboracion|fabricacion|ropa|costura|actividad|prenda;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «confección» es un tipo de «acción», «evento» y «rasgo psicológico». Dominio: acción. Otras palabras para el mismo concepto: elaboración, fabricación y preparación. En inglés: devising, fashioning y making. Acción asociada: construir, componer y crear. En su definición aparecen, entre otras: consecuencia y aproximación. Algunos tipos: cartografía. (La palabra también puede referirse a otros conceptos, como un tipo de «oficio» y «creación».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt36",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es la cerámica?",
+   "crit": "material|arte|arcilla|barro|artesania;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «cerámica» es un tipo de «utensilio», «herramienta» y «instrumental». Dominio: objeto fabricado. Otras palabras para el mismo concepto: alfarería. En inglés: pottery y clayware. Hecho de: arcilla. En su definición aparecen, entre otras: cerámica, arcilla y kiln. (La palabra también puede referirse a otros conceptos, como un tipo de «oficio» y «arte».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt37",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es una pistola?",
+   "crit": "arma;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «pistola» es un tipo de «arma», «arma de fuego» y «instrumento» (y, más en general, «dispositivo» y «instrumental»). Dominio: objeto fabricado. Otras palabras para el mismo concepto: revólver. En inglés: pistol, handgun y side arm. En su definición aparecen, entre otras: mano. Algunos tipos: revólver, cuarenta y cinco y baqueta.",
+   "v": "OK"
+  },
+  {
+   "id": "cpt38",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un ingrediente?",
+   "crit": "alimento|componente|elemento|sustancia|producto;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «ingrediente» es un tipo de «división», «concepción» y «idea» (y, más en general, «contenido mental» y «cognición»). Dominio: idea o conocimiento. Otras palabras para el mismo concepto: componente, constituyente, elemento y factor. En inglés: component, constituent y element. Acción asociada: factorizar y componer. Algunos tipos: punto. (La palabra también puede referirse a otros conceptos, como un tipo de «componente» y «comida».)",
+   "v": "OK"
+  },
+  {
+   "id": "cpt39",
+   "cat": "concepto",
+   "i": 0,
+   "q": "¿qué es un familiar?",
+   "crit": "pariente|persona|miembro;!no lo s*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «familiar» es un tipo de «pariente», «alguien» y «organismo». Dominio: persona. Otras palabras para el mismo concepto: pariente. En inglés: kin, kinsperson y family. En su definición aparecen, entre otras: afinidad y extraño. Algunos tipos: afín.",
+   "v": "OK"
+  },
+  {
+   "id": "tax00",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bote es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax01",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bote es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax02",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una mezcla es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax03",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una mezcla es una persona?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax04",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un emisor es un alimento?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax05",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un educador es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax06",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un educador es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax07",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un proyectil es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax08",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un proyectil es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax09",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un apoyo es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax10",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bulto es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax11",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bulto es un alimento?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax12",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿las medias son una prenda?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax13",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿las medias son un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax14",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un menú es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax15",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿el almidón es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax16",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un mineral es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax17",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un fondo es una persona?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax18",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un estilo es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax19",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un palo es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax20",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un palo es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax21",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un culé es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax22",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un rancho es un lugar?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax23",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una vara es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax24",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bufete es un lugar?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax25",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un bufete es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax26",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un proceso es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax27",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un asiento es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax28",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un asiento es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax29",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una recta es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax30",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la luz es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax31",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿el lomo es un alimento?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax32",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿el lomo es una persona?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax33",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la seda es un material?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax34",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la seda es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax35",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un ancestro es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax36",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un campamento es un lugar?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax37",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un residuo es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax38",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un rifle es un arma?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax39",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un rifle es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax40",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un rifle es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax41",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la colonización es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax42",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la alimentación es un animal?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax43",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un hombre es un ser vivo?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax44",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un hombre es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax45",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la basura es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax46",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿la cerámica es un material?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax47",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una pistola es un objeto?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax48",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿una pistola es un ser vivo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax49",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un ingrediente es una persona?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "tax50",
+   "cat": "taxonomia",
+   "i": 0,
+   "q": "¿un familiar es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

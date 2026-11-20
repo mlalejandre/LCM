@@ -1,0 +1,44 @@
+ch50c-a OK | holaa | hola | ¡Hola! ¿Qué tal?
+ch50c-a OK | yo no puedo dormir, mañana tengo un examen | examen;!no lo he entendido | Entendido: no puedes dormir mañana tengo un examen.
+ch50c-a OK | me llamo Lucía y estudio Derecho en Salamanca | lucia;derecho;!no lo he entendido | Encantado, Lucía. Entendido: estudias a Derecho en Salamanca.
+ch50c-a OK | estoy en cuarto curso | cuarto;!no lo he entendido | Entendido: estás en cuarto curso.
+ch50c-a OK | ¿qué estudio? | derecho | Estudias a Derecho en Salamanca.
+ch50c-a OK | ¿dónde estudio? | salamanca | Estudias a Derecho en Salamanca.
+ch50c-a ABST_INDEBIDA | ¿qué tengo mañana? | examen | No lo sé: no me has dicho qué tienes. De ti sé que te llamas Lucía y no puedes dormir mañana tengo un examen.
+ch50c-a MAL | el examen es de Derecho Penal | penal;!no lo he entendido | Entendido: Derecho tiene un examen.
+ch50c-a MAL | ¿de qué es el examen? | penal | El examen de Derecho es un examen.
+ch50c-b ABST_INDEBIDA | comparto piso con dos amigas, Alba y Sofía | alba;sofia;!no lo he entendido | Entendido: Comparto pisó con dos amigas. No tengo claro de quién hablas. ¿A quién te refieres?
+ch50c-b OK | ¿de dónde es Sofía? | leon | Sofía es de León.
+ch50c-b ABST_INDEBIDA | ¿con cuántas personas comparto piso? | dos|2 | No lo sé: no me has dicho cuántas personas compartes. De ti sé que te llamas Lucía y no puedes dormir mañana tengo un examen.
+ch50c-b OK | Sofía estudia Medicina | medicina;!no lo he entendido | Entendido: Sofía estudia a Medicina.
+ch50c-b OK | ¿quién estudia Medicina? | sofia | Sofía estudia a Medicina.
+ch50c-b OK | anoche nos hizo una tortilla de patatas | tortilla;!no lo he entendido | Entendido: Alba hizo una tortilla de patatas anoche.
+ch50c-b OK | ¿qué nos hizo Alba anoche? | tortilla | Alba hizo una tortilla de patatas anoche.
+ch50c-b OK | ¿la tortilla lleva huevo? | ^si | Sí, las tortillas llevan huevo.
+ch50c-c ABST_INDEBIDA | cuando acabe los exámenes me iré a Portugal | portugal;!no lo he entendido | No lo sé. No conozco «exámenes»: ¿me lo explicas?
+ch50c-c OK | iré con mi novio, que se llama Diego | diego;!no lo he entendido | Entendido: irás con tu novio; tu novio se llama Diego.
+ch50c-c ABST_INDEBIDA | ¿adónde me iré? | portugal | No lo sé: no me has dicho dónde vas. De ti sé que te llamas Lucía y no puedes dormir mañana tengo un examen.
+ch50c-c OK | ¿cómo se llama mi novio? | diego | Tu novio se llama Diego.
+ch50c-c OK | Diego trabaja en una librería | libreria;!no lo he entendido | Entendido: Diego trabaja en una librería.
+ch50c-c OK | ¿dónde trabaja Diego? | libreria | Diego trabaja en una librería.
+ch50c-c OK | queremos ir en coche | coche;!no lo he entendido | Entendido: quieres ir en coche.
+ch50c-c ABST_INDEBIDA | ¿cómo queremos ir? | coche | No lo sé. De ti sé que te llamas Lucía y no puedes dormir mañana tengo un examen.
+ch50c-c OK | ¿un coche es un vehículo? | ^si | Sí, un coche es un vehículo.
+ch50c-d OK | [IMG foto.png] mira, esta es la mochila que me regaló Diego | morad*;!no lo he entendido | Entendido: tu mochila es morada.
+ch50c-d OK | ¿de qué color es mi mochila? | morad* | Tu mochila es morada.
+ch50c-d ABST_INDEBIDA | ¿quién me regaló la mochila? | diego | No lo sé: nadie me ha dicho eso.
+ch50c-d OK | por cierto, mi madre está enferma | madre;enferm*;!no lo he entendido | Entendido: tu madre está enferma; la enferma es morada.
+ch50c-d OK | tiene gripe | gripe;!no lo he entendido | Entendido: la enferma tiene gripe.
+ch50c-d OK | ¿qué le pasa a mi madre? | gripe|enferm* | Tu madre está enferma.
+ch50c-d OK | ¿a quién llamaré mañana? | madre | Llamarás a tu madre mañana.
+ch50c-d OK | mi madre vive en Ávila | avila;!no lo he entendido | Entendido: tu madre vive en Ávila.
+ch50c-d OK | ¿dónde vive mi madre? | avila | Tu madre vive en Ávila.
+ch50c-e OK | ¿cómo me llamo? | lucia | Te llamas Lucía.
+ch50c-e ABST_INDEBIDA | ¿en qué curso estoy? | cuarto | No he entendido bien la pregunta. ¿Me la dices de otra forma?
+ch50c-e ABST_INDEBIDA | ¿Alba es de León? | ^no|zamora | No lo sé. Solo sé que Alba es de Zamora.
+ch50c-e OK | ¿tengo hermanos? | ABST|^no | No lo sé: no me has dicho qué tienes.
+ch50c-e OK | ¿qué sabes de Diego? | novio|libreria | Diego es tu novio. Diego trabaja en una librería.
+ch50c-e ABST_INDEBIDA | ¿Sofía estudia Derecho? | ^no|medicina | No lo sé. Solo sé que Sofía estudia a Medicina.
+ch50c-e OK | ¿qué te he contado de mi madre? | enferm*|gripe|avila | Tu madre está enferma. Tu madre vive en Ávila.
+ch50c-e ABST_INDEBIDA | ¿me deseas suerte? | suerte|ANY | No he entendido bien la pregunta. ¿Me la dices de otra forma?
+ch50c-e OK | buenas noches | buenas noches|descans*|hasta | ¡Buenas noches, Lucía! ¿En qué puedo ayudarte?

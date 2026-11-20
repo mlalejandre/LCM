@@ -1,0 +1,500 @@
+{
+  "modo": "simulacion_del_puente_semantico_no_conversacion_integral_del_lcm",
+  "advertencia": "Las plantillas son sintéticas y los resultados NO equivalen a cobertura del español real.",
+  "n": 12000,
+  "correctos": 12000,
+  "exactitud": 1.0,
+  "matriz": [
+    {
+      "esperado": "abstencion",
+      "obtenido": "abstencion",
+      "n": 1714
+    },
+    {
+      "esperado": "crear",
+      "obtenido": "crear",
+      "n": 3429
+    },
+    {
+      "esperado": "definicion",
+      "obtenido": "definicion",
+      "n": 1714
+    },
+    {
+      "esperado": "mostrar",
+      "obtenido": "mostrar",
+      "n": 3429
+    },
+    {
+      "esperado": "pregunta",
+      "obtenido": "pregunta",
+      "n": 1714
+    }
+  ],
+  "fallos": [],
+  "inventario": {
+    "conceptos": 1875,
+    "aprendidos": 0,
+    "formas": 3571,
+    "formas_ambiguas": 273,
+    "tipos": {
+      "accion": 144,
+      "concepto": 1531,
+      "propiedad": 14,
+      "funcional": 169,
+      "sentido": 17
+    },
+    "familias": {
+      "produccion": 12,
+      "comunicacion": 51,
+      "educacion": 1,
+      "cognicion": 31,
+      "volicion": 6,
+      "modalidad": 5,
+      "tiempo": 72,
+      "cambio": 5,
+      "cantidad": 116,
+      "espacio": 9,
+      "manipulacion": 6,
+      "informacion": 5,
+      "percepcion": 7,
+      "emocion": 82,
+      "relacion": 61,
+      "lenguaje": 11,
+      "evaluacion": 3,
+      "informatica": 100,
+      "persona": 131,
+      "matematica": 1,
+      "visual": 39,
+      "gramatica": 169,
+      "estado": 60,
+      "objeto": 325,
+      "naturaleza": 157,
+      "ubicacion": 98,
+      "valoracion": 57,
+      "color": 37,
+      "actividad": 205,
+      "finanzas": 1,
+      "objetos": 2,
+      "ocio": 1,
+      "arquitectura": 1,
+      "animales": 3,
+      "organizacion": 1,
+      "materiales": 1,
+      "fuego": 1,
+      "medicina": 1,
+      "tecnologia": 1
+    },
+    "definiciones_explicitadas": 242
+  },
+  "adversario": {
+    "modo": "desafio_de_plantillas_adversarias_no_lcm_completo",
+    "n": 4000,
+    "correctos": 2011,
+    "exactitud": 0.50275,
+    "por_familia": [
+      {
+        "familia": "accion_subordinada",
+        "n": 192,
+        "aciertos": 0
+      },
+      {
+        "familia": "condicional",
+        "n": 196,
+        "aciertos": 196
+      },
+      {
+        "familia": "contraste_negacion",
+        "n": 190,
+        "aciertos": 0
+      },
+      {
+        "familia": "declaracion_sujeto",
+        "n": 203,
+        "aciertos": 203
+      },
+      {
+        "familia": "deseo_sin_comando",
+        "n": 190,
+        "aciertos": 190
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "n": 205,
+        "aciertos": 0
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "n": 187,
+        "aciertos": 0
+      },
+      {
+        "familia": "futuro_declarativo",
+        "n": 199,
+        "aciertos": 199
+      },
+      {
+        "familia": "negacion_compleja",
+        "n": 209,
+        "aciertos": 209
+      },
+      {
+        "familia": "negacion_pronominal",
+        "n": 209,
+        "aciertos": 209
+      },
+      {
+        "familia": "optativo",
+        "n": 212,
+        "aciertos": 0
+      },
+      {
+        "familia": "otra_tarea",
+        "n": 198,
+        "aciertos": 198
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "n": 199,
+        "aciertos": 0
+      },
+      {
+        "familia": "pregunta_conceptual_distinta",
+        "n": 201,
+        "aciertos": 201
+      },
+      {
+        "familia": "referencia_sin_adjunto",
+        "n": 207,
+        "aciertos": 207
+      },
+      {
+        "familia": "solicitud_condicional",
+        "n": 199,
+        "aciertos": 199
+      },
+      {
+        "familia": "solicitud_indirecta",
+        "n": 183,
+        "aciertos": 0
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "n": 212,
+        "aciertos": 0
+      },
+      {
+        "familia": "tarea_compuesta_no_implementada",
+        "n": 200,
+        "aciertos": 0
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "n": 209,
+        "aciertos": 0
+      }
+    ],
+    "fallos": [
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del amarillo.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "contraste_negacion",
+        "frase": "No pintes: solo muestra el color negro.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color amarillo?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "accion_subordinada",
+        "frase": "Hazme el favor de mostrar el color amarillo.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color verde?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra rojo.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "frase": "¿Puedes explicar el significado del color blanco?",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra azul?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "frase": "¿Puedes explicar el significado del color azul?",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "frase": "¿Puedes explicar el significado del color verde?",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra negro.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra blanco.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del blanco.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra azul?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra negro?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "frase": "¿Puedes explicar el significado del color rojo?",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del azul.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "accion_subordinada",
+        "frase": "Hazme el favor de mostrar el color verde.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color rojo?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra amarillo.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra azul.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra verde?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "optativo",
+        "frase": "Desearía visualizar una tarjeta de color azul.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra azul.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color rojo?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra azul.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del amarillo.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra rojo.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra amarillo?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "solicitud_indirecta",
+        "frase": "Me pregunto si podrías dibujar un fondo negro.",
+        "esperado": "crear",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra blanco.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra blanco.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "solicitud_indirecta",
+        "frase": "Me pregunto si podrías dibujar un fondo azul.",
+        "esperado": "crear",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "subjuntivo_no_visto",
+        "frase": "Me gustaría que dibujaras una muestra blanco.",
+        "esperado": "crear",
+        "obtenido": "pregunta"
+      },
+      {
+        "familia": "explicacion_no_generacion",
+        "frase": "¿Puedes explicar el significado del color negro?",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del amarillo.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "contraste_negacion",
+        "frase": "No pintes: solo muestra el color verde.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del azul.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "tarea_compuesta_no_implementada",
+        "frase": "Muestra el color negro y compáralo con el blanco.",
+        "esperado": "abstencion",
+        "obtenido": "otro"
+      },
+      {
+        "familia": "solicitud_indirecta",
+        "frase": "Me pregunto si podrías dibujar un fondo amarillo.",
+        "esperado": "crear",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra rojo?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "tarea_compuesta_no_implementada",
+        "frase": "Muestra el color rojo y compáralo con el blanco.",
+        "esperado": "abstencion",
+        "obtenido": "otro"
+      },
+      {
+        "familia": "optativo",
+        "frase": "Desearía visualizar una tarjeta de color rojo.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "tarea_compuesta_no_implementada",
+        "frase": "Muestra el color verde y compáralo con el blanco.",
+        "esperado": "abstencion",
+        "obtenido": "otro"
+      },
+      {
+        "familia": "verbo_de_soporte",
+        "frase": "¿Podrías ponerme una muestra negro?",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "fuera_de_capacidad",
+        "frase": "Enséñame los matices del blanco.",
+        "esperado": "abstencion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color blanco?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "polisemia_de_ensenar",
+        "frase": "Me enseñas qué es el color verde?",
+        "esperado": "definicion",
+        "obtenido": "mostrar"
+      },
+      {
+        "familia": "contraste_negacion",
+        "frase": "No pintes: solo muestra el color blanco.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      },
+      {
+        "familia": "accion_subordinada",
+        "frase": "Hazme el favor de mostrar el color amarillo.",
+        "esperado": "mostrar",
+        "obtenido": "abstencion"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+ "fecha": "2026-11-18",
+ "tanda10_multimodal": {
+  "n": 57,
+  "antes_de_la_ronda": {
+   "acierto": 33.33,
+   "falsas_pct": 45.61
+  },
+  "lcm23": {
+   "acierto": 100.0,
+   "falsas_pct": 0.0
+  },
+  "nota": "3 criterios con sintaxis regex invalida se corrigieron antes de medir el resultado final"
+ },
+ "examen_ciego_4": {
+  "n": 60,
+  "nota": "escrito con el codigo congelado (it19), una sola pasada",
+  "lcm22": {
+   "acierto": 38.33,
+   "falsas_pct": 31.67
+  },
+  "lcm23": {
+   "acierto": 90.0,
+   "falsas_pct": 3.33
+  }
+ },
+ "examen_ciego_3_ahora_tanda09": {
+  "n": 173,
+  "ciego_lcm22": {
+   "acierto": 94.22,
+   "falsas_pct": 1.16
+  },
+  "lcm23_como_tanda": {
+   "acierto": 100.0
+  }
+ },
+ "examen_ciego_2": {
+  "n": 301,
+  "nota": "cuarta pasada, solo agregados",
+  "lcm22": {
+   "acierto": 93.02,
+   "falsas_pct": 3.32
+  },
+  "lcm23": {
+   "acierto": 93.69,
+   "falsas_pct": 2.99
+  }
+ },
+ "examenes_del_autor": {
+  "n": 703,
+  "lcm22": 87.48,
+  "lcm23": 87.34,
+  "nota": "cambia 1 pregunta: '¿Tiene un circulo lados?' esperaba NO SE; ahora responde por fabrica que no"
+ },
+ "banco_generado": {
+  "dev": {
+   "n": 12335,
+   "acierto": 100.0,
+   "falsas": 0
+  },
+  "validacion": {
+   "n": 12331,
+   "acierto": 98.98,
+   "falsas_pct": 0.27
+  }
+ },
+ "tandas_1_a_10": {
+  "n": 1188,
+  "acierto": 100.0
+ }
+}

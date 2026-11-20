@@ -1,0 +1,17 @@
+D = [{"id": "r02", "cat": "listas", "turnos": [
+ ("hola", "hola"),
+ ("he viajado a Escocia, Irlanda y Noruega", "escocia|irlanda|noruega;!no lo he entendido"),
+ ("¿he viajado a Irlanda?", "^si"),
+ ("¿adónde he viajado?", "escocia;irlanda;noruega"),
+ ("tengo primos en Cádiz, Huelva y Almería", "cadiz|huelva|almeria;!no lo he entendido"),
+ ("¿tengo primos en Huelva?", "^si"),
+ ("en la clase de mi hijo hay niños de Rumanía, Marruecos y Ecuador", "rumania|marruecos|ecuador;!no lo he entendido"),
+ ("¿hay niños de Ecuador en la clase de mi hijo?", "^si"),
+ ("tengo un coche rojo, una moto negra y una bici azul", "coche|moto|bici;!no lo he entendido"),
+ ("¿de qué color es mi moto?", "negra"),
+ ("tengo tres tías: Carmen, Luisa y Pilar", "carmen|luisa|pilar;!no lo he entendido"),
+ ("¿cómo se llaman mis tías?", "carmen;luisa;pilar"),
+ ("¿cuántas tías tengo?", "tres|3"),
+ ("hablo español, catalán e inglés", "español|catalan|ingles;!no lo he entendido"),
+ ("¿hablo catalán?", "^si"),
+]}]

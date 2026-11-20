@@ -1,0 +1,17 @@
+D = [{"id": "p07", "cat": "generaliza", "turnos": [
+ ("buenas tardes", "buenas|hola"),
+ ("soy de Cádiz y vivo en Burgos desde hace dos años", "cadiz|burgos;!no lo he entendido"),
+ ("¿de dónde soy?", "cadiz;!burgos"),
+ ("¿desde cuándo vivo en Burgos?", "dos|2"),
+ ("los sábados juego al pádel con mi cuñado", "padel;!no lo he entendido"),
+ ("¿con quién juego al pádel?", "cuñado"),
+ ("¿cuándo juego al pádel?", "sabado*"),
+ ("mi cuñado llega tarde por el tráfico", "trafico;!no lo he entendido"),
+ ("¿por qué llega tarde mi cuñado?", "trafico"),
+ ("guardo las raquetas dentro del armario", "raquetas;!no lo he entendido"),
+ ("¿dónde guardo las raquetas?", "armario"),
+ ("¿qué hay dentro del armario?", "raquetas"),
+ ("le he comprado unas zapatillas a mi cuñado", "zapatillas;!no lo he entendido"),
+ ("¿a quién le he comprado las zapatillas?", "cuñado"),
+ ("¿para qué juego al pádel?", "ABST"),
+]}]

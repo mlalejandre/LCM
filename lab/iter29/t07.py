@@ -1,0 +1,15 @@
+D = [{"id": "m07", "cat": "generaliza", "turnos": [
+ ("buenas", "hola|buenas"),
+ ("el jueves es la boda de mi prima Nerea", "boda;!no lo he entendido"),
+ ("¿cuándo es la boda de Nerea?", "jueves"),
+ ("voy a ir con mis cuñados, Marcos y Elena", "marcos;elena;!no lo he entendido"),
+ ("¿cómo se llama mi cuñada?", "elena;!marcos"),
+ ("me he comprado un vestido verde para la boda", "vestido;!no lo he entendido"),
+ ("¿de qué color es mi vestido?", "verde"),
+ ("a mi cuñado se le ha perdido la corbata", "corbata;!no lo he entendido"),
+ ("¿qué se le ha perdido a Marcos?", "corbata"),
+ ("estoy nerviosa, nunca he dado un discurso", "nerviosa|discurso;!no lo he entendido"),
+ ("¿cómo estoy?", "nerviosa"),
+ ("Nerea, que es enfermera, se casa con un médico", "enfermera|medico;!no lo he entendido"),
+ ("¿de qué trabaja Nerea?", "enfermera"),
+]}]

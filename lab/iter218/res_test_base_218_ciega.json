@@ -1,0 +1,939 @@
+{
+ "resumen": {
+  "tipos": {
+   "L": {
+    "n": 28,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 3.6
+   },
+   "TOTAL": {
+    "n": 95,
+    "ok": 16,
+    "falsas": 8,
+    "acierto": 16.8
+   },
+   "P": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "D": {
+    "n": 10,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "V": {
+    "n": 7,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 14.3
+   },
+   "I": {
+    "n": 11,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "H": {
+    "n": 10,
+    "ok": 2,
+    "falsas": 1,
+    "acierto": 20.0
+   },
+   "M": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 9,
+    "ok": 9,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 1,
+    "acierto": 50.0
+   },
+   "G": {
+    "n": 6,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   },
+   "K": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 3,
+    "acierto": 0.0
+   }
+  },
+  "frases_cubiertas": [
+   1,
+   48
+  ]
+ },
+ "filas": [
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿los murciélagos pueden volar?",
+   "crit": "^si",
+   "r": "Sí, los murciélagos vuelan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cómo son las alas de los murciélagos?",
+   "crit": "manos|dedos|piel",
+   "r": "No sé nada de la ala del murciélago: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿dónde duermen los murciélagos?",
+   "crit": "cueva*|arbol*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuándo duermen los murciélagos?",
+   "crit": "dia",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuándo salen a cazar los murciélagos?",
+   "crit": "noche",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿de qué se alimenta la mayoría de los murciélagos?",
+   "crit": "insecto*",
+   "r": "No sé nada de la mayoría del murciélago: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuántos mosquitos puede comer un murciélago en una noche?",
+   "crit": "mil|1000",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "murciélagos",
+   "t": "D",
+   "q": "¿cómo se orientan los murciélagos en la oscuridad?",
+   "crit": "sonido*|eco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "murciélagos",
+   "t": "V",
+   "q": "¿qué es la ecolocalización?",
+   "crit": "sonido*|eco|sistema",
+   "r": "No sé qué es la ecolocalizacion. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "murciélagos",
+   "t": "D",
+   "q": "¿qué hacen muchos murciélagos en invierno?",
+   "crit": "hiberna*",
+   "r": "No lo sé. No conozco «muchos murciélagos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuándo nacen las crías?",
+   "crit": "primavera",
+   "r": "No lo sé. No conozco «crías»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "murciélagos",
+   "t": "I",
+   "q": "¿cómo se llama un grupo de murciélagos?",
+   "crit": "colonia",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "murciélagos",
+   "t": "I",
+   "q": "¿cuál es el murciélago más grande del mundo?",
+   "crit": "zorro volador",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuánto miden las alas del zorro volador?",
+   "crit": "metro",
+   "r": "No sé nada de la ala del zorro: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿de qué se alimenta el vampiro?",
+   "crit": "sangre",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "murciélagos",
+   "t": "V",
+   "q": "¿qué es un vampiro?",
+   "crit": "murcielago",
+   "r": "Un vampiro es un ser imaginario.",
+   "v": "MAL",
+   "k": 14
+  },
+  {
+   "tema": "murciélagos",
+   "t": "D",
+   "q": "¿por qué son útiles los murciélagos?",
+   "crit": "insectos|cosechas",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "murciélagos",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que estudian los murciélagos?",
+   "crit": "quiropterologo*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "murciélagos",
+   "t": "L",
+   "q": "¿cuánto viven algunos murciélagos?",
+   "crit": "treinta|30",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 17
+  },
+  {
+   "tema": "murciélagos",
+   "t": "H",
+   "q": "¿un murciélago es un mamífero?",
+   "crit": "^si",
+   "r": "Sí, un murciélago es un mamífero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "H",
+   "q": "¿el vampiro es un animal?",
+   "crit": "^si",
+   "r": "No, un vampiro es un ser imaginario.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "H",
+   "q": "¿los murciélagos son pájaros?",
+   "crit": "^no",
+   "r": "No, un murciélago es un mamífero, no un pájaro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "M",
+   "q": "¿cuánto miden las alas del murciélago más grande del mundo?",
+   "crit": "metro",
+   "r": "No sé nada de la ala del murciélago: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "I",
+   "q": "¿qué murciélago se alimenta de sangre?",
+   "crit": "vampiro",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "D",
+   "q": "¿todos los murciélagos comen insectos?",
+   "crit": "^no|mayoria|algunos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿cuántas especies de murciélagos hay?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿cuánto pesa un murciélago?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿quién descubrió la ecolocalización?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "C",
+   "q": "anoche vi un murciélago en mi jardín",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: viste un murciélago en tu jardín anoche.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "C",
+   "q": "¿qué estaría haciendo?",
+   "crit": "cazar|cazando|insecto*",
+   "r": "Viste un murciélago en tu jardín anoche.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "G",
+   "q": "dime un murciélago",
+   "crit": "zorro volador|vampiro",
+   "r": "No conozco ningún ejemplo de «murcielago» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "G",
+   "q": "descríbeme el zorro volador",
+   "crit": "grande|metro|murcielago",
+   "r": "Un zorro es un mamífero. Los mamíferos tienen pelo. Los mamíferos respiran aire. Los mamíferos tienen crías vivas.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "K",
+   "q": "los murciélagos duermen de noche",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|de dia",
+   "r": "Entendido: los murciélagos duermen de noche.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "V",
+   "q": "¿qué es el cafeto?",
+   "crit": "planta",
+   "r": "No sé qué es el cafeto. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿dónde crece el cafeto?",
+   "crit": "paises|calido*|lluvios*",
+   "r": "No lo sé. No conozco «cafeto»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿de qué color son los frutos del cafeto?",
+   "crit": "rojo*",
+   "r": "No sé nada de el fruto del cafeto: no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿cuántas semillas hay dentro de cada cereza?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿dónde se secan los granos?",
+   "crit": "sol",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "café",
+   "t": "D",
+   "q": "¿qué les pasa a los granos cuando se tuestan?",
+   "crit": "marron|color|olor",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿cómo se prepara la bebida?",
+   "crit": "agua caliente|molido",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "café",
+   "t": "V",
+   "q": "¿qué es la cafeína?",
+   "crit": "sustancia|sueno",
+   "r": "Según mi diccionario de conceptos: «cafeína» es un tipo de «compuesto», «producto químico» y «materia» (y, más en general, «sustancia»). Dominio: sustancia. En inglés: caffeine y caffein. En su definición aparecen, entre otras: amargo, café, té, responsable y estimulante.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿qué contiene el café?",
+   "crit": "cafeina",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "café",
+   "t": "D",
+   "q": "¿por qué toma mucha gente café por la mañana?",
+   "crit": "sueno|cafeina",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "café",
+   "t": "I",
+   "q": "¿cómo se llama el café sin cafeína?",
+   "crit": "descafeinado",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿un café solo lleva leche?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿qué lleva el cortado?",
+   "crit": "leche",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "café",
+   "t": "I",
+   "q": "¿qué país produce más café?",
+   "crit": "brasil",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "café",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que preparan café en las cafeterías?",
+   "crit": "barista*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿qué sabe dibujar un buen barista?",
+   "crit": "figuras",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "café",
+   "t": "L",
+   "q": "¿cuántas tazas recomiendan los médicos como máximo?",
+   "crit": "cuatro|4",
+   "r": "No lo sé. No conozco «cuántas tazas»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "café",
+   "t": "H",
+   "q": "¿el cafeto es una planta?",
+   "crit": "^si",
+   "r": "Eso no me consta; solo sé Una flor es una planta; Un árbol es una planta.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "H",
+   "q": "¿el cafeto es un ser vivo?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "H",
+   "q": "¿el descafeinado es un café?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "M",
+   "q": "¿cómo se llaman los frutos del arbusto del café?",
+   "crit": "cereza*",
+   "r": "No sé nada de el fruto de arbusto: no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "D",
+   "q": "¿el descafeinado quita el sueño?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿quién descubrió el café?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿cuánto cuesta un kilo de café?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿cuántos baristas hay en Brasil?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "C",
+   "q": "mi prima es barista",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu prima es barista.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "C",
+   "q": "¿mi prima prepara café?",
+   "crit": "^si|prepara*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu prima sé que es barista.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "G",
+   "q": "dime dos tipos de café",
+   "crit": "solo|cortado|descafeinado|con leche",
+   "r": "Entendido: Dime dos tipos de café.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "G",
+   "q": "descríbeme el cafeto",
+   "crit": "arbusto|planta|paises|frutos",
+   "r": "No sé lo bastante de «cafeto» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "K",
+   "q": "los frutos del cafeto son azules",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|rojo*",
+   "r": "Entendido: los frutos del cafeto son azules.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿dónde viven los nurbos?",
+   "crit": "montana*|talia",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "V",
+   "q": "¿qué son los nurbos?",
+   "crit": "animal*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿de qué color tienen el pelo los nurbos?",
+   "crit": "azul",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿de qué se alimentan los nurbos?",
+   "crit": "hojas|melco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿dónde crece el melco?",
+   "crit": "rio*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "V",
+   "q": "¿qué es una tirna?",
+   "crit": "grupo*",
+   "r": "No sé qué es una tirna. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿quién es la jefa de una tirna?",
+   "crit": "hembra|vieja",
+   "r": "No lo sé. No conozco «tirna»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "D",
+   "q": "¿qué hace un nurbo cuando ve un peligro?",
+   "crit": "silba",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "V",
+   "q": "¿qué es un dargo?",
+   "crit": "pajaro",
+   "r": "No sé qué es un dargo. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "I",
+   "q": "¿cuál es el peor enemigo de los nurbos?",
+   "crit": "dargo",
+   "r": "No lo sé. No conozco «nurbos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿dónde duermen los nurbos en invierno?",
+   "crit": "madriguera*",
+   "r": "No lo sé. No conozco «nurbos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "I",
+   "q": "¿cómo se llaman las crías de los nurbos?",
+   "crit": "nurbin*",
+   "r": "No sé nada de la cria del nurbo: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿de qué color nacen los nurbines?",
+   "crit": "blanco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿qué creen los habitantes de Talia?",
+   "crit": "suerte",
+   "r": "No lo sé. No conozco «habitantes»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "D",
+   "q": "¿por qué está prohibido cazar nurbos?",
+   "crit": "suerte",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "I",
+   "q": "¿cuál es el nurbo más raro?",
+   "crit": "dorado",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "L",
+   "q": "¿dónde vive el nurbo dorado?",
+   "crit": "aran|cima",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que cuidan a los nurbos?",
+   "crit": "nurbero*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "H",
+   "q": "¿un nurbo es un animal?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "H",
+   "q": "¿un nurbo es un ser vivo?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "H",
+   "q": "¿el dargo es un animal?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "H",
+   "q": "¿el melco es una planta?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "D",
+   "q": "¿un nurbo tiene cola?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "M",
+   "q": "¿de qué color es el pico del peor enemigo de los nurbos?",
+   "crit": "rojo",
+   "r": "No sé nada de el pico de enemigo: no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "N",
+   "q": "¿cuántos nurbos quedan?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "N",
+   "q": "¿cuánto pesa un nurbo?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "N",
+   "q": "¿qué come el dargo?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "C",
+   "q": "mi abuelo es nurbero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuelo es nurbero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "C",
+   "q": "¿mi abuelo cuida nurbos?",
+   "crit": "^si|cuida*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu abuelo sé que es nurbero.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "G",
+   "q": "descríbeme un nurbo",
+   "crit": "animal*|azul|cola|montana*",
+   "r": "No sé lo bastante de «nurbo» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "G",
+   "q": "dime un enemigo de los nurbos",
+   "crit": "dargo",
+   "r": "No conozco ningún ejemplo de «enemigo» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "nurbos (inventado)",
+   "t": "K",
+   "q": "los nurbos tienen el pelo verde",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|azul",
+   "r": "Entendido: los nurbos tienen el pelo verde; el pelo de los nurbos es verde.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

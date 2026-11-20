@@ -1,0 +1,78 @@
+{
+ "1": {
+  "n": 10,
+  "acierto": 20.0,
+  "falsas": 1,
+  "nota": "corregido a mano: dos 'OK' eran par\u00e1frasis rotas de las capas antiguas; una daba 'viene el viernes (13 de noviembre)', fecha pasada"
+ },
+ "2": {
+  "n": 8,
+  "acierto": 12.5,
+  "falsas": 0,
+  "nota": "criterio de '\u00bfc\u00f3mo se llama mi sobrina?' cambiado a 'ane|ABST': que Ane es nombre de chica no se puede saber sin datos del mundo; el registro no cambia (segu\u00eda fallando)"
+ },
+ "3": {
+  "n": 9,
+  "acierto": 44.44,
+  "falsas": 0
+ },
+ "4": {
+  "n": 10,
+  "acierto": 80.0,
+  "falsas": 0,
+  "nota": "corregido a mano: 'Lola invit\u00f3 a su boda' perdi\u00f3 a qui\u00e9n invit\u00f3 (me) y aprob\u00f3 por contener 'boda'"
+ },
+ "5": {
+  "n": 10,
+  "acierto": 100.0,
+  "falsas": 0
+ },
+ "6": {
+  "n": 8,
+  "acierto": 62.5,
+  "falsas": 0
+ },
+ "7": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 0
+ },
+ "8": {
+  "n": 8,
+  "acierto": 62.5,
+  "falsas": 1,
+  "nota": "corregido a mano: '\u00bfcu\u00e1ndo quiero ir a Italia?' dio 'del 21 de junio de 2026' (verano ya pasado) y aprob\u00f3 por contener 'verano'"
+ },
+ "9": {
+  "n": 9,
+  "acierto": 44.44,
+  "falsas": 1,
+  "nota": "corregido a mano: 'sacas dos a\u00f1os a pasear' aprob\u00f3 por contener 'pasear'"
+ },
+ "10": {
+  "n": 8,
+  "acierto": 87.5,
+  "falsas": 0
+ },
+ "11": {
+  "n": 9,
+  "acierto": 77.78,
+  "falsas": 1
+ },
+ "12": {
+  "n": 6,
+  "acierto": 100.0,
+  "falsas": 0,
+  "nota": "tres turnos sin puntuar (ANY) eran notas literales (opini\u00f3n, \u00absu padre dice que s\u00ed\u00bb, \u00abtienen uno\u00bb); \u00ab\u00bfqu\u00e9 dice el padre de Mario?\u00bb aprob\u00f3 como abstenci\u00f3n pero dec\u00eda \u00abqu\u00e9 dice t\u00fa\u00bb"
+ },
+ "13": {
+  "n": 10,
+  "acierto": 90.0,
+  "falsas": 0
+ },
+ "14": {
+  "n": 8,
+  "acierto": 87.5,
+  "falsas": 0
+ }
+}

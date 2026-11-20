@@ -1,0 +1,562 @@
+{
+ "resumen": {
+  "n": 58,
+  "ok": 53,
+  "acierto": 91.38,
+  "falsas": 4,
+  "tasa_falsas": 6.9,
+  "abst_indebida": 1,
+  "error": 0,
+  "por_cat": {
+   "fabrica_y_dicho": {
+    "n": 12,
+    "acierto": 91.7,
+    "falsas": 1
+   },
+   "herencia_charla": {
+    "n": 14,
+    "acierto": 92.9,
+    "falsas": 0
+   },
+   "personas": {
+    "n": 9,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "relaciones": {
+    "n": 12,
+    "acierto": 75.0,
+    "falsas": 3
+   },
+   "varias_clases": {
+    "n": 11,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 1,
+   "q": "mi hermana tiene un hámster y dos periquitos",
+   "crit": "hamster|periquitos;!no lo he entendido",
+   "r": "Entendido: tu hermana tiene un hámster y dos periquitos.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 2,
+   "q": "¿mi hermana tiene un mamífero?",
+   "crit": "^si",
+   "r": "Sí, tu hermana tiene un hámster.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 3,
+   "q": "¿mi hermana tiene aves?",
+   "crit": "^si",
+   "r": "Sí, tu hermana tiene dos periquitos.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 4,
+   "q": "¿mi hermana tiene un pez?",
+   "crit": "^no|ABST",
+   "r": "No me consta. Solo sé que tu hermana tiene un hámster y dos periquitos.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 5,
+   "q": "¿cuántos animales tiene mi hermana?",
+   "crit": "3|tres",
+   "r": "Tres, que yo sepa: un hámster y dos periquitos.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 6,
+   "q": "ayer comí lentejas y una manzana",
+   "crit": "lentejas|manzana;!no lo he entendido",
+   "r": "Entendido: comiste lentejas y una manzana ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 7,
+   "q": "¿comí fruta ayer?",
+   "crit": "^si",
+   "r": "Sí, comiste una manzana ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 8,
+   "q": "¿comí legumbres ayer?",
+   "crit": "^si",
+   "r": "Sí, comiste lentejas ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 9,
+   "q": "¿comí carne ayer?",
+   "crit": "^no|ABST",
+   "r": "No lo sé. Solo sé que comiste lentejas ayer y comiste una manzana ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 10,
+   "q": "¿qué fruta comí?",
+   "crit": "manzana",
+   "r": "No lo sé: no me has dicho qué comiste. De ti sé que comiste lentejas ayer y comiste una manzana ayer.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 11,
+   "q": "he vendido el piano",
+   "crit": "piano;!no lo he entendido",
+   "r": "Entendido: vendiste el piano.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 12,
+   "q": "¿he vendido un instrumento?",
+   "crit": "^si",
+   "r": "Sí, vendiste el piano.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-her",
+   "cat": "herencia_charla",
+   "i": 13,
+   "q": "¿qué instrumento he vendido?",
+   "crit": "piano",
+   "r": "Vendiste el piano.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 1,
+   "q": "mi cuñado Raúl es fontanero",
+   "crit": "fontanero;!no lo he entendido",
+   "r": "Entendido: Raúl es fontanero.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 2,
+   "q": "¿Raúl es una persona?",
+   "crit": "^si",
+   "r": "Sí, Raúl es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 3,
+   "q": "¿mi cuñado es un profesional?",
+   "crit": "^si",
+   "r": "Sí, Raúl es un profesional. Lo deduzco porque Raúl es fontanero y un fontanero es un profesional.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 4,
+   "q": "¿Raúl es un animal?",
+   "crit": "^no",
+   "r": "No, Raúl es un fontanero.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 5,
+   "q": "¿Raúl es de mi familia?",
+   "crit": "^si",
+   "r": "Sí, Raúl es tu cuñado.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 6,
+   "q": "mi jefa es una mujer muy seria",
+   "crit": "seria;!no lo he entendido",
+   "r": "Entendido: tu jefa es una mujer; tu jefa es muy seria.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 7,
+   "q": "¿mi jefa es una persona?",
+   "crit": "^si",
+   "r": "Sí, tu jefa es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-per",
+   "cat": "personas",
+   "i": 8,
+   "q": "¿mi jefa es graciosa?",
+   "crit": "^no",
+   "r": "No, tu jefa es muy seria.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 1,
+   "q": "¿la comida es un alimento?",
+   "crit": "^si",
+   "r": "Sí, una comida es un alimento.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 2,
+   "q": "¿un desayuno es una comida?",
+   "crit": "^si",
+   "r": "Sí, un desayuno es una comida.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 3,
+   "q": "¿una ensaladera es un recipiente?",
+   "crit": "^si",
+   "r": "Sí, una ensaladera es un recipiente.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 4,
+   "q": "¿una rosa es una flor?",
+   "crit": "^si",
+   "r": "Sí, una rosa es una flor.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 5,
+   "q": "¿el rosa es un color?",
+   "crit": "^si",
+   "r": "Sí, un rosa es un color.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 6,
+   "q": "¿una tijera es una herramienta?",
+   "crit": "^si",
+   "r": "Sí, una tijera es una herramienta.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 7,
+   "q": "¿un pollo es un ave?",
+   "crit": "^si",
+   "r": "Sí, un pollo es un ave.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 8,
+   "q": "¿el pollo es un alimento?",
+   "crit": "^si|carne",
+   "r": "Sí, un pollo es un alimento. Lo deduzco porque un pollo es una carne y una carne es un alimento.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 9,
+   "q": "¿un zapato es un animal?",
+   "crit": "^no",
+   "r": "No, un zapato es un calzado.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-var",
+   "cat": "varias_clases",
+   "i": 10,
+   "q": "¿un vaso es un recipiente?",
+   "crit": "^si",
+   "r": "Sí, un vaso es un recipiente.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 1,
+   "q": "¿para qué sirve una escoba?",
+   "crit": "barrer|limpiar",
+   "r": "Una escoba sirve para barrer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 2,
+   "q": "¿de qué está hecho un jersey?",
+   "crit": "lana|algodon|tela|tejido",
+   "r": "Un jersey suele ser de lana.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 3,
+   "q": "¿dónde suele estar una cama?",
+   "crit": "dormitorio|habitacion",
+   "r": "Una cama suele estar en el dormitorio.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 4,
+   "q": "¿quién usa una sartén?",
+   "crit": "cocinero",
+   "r": "Las sartenes las usan sobre todo los cocineros.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 5,
+   "q": "¿qué sirve para sentarse?",
+   "crit": "silla|sofa|sillon|banco|taburete",
+   "r": "Para sentarse sirven, por ejemplo, los bancos, las butacas, las sillas, los sillones y los sofás.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 6,
+   "q": "¿qué hay en un baño?",
+   "crit": "lavabo|ducha|bañera|vater|espejo",
+   "r": "En un baño suele haber lavabo, váter, ducha, bañera, espejo, objetos de aseo y toallas.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 7,
+   "q": "¿con qué se corta el pan?",
+   "crit": "cuchillo",
+   "r": "Para cortar el pan sirven, por ejemplo, los cuchillos, las navajas y las tijeras.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 8,
+   "q": "he comprado una sierra",
+   "crit": "sierra;!no lo he entendido",
+   "r": "Entendido: compraste una sierra.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 9,
+   "q": "¿he comprado algo para cortar?",
+   "crit": "^si|sierra",
+   "r": "Sí: compraste una sierra, y las sierras sirven para cortar madera.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 10,
+   "q": "¿una silla sirve para sentarse?",
+   "crit": "^si",
+   "r": "Sí, las sillas sirven para sentarse.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-rel",
+   "cat": "relaciones",
+   "i": 11,
+   "q": "¿una silla sirve para cortar?",
+   "crit": "^no",
+   "r": "No, las sillas sirven para sentarse.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 1,
+   "q": "el loro de mi abuela no habla",
+   "crit": "habla;!no lo he entendido",
+   "r": "Entendido: el loro de tu abuela no habla.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 2,
+   "q": "¿el loro de mi abuela habla?",
+   "crit": "^no",
+   "r": "No, el loro de tu abuela no habla.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 3,
+   "q": "¿los loros hablan?",
+   "crit": "^si",
+   "r": "Sí, los loros hablan.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 4,
+   "q": "Marta sabe cocinar",
+   "crit": "marta;!no lo he entendido",
+   "r": "Entendido: Marta sabe cocinar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 5,
+   "q": "¿quién sabe cocinar?",
+   "crit": "marta",
+   "r": "Marta sabe cocinar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 6,
+   "q": "¿los cocineros cocinan?",
+   "crit": "^si",
+   "r": "Sí, los cocineros cocinan.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 7,
+   "q": "¿los peces vuelan?",
+   "crit": "^no",
+   "r": "No, los peces no vuelan.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 8,
+   "q": "¿cómo lo sabes?",
+   "crit": "fabrica",
+   "r": "Lo traigo aprendido de fábrica: los peces no vuelan. No viene de lo que me has contado.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 9,
+   "q": "mi gato tiene tres patas",
+   "crit": "tres|3;!no lo he entendido",
+   "r": "Entendido: tu gato tiene tres patas.",
+   "v": "OK"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 10,
+   "q": "¿cuántas patas tiene mi gato?",
+   "crit": "tres|3",
+   "r": "Los gatos tienen cuatro patas.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 11,
+   "q": "¿cuántas patas tiene un gato?",
+   "crit": "cuatro|4",
+   "r": "Los gatos tienen cuatro patas.",
+   "v": "OK"
+  }
+ ]
+}

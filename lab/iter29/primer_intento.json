@@ -1,0 +1,40 @@
+{
+ "1": {
+  "n": 10,
+  "acierto": 80.0,
+  "falsas": 2,
+  "nota": "corregido a mano: 'Jorge fue el mejor alumno de su clase' -> \u00abde la clase de la comunidad\u00bb aprob\u00f3 por contener 'jorge'"
+ },
+ "2": {
+  "n": 10,
+  "acierto": 30.0,
+  "falsas": 0
+ },
+ "3": {
+  "n": 10,
+  "acierto": 60.0,
+  "falsas": 0
+ },
+ "4": {
+  "n": 8,
+  "acierto": 25.0,
+  "falsas": 1
+ },
+ "5": {
+  "n": 10,
+  "acierto": 60.0,
+  "falsas": 2,
+  "nota": "corregido a mano: 'los dientes salen' pierde el dativo (incompleto); 'se me ha roto el m\u00f3vil' -> 'los dientes se rompieron el m\u00f3vil' y su pregunta son falsas aunque el corrector las dio por buenas"
+ },
+ "6": {
+  "n": 11,
+  "acierto": 54.55,
+  "falsas": 0,
+  "nota": "corregido a mano: 'Rosario fue maestra y a\u00f1o' (turnos 2 y 3) es una frase rota aunque contiene 'maestra'"
+ },
+ "7": {
+  "n": 13,
+  "acierto": 61.54,
+  "falsas": 0
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "fecha": "2026-11-19",
+ "evaluador": "mismo juez para 2.10 y 2.11 + auditoría manual con el mismo criterio, después de la medida única",
+ "charla50f": {
+  "n": 49,
+  "automatico": {
+   "lcm210": [
+    63.27,
+    3
+   ],
+   "lcm211_congelada": [
+    81.63,
+    2
+   ],
+   "lcm211_tras_arreglos_no_ciega": [
+    97.96,
+    1
+   ]
+  },
+  "auditado": {
+   "lcm210": {
+    "acierto": 42.86,
+    "falsas": 2
+   },
+   "lcm211_congelada": {
+    "acierto": 75.51,
+    "falsas": 0
+   },
+   "lcm211_tras_arreglos_no_ciega": {
+    "acierto": 95.92,
+    "falsas": 0
+   }
+  }
+ },
+ "examen_ciego11": {
+  "n": 44,
+  "automatico": {
+   "lcm210": [
+    63.64,
+    1
+   ],
+   "lcm211_congelada": [
+    93.18,
+    0
+   ],
+   "lcm211_tras_arreglos_no_ciega": [
+    95.45,
+    0
+   ]
+  },
+  "auditado": {
+   "lcm210": {
+    "acierto": 63.64,
+    "falsas": 0
+   },
+   "lcm211_congelada": {
+    "acierto": 93.18,
+    "falsas": 0
+   },
+   "lcm211_tras_arreglos_no_ciega": {
+    "acierto": 95.45,
+    "falsas": 0
+   }
+  }
+ },
+ "controles": {
+  "examenes_autor": {
+   "lcm210": 88.05,
+   "lcm211": 88.05
+  },
+  "examen_ciego2": {
+   "lcm210": 94.35,
+   "lcm211": 94.35
+  },
+  "examen_ciego6": {
+   "lcm210": 80.6,
+   "lcm211": 80.6
+  },
+  "examen_ciego7": {
+   "lcm210": 76.74,
+   "lcm211": 76.74
+  }
+ },
+ "curva_primer_intento": {
+  "total": {
+   "n": 82,
+   "acierto": 63.41,
+   "falsas": 4
+  },
+  "por_tanda": {
+   "1": {
+    "n": 14,
+    "acierto": 57.14,
+    "falsas": 1,
+    "nota": "corregido a mano: 'para la cena compro tomates…' -> «Iván compró tomates…» (sujeto falso, faltan los ajos) aprobó por contener 'tomates'"
+   },
+   "2": {
+    "n": 14,
+    "acierto": 28.57,
+    "falsas": 3,
+    "nota": "corregido a mano: «Sí, Lola vive en Teruel o en Huesca» (afirma sin saber), «harás pizza y pasta» (la «o» como «y», 2 turnos) son falsas; tras «no vive en Huesca» no deduce Teruel (fallo) — el juez las aprobó"
+   },
+   "3": {
+    "n": 15,
+    "acierto": 80.0,
+    "falsas": 0,
+    "nota": "corregido a mano: «Entendido: Me gusta más el mar que la montaña» es un eco sin entender (persona sin cambiar), aprobó por contener 'mar'"
+   },
+   "4": {
+    "n": 13,
+    "acierto": 30.77,
+    "falsas": 0,
+    "nota": "corregido a mano: «Vale, lo apunto: …» (2 turnos) es un eco sin entender; «Tienes 38 años (o uno menos…)» es correcto aunque el juez lo marcó MAL; «no registraré el contenido» es fallo, no falsa"
+   },
+   "5": {
+    "n": 14,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "6": {
+    "n": 12,
+    "acierto": 83.33,
+    "falsas": 0
+   }
+  }
+ },
+ "arreglos_no_ciegos": [
+  "introductores («ya me acuerdo:»)",
+  "«como» inicial = comer",
+  "verbo sobrentendido («y yo veintiocho»)",
+  "regla con una palabra («si estudio, apruebo»)",
+  "«¿quién corre más rápido, X o Y?»",
+  "la edad usa el dato más reciente (edad dicha o fecha de nacimiento)"
+ ],
+ "pytest": {
+  "passed": 779,
+  "failed_entorno": [
+   "test_parche106 (red)",
+   "test_reproducibilidad (empaquetado)",
+   "test_vision_chat (html ausente)"
+  ]
+ }
+}

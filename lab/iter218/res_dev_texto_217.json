@@ -1,0 +1,1017 @@
+{
+ "resumen": {
+  "tipos": {
+   "L": {
+    "n": 35,
+    "ok": 26,
+    "falsas": 7,
+    "acierto": 74.3
+   },
+   "TOTAL": {
+    "n": 101,
+    "ok": 59,
+    "falsas": 30,
+    "acierto": 58.4
+   },
+   "V": {
+    "n": 8,
+    "ok": 6,
+    "falsas": 2,
+    "acierto": 75.0
+   },
+   "D": {
+    "n": 12,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "I": {
+    "n": 9,
+    "ok": 8,
+    "falsas": 1,
+    "acierto": 88.9
+   },
+   "P": {
+    "n": 3,
+    "ok": 2,
+    "falsas": 1,
+    "acierto": 66.7
+   },
+   "H": {
+    "n": 7,
+    "ok": 4,
+    "falsas": 3,
+    "acierto": 57.1
+   },
+   "M": {
+    "n": 3,
+    "ok": 1,
+    "falsas": 2,
+    "acierto": 33.3
+   },
+   "N": {
+    "n": 9,
+    "ok": 1,
+    "falsas": 8,
+    "acierto": 11.1
+   },
+   "C": {
+    "n": 6,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 66.7
+   },
+   "G": {
+    "n": 6,
+    "ok": 1,
+    "falsas": 3,
+    "acierto": 16.7
+   },
+   "K": {
+    "n": 3,
+    "ok": 0,
+    "falsas": 3,
+    "acierto": 0.0
+   }
+  },
+  "frases_cubiertas": [
+   42,
+   56
+  ]
+ },
+ "filas": [
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (20 frases). He entendido bien 6; las otras 14 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué son las abejas?",
+   "crit": "insecto*",
+   "r": "Una abeja es un insecto. Las abejas vuelan y hacen miel.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿dónde vive una colonia?",
+   "crit": "colmena",
+   "r": "En el texto pone: «Cada colonia vive en una colmena».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué tipos de abejas hay en una colmena?",
+   "crit": "reina;obrera*;zangano*",
+   "r": "En el texto pone: «En una colmena hay tres tipos de abejas: la reina, las obreras y los zánganos».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿quién pone los huevos?",
+   "crit": "reina",
+   "r": "La única pone huevos.",
+   "v": "MAL",
+   "k": 3
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿quién hace el trabajo en la colmena?",
+   "crit": "obrera*",
+   "r": "En el texto pone: «Cada colonia vive en una colmena».",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿los zánganos tienen aguijón?",
+   "crit": "^no",
+   "r": "No, los zánganos no tienen aguijón.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué recogen las obreras?",
+   "crit": "nectar",
+   "r": "En el texto pone: «Las obreras recogen el néctar de las flores y lo convierten en miel».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿dónde se guarda la miel?",
+   "crit": "panal",
+   "r": "Una miel suele estar en el panal o la una estructura de celdas de cera.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es el panal?",
+   "crit": "estructura|celdas|cera",
+   "r": "En el texto pone: «La miel se guarda en el panal, una estructura de celdas de cera».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuántos lados tienen las celdas?",
+   "crit": "seis|6",
+   "r": "Las celdas tienen seis lados.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿qué hace una abeja cuando encuentra flores?",
+   "crit": "baile|avisa",
+   "r": "En el texto pone: «Cuando una abeja encuentra flores, avisa a las demás con un baile».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿por qué son importantes las abejas para las plantas?",
+   "crit": "polen",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es la polinización?",
+   "crit": "polen|flor*",
+   "r": "En el texto pone: «Este trabajo se llama polinización».",
+   "v": "MAL",
+   "k": 11
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuándo pica una abeja?",
+   "crit": "amenazada",
+   "r": "En el texto pone: «Una abeja solo pica si se siente amenazada».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué le pasa a la abeja obrera después de picar?",
+   "crit": "muere|morir",
+   "r": "En el texto pone: «Después de picar, la abeja obrera muere».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "abejas",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que cuidan las colmenas?",
+   "crit": "apicultor*",
+   "r": "En el texto pone: «Las personas que cuidan las colmenas se llaman apicultores».",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "abejas",
+   "t": "V",
+   "q": "¿qué es un apicultor?",
+   "crit": "persona|cuida*",
+   "r": "En el texto pone: «Las personas que cuidan las colmenas se llaman apicultores».",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿para qué usa humo el apicultor?",
+   "crit": "calmar",
+   "r": "Para calmar a las abejas.",
+   "v": "OK",
+   "k": 15
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿qué lleva el apicultor?",
+   "crit": "traje|velo",
+   "r": "En el texto pone: «Las abejas llevan el polen de una flor a otra, por eso son muy importantes para las plantas».",
+   "v": "MAL",
+   "k": 16
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿de qué se alimentan las abejas en invierno?",
+   "crit": "miel",
+   "r": "En el texto pone: «En invierno las abejas no salen de la colmena y se alimentan de la miel que guardaron».",
+   "v": "OK",
+   "k": 17
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué come la reina?",
+   "crit": "jalea",
+   "r": "En el texto pone: «En una colmena hay tres tipos de abejas: la reina, las obreras y los zánganos».",
+   "v": "MAL",
+   "k": 18
+  },
+  {
+   "tema": "abejas",
+   "t": "L",
+   "q": "¿cuánto puede vivir una reina?",
+   "crit": "cinco|5",
+   "r": "En el texto pone: «Una reina puede vivir cinco años, mientras que una obrera vive solo unas semanas».",
+   "v": "OK",
+   "k": 19
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿una obrera es un insecto?",
+   "crit": "^si",
+   "r": "No, una obrera es una hembra.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿un zángano es un animal?",
+   "crit": "^si",
+   "r": "No, un zángano es un macho.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "H",
+   "q": "¿las abejas son plantas?",
+   "crit": "^no",
+   "r": "No, una abeja es un animal, no una planta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "I",
+   "q": "¿quién no tiene aguijón?",
+   "crit": "zangano*",
+   "r": "Los zánganos no tienen aguijón.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "D",
+   "q": "¿una obrera puede poner huevos?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "M",
+   "q": "¿qué come la que pone los huevos?",
+   "crit": "jalea",
+   "r": "En el texto pone: «La reina es la única que pone huevos».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿cuántas abejas hay en una colmena?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Cada colonia vive en una colmena».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿de qué color es la reina?",
+   "crit": "ABST",
+   "r": "En el texto pone: «En una colmena hay tres tipos de abejas: la reina, las obreras y los zánganos».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién inventó la colmena?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Cada colonia vive en una colmena».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "C",
+   "q": "mi tío es apicultor",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tío es apicultor.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "C",
+   "q": "¿mi tío cuida colmenas?",
+   "crit": "^si|colmena*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu tío sé que es apicultor.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "G",
+   "q": "dime los tipos de abejas",
+   "crit": "reina|obrera*|zangano*",
+   "r": "Entendido: tu tío dime los tipos de abejas.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "G",
+   "q": "descríbeme un zángano",
+   "crit": "macho|aguijon",
+   "r": "No sé lo bastante de «zangano» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "K",
+   "q": "los zánganos tienen aguijón",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|no tienen",
+   "r": "Entendido, lo actualizo: los zánganos tienen aguijón.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (19 frases). He entendido bien 8; las otras 11 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es un volcán?",
+   "crit": "abertura",
+   "r": "Un volcán es un paisaje.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es el magma?",
+   "crit": "roca",
+   "r": "En el texto pone: «Debajo de la corteza hay roca fundida muy caliente, llamada magma».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿cómo se llama el magma cuando sale al exterior?",
+   "crit": "lava",
+   "r": "En el texto pone: «Cuando el magma sale al exterior se llama lava».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿por dónde sale la lava?",
+   "crit": "crater",
+   "r": "La lava sale por el cráter.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es el cráter?",
+   "crit": "boca",
+   "r": "El cráter es la boca del volcán.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es una erupción?",
+   "crit": "salida|lava",
+   "r": "En el texto pone: «La salida violenta de lava, gases y ceniza se llama erupción».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿todos los volcanes están activos?",
+   "crit": "^no|algunos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿un volcán dormido puede despertar?",
+   "crit": "^si",
+   "r": "Sí, los volcanes pueden despertar después de cientos de años.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿los volcanes extinguidos entran en erupción?",
+   "crit": "^no",
+   "r": "No, los volcanes no entran en erupción.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué temperatura puede alcanzar la lava?",
+   "crit": "mil|1000",
+   "r": "En el texto pone: «La lava puede alcanzar más de mil grados».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿en qué se convierte la lava al enfriarse?",
+   "crit": "roca",
+   "r": "En el texto pone: «Al enfriarse, la lava se convierte en roca dura».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿por qué cultiva la gente cerca de los volcanes?",
+   "crit": "fertil|ceniza",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que estudian los volcanes?",
+   "crit": "vulcanologo*",
+   "r": "En el texto pone: «Las personas que estudian los volcanes se llaman vulcanólogos».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "volcanes",
+   "t": "V",
+   "q": "¿qué es un sismógrafo?",
+   "crit": "aparato|mide*",
+   "r": "En el texto pone: «Usan sismógrafos, unos aparatos que miden los temblores de la tierra».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿qué pasa antes de una erupción?",
+   "crit": "tiembla|temblar",
+   "r": "La lava sale por el cráter, que es la boca del volcán.",
+   "v": "MAL",
+   "k": 13
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿cuál es el volcán más alto de España?",
+   "crit": "teide",
+   "r": "En el texto pone: «El Teide es el volcán más alto de España».",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿dónde está el Teide?",
+   "crit": "tenerife",
+   "r": "En el texto pone: «El Teide es el volcán más alto de España».",
+   "v": "MAL",
+   "k": 15
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿cuánto mide el Teide?",
+   "crit": "3715",
+   "r": "En el texto pone: «El Teide es el volcán más alto de España».",
+   "v": "MAL",
+   "k": 15
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿de dónde es el Krakatoa?",
+   "crit": "indonesia",
+   "r": "No lo sé: no me has dicho dónde es Krakatoa. De Krakatoa sé que es un volcán de Indonesia.",
+   "v": "ABST_INDEBIDA",
+   "k": 16
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿en qué año fue la erupción del Krakatoa?",
+   "crit": "1883",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 17
+  },
+  {
+   "tema": "volcanes",
+   "t": "L",
+   "q": "¿qué puede formar un volcán submarino?",
+   "crit": "isla",
+   "r": "Los volcanes pueden despertar después de cientos de años.",
+   "v": "MAL",
+   "k": 18
+  },
+  {
+   "tema": "volcanes",
+   "t": "H",
+   "q": "¿el Teide es un volcán?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El Teide es el volcán más alto de España».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "H",
+   "q": "¿el Krakatoa es un lugar?",
+   "crit": "^si",
+   "r": "Sí, Krakatoa es un lugar. Lo deduzco porque Krakatoa es un volcán de Indonesia y un volcán es un lugar.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "M",
+   "q": "¿dónde está el volcán más alto de España?",
+   "crit": "tenerife",
+   "r": "Los volcanes no entran en erupción.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "I",
+   "q": "¿qué volcán está en Tenerife?",
+   "crit": "teide",
+   "r": "En el texto pone: «Está en la isla de Tenerife y mide 3715 metros».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "D",
+   "q": "¿el Teide tiene cráter?",
+   "crit": "^si",
+   "r": "No sé quién es Teide: todavía no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuántos volcanes hay en el mundo?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Un volcán es una abertura de la corteza terrestre por la que sale roca fundida».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién subió primero al Teide?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuánto mide el Krakatoa?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Está en la isla de Tenerife y mide 3715 metros».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "C",
+   "q": "el verano pasado subí al Teide",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: subiste al Teide el verano pasado.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "C",
+   "q": "¿en qué isla estuve?",
+   "crit": "tenerife",
+   "r": "En el texto pone: «Está en la isla de Tenerife y mide 3715 metros».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "G",
+   "q": "dime un volcán",
+   "crit": "teide|krakatoa",
+   "r": "Entendido: Tenerife dime un volcán.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "G",
+   "q": "descríbeme el Teide",
+   "crit": "tenerife|3715|alto",
+   "r": "Entendido: Tenerife describeme el Teide.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "K",
+   "q": "el Teide está en Mallorca",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|tenerife",
+   "r": "Entendido: Teide está en Mallorca.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (18 frases). He entendido bien 7; las otras 11 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántos jugadores juegan al ajedrez?",
+   "crit": "dos|2",
+   "r": "En el texto pone: «El ajedrez es un juego de mesa para dos jugadores».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántas casillas tiene el tablero?",
+   "crit": "64|sesenta y cuatro",
+   "r": "En el texto pone: «Se juega sobre un tablero de sesenta y cuatro casillas».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿con cuántas piezas empieza cada jugador?",
+   "crit": "16|dieciseis",
+   "r": "Sí: el texto dice «Cada jugador empieza con dieciséis piezas».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿qué tipos de piezas hay?",
+   "crit": "rey;dama;torre;alfil;caballo;peon",
+   "r": "En el texto pone: «Hay seis tipos de piezas: el rey, la dama, la torre, el alfil, el caballo y el peón».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿quién mueve primero?",
+   "crit": "blancas",
+   "r": "Las blancas mueven primero siempre.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿cuál es la pieza más poderosa?",
+   "crit": "dama",
+   "r": "En el texto pone: «La dama es la pieza más poderosa, porque puede moverse en cualquier dirección».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿por qué es la dama la pieza más poderosa?",
+   "crit": "direccion|moverse",
+   "r": "Porque puede moverse en cualquier dirección. Lo dice el texto: «La dama es la pieza más poderosa, porque puede moverse en cualquier dirección».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cómo se mueve la torre?",
+   "crit": "recta",
+   "r": "La torre se mueve en línea recta.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cómo se mueve el alfil?",
+   "crit": "diagonal",
+   "r": "El alfil se mueve en diagonal.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿qué pieza puede saltar sobre las demás?",
+   "crit": "caballo",
+   "r": "En el texto pone: «El caballo es la única pieza que puede saltar sobre las demás».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿qué le pasa al peón si llega al otro lado del tablero?",
+   "crit": "dama",
+   "r": "En el texto pone: «El peón es la pieza menos valiosa, pero si llega al otro lado del tablero se convierte en dama».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿cuántas casillas puede moverse el rey?",
+   "crit": "una|1",
+   "r": "En el texto pone: «El rey solo puede moverse una casilla».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿cuál es el objetivo del ajedrez?",
+   "crit": "rey|atrapar",
+   "r": "En el texto pone: «El objetivo del juego es atrapar al rey del rival».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿cuándo está el rey en jaque?",
+   "crit": "amenazado",
+   "r": "En el texto pone: «Cuando el rey está amenazado se dice que está en jaque».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿qué pasa si el rey no puede escapar?",
+   "crit": "jaque mate|termina",
+   "r": "Me dijiste que si el rey no puede escapar, es jaque maté y la partida termina.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿cuándo acaba la partida en tablas?",
+   "crit": "ningun*|ganar",
+   "r": "En el texto pone: «Cuando ningún jugador puede ganar, la partida acaba en tablas».",
+   "v": "OK",
+   "k": 15
+  },
+  {
+   "tema": "ajedrez",
+   "t": "L",
+   "q": "¿para qué usan un reloj los jugadores profesionales?",
+   "crit": "tiempo|medir",
+   "r": "Jugador usan un reloj para medir el tiempo.",
+   "v": "OK",
+   "k": 16
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿cómo se llama a los mejores jugadores del mundo?",
+   "crit": "maestro*",
+   "r": "En el texto pone: «A los mejores jugadores del mundo se les llama grandes maestros».",
+   "v": "OK",
+   "k": 17
+  },
+  {
+   "tema": "ajedrez",
+   "t": "H",
+   "q": "¿la torre es una pieza?",
+   "crit": "^si",
+   "r": "No, una torre es un edificio.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "H",
+   "q": "¿el ajedrez es un juego?",
+   "crit": "^si",
+   "r": "Sí, un ajedrez es un juego. Lo deduzco porque un ajedrez es un juego de mesa y un juego de mesa es un juego.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "I",
+   "q": "¿qué pieza se mueve en diagonal?",
+   "crit": "alfil",
+   "r": "En el texto pone: «El alfil se mueve en diagonal».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "M",
+   "q": "¿en qué se convierte la pieza menos valiosa?",
+   "crit": "dama",
+   "r": "En el texto pone: «El peón es la pieza menos valiosa, pero si llega al otro lado del tablero se convierte en dama».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "D",
+   "q": "¿el alfil puede saltar sobre las demás piezas?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De el alfil sé que se mueve en diagonal.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿quién inventó el ajedrez?",
+   "crit": "ABST",
+   "r": "En el texto pone: «El ajedrez es un juego de mesa para dos jugadores».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿cuánto dura una partida?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Si el rey no puede escapar, es jaque mate y la partida termina».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿de qué material son las piezas?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Cada jugador empieza con dieciséis piezas».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "C",
+   "q": "mi hijo juega con las blancas",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hijo juega con las blancas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "C",
+   "q": "¿mi hijo mueve primero?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que tu hijo juega con las blancas.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "G",
+   "q": "dime tres piezas de ajedrez",
+   "crit": "rey|dama|torre|alfil|caballo|peon",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dime tres piezas de ajedrez».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "G",
+   "q": "descríbeme la dama",
+   "crit": "poderosa|direccion|pieza",
+   "r": "Una dama es una persona. Las personas hablan. Las personas hablan. Las personas piensan.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "K",
+   "q": "el alfil se mueve en línea recta",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|diagonal",
+   "r": "Entendido: el alfil se mueve en línea recta.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

@@ -1,0 +1,729 @@
+{
+ "resumen": {
+  "n": 76,
+  "ok": 68,
+  "acierto": 89.47,
+  "falsas": 2,
+  "tasa_falsas": 2.63,
+  "abst_indebida": 6,
+  "error": 0,
+  "por_cat": {
+   "clases": {
+    "n": 11,
+    "acierto": 90.9,
+    "falsas": 0
+   },
+   "fabrica_y_dicho": {
+    "n": 8,
+    "acierto": 87.5,
+    "falsas": 0
+   },
+   "herencia_charla": {
+    "n": 13,
+    "acierto": 84.6,
+    "falsas": 0
+   },
+   "personas": {
+    "n": 13,
+    "acierto": 76.9,
+    "falsas": 2
+   },
+   "relaciones": {
+    "n": 25,
+    "acierto": 96.0,
+    "falsas": 0
+   },
+   "relaciones_charla": {
+    "n": 6,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 1,
+   "q": "¿para qué sirve una gaita?",
+   "crit": "musica|tocar",
+   "r": "Una gaita sirve para hacer música y tocar música. Lo sé porque una gaita es un instrumento.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 2,
+   "q": "¿quién usa una gaita?",
+   "crit": "musico*|gaitero*",
+   "r": "Las gaitas las usan sobre todo los músicos. Lo sé porque una gaita es un instrumento.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 3,
+   "q": "¿para qué sirve una piragua?",
+   "crit": "navegar|remar|deporte|transport*|viajar",
+   "r": "Una piragua sirve para navegar. Lo sé porque una piragua es un barco.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 4,
+   "q": "¿dónde suele estar una piragua?",
+   "crit": "rio|agua|mar|lago",
+   "r": "Una piragua suele estar en el mar o el puerto. Lo sé porque una piragua es un barco.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 5,
+   "q": "¿para qué sirve un tractor?",
+   "crit": "arar|campo|trabajar|labrar|transport*|tirar",
+   "r": "Un tractor sirve para transportar y viajar. Lo sé porque un tractor es un vehículo.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 6,
+   "q": "¿quién usa un tractor?",
+   "crit": "agricultor*|granjero*",
+   "r": "Los tractores los usan sobre todo los agricultores.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 7,
+   "q": "¿para qué sirve una cafetera?",
+   "crit": "cafe",
+   "r": "Una cafetera sirve para hacer café.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 8,
+   "q": "¿dónde suele estar una cafetera?",
+   "crit": "cocina",
+   "r": "Una cafetera suele estar en la cocina.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 9,
+   "q": "¿para qué sirve una vitrocerámica?",
+   "crit": "cocinar|calentar",
+   "r": "Una vitrocerámica sirve para cocinar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 10,
+   "q": "¿para qué sirven las damas?",
+   "crit": "jugar",
+   "r": "Una damas sirve para jugar. Lo sé porque una damas es un juguete.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 11,
+   "q": "¿de qué está hecho un top?",
+   "crit": "tela|algodon|tejido",
+   "r": "Un top suele ser de tela. Lo sé porque un top es una prenda.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 12,
+   "q": "¿para qué sirve un catamarán?",
+   "crit": "navegar|viajar|transport*",
+   "r": "Un catamarán sirve para navegar. Lo sé porque un catamarán es un barco.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 13,
+   "q": "¿para qué sirve el champú?",
+   "crit": "lavar*|pelo",
+   "r": "Un champú sirve para lavarse el pelo.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 14,
+   "q": "¿dónde suele estar el champú?",
+   "crit": "baño|ducha",
+   "r": "Un champú suele estar en el baño. Lo sé porque un champú es un objeto de aseo.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 15,
+   "q": "¿para qué sirve una batidora?",
+   "crit": "batir|triturar|mezclar",
+   "r": "Una batidora sirve para batir y triturar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 16,
+   "q": "¿para qué sirve una hoz?",
+   "crit": "segar|cortar|trabajar",
+   "r": "Una hoz sirve para trabajar. Lo sé porque una hoz es una herramienta.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 17,
+   "q": "¿quién usa una hoz?",
+   "crit": "agricultor*|campesino*|segador*",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 18,
+   "q": "¿para qué sirve un bolígrafo?",
+   "crit": "escribir",
+   "r": "Un bolígrafo sirve para escribir.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 19,
+   "q": "¿con qué se bate?",
+   "crit": "batidor*",
+   "r": "Para batir sirven, por ejemplo, los batidores y las batidoras.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 20,
+   "q": "¿qué sirve para hacer café?",
+   "crit": "cafetera*",
+   "r": "Para hacer cafe sirve una cafetera.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 21,
+   "q": "¿una batidora sirve para escribir?",
+   "crit": "^no",
+   "r": "No, las batidoras sirven para batir y triturar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 22,
+   "q": "¿un bolígrafo sirve para escribir?",
+   "crit": "^si",
+   "r": "Sí, los bolígrafos sirven para escribir.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 23,
+   "q": "¿un tractor sirve para navegar?",
+   "crit": "^no|ABST",
+   "r": "No lo sé. No conozco «tractor»: ¿me lo explicas?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-rel",
+   "cat": "relaciones",
+   "i": 24,
+   "q": "¿para qué sirve un trofeo?",
+   "crit": "ABST|premi*|reconoc*|recuerdo|ganador*",
+   "r": "No lo sé. No conozco «trofeo»: ¿me lo explicas?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 1,
+   "q": "tengo una hoz y una piragua",
+   "crit": "hoz|piragua;!no lo he entendido",
+   "r": "Entendido: tienes una hoz y una piragua.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 2,
+   "q": "¿tengo algo para navegar?",
+   "crit": "^si|piragua",
+   "r": "Sí: tienes una piragua, y los barcos sirven para navegar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 3,
+   "q": "¿tengo algo para escribir?",
+   "crit": "^no|ABST",
+   "r": "No me consta: no me has hablado de nada que sirva para escribir.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 4,
+   "q": "¿tengo una herramienta?",
+   "crit": "^si",
+   "r": "Sí, tienes una hoz.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cha",
+   "cat": "relaciones_charla",
+   "i": 5,
+   "q": "¿tengo un vehículo?",
+   "crit": "^si|barco|ABST",
+   "r": "Sí, tienes una piragua.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 1,
+   "q": "mi cuñada Elena es veterinaria",
+   "crit": "veterinaria;!no lo he entendido",
+   "r": "Entendido: Elena es veterinaria.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 2,
+   "q": "¿Elena es una persona?",
+   "crit": "^si",
+   "r": "Sí, Elena es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 3,
+   "q": "¿Elena es una profesional?",
+   "crit": "^si",
+   "r": "Sí, Elena es un profesional. Lo deduzco porque Elena es veterinaria y un veterinario es un profesional.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 4,
+   "q": "¿Elena trabaja?",
+   "crit": "^si",
+   "r": "Sí, los profesionales trabajan.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 5,
+   "q": "¿Elena cura animales?",
+   "crit": "^si",
+   "r": "Sí, los veterinarios curan animales.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 6,
+   "q": "¿Elena es un edificio?",
+   "crit": "^no",
+   "r": "No, Elena es un veterinario.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 7,
+   "q": "mi sobrino es boxeador",
+   "crit": "boxeador;!no lo he entendido",
+   "r": "Entendido: tu sobrino es boxeador.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 8,
+   "q": "¿mi sobrino es un deportista?",
+   "crit": "^si",
+   "r": "No, tu sobrino es boxeador.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 9,
+   "q": "¿quién es boxeador?",
+   "crit": "sobrino",
+   "r": "Tu sobrino es boxeador.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 10,
+   "q": "mi vecina es piloto",
+   "crit": "piloto;!no lo he entendido",
+   "r": "Entendido: tu vecina es pilota.",
+   "v": "MAL"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 11,
+   "q": "¿mi vecina pilota aviones?",
+   "crit": "^si",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-per",
+   "cat": "personas",
+   "i": 12,
+   "q": "¿quién es piloto?",
+   "crit": "vecina",
+   "r": "Tu vecina es pilota.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 1,
+   "q": "tengo un erizo y una alpaca",
+   "crit": "erizo|alpaca;!no lo he entendido",
+   "r": "Entendido: tienes un erizo y una alpaca.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 2,
+   "q": "¿tengo un mamífero?",
+   "crit": "^si",
+   "r": "Sí, tienes un erizo.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 3,
+   "q": "¿tengo un ave?",
+   "crit": "^no|ABST",
+   "r": "No me consta. Solo sé que tienes un erizo y una alpaca.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 4,
+   "q": "¿mi erizo es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí, tu erizo es un ser vivo. Lo deduzco porque tu erizo es un erizo, un erizo es un mamífero, un mamífero es un animal y un animal es un ser vivo.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 5,
+   "q": "¿qué animales tengo?",
+   "crit": "erizo;alpaca",
+   "r": "Tienes un erizo y una alpaca.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 6,
+   "q": "me he comprado un poncho y un sombrero",
+   "crit": "poncho|sombrero;!no lo he entendido",
+   "r": "Entendido: te compraste un poncho y un sombrero.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 7,
+   "q": "¿me he comprado ropa?",
+   "crit": "^si",
+   "r": "Sí, te compraste un poncho.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 8,
+   "q": "¿qué prenda me he comprado?",
+   "crit": "poncho|sombrero",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 9,
+   "q": "ayer comí coliflor y una pera",
+   "crit": "coliflor|pera;!no lo he entendido",
+   "r": "Entendido: comiste coliflor y una pera ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 10,
+   "q": "¿comí verdura ayer?",
+   "crit": "^si",
+   "r": "Sí, comiste coliflor ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 11,
+   "q": "¿qué fruta comí?",
+   "crit": "pera",
+   "r": "No lo sé: no me has dicho qué comiste. De ti sé que tienes un erizo y tienes una alpaca.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-her",
+   "cat": "herencia_charla",
+   "i": 12,
+   "q": "¿comí pescado ayer?",
+   "crit": "^no|ABST",
+   "r": "No lo sé. Solo sé que comiste coliflor ayer y comiste una pera ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 1,
+   "q": "mi pinzón no canta",
+   "crit": "canta;!no lo he entendido",
+   "r": "Entendido: tu pinzón no canta.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 2,
+   "q": "¿mi pinzón canta?",
+   "crit": "^no",
+   "r": "No, tu pinzón no canta.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 3,
+   "q": "¿los pinzones cantan?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 4,
+   "q": "Olga sabe pilotar",
+   "crit": "olga;!no lo he entendido",
+   "r": "Entendido: Olga sabe pilotar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 5,
+   "q": "¿quién sabe pilotar?",
+   "crit": "olga",
+   "r": "Olga sabe pilotar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 6,
+   "q": "mi erizo tiene tres patas",
+   "crit": "tres|3;!no lo he entendido",
+   "r": "Entendido: tu erizo tiene tres patas.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-fab",
+   "cat": "fabrica_y_dicho",
+   "i": 7,
+   "q": "¿cuántas patas tiene mi erizo?",
+   "crit": "tres|3",
+   "r": "Tu erizo tiene tres patas.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 1,
+   "q": "¿una gacela es un mamífero?",
+   "crit": "^si",
+   "r": "Sí, una gacela es un mamífero.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 2,
+   "q": "¿un dromedario es un ave?",
+   "crit": "^no",
+   "r": "No, un dromedario es un mamífero, no un ave.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 3,
+   "q": "¿una catedral es un edificio?",
+   "crit": "^si",
+   "r": "Sí, una catedral es un edificio.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 4,
+   "q": "¿un rascacielos es un lugar?",
+   "crit": "^si",
+   "r": "Sí, un rascacielos es un lugar. Lo deduzco porque un rascacielos es un edificio y un edificio es un lugar.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 5,
+   "q": "¿la bechamel es un alimento?",
+   "crit": "^si",
+   "r": "Sí, una bechamel es un alimento. Lo deduzco porque una bechamel es una salsa y una salsa es un alimento.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 6,
+   "q": "¿el regaliz es un objeto?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 7,
+   "q": "¿una droguería es un animal?",
+   "crit": "^no",
+   "r": "No, una droguería es un edificio.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 8,
+   "q": "¿un chándal es ropa?",
+   "crit": "^si",
+   "r": "Sí, un chándal es una prenda.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 9,
+   "q": "¿una lechuga es una verdura?",
+   "crit": "^si",
+   "r": "Sí, una lechuga es una verdura.",
+   "v": "OK"
+  },
+  {
+   "id": "c15b-cla",
+   "cat": "clases",
+   "i": 10,
+   "q": "¿un albergue es una persona?",
+   "crit": "^no",
+   "r": "No, un albergue es un edificio.",
+   "v": "OK"
+  }
+ ]
+}

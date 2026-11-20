@@ -1,0 +1,136 @@
+{
+ "fecha": "2026-11-19",
+ "evaluador": "mismo juez (lab/banco.py) para 2.8 y 2.9; además, auditoría manual de las transcripciones con el mismo criterio para las dos versiones, hecha DESPUÉS de la medida única",
+ "charla50d": {
+  "n_puntuados": 44,
+  "interacciones": 50,
+  "escrita": "con la 2.8 congelada, antes de tocar nada; no se leyó hasta la medida final",
+  "automatico": {
+   "lcm28": 52.27,
+   "lcm29_congelada": 61.36,
+   "lcm29_tras_arreglos_no_ciega": 63.64,
+   "falsas": {
+    "lcm28": 10,
+    "lcm29_congelada": 7,
+    "lcm29_tras_arreglos_no_ciega": 7
+   }
+  },
+  "auditoria_manual": {
+   "lcm28": {
+    "acierto": 47.73,
+    "falsas": 12
+   },
+   "lcm29_congelada": {
+    "acierto": 59.09,
+    "falsas": 8
+   },
+   "lcm29_tras_arreglos_no_ciega": {
+    "acierto": 63.64,
+    "falsas": 7
+   }
+  }
+ },
+ "examen_ciego9": {
+  "n": 45,
+  "escrito": "con la 2.8 congelada, con las construcciones que fallaban (roles, fecha delante, color, aposición, coma, dativos) pero con frases nuevas",
+  "automatico": {
+   "lcm28": 51.11,
+   "lcm29_congelada": 68.89,
+   "lcm29_tras_arreglos_no_ciega": 75.56,
+   "falsas": {
+    "lcm28": 1,
+    "lcm29_congelada": 2,
+    "lcm29_tras_arreglos_no_ciega": 2
+   }
+  },
+  "auditoria_manual": {
+   "lcm28": {
+    "acierto": 42.22,
+    "falsas": 2
+   },
+   "lcm29_congelada": {
+    "acierto": 57.78,
+    "falsas": 5
+   },
+   "lcm29_tras_arreglos_no_ciega": {
+    "acierto": 73.33,
+    "falsas": 2
+   }
+  },
+  "nota": "la 2.9 congelada metió 3 falsas nuevas (el santo «se llama Dolores», «al suelo le cayó el móvil»); se corrigieron después de leerlas"
+ },
+ "controles": {
+  "examenes_autor": {
+   "lcm28": 88.05,
+   "lcm29": 88.05
+  },
+  "examen_ciego2": {
+   "lcm28": 93.69,
+   "lcm29": 93.69
+  },
+  "examen_ciego6": {
+   "lcm28": 80.6,
+   "lcm29": 80.6
+  },
+  "examen_ciego7": {
+   "lcm28": 69.77,
+   "lcm29": 76.74,
+   "nota": "ya no es ciego (leído en rondas anteriores)"
+  }
+ },
+ "curva_primer_intento": {
+  "total": {
+   "n": 72,
+   "acierto_primer_intento": 54.17,
+   "falsas": 5
+  },
+  "por_tanda": {
+   "1": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 2,
+    "nota": "corregido a mano: 'Jorge fue el mejor alumno de su clase' -> «de la clase de la comunidad» aprobó por contener 'jorge'"
+   },
+   "2": {
+    "n": 10,
+    "acierto": 30.0,
+    "falsas": 0
+   },
+   "3": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0
+   },
+   "4": {
+    "n": 8,
+    "acierto": 25.0,
+    "falsas": 1
+   },
+   "5": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 2,
+    "nota": "corregido a mano: 'los dientes salen' pierde el dativo (incompleto); 'se me ha roto el móvil' -> 'los dientes se rompieron el móvil' y su pregunta son falsas aunque el corrector las dio por buenas"
+   },
+   "6": {
+    "n": 11,
+    "acierto": 54.55,
+    "falsas": 0,
+    "nota": "corregido a mano: 'Rosario fue maestra y año' (turnos 2 y 3) es una frase rota aunque contiene 'maestra'"
+   },
+   "7": {
+    "n": 13,
+    "acierto": 61.54,
+    "falsas": 0
+   }
+  }
+ },
+ "pytest": {
+  "passed": 768,
+  "failed_entorno": [
+   "test_parche106 (red)",
+   "test_reproducibilidad (empaquetado)",
+   "test_vision_chat (html ausente)"
+  ]
+ }
+}

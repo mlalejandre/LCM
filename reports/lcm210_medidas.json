@@ -1,0 +1,133 @@
+{
+ "fecha": "2026-11-19",
+ "evaluador": "mismo juez (lab/banco.py) para 2.9 y 2.10 + auditoría manual con el mismo criterio, hecha DESPUÉS de la medida única",
+ "charla50e": {
+  "n": 50,
+  "escrita": "con la 2.9 congelada; no se leyó hasta la medida final",
+  "automatico": {
+   "lcm29": [
+    70.0,
+    1
+   ],
+   "lcm210_congelada": [
+    82.0,
+    0
+   ],
+   "lcm210_tras_arreglo_no_ciega": [
+    84.0,
+    0
+   ]
+  },
+  "auditado": {
+   "lcm29": {
+    "acierto": 68.0,
+    "falsas": 1
+   },
+   "lcm210_congelada": {
+    "acierto": 82.0,
+    "falsas": 0
+   },
+   "lcm210_tras_arreglo_no_ciega": {
+    "acierto": 84.0,
+    "falsas": 0
+   }
+  }
+ },
+ "examen_ciego10": {
+  "n": 46,
+  "automatico": {
+   "lcm29": [
+    82.61,
+    1
+   ],
+   "lcm210_congelada": [
+    95.65,
+    2
+   ]
+  },
+  "auditado": {
+   "lcm29": {
+    "acierto": 80.43,
+    "falsas": 0
+   },
+   "lcm210_congelada": {
+    "acierto": 97.83,
+    "falsas": 0
+   }
+  },
+  "criterio_corregido": "'¿qué hay detrás del coche?' tenía ABST, pero con «el coche está aparcado delante de la farmacia» la respuesta correcta es la farmacia (la inversa; el turno siguiente del examen la da por buena). Se corrige el criterio a 'farmacia' para las DOS versiones."
+ },
+ "controles": {
+  "examenes_autor": {
+   "lcm29": 88.05,
+   "lcm210": 88.05
+  },
+  "examen_ciego2": {
+   "lcm29": 93.69,
+   "lcm210": 94.35
+  },
+  "examen_ciego6": {
+   "lcm29": 80.6,
+   "lcm210": 80.6
+  },
+  "examen_ciego7": {
+   "lcm29": 76.74,
+   "lcm210": 76.74
+  }
+ },
+ "curva_primer_intento": {
+  "total": {
+   "n": 97,
+   "acierto": 80.41,
+   "mal_o_alucina": 6
+  },
+  "por_tanda": {
+   "1": {
+    "n": 11,
+    "acierto": 72.73,
+    "falsas": 0
+   },
+   "2": {
+    "n": 14,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "3": {
+    "n": 15,
+    "acierto": 66.67,
+    "falsas": 1,
+    "nota": "restaurado a mano con la salida del primer intento (se perdió al limpiar). El MAL fue «queda fuera de lo que sé hacer» (capa antigua): respuesta errónea, no un dato falso"
+   },
+   "4": {
+    "n": 11,
+    "acierto": 72.73,
+    "falsas": 2
+   },
+   "5": {
+    "n": 15,
+    "acierto": 80.0,
+    "falsas": 0,
+    "nota": "corregido a mano: 'jugamos… ayer' -> «juegas … ayer» (tiempo y persona mal, 2 turnos) y «Una silla ser de un roble» (frase rota) aprobaron por contener la palabra"
+   },
+   "6": {
+    "n": 16,
+    "acierto": 75.0,
+    "falsas": 2
+   },
+   "7": {
+    "n": 15,
+    "acierto": 93.33,
+    "falsas": 1,
+    "nota": "el MAL fue «La raqueta está dentro del armario» (número cambiado por un marco derivado): error de forma, no un dato falso"
+   }
+  }
+ },
+ "pytest": {
+  "passed": 773,
+  "failed_entorno": [
+   "test_parche106 (red)",
+   "test_reproducibilidad (empaquetado)",
+   "test_vision_chat (html ausente)"
+  ]
+ }
+}

@@ -1,0 +1,623 @@
+{
+ "resumen": {
+  "n": 67,
+  "ok": 36,
+  "acierto": 53.73,
+  "falsas": 17,
+  "tasa_falsas": 25.37,
+  "abst_indebida": 14,
+  "error": 0,
+  "por_cat": {
+   "aprender": {
+    "n": 67,
+    "acierto": 53.7,
+    "falsas": 17
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 0,
+   "q": "Te voy a leer un texto sobre las setas.\nLos hongos no son plantas ni animales: forman un reino propio.\nA diferencia de las plantas, los hongos no tienen clorofila y no pueden fabricar su propio alimento.\nSe alimentan de restos de otros seres vivos, como hojas muertas y madera podrida.\nLa parte más importante de un hongo es el micelio, una red de hilos muy finos que crece bajo la tierra.\nLa seta es solo el fruto del hongo, igual que una manzana es el fruto del manzano.\nUna seta tiene tres partes: el sombrero, el pie y las láminas.\nLas láminas están debajo del sombrero.\nEn las láminas se forman las esporas.\nLas esporas son como semillas diminutas y el viento las lleva muy lejos.\nCuando una espora cae en un sitio húmedo, nace un nuevo micelio.\nLas setas salen sobre todo en otoño, después de las lluvias.\nNecesitan humedad y sombra, por eso abundan en los bosques.\nAlgunas setas son comestibles y otras son venenosas.\nEl boletus es una seta comestible muy apreciada en la cocina.\nTiene el sombrero marrón y el pie grueso.\nLa amanita faloides es la seta más venenosa que existe.\nSu veneno destruye el hígado y puede causar la muerte.\nEs de color verde pálido y a veces se confunde con setas comestibles.\nPor eso nunca hay que comer una seta si no se conoce bien.\nLa trufa es un hongo que crece bajo tierra, junto a las raíces de las encinas.\nEs negra, tiene forma de bola y huele muy fuerte.\nPara encontrarla se usan perros entrenados.\nLa trufa es uno de los alimentos más caros del mundo.\nLa levadura también es un hongo, aunque es tan pequeña que no se ve a simple vista.\nSirve para hacer pan y cerveza.\nEl moho que aparece en el pan viejo es otro hongo.\nGracias al moho se descubrió la penicilina, un medicamento que cura infecciones.\nLas personas que estudian los hongos se llaman micólogos.\nLas que salen al monte a recoger setas se llaman seteros.\nUn buen setero lleva una cesta de mimbre para que las esporas caigan al suelo mientras camina.\nNunca usa bolsas de plástico, porque las setas se estropean.\nLos hongos son muy importantes para el bosque, porque descomponen la materia muerta y devuelven los nutrientes a la tierra.",
+   "crit": "",
+   "r": "He leído el texto (32 frases). He entendido bien 14; las otras 18 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 1,
+   "q": "hola, soy Marcos",
+   "crit": "",
+   "r": "Encantado, Marcos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 2,
+   "q": "hoy quiero aprender cosas sobre las setas",
+   "crit": "",
+   "r": "Entendido: quieres aprender cosas sobre las setas hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 3,
+   "q": "¿qué es el micelio?",
+   "crit": "red|hilos",
+   "r": "En el texto pone: «La parte más importante de un hongo es el micelio, una red de hilos muy finos que crece bajo la tierra».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 4,
+   "q": "¿qué partes tiene una seta?",
+   "crit": "sombrero;pie;laminas",
+   "r": "Sombrero, pie y laminas: me lo enseñaste tú.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 5,
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "Las láminas se forman las esporas en las láminas.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 6,
+   "q": "¿los hongos son plantas?",
+   "crit": "^no",
+   "r": "No, un hongo es un hongo, no una planta.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 7,
+   "q": "¿pueden los hongos fabricar su propia comida?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De los hongos sé que no tienen clorofila y no pueden fabricar su propio alimento.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 8,
+   "q": "¿de qué se alimentan los hongos?",
+   "crit": "restos|hojas|madera",
+   "r": "Los hongos se alimentan de restos y otros seres vivos como hojas muertas y madera podrida.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 9,
+   "q": "¿cuándo salen las setas?",
+   "crit": "otono",
+   "r": "Las setas salen después de las lluvias en otoño (del 23 de septiembre de 2026 al 20 de diciembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 10,
+   "q": "¿qué necesitan las setas para salir?",
+   "crit": "humedad|sombra|lluvia*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 11,
+   "q": "¿por qué abundan las setas en los bosques?",
+   "crit": "humedad|sombra",
+   "r": "Porque las setas se estropean. Lo dice el texto: «Nunca usa bolsas de plástico, porque las setas se estropean».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 12,
+   "q": "¿qué pasa cuando una espora cae en un sitio húmedo?",
+   "crit": "micelio",
+   "r": "En el texto pone: «Cuando una espora cae en un sitio húmedo, nace un nuevo micelio».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 13,
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 14,
+   "q": "¿de qué color es la seta más venenosa?",
+   "crit": "verde",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 15,
+   "q": "¿qué le pasa a quien se come una amanita faloides?",
+   "crit": "higado|muerte|morir|muere",
+   "r": "En el texto pone: «La amanita faloides es la seta más venenosa que existe».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 16,
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 17,
+   "q": "¿el boletus es comestible?",
+   "crit": "^si",
+   "r": "Sí, el boletus es muy apreciado y una seta comestible en la cocina.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 18,
+   "q": "¿qué seta tiene el sombrero marrón?",
+   "crit": "boletus",
+   "r": "En el texto pone: «Una seta tiene tres partes: el sombrero, el pie y las láminas».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 19,
+   "q": "¿el boletus es una seta?",
+   "crit": "^si",
+   "r": "Sí, el boletus es muy apreciado y una seta comestible en la cocina.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 20,
+   "q": "¿el boletus tiene pie?",
+   "crit": "^si",
+   "r": "Sí, el boletus tiene el pie grueso.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 21,
+   "q": "¿la trufa es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí, una trufa es un ser vivo. Lo deduzco porque la trufa es un hongo y un hongo es un ser vivo.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 22,
+   "q": "¿la trufa es un alimento?",
+   "crit": "^si",
+   "r": "No, una trufa es un hongo.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 23,
+   "q": "¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "La trufa es un hongo.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 24,
+   "q": "¿de qué color es la trufa?",
+   "crit": "negra",
+   "r": "La trufa es negra.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 25,
+   "q": "¿qué hongo crece junto a las encinas?",
+   "crit": "trufa",
+   "r": "En el texto pone: «La trufa es un hongo que crece bajo tierra, junto a las raíces de las encinas».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 26,
+   "q": "¿cómo se encuentra una trufa?",
+   "crit": "perro*",
+   "r": "En el texto pone: «La trufa es un hongo que crece bajo tierra, junto a las raíces de las encinas».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 27,
+   "q": "¿qué hongo encuentran los perros?",
+   "crit": "trufa",
+   "r": "En el texto pone: «Para encontrarla se usan perros entrenados».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 28,
+   "q": "¿es cara la trufa?",
+   "crit": "^si|cara*|caro*",
+   "r": "No lo sé. Solo sé que la trufa es un hongo y la trufa es negra.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 29,
+   "q": "¿dónde crece el alimento más caro del mundo?",
+   "crit": "encina*|bajo tierra",
+   "r": "En el texto pone: «La trufa es uno de los alimentos más caros del mundo».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 30,
+   "q": "¿la levadura es un hongo?",
+   "crit": "^si",
+   "r": "Sí, una levadura es un hongo.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 31,
+   "q": "¿qué hongo sirve para hacer pan?",
+   "crit": "levadura",
+   "r": "En el texto pone: «Sirve para hacer pan y cerveza».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 32,
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "En el texto pone: «La levadura también es un hongo, aunque es tan pequeña que no se ve a simple vista».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 33,
+   "q": "¿el moho es un animal?",
+   "crit": "^no",
+   "r": "No, un moho es un hongo, no un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 34,
+   "q": "¿qué se descubrió gracias al moho?",
+   "crit": "penicilina",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 35,
+   "q": "¿qué es la penicilina?",
+   "crit": "medicamento",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 36,
+   "q": "¿cómo se llaman las personas que recogen setas?",
+   "crit": "setero*",
+   "r": "En el texto pone: «Las que salen al monte a recoger setas se llaman seteros».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 37,
+   "q": "¿qué es un micólogo?",
+   "crit": "persona*|estudia*",
+   "r": "En el texto pone: «Las personas que estudian los hongos se llaman micólogos».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 38,
+   "q": "¿por qué no hay que llevar bolsas de plástico?",
+   "crit": "estropea*",
+   "r": "Porque las setas se estropean. Lo dice el texto: «Nunca usa bolsas de plástico, porque las setas se estropean».",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 39,
+   "q": "¿por qué son importantes los hongos para el bosque?",
+   "crit": "descompon*|nutrientes",
+   "r": "Porque descomponen la materia muerta.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 40,
+   "q": "¿una amanita tiene esporas?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 41,
+   "q": "¿cuántas especies de hongos hay?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Los hongos no son plantas ni animales: forman un reino propio».",
+   "v": "ALUCINA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 42,
+   "q": "¿cuánto cuesta un kilo de trufa?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 43,
+   "q": "¿quién descubrió la penicilina?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Gracias al moho se descubrió la penicilina, un medicamento que cura infecciones».",
+   "v": "ALUCINA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 44,
+   "q": "¿de qué color es el pie de la amanita?",
+   "crit": "ABST",
+   "r": "No sé nada de el pie de la amanita: no me has hablado de él.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 45,
+   "q": "ayer encontré un boletus en el monte",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: encontraste un boletus en el monte ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 46,
+   "q": "¿me lo puedo comer?",
+   "crit": "^si|comestible",
+   "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 47,
+   "q": "mi vecino ha cogido una amanita faloides",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecino cogió una amanita faloides.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 48,
+   "q": "¿es peligrosa la seta de mi vecino?",
+   "crit": "^si|venenos*|peligros*",
+   "r": "No sé nada de la seta de tu vecino: no me has hablado de ella.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 49,
+   "q": "quiero salir a buscar setas, ¿qué me llevo?",
+   "crit": "cesta",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 50,
+   "q": "¿en qué época del año salgo a buscarlas?",
+   "crit": "otono",
+   "r": "No lo sé. De ti sé que te llamas Marcos y quieres aprender cosas sobre las setas hoy.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 51,
+   "q": "dime una seta comestible",
+   "crit": "boletus",
+   "r": "Entendido: tu vecino dime una seta comestible.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 52,
+   "q": "dime una seta venenosa",
+   "crit": "amanita",
+   "r": "Sí, eso ya me lo habías dicho.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 53,
+   "q": "dime tres hongos",
+   "crit": "trufa|levadura|moho|boletus|amanita",
+   "r": "Seta, champiñón y moho.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 54,
+   "q": "descríbeme una trufa",
+   "crit": "negra|bola|huele|olor|tierra|encina*",
+   "r": "No sé lo bastante de «trufa» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 55,
+   "q": "invéntate una adivinanza sobre la trufa",
+   "crit": "negra|bola|huel*|tierra|encina*",
+   "r": "Adivina, adivinanza: tengo lavabo, váter y ducha y sirvo para asearse. ¿Qué soy?",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 56,
+   "q": "la amanita faloides se puede comer",
+   "crit": "venenos*|no se puede|contradic*|pero|segun|texto",
+   "r": "Entendido: la amanita de tu vecino se puede comer.",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 57,
+   "q": "¿se puede comer la amanita faloides?",
+   "crit": "^no|texto|segun|pero",
+   "r": "No lo sé. Solo sé que la amanita de tu vecino se puede comer.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 58,
+   "q": "cambiando de tema, mi hermana se llama Lucía",
+   "crit": "",
+   "r": "Entendido: tu hermana se llama Lucía.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 59,
+   "q": "¿cuánto es 7 por 6?",
+   "crit": "42",
+   "r": "7 × 6 = 42.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 60,
+   "q": "mañana tengo una reunión",
+   "crit": "",
+   "r": "Entendido: tienes una reunión mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 61,
+   "q": "Lucía vive en Burgos",
+   "crit": "",
+   "r": "Entendido: Lucía vive en Burgos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 62,
+   "q": "¿dónde vive Lucía?",
+   "crit": "burgos",
+   "r": "Lucía vive en Burgos.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 63,
+   "q": "volviendo a las setas, ¿qué es una trufa?",
+   "crit": "hongo",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 64,
+   "q": "¿dónde se forman las esporas?",
+   "crit": "laminas",
+   "r": "Las láminas se forman las esporas en las láminas.",
+   "v": "OK"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 65,
+   "q": "¿qué seta es la más venenosa?",
+   "crit": "amanita",
+   "r": "En el texto pone: «Algunas setas son comestibles y otras son venenosas».",
+   "v": "MAL"
+  },
+  {
+   "id": "aprender-texto",
+   "cat": "aprender",
+   "i": 66,
+   "q": "¿para qué sirve la levadura?",
+   "crit": "pan|cerveza",
+   "r": "En el texto pone: «La levadura también es un hongo, aunque es tan pequeña que no se ve a simple vista».",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

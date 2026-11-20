@@ -1,0 +1,17 @@
+D = [{"id": "r04", "cat": "mezcla", "turnos": [
+ ("buenas", "hola|buenas"),
+ ("pongo los platos en la mesa, los vasos en el armario y las tazas en el cajón", "platos|vasos|tazas;!no lo he entendido"),
+ ("¿dónde pongo los vasos?", "armario"),
+ ("¿dónde pongo las tazas?", "cajon"),
+ ("tengo dos perros: Kira y Thor", "kira|thor;!no lo he entendido"),
+ ("¿cómo se llaman mis perros?", "kira;thor"),
+ ("mi madre, mi tía y yo somos de Zamora", "zamora;!no lo he entendido"),
+ ("¿de dónde es mi tía?", "zamora"),
+ ("¿de dónde soy?", "zamora"),
+ ("mi novio es alto y moreno y yo también", "alto|moreno;!no lo he entendido"),
+ ("¿soy morena?", "^si"),
+ ("ni mi novio ni yo fumamos", "fum*;!no lo he entendido"),
+ ("¿mi novio fuma?", "^no"),
+ ("he estudiado en Salamanca, en Oviedo y en Valencia", "salamanca|oviedo|valencia;!no lo he entendido"),
+ ("¿he estudiado en Oviedo?", "^si"),
+]}]

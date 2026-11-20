@@ -1,0 +1,17 @@
+D = [{"id": "q05", "cat": "mezcla_conectores", "turnos": [
+ ("buenas", "hola|buenas"),
+ ("mi vecino Óscar es fontanero o electricista", "fontanero|electricista;!no lo he entendido"),
+ ("¿a qué se dedica Óscar?", "fontanero;electricista"),
+ ("¿Óscar es fontanero?", "electricista"),
+ ("Óscar no es electricista", "electricista|fontanero;!no lo he entendido"),
+ ("¿a qué se dedica Óscar?", "fontanero;!no lo s*"),
+ ("mi sobrina Irene es más baja que mi sobrino Dani", "irene|dani;!no lo he entendido"),
+ ("¿quién es más alto, Irene o Dani?", "dani"),
+ ("si el sábado hace bueno, iremos al campo", "campo;!no lo he entendido"),
+ ("el sábado hace bueno", "ANY"),
+ ("¿adónde iremos el sábado?", "campo"),
+ ("no me gusta ni el brócoli ni la coliflor", "brocoli|coliflor;!no lo he entendido"),
+ ("¿me gusta la coliflor?", "^no"),
+ ("tengo dos hermanas, Rosa y Elena", "rosa;elena;!no lo he entendido"),
+ ("¿cómo se llaman mis hermanas?", "rosa;elena"),
+]}]

@@ -1,0 +1,420 @@
+{
+  "schema": "lcm18-auditoria-1",
+  "casos": [
+    {
+      "id": "V001",
+      "grupo": "directa",
+      "turnos": [
+        "Felisa entregó un frasco a Nicolás.",
+        "¿Quién tiene el frasco?"
+      ],
+      "expected": "Nicolás",
+      "kind": "answer"
+    },
+    {
+      "id": "V002",
+      "grupo": "directa",
+      "turnos": [
+        "Aurelio dio la manta a Jimena.",
+        "¿Quién recibió la manta?"
+      ],
+      "expected": "Jimena",
+      "kind": "answer"
+    },
+    {
+      "id": "V003",
+      "grupo": "directa",
+      "turnos": [
+        "Marcos le prestó el paraguas a Amalia.",
+        "¿Quién lo tiene ahora?"
+      ],
+      "expected": "Amalia",
+      "kind": "answer"
+    },
+    {
+      "id": "V004",
+      "grupo": "directa",
+      "turnos": [
+        "Roberto entregó la bolsa a Yasmina.",
+        "¿A quién entregó Roberto la bolsa?"
+      ],
+      "expected": "Yasmina",
+      "kind": "answer"
+    },
+    {
+      "id": "V005",
+      "grupo": "directa",
+      "turnos": [
+        "Noemí dio la radio a Ernesto.",
+        "¿Qué dio Noemí?"
+      ],
+      "expected": "radio",
+      "kind": "answer"
+    },
+    {
+      "id": "V006",
+      "grupo": "directa",
+      "turnos": [
+        "Álvaro prestó el estuche a Maite.",
+        "¿Quién tiene el estuche?"
+      ],
+      "expected": "Maite",
+      "kind": "answer"
+    },
+    {
+      "id": "V007",
+      "grupo": "directa",
+      "turnos": [
+        "Maribel entregó una carta a Jon.",
+        "¿Quién recibió la carta?"
+      ],
+      "expected": "Jon",
+      "kind": "answer"
+    },
+    {
+      "id": "V008",
+      "grupo": "directa",
+      "turnos": [
+        "Pepa dio la linterna a Óscar.",
+        "¿Quién tiene la linterna?"
+      ],
+      "expected": "Óscar",
+      "kind": "answer"
+    },
+    {
+      "id": "V009",
+      "grupo": "directa",
+      "turnos": [
+        "Emma entregó una camisa a Mateo.",
+        "¿Quién recibió la camisa?"
+      ],
+      "expected": "Mateo",
+      "kind": "answer"
+    },
+    {
+      "id": "V010",
+      "grupo": "directa",
+      "turnos": [
+        "Julián prestó el sombrero a Coral.",
+        "¿Qué prestó Julián?"
+      ],
+      "expected": "sombrero",
+      "kind": "answer"
+    },
+    {
+      "id": "V011",
+      "grupo": "secuencia",
+      "turnos": [
+        "Olivia prestó la mochila a Jorge.",
+        "Jorge se la devolvió a Olivia.",
+        "¿Quién tiene la mochila?"
+      ],
+      "expected": "Olivia",
+      "kind": "answer"
+    },
+    {
+      "id": "V012",
+      "grupo": "secuencia",
+      "turnos": [
+        "Silvia entregó el globo a Manu.",
+        "Manu lo devolvió a Silvia.",
+        "¿Quién lo tenía antes?"
+      ],
+      "expected": "Manu",
+      "kind": "answer"
+    },
+    {
+      "id": "V013",
+      "grupo": "secuencia",
+      "turnos": [
+        "Samuel dio el collar a Inma.",
+        "Luego Inma entregó el collar a Rosa.",
+        "¿Quién tiene el collar ahora?"
+      ],
+      "expected": "Rosa",
+      "kind": "answer"
+    },
+    {
+      "id": "V014",
+      "grupo": "secuencia",
+      "turnos": [
+        "Sofía entregó una pulsera a Óscar.",
+        "Óscar la devolvió a Sofía.",
+        "¿Quién tiene la pulsera ahora?"
+      ],
+      "expected": "Sofía",
+      "kind": "answer"
+    },
+    {
+      "id": "V015",
+      "grupo": "secuencia",
+      "turnos": [
+        "Teresa prestó el teclado a Lucas.",
+        "Después Lucas le entregó el teclado a Marta.",
+        "¿Quién tiene el teclado?"
+      ],
+      "expected": "Marta",
+      "kind": "answer"
+    },
+    {
+      "id": "V016",
+      "grupo": "secuencia",
+      "turnos": [
+        "Bruno dio un libro a Celia.",
+        "Celia dio una postal a Isabel.",
+        "¿Quién tiene el libro?"
+      ],
+      "expected": "Celia",
+      "kind": "answer"
+    },
+    {
+      "id": "V017",
+      "grupo": "secuencia",
+      "turnos": [
+        "Bruno dio un libro a Celia.",
+        "Celia dio una postal a Isabel.",
+        "¿Quién tiene la postal?"
+      ],
+      "expected": "Isabel",
+      "kind": "answer"
+    },
+    {
+      "id": "V018",
+      "grupo": "secuencia",
+      "turnos": [
+        "Berta prestó el reloj a Hugo.",
+        "Hugo se lo devolvió a Berta.",
+        "¿Quién lo tenía antes?"
+      ],
+      "expected": "Hugo",
+      "kind": "answer"
+    },
+    {
+      "id": "V019",
+      "grupo": "secuencia",
+      "turnos": [
+        "Leo entregó el mapa a Marta.",
+        "Después Marta le dio el mapa a Daniel.",
+        "¿Quién recibió el mapa al final?"
+      ],
+      "expected": "Daniel",
+      "kind": "answer"
+    },
+    {
+      "id": "V020",
+      "grupo": "secuencia",
+      "turnos": [
+        "Rita prestó el cuadro a Jorge.",
+        "Jorge se lo devolvió a Rita.",
+        "¿Quién tiene el cuadro?"
+      ],
+      "expected": "Rita",
+      "kind": "answer"
+    },
+    {
+      "id": "V021",
+      "grupo": "seguridad",
+      "turnos": [
+        "Ana no dio la postal a Isabel.",
+        "¿Quién tiene la postal?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V022",
+      "grupo": "seguridad",
+      "turnos": [
+        "Según Pablo, Iván entregó la cámara a María.",
+        "¿Quién tiene la cámara?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V023",
+      "grupo": "seguridad",
+      "turnos": [
+        "Si Sonia entregara la llave a José, serían felices.",
+        "¿Quién tiene la llave?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V024",
+      "grupo": "seguridad",
+      "turnos": [
+        "Por favor, devuelve el abrigo a Teresa.",
+        "¿Quién tiene el abrigo?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V025",
+      "grupo": "seguridad",
+      "turnos": [
+        "Inés entregó la caja a Ramón.",
+        "¿Quién es dueño de la caja?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V026",
+      "grupo": "seguridad",
+      "turnos": [
+        "Lola dio la cartera a Begoña.",
+        "¿Quién es propietaria de la cartera?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V027",
+      "grupo": "seguridad",
+      "turnos": [
+        "Raúl prestó la taza a Emma.",
+        "Mario prestó la taza a Ana.",
+        "¿Quién tiene la taza?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V028",
+      "grupo": "seguridad",
+      "turnos": [
+        "Clara entregó el sobre a Sergio.",
+        "Lo devolvieron a Clara.",
+        "¿Quién tiene el sobre?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V029",
+      "grupo": "seguridad",
+      "turnos": [
+        "Marta entregó un bolso a Hugo.",
+        "Marta no entregó otro bolso a Pepe.",
+        "¿Quién tiene el bolso?"
+      ],
+      "expected": "Hugo",
+      "kind": "answer"
+    },
+    {
+      "id": "V030",
+      "grupo": "seguridad",
+      "turnos": [
+        "Ana dio la llave a Bruno.",
+        "Quizá Bruno se la devolvió.",
+        "¿Quién tiene la llave?"
+      ],
+      "expected": "Bruno",
+      "kind": "answer"
+    },
+    {
+      "id": "V031",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Gustavo le ha entregado una taza a Laura.",
+        "¿Quién tiene la taza?"
+      ],
+      "expected": "Laura",
+      "kind": "answer"
+    },
+    {
+      "id": "V032",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "La mochila fue prestada a Elena por Álvaro.",
+        "¿Quién recibió la mochila?"
+      ],
+      "expected": "Elena",
+      "kind": "answer"
+    },
+    {
+      "id": "V033",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Félix le prestó a Ricardo su instrumento.",
+        "¿Quién tiene el instrumento?"
+      ],
+      "expected": "Ricardo",
+      "kind": "answer"
+    },
+    {
+      "id": "V034",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "La semana pasada Luis entregó la bici a Nora.",
+        "¿Quién tiene la bici ahora?"
+      ],
+      "expected": "Nora",
+      "kind": "answer"
+    },
+    {
+      "id": "V035",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "El paquete lo recibió Sara de manos de Ana.",
+        "¿Quién tiene el paquete?"
+      ],
+      "expected": "Sara",
+      "kind": "answer"
+    },
+    {
+      "id": "V036",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Nicolás le hizo llegar el sobre a María.",
+        "¿Quién recibió el sobre?"
+      ],
+      "expected": "María",
+      "kind": "answer"
+    },
+    {
+      "id": "V037",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Esther trasladó un sillón a casa de Rafa.",
+        "¿Quién tiene el sillón?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V038",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Carmen prestó la libreta a Susana.",
+        "Susana se la devolvió a Carmen.",
+        "¿Quién se quedó con la libreta?"
+      ],
+      "expected": "Carmen",
+      "kind": "answer"
+    },
+    {
+      "id": "V039",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Pedro afirmó que Marta le había prestado un libro.",
+        "¿Quién tiene el libro?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    },
+    {
+      "id": "V040",
+      "grupo": "espanol_abierto",
+      "turnos": [
+        "Bea dejó el paraguas en la puerta.",
+        "¿Quién tiene el paraguas?"
+      ],
+      "expected": "unknown",
+      "kind": "answer"
+    }
+  ]
+}

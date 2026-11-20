@@ -1,0 +1,16 @@
+D = [{"id": "q02", "cat": "disyuntivas", "turnos": [
+ ("hola", "hola"),
+ ("mi prima Lola vive en Teruel o en Huesca", "teruel|huesca;!no lo he entendido"),
+ ("¿dónde vive Lola?", "teruel;huesca"),
+ ("¿Lola vive en Huesca?", "teruel;!si, lola"),
+ ("Lola no vive en Huesca", "huesca|teruel;!no lo he entendido"),
+ ("¿dónde vive Lola?", "teruel;!o en huesca;!no lo s*"),
+ ("el examen es el jueves o el viernes", "jueves|viernes;!no lo he entendido"),
+ ("¿cuándo es el examen?", "jueves;viernes"),
+ ("¿el examen es el lunes?", "^no"),
+ ("para cenar haré pizza o pasta", "pizza|pasta;!pizza y pasta;!no lo he entendido"),
+ ("¿qué haré para cenar?", "pizza;pasta;!y haras;!pizza y pasta"),
+ ("o mi padre o mi madre me llevará al aeropuerto", "aeropuerto;!no lo he entendido"),
+ ("¿quién me llevará al aeropuerto?", "padre;madre"),
+ ("¿mi padre me llevará al aeropuerto?", "madre"),
+]}]

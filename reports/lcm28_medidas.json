@@ -1,0 +1,238 @@
+{
+ "fecha": "2026-11-19",
+ "evaluador": "estricto 2.8: además, «No lo tengo del todo claro…» ya no aprueba un «no»; 2.7 y 2.8 medidas con el mismo juez",
+ "charla50c": {
+  "n_puntuados": 44,
+  "interacciones": 50,
+  "escrita": "con la 2.7 congelada, sin buscar fallos conocidos; transcripciones leídas solo después de la medida final",
+  "automatico": {
+   "lcm27": 65.91,
+   "lcm28_congelada": 70.45,
+   "lcm28_tras_corregir": 70.45,
+   "falsas": {
+    "lcm27": 3,
+    "lcm28_congelada": 2,
+    "lcm28_tras_corregir": 2
+   }
+  },
+  "auditoria_manual": {
+   "lcm27": {
+    "acierto": 63.64,
+    "turnos_con_algo_falso": 3
+   },
+   "lcm28_congelada": {
+    "acierto": 63.64,
+    "turnos_con_algo_falso": 4,
+    "turnos_con_error_de_forma": 5,
+    "nota": "«estudias a Derecho» (5 turnos) y «la enferma es morada»: dos regresiones de la 2.8"
+   },
+   "lcm28_tras_corregir": {
+    "acierto": 68.18,
+    "turnos_con_algo_falso": 2,
+    "nota": "medida NO ciega: las dos regresiones se corrigieron después de leer las respuestas"
+   }
+  }
+ },
+ "examen_ciego8": {
+  "n": 56,
+  "lcm27": 76.79,
+  "lcm28": 76.79,
+  "falsas": {
+   "lcm27": 0,
+   "lcm28": 0
+  },
+  "nota": "respuestas idénticas turno a turno"
+ },
+ "curva_primer_intento": {
+  "T01-09": {
+   "n": 86,
+   "acierto_primer_intento": 65.12,
+   "falsas": 10
+  },
+  "T10-18": {
+   "n": 81,
+   "acierto_primer_intento": 70.37,
+   "falsas": 5
+  },
+  "T19-26": {
+   "n": 74,
+   "acierto_primer_intento": 74.33,
+   "falsas": 1
+  },
+  "por_tanda": {
+   "1": {
+    "n": 8,
+    "acierto": 37.5,
+    "falsas": 4
+   },
+   "2": {
+    "n": 10,
+    "acierto": 50.0,
+    "falsas": 0
+   },
+   "3": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 0
+   },
+   "4": {
+    "n": 10,
+    "acierto": 80.0,
+    "falsas": 1,
+    "nota": "corregido a mano: 'me opera el doctor Ruiz, que es muy bueno' aprobó por contener 'Ruiz' pero acabó en «¿A quién te refieres?»"
+   },
+   "5": {
+    "n": 10,
+    "acierto": 50.0,
+    "falsas": 2
+   },
+   "6": {
+    "n": 9,
+    "acierto": 66.67,
+    "falsas": 1
+   },
+   "7": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "8": {
+    "n": 10,
+    "acierto": 40.0,
+    "falsas": 2
+   },
+   "9": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "10": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 1
+   },
+   "11": {
+    "n": 8,
+    "acierto": 37.5,
+    "falsas": 0,
+    "nota": "corregido a mano: '¿me ha gustado a mí?' aprobó '^no' con «No lo tengo del todo claro…»; el juez ya no lo acepta"
+   },
+   "12": {
+    "n": 10,
+    "acierto": 40.0,
+    "falsas": 1,
+    "nota": "corregido a mano: 'se llaman Paula y Marta' -> «Paula llamar; Marta llamar» (capas antiguas) y 'las voy a llevar al zoo' -> «vas a tus sobrinas a llevar al zoo» aprobaron por contener las palabras"
+   },
+   "13": {
+    "n": 9,
+    "acierto": 88.89,
+    "falsas": 1,
+    "nota": "«hizo mucho frío» (sin puntuar) dio «Sergio hizo frío mucho»; «visitamos» se guardó en presente (aprobó por contener la palabra)"
+   },
+   "14": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "15": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 0
+   },
+   "16": {
+    "n": 9,
+    "acierto": 66.67,
+    "falsas": 1
+   },
+   "17": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 0
+   },
+   "18": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 1
+   },
+   "19": {
+    "n": 10,
+    "acierto": 100.0,
+    "falsas": 0,
+    "nota": "«¿de qué color son los globos?» lo contestaron las capas antiguas («Tus globos es azul»): aprobado pero con error de concordancia"
+   },
+   "20": {
+    "n": 9,
+    "acierto": 88.89,
+    "falsas": 0
+   },
+   "21": {
+    "n": 9,
+    "acierto": 66.67,
+    "falsas": 0
+   },
+   "22": {
+    "n": 9,
+    "acierto": 55.56,
+    "falsas": 1
+   },
+   "23": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 0
+   },
+   "24": {
+    "n": 9,
+    "acierto": 66.67,
+    "falsas": 0
+   },
+   "25": {
+    "n": 9,
+    "acierto": 77.78,
+    "falsas": 0
+   },
+   "26": {
+    "n": 10,
+    "acierto": 60.0,
+    "falsas": 0
+   }
+  }
+ },
+ "tandas_iter28": {
+  "tandas": 26,
+  "interacciones": 260,
+  "final": "25 de 26 al 100 %; T23 al 88,9 % («¿qué le está saliendo a Mateo?»: dativo sin resolver)"
+ },
+ "control": {
+  "examen_ciego_2": {
+   "n": 301,
+   "lcm27": 93.69,
+   "lcm28": 93.69
+  },
+  "examen_ciego_6": {
+   "n": 67,
+   "lcm27": 79.1,
+   "lcm28": 80.6
+  },
+  "examen_ciego_7": {
+   "n": 43,
+   "lcm27": 69.77,
+   "lcm28": 69.77
+  },
+  "examenes_del_autor": {
+   "n": 703,
+   "lcm27": 88.05,
+   "lcm28": 88.05
+  },
+  "banco_generado_validacion": {
+   "n": 12331,
+   "lcm27": 98.49,
+   "lcm28": 98.49,
+   "falsas_pct": 0.27
+  },
+  "charla50b_ya_gastada": {
+   "lcm27": 95.0,
+   "lcm28": 97.5
+  }
+ },
+ "pytest": "761 passed, 1 skipped, 3 fallos solo de este entorno"
+}

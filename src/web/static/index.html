@@ -213,6 +213,25 @@ dialog pre{white-space:pre-wrap;background:var(--panel2);border-radius:10px;padd
   .app{height:100dvh}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* LCM_VISION_01_INLINE_CSS — integración en el compositor existente */
+#vision-adjuntar{flex:none;align-self:flex-end;width:40px;height:40px;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--panel);border-radius:11px;color:var(--ink2)}
+#vision-adjuntar:hover{color:var(--azul);border-color:var(--azul)}
+#vision-adjuntar svg{width:19px;height:19px}
+#vision-previa[hidden]{display:none}
+#vision-previa{display:flex;align-items:center;gap:10px;margin-top:8px;padding:7px 10px;
+  border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:13px}
+#vision-previa img{width:48px;height:48px;object-fit:cover;border-radius:7px;border:1px solid var(--line)}
+#vision-previa span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#vision-quitar{border:0;background:transparent;color:var(--ink2);padding:5px 9px}
+#v-chat.vision-soltar .entrada{outline:3px dashed var(--azul);outline-offset:-5px;background:var(--azul-t)}
+.vision-ficha{margin-top:12px;max-width:370px;border:1px solid var(--line);border-radius:14px;
+  background:var(--panel);overflow:hidden;font:14px var(--sans)}
+.vision-ficha img{display:block;width:100%;height:auto;aspect-ratio:400/224;object-fit:cover}
+.vision-ficha .vision-pie{padding:8px 11px;display:flex;justify-content:space-between;gap:10px;color:var(--ink2)}
+.vision-adjunto{display:block;margin-top:8px;font:12px var(--sans);opacity:.8}
+
 </style>
 </head>
 <body>
@@ -243,9 +262,14 @@ dialog pre{white-space:pre-wrap;background:var(--panel2);border-radius:10px;padd
         <button class="btn" id="c-exp" type="button">Exportar</button><button class="btn" id="c-nueva" type="button">Nueva conversación</button></div>
       <div class="flujo" id="flujo"><div class="col" id="msgs"></div></div>
       <div class="entrada"><div class="col">
-        <div class="caja"><textarea id="txt" rows="1" placeholder="Escribe una frase o una pregunta…" aria-label="Mensaje"></textarea>
+        <div class="caja"><!-- LCM_VISION_01_INLINE_UI -->
+<button id="vision-adjuntar" type="button" title="Adjuntar imagen" aria-label="Adjuntar imagen">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 11.5-8.7 8.7a6 6 0 0 1-8.5-8.5L13.2 2.3a4 4 0 0 1 5.7 5.7l-9.4 9.4a2 2 0 0 1-2.8-2.8l8.2-8.2"/></svg></button>
+<input id="vision-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+<textarea id="txt" rows="1" placeholder="Escribe una frase o una pregunta…" aria-label="Mensaje"></textarea>
           <button class="enviar" id="env" type="button" aria-label="Enviar"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></div>
-        <div class="ayuda"><span><kbd>Enter</kbd> envía · <kbd>Shift</kbd>+<kbd>Enter</kbd> salto de línea</span><span><kbd>↑</kbd> repite tu último mensaje</span><span><kbd>/</kbd> escribir</span></div>
+        <div id="vision-previa" hidden aria-live="polite"><img id="vision-miniatura" alt="Imagen preparada para enviar"><span id="vision-nombre"></span><button id="vision-quitar" type="button" aria-label="Quitar imagen">Quitar ×</button></div>
+<div class="ayuda"><span><kbd>Enter</kbd> envía · <kbd>Shift</kbd>+<kbd>Enter</kbd> salto de línea</span><span><kbd>↑</kbd> repite tu último mensaje</span><span><kbd>/</kbd> escribir</span></div>
       </div></div>
     </section>
     <!-- ================= APRENDER ================= -->
@@ -365,11 +389,26 @@ const guardarHist=()=>{try{localStorage.setItem("lcm-chat",JSON.stringify(hist.s
 function fmt(t){return esc(t).replace(/«([^»]+)»/g,"<em>«$1»</em>").replace(/\n/g,"<br>")}
 function pintarMsg(m,sin){
   const d=document.createElement("div");
-  if(m.rol==="yo"){d.className="msg yo";d.innerHTML=`<div class="cuerpo">${esc(m.t)}</div>`}
+  if(m.rol==="yo"){
+    d.className="msg yo";
+    d.innerHTML=`<div class="cuerpo">${esc(m.t)}${m.archivo?`<span class="vision-adjunto">📎 ${esc(m.archivo)}</span>`:""}</div>`;
+  }
   else{
     d.className="msg lcm"+(m.fallo?" fallo":"");
     const ap=(m.apr||[]).map((f,i)=>`<div class="h">${ICO_OK}<span>Aprendí: ${esc(f.texto)}</span>${f.origen==="personal"?`<button type="button" data-i="${i}">Olvidar</button>`:""}</div>`).join("");
     d.innerHTML=`<div class="av">LCM</div><div><div class="cuerpo">${fmt(m.t)}</div>${ap?`<div class="apr">${ap}</div>`:""}<div class="meta"><span>${m.ms??0} ms</span><button type="button" data-copiar>Copiar</button>${m.fallo?"":'<button type="button" data-como>¿Cómo lo sabes?</button>'}</div></div>`;
+    // LCM_VISION_01_INLINE_RENDER: la muestra es una imagen PNG real, no texto HTML remoto.
+    if(m.imagen && ["ROJO","VERDE","AZUL","AMARILLO","BLANCO","NEGRO"].includes(m.imagen.color)){
+      const ficha=document.createElement("div");ficha.className="vision-ficha";
+      const img=document.createElement("img");
+      img.src="/api/vision/muestra?color="+encodeURIComponent(m.imagen.color);
+      img.alt="Muestra del color "+m.imagen.color.toLowerCase();
+      const pie=document.createElement("div");pie.className="vision-pie";
+      const titulo=document.createElement("span");titulo.textContent=m.imagen.color.toLowerCase();
+      const hex=document.createElement("span");hex.textContent=m.imagen.hex||"";
+      pie.append(titulo,hex);ficha.append(img,pie);
+      d.querySelector(".cuerpo").after(ficha);
+    }
     const bc=d.querySelector("[data-como]"); if(bc)bc.onclick=()=>enviar("¿Cómo lo sabes?");
     d.querySelector("[data-copiar]").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(m.t).then(()=>aviso("Copiado"))};
     $$(".apr button",d).forEach(b=>b.onclick=async()=>{const f=m.apr[+b.dataset.i];const r=await api("/api/olvidar",{s:f.s,p:f.p,o:f.o});if(r.ok){b.parentElement.remove();aviso("Olvidado");estado()}});
@@ -384,16 +423,77 @@ function pintarTodo(){
   } else hist.forEach(m=>pintarMsg(m,true));
   $("#flujo").scrollTop=1e9;
 }
+/* LCM_VISION_01_INLINE_JS — archivos y arrastre en la conversación existente */
+let visionPendiente = null, visionPreviewURL = null;
+const visionInput = $("#vision-file"), visionPanel = $("#vision-previa");
+function visionQuitar(){
+  visionPendiente = null; visionInput.value=""; visionPanel.hidden=true;
+  if(visionPreviewURL){URL.revokeObjectURL(visionPreviewURL);visionPreviewURL=null;}
+}
+function visionElegir(f){
+  if(!f)return;
+  if(!/^image\/(png|jpeg|webp)$/.test(f.type)){
+    aviso("Adjunta una imagen PNG, JPEG o WebP.",true);return;
+  }
+  if(f.size>8000000){aviso("La imagen supera el límite de 8 MB.",true);return;}
+  visionQuitar(); visionPendiente=f;
+  visionPreviewURL=URL.createObjectURL(f);
+  $("#vision-miniatura").src=visionPreviewURL;
+  $("#vision-nombre").textContent=f.name;
+  visionPanel.hidden=false;
+  $("#txt").focus();
+}
+$("#vision-adjuntar").onclick=()=>visionInput.click();
+visionInput.onchange=()=>visionElegir(visionInput.files?.[0]);
+$("#vision-quitar").onclick=visionQuitar;
+const visionZona=$("#v-chat");
+visionZona.addEventListener("dragover",e=>{
+  if(e.dataTransfer?.types?.includes("Files")){e.preventDefault();e.dataTransfer.dropEffect="copy";visionZona.classList.add("vision-soltar");}
+});
+visionZona.addEventListener("dragleave",e=>{if(!visionZona.contains(e.relatedTarget))visionZona.classList.remove("vision-soltar")});
+visionZona.addEventListener("drop",e=>{
+  visionZona.classList.remove("vision-soltar");
+  if(!e.dataTransfer?.files?.length)return;
+  e.preventDefault();
+  if(e.dataTransfer.files.length!==1){aviso("Adjunta una sola imagen por mensaje.",true);return;}
+  visionElegir(e.dataTransfer.files[0]);
+});
+async function visionComoBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result).split(",")[1] || "");
+    reader.onerror=()=>reject(new Error("No se pudo leer la imagen."));
+    reader.readAsDataURL(file);
+  });
+}
+
 let ocupado=false, ultimo="";
 async function enviar(t){
-  t=(t??$("#txt").value).trim(); if(!t||ocupado)return;
-  ocupado=true; ultimo=t; $("#txt").value=""; auto(); $("#env").disabled=true;
+  t=(t??$("#txt").value).trim();
+  if((!t&&!visionPendiente)||ocupado)return;
+  const fichero=visionPendiente;
+  ocupado=true;ultimo=t;
+  $("#txt").value="";auto();$("#env").disabled=true;
   if(!hist.length)$("#msgs").innerHTML="";
-  hist.push({rol:"yo",t}); pintarMsg(hist.at(-1));
-  const p=document.createElement("div");p.className="msg lcm";p.innerHTML='<div class="av">LCM</div><div class="pensando"><i></i><i></i><i></i></div>';$("#msgs").append(p);$("#flujo").scrollTop=1e9;
-  const r=await api("/api/chat",{texto:t}); p.remove();
-  const m=r.error?{rol:"lcm",t:r.error==="red"?"No consigo hablar con el servidor local.":r.error,fallo:true,ms:0}:{rol:"lcm",t:r.respuesta,fallo:r.fallo,apr:r.aprendido,ms:r.ms};
-  hist.push(m); pintarMsg(m); guardarHist(); ocupado=false; $("#env").disabled=false; $("#txt").focus(); if(r.aprendido&&r.aprendido.length)estado();
+  const yo={rol:"yo",t:t||"(Imagen adjunta)"};
+  if(fichero)yo.archivo=fichero.name.slice(0,120);
+  hist.push(yo);pintarMsg(yo);
+  const p=document.createElement("div");p.className="msg lcm";
+  p.innerHTML='<div class="av">LCM</div><div class="pensando"><i></i><i></i><i></i></div>';
+  $("#msgs").append(p);$("#flujo").scrollTop=1e9;
+  const payload={texto:t};
+  let r;
+  try{
+    if(fichero){payload.imagen_base64=await visionComoBase64(fichero);payload.nombre=fichero.name.slice(0,120);}
+    r=await api("/api/chat",payload);
+  }catch(e){r={error:e.message||"No se pudo enviar la imagen."};aviso(r.error,true);}
+  p.remove();
+  const m=r.error?{rol:"lcm",t:r.error==="red"?"No consigo hablar con el servidor local.":r.error,fallo:true,ms:0}
+    :{rol:"lcm",t:r.respuesta,fallo:r.fallo,apr:r.aprendido,ms:r.ms,imagen:r.imagen||null};
+  hist.push(m);pintarMsg(m);guardarHist();
+  if(fichero)visionQuitar();
+  ocupado=false;$("#env").disabled=false;$("#txt").focus();
+  if(r.aprendido?.length)estado();
 }
 function auto(){const t=$("#txt");t.style.height="auto";t.style.height=Math.min(t.scrollHeight,160)+"px"}
 $("#txt").addEventListener("input",auto);

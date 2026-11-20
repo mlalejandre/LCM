@@ -1,0 +1,180 @@
+{
+ "fecha": "2026-11-19",
+ "base": {
+  "relaciones": {
+   "funcion": 272,
+   "material": 83,
+   "lugar": 75,
+   "usuario": 52
+  },
+  "alias_de_clase": 6,
+  "nota": "más segundas clases (comida/alimento, recipientes, pájaro, pollo ave+carne…) y oficios con lo que hacen"
+ },
+ "charla50i": {
+  "automatico": {
+   "lcm214": [
+    62.0,
+    3
+   ],
+   "lcm215": [
+    84.0,
+    3
+   ]
+  },
+  "auditado": {
+   "lcm214": {
+    "acierto": 62.0,
+    "falsas": 3
+   },
+   "lcm215": {
+    "acierto": 88.0,
+    "falsas": 1,
+    "nota": "2 respuestas correctas en plural que el corrector no reconocía pasan a acierto («los carpinteros y los albañiles», «los cuchillos…»); «¿con qué se escribe?» se cuenta FALLO porque la lista incluía «cuadernos»"
+   }
+  },
+  "no_ciega_tras_arreglos": {
+   "lcm215": {
+    "acierto": 98.0,
+    "falsas": 0,
+    "queda": "«el perro de Luis» -> «¿Luis tiene un animal?»"
+   }
+  }
+ },
+ "examen_ciego15": {
+  "automatico": {
+   "lcm214": [
+    72.41,
+    5
+   ],
+   "lcm215": [
+    91.38,
+    4
+   ]
+  },
+  "auditado": {
+   "lcm214": {
+    "acierto": 72.41,
+    "falsas": 5
+   },
+   "lcm215": {
+    "acierto": 96.55,
+    "falsas": 1,
+    "nota": "3 correctas en plural pasan a acierto; falsa real: «mi gato tiene tres patas» -> «Los gatos tienen cuatro patas»"
+   }
+  },
+  "no_ciega_tras_arreglos": {
+   "lcm215": {
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "examen_ciego15b": {
+  "nota": "muestra LIMPIA: palabras al azar (semilla 2151) de la base 2.14, excluido todo lo visto; escrito tras congelar y antes de medir; criterios sin consultar los datos de relaciones",
+  "automatico": {
+   "lcm214": [
+    56.58,
+    4
+   ],
+   "lcm215": [
+    89.47,
+    2
+   ]
+  },
+  "auditado": {
+   "lcm214": {
+    "acierto": 56.58,
+    "falsas": 4
+   },
+   "lcm215": {
+    "acierto": 88.16,
+    "falsas": 3,
+    "nota": "«un tractor sirve para transportar y viajar» aprobaba por «transportar»: se cuenta FALLO (heredado de vehículo, «viajar» no es propio de un tractor)"
+   }
+  },
+  "por_parte_auto_214_215": {
+   "relaciones": [
+    20.0,
+    96.0
+   ],
+   "relaciones_charla": [
+    83.3,
+    100.0
+   ],
+   "personas": [
+    61.5,
+    76.9
+   ],
+   "herencia_charla": [
+    69.2,
+    84.6
+   ],
+   "fabrica_y_dicho": [
+    87.5,
+    87.5
+   ],
+   "clases": [
+    81.8,
+    90.9
+   ]
+  },
+  "no_ciega_tras_arreglos": {
+   "lcm215": {
+    "acierto": 93.42,
+    "falsas": 1
+   }
+  }
+ },
+ "controles_214_215": {
+  "examenes_autor": [
+   88.19,
+   88.62
+  ],
+  "examen_ciego2": [
+   94.35,
+   94.35
+  ],
+  "examen_ciego6": [
+   80.6,
+   80.6
+  ],
+  "examen_ciego7": [
+   79.07,
+   79.07
+  ]
+ },
+ "verde": [
+  "posesión dicha con «de» («el perro de Luis» -> Luis tiene un perro)",
+  "oficios de género común («piloto» -> «pilota») y «¿mi vecina pilota aviones?»",
+  "función heredada demasiado general para miembros atípicos (se arregló tractor a mano; quedarán otros)",
+  "nombres solo plurales («una damas»)",
+  "concordancia femenina en «Carmen es un profesional»",
+  "conceptos sin relación anotada contestan por la clase («una hoz sirve para trabajar» antes de anotarla)",
+  "la capa antigua aún dice «No conozco tractor» en alguna forma de pregunta",
+  "¿quién sabe nadar? (fallo previo a esta ronda)"
+ ],
+ "curva_primer_intento": {
+  "1": {
+   "n": 18,
+   "acierto": 83.33,
+   "falsas": 3,
+   "nota": "los 3 fallos eran del criterio (pedía «pintor»/«cama» y la respuesta natural va en plural): corregido a mano -> 18/18"
+  },
+  "2": {
+   "n": 11,
+   "acierto": 90.91,
+   "falsas": 0,
+   "nota": "fallo real: «se ha comprado un taladro» y se pregunta con «tiene» (comprar implica tener)"
+  },
+  "3": {
+   "n": 18,
+   "acierto": 100.0,
+   "falsas": 0
+  },
+  "4": {
+   "n": 14,
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ }
+}

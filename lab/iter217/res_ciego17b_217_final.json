@@ -1,0 +1,1274 @@
+{
+ "resumen": {
+  "n": 136,
+  "ok": 135,
+  "acierto": 99.26,
+  "falsas": 0,
+  "tasa_falsas": 0.0,
+  "abst_indebida": 1,
+  "error": 0,
+  "por_cat": {
+   "P_preguntar": {
+    "n": 31,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "Q_callar": {
+    "n": 17,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "R_integrar": {
+    "n": 16,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "S_tono": {
+    "n": 18,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "T_hilo": {
+    "n": 17,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "U_pertinencia": {
+    "n": 16,
+    "acierto": 93.8,
+    "falsas": 0
+   },
+   "V_verde": {
+    "n": 21,
+    "acierto": 100.0,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 0,
+   "q": "buenos días, soy Elvira",
+   "crit": "elvira",
+   "r": "Encantado, Elvira.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 1,
+   "q": "en Semana Santa nos vamos de escapada",
+   "crit": "¿*;adonde|donde",
+   "r": "Entendido: te vas de escapada en semana santa. ¿Adónde vas?",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 2,
+   "q": "a Oporto",
+   "crit": "oporto;!no lo he entendido;!no he entendido",
+   "r": "Entendido: te vas de escapada en semana santa a Oporto.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 3,
+   "q": "¿adónde nos vamos en Semana Santa?",
+   "crit": "oporto",
+   "r": "Te vas de escapada en semana santa a Oporto.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 4,
+   "q": "he adoptado un conejo",
+   "crit": "¿*;como se llama",
+   "r": "Entendido: adoptaste un conejo. ¿Cómo se llama?",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 5,
+   "q": "Copito",
+   "crit": "copito;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu conejo se llama Copito.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 6,
+   "q": "¿cómo se llama mi conejo?",
+   "crit": "copito",
+   "r": "Tu conejo se llama Copito.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 7,
+   "q": "me he comprado una tarzuela",
+   "crit": "¿*;tarzuela",
+   "r": "Entendido: te compraste una tarzuela. ¿Qué es una tarzuela? Es la primera vez que oigo esa palabra.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 8,
+   "q": "sirve para pelar naranjas",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: una tarzuela sirve para pelar naranjas.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 9,
+   "q": "¿para qué sirve una tarzuela?",
+   "crit": "pelar",
+   "r": "Una tarzuela sirve para pelar naranjas.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 10,
+   "q": "ayer quedé con Fermín",
+   "crit": "¿*;quien es fermin",
+   "r": "Entendido: quedaste con Fermín ayer. ¿Quién es Fermín?",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 11,
+   "q": "un compañero de la facultad",
+   "crit": "companero|compañero;!no lo he entendido;!no he entendido",
+   "r": "Entendido: Fermín es el compañero de la facultad.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 12,
+   "q": "¿quién es Fermín?",
+   "crit": "companero|compañero",
+   "r": "Fermín es el compañero de la facultad.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 13,
+   "q": "anoche me enfadé con mi hermano",
+   "crit": "¿*|cuentame;que paso|por que",
+   "r": "Entendido: te enfadaste con tu hermano anoche. ¿Qué pasó?",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 14,
+   "q": "porque me cogió el coche sin permiso",
+   "crit": "coche|permiso;!no lo he entendido;!no he entendido",
+   "r": "Entendido: te enfadaste con tu hermano anoche porque te cogió el coche sin permiso.",
+   "v": "OK"
+  },
+  {
+   "id": "w-1",
+   "cat": "P_preguntar",
+   "i": 15,
+   "q": "¿por qué me enfadé con mi hermano?",
+   "crit": "coche|permiso",
+   "r": "Porque te cogió el coche sin permiso.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 0,
+   "q": "me llamo Octavio",
+   "crit": "octavio",
+   "r": "Encantado, Octavio.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 1,
+   "q": "tengo una nieta",
+   "crit": "¿*;como se llama",
+   "r": "Entendido: tienes una nieta. ¿Cómo se llama?",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 2,
+   "q": "Martina, y tiene tres años",
+   "crit": "martina;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu nieta se llama Martina; Martina tiene tres años.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 3,
+   "q": "¿cuántos años tiene Martina?",
+   "crit": "tres|3",
+   "r": "Martina tiene 3 años.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 4,
+   "q": "¿cómo se llama mi nieta?",
+   "crit": "martina",
+   "r": "Tu nieta se llama Martina.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 5,
+   "q": "el domingo tengo una comida",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tienes una comida el domingo. ¿Con quién?",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 6,
+   "q": "con mis hermanos, en casa de mi madre",
+   "crit": "hermanos|madre;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tienes una comida con tus hermanos en casa de tu madre el domingo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 7,
+   "q": "¿con quién como el domingo?",
+   "crit": "hermanos",
+   "r": "Tienes una comida con tus hermanos en casa de tu madre el domingo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 8,
+   "q": "la semana pasada tuve una entrevista",
+   "crit": "¿*;que tal",
+   "r": "Entendido: tuviste una entrevista la semana pasada. ¿Qué tal te fue?",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 9,
+   "q": "regular",
+   "crit": "regular;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu entrevista salió regular.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 10,
+   "q": "¿qué tal me fue la entrevista?",
+   "crit": "regular",
+   "r": "Tu entrevista salió regular.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 11,
+   "q": "estoy viendo una serie",
+   "crit": "¿*;serie",
+   "r": "Entendido: ves una serie. ¿Qué serie es?",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 12,
+   "q": "una de policías",
+   "crit": "policias;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu serie es de policías.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 13,
+   "q": "en junio me voy de viaje",
+   "crit": "¿*;adonde|donde",
+   "r": "Entendido: te vas de viaje en junio. ¿Adónde vas?",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 14,
+   "q": "todavía no lo sé",
+   "crit": "!¿*;!no lo he entendido;!no he entendido",
+   "r": "De acuerdo, no pasa nada.",
+   "v": "OK"
+  },
+  {
+   "id": "w-2",
+   "cat": "R_integrar",
+   "i": 15,
+   "q": "¿cuándo me voy de viaje?",
+   "crit": "junio",
+   "r": "Te vas de viaje en junio (junio de 2027).",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 0,
+   "q": "soy Remedios",
+   "crit": "remedios",
+   "r": "Encantado, Remedios.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 1,
+   "q": "¿cuánto es 12 por 12?",
+   "crit": "144;!¿*",
+   "r": "12 × 12 = 144.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 2,
+   "q": "¿qué es una sartén?",
+   "crit": "utensilio|cocina|freir|objeto;!¿*",
+   "r": "Una sartén es un utensilio.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 3,
+   "q": "los martes tengo pilates",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Entendido: tienes pilates los martes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 4,
+   "q": "mi gata se llama Luna",
+   "crit": "luna;!¿*",
+   "r": "Entendido: tu gata se llama Luna.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 5,
+   "q": "tengo una gata",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Entendido: tienes una gata.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 6,
+   "q": "voy a Burgos el jueves",
+   "crit": "!no lo he entendido;!no he entendido;!adonde",
+   "r": "Entendido: vas a Burgos el jueves.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 7,
+   "q": "prefiero que no me preguntes nada",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "De acuerdo, no te haré preguntas. Si cambias de idea, dímelo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 8,
+   "q": "me han regalado un cachorro",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Entendido: recibiste un cachorro de regalo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 9,
+   "q": "mañana me voy de excursión",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Entendido: te vas de excursión mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 10,
+   "q": "estoy preocupada",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Lo siento, Remedios. Si te apetece, cuéntame por qué estás preocupada.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 11,
+   "q": "ya puedes hacerme preguntas",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Gracias. Si algo no lo sé o me falta, te lo preguntaré.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 12,
+   "q": "tengo un sobrino",
+   "crit": "¿*;como se llama",
+   "r": "Entendido: tienes un sobrino. ¿Cómo se llama?",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 13,
+   "q": "mejor no",
+   "crit": "!¿*;!no lo he entendido;!no he entendido",
+   "r": "De acuerdo, no pasa nada.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 14,
+   "q": "Rosa y Manuel se han casado",
+   "crit": "!no lo he entendido;!no he entendido;!quien es",
+   "r": "¡Qué buena noticia, Remedios! Enhorabuena. Entendido: Rosa y Manuel se casaron.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 15,
+   "q": "el hierro es un metal",
+   "crit": "!no lo he entendido;!no he entendido;!¿*",
+   "r": "Entendido: el hierro es un metal.",
+   "v": "OK"
+  },
+  {
+   "id": "w-3",
+   "cat": "Q_callar",
+   "i": 16,
+   "q": "bueno, me marcho, muchas gracias",
+   "crit": "de nada|hasta|adios;!¿*",
+   "r": "De nada, Remedios. ¡Hasta luego! Aquí estaré cuando quieras.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 0,
+   "q": "soy Fidel",
+   "crit": "fidel",
+   "r": "Encantado, Fidel.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 1,
+   "q": "me han dado la beca",
+   "crit": "enhorabuena|felicidades|me alegro|que bien|que buena noticia|que suerte",
+   "r": "¡Enhorabuena! Entendido: recibiste la beca.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 2,
+   "q": "¿me han dado la beca?",
+   "crit": "^si",
+   "r": "Sí, recibiste la beca.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 3,
+   "q": "se ha muerto mi perra",
+   "crit": "lo siento;!¿*;!enhorabuena;!que bien",
+   "r": "Lo siento mucho.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 4,
+   "q": "mi hija se ha graduado",
+   "crit": "enhorabuena|felicidades|me alegro|que bien|que buena noticia|que suerte",
+   "r": "¡Qué buena noticia! Enhorabuena. Entendido: tu hija se graduó.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 5,
+   "q": "me he torcido el tobillo",
+   "crit": "lo siento|vaya|que pena|animo|que mala suerte;!enhorabuena",
+   "r": "Vaya, lo siento, Fidel. Entendido: te torciste el tobillo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 6,
+   "q": "he perdido el trabajo",
+   "crit": "lo siento|vaya|que pena|animo|que mala suerte;!enhorabuena",
+   "r": "Lo siento. Entendido: perdiste el trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 7,
+   "q": "pasado mañana tengo las oposiciones",
+   "crit": "suerte|animo",
+   "r": "¡Mucha suerte! Entendido: tienes las oposiciones Pasado mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 8,
+   "q": "no me han cogido en el trabajo",
+   "crit": "!enhorabuena;!que bien;!no lo he entendido;!no he entendido",
+   "r": "Entendido: no fuiste cogido en el trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 9,
+   "q": "vamos a tener un hijo",
+   "crit": "enhorabuena|felicidades|me alegro|que bien|que buena noticia|que suerte",
+   "r": "¡Enhorabuena! Entendido: tendrás un hijo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 10,
+   "q": "mi abuela está ingresada",
+   "crit": "lo siento|vaya|que pena|animo|que mala suerte|espero;!enhorabuena",
+   "r": "Vaya, lo siento. Espero que se mejore. Entendido: tu abuela está ingresada.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 11,
+   "q": "tengo tres hermanos",
+   "crit": "!enhorabuena;!lo siento;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tienes tres hermanos. ¿Cómo se llaman?",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 12,
+   "q": "no tengo coche",
+   "crit": "!lo siento;!enhorabuena;!no lo he entendido;!no he entendido",
+   "r": "Entendido: no tienes coche.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 13,
+   "q": "hoy cumplo cuarenta años",
+   "crit": "felicidades|feliz|enhorabuena",
+   "r": "¡Felicidades! Entendido: cumples cuarenta años hoy.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 14,
+   "q": "estoy muy agobiado",
+   "crit": "¿*|cuentame|lo siento",
+   "r": "Lo siento, Fidel. Si te apetece, cuéntame por qué estás agobiado.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 15,
+   "q": "es que tengo muchísimo trabajo",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: estás muy agobiado porque tienes muchísimo trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 16,
+   "q": "¿por qué estoy agobiado?",
+   "crit": "trabajo",
+   "r": "Porque tienes muchísimo trabajo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-4",
+   "cat": "S_tono",
+   "i": 17,
+   "q": "ya estoy más tranquilo",
+   "crit": "me alegro|que bien",
+   "r": "¡Me alegro! Entendido: estás tranquilo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 0,
+   "q": "me llamo Begoña",
+   "crit": "begona",
+   "r": "Encantado, Begoña.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 1,
+   "q": "soy veterinaria",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: eres veterinaria.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 2,
+   "q": "tengo 29 años",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tienes 29 años.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 3,
+   "q": "hazme una pregunta",
+   "crit": "¿*;!como te llamas;!dedicas;!cuantos años",
+   "r": "¿Dónde vives?",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 4,
+   "q": "en Oviedo",
+   "crit": "oviedo;!no lo he entendido;!no he entendido",
+   "r": "Entendido: vives en Oviedo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 5,
+   "q": "¿dónde vivo?",
+   "crit": "oviedo",
+   "r": "Vives en Oviedo.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 6,
+   "q": "el lunes empiezo un curso de cerámica",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: empiezas un curso de cerámica el lunes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 7,
+   "q": "el sábado voy a un concierto",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: vas a un concierto el sábado.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 8,
+   "q": "¿qué planes tengo?",
+   "crit": "curso|ceramica;concierto",
+   "r": "Empiezas un curso de cerámica el lunes y vas a un concierto el sábado.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 9,
+   "q": "¿de qué estábamos hablando?",
+   "crit": "curso|ceramica|concierto|oviedo|veterinaria",
+   "r": "Me has contado que eres veterinaria, tienes 29 años, vives en Oviedo, empiezas un curso de cerámica el lunes y vas a un concierto el sábado.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 10,
+   "q": "los miércoles tengo yoga",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tienes yoga los miércoles.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 11,
+   "q": "perdona, los jueves",
+   "crit": "jueves;!no lo he entendido;!no he entendido",
+   "r": "Corregido: tienes yoga los jueves.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 12,
+   "q": "¿qué día tengo yoga?",
+   "crit": "jueves;!miercoles",
+   "r": "Tienes yoga los jueves.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 13,
+   "q": "cambiemos de tema",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "De acuerdo, cambiamos de tema. Cuéntame lo que te apetezca.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 14,
+   "q": "¿qué te falta por saber de mí?",
+   "crit": "gusta|aficion*|tiempo libre|¿*|nada",
+   "r": "Todavía no sé qué te gusta hacer. Solo sé lo que me cuentas.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 15,
+   "q": "¿y tú qué tal estás?",
+   "crit": "bien",
+   "r": "Bien, gracias, Begoña. Aquí estoy, atento a lo que me cuentes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-5",
+   "cat": "T_hilo",
+   "i": 16,
+   "q": "me tengo que ir, gracias por la charla",
+   "crit": "de nada|hasta|adios;!¿*",
+   "r": "De nada, Begoña. ¡Hasta luego! Aquí estaré cuando quieras.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 0,
+   "q": "hola, soy Ramiro",
+   "crit": "ramiro",
+   "r": "Encantado, Ramiro.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 1,
+   "q": "mi marido se llama Esteban",
+   "crit": "esteban",
+   "r": "Entendido: tu marido se llama Esteban.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 2,
+   "q": "Esteban es cocinero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: Esteban es cocinero.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 3,
+   "q": "tenemos tres hijos",
+   "crit": "¿*;como se llaman",
+   "r": "Entendido: tienes tres hijos. ¿Cómo se llaman?",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 4,
+   "q": "Nico, Alba y Bruno",
+   "crit": "nico|alba|bruno;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tus hijos se llaman Nico, Alba y Bruno.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 5,
+   "q": "¿cómo se llaman mis hijos?",
+   "crit": "nico;alba;bruno",
+   "r": "Tus hijos se llaman Nico, Alba y Bruno.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 6,
+   "q": "los niños van al colegio en autobús",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: Nico, Alba y Bruno van al colegio en autobús.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 7,
+   "q": "¿cómo van mis hijos al colegio?",
+   "crit": "autobus",
+   "r": "No lo sé. No conozco «hijos»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 8,
+   "q": "a Alba le he comprado una bicicleta",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: compraste una bicicleta a Alba.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 9,
+   "q": "¿qué le he comprado a Alba?",
+   "crit": "bicicleta",
+   "r": "Compraste una bicicleta a Alba.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 10,
+   "q": "ayer se me estropeó la lavadora",
+   "crit": "lo siento|vaya|que pena|animo|que mala suerte",
+   "r": "Vaya, lo siento. Entendido: se te estropeó la lavadora ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 11,
+   "q": "ha venido el técnico",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: el técnico vino.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 12,
+   "q": "¿qué le pasó a la lavadora?",
+   "crit": "estropeo|estropeada|estropea*",
+   "r": "Se te estropeó la lavadora ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 13,
+   "q": "¿qué sabes de mi familia?",
+   "crit": "esteban;alba|nico|bruno",
+   "r": "Esteban es tu marido; Esteban es cocinero. Nico es tu hijo; Nico va al colegio en autobús. Alba es tu hija; Alba va al colegio en autobús. Bruno es tu hijo; Bruno va al colegio en autobús.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 14,
+   "q": "¿a qué se dedica Esteban?",
+   "crit": "cocinero",
+   "r": "Esteban es cocinero.",
+   "v": "OK"
+  },
+  {
+   "id": "w-6",
+   "cat": "U_pertinencia",
+   "i": 15,
+   "q": "¿un cocinero es una persona?",
+   "crit": "^si;!¿*",
+   "r": "Sí, un cocinero es una persona. Lo deduzco porque un cocinero es un profesional y un profesional es una persona.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 0,
+   "q": "soy Leire",
+   "crit": "leire",
+   "r": "Encantado, Leire.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 1,
+   "q": "trabajo con dos socias, Ainhoa y Maider",
+   "crit": "ainhoa|maider;!no lo he entendido;!no he entendido",
+   "r": "Entendido: trabajas con dos socias; tus socios se llaman Ainhoa y Maider.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 2,
+   "q": "¿con quién trabajo?",
+   "crit": "ainhoa;maider",
+   "r": "Trabajas con dos socias: Ainhoa y Maider.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 3,
+   "q": "Ainhoa cocina mejor que Maider",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: Ainhoa cocina mejor que Maider.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 4,
+   "q": "Maider cocina mejor que Jon",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: Maider cocina mejor que Jon.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 5,
+   "q": "¿quién cocina mejor, Ainhoa o Jon?",
+   "crit": "ainhoa",
+   "r": "Ainhoa cocina mejor que Jon. Lo deduzco porque Ainhoa cocina mejor que Maider y Maider cocina mejor que Jon.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 6,
+   "q": "tenía 120 euros y me he gastado 45 en unas botas",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido. Echo la cuenta: 120 − 45 = 75 euros.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 7,
+   "q": "¿cuánto me queda?",
+   "crit": "75",
+   "r": "75 euros: 120 − 45 = 75.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 8,
+   "q": "hoy ha sido un día rarísimo",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Vaya. ¿Qué ha pasado?",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 9,
+   "q": "es que se ha ido la luz en la oficina",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: es porque sabes ha ido la luz en la oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 10,
+   "q": "¿por qué ha sido un día raro?",
+   "crit": "luz",
+   "r": "Porque sabes ha ido la luz en la oficina.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 11,
+   "q": "a mi sobrino le flipan los dinosaurios",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: a tu sobrino le encantan los dinosaurios.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 12,
+   "q": "¿qué le gusta a mi sobrino?",
+   "crit": "dinosaurio*",
+   "r": "A tu sobrino le encantan los dinosaurios.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 13,
+   "q": "voy al gimnasio los lunes",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: vas al gimnasio los lunes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 14,
+   "q": "no, los martes",
+   "crit": "martes;!no lo he entendido;!no he entendido",
+   "r": "Corregido: vas al gimnasio los martes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 15,
+   "q": "¿cuándo voy al gimnasio?",
+   "crit": "martes;!lunes",
+   "r": "Vas al gimnasio los martes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 16,
+   "q": "ayer cené con mi prima Abril",
+   "crit": "abril;!cenaste abril",
+   "r": "Entendido: cenaste con tu prima Abril ayer.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 17,
+   "q": "¿cómo se llama mi prima?",
+   "crit": "abril",
+   "r": "Tu prima se llama Abril.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 18,
+   "q": "me han puesto una multa",
+   "crit": "lo siento|vaya|que pena|animo|que mala suerte;!no lo he entendido;!no he entendido",
+   "r": "Lo siento. Entendido: recibiste una multa.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 19,
+   "q": "¿me han puesto una multa?",
+   "crit": "^si",
+   "r": "Sí, recibiste una multa.",
+   "v": "OK"
+  },
+  {
+   "id": "w-7",
+   "cat": "V_verde",
+   "i": 20,
+   "q": "venga, hasta otro día",
+   "crit": "hasta|adios;!¿*",
+   "r": "¡Hasta luego, Leire! Aquí estaré cuando quieras.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 0,
+   "q": "soy Casimiro",
+   "crit": "casimiro",
+   "r": "Encantado, Casimiro.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 1,
+   "q": "me he apuntado a clases de quendo",
+   "crit": "¿*;quendo",
+   "r": "Entendido: te apuntaste a clases de quendo. ¿Qué es quendo? Es la primera vez que oigo esa palabra.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 2,
+   "q": "es un arte marcial",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: el quendo es un arte marcial.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 3,
+   "q": "¿qué es el quendo?",
+   "crit": "arte marcial|marcial",
+   "r": "El quendo es un arte marcial.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 4,
+   "q": "el mes que viene me mudo",
+   "crit": "¿*;adonde|donde",
+   "r": "Entendido: te mudas el próximo mes. ¿Adónde te mudas?",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 5,
+   "q": "a un piso más grande, en Getafe",
+   "crit": "getafe|piso;!no lo he entendido;!no he entendido",
+   "r": "Entendido: te mudas a un piso más grande en Getafe el próximo mes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 6,
+   "q": "¿adónde me mudo?",
+   "crit": "getafe|piso",
+   "r": "Te mudas a un piso más grande en Getafe el próximo mes.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 7,
+   "q": "tengo pareja",
+   "crit": "¿*;como se llama",
+   "r": "Entendido: tienes pareja. ¿Cómo se llama?",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 8,
+   "q": "se llama Noa",
+   "crit": "noa;!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu pareja se llama Noa.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 9,
+   "q": "¿cómo se llama mi pareja?",
+   "crit": "noa",
+   "r": "Tu pareja se llama Noa.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 10,
+   "q": "ayer fui al médico",
+   "crit": "¿*|espero;encuentras|estas bien|paso|que te",
+   "r": "Entendido: fuiste al médico ayer. ¿Te encuentras bien?",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 11,
+   "q": "tenía fiebre",
+   "crit": "lo siento|vaya|espero|mejor*|fiebre;!no lo he entendido;!no he entendido",
+   "r": "Vaya, lo siento, Casimiro. Entendido: tenías fiebre.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 12,
+   "q": "el sábado tengo una boda",
+   "crit": "¿*;quien",
+   "r": "Entendido: tienes una boda el sábado. ¿Quién se casa?",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 13,
+   "q": "la de mi amigo Roque",
+   "crit": "roque;!no lo he entendido;!no he entendido",
+   "r": "Entendido: Roque tiene una boda.",
+   "v": "OK"
+  },
+  {
+   "id": "w-8",
+   "cat": "P_preguntar",
+   "i": 14,
+   "q": "¿de quién es la boda?",
+   "crit": "roque",
+   "r": "La boda de Roque es de Roque.",
+   "v": "OK"
+  }
+ ]
+}

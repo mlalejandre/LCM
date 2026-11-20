@@ -1,0 +1,470 @@
+{
+ "resumen": {
+  "n": 45,
+  "ok": 31,
+  "acierto": 68.89,
+  "falsas": 2,
+  "tasa_falsas": 4.44,
+  "abst_indebida": 12,
+  "error": 0,
+  "por_cat": {
+   "libre": {
+    "n": 45,
+    "acierto": 68.9,
+    "falsas": 2
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 1,
+   "q": "juego en un equipo de balonmano",
+   "crit": "balonmano;!no lo he entendido",
+   "r": "Entendido: juegas en un equipo de balonmano.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 2,
+   "q": "mi amiga Celia, que es la capitana, se ha roto un dedo",
+   "crit": "celia;dedo;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 3,
+   "q": "¿qué es Celia?",
+   "crit": "capitana",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 4,
+   "q": "¿qué se ha roto Celia?",
+   "crit": "dedo",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Mi amiga Celia es la capitana. Mi amiga Celia se ha roto un dedo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 5,
+   "q": "el sábado es la final",
+   "crit": "sabado;final;!no lo he entendido",
+   "r": "Entendido: la final es el sábado.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 6,
+   "q": "¿cuándo es la final?",
+   "crit": "sabado",
+   "r": "La final es el sábado (sábado 21 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 7,
+   "q": "estoy nerviosa, llevo toda la semana entrenando",
+   "crit": "ANY",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Estoy nerviosa. Llevo toda la semana entrenando».",
+   "v": null
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 8,
+   "q": "¿cómo estoy?",
+   "crit": "nerviosa",
+   "r": "No lo sé: no me has dicho cómo estás. De ti sé que juegas en un equipo de balonmano.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-equipo",
+   "cat": "libre",
+   "i": 9,
+   "q": "¿en qué equipo juego?",
+   "crit": "balonmano",
+   "r": "No lo sé: no me has dicho qué equipas. De ti sé que juegas en un equipo de balonmano.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 0,
+   "q": "buenas",
+   "crit": "buenas|hola",
+   "r": "¡Buenas! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 1,
+   "q": "me mudo a un piso con dos compañeros, Óscar y Nacho",
+   "crit": "oscar;nacho;!no lo he entendido",
+   "r": "Entendido: te mudas a un piso con dos compañeros; tus compañeros se llaman Óscar y Nacho.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 2,
+   "q": "¿con quién me mudo?",
+   "crit": "oscar|nacho",
+   "r": "Te mudas a un piso con dos compañeros.",
+   "v": "MAL"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 3,
+   "q": "¿cuántos compañeros tengo?",
+   "crit": "dos|2",
+   "r": "No lo sé: no me has dicho cuántos companeros tienes. De ti sé que te mudas a un piso con dos compañeros y Óscar es tu compañero.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 4,
+   "q": "Óscar es de Valencia y Nacho de Bilbao",
+   "crit": "ANY",
+   "r": "Entendido: Óscar es de Valencia; Nacho es de Bilbao.",
+   "v": null
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 5,
+   "q": "¿de dónde es Nacho?",
+   "crit": "bilbao",
+   "r": "Nacho es de Bilbao.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 6,
+   "q": "hemos alquilado una casa amarilla cerca del río",
+   "crit": "casa;!no lo he entendido",
+   "r": "Entendido: alquilaste una casa amarilla cerca del río.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 7,
+   "q": "¿de qué color es la casa?",
+   "crit": "amarill*",
+   "r": "Alquilaste una casa amarilla cerca del río.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 8,
+   "q": "el lunes es la mudanza",
+   "crit": "lunes;!no lo he entendido",
+   "r": "Entendido: la mudanza es el lunes.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-mudanza",
+   "cat": "libre",
+   "i": 9,
+   "q": "¿cuándo es la mudanza?",
+   "crit": "lunes",
+   "r": "La mudanza es el lunes (lunes 23 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 1,
+   "q": "mi hija Alma tiene un año",
+   "crit": "alma;!no lo he entendido",
+   "r": "Entendido: Alma tiene un año.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 2,
+   "q": "le está saliendo el primer diente",
+   "crit": "diente;!no lo he entendido",
+   "r": "Entendido: el diente primero sale.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 3,
+   "q": "¿qué le está saliendo a Alma?",
+   "crit": "diente",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 4,
+   "q": "a mi marido le duele la espalda de cogerla en brazos",
+   "crit": "espalda;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «A mi marido le duele la espalda de coger en brazos».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 5,
+   "q": "¿qué le duele a mi marido?",
+   "crit": "espalda",
+   "r": "No lo tengo del todo claro, pero me dijiste: «A mi marido le duele la espalda de coger en brazos».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 6,
+   "q": "¿cuántos años tiene Alma?",
+   "crit": "uno|un ano|1",
+   "r": "Alma tiene 1 años.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 7,
+   "q": "hoy no ha dormido la siesta, está muy cansada",
+   "crit": "ANY",
+   "r": "Entendido: Alma no durmió la siesta hoy; Alma está muy cansada.",
+   "v": null
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 8,
+   "q": "¿cómo está Alma?",
+   "crit": "cansada",
+   "r": "Alma está muy cansada.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-bebe",
+   "cat": "libre",
+   "i": 9,
+   "q": "¿Alma es mi hija?",
+   "crit": "^si",
+   "r": "Sí, Alma es tu hija.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 0,
+   "q": "mañana es el santo de mi abuela",
+   "crit": "abuela;!no lo he entendido",
+   "r": "Entendido: el santo de tu abuela es mañana.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 1,
+   "q": "se llama Dolores y fue maestra muchos años",
+   "crit": "dolores;!no lo he entendido",
+   "r": "Entendido: el santo de tu abuela se llama Dolores; Dolores fue maestro durante muchos años.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 2,
+   "q": "¿a qué se dedicaba mi abuela?",
+   "crit": "maestra",
+   "r": "No lo sé: no me has dicho a qué se dedica tu abuela. De tu abuela sé que Dolores es el santo de tu abuela.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 3,
+   "q": "¿cuándo es el santo de mi abuela?",
+   "crit": "mañana",
+   "r": "Dolores es mañana (jueves 19 de noviembre de 2026).",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 4,
+   "q": "le vamos a regalar un pañuelo verde",
+   "crit": "pañuelo;!no lo he entendido",
+   "r": "Entendido: regalarás un pañuelo verde.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 5,
+   "q": "¿de qué color es el pañuelo?",
+   "crit": "verde",
+   "r": "Regalarás un pañuelo verde.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 6,
+   "q": "¿qué le vamos a regalar?",
+   "crit": "pañuelo",
+   "r": "Regalarás un pañuelo verde.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 7,
+   "q": "mi tío Félix, que es el hijo mayor, organiza la comida",
+   "crit": "felix;!no lo he entendido",
+   "r": "Entendido: Félix es hijo mayor; Félix organiza la comida.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 8,
+   "q": "¿quién organiza la comida?",
+   "crit": "felix",
+   "r": "Félix organiza la comida.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-abuela",
+   "cat": "libre",
+   "i": 9,
+   "q": "¿Félix es mi tío?",
+   "crit": "^si",
+   "r": "Sí, Félix es tu tío.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 0,
+   "q": "qué rabia",
+   "crit": "ANY",
+   "r": "Vaya, lo siento.",
+   "v": null
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 1,
+   "q": "se me ha roto el móvil, se me cayó al suelo",
+   "crit": "movil;!no lo he entendido",
+   "r": "Entendido: se te rompió el móvil; al suelo le cayó el móvil.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 2,
+   "q": "¿qué se me ha roto?",
+   "crit": "movil",
+   "r": "Se te rompió el móvil.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 3,
+   "q": "¿dónde se me cayó?",
+   "crit": "suelo",
+   "r": "No lo sé: no me has dicho dónde caíste. De ti sé que se te rompió el móvil.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 4,
+   "q": "tengo que comprar otro, el viejo tenía cinco años",
+   "crit": "ANY",
+   "r": "Entendido: tienes que comprar otro el viejo tenía cinco años.",
+   "v": null
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 5,
+   "q": "¿qué tengo que comprar?",
+   "crit": "movil|otro",
+   "r": "Tienes que comprar otro el viejo tenía cinco años.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 6,
+   "q": "[IMG foto.png] me gusta este color para el nuevo",
+   "crit": "azul;!no lo he entendido",
+   "r": "Entendido: Me gusta un color para.",
+   "v": "MAL"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 7,
+   "q": "¿qué color me gusta para el nuevo?",
+   "crit": "azul",
+   "r": "No lo sé: no me has dicho qué te gusta.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 8,
+   "q": "¿un móvil es un objeto?",
+   "crit": "^si",
+   "r": "Sí, un móvil es un objeto. Lo deduzco porque un móvil es un aparato y un aparato es un objeto.",
+   "v": "OK"
+  },
+  {
+   "id": "c9-movil",
+   "cat": "libre",
+   "i": 9,
+   "q": "gracias",
+   "crit": "nada|gusto|para eso",
+   "r": "De nada.",
+   "v": "OK"
+  }
+ ]
+}

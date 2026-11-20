@@ -1,0 +1,16 @@
+D = [{"id": "q01", "cat": "copulativas", "turnos": [
+ ("hola", "hola"),
+ ("mi abuela tiene una gata y un canario", "gata|canario;!no lo he entendido"),
+ ("¿mi abuela tiene un canario?", "^si"),
+ ("mi abuela no tiene ni perro ni loro", "perro|loro;!no lo he entendido"),
+ ("¿mi abuela tiene loro?", "^no"),
+ ("¿mi abuela tiene perro?", "^no"),
+ ("tanto mi tío como mi tía son profesores", "profesor*;!no lo he entendido"),
+ ("¿mi tía es profesora?", "^si"),
+ ("¿a qué se dedica mi tío?", "profesor"),
+ ("Hugo e Iván juegan al baloncesto", "hugo|ivan;!no lo he entendido"),
+ ("¿Iván juega al baloncesto?", "^si"),
+ ("para la cena compro tomates, cebollas, pimientos y ajos", "tomates|cebollas;!ivan;!no lo he entendido"),
+ ("¿compro pimientos para la cena?", "^si"),
+ ("¿qué compro para la cena?", "tomates;cebollas;pimientos;ajos"),
+]}]

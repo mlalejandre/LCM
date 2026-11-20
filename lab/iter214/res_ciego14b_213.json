@@ -1,0 +1,1282 @@
+{
+ "resumen": {
+  "n": 138,
+  "ok": 51,
+  "acierto": 36.96,
+  "falsas": 7,
+  "tasa_falsas": 5.07,
+  "abst_indebida": 80,
+  "error": 0,
+  "por_cat": {
+   "A_jerarquia": {
+    "n": 57,
+    "acierto": 26.3,
+    "falsas": 2
+   },
+   "B_contrarios": {
+    "n": 35,
+    "acierto": 31.4,
+    "falsas": 0
+   },
+   "C_partes": {
+    "n": 12,
+    "acierto": 58.3,
+    "falsas": 3
+   },
+   "D_propiedades": {
+    "n": 23,
+    "acierto": 47.8,
+    "falsas": 1
+   },
+   "E_charla": {
+    "n": 11,
+    "acierto": 63.6,
+    "falsas": 1
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 0,
+   "q": "¿una fachada es parte de un edificio?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé. No conozco «fachada»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 1,
+   "q": "¿una fachada es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé. No conozco «fachada»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 2,
+   "q": "¿el carbono es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé. No conozco «carbono»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 3,
+   "q": "¿qué es el carbono?",
+   "crit": "elemento|sustancia|quimic*;!no conozco",
+   "r": "Según mi diccionario de conceptos: «carbono» es un tipo de «elemento», «sustancia» y «materia». Dominio: sustancia. En inglés: carbon, C y atomic number 6. En su definición aparecen, entre otras: abundante, componente, forma, grafito y orgánico. Algunos tipos: grafito, fullereno, radiocarbono y hollín.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 4,
+   "q": "¿un convento es un edificio?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 5,
+   "q": "¿la tensión es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 6,
+   "q": "¿un gigante es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 7,
+   "q": "¿un dios es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 8,
+   "q": "¿una variación es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 9,
+   "q": "¿una maniobra es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 10,
+   "q": "¿una afición es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 11,
+   "q": "¿qué es una afición?",
+   "crit": "gusto|actividad|pasatiempo|hobby|inclinacion|interes;!no conozco",
+   "r": "Según mi diccionario de conceptos: «afición» es un tipo de «diversión», «actividad» y «acción» (y, más en general, «evento» y «rasgo psicológico»). Dominio: acción. Otras palabras para el mismo concepto: distracción. En inglés: pastime, interest y pursuit. Acción asociada: proseguir. En su definición aparecen, entre otras: vez y idea. (La palabra también puede referirse a otros conceptos, como un tipo de «sensación» y «afición».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 12,
+   "q": "¿el malestar es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 13,
+   "q": "¿un aplauso es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 14,
+   "q": "¿un efecto es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 15,
+   "q": "¿qué es un efecto?",
+   "crit": "resultado|consecuencia;!no conozco",
+   "r": "Según mi diccionario de conceptos: «efecto» es un tipo de «fenómeno» y «proceso». Dominio: fenómeno. Otras palabras para el mismo concepto: consecuencia y resultado. En inglés: consequence, effect y outcome. Acción asociada: resultar, dejar y efectuar. En su definición aparecen, entre otras: previo. Algunos tipos: respuesta, impacto, subproducto, influencia, bajón y potencia explosiva. (La palabra también puede referirse a otros conceptos, como un tipo de «apariencia» y «creencia».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 16,
+   "q": "¿una cifra es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 17,
+   "q": "¿qué es una cifra?",
+   "crit": "numero|signo|cantidad;!no conozco",
+   "r": "Según mi diccionario de conceptos: «cifra» es un tipo de «cantidad», «bienes» y «posesión» (y, más en general, «relación»). Dominio: posesión. En inglés: figure. Acción asociada: averigüar. En su definición aparecen, entre otras: dinero, explícito y numérico. (La palabra también puede referirse a otros conceptos, como un tipo de «símbolo» y «escritura».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 18,
+   "q": "¿una pieza es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 19,
+   "q": "¿qué es una pieza?",
+   "crit": "parte|objeto|elemento|trozo;!no conozco",
+   "r": "Según mi diccionario de conceptos: «pieza» es un tipo de «música», «comunicación auditiva» y «comunicación». Dominio: comunicación. Otras palabras para el mismo concepto: composición y obra. En inglés: opus, composition y piece. Acción asociada: componer. En su definición aparecen, entre otras: musical y trabajo. Algunos tipos: canción, movimiento, pasaje, adaptación, trío y quinteto. (La palabra también puede referirse a otros conceptos, como un tipo de «acuñación» y «equipamiento».)",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 20,
+   "q": "¿un domicilio es un lugar?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 21,
+   "q": "¿qué es un domicilio?",
+   "crit": "casa|vivienda|lugar|direccion|residencia;!no conozco",
+   "r": "Según mi diccionario de conceptos: «domicilio» es un tipo de «construcción», «housing» y «structure» (y, más en general, «artifact»). Dominio: objeto fabricado. Otras palabras para el mismo concepto: casa, habitáculo, morada y piso. En inglés: dwelling, home y domicile. Partes: baño, alcoba, gabinete, comedor y cuarto de juego. Acción asociada: habitar. En su definición aparecen, entre otras: existencia. Algunos tipos: hogar, palacio Anasazi, comunidad de propietarios, hermita, vivienda lacustre y yurta. (La palabra también puede referirse a otros conceptos, como un tipo de «dirección».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 22,
+   "q": "¿un indio es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 23,
+   "q": "¿un departamento es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 24,
+   "q": "¿la transparencia es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 25,
+   "q": "¿un referéndum es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 26,
+   "q": "¿qué es un referéndum?",
+   "crit": "votacion|consulta|evento;!no conozco",
+   "r": "Según mi diccionario de conceptos: «referéndum» es un tipo de «voto», «acción» y «evento» (y, más en general, «rasgo psicológico»). Dominio: acción. Otras palabras para el mismo concepto: consulta y referendo. En inglés: referendum. En su definición aparecen, entre otras: legislativo, final, aprobación, popular y voto.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 27,
+   "q": "¿una inscripción es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 28,
+   "q": "¿una adhesión es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 29,
+   "q": "¿qué es la tele?",
+   "crit": "television|aparato|medio;!no conozco",
+   "r": "Según mi diccionario de conceptos: «tele» es un tipo de «broadcasting», «telecomunicación» y «instrumental». Dominio: comunicación. Otras palabras para el mismo concepto: televisión. En inglés: television, telecasting y TV. Partes: imagen y audio. Sirve para ver programas. En su definición aparecen, entre otras: ocular y imagen. (La palabra también puede referirse a otros conceptos, como un tipo de «receptor».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 30,
+   "q": "¿una mención es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 31,
+   "q": "¿la justicia es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 32,
+   "q": "¿qué es la justicia?",
+   "crit": "cualidad|virtud|valor|principio|poder|institucion;!no conozco",
+   "r": "Según mi diccionario de conceptos: «justicia» es un tipo de «rectitud», «moralidad» y «calidad» (y, más en general, «atributo»). Dominio: cualidad. En inglés: justice y justness. Lo contrario: injusticia. En su definición aparecen, entre otras: justo. (La palabra también puede referirse a otros conceptos, como un tipo de «juicio» y «acuerdo».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 33,
+   "q": "¿un protocolo es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 34,
+   "q": "¿una batalla es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 35,
+   "q": "¿qué es una batalla?",
+   "crit": "combate|lucha|enfrentamiento|evento|pelea;!no conozco",
+   "r": "Según mi diccionario de conceptos: «batalla» es un tipo de «acción», «evento» y «rasgo psicológico». Dominio: acción. Otras palabras para el mismo concepto: acción, combate, conflicto y lucha. En inglés: battle, conflict y fight. Acción asociada: librar, lidiar y combatir. En su definición aparecen, entre otras: hostil, concurrencia, militar, asignatura y guerra. Algunos tipos: combate, Armagedón, batalla campal y dogfight. (La palabra también puede referirse a otros conceptos, como un tipo de «intento» y «acción».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 36,
+   "q": "¿la especulación es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 37,
+   "q": "¿un volante es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 38,
+   "q": "¿qué es un volante?",
+   "crit": "pieza|parte|objeto|rueda|mando|dispositivo;!no conozco",
+   "r": "Según mi diccionario de conceptos: «volante» es un tipo de «mecanismo», «dispositivo» y «instrumental». Dominio: objeto fabricado. En inglés: wheel y steering wheel. Sirve para dirigir. En su definición aparecen, entre otras: control. (La palabra también puede referirse a otros conceptos, como un tipo de «rueda» y «adorno».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 39,
+   "q": "¿un abandono es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 40,
+   "q": "¿una definición es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 41,
+   "q": "¿qué es una definición?",
+   "crit": "explicacion|texto|significado|enunciado;!no conozco",
+   "r": "Definición: Descripcion del significado de un concepto.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 42,
+   "q": "¿una meta es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 43,
+   "q": "¿qué es una meta?",
+   "crit": "objetivo|fin|final|proposito|llegada;!no conozco",
+   "r": "Según mi diccionario de conceptos: «meta» es un tipo de «fin», «contenido mental» y «cognición» (y, más en general, «rasgo psicológico»). Dominio: idea o conocimiento. Otras palabras para el mismo concepto: finalidad, intención, objetivo y objeto. En inglés: purpose, intent y intention. Acción asociada: crear, proponer y pensar. En su definición aparecen, entre otras: consecuencia, plan y acción. Algunos tipos: voluntad, idea, proyecto, objetivo opuesto y motivo. (La palabra también puede referirse a otros conceptos, como un tipo de «contenido mental» y «fin».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 44,
+   "q": "¿una subvención es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 45,
+   "q": "¿la totalidad es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 46,
+   "q": "¿un precio es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 47,
+   "q": "¿qué es un precio?",
+   "crit": "valor|cantidad|dinero|coste|importe;!no conozco",
+   "r": "«precio» tiene varios sentidos posibles: contexto cantidad/numeros; contexto actividad/trabajo; contexto actividad/economia. ¿A cuál te refieres?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 48,
+   "q": "¿un choque es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 49,
+   "q": "¿qué es un choque?",
+   "crit": "golpe|accidente|colision|impacto|encuentro|enfrentamiento;!no conozco",
+   "r": "Según mi diccionario de conceptos: «choque» es un tipo de «discusión», «desacuerdo» y «acción» (y, más en general, «evento» y «rasgo psicológico»). Dominio: comunicación. Otras palabras para el mismo concepto: altercado, discusión, encontrón y palabras. En inglés: quarrel, wrangle y row. Acción asociada: altercar y disputar. En su definición aparecen, entre otras: furioso. Algunos tipos: roce y bronca. (La palabra también puede referirse a otros conceptos, como un tipo de «impacto» y «contacto».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 50,
+   "q": "¿una colección es una persona?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 51,
+   "q": "¿qué es una colección?",
+   "crit": "conjunto|grupo|serie;!no conozco",
+   "r": "Según mi diccionario de conceptos: «colección» es un tipo de «agrupación» y «group». Dominio: grupo. Otras palabras para el mismo concepto: acumulación, conjunto, cúmulo y hatajo. En inglés: collection, aggregation y accumulation. Acción asociada: armar y acumular. En su definición aparecen, entre otras: respectivo y entero. Algunos tipos: dato, jurisprudencia, categoría, surtido, conjunto y bulto. (La palabra también puede referirse a otros conceptos, como un tipo de «agrupación» y «publicación».)",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 52,
+   "q": "¿una placa es un ser vivo?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 53,
+   "q": "¿una norma es un objeto?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 54,
+   "q": "¿qué es una norma?",
+   "crit": "regla|ley|principio|pauta;!no conozco",
+   "r": "«norma» tiene varios sentidos posibles: contexto relacion/espacio; contexto actividad/sociedad. ¿A cuál te refieres?",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 55,
+   "q": "¿un cura es una persona?",
+   "crit": "^si;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-A",
+   "cat": "A_jerarquia",
+   "i": 56,
+   "q": "¿una cotización es un animal?",
+   "crit": "^no;!no conozco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 0,
+   "q": "¿qué es lo contrario de fresco?",
+   "crit": "rancio|podrido|caluroso|calido|pasado|seco",
+   "r": "No lo sé. No conozco «fresco»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 1,
+   "q": "¿qué es lo contrario de parecido?",
+   "crit": "diferente|distinto",
+   "r": "No lo sé. No conozco «parecido»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 2,
+   "q": "¿qué es lo contrario de muerto?",
+   "crit": "vivo",
+   "r": "Lo contrario de muerto es vivo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 3,
+   "q": "¿qué es lo contrario de actual?",
+   "crit": "futuro|pasado|antiguo",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 4,
+   "q": "¿qué es lo contrario de estrecho?",
+   "crit": "amplio|ancho",
+   "r": "Lo contrario de estrecho es ancho.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 5,
+   "q": "¿cuál es el contrario de nulo?",
+   "crit": "valido",
+   "r": "Según el léxico, lo contrario de «nulo» es válido.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 6,
+   "q": "¿qué es lo contrario de similar?",
+   "crit": "diferente|distinto",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 7,
+   "q": "¿qué es lo contrario de constitucional?",
+   "crit": "inconstitucional",
+   "r": "No lo sé. No conozco «constitucional»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 8,
+   "q": "¿qué es lo contrario de temprano?",
+   "crit": "tardio|tarde",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 9,
+   "q": "¿qué es lo contrario de semejante?",
+   "crit": "diferente|distinto",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 10,
+   "q": "¿qué es lo contrario de evidente?",
+   "crit": "dudoso|oculto|invisible|discreto|incierto",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 11,
+   "q": "dime lo contrario de ocupado",
+   "crit": "libre|desocupado|disponible|vacio",
+   "r": "Lo contrario de ocupado es libre.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 12,
+   "q": "¿qué es lo contrario de ilegal?",
+   "crit": "legal|licito|legitimo",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 13,
+   "q": "¿qué es lo contrario de normal?",
+   "crit": "raro|anormal|extraordinario|excepcional|insolito",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 14,
+   "q": "¿qué es lo contrario de trasero?",
+   "crit": "delantero",
+   "r": "No lo sé. No conozco «trasero»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 15,
+   "q": "¿qué es lo contrario de joven?",
+   "crit": "viejo|mayor|anciano",
+   "r": "Lo contrario de joven es viejo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 16,
+   "q": "¿qué es lo contrario de definido?",
+   "crit": "indefinido|vago|confuso|impreciso",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 17,
+   "q": "¿qué es lo contrario de abierto?",
+   "crit": "cerrado",
+   "r": "Lo contrario de abierto es cerrado.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 18,
+   "q": "¿qué es lo contrario de productivo?",
+   "crit": "improductivo|esteril|infructuoso",
+   "r": "No lo sé. No conozco «productivo»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 19,
+   "q": "¿cuál es el opuesto de cómodo?",
+   "crit": "incomodo",
+   "r": "Según el léxico, lo contrario de «cómodo» es incómodo.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 20,
+   "q": "¿qué es lo contrario de simple?",
+   "crit": "complejo|complicado|elaborado|sofisticado",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 21,
+   "q": "¿qué es lo contrario de gran?",
+   "crit": "pequeño|menudo",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 22,
+   "q": "¿qué es lo contrario de divertido?",
+   "crit": "aburrido|serio|solemne",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 23,
+   "q": "¿qué es lo contrario de válido?",
+   "crit": "nulo|invalido",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 24,
+   "q": "¿qué es lo contrario de excepcional?",
+   "crit": "comun|normal|habitual|usual|corriente",
+   "r": "No lo sé. No conozco «lo contrario»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 25,
+   "q": "¿qué es lo contrario de abrir?",
+   "crit": "cerrar",
+   "r": "Lo contrario de abrir es cerrar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 26,
+   "q": "¿qué es lo contrario de participar?",
+   "crit": "abstenerse|abandonar|desistir|retirarse|ABST",
+   "r": "No lo sé.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 27,
+   "q": "¿qué es lo contrario de comprar?",
+   "crit": "vender",
+   "r": "Lo contrario de comprar es vender.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 28,
+   "q": "¿qué es lo contrario de fallecer?",
+   "crit": "nacer",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 29,
+   "q": "¿qué es lo contrario de seguir?",
+   "crit": "parar|cesar|dejar|preceder|abandonar",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 30,
+   "q": "¿qué es lo contrario de ampliar?",
+   "crit": "reducir|disminuir",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 31,
+   "q": "¿qué es lo contrario de impedir?",
+   "crit": "permitir|dejar|facilitar",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 32,
+   "q": "¿qué es lo contrario de gustar?",
+   "crit": "disgustar|desagradar|detestar|odiar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 33,
+   "q": "¿qué es lo contrario de retirar?",
+   "crit": "añadir|poner|agregar|depositar|meter|anadir",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-B",
+   "cat": "B_contrarios",
+   "i": 34,
+   "q": "¿qué es lo contrario de dar?",
+   "crit": "quitar|tomar|recibir",
+   "r": "Lo contrario de dar es recibir.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 0,
+   "q": "¿qué partes tiene una operación?",
+   "crit": "ABST|fases|pasos|etapas",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 1,
+   "q": "¿qué partes tiene la tierra?",
+   "crit": "ABST|continentes|oceanos|corteza|nucleo|manto",
+   "r": "Según mi diccionario de conceptos, «tierra» tiene como partes: aire, hemisferio, suelo, geosfera y cielo.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 2,
+   "q": "¿qué partes tiene una revista?",
+   "crit": "paginas|portada|articulos|secciones",
+   "r": "Según mi diccionario de conceptos, «revista» tiene como partes: artículo de revista.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 3,
+   "q": "¿qué partes tiene un empresario?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 4,
+   "q": "¿qué partes tiene la confianza?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 5,
+   "q": "¿qué partes tiene un compañero?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 6,
+   "q": "¿qué partes tiene un ejército?",
+   "crit": "ABST|soldados|tropas|regimientos|unidades|divisiones",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 7,
+   "q": "¿qué partes tiene un restaurante?",
+   "crit": "cocina|comedor|mesas|barra|aseos|baño|salon",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 8,
+   "q": "¿qué partes tiene un elemento?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 9,
+   "q": "¿qué partes tiene un equipo?",
+   "crit": "ABST|jugadores|miembros",
+   "r": "Según mi diccionario de conceptos, «equipo» tiene como partes: banquillo.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 10,
+   "q": "¿qué partes tiene una fiesta?",
+   "crit": "ABST|invitados|musica",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-C",
+   "cat": "C_partes",
+   "i": 11,
+   "q": "¿qué partes tiene una oficina?",
+   "crit": "mesas|despachos|sillas|ordenadores|escritorios|mesa",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 0,
+   "q": "¿el pan es comestible?",
+   "crit": "^si",
+   "r": "Sí, los alimentos son comestibles.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 1,
+   "q": "¿el pan es un ser vivo?",
+   "crit": "^no",
+   "r": "No, un pan es un alimento.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 2,
+   "q": "¿en una óptica venden gafas?",
+   "crit": "^si|gafas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 3,
+   "q": "¿una grosella es comestible?",
+   "crit": "^si",
+   "r": "Sí, la fruta es comestible.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 4,
+   "q": "¿las grosellas crecen en plantas?",
+   "crit": "^si",
+   "r": "Sí, la fruta crece en plantas.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 5,
+   "q": "¿una pradera está al aire libre?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 6,
+   "q": "¿el requesón viene de la leche?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 7,
+   "q": "¿las lentejas son comestibles?",
+   "crit": "^si",
+   "r": "Sí, los alimentos son comestibles.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 8,
+   "q": "¿una fractura hace daño?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 9,
+   "q": "¿una semana tiene días?",
+   "crit": "^si|siete|7",
+   "r": "Sí, las semanas tienen días.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 10,
+   "q": "¿un batido se bebe?",
+   "crit": "^si",
+   "r": "Sí, las bebidas se beben.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 11,
+   "q": "¿la cena es una comida?",
+   "crit": "^si",
+   "r": "No, una cena es un evento.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 12,
+   "q": "¿una conferencia es un evento?",
+   "crit": "^si",
+   "r": "Sí, una conferencia es un evento.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 13,
+   "q": "¿una escopeta es peligrosa?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 14,
+   "q": "¿una escopeta sirve para atacar?",
+   "crit": "^si|disparar|cazar",
+   "r": "No lo sé. No conozco «escopeta»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 15,
+   "q": "¿un túnel es un lugar?",
+   "crit": "^si",
+   "r": "Sí, un túnel es un lugar.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 16,
+   "q": "¿la barriga es parte del cuerpo?",
+   "crit": "^si",
+   "r": "Eso no me consta; solo sé Un ojo es parte del cuerpo; Una mano es parte del cuerpo; Un pie es parte del cuerpo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 17,
+   "q": "¿un pollo tiene plumas?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 18,
+   "q": "¿los pollos tienen pelo?",
+   "crit": "^no",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 19,
+   "q": "¿el taekwondo es un deporte?",
+   "crit": "^si",
+   "r": "Sí, un taekwondo es un deporte.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 20,
+   "q": "¿en el taekwondo se hace ejercicio?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 21,
+   "q": "¿el terror es una emoción?",
+   "crit": "^si",
+   "r": "Sí, un terror es una emoción.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-D",
+   "cat": "D_propiedades",
+   "i": 22,
+   "q": "¿una tetera es un recipiente?",
+   "crit": "^si|utensilio",
+   "r": "No lo sé seguro: de fábrica sé que una tetera es un utensilio, pero no si es un recipiente.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 1,
+   "q": "mi primo es alcalde",
+   "crit": "alcalde;!no lo he entendido",
+   "r": "Entendido: tu primo es alcalde.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 2,
+   "q": "¿mi primo es un político?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que tu primo es alcalde.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 3,
+   "q": "tengo una tortuga",
+   "crit": "tortuga;!no lo he entendido",
+   "r": "Entendido: tienes una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 4,
+   "q": "¿tengo un reptil?",
+   "crit": "^si",
+   "r": "Sí, tienes una tortuga.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 5,
+   "q": "¿mi tortuga tiene caparazón?",
+   "crit": "^si",
+   "r": "Sí, las tortugas tienen caparazón.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 6,
+   "q": "mi casa es pequeña",
+   "crit": "pequeña;!no lo he entendido",
+   "r": "Entendido: tu casa es pequeña.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 7,
+   "q": "¿mi casa es grande?",
+   "crit": "^no",
+   "r": "No, tu casa es pequeña.",
+   "v": "OK"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 8,
+   "q": "mi tía es una mujer muy alegre",
+   "crit": "alegre;!no lo he entendido",
+   "r": "Entendido: tu tía es una mujer.",
+   "v": "MAL"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 9,
+   "q": "¿mi tía es triste?",
+   "crit": "^no",
+   "r": "No lo sé. Solo sé que tu tía es una mujer.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c14b-E",
+   "cat": "E_charla",
+   "i": 10,
+   "q": "¿mi tía es una persona?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que tu tía es una mujer.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

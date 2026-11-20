@@ -1,0 +1,888 @@
+{
+ "resumen": {
+  "n": 92,
+  "ok": 57,
+  "acierto": 61.96,
+  "falsas": 2,
+  "tasa_falsas": 2.17,
+  "abst_indebida": 33,
+  "error": 0,
+  "por_cat": {
+   "A_memoria": {
+    "n": 10,
+    "acierto": 90.0,
+    "falsas": 0
+   },
+   "B_conceptos": {
+    "n": 13,
+    "acierto": 76.9,
+    "falsas": 0
+   },
+   "C_razonar": {
+    "n": 17,
+    "acierto": 76.5,
+    "falsas": 1
+   },
+   "D_lectura": {
+    "n": 11,
+    "acierto": 9.1,
+    "falsas": 0
+   },
+   "E_aprender": {
+    "n": 10,
+    "acierto": 40.0,
+    "falsas": 1
+   },
+   "F_crear": {
+    "n": 8,
+    "acierto": 25.0,
+    "falsas": 0
+   },
+   "G_calculo": {
+    "n": 8,
+    "acierto": 100.0,
+    "falsas": 0
+   },
+   "H_social": {
+    "n": 6,
+    "acierto": 83.3,
+    "falsas": 0
+   },
+   "I_robustez": {
+    "n": 9,
+    "acierto": 55.6,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 0,
+   "q": "mi nombre es Celia",
+   "crit": "celia",
+   "r": "Encantado, Celia.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 1,
+   "q": "estudio enfermería en Granada",
+   "crit": "enfermeria|granada;!no lo he entendido",
+   "r": "Entendido: estudias enfermería en Granada.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 2,
+   "q": "¿qué estudio?",
+   "crit": "enfermeria",
+   "r": "Estudias enfermería en Granada.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 3,
+   "q": "comparto piso con dos amigas, Sara y Noelia",
+   "crit": "sara|noelia;!no lo he entendido",
+   "r": "Entendido: Comparto pisó con dos amigas; las amigas de Comparto se llaman Sara y Noelia.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 4,
+   "q": "¿con quién comparto piso?",
+   "crit": "sara;noelia",
+   "r": "No lo sé. De ti sé que te llamas Celia y estudias enfermería en Granada.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 5,
+   "q": "Sara toca el violín",
+   "crit": "violin;!no lo he entendido",
+   "r": "Entendido: Sara toca el violín.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 6,
+   "q": "¿qué instrumento toca Sara?",
+   "crit": "violin",
+   "r": "Sara toca el violín.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 7,
+   "q": "el mes pasado estuve en Roma",
+   "crit": "roma;!no lo he entendido",
+   "r": "Entendido: estuviste en Roma el mes pasado.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 8,
+   "q": "¿dónde estuve el mes pasado?",
+   "crit": "roma",
+   "r": "Estuviste en Roma el mes pasado.",
+   "v": "OK"
+  },
+  {
+   "id": "c-A",
+   "cat": "A_memoria",
+   "i": 9,
+   "q": "¿Noelia toca el piano?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Noelia sé que es la amiga de Comparto.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 0,
+   "q": "¿una araña es un insecto?",
+   "crit": "^no|aracnido",
+   "r": "No, una araña es un arácnido, no un insecto.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 1,
+   "q": "¿qué es una trucha?",
+   "crit": "pez|animal",
+   "r": "Una trucha es un pez.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 2,
+   "q": "¿cuál es el contrario de encender?",
+   "crit": "apagar",
+   "r": "Lo contrario de encender es apagar.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 3,
+   "q": "¿de qué está hecho un jersey?",
+   "crit": "lana",
+   "r": "Un jersey suele ser de lana.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 4,
+   "q": "¿dónde vive una vaca?",
+   "crit": "granja|prado",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 5,
+   "q": "¿qué es más grande, una casa o un coche?",
+   "crit": "casa",
+   "r": "No lo sé: con lo que me has dicho no puedo ordenarlos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 6,
+   "q": "¿para qué sirve un despertador?",
+   "crit": "despertar*",
+   "r": "Un despertador sirve para despertar.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 7,
+   "q": "¿quién usa un pincel?",
+   "crit": "pintor*",
+   "r": "Los pinceles los usan sobre todo los pintores.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 8,
+   "q": "¿qué tienen en común un cuchillo y unas tijeras?",
+   "crit": "cortar",
+   "r": "Los dos son herramientas; los dos tienen hoja, tienen mango y sirven para hacer tareas; los dos sirven para cortar y suelen ser de metal.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 9,
+   "q": "dime dos instrumentos",
+   "crit": "guitarra|piano|violin|flauta|tambor|trompeta",
+   "r": "Guitarra y piano.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 10,
+   "q": "¿cuántos minutos tiene una hora?",
+   "crit": "sesenta|60",
+   "r": "No sé cuántos exactamente. Solo sé que las horas tienen minutos.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 11,
+   "q": "¿los peces respiran aire?",
+   "crit": "^no|ABST",
+   "r": "No lo sé. Solo sé que los peces respiran bajo el agua.",
+   "v": "OK"
+  },
+  {
+   "id": "c-B",
+   "cat": "B_conceptos",
+   "i": 12,
+   "q": "¿qué hay en un dormitorio?",
+   "crit": "cama*|armario*",
+   "r": "En un dormitorio suele haber almohadas, armarios, camas, cunas, despertadores y mesillas.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 0,
+   "q": "los delfines son mamíferos",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: los delfines son mamíferos.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 1,
+   "q": "Flipper es un delfín",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: Flipper es un delfín.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 2,
+   "q": "¿Flipper es un mamífero?",
+   "crit": "^si",
+   "r": "Sí, Flipper es un mamífero. Lo deduzco porque Flipper es un delfín y los delfines son mamíferos.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 3,
+   "q": "¿Flipper es un pez?",
+   "crit": "^no",
+   "r": "No, Flipper es un delfín.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 4,
+   "q": "Óscar corre más rápido que Lucas",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: Óscar corre más rápido que Lucas.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 5,
+   "q": "Lucas corre más rápido que Mateo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: Lucas corre más rápido que Mateo.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 6,
+   "q": "¿quién corre más rápido, Óscar o Mateo?",
+   "crit": "oscar",
+   "r": "No lo sé: me faltan datos para comparar.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 7,
+   "q": "si apruebo, me compro una bici",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: si apruebas, te compras una bici. Lo tendré en cuenta.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 8,
+   "q": "he aprobado",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: aprobaste. Entonces te compras una bici: lo deduzco porque me dijiste que si apruebas, te compras una bici.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 9,
+   "q": "¿me compro una bici?",
+   "crit": "^si",
+   "r": "Sí, te compras una bici.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 10,
+   "q": "antes de acostarme leí un rato",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: leíste un rato antes de acostar.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 11,
+   "q": "¿qué hice antes de acostarme?",
+   "crit": "lei|leiste|leer",
+   "r": "Aprobaste y leíste un rato antes de acostar.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 12,
+   "q": "el pasaporte está en la carpeta y la carpeta está en la maleta",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: el pasaporte está en la carpeta; la carpeta está en la maleta.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 13,
+   "q": "¿dónde está el pasaporte?",
+   "crit": "carpeta|maleta",
+   "r": "El pasaporte está en la carpeta.",
+   "v": "OK"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 14,
+   "q": "¿el pasaporte está en la maleta?",
+   "crit": "^si",
+   "r": "No, el pasaporte está en la carpeta.",
+   "v": "MAL"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 15,
+   "q": "tenía 50 euros y me gasté 20 en el cine",
+   "crit": "!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tenía 50 euros y me gasté 20 en el cine».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-C",
+   "cat": "C_razonar",
+   "i": 16,
+   "q": "¿cuánto me queda?",
+   "crit": "30",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 0,
+   "q": "Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada.",
+   "crit": "!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 1,
+   "q": "¿a qué hora salió Berta de casa?",
+   "crit": "ocho|8",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 2,
+   "q": "¿quién es Dani?",
+   "crit": "hijo",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 3,
+   "q": "¿dónde dejó a Dani?",
+   "crit": "guarderia",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 4,
+   "q": "¿cómo fue a la oficina?",
+   "crit": "metro",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 5,
+   "q": "¿qué comió?",
+   "crit": "ensalada",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 6,
+   "q": "¿con quién comió?",
+   "crit": "lidia",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 7,
+   "q": "¿quién es Lidia?",
+   "crit": "companera|compañera",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Te leo una nota. Esta mañana Berta salió de casa a las ocho con su hijo Dani. Lo dejó en la guardería y después cogió el metro para ir a la oficina. A mediodía comió una ensalada con su compañera Lidia. Por la tarde tuvo una reunión muy larga y llegó a casa cansada».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 8,
+   "q": "¿qué tuvo por la tarde?",
+   "crit": "reunion",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 9,
+   "q": "¿cómo llegó a casa?",
+   "crit": "cansada",
+   "r": "No lo sé. No conozco «A»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-D",
+   "cat": "D_lectura",
+   "i": 10,
+   "q": "¿fue a la oficina en coche?",
+   "crit": "^no|ABST",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "OK"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 0,
+   "q": "un cuatí es un mamífero que vive en la selva",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: el cuatí es un mamífero; el mamífero vive en la selva.",
+   "v": "OK"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 1,
+   "q": "¿dónde vive un cuatí?",
+   "crit": "selva",
+   "r": "El mamífero vive en la selva.",
+   "v": "OK"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 2,
+   "q": "¿un cuatí es un animal?",
+   "crit": "^si",
+   "r": "Sí, un cuatí es un animal. Lo deduzco porque el cuatí es un mamífero y un mamífero es un animal.",
+   "v": "OK"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 3,
+   "q": "¿un cuatí es una planta?",
+   "crit": "^no",
+   "r": "No, un cuatí es un mamífero.",
+   "v": "OK"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 4,
+   "q": "un almirez sirve para machacar ajos",
+   "crit": "!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Un almirez sirve para machacar ajos».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 5,
+   "q": "¿para qué sirve un almirez?",
+   "crit": "machacar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 6,
+   "q": "lo opuesto de chulo es soso",
+   "crit": "!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Lo opuesto de chulo es soso».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 7,
+   "q": "¿qué es lo contrario de chulo?",
+   "crit": "soso",
+   "r": "No lo sé: no tengo anotado el contrario de «chulo».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 8,
+   "q": "currar es lo mismo que trabajar",
+   "crit": "!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Currar es lo mismo que trabajar».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-E",
+   "cat": "E_aprender",
+   "i": 9,
+   "q": "¿qué significa currar?",
+   "crit": "trabajar",
+   "r": "Currar es Mismo.",
+   "v": "MAL"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 0,
+   "q": "escríbeme un poema sobre el otoño",
+   "crit": "otoño;!no lo he entendido",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 1,
+   "q": "dime algo que rime con camión",
+   "crit": "avion|corazon|cancion|leon|melon|balon|raton|ilusion|razon|emocion|estacion",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dime algo que rime con camión».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 2,
+   "q": "invéntate un cuento sobre un dragón",
+   "crit": "dragon;!no lo he entendido",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 3,
+   "q": "hazme una frase con la palabra silla",
+   "crit": "silla",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 4,
+   "q": "descríbeme una cocina",
+   "crit": "horno|nevera|fregadero|fogones|cocinar",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 5,
+   "q": "dame un nombre para una gata",
+   "crit": "!no lo he entendido;!no se;!no lo se",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": "OK"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 6,
+   "q": "cuéntame otro chiste",
+   "crit": "!no lo he entendido;!no se",
+   "r": "No sé contar chistes todavía. Si me enseñas uno, lo recuerdo.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-F",
+   "cat": "F_crear",
+   "i": 7,
+   "q": "mi abuelo escribía poemas",
+   "crit": "!van estos versos;!no lo he entendido",
+   "r": "Entendido: tu abuelo escribía poemas.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 0,
+   "q": "¿cuánto es 64 menos 29?",
+   "crit": "35",
+   "r": "64 − 29 = 35.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 1,
+   "q": "¿cuánto es la cuarta parte de 100?",
+   "crit": "25",
+   "r": "La cuarta parte de 100 es 25.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 2,
+   "q": "en un autobús van 18 personas y suben 7, ¿cuántas van ahora?",
+   "crit": "25",
+   "r": "25 van: 18 + 7 = 25.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 3,
+   "q": "¿cuánto es 3 por 3 por 3?",
+   "crit": "27",
+   "r": "3 × 3 × 3 = 27.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 4,
+   "q": "¿cuántos segundos tiene un minuto?",
+   "crit": "sesenta|60",
+   "r": "Un minuto tiene 60 segundos.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 5,
+   "q": "¿cuánto es 15 más el doble de 10?",
+   "crit": "35",
+   "r": "15 + el doble(10) = 35.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 6,
+   "q": "si hoy es martes, ¿qué día será dentro de 3 días?",
+   "crit": "viernes",
+   "r": "Dentro de 3 días será viernes.",
+   "v": "OK"
+  },
+  {
+   "id": "c-G",
+   "cat": "G_calculo",
+   "i": 7,
+   "q": "pinta una estrella roja",
+   "crit": "estrella",
+   "r": "Aquí tienes una estrella roja, hecha con la aplicación de dibujo.",
+   "v": "OK"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 0,
+   "q": "hola, ¿cómo estás?",
+   "crit": "hola|bien",
+   "r": "¡Hola! Bien, gracias. ¿Y tú qué tal?",
+   "v": "OK"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 1,
+   "q": "¿te gusta hablar conmigo?",
+   "crit": "!no lo he entendido",
+   "r": "No tengo gustos propios: no puedo probar ni sentir. ¿A ti te gusta?",
+   "v": "OK"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 2,
+   "q": "hoy he tenido un día horrible",
+   "crit": "siento|vaya|animo|contar*;!no lo he entendido",
+   "r": "Vaya, lo siento. ¿Quieres contarme qué ha pasado?",
+   "v": "OK"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 3,
+   "q": "es que se me ha roto el coche",
+   "crit": "coche;!no lo he entendido",
+   "r": "Entendido: se te rompió el coche.",
+   "v": "OK"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 4,
+   "q": "¿por qué he tenido un mal día?",
+   "crit": "coche",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-H",
+   "cat": "H_social",
+   "i": 5,
+   "q": "bueno, me voy, gracias por todo",
+   "crit": "nada|gracias|hasta|adios|gusto",
+   "r": "Entendido: te vas gracias por todo.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 0,
+   "q": "ola kiero contarte algo",
+   "crit": "!no lo he entendido",
+   "r": "Entendido: Hola quiere contar algo.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 1,
+   "q": "mi novio se yama alex",
+   "crit": "alex",
+   "r": "Entendido: tu novio se llama Alex.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 2,
+   "q": "komo se llama mi novio",
+   "crit": "alex",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Komo se llama mi novio».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 3,
+   "q": "trabaja en 1 hospital dsd hace 2 años",
+   "crit": "hospital;!no lo he entendido",
+   "r": "Entendido: Alex trabaja dsd en 1 hospital hace 2 años.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 4,
+   "q": "donde trabaja",
+   "crit": "hospital",
+   "r": "Alex trabaja dsd en 1 hospital hace 2 años.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 5,
+   "q": "Y TIENE UN HERMANO GEMELO",
+   "crit": "hermano;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Y TIENE UN HERMANO GEMELO».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 6,
+   "q": "alex tiene hermanos?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho qué tiene Alex.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 7,
+   "q": "le flipa el baloncesto",
+   "crit": "baloncesto;!no lo he entendido",
+   "r": "Entendido: a Alex le flipa el baloncesto.",
+   "v": "OK"
+  },
+  {
+   "id": "c-I",
+   "cat": "I_robustez",
+   "i": 8,
+   "q": "que le gusta a alex",
+   "crit": "baloncesto",
+   "r": "No lo sé: no me has dicho qué le gusta a Alex.",
+   "v": "ABST_INDEBIDA"
+  }
+ ]
+}

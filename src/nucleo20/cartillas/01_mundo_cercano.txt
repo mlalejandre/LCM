@@ -1,0 +1,38 @@
+# CARTILLA 1 · El mundo cercano: dónde viven los animales, cómo son las cosas, las medidas del tiempo y lo que hace cada oficio.
+# Una idea por frase. La escuela (python -m src.nucleo20.escuela) la convierte en conocimiento de fábrica.
+
+# Dónde viven los animales
+La ballena vive en el mar. El delfín vive en el mar. El tiburón vive en el mar. El pulpo vive en el mar. La medusa vive en el mar.
+El pingüino vive en el hielo y el mar. La foca vive en el hielo y el mar. El oso polar vive en el hielo.
+La rana vive en la charca. El pato vive en el estanque y el río. El cocodrilo vive en el río. La trucha vive en el río.
+El oso vive en el bosque. El lobo vive en el bosque. El ciervo vive en el bosque. La ardilla vive en el bosque. El búho vive en el bosque. El jabalí vive en el bosque.
+El león vive en la sabana. La jirafa vive en la sabana. La cebra vive en la sabana. El elefante vive en la sabana y la selva.
+El mono vive en la selva. El tigre vive en la selva. El loro vive en la selva. El camello vive en el desierto.
+La vaca vive en la granja y el prado. La oveja vive en la granja y el prado. El cerdo vive en la granja. La gallina vive en la granja y el gallinero. El caballo vive en la cuadra y el prado.
+El perro vive en las casas. El gato vive en las casas. La abeja vive en la colmena. La hormiga vive en el hormiguero. El águila vive en la montaña. El topo vive en la tierra.
+
+# Cómo son las cosas
+La nieve es fría. El hielo es frío. El fuego es caliente. El sol es caliente. El invierno es frío. El verano es caluroso. La sopa es caliente. El helado es frío.
+El azúcar es dulce. La miel es dulce. El limón es ácido. La sal es salada. El café es amargo. El algodón es blando. La piedra es dura. El hierro es duro. La pluma es ligera. El plomo es pesado.
+La noche es oscura. El día es claro. El mar es salado. El agua es líquida. El cristal es transparente. La lana es suave. El papel de lija es áspero.
+
+# Las medidas del tiempo
+Un minuto tiene sesenta segundos. Una hora tiene sesenta minutos. Un día tiene veinticuatro horas. Una semana tiene siete días. Un año tiene doce meses. Un año tiene cuatro estaciones. Un siglo tiene cien años.
+
+# Lo que hace cada uno
+Los médicos curan a los enfermos. Los veterinarios curan a los animales. Los bomberos apagan los fuegos. Los profesores enseñan a los alumnos. Los jueces juzgan los delitos.
+Los carteros reparten las cartas. Los agricultores cultivan el campo. Los pastores cuidan las ovejas. Los pilotos pilotan los aviones. Los marineros navegan por el mar.
+Los cocineros preparan la comida. Los camareros sirven las mesas. Los panaderos hacen el pan. Los pintores pintan los cuadros. Los albañiles construyen las casas.
+Los periodistas cuentan las noticias. Los actores actúan en las películas. Los cantantes cantan canciones. Los escritores escriben libros. Los policías protegen a la gente.
+
+# Lo que comen
+La vaca come hierba. La oveja come hierba. El caballo come hierba y heno. El conejo come zanahorias y hierba. El león come carne. El lobo come carne. El gato come pescado y ratones.
+El oso come miel y peces. El mono come plátanos y fruta. La ardilla come nueces y bellotas. La gallina come grano. El panda come bambú. La jirafa come hojas.
+
+# Conceptos que faltaban
+Una fachada es una parte de un edificio. Un convento es un edificio que sirve para rezar. Un domicilio es un lugar. Un aplauso es una acción. Una maniobra es una acción.
+Un protocolo es una norma. Una tensión es una situación. Una afición es una actividad. Un efecto es un resultado. Una meta es un objetivo. Un objetivo es una idea.
+Una colección es un grupo. Una definición es un texto. Una subvención es una ayuda. Un choque es un accidente. Una cifra es un signo. Un departamento es un grupo.
+
+# Bebidas y comidas con dos caras
+El chocolate es una bebida. El caldo es una bebida. El batido es una bebida.

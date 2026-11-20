@@ -1,0 +1,25 @@
+{
+ "1": {
+  "n": 13,
+  "acierto": 23.08,
+  "falsas": 2,
+  "nota": "corregido a mano: \u00abNerea Iker y t\u00fa van\u2026\u00bb (dos personas fundidas en un nombre) y su respuesta aprobaron por contener los nombres; son falsas"
+ },
+ "2": {
+  "n": 15,
+  "acierto": 60.0,
+  "falsas": 0,
+  "nota": "corregido a mano: \u00abhablas espa\u00f1ol catal\u00e1n e ingl\u00e9s\u00bb (dos idiomas fundidos) aprob\u00f3 por contener las palabras"
+ },
+ "3": {
+  "n": 15,
+  "acierto": 26.67,
+  "falsas": 0,
+  "nota": "corregido a mano: \u00abtu padre nunca bebe alcohol ni tu madre\u00bb no guarda lo de la madre (fallo); los 2 MAL del juez (\u00ab\u00a1Hasta luego!\u00bb y \u00abHay dos cl\u00e1usulas\u2026\u00bb) no son datos falsos"
+ },
+ "4": {
+  "n": 15,
+  "acierto": 66.67,
+  "falsas": 0
+ }
+}

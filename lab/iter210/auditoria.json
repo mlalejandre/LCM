@@ -1,0 +1,83 @@
+{
+ "criterio": "Auditoría hecha DESPUÉS de la medida única, con el mismo criterio para 2.9 y 2.10. Un acierto del juez pasa a fallo si la frase es falsa (ALUCINA) o está rota; una respuesta incompleta o una negativa equivocada es FALLO pero no cuenta como falsa.",
+ "charla50e": {
+  "2.9": {
+   "juez": [
+    70.0,
+    1
+   ],
+   "auditado": {
+    "acierto": 68.0,
+    "falsas": 1
+   },
+   "cambios": [
+    "'antes de la cena siempre llamo a mi madre' -> «Luis llamó antes de la cena a tu madre siempre»: ALUCINA (el juez lo aprobó)",
+    "'¿hasta qué hora abre el taller?' -> «queda fuera de lo que sé hacer»: FALLO, no falsa"
+   ]
+  },
+  "2.10": {
+   "juez": [
+    82.0,
+    0
+   ],
+   "auditado": {
+    "acierto": 82.0,
+    "falsas": 0
+   },
+   "cambios": [],
+   "regresion": "'¿qué hay debajo de la cama?' (repaso) lo capturó la imagen que seguía en foco: «No sé a qué figura te refieres»"
+  },
+  "2.10_tras_arreglo_no_ciega": {
+   "juez": [
+    84.0,
+    0
+   ],
+   "auditado": {
+    "acierto": 84.0,
+    "falsas": 0
+   },
+   "cambio": "la imagen ya no captura preguntas sobre cosas que no son figuras («¿qué hay debajo de la cama?»)"
+  }
+ },
+ "ciego10": {
+  "criterio_corregido": "'¿qué hay detrás del coche?' tenía ABST, pero con «el coche está aparcado delante de la farmacia» la respuesta correcta es la farmacia (la inversa; el turno siguiente del examen la da por buena). Se corrige el criterio a 'farmacia' para las DOS versiones.",
+  "2.9": {
+   "juez": [
+    82.61,
+    1
+   ],
+   "auditado": {
+    "acierto": 80.43,
+    "falsas": 0
+   },
+   "cambios": [
+    "'¿qué hay detrás del coche?' -> «No lo sé»: pasa a FALLO con el criterio corregido",
+    "'¿para qué estudio?' -> «Para el examen.»: FALLO incompleto, no falsa"
+   ]
+  },
+  "2.10": {
+   "juez": [
+    95.65,
+    2
+   ],
+   "auditado": {
+    "acierto": 97.83,
+    "falsas": 0
+   },
+   "cambios": [
+    "'¿qué hay detrás del coche?' -> «La farmacia está detrás del coche. Lo deduzco…»: ACIERTO con el criterio corregido",
+    "'¿para qué estudio?' -> «Para el examen.»: FALLO incompleto, no falsa"
+   ]
+  },
+  "2.10_tras_arreglo_no_ciega": {
+   "juez": [
+    95.65,
+    2
+   ],
+   "auditado": {
+    "acierto": 97.83,
+    "falsas": 0
+   }
+  }
+ }
+}

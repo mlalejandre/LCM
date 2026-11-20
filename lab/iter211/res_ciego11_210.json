@@ -1,0 +1,445 @@
+{
+ "resumen": {
+  "n": 44,
+  "ok": 28,
+  "acierto": 63.64,
+  "falsas": 1,
+  "tasa_falsas": 2.27,
+  "abst_indebida": 15,
+  "error": 0,
+  "por_cat": {
+   "comas": {
+    "n": 4,
+    "acierto": 50.0,
+    "falsas": 0
+   },
+   "comparativas": {
+    "n": 12,
+    "acierto": 83.3,
+    "falsas": 0
+   },
+   "condicionales": {
+    "n": 8,
+    "acierto": 62.5,
+    "falsas": 1
+   },
+   "copulativas": {
+    "n": 11,
+    "acierto": 81.8,
+    "falsas": 0
+   },
+   "disyuntivas": {
+    "n": 9,
+    "acierto": 22.2,
+    "falsas": 0
+   }
+  }
+ },
+ "filas": [
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 1,
+   "q": "mi tío Jorge e Inés están casados",
+   "crit": "jorge|ines;!no lo he entendido",
+   "r": "Entendido: Jorge e Inés están casados.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 2,
+   "q": "¿con quién está casado Jorge?",
+   "crit": "ines",
+   "r": "Jorge está casado con Inés.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 3,
+   "q": "Inés no come ni carne ni pescado",
+   "crit": "carne|pescado;!no lo he entendido",
+   "r": "Entendido: Inés no come carne ni pescado.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 4,
+   "q": "¿Inés come pescado?",
+   "crit": "^no",
+   "r": "No, Inés no come pescado.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 5,
+   "q": "¿Inés come carne?",
+   "crit": "^no",
+   "r": "No, Inés no come carne.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 6,
+   "q": "tanto Jorge como Inés trabajan en un banco",
+   "crit": "banco;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tanto Jorge como Inés trabajan en un banco».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 7,
+   "q": "¿dónde trabaja Inés?",
+   "crit": "banco",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Tanto Jorge como Inés trabajan en un banco».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 8,
+   "q": "Jorge habla inglés y francés",
+   "crit": "ingles|frances;!no lo he entendido",
+   "r": "Entendido: Jorge habla inglés y francés.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 9,
+   "q": "¿Jorge habla francés?",
+   "crit": "^si",
+   "r": "Sí, Jorge habla francés.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-cop",
+   "cat": "copulativas",
+   "i": 10,
+   "q": "¿Jorge habla alemán?",
+   "crit": "ABST|^no",
+   "r": "No lo sé. Solo sé que Jorge habla inglés y Jorge habla francés.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 0,
+   "q": "buenas",
+   "crit": "hola|buenas",
+   "r": "¡Buenas! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 1,
+   "q": "la reunión es el martes o el miércoles",
+   "crit": "martes|miercoles;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La reunión es el martes o el miércoles».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 2,
+   "q": "¿cuándo es la reunión?",
+   "crit": "martes;miercoles",
+   "r": "No lo tengo del todo claro, pero me dijiste: «La reunión es el martes o el miércoles».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 3,
+   "q": "¿la reunión es el martes?",
+   "crit": "miercoles",
+   "r": "No lo tengo del todo claro, pero me dijiste: «La reunión es el martes o el miércoles».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 4,
+   "q": "al final no es el martes",
+   "crit": "martes|miercoles|reunion;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «No es el martes».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 5,
+   "q": "¿cuándo es la reunión?",
+   "crit": "miercoles;!no lo s*",
+   "r": "No lo tengo del todo claro, pero me dijiste: «La reunión es el martes o el miércoles».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 6,
+   "q": "o voy en tren o voy en autobús",
+   "crit": "tren|autobus;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «O voy en tren o voy en autobús».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 7,
+   "q": "¿cómo voy?",
+   "crit": "tren;autobus",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-dis",
+   "cat": "disyuntivas",
+   "i": 8,
+   "q": "¿voy en coche?",
+   "crit": "^no|ABST",
+   "r": "No lo sé: no me has dicho nada sobre eso.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 1,
+   "q": "Marta es mayor que Raúl",
+   "crit": "marta|raul;!no lo he entendido",
+   "r": "Entendido: Marta es mayor que Raúl.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 2,
+   "q": "Raúl es mayor que Teo",
+   "crit": "raul|teo;!no lo he entendido",
+   "r": "Entendido: Raúl es mayor que Teo.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 3,
+   "q": "¿quién es el mayor?",
+   "crit": "marta",
+   "r": "Marta es la mayor.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 4,
+   "q": "¿quién es el menor?",
+   "crit": "teo",
+   "r": "Teo es el menor.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 5,
+   "q": "¿Teo es mayor que Marta?",
+   "crit": "^no",
+   "r": "No, Marta es mayor que Teo.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 6,
+   "q": "Raúl corre más rápido que Marta",
+   "crit": "raul|marta;!no lo he entendido",
+   "r": "Entendido: Raúl corre más rapido que Marta.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 7,
+   "q": "¿quién corre más rápido, Marta o Raúl?",
+   "crit": "raul",
+   "r": "No lo sé: me faltan datos para comparar.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 8,
+   "q": "mi coche es menos caro que el de Raúl",
+   "crit": "coche;!no lo he entendido",
+   "r": "Entendido: tu coche es menos caro que el coche de Raúl.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 9,
+   "q": "¿el coche de Raúl es más caro que el mío?",
+   "crit": "^si",
+   "r": "Sí, el coche de Raúl es más caro que tu coche.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 10,
+   "q": "Teo es tan simpático como Marta",
+   "crit": "teo|marta;!no lo he entendido",
+   "r": "Entendido: Teo es tan simpatico como Marta.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-comp",
+   "cat": "comparativas",
+   "i": 11,
+   "q": "¿Marta es menos simpática que Teo?",
+   "crit": "^no|igual|tan",
+   "r": "No lo sé: no tengo datos para comparar a Marta con Teo en eso.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 1,
+   "q": "nací el 10 de enero de 2000",
+   "crit": "2000;!no lo he entendido",
+   "r": "Entendido: naciste el 10 de enero de 2000.",
+   "v": "OK"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 2,
+   "q": "¿qué edad tengo?",
+   "crit": "26",
+   "r": "Tienes 26 años (o uno menos, según el día de su cumpleaños).",
+   "v": "OK"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 3,
+   "q": "si hubiera nacido en 1998, ¿qué edad tendría?",
+   "crit": "28",
+   "r": "Es una condición, no un hecho observado. Necesito que indiques «si ... entonces ...» para aprender la regla.",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 4,
+   "q": "¿qué edad tengo?",
+   "crit": "26;!28",
+   "r": "Tienes 26 años (o uno menos, según el día de su cumpleaños).",
+   "v": "OK"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 5,
+   "q": "si mañana hace sol, iré a correr",
+   "crit": "sol|correr;!no lo he entendido",
+   "r": "Vale, lo apunto: «Si mañana hace sol, iré a correr».",
+   "v": "OK"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 6,
+   "q": "mañana hace sol",
+   "crit": "ANY",
+   "r": "Vale, lo apunto: «Mañana hace sol».",
+   "v": null
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 7,
+   "q": "¿qué haré mañana?",
+   "crit": "correr",
+   "r": "No lo tengo del todo claro, pero me dijiste: «Mañana hace sol».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-si",
+   "cat": "condicionales",
+   "i": 8,
+   "q": "¿cuántos años tendré en 2030?",
+   "crit": "30",
+   "r": "Tienes 26 años (o uno menos, según el día de su cumpleaños).",
+   "v": "MAL"
+  },
+  {
+   "id": "c11-coma",
+   "cat": "comas",
+   "i": 0,
+   "q": "hola",
+   "crit": "hola",
+   "r": "¡Hola! ¿En qué puedo ayudarte?",
+   "v": "OK"
+  },
+  {
+   "id": "c11-coma",
+   "cat": "comas",
+   "i": 1,
+   "q": "en mi clase hay alumnos de Perú, Chile, Cuba y Bolivia",
+   "crit": "peru|chile|cuba|bolivia;!no lo he entendido",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En mi clase hay alumnos de Perú y Chile y Cuba y Bolivia».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-coma",
+   "cat": "comas",
+   "i": 2,
+   "q": "¿hay alumnos de Cuba?",
+   "crit": "^si",
+   "r": "No lo tengo del todo claro, pero me dijiste: «En mi clase hay alumnos de Perú y Chile y Cuba y Bolivia».",
+   "v": "ABST_INDEBIDA"
+  },
+  {
+   "id": "c11-coma",
+   "cat": "comas",
+   "i": 3,
+   "q": "¿hay alumnos de México?",
+   "crit": "ABST|^no",
+   "r": "No lo sé.",
+   "v": "OK"
+  }
+ ]
+}

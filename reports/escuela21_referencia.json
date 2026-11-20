@@ -1,0 +1,45 @@
+{
+ "antes": {
+  "conversacional": {
+   "categoria": 93.76,
+   "dependencia": 91.44,
+   "funcion": 81.9,
+   "lema": 94.96,
+   "frases_perfectas": 62.53,
+   "n": 3000
+  },
+  "ud_test": {
+   "categoria": 95.67,
+   "dependencia": 87.53,
+   "funcion": 82.05,
+   "lema": 97.78,
+   "frases_perfectas": 40.58,
+   "n": 1565
+  }
+ },
+ "despues": {
+  "conversacional": {
+   "categoria": 99.13,
+   "dependencia": 99.7,
+   "funcion": 99.4,
+   "lema": 99.19,
+   "frases_perfectas": 93.8,
+   "n": 3000
+  },
+  "ud_test": {
+   "categoria": 95.81,
+   "dependencia": 87.51,
+   "funcion": 81.94,
+   "lema": 97.8,
+   "frases_perfectas": 41.09,
+   "n": 1565
+  }
+ },
+ "adoptada": true,
+ "epocas": 3,
+ "conv": 24000,
+ "ud": 12000,
+ "lr": 0.0004,
+ "dispositivo": "cpu",
+ "fecha": "2026-11-18 13:36"
+}

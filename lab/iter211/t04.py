@@ -1,0 +1,15 @@
+D = [{"id": "q04", "cat": "condicionales", "turnos": [
+ ("hola", "hola"),
+ ("nací en 1988", "1988;!no lo he entendido"),
+ ("si nací el 20 de diciembre, ¿qué edad tengo?", "37;!38"),
+ ("y si nací el 2 de febrero, ¿qué edad tengo?", "38;!37"),
+ ("si nací el día 3, ¿qué edad tengo?", "37;38"),
+ ("¿qué edad tengo?", "37;38"),
+ ("si hace frío, mi madre no sale de casa", "frio|casa;!no lo he entendido"),
+ ("hoy hace frío", "frio;!no lo he entendido"),
+ ("¿mi madre sale hoy de casa?", "^no"),
+ ("si me toca la lotería, me compro un barco", "barco|loteria;!no lo he entendido"),
+ ("¿qué haré si me toca la lotería?", "barco"),
+ ("¿me he comprado un barco?", "ABST|^no"),
+ ("si tuviera 10 años menos, ¿qué edad tendría?", "27;28"),
+]}]
