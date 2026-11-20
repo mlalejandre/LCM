@@ -82,10 +82,34 @@ _EVENTOS_SIN_NOMBRE = {"santo", "cumpleanos", "boda", "fiesta", "cena", "comida"
 class Conversador(Nucleo):
     # ================================================================== entrada
     def procesar(self, texto: str) -> Optional[dict]:
+        """2.19: los términos de varias palabras («la Torre de Hércules», «el zorro volador») entran como una pieza y salen con su forma."""
+        from . import compuestos as _C
+        try:
+            if texto and not getattr(self, "_leyendo", False):
+                if "?" not in texto and len(texto) < 400:
+                    _C.aprende_propios(self, texto)
+                if len(texto) < 400:
+                    texto = _C.codifica(self, texto)
+        except Exception:                                # noqa
+            pass
+        r = self._procesar_218(texto)
+        try:
+            if isinstance(r, dict) and r.get("respuesta") and _C.tabla(self):
+                r = dict(r, respuesta=_C.decodifica(self, r["respuesta"]))
+                self._ult_resp = r["respuesta"]
+        except Exception:                                # noqa
+            pass
+        return r
+
+    def _procesar_218(self, texto: str) -> Optional[dict]:
         """2.16: la charla, más leer un texto inserto, seguir el hilo de quién va con quién y, si hace falta, citar lo leído."""
         from . import lectura, crear, relaciones as _rel
         _rel.ENSENADO.clear(); _rel.ENSENADO.update(self.usuario.get("rel") or {})
         if texto and not getattr(self, "_leyendo", False) and len(texto) < 220:
+            # 2.19: «volviendo a las setas, ¿…?», «cambiando de tema, …»: el giro de la charla no es parte de lo que se dice
+            m_g = re.match(r"^\s*(?:(?:y\s+)?volviendo a[^,:?]{2,40}|cambiando de tema|por cierto|otra cosa|a prop[oó]sito|una (?:pregunta|duda|cosa)(?: m[aá]s)?|oye|y otra cosa|hablando de[^,:?]{2,40})\s*[,:]\s*(\S.+)$", texto, re.I)
+            if m_g:
+                texto = m_g.group(1)[:1].upper() + m_g.group(1)[1:] if not m_g.group(1).startswith(("¿", "¡")) else m_g.group(1)
             from . import iniciativa as _ini
             try:
                 texto = _ini.correferencia(self, texto)  # 2.17: «las niñas» son mis hijas
@@ -134,7 +158,11 @@ class Conversador(Nucleo):
                 from . import exposicion as _X
                 rps = _X.peticion_sin_atender(texto, self)     # 2.18: una petición nunca se apunta como un hecho
                 if rps is None and len(lectura.frases(texto)) == 1:
+                    foto_c, n_c = _X.foto_leido(self), len(self.F)
                     rps = _X.charla(self, texto)         # una frase que explica algo general se lee como al leer un texto
+                    if rps is not None:                  # 2.19: también aquí se contrasta con lo leído
+                        rps = _X.contraste(self, texto, rps, foto_c, n_c)
+                        rps = _X.contraste_texto(self, texto, rps)
             except Exception:                            # noqa
                 rps = None
             if rps is not None:
@@ -187,7 +215,13 @@ class Conversador(Nucleo):
                 r = _X.contraste(self, texto, r, foto_l, n_af)   # 2.18: lo que me dicen frente a lo que leí
             except Exception:                            # noqa
                 pass
-        if texto and "?" in texto and not getattr(self, "_leyendo", False) and isinstance(r, dict) and r.get("estado") == "abst" and not getattr(self, "_reform", False):
+        if texto and "?" not in texto and not getattr(self, "_leyendo", False):
+            try:
+                r = _X.contraste_texto(self, texto, r)   # 2.19: …y frente a las frases leídas que no dejaron un hecho
+                _X.apunta_no_entendida(self, texto, r)
+            except Exception:                            # noqa
+                pass
+        if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or (isinstance(r, dict) and r.get("estado") == "abst")) and not getattr(self, "_reform", False):
             self._reform = True
             try:
                 rpc = _X.por_clase(self, texto)          # 2.18: lo que vale para la clase vale para quien es de esa clase
@@ -213,6 +247,19 @@ class Conversador(Nucleo):
                     alt = _X.inversa(texto)              # 2.18: «¿qué pieza se mueve en diagonal?» -> ¿quién…?
                 except Exception:                        # noqa
                     alt = None
+            if not alt:
+                try:                                     # 2.19: la misma pregunta con otras palabras («¿de qué se alimentan?» = «¿qué comen?»)
+                    from . import sinonimia as _S
+                    self._reform = True
+                    for cand in _S.alternativas(texto):
+                        r_c = self._procesar_charla(cand)
+                        if isinstance(r_c, dict) and r_c.get("estado") == "ok":
+                            r = r_c
+                            break
+                except Exception:                        # noqa
+                    pass
+                finally:
+                    self._reform = False
             if alt:
                 self._reform = True
                 try:

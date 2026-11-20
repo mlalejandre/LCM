@@ -1380,3 +1380,37 @@ examen: examinar
 paseo: pasear
 clase: estudiar
 
+# ---------------------------------------------------------------- LCM 2.19: decir lo mismo con otras palabras
+# [equivalencias]  verbo: verbos que significan lo mismo. «Xse de» = pronominal con «de» («alimentarse de algo» = «comer algo»).
+[equivalencias]
+comer: alimentarse de, ingerir, tomar
+vivir: habitar, residir
+fabricar: producir, elaborar, hacer
+usar: utilizar, emplear
+empezar: comenzar, iniciar
+terminar: acabar, finalizar
+encontrar: hallar, localizar
+construir: edificar, levantar
+cazar: capturar, atrapar
+proteger: defender
+mostrar: enseñar
+medir: alcanzar
+llevar: transportar
+quitar: eliminar
+cuidar: atender
+recoger: recolectar
+curar: sanar
+causar: provocar, producir
+necesitar: requerir, precisar
+guardar: almacenar, conservar
+
+[equivalencias_nombres]
+comida: alimento
+sitio: lugar
+casa: hogar, vivienda
+trabajo: empleo
+médico: doctor
+coche: automóvil
+fallo: error
+miedo: temor
+

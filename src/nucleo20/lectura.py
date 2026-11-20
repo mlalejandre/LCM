@@ -74,14 +74,23 @@ def leer(nuc, texto):
         for k, f in enumerate(fs):
             f2 = _CONECTOR.sub("", f, count=1)
             f2 = f2[:1].upper() + f2[1:]
+            try:                                        # 2.19: los términos de varias palabras, como una pieza
+                from . import compuestos as _C
+                _C.aprende_propios(nuc, f2)
+                f2 = _C.codifica(nuc, f2)
+            except Exception:                           # noqa
+                pass
             n0 = len(nuc.F)
             # 2.18: frase que EXPLICA (sujeto genérico, definición, regla, «algunos…») -> camino expositivo
             sn_x, _ = X.sujeto(f2)
             w_ini = f2.split()[0] if f2.split() else ""
             sin_suj = sn_x is None and (X._fin3(w_ini) or w_ini in ("Su", "Sus", "Es", "Son", "Está", "Están")) and w_ini != "Hay"
             expositiva = (sn_x is not None and re.fullmatch(X._DET, sa(sn_x.split()[0].lower())) is not None) \
-                or re.match(r"^(?:Algun[oa]s|Cuando|Si|Siempre que|A los|A las|Al|Después de|Antes de|En (?:un|una|el|la|los|las) [a-záéíóúñ]+ hay|Hay)\b", f2) is not None \
-                or (sin_suj and fresco and hilo.ult is not None) or (fresco and re.search(r"\bse llaman?\b|, por eso\b", f2) is not None)
+                or re.match(r"^(?:Algun[oa]s|Cuando|Si|Siempre que|A los|A las|Al|Después de|Antes de|En (?:un|una|el|la|los|las) [a-záéíóúñü]+ hay|Hay)\b", f2) is not None \
+                or (sin_suj and fresco and hilo.ult is not None) or (fresco and re.search(r"\bse llaman?\b", f2) is not None) or re.search(r",\s+(?:y\s+)?por eso\b", f2) is not None \
+                or (re.match(r"^Por (?:eso|ello|esa razón|ese motivo)\b", f2) is not None and bool(hilo.previa)) \
+                or (sn_x is not None and re.search(r"\b(?:es|son|fue|era|fueron)\s+(?:el|la|los|las)\s+(?:únic[oa]s?|primer[oa]?s?|últim[oa]s?|[a-záéíóúñü]+\s+(?:más|menos)\s+[a-záéíóúñü]+)\b", f2) is not None) \
+                or (sn_x is not None and len(sn_x.split()) == 1 and sn_x[:1].isupper() and sa(sn_x.lower()) in _C.tabla(nuc))
             if expositiva:
                 if sn_x is None and hilo.ult and sin_suj and w_ini not in ("Su", "Sus"):
                     tema_de[f] = hilo.para("p" if X._fin3(w_ini) == "p" or w_ini in ("Son", "Están") else "s") or hilo.ult
@@ -102,6 +111,9 @@ def leer(nuc, texto):
                 nuc.pend = None
                 continue
             fresco = False
+            hilo.previa = f2
+            if sn_x:
+                hilo.pon(sn_x)
             w0 = f2.split()[0] if f2.split() else ""
             f3 = re.sub(rf"^{coloquial._T_NARR}\s+", "", f2, flags=re.I)        # «Los lunes lleva…»: el verbo va tras el complemento de tiempo
             w0 = f3.split()[0] if f3.split() else w0
@@ -153,6 +165,11 @@ def cita(nuc, pregunta):
     leidos = nuc.usuario.get("leido") or []
     if not leidos or "?" not in pregunta:
         return None
+    try:
+        from . import compuestos as _C
+        pregunta = _C.decodifica(nuc, pregunta)          # las frases guardadas están como se escribieron
+    except Exception:                                    # noqa
+        pass
     q = sa(pregunta.lower())
     cont = _contenido(pregunta)
     if not cont:
@@ -210,7 +227,7 @@ def cita(nuc, pregunta):
 
 _GEN_Q = {"pasa", "pasan", "ocurr", "suced", "hace", "hacen", "llama", "llam", "sirve", "sirv", "tipo", "tipos", "clase", "parte", "puede", "pued", "suele", "cosa", "cosas", "forma", "manera", "sitio", "lugar", "epoca", "momen",
           "perso", "gente", "anima", "objet"}
-_NUM_RE = re.compile(r"\b(?:\d+|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci\w+|veint\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien\w*|mil|"
+_NUM_RE = re.compile(r"\b(?:\d+|unos|unas|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci\w+|veint\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien\w*|mil|"
                      r"millon\w*|medio|media|vari[oa]s|much[oa]s|poc[oa]s|un par|docena|cientos|miles)\b")
 
 
@@ -218,13 +235,13 @@ def _responde(q, f, raices, cubre):
     """¿Puede esta frase CONTESTAR a la pregunta? Tiene que hablar de todo lo que se pregunta y traer el tipo de dato que se pide."""
     fs = sa(f.lower())
     lem_f = set()
-    for w in re.findall(r"[a-záéíóúñ]+", f.lower()):
+    for w in re.findall(r"[a-záéíóúñü]+", f.lower()):
         try:
             lem_f |= {a_[0] for a_ in (M.analizar(w) or [])}
         except Exception:                                # noqa
             pass
     def _por_lema(r):
-        for w in re.findall(r"[a-záéíóúñ]+", q):
+        for w in re.findall(r"[a-záéíóúñü]+", q):
             if _raiz(w) == r:
                 try:
                     if {a_[0] for a_ in (M.analizar(w) or [])} & lem_f:
@@ -247,6 +264,9 @@ def _responde(q, f, raices, cubre):
             cuenta_n = [m_.group(1) for m_ in re.finditer(_NUM_RE.pattern + r"\s+(?:y\s+\w+\s+)?(?:de\s+)?([a-zñ]+)", fs)] + re.findall(r"\b(?:un|una)\s+([a-zñ]+)", fs)
             if cuenta_n and not any(_raiz(c)[:4] == nom[:4] for c in cuenta_n):
                 return False
+    ms = re.match(r"^\W*(?:y\s+)?(?:cuanto|cuanta|cuantos|cuantas|que|como)\s+[a-zñ]+\s+(?:el|la|los|las)\s+([a-zñ]+)$", q.strip(" ?¿"))
+    if ms and re.match(r"^(?:en|sobre|desde|para|con)\s+(?:el|la|los|las)\s+" + re.escape(ms.group(1)[:4]), fs):
+        return False                                     # lo preguntado es el sujeto; en la frase solo es el lugar
     if re.match(r"^\W*(?:y\s+)?(?:donde|adonde|por donde|de donde|en que (?:sitio|lugar|isla|pais|ciudad))\b", q) \
             and not re.search(r"\b(?:en|sobre|bajo|debajo|encima|junto|cerca|lejos|dentro|fuera|entre|por|desde|hasta|hacia|al|a la|a los|de)\b", fs):
         return False

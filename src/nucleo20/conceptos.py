@@ -18,7 +18,7 @@ def kb():
     if _KB is not None:
         return _KB
     d = {"isa": {}, "hijos": {}, "forma": {}, "gen": {}, "props": [], "partes": {}, "parte_de": {}, "ant": {}, "grupos": {}, "parte_disp": {}, "efectos": {},
-         "alias": {}, "rel": {"funcion": {}, "material": {}, "lugar": {}, "usuario": {}}, "tam": {}, "huecos": {}, "tono": {}, "acciones": {}}
+         "alias": {}, "rel": {"funcion": {}, "material": {}, "lugar": {}, "usuario": {}}, "tam": {}, "huecos": {}, "tono": {}, "acciones": {}, "equiv": {}, "equiv_n": {}}
     ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "conceptos_base.txt")
     sec = ""
 
@@ -100,6 +100,10 @@ def kb():
         elif sec == "huecos":                            # 2.17: lo que suele faltar por saber cuando alguien cuenta algo («me voy de viaje» -> ¿adónde?)
             h, _, preg = resto.partition("|")
             d["huecos"].setdefault(sa(cab.strip()), []).append((h.strip(), preg.strip()))
+        elif sec == "equivalencias":                     # 2.19: verbos que dicen lo mismo («comer: alimentarse de, ingerir»)
+            d["equiv"][cab.strip()] = [x.strip() for x in resto.split(",") if x.strip()]
+        elif sec == "equivalencias_nombres":             # 2.19: nombres que dicen lo mismo («comida: alimento»)
+            d["equiv_n"][cab.strip()] = [x.strip() for x in resto.split(",") if x.strip()]
         elif sec == "acciones":                          # 2.17: el evento y la acción que es («cena: cenar»): «tengo una cena» = «ceno»
             d["acciones"][sa(cab.strip())] = [sa(x.strip()) for x in resto.split(",") if x.strip()]
         elif sec == "tono":                              # 2.17: cómo se recibe una noticia (logro, bueno, malo, duelo, reto, felicidades)

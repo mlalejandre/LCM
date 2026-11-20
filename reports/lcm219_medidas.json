@@ -1,0 +1,299 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.19 · aprender de un texto, segunda vuelta (términos de varias palabras, equivalencias, contraste)",
+ "medida_final_limpia_test4_65": {
+  "temas": [
+   "el olivo",
+   "los trenes"
+  ],
+  "nota": "escrita con el código definitivo congelado (41fb22f); medida una vez; sin arreglos después",
+  "sin_texto_219": [
+   23.1,
+   9
+  ],
+  "texto": {
+   "lcm218": [
+    78.5,
+    5
+   ],
+   "lcm219": [
+    83.1,
+    4
+   ]
+  },
+  "frases": {
+   "lcm218": [
+    70.8,
+    7
+   ],
+   "lcm219": [
+    75.4,
+    6
+   ]
+  },
+  "auditado_texto": {
+   "lcm218": 78.5,
+   "lcm219": 80.0
+  },
+  "auditoria": "en la 2.19 dos definiciones aprobadas salen embarulladas («la vía es circulan sobre dos raíles de acero») y cuentan como fallo",
+  "por_tipo_texto_218_219": {
+   "literal": [
+    90,
+    95
+   ],
+   "charla": [
+    75,
+    100
+   ],
+   "contradiccion": [
+    0,
+    50
+   ],
+   "uso": [
+    75,
+    75
+   ],
+   "deduccion": [
+    40,
+    40
+   ],
+   "parafrasis": [
+    0,
+    0
+   ],
+   "combinar": [
+    0,
+    0
+   ],
+   "herencia": [
+    100,
+    100
+   ],
+   "inversa": [
+    100,
+    100
+   ],
+   "vocabulario": [
+    100,
+    100
+   ],
+   "no_dicho": [
+    100,
+    100
+   ]
+  }
+ },
+ "primera_medida_limpia_test3_60": {
+  "temas": [
+   "pingüinos",
+   "el pan"
+  ],
+  "nota": "escrita con el código congelado (1236d83); primer intento a ciegas",
+  "texto": {
+   "lcm218": [
+    76.7,
+    6
+   ],
+   "lcm219_ciega": [
+    81.7,
+    5
+   ],
+   "lcm219_final_no_ciega": [
+    93.3,
+    4
+   ]
+  },
+  "frases": {
+   "lcm218": [
+    70.0,
+    7
+   ],
+   "lcm219_ciega": [
+    73.3,
+    7
+   ],
+   "lcm219_final_no_ciega": [
+    81.7,
+    7
+   ]
+  },
+  "hallazgo": "las reglas no admitían la «ü»: «pingüino» rompía superlativos, definiciones y clases compuestas"
+ },
+ "temas_ya_conocidos_texto_218_219": {
+  "nota": "no son medida limpia: se usaron para desarrollar",
+  "dev_101": [
+   [
+    94.1,
+    0
+   ],
+   [
+    96.0,
+    0
+   ]
+  ],
+  "test_95": [
+   [
+    81.1,
+    7
+   ],
+   [
+    88.4,
+    5
+   ]
+  ],
+  "test2_58": [
+   [
+    74.1,
+    6
+   ],
+   [
+    94.8,
+    0
+   ]
+  ],
+  "setas_59": [
+   [
+    67.8,
+    5
+   ],
+   [
+    72.9,
+    6
+   ]
+  ]
+ },
+ "temas_ya_conocidos_frases_218_219": {
+  "dev_101": [
+   [
+    84.2,
+    8
+   ],
+   [
+    89.1,
+    5
+   ]
+  ],
+  "test_95": [
+   [
+    72.6,
+    8
+   ],
+   [
+    85.3,
+    3
+   ]
+  ],
+  "test2_58": [
+   [
+    58.6,
+    6
+   ],
+   [
+    79.3,
+    2
+   ]
+  ]
+ },
+ "controles_218_219": {
+  "examenes_autor": [
+   89.9,
+   89.9
+  ],
+  "examen_ciego2": [
+   94.68,
+   94.68
+  ],
+  "examen_ciego6": [
+   82.09,
+   82.09
+  ],
+  "examen_ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "limpio_16b": [
+   96.48,
+   96.48
+  ],
+  "limpio_16c": [
+   100.0,
+   100.0
+  ],
+  "limpio_17b": [
+   99.26,
+   99.26
+  ],
+  "limpio_17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas de rondas anteriores",
+ "pytest": "894 pasan (3 de entorno fallan como siempre)",
+ "curva_primer_intento": {
+  "nota": "primer intento de cada paso (texto pegado); temas ya conocidos",
+  "base_218": {
+   "dev": [
+    94.1,
+    0
+   ],
+   "test": [
+    81.1,
+    7
+   ],
+   "test2": [
+    74.1,
+    6
+   ],
+   "setas": [
+    67.8,
+    5
+   ]
+  },
+  "paso1_compuestos_y_definiciones": {
+   "dev": [
+    96.0,
+    0
+   ],
+   "test": [
+    83.2,
+    6
+   ],
+   "test2": [
+    87.9,
+    2
+   ]
+  },
+  "paso2_equivalencias_mayoria_coordinacion": {
+   "dev": [
+    96.0,
+    0
+   ],
+   "test": [
+    87.4,
+    6
+   ],
+   "test2": [
+    94.8,
+    0
+   ],
+   "setas": [
+    72.9,
+    6
+   ]
+  },
+  "1": {
+   "n": 220,
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ }
+}

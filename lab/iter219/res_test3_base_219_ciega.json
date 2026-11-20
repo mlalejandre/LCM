@@ -1,0 +1,624 @@
+{
+ "resumen": {
+  "tipos": {
+   "L": {
+    "n": 18,
+    "ok": 1,
+    "falsas": 5,
+    "acierto": 5.6
+   },
+   "TOTAL": {
+    "n": 60,
+    "ok": 17,
+    "falsas": 11,
+    "acierto": 28.3
+   },
+   "V": {
+    "n": 5,
+    "ok": 2,
+    "falsas": 2,
+    "acierto": 40.0
+   },
+   "P": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "D": {
+    "n": 5,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "I": {
+    "n": 6,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 66.7
+   },
+   "M": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 1,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 25.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 0,
+    "falsas": 2,
+    "acierto": 0.0
+   }
+  },
+  "frases_cubiertas": [
+   1,
+   29
+  ]
+ },
+ "filas": [
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿los pingüinos pueden volar?",
+   "crit": "^no",
+   "r": "No, los pingüinos no vuelan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "pingüinos",
+   "t": "V",
+   "q": "¿qué son los pingüinos?",
+   "crit": "ave*",
+   "r": "Un pingüino es un ave. Los pingüinos nadan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿para qué usan sus alas los pingüinos?",
+   "crit": "nadar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿dónde viven los pingüinos?",
+   "crit": "sur|antartida",
+   "r": "Los pingüinos suelen vivir en el hielo y el mar.",
+   "v": "MAL",
+   "k": 2
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué comen los pingüinos?",
+   "crit": "peces|calamares|crustaceos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿qué protege a los pingüinos del frío?",
+   "crit": "grasa",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cómo son los pingüinos en el agua?",
+   "crit": "rapidos",
+   "r": "Agua es una bebida.",
+   "v": "MAL",
+   "k": 5
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cuál es el pingüino más grande?",
+   "crit": "emperador",
+   "r": "No lo sé: no tengo comparaciones sobre eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cuánto pesa el pingüino emperador?",
+   "crit": "cuarenta|40",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿quién cuida el huevo?",
+   "crit": "macho",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cuántos huevos pone la hembra?",
+   "crit": "un|1",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "pingüinos",
+   "t": "V",
+   "q": "¿qué es una colonia?",
+   "crit": "grupo*",
+   "r": "Una colonia es un objeto de aseo.",
+   "v": "MAL",
+   "k": 10
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿qué hacen los pingüinos cuando hace mucho frío?",
+   "crit": "juntan|calor",
+   "r": "No lo sé: no tengo datos del tiempo, solo lo que tú me cuentes.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿de qué color es el plumón de las crías?",
+   "crit": "gris",
+   "r": "No sé nada de el plumón de la cria: no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cuál es el peor enemigo de los pingüinos en el mar?",
+   "crit": "foca",
+   "r": "No lo sé: no me has dicho cuál es el enemigo del pingüino.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿qué pingüino vive cerca del ecuador?",
+   "crit": "galapagos",
+   "r": "No me has dicho qué hay cerca del ecuador.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que estudian las aves?",
+   "crit": "ornitologo*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 15
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿un pingüino es un animal?",
+   "crit": "^si",
+   "r": "Sí, un pingüino es un animal. Lo deduzco porque un pingüino es un ave y un ave es un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿el pingüino emperador es un ave?",
+   "crit": "^si",
+   "r": "No lo sé. No conozco «pingüino»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿un pingüino es un pez?",
+   "crit": "^no",
+   "r": "No, un pingüino es un ave, no un pez.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "M",
+   "q": "¿cuánto pesa el pingüino más grande?",
+   "crit": "cuarenta|40",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿el pingüino emperador puede volar?",
+   "crit": "^no",
+   "r": "No lo sé. No conozco «pingüino emperador»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿cuántos pingüinos hay en la Antártida?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿cuánto vive un pingüino?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿quién descubrió la Antártida?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "C",
+   "q": "mi hermana es ornitóloga",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hermana es ornitóloga.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "C",
+   "q": "¿mi hermana estudia las aves?",
+   "crit": "^si|estudia*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu hermana sé que es ornitóloga.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "G",
+   "q": "dime un pingüino",
+   "crit": "emperador|galapagos",
+   "r": "No conozco ningún ejemplo de «pinguino» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "G",
+   "q": "descríbeme el pingüino emperador",
+   "crit": "grande|metro|kilos|pingüino|pinguino",
+   "r": "Un pingüino es un ave. Suele estar en el hielo. Los pingüinos nadan. Las aves tienen alas. Las aves tienen plumas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "K",
+   "q": "los pingüinos pueden volar",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|no pueden",
+   "r": "Entendido: los pingüinos pueden volar.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿con qué se hace el pan?",
+   "crit": "harina;agua",
+   "r": "Según mi diccionario de conceptos no tengo anotada su composición, pero en la definición de «pan» aparecen: masa, comida, levadura, panadería y polvo.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es la harina?",
+   "crit": "polvo",
+   "r": "Una harina es un condimento.",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cuánto se deja reposar la masa?",
+   "crit": "horas",
+   "r": "No lo sé. No conozco «reposar»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "el pan",
+   "t": "D",
+   "q": "¿por qué crece la masa?",
+   "crit": "levadura|gas",
+   "r": "No lo sé. No conozco «masa»: ¿me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es la fermentación?",
+   "crit": "levadura|gas|masa|proceso",
+   "r": "No sé qué es la fermentacion. ¿Me lo explicas?",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿dónde se cuece la masa?",
+   "crit": "horno",
+   "r": "No he entendido la pregunta. Prueba con otra forma (por ejemplo: ¿Quién compró pan?).",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el pan",
+   "t": "I",
+   "q": "¿cómo se llama la parte de fuera del pan?",
+   "crit": "corteza",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo es la miga?",
+   "crit": "blanda",
+   "r": "Según mi diccionario de conceptos: «miga» es un tipo de «pedazo» y «cantidad». Dominio: alimento o bebida. En inglés: crumb. Acción asociada: desmigajarse. En su definición aparecen, entre otras: menudo, pedazo, pan y coca.",
+   "v": "MAL",
+   "k": 8
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo es la corteza?",
+   "crit": "dura|crujiente",
+   "r": "Según mi diccionario de conceptos: «corteza» es un tipo de «cubierta» y «covering». Dominio: planta. En inglés: bark. En su definición aparecen, entre otras: duro, proteccionista, arbóreo, tallo y raíz. Algunos tipos: canela china y canella. (La palabra también puede referirse a otros conceptos, como un tipo de «tejido» y «piel».)",
+   "v": "MAL",
+   "k": 8
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿con qué se hace el pan integral?",
+   "crit": "grano",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo se vende el pan de molde?",
+   "crit": "rebanadas|cortado",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 10
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es una baguette?",
+   "crit": "barra|pan",
+   "r": "Según mi diccionario de conceptos: «baguette» es un tipo de «pan blanco», «pan» y «alimento» (y, más en general, «sólido» y «materia»). Dominio: alimento o bebida. En inglés: baguet y baguette. En su definición aparecen, entre otras: estrecho, francés, palo y barra. (La palabra también puede referirse a otros conceptos, como un tipo de «barra» y «artículo».)",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿de dónde es típica la baguette?",
+   "crit": "francia",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿para qué sirve el pan duro?",
+   "crit": "torrijas|sopas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "el pan",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que hacen pan?",
+   "crit": "panadero*",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 13
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cuándo empieza a trabajar un panadero?",
+   "crit": "madrugada",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿el pan es un alimento?",
+   "crit": "^si",
+   "r": "Sí, un pan es un alimento.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿la baguette es un pan?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿un panadero es una persona?",
+   "crit": "^si",
+   "r": "Sí, un panadero es una persona. Lo deduzco porque un panadero es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿qué elabora un panadero?",
+   "crit": "pan",
+   "r": "Los panaderos hacen pan y hacen el pan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "D",
+   "q": "¿el pan integral tiene fibra?",
+   "crit": "^si",
+   "r": "No me consta. Solo sé que el pan tiene corteza y miga.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "M",
+   "q": "¿cómo es la parte de dentro del pan?",
+   "crit": "blanda",
+   "r": "El pan es un alimento.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuánto cuesta una barra de pan?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿quién inventó el pan?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuántos panaderos hay en Francia?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "C",
+   "q": "mi padre era panadero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu padre era panadero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "C",
+   "q": "¿mi padre hacía pan?",
+   "crit": "^si|hacia|pan",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "G",
+   "q": "dime dos tipos de pan",
+   "crit": "integral|molde|baguette",
+   "r": "Barra y chapata.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "G",
+   "q": "descríbeme la corteza",
+   "crit": "dura|crujiente|fuera",
+   "r": "No sé lo bastante de «corteza» para describirlo: cuéntame cómo es y lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "K",
+   "q": "la miga es dura",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|blanda",
+   "r": "Entendido: la miga es dura.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

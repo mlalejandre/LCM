@@ -1,0 +1,58 @@
+{
+ "nota": "primer intento de cada paso (texto pegado); temas ya conocidos",
+ "base_218": {
+  "dev": [
+   94.1,
+   0
+  ],
+  "test": [
+   81.1,
+   7
+  ],
+  "test2": [
+   74.1,
+   6
+  ],
+  "setas": [
+   67.8,
+   5
+  ]
+ },
+ "paso1_compuestos_y_definiciones": {
+  "dev": [
+   96.0,
+   0
+  ],
+  "test": [
+   83.2,
+   6
+  ],
+  "test2": [
+   87.9,
+   2
+  ]
+ },
+ "paso2_equivalencias_mayoria_coordinacion": {
+  "dev": [
+   96.0,
+   0
+  ],
+  "test": [
+   87.4,
+   6
+  ],
+  "test2": [
+   94.8,
+   0
+  ],
+  "setas": [
+   72.9,
+   6
+  ]
+ },
+ "1": {
+  "n": 220,
+  "acierto": 100.0,
+  "falsas": 0
+ }
+}
