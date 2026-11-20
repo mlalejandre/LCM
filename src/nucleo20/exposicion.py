@@ -598,7 +598,9 @@ def responder(nuc, texto):
     n = sa(texto.lower()).strip(" ¿?¡!.")
     n = re.sub(r"^(?:y|pero|entonces|oye|dime)\s*,?\s+", "", n)
     # ¿qué es X?
-    m = re.match(r"^que (?:es|son|significa|quiere decir) (?:(?:el|la|los|las|un|una|unos|unas) )?([a-zñ ]+)$", n)
+    m = re.match(r"^(?:que|quien|quienes) (?:es|son|significa|quiere decir) (?:(?:el|la|los|las|un|una|unos|unas) )?([a-zñ ]+)$", n)   # 2.23: «¿quién es el molinero?» pide la definición igual que «¿qué es…?»
+    if m and n.startswith("quien") and not _def_de(ex, sa(_sing(m.group(1).strip()))):
+        m = None                                         # sin definición aprendida, «¿quién es X?» sigue siendo cosa del núcleo
     if m:
         d = _def_de(ex, m.group(1))
         if d and not d.get("cuando") and not d.get("previa") and len(d["d"].split()) < 2:
@@ -892,15 +894,30 @@ _TRAS_DET = {"el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del",
              "estos", "estas", "ese", "esa", "cada", "dos", "tres", "cuatro", "varios", "varias", "muchos", "muchas", "algunos", "algunas"}
 
 
+def _personal(t):
+    """¿Trae la frase un pronombre o un posesivo de primera o segunda persona? 2.23: «té» (la bebida) no es «te»."""
+    return _PERSONAL.search(sa(re.sub(r"\bt[ée]s\b|\bté\b", "infusion", t.lower()))) is not None
+
+
+_YO_SEGURO = {"tengo", "voy", "soy", "estoy", "quiero", "puedo", "hago", "digo", "veo", "creo", "salgo", "vengo", "pongo", "se", "pienso", "necesito", "prefiero", "vivo", "trabajo",
+              "estudio", "compro", "llevo", "llamo", "conozco", "busco", "espero", "siento", "recuerdo", "debo", "suelo", "odio", "amo", "juego", "como", "bebo", "duermo"}
+
+
 def _impersonal(t):
     """¿Habla de las cosas en general y no de ti o de mí? 2.21: una palabra tras un determinante, una preposición, «es» o un infinitivo
     es un nombre o un adjetivo aunque se escriba como un verbo («un traje», «varias semanas», «dibujar figuras», «es blando»)."""
     n = sa(t.lower())
-    if _PERSONAL.search(n):
+    if _personal(t):
         return False
     ws = re.findall(r"[a-záéíóúñü]+", t.lower())
+    visto3 = False
     for i, w in enumerate(ws[:10]):
         ant = sa(ws[i - 1]) if i > 0 else ""
+        if visto3 and w.endswith("o") and sa(w) not in _YO_SEGURO and ant not in ("no", "nunca", "me", "lo", "la", "los", "las", "le", "te", "ya", "si", "que", "cuando", "y", "pero", "tambien",
+                                                                                "siempre", "casi", "hoy", "luego", "entonces", "yo"):
+            continue                                     # 2.23: tras un verbo en 3.ª persona, «duro», «seco», «blando» son adjetivos, no «yo duro»
+        if _fin3(w) and ant not in _TRAS_DET:
+            visto3 = True
         if w == "se" or len(w) < 3 or ant in _TRAS_DET or ant in ("es", "son", "era", "eran", "muy") or (len(ant) > 3 and ant.endswith(("ar", "er", "ir")) and w.endswith("s")):
             continue
         try:
@@ -950,7 +967,7 @@ def charla(nuc, texto):
         if not _nombra_persona(nuc, T):
             _apunta(nuc, T + ".", tema=hilo.ult if (sn is None and hilo.ult) else None)
     if not (generica or marca or sin_suj or define or por_eso):
-        if sn is not None and not _PERSONAL.search(sa(T.lower())):
+        if sn is not None and not _personal(T):
             hilo.pon(sn)                                 # se anota de qué se habla, aunque la frase la lea el núcleo
             hilo.previa = T
             nuc._hilo_turno = nuc.turno
@@ -981,6 +998,8 @@ def charla(nuc, texto):
     for f in nuc.F[n0:]:
         f["expo"] = True
     leidos = nuc.usuario.setdefault("leido", [])
+    if getattr(nuc, "_partiendo", False):
+        leidos = [{"frases": [], "temas": {}, "charla": True}]      # (una parte: no se guarda aparte)
     if not leidos or not leidos[-1].get("charla"):
         leidos.append({"turno": nuc.turno, "frases": [], "temas": {}, "charla": True})
         del leidos[:-12]
@@ -1090,11 +1109,19 @@ def por_clase(nuc, texto):
         for c in clases:
             c0 = sa(_sing(c))
             if not any(g.get("s") == "K:" + c0 and g.get("v") != "ser" and g.get("vig", True) for g in nuc.F):
-                c_a = c0[:-1] + "a" if c0.endswith("o") else c0
-                if c_a != c0 and any(g.get("s") == "K:" + c_a and g.get("v") != "ser" and g.get("vig", True) for g in nuc.F):
-                    c0 = c_a                             # «astronauta», «barista»: nombres en -a que valen para los dos géneros
+                # «astronauta», «barista»: nombres en -a que valen para los dos géneros; 2.22: «papelera», «pescadera», «pintora»: el oficio
+                # se aprendió en masculino («los papeleros fabrican papel»)
+                otras = [c0[:-1] + "a" if c0.endswith("o") else None, c0[:-1] + "o" if c0.endswith("a") else None, c0[:-1] if c0.endswith("ora") else None]
+                c_a = next((x for x in otras if x and any(g.get("s") == "K:" + x and g.get("v") != "ser" and g.get("vig", True) for g in nuc.F)), None)
+                if c_a:
+                    c0 = c_a
                 else:
-                    continue
+                    # 2.22: quizá el núcleo no entendió la frase, pero está leída («Los pescaderos limpian el pescado y lo cortan…»)
+                    leido_ = " ".join(sa(x.lower()) for t_ in (nuc.usuario.get("leido") or []) for x in t_.get("frases", []))
+                    c_l = next((x for x in [c0] + [o for o in otras if o] if re.search(r"\b(?:los|las) " + re.escape(sa(M.plural(x))) + r"\b", leido_)), None)
+                    if not c_l:
+                        continue
+                    c0 = c_l
             pl = M.plural(c0) if hasattr(M, "plural") else c0 + "s"
             q2 = re.sub(r"\b" + re.escape(hit) + r"\b", _el(pl, pl=True), q, count=1, flags=re.I)
             ws = q2.split()
@@ -1136,6 +1163,8 @@ def por_clase(nuc, texto):
 
 
 def _apunta(nuc, T, tema=None):
+    if getattr(nuc, "_partiendo", False):
+        return                                           # 2.23: es una parte de una frase que se está leyendo por trozos; se guarda la frase entera, tal como se dijo
     leidos = nuc.usuario.setdefault("leido", [])
     if not leidos or not leidos[-1].get("charla"):
         leidos.append({"turno": nuc.turno, "frases": [], "temas": {}, "charla": True})
@@ -1205,6 +1234,35 @@ def _familia(a, b):
     return bool(pa & pb & {"color", "forma", "sabor", "estacion", "mes", "dia de la semana", "punto cardinal"})
 
 
+_MOMENTOS = {"manana", "tarde", "noche", "mediodia", "madrugada", "medianoche", "amanecer", "anochecer"}
+_NUM_PAL = {"un": 1, "una": 1, "uno": 1, "dos": 2, "tres": 3, "cuatro": 4, "cinco": 5, "seis": 6, "siete": 7, "ocho": 8, "nueve": 9, "diez": 10, "once": 11, "doce": 12, "quince": 15, "veinte": 20,
+            "treinta": 30, "cuarenta": 40, "cincuenta": 50, "cien": 100, "mil": 1000}
+
+
+def _cantidades(t):
+    """{nombre contado: número} de una frase: «tarda siete días» -> {dia: 7}."""
+    out = {}
+    for m in re.finditer(r"\b(\d+|" + "|".join(_NUM_PAL) + r")\s+([a-zñ]+)", sa(t.lower())):
+        n = int(m.group(1)) if m.group(1).isdigit() else _NUM_PAL[m.group(1)]
+        k = sa(_sing(m.group(2)))
+        if m.group(1) in ("un", "una", "uno") or k in ("de", "que", "y", "o", "mas", "menos", "vez", "veces"):
+            continue
+        out[k] = n
+    return out
+
+
+_T_UNI = {"segundo": 1, "minuto": 60, "hora": 3600, "dia": 86400, "semana": 604800, "mes": 2592000, "ano": 31536000, "año": 31536000, "siglo": 3153600000}
+
+
+def _duraciones(t):
+    """Duraciones de una frase, en segundos: «tarda un mes» -> {2592000}. Sirve para ver que «un mes» y «un año» no son lo mismo."""
+    out = set()
+    for m in re.finditer(r"\b(\d+|" + "|".join(_NUM_PAL) + r"|varios|varias|unos|unas|pocos|pocas|muchos|muchas)\s+(segundo|minuto|hora|dia|semana|mes|ano|año|siglo)(?:s|es)?\b", sa(t.lower())):
+        n = int(m.group(1)) if m.group(1).isdigit() else _NUM_PAL.get(m.group(1), 3)
+        out.add(n * _T_UNI[m.group(2)])
+    return out
+
+
 def contraste_texto(nuc, texto, r):
     """Lo que se acaba de decir frente a las FRASES leídas (aunque no dejaran un hecho): misma cosa, mismo verbo y un valor contrario."""
     if not isinstance(r, dict) or r.get("estado") != "ok" or "?" in texto or "coincide con lo que aprendí" in (r.get("respuesta") or "") or "Pero ojo" in (r.get("respuesta") or ""):
@@ -1227,12 +1285,19 @@ def contraste_texto(nuc, texto, r):
     vs = lem(resto.split(" y ")[0])
     for txt in reversed(leidos[-4:]):
         temas = txt.get("temas") or {}
+        ant_suj = ""
         for L in txt.get("frases", []):
             if sa(L.rstrip(".").lower()) == sa(T.lower()):
                 continue
             Lc = L.rstrip(".")
             ctx = claves(Lc) | (claves(temas[L]) if L in temas else set())
+            if re.match(r"^(?:Su|Sus)\b", Lc) and ant_suj:
+                ctx |= claves(ant_suj)                   # 2.22: «Sus frutos son rojos»: los frutos de aquello de lo que se venía hablando
+            else:
+                ant_suj = sujeto(Lc)[0] or temas.get(L, "") or ant_suj
             sujL = claves(sujeto(Lc)[0] or temas.get(L, "") or "")
+            if re.match(r"^(?:Su|Sus)\b", Lc):
+                sujL = claves(" ".join(Lc.split()[:2])) | (ctx - claves(Lc))
             if not cs or not (cs <= ctx) or not (cs & sujL or L in temas):
                 continue
             if not (vs & lem(Lc)):
@@ -1240,6 +1305,14 @@ def contraste_texto(nuc, texto, r):
             neg_l = bool(re.search(r"\b(?:no|nunca|jamas|tampoco|ningun[oa]?)\b", sa(Lc.lower())))
             cl = claves(Lc) - cs
             choque = any(_familia(a, b) for a in cr for b in cl if a not in cl)
+            if not choque:                               # 2.22: dos momentos del día distintos, o dos cantidades distintas de lo mismo («dos días» / «siete días»)
+                choque = any(a in _MOMENTOS and b in _MOMENTOS and a != b for a in cr - cl for b in cl - cr)
+            if not choque:
+                na, nb = _cantidades(resto), _cantidades(Lc)
+                choque = any(k in nb and nb[k] != v for k, v in na.items())
+            if not choque:                               # 2.23: dos duraciones distintas («un mes» / «un año», «dos semanas» / «dos meses»)
+                da, db = _duraciones(resto), _duraciones(Lc)
+                choque = bool(da) and bool(db) and da != db
             if not choque and neg_s != neg_l and cr and len(cr & cl) >= max(1, round(0.7 * len(cr))):
                 choque = True
             if choque:

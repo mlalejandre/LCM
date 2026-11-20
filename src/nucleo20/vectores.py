@@ -22,6 +22,7 @@ from .morfo import sa
 _AQUI = os.path.dirname(os.path.abspath(__file__))
 RUTA_LEXICO = os.path.join(_AQUI, "..", "..", "data", "lexico_es.json")
 RUTA_DEF = os.path.join(_AQUI, "..", "..", "data", "definiciones.json.gz")
+RUTA_CON = os.path.join(_AQUI, "..", "..", "data", "conceptos.json.gz")
 RUTA_VEC = os.path.join(_AQUI, "vectores_lexico.pt")
 DIM = 96
 P_SIM = 0.5          # peso de «adjetivo de sentido parecido» frente a «mismo sentido» (1.0)
@@ -85,8 +86,65 @@ def entrenar(dim=DIM, semilla=7, guardar=True, log=None, p_sim=P_SIM):
     signo = (U * Vt).sum(0).sign()
     X = torch.nn.functional.normalize(U * (S.clamp_min(0) * (signo > 0)).sqrt(), dim=1)
     if guardar:
-        torch.save({"palabras": palabras, "X": X.half(), "dim": dim, "fuente": L.get("fuente", "")}, RUTA_VEC)
+        torch.save({"palabras": palabras, "X": X.half(), "dim": dim, "fuente": L.get("fuente", ""), "puentes": puentes(log=log)}, RUTA_VEC)
     return palabras, X
+
+
+def puentes(minimo=2, log=None):
+    """2.22 · Sinónimos que el léxico español no enlaza, sacados de los otros idiomas de la base de conceptos (data/conceptos.json.gz).
+    Si dos sentidos distintos comparten palabra en varios idiomas («transformar» y «convertir»: it. trasformare, pt. modificar), es un
+    indicio de que dicen lo mismo. Devuelve {palabra: {otra: n.º de idiomas}} con n >= minimo. Es un indicio ruidoso (a ojo, la mitad
+    de las parejas son buenas): por eso nunca basta solo; quien lo usa exige además que la pregunta rehecha tenga respuesta."""
+    if not os.path.exists(RUTA_CON):
+        return {}
+    import gzip
+    c = json.load(gzip.open(RUTA_CON, "rt", encoding="utf-8"))
+    lem, ids = c.get("lem", {}), c.get("ids", [])
+    if "es" not in lem:
+        return {}
+    par = {}
+    for l in lem:
+        if l == "es":
+            continue
+        inv = {}
+        for s, ws in lem[l].items():
+            for w in ws:
+                inv.setdefault(w.lower(), []).append(int(s))
+        vistos = set()
+        for ss in inv.values():
+            if len(ss) < 2 or len(ss) > 6:
+                continue
+            for i in range(len(ss)):
+                for j in range(i + 1, len(ss)):
+                    a, b = (ss[i], ss[j]) if ss[i] < ss[j] else (ss[j], ss[i])
+                    if ids[a][-1] != ids[b][-1] or (a, b) in vistos:
+                        continue
+                    vistos.add((a, b))
+                    par[(a, b)] = par.get((a, b), 0) + 1
+    es = {int(s): [sa(w.lower()) for w in ws if " " not in w and sa(w.lower()).isalpha()] for s, ws in lem["es"].items()}
+    w2s = {}
+    for s, ws in es.items():
+        for w in ws:
+            w2s.setdefault(w, set()).add(s)
+    out = {}
+    for (a, b), n in par.items():
+        if n < minimo:
+            continue
+        for x in es.get(a, ()):
+            for y in es.get(b, ()):
+                if x != y and not (w2s[x] & w2s[y]):
+                    if out.setdefault(x, {}).get(y, 0) < n:
+                        out[x][y] = n
+                        out.setdefault(y, {})[x] = n
+    if log:
+        log(f"puentes entre idiomas: {sum(len(v) for v in out.values()) // 2} parejas nuevas")
+    return out
+
+
+def puente(a, b):
+    """N.º de idiomas en que dos palabras sin sentido común en español comparten palabra (0 si ninguno o si no hay datos)."""
+    _carga()
+    return (_V.get("puentes") or {}).get(sa(a.lower()), {}).get(sa(b.lower()), 0)
 
 
 def _carga():
@@ -97,6 +155,13 @@ def _carga():
         if os.path.exists(RUTA_VEC):
             d = torch.load(RUTA_VEC, map_location="cpu")
             palabras, X = d["palabras"], d["X"].float()
+            if "puentes" not in d:                       # fichero de la 2.20/2.21: se completa sin reentrenar los vectores
+                d["puentes"] = puentes()
+                try:
+                    torch.save(d, RUTA_VEC)
+                except Exception:                        # noqa
+                    pass
+            _V["puentes"] = d["puentes"]
         else:
             r = entrenar()
             if r is None:

@@ -1,0 +1,503 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 35,
+    "ok": 26,
+    "falsas": 3,
+    "acierto": 74.3
+   },
+   "L": {
+    "n": 10,
+    "ok": 9,
+    "falsas": 0,
+    "acierto": 90.0
+   },
+   "D": {
+    "n": 1,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "I": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 50.0
+   },
+   "P": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "M": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "N": {
+    "n": 4,
+    "ok": 2,
+    "falsas": 2,
+    "acierto": 50.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "K": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   11,
+   13
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "El mercado es un lugar donde se venden alimentos frescos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Cada vendedor tiene un puesto.",
+   "r": "Entendido: el vendedor tiene un puesto.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Los fruteros venden fruta y verdura.",
+   "r": "Entendido: los fruteros venden fruta y verdura.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Los pescaderos limpian el pescado y lo cortan en rodajas.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Los pescaderos limpian el pescado y lo cortan en rodajas».",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "El pescado se pone sobre hielo para que no se estropee.",
+   "r": "Entendido: el pescado se pone para que no se estropeaste sobre hielo.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Los vendedores pesan la compra en una báscula.",
+   "r": "Entendido: los vendedores pesan la compra en una báscula.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "El mercado abre muy temprano y cierra a mediodía.",
+   "r": "Entendido: el mercado abre muy temprano; el mercado cierra a mediodía.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Los camiones traen la mercancía de madrugada.",
+   "r": "Entendido: los camiones traen la mercancía de madrugada.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "El mercado central es el mercado más grande de la ciudad.",
+   "r": "Entendido: el mercado central es un mercado; el mercado central es muy grande.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Tiene más de cien puestos.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tiene más de cien puestos».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "La lonja es el mercado donde se vende el pescado recién llegado.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Está junto al puerto.",
+   "r": "Entendido: la lonja está junto al puerto.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el mercado",
+   "t": "-",
+   "q": "Las personas que compran en el mercado se llaman clientes.",
+   "r": "Entendido: los clientes son personas; los clientes compran en el mercado.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el mercado",
+   "t": "V",
+   "q": "¿qué es el mercado?",
+   "crit": "lugar",
+   "r": "Un mercado es un edificio. Además, según lo que he aprendido, el mercado es un lugar donde se venden alimentos frescos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿qué se vende en el mercado?",
+   "crit": "alimentos",
+   "r": "En el texto pone: «El mercado es un lugar donde se venden alimentos frescos».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿qué tiene cada vendedor?",
+   "crit": "puesto",
+   "r": "Los vendedores tienen un puesto.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿qué venden los fruteros?",
+   "crit": "fruta|verdura",
+   "r": "Los fruteros venden fruta y verdura.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿quiénes limpian el pescado?",
+   "crit": "pescadero*",
+   "r": "En el texto pone: «Los pescaderos limpian el pescado y lo cortan en rodajas».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿sobre qué se pone el pescado?",
+   "crit": "hielo",
+   "r": "El pescado se pone para que no se estropeaste sobre hielo.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el mercado",
+   "t": "D",
+   "q": "¿por qué se pone el pescado sobre hielo?",
+   "crit": "estrope*",
+   "r": "No me has dicho por qué. Solo sé que el pescado se pone para que no se estropeaste sobre hielo.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿dónde pesan la compra los vendedores?",
+   "crit": "bascula",
+   "r": "En el texto pone: «Los vendedores pesan la compra en una báscula».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿cuándo cierra el mercado?",
+   "crit": "mediodia",
+   "r": "El mercado cierra a mediodía.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿cuándo traen la mercancía los camiones?",
+   "crit": "madrugada",
+   "r": "En el texto pone: «Los camiones traen la mercancía de madrugada».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el mercado",
+   "t": "I",
+   "q": "¿cuál es el mercado más grande de la ciudad?",
+   "crit": "central",
+   "r": "El mercado central: según lo que he aprendido, es el mercado más grande de la ciudad.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿cuántos puestos tiene el mercado central?",
+   "crit": "cien|100",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "el mercado",
+   "t": "V",
+   "q": "¿qué es la lonja?",
+   "crit": "mercado",
+   "r": "Una lonja es un edificio. Además, según lo que he aprendido, la lonja es el mercado donde se vende el pescado recién llegado.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el mercado",
+   "t": "L",
+   "q": "¿dónde está la lonja?",
+   "crit": "puerto",
+   "r": "La lonja está junto al puerto.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el mercado",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que compran en el mercado?",
+   "crit": "cliente*",
+   "r": "Clientes. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el mercado",
+   "t": "H",
+   "q": "¿un frutero es un vendedor?",
+   "crit": "^si|vend*",
+   "r": "No, un frutero es un profesional.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "H",
+   "q": "¿la lonja es un mercado?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la lonja es el mercado donde se vende el pescado recién llegado.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿quiénes lavan el pescado?",
+   "crit": "pescadero*",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «lavar»; si es otra forma de decir algo, dímelo («lavar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿cuándo llevan la mercancía los camiones?",
+   "crit": "madrugada",
+   "r": "No lo sé. («llevar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿sobre qué se coloca el pescado?",
+   "crit": "hielo",
+   "r": "El pescado se pone para que no se estropeaste sobre hielo. Entiendo «colocar» como «poner».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "M",
+   "q": "¿cuántos puestos tiene el mercado más grande de la ciudad?",
+   "crit": "cien|100",
+   "r": "No sé nada del mercado central de la ciudad: no me has hablado de él.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "M",
+   "q": "¿dónde está el mercado donde se vende el pescado recién llegado?",
+   "crit": "puerto",
+   "r": "La lonja está junto al puerto. Lo junto con otra cosa que aprendí: la lonja es «mercado donde se vende el pescado recién llegado».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "N",
+   "q": "¿quién construyó el mercado central?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («construir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "N",
+   "q": "¿cuánto cuesta el pescado?",
+   "crit": "ABST",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "N",
+   "q": "¿quién conduce los camiones?",
+   "crit": "ABST",
+   "r": "Los camioneros.",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "N",
+   "q": "¿dónde duermen los fruteros?",
+   "crit": "ABST",
+   "r": "No lo sé. («dormir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "C",
+   "q": "despachar es lo mismo que vender",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: «despachar» significa vender.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿qué despachan los fruteros?",
+   "crit": "fruta|verdura",
+   "r": "Los fruteros venden fruta y verdura. Entiendo «despachar» como «vender».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "C",
+   "q": "un chiringo es lo mismo que un puesto",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: «chiringo» y «puesto» quieren decir lo mismo. Lo tendré en cuenta cuando me preguntes.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿qué tiene cada vendedor?",
+   "crit": "puesto",
+   "r": "Los vendedores tienen un puesto.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "P",
+   "q": "¿cuántos chiringos tiene el mercado central?",
+   "crit": "cien|100",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "C",
+   "q": "mi madre es pescadera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu madre es pescadera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "C",
+   "q": "¿mi madre limpia el pescado?",
+   "crit": "^si|limpia*",
+   "r": "Sí: el texto dice «Los pescaderos limpian el pescado y lo cortan en rodajas». Lo deduzco porque tu madre es pescadero y eso vale para los pescaderos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "G",
+   "q": "descríbeme la lonja",
+   "crit": "mercado|pescado|puerto",
+   "r": "La lonja es el mercado donde se vende el pescado recién llegado. La lonja está junto al puerto. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el mercado",
+   "t": "K",
+   "q": "el mercado cierra por la noche",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|mediodia",
+   "r": "Entendido: el mercado cierra por la noche. Pero ojo: en lo que leí ponía «El mercado abre muy temprano y cierra a mediodía». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

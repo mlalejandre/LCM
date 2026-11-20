@@ -1,0 +1,939 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 16,
+    "ok": 12,
+    "falsas": 4,
+    "acierto": 75.0
+   },
+   "TOTAL": {
+    "n": 93,
+    "ok": 73,
+    "falsas": 8,
+    "acierto": 78.5
+   },
+   "L": {
+    "n": 49,
+    "ok": 37,
+    "falsas": 1,
+    "acierto": 75.5
+   },
+   "I": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "M": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "K": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 3,
+    "acierto": 50.0
+   },
+   "N": {
+    "n": 12,
+    "ok": 12,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   49,
+   63
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el violín",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (9 frases). He entendido bien 7; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el violín",
+   "t": "V",
+   "q": "¿qué es el violín?",
+   "crit": "instrumento",
+   "r": "Un violín es un instrumento de cuerda, como me dijiste; de fábrica sé además que es un instrumento. Además, según lo que he aprendido, el violín es un instrumento de cuerda pequeño.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿cuántas cuerdas tiene el violín?",
+   "crit": "cuatro|4",
+   "r": "El violín tiene cuatro cuerdas.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿dónde se apoya el violín?",
+   "crit": "hombro",
+   "r": "Stradivarius se apoya en el hombro. Lo deduzco porque Stradivarius es un violín y el violín se apoya en el hombro.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿con qué se toca el violín?",
+   "crit": "arco",
+   "r": "En el texto pone: «Se toca con un arco».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el violín",
+   "t": "V",
+   "q": "¿qué es el arco?",
+   "crit": "vara",
+   "r": "Un arco es una vara de madera, como me dijiste; de fábrica sé además que es un arma. Además, según lo que he aprendido, el arco es una vara de madera con crines de caballo.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿contra qué se frota el arco?",
+   "crit": "cuerdas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿cuándo ensayan los violinistas?",
+   "crit": "dia",
+   "r": "En el texto pone: «Los violinistas estudian muchos años y ensayan cada día».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿dónde guardan el violín los violinistas?",
+   "crit": "estuche",
+   "r": "En el texto pone, hablando de los violinistas: «Guardan el violín en un estuche».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el violín",
+   "t": "I",
+   "q": "¿cuál es el violín más caro del mundo?",
+   "crit": "stradivarius",
+   "r": "El Stradivarius: según lo que he aprendido, es el violín más caro del mundo.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el violín",
+   "t": "L",
+   "q": "¿cuándo se fabricó el Stradivarius?",
+   "crit": "trescientos|300",
+   "r": "No lo sé. De Stradivarius sé que es un violín y es muy caro.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "el violín",
+   "t": "M",
+   "q": "¿cuándo se fabricó el violín más caro del mundo?",
+   "crit": "trescientos|300",
+   "r": "No lo sé. De Stradivarius sé que es un violín y es muy caro.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el violín",
+   "t": "K",
+   "q": "el violín tiene seis cuerdas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|cuatro",
+   "r": "Entendido: Stradivarius tiene seis cuerdas. Pero ojo: en lo que leí ponía «Tiene cuatro cuerdas y se apoya en el hombro». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el violín",
+   "t": "N",
+   "q": "¿cuánto cuesta un arco?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el violín",
+   "t": "N",
+   "q": "¿quién inventó el violín?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los lobos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 9; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los lobos",
+   "t": "V",
+   "q": "¿qué son los lobos?",
+   "crit": "mamifero*",
+   "r": "Un lobo es un mamífero. Los lobos aúllan y comen carne. Además, según lo que he aprendido, los lobos son mamíferos que viven en grupo.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿cuándo cazan los lobos?",
+   "crit": "noche",
+   "r": "Los lobos cazan de noche.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿cuándo duermen los lobos?",
+   "crit": "dia",
+   "r": "Los lobos duermen de día.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los lobos",
+   "t": "I",
+   "q": "¿cómo se llama un grupo de lobos?",
+   "crit": "manada",
+   "r": "Manada. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿qué recorre la manada?",
+   "crit": "kilometros",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "los lobos",
+   "t": "I",
+   "q": "¿cómo se llaman las crías de los lobos?",
+   "crit": "lobezno*",
+   "r": "Lobeznos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿cuándo nacen los lobeznos?",
+   "crit": "primavera",
+   "r": "En el texto pone: «Las crías de los lobos se llaman lobeznos y nacen en primavera».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿dónde viven los lobeznos?",
+   "crit": "cueva",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿cuánto tiempo viven los lobeznos en una cueva?",
+   "crit": "dos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿cómo son los colmillos de los lobos?",
+   "crit": "largos|afilados",
+   "r": "En el texto pone: «Los lobos tienen colmillos largos y afilados».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿qué desgarran los lobos?",
+   "crit": "carne",
+   "r": "Los lobos desgarran la carne con el jefe del grupo de lobos.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿qué hacen los lobos cuando hay peligro?",
+   "crit": "aullan",
+   "r": "En el texto pone: «Cuando hay peligro aúllan muy fuerte».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los lobos",
+   "t": "I",
+   "q": "¿cuál es el lobo más blanco?",
+   "crit": "artico",
+   "r": "El lobo ártico: según lo que he aprendido, es el lobo más blanco.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los lobos",
+   "t": "L",
+   "q": "¿dónde vive el lobo ártico?",
+   "crit": "norte",
+   "r": "El lobo ártico vive en el norte.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los lobos",
+   "t": "M",
+   "q": "¿dónde vive el lobo más blanco?",
+   "crit": "norte",
+   "r": "El lobo ártico vive en el norte.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los lobos",
+   "t": "K",
+   "q": "los lobeznos viven en una cueva durante seis meses",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|dos",
+   "r": "Entendido: los lobeznos viven en una cueva durante seis meses.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "los lobos",
+   "t": "N",
+   "q": "¿cuánto pesa un lobo?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «pesar»; si es otra forma de decir algo, dímelo («pesar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los lobos",
+   "t": "N",
+   "q": "¿quién cuida a los lobeznos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («cuidar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 10; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la panadería",
+   "t": "V",
+   "q": "¿qué es la panadería?",
+   "crit": "tienda",
+   "r": "Una panadería es un edificio. Además, según lo que he aprendido, la panadería es la tienda donde se vende el pan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿cuándo cierra la panadería?",
+   "crit": "mediodia",
+   "r": "La panadería cierra a mediodía.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿qué amasa el panadero?",
+   "crit": "harina",
+   "r": "En el texto pone: «El panadero amasa la harina y la deja reposar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿dónde mete la masa el panadero?",
+   "crit": "horno",
+   "r": "El panadero mete la masa en el horno.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿cuántos grados alcanza el horno?",
+   "crit": "doscientos|200",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿qué hay dentro del horno?",
+   "crit": "pala",
+   "r": "No me has dicho qué hay dentro del horno.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la panadería",
+   "t": "V",
+   "q": "¿qué es el obrador?",
+   "crit": "sala",
+   "r": "Según lo que he aprendido, el obrador es la sala donde se hace el pan.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿cuántos panaderos trabajan en el obrador?",
+   "crit": "tres|3",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿dónde se colocan las barras?",
+   "crit": "cestas",
+   "r": "En el texto pone: «Las barras se colocan en cestas y se venden por la mañana».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿cuándo se venden las barras?",
+   "crit": "manana",
+   "r": "Las barras se venden por la mañana.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la panadería",
+   "t": "V",
+   "q": "¿qué son las ensaimadas?",
+   "crit": "bollos",
+   "r": "Una ensaimada es un bollo, como me dijiste; de fábrica sé además que es un dulce.",
+   "v": "MAL",
+   "k": 9
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿de qué se cubren las ensaimadas?",
+   "crit": "azucar",
+   "r": "Las ensaimadas se cubren de azúcar.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la panadería",
+   "t": "K",
+   "q": "la panadería cierra por la noche",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|mediodia",
+   "r": "Entendido: la panadería cierra por la noche. Pero ojo: en lo que leí ponía «Abre muy temprano y cierra a mediodía». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿cuánto cuesta una barra?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿quién limpia el horno?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («limpiar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 9; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "V",
+   "q": "¿qué es el telescopio?",
+   "crit": "aparato",
+   "r": "Hubble es un telescopio. Además, según lo que he aprendido, el telescopio es un aparato que sirve para ver objetos lejanos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿cuántas lentes tiene el telescopio?",
+   "crit": "dos|2",
+   "r": "El telescopio tiene dos lentes.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "V",
+   "q": "¿qué son las lentes?",
+   "crit": "piezas",
+   "r": "En el texto pone, hablando del telescopio: «Tiene dos lentes y un tubo largo».",
+   "v": "MAL",
+   "k": 2
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿qué aumentan las lentes?",
+   "crit": "imagen",
+   "r": "Los lentes aumentan la imagen y la acercan al ojo.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿quién fue el primer astrónomo que miró el cielo con un telescopio?",
+   "crit": "galileo",
+   "r": "Galileo: según lo que he aprendido, fue el primer astronomo que miró el cielo con un telescopio.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el telescopio",
+   "t": "V",
+   "q": "¿quiénes son los astrónomos?",
+   "crit": "personas|estudian",
+   "r": "Los astrónomos trabajan de noche. Los astrónomos duermen por la mañana.",
+   "v": "MAL",
+   "k": 5
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿cuándo trabajan los astrónomos?",
+   "crit": "noche",
+   "r": "Los astrónomos trabajan de noche.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el telescopio",
+   "t": "V",
+   "q": "¿qué es el observatorio?",
+   "crit": "edificio",
+   "r": "Un observatorio es un edificio. Además, según lo que he aprendido, el observatorio es el edificio donde están los telescopios grandes.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿dónde suele estar el observatorio?",
+   "crit": "montana",
+   "r": "Un observatorio suele estar en la montaña.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el telescopio",
+   "t": "I",
+   "q": "¿cuál es el telescopio más famoso?",
+   "crit": "hubble",
+   "r": "El Hubble: según lo que he aprendido, es el telescopio más famoso.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el telescopio",
+   "t": "L",
+   "q": "¿cuánto pesa el Hubble?",
+   "crit": "once|11",
+   "r": "Hubble pesa once toneladas.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el telescopio",
+   "t": "M",
+   "q": "¿cuánto pesa el telescopio más famoso?",
+   "crit": "once|11",
+   "r": "Hubble pesa once toneladas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "K",
+   "q": "el telescopio tiene cinco lentes",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|dos",
+   "r": "Entendido: Hubble tiene cinco lentes. Pero ojo: en lo que leí ponía «Tiene dos lentes y un tubo largo». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "N",
+   "q": "¿cuánto cuesta un telescopio?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el telescopio",
+   "t": "N",
+   "q": "¿quién construyó el Hubble?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («construir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "V",
+   "q": "¿qué es el chocolate?",
+   "crit": "alimento",
+   "r": "El chocolate es un alimento, como me dijiste; de fábrica sé además que es un dulce. Además, según lo que he aprendido, el chocolate es un alimento que se hace con cacao.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el chocolate",
+   "t": "V",
+   "q": "¿qué es el cacao?",
+   "crit": "fruto",
+   "r": "Según lo que he aprendido, el cacao es el fruto de un árbol tropical.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿dónde se secan las semillas del cacao?",
+   "crit": "sol",
+   "r": "En el texto pone: «Sus semillas se secan al sol y se tuestan».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿qué forman las semillas al molerse?",
+   "crit": "pasta",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿con qué se mezcla la pasta?",
+   "crit": "azucar",
+   "r": "La pasta se mezcla con azúcar.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿dónde se vierte la pasta?",
+   "crit": "moldes",
+   "r": "En el texto pone: «La pasta se mezcla con azúcar y se vierte en moldes».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el chocolate",
+   "t": "I",
+   "q": "¿qué chocolate lleva más cacao?",
+   "crit": "negro",
+   "r": "En el texto pone: «El chocolate negro es el chocolate que lleva más cacao».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿qué sabor tiene el chocolate negro?",
+   "crit": "amargo",
+   "r": "El chocolate negro tiene un sabor amargo.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿el chocolate blanco lleva cacao en polvo?",
+   "crit": "^no",
+   "r": "No, el chocolate blanco no lleva cacao en polvo.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿con qué se hace el chocolate blanco?",
+   "crit": "manteca|leche",
+   "r": "El chocolate blanco se hace con manteca de cacao y leche.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿dónde trabajan los chocolateros?",
+   "crit": "obrador",
+   "r": "Los chocolateros trabajan en un obrador fresco.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el chocolate",
+   "t": "L",
+   "q": "¿cuánto tardan los chocolateros en hacer una tableta?",
+   "crit": "dos",
+   "r": "Los chocolateros tardan dos días en hacer una tableta.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el chocolate",
+   "t": "M",
+   "q": "¿qué sabor tiene el chocolate que lleva más cacao?",
+   "crit": "amargo",
+   "r": "En el texto pone, hablando del chocolate negro: «Tiene un sabor amargo». Lo junto con otra cosa que aprendí: el chocolate negro es «chocolate que lleva más cacao».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "K",
+   "q": "los chocolateros tardan dos horas en hacer una tableta",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|dias",
+   "r": "Entendido: los chocolateros tardan dos horas en hacer una tableta.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "N",
+   "q": "¿cuánto cuesta una tableta?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el chocolate",
+   "t": "N",
+   "q": "¿quién descubrió el cacao?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (10 frases). He entendido bien 8; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "V",
+   "q": "¿quiénes son los carpinteros?",
+   "crit": "personas|madera",
+   "r": "Los carpinteros hacen mesas. Los carpinteros hacen sillas. Los carpinteros hacen puertas. Los carpinteros usan un serrucho. Los carpinteros llevan un lápiz en la oreja.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿qué hacen los carpinteros?",
+   "crit": "mesas|sillas|puertas",
+   "r": "Los carpinteros hacen mesas, los carpinteros hacen sillas, los carpinteros hacen puertas y los carpinteros usan un serrucho.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿qué usan los carpinteros?",
+   "crit": "serrucho",
+   "r": "Un carpintero suele usar martillos, serruchos, sierras y taladros.",
+   "v": "MAL",
+   "k": 2
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿dónde llevan un lápiz los carpinteros?",
+   "crit": "oreja",
+   "r": "Los carpinteros llevan un lápiz en la oreja.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "V",
+   "q": "¿qué es el serrucho?",
+   "crit": "sierra",
+   "r": "Un serrucho es una sierra de mano, como me dijiste; de fábrica sé además que es una herramienta. Además, según lo que he aprendido, el serrucho es una sierra de mano con dientes de acero.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿qué corta el serrucho?",
+   "crit": "madera",
+   "r": "En el texto pone, hablando del serrucho: «Corta la madera cuando se mueve adelante y atrás».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "V",
+   "q": "¿qué es la carpintería?",
+   "crit": "taller",
+   "r": "Según lo que he aprendido, la carpintería es el taller donde trabajan los carpinteros.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿a qué huele la carpintería?",
+   "crit": "madera",
+   "r": "La carpintería huele a madera.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "V",
+   "q": "¿qué es el serrín?",
+   "crit": "polvo",
+   "r": "El serrín es polvo. Además, según lo que he aprendido, el serrín es el polvo que cae al cortar la madera.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿cuándo se recoge el serrín?",
+   "crit": "tarde",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿para qué se usa el serrín?",
+   "crit": "tableros",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "L",
+   "q": "¿cuándo se lijan las tablas?",
+   "crit": "antes",
+   "r": "Las tablas se lijan antes de pintarlas.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "K",
+   "q": "el serrín se recoge cada mañana",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|tarde",
+   "r": "Entendido: el serrín se recoge cada mañana.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "N",
+   "q": "¿cuánto cuesta un serrucho?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los carpinteros",
+   "t": "N",
+   "q": "¿quién barre la carpintería?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («barrer» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

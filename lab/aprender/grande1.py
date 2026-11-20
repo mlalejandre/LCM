@@ -1,0 +1,275 @@
+"""APRENDER · EXAMEN GRANDE 1 (después de la 2.22). Diez temas nuevos con el mismo reparto de tipos de pregunta en cada uno. Escrito sin ejecutar
+nada y sin tocar el código; se mide UNA vez en cada versión. Sirve de vara fija: con unas 350 preguntas, una diferencia de pocos puntos
+ya no es ruido. NO se usa para desarrollar: quien quiera afinar con él, que escriba otro para medir.
+Reparto por tema: 10 literales (L), 3 de vocabulario (V), 3 inversas (I), 3 de herencia (H), 4 paráfrasis (P), 2 de combinar dos
+frases (M), 2 deducciones (D), 4 trampas que el texto no contesta (N), 2 de charla personal (C), 1 de uso (G) y 2 contradicciones (K)."""
+N = "!no lo he entendido;!no he entendido"
+K_ = "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*"
+
+
+def _tema(nombre, intro, frases, extra):
+    return {"nombre": nombre, "intro": intro, "frases": frases, "extra": extra}
+
+
+BALLENAS = _tema("las ballenas", "Te voy a leer un texto sobre las ballenas.", [
+ ("Las ballenas son mamíferos que viven en el mar.", [("V", "¿qué son las ballenas?", "mamifero*"), ("L", "¿dónde viven las ballenas?", "mar")]),
+ ("Respiran aire por un orificio que tienen en la cabeza.", [("L", "¿por dónde respiran las ballenas?", "orificio|cabeza")]),
+ ("La ballena azul es el animal más grande del planeta.", [("I", "¿cuál es el animal más grande del planeta?", "ballena azul")]),
+ ("Mide unos treinta metros y pesa más de cien toneladas.", [("L", "¿cuánto mide la ballena azul?", "treinta|30")]),
+ ("Las ballenas se alimentan de krill.", [("L", "¿de qué se alimentan las ballenas?", "krill")]),
+ ("El krill es un crustáceo muy pequeño parecido a una gamba.", [("V", "¿qué es el krill?", "crustaceo")]),
+ ("Para comer filtran el agua con unas láminas llamadas barbas.", [("V", "¿qué son las barbas?", "laminas"), ("L", "¿con qué filtran el agua las ballenas?", "barbas|laminas")]),
+ ("Las crías se llaman ballenatos y maman durante un año.", [("I", "¿cómo se llaman las crías de las ballenas?", "ballenato*"), ("L", "¿cuánto tiempo maman los ballenatos?", "ano")]),
+ ("Las ballenas se comunican con cantos que se oyen a muchos kilómetros.", [("L", "¿con qué se comunican las ballenas?", "cantos")]),
+ ("En invierno viajan hacia aguas cálidas.", [("L", "¿cuándo viajan las ballenas hacia aguas cálidas?", "invierno")]),
+ ("Un grupo de ballenas se llama manada.", [("I", "¿cómo se llama un grupo de ballenas?", "manada")]),
+ ("Las ballenas duermen cerca de la superficie.", [("L", "¿dónde duermen las ballenas?", "superficie")]),
+ ("Las personas que estudian las ballenas se llaman cetólogos.", [("L", "¿quiénes estudian las ballenas?", "cetologo*")]),
+ ("Antiguamente se cazaban ballenas para obtener aceite.", [("L", "¿para qué se cazaban ballenas antiguamente?", "aceite")]),
+], [
+ ("H", "¿una ballena es un animal?", "^si"), ("H", "¿el krill es un crustáceo?", "^si"), ("H", "¿un cetólogo es una persona?", "^si"),
+ ("P", "¿de qué se nutren las ballenas?", "krill"), ("P", "¿dónde habitan las ballenas?", "mar"), ("P", "¿quiénes investigan las ballenas?", "cetologo*"), ("P", "¿dónde descansan las ballenas?", "superficie"),
+ ("M", "¿cuánto mide el animal más grande del planeta?", "treinta|30"), ("M", "¿cuánto pesa el animal más grande del planeta?", "cien|100"),
+ ("D", "¿la ballena azul respira aire?", "^si"), ("D", "¿una ballena es un pez?", "^no|mamifero*"),
+ ("N", "¿quién descubrió la ballena azul?", "ABST"), ("N", "¿cuánto cuesta el aceite de ballena?", "ABST"), ("N", "¿cuántas ballenas quedan en el mundo?", "ABST"), ("N", "¿quién pinta las ballenas?", "ABST"),
+ ("C", "mi hermano es cetólogo", N), ("C", "¿mi hermano estudia las ballenas?", "^si|estudia*"),
+ ("G", "descríbeme el krill", "crustaceo|pequeno|gamba"),
+ ("K", "las ballenas viajan hacia aguas cálidas en verano", K_ + "|invierno"), ("K", "los ballenatos maman durante tres años", K_ + "|un ano"),
+])
+
+DESIERTO = _tema("el desierto", "Te voy a leer un texto sobre el desierto.", [
+ ("Un desierto es un lugar donde casi nunca llueve.", [("V", "¿qué es un desierto?", "lugar"), ("L", "¿llueve mucho en un desierto?", "^no|casi nunca")]),
+ ("De día hace mucho calor y de noche hace frío.", [("L", "¿cuándo hace frío en el desierto?", "noche")]),
+ ("El Sáhara es el desierto cálido más grande del mundo.", [("I", "¿cuál es el desierto cálido más grande del mundo?", "sahara")]),
+ ("Está en el norte de África.", [("L", "¿dónde está el Sáhara?", "africa|norte")]),
+ ("Las dunas son montañas de arena que mueve el viento.", [("V", "¿qué son las dunas?", "montanas|arena"), ("L", "¿qué mueve las dunas?", "viento")]),
+ ("Un oasis es una zona del desierto donde hay agua y palmeras.", [("V", "¿qué es un oasis?", "zona|agua|palmeras")]),
+ ("Los camellos aguantan muchos días sin beber.", [("L", "¿cuánto aguantan los camellos sin beber?", "dias")]),
+ ("Guardan grasa en la joroba.", [("L", "¿dónde guardan grasa los camellos?", "joroba")]),
+ ("Los cactus almacenan agua en el tallo.", [("L", "¿dónde almacenan agua los cactus?", "tallo")]),
+ ("Las personas que viven en el desierto y se mueven de un sitio a otro se llaman nómadas.", [("I", "¿cómo se llaman las personas que viven en el desierto y se mueven de un sitio a otro?", "nomada*")]),
+ ("Los nómadas viven en tiendas de tela.", [("L", "¿dónde viven los nómadas?", "tiendas")]),
+ ("Un grupo de camellos que viaja junto se llama caravana.", [("I", "¿cómo se llama un grupo de camellos que viaja junto?", "caravana")]),
+ ("Las caravanas transportaban sal y telas.", [("L", "¿qué transportaban las caravanas?", "sal|telas")]),
+ ("Muchos animales del desierto salen solo de noche.", [("L", "¿cuándo salen muchos animales del desierto?", "noche")]),
+], [
+ ("H", "¿el Sáhara es un desierto?", "^si"), ("H", "¿un camello es un animal?", "^si"), ("H", "¿un nómada es una persona?", "^si"),
+ ("P", "¿dónde guardan agua los cactus?", "tallo"), ("P", "¿qué llevaban las caravanas?", "sal|telas"), ("P", "¿dónde habitan los nómadas?", "tiendas"), ("P", "¿qué desplaza las dunas?", "viento"),
+ ("M", "¿dónde está el desierto cálido más grande del mundo?", "africa|norte"), ("M", "¿qué transportaba un grupo de camellos que viaja junto?", "sal|telas"),
+ ("D", "¿hay agua en un oasis?", "^si"), ("D", "¿en el Sáhara llueve mucho?", "^no|casi nunca"),
+ ("N", "¿quién descubrió el Sáhara?", "ABST"), ("N", "¿cuánto cuesta un camello?", "ABST"), ("N", "¿cuántos oasis hay en África?", "ABST"), ("N", "¿quién riega los cactus?", "ABST"),
+ ("C", "mi abuelo era nómada", N), ("C", "¿mi abuelo vivía en una tienda?", "^si|tienda*"),
+ ("G", "descríbeme un oasis", "zona|agua|palmeras"),
+ ("K", "los camellos guardan grasa en las patas", K_ + "|joroba"), ("K", "el Sáhara está en el sur de África", K_ + "|norte"),
+])
+
+ORQUESTA = _tema("la orquesta", "Te voy a leer un texto sobre la orquesta.", [
+ ("Una orquesta es un grupo grande de músicos que tocan juntos.", [("V", "¿qué es una orquesta?", "grupo|musicos")]),
+ ("El director marca el ritmo con una batuta.", [("L", "¿con qué marca el ritmo el director?", "batuta"), ("L", "¿quién marca el ritmo?", "director")]),
+ ("La batuta es un palo fino y corto.", [("V", "¿qué es la batuta?", "palo")]),
+ ("Los violines se sientan delante, a la izquierda del director.", [("L", "¿dónde se sientan los violines?", "delante|izquierda")]),
+ ("El violín se toca con un arco.", [("L", "¿con qué se toca el violín?", "arco")]),
+ ("El contrabajo es el instrumento de cuerda más grande de la orquesta.", [("I", "¿cuál es el instrumento de cuerda más grande de la orquesta?", "contrabajo")]),
+ ("Se toca de pie.", [("L", "¿cómo se toca el contrabajo?", "pie")]),
+ ("Los timbales son tambores que se golpean con mazas.", [("V", "¿qué son los timbales?", "tambores"), ("L", "¿con qué se golpean los timbales?", "mazas")]),
+ ("Antes del concierto los músicos afinan sus instrumentos.", [("L", "¿cuándo afinan los músicos sus instrumentos?", "antes|concierto")]),
+ ("El oboe da la nota para afinar.", [("L", "¿qué instrumento da la nota para afinar?", "oboe")]),
+ ("La hoja donde están escritas las notas se llama partitura.", [("I", "¿cómo se llama la hoja donde están escritas las notas?", "partitura")]),
+ ("El primer violín se llama concertino.", [("I", "¿cómo se llama el primer violín?", "concertino")]),
+ ("Los ensayos duran tres horas.", [("L", "¿cuánto duran los ensayos?", "tres|3")]),
+ ("Al terminar el concierto el público aplaude.", [("L", "¿cuándo aplaude el público?", "terminar|concierto")]),
+], [
+ ("H", "¿el contrabajo es un instrumento?", "^si"), ("H", "¿los timbales son tambores?", "^si"), ("H", "¿el director es una persona?", "^si"),
+ ("P", "¿con qué se pegan los timbales?", "mazas"), ("P", "¿cuánto tardan los ensayos?", "tres|3"), ("P", "¿quién señala el ritmo?", "director"), ("P", "¿cuándo ajustan los músicos sus instrumentos?", "antes|concierto"),
+ ("M", "¿cómo se toca el instrumento de cuerda más grande de la orquesta?", "pie"), ("M", "¿qué es el palo con el que el director marca el ritmo?", "batuta|fino|corto"),
+ ("D", "¿el violín es un instrumento de cuerda?", "^si|ABST"), ("D", "¿el público aplaude antes del concierto?", "^no|terminar"),
+ ("N", "¿quién inventó el violín?", "ABST"), ("N", "¿cuánto cuesta un contrabajo?", "ABST"), ("N", "¿cuántos músicos hay en la orquesta?", "ABST"), ("N", "¿quién limpia los timbales?", "ABST"),
+ ("C", "mi prima es directora de orquesta", N), ("C", "¿mi prima usa una batuta?", "^si|batuta"),
+ ("G", "descríbeme los timbales", "tambores|mazas"),
+ ("K", "los ensayos duran cinco horas", K_ + "|tres"), ("K", "el contrabajo se toca sentado", K_ + "|pie"),
+])
+
+HOSPITAL = _tema("el hospital", "Te voy a leer un texto sobre el hospital.", [
+ ("Un hospital es un edificio donde se cura a los enfermos.", [("V", "¿qué es un hospital?", "edificio"), ("L", "¿a quién se cura en un hospital?", "enfermos")]),
+ ("Los médicos examinan a los pacientes y deciden el tratamiento.", [("L", "¿quiénes examinan a los pacientes?", "medicos")]),
+ ("Las enfermeras ponen las inyecciones y toman la temperatura.", [("L", "¿quiénes ponen las inyecciones?", "enfermera*")]),
+ ("La sala donde se opera se llama quirófano.", [("I", "¿cómo se llama la sala donde se opera?", "quirofano")]),
+ ("En el quirófano todo tiene que estar muy limpio.", [("L", "¿cómo tiene que estar todo en el quirófano?", "limpio")]),
+ ("Los cirujanos son los médicos que operan.", [("V", "¿qué son los cirujanos?", "medicos")]),
+ ("Antes de operar se lavan las manos durante cinco minutos.", [("L", "¿cuánto tiempo se lavan las manos los cirujanos?", "cinco|5")]),
+ ("La ambulancia es el vehículo que lleva a los enfermos al hospital.", [("V", "¿qué es la ambulancia?", "vehiculo")]),
+ ("Lleva una sirena para pedir paso.", [("L", "¿para qué lleva una sirena la ambulancia?", "paso")]),
+ ("Las urgencias están abiertas día y noche.", [("L", "¿cuándo están abiertas las urgencias?", "dia|noche")]),
+ ("Una radiografía es una foto de los huesos.", [("L", "¿de qué es una foto una radiografía?", "huesos")]),
+ ("Los bebés nacen en la planta de maternidad.", [("L", "¿dónde nacen los bebés?", "maternidad")]),
+ ("Los médicos que cuidan a los niños se llaman pediatras.", [("I", "¿cómo se llaman los médicos que cuidan a los niños?", "pediatra*")]),
+ ("El aparato con el que el médico escucha el corazón se llama fonendo.", [("I", "¿cómo se llama el aparato con el que el médico escucha el corazón?", "fonendo")]),
+], [
+ ("H", "¿un cirujano es un médico?", "^si"), ("H", "¿la ambulancia es un vehículo?", "^si"), ("H", "¿un pediatra es un médico?", "^si"),
+ ("P", "¿quiénes revisan a los pacientes?", "medicos"), ("P", "¿quiénes atienden a los niños?", "pediatra*"), ("P", "¿qué transporta a los enfermos al hospital?", "ambulancia"), ("P", "¿a quién se sana en un hospital?", "enfermos"),
+ ("M", "¿cómo tiene que estar todo en la sala donde se opera?", "limpio"), ("M", "¿qué lleva el vehículo que lleva a los enfermos al hospital?", "sirena"),
+ ("D", "¿un cirujano opera?", "^si"), ("D", "¿las urgencias cierran por la noche?", "^no|dia y noche"),
+ ("N", "¿quién construyó el hospital?", "ABST"), ("N", "¿cuánto cuesta una radiografía?", "ABST"), ("N", "¿cuántos médicos hay en el hospital?", "ABST"), ("N", "¿quién conduce la ambulancia?", "ABST"),
+ ("C", "mi madre es cirujana", N), ("C", "¿mi madre opera?", "^si|opera*"),
+ ("G", "descríbeme la ambulancia", "vehiculo|enfermos|sirena"),
+ ("K", "los cirujanos se lavan las manos durante un minuto", K_ + "|cinco"), ("K", "los bebés nacen en el quirófano", K_ + "|maternidad"),
+])
+
+AEROPUERTO = _tema("el aeropuerto", "Te voy a leer un texto sobre el aeropuerto.", [
+ ("Un aeropuerto es un lugar donde despegan y aterrizan los aviones.", [("V", "¿qué es un aeropuerto?", "lugar"), ("L", "¿qué despega en un aeropuerto?", "aviones")]),
+ ("Los aviones despegan y aterrizan en la pista.", [("L", "¿dónde aterrizan los aviones?", "pista")]),
+ ("La torre de control es el edificio más alto del aeropuerto.", [("I", "¿cuál es el edificio más alto del aeropuerto?", "torre de control")]),
+ ("Desde allí los controladores dirigen a los aviones por radio.", [("L", "¿quiénes dirigen a los aviones?", "controlador*")]),
+ ("Los pasajeros enseñan su billete en el mostrador.", [("L", "¿dónde enseñan su billete los pasajeros?", "mostrador")]),
+ ("Las maletas viajan en la bodega del avión.", [("L", "¿dónde viajan las maletas?", "bodega")]),
+ ("La bodega es la parte de abajo del avión.", [("V", "¿qué es la bodega?", "parte|abajo")]),
+ ("El piloto es la persona que conduce el avión.", [("V", "¿quién es el piloto?", "persona|conduce")]),
+ ("Los auxiliares de vuelo atienden a los pasajeros durante el viaje.", [("L", "¿quiénes atienden a los pasajeros?", "auxiliar*")]),
+ ("Antes de subir al avión los pasajeros pasan un control de seguridad.", [("L", "¿cuándo pasan los pasajeros un control de seguridad?", "antes|subir")]),
+ ("El pasillo que une la terminal con el avión se llama pasarela.", [("I", "¿cómo se llama el pasillo que une la terminal con el avión?", "pasarela")]),
+ ("Un avión grande lleva más de trescientos pasajeros.", [("L", "¿cuántos pasajeros lleva un avión grande?", "trescientos|300")]),
+ ("Los aviones se guardan y se reparan en el hangar.", [("L", "¿dónde se reparan los aviones?", "hangar")]),
+ ("Las personas que reparan los aviones se llaman mecánicos.", [("I", "¿cómo se llaman las personas que reparan los aviones?", "mecanico*")]),
+], [
+ ("H", "¿la torre de control es un edificio?", "^si"), ("H", "¿el piloto es una persona?", "^si"), ("H", "¿un mecánico es una persona?", "^si"),
+ ("P", "¿dónde se arreglan los aviones?", "hangar"), ("P", "¿quiénes guían a los aviones?", "controlador*"), ("P", "¿dónde muestran su billete los pasajeros?", "mostrador"), ("P", "¿cuántos pasajeros transporta un avión grande?", "trescientos|300"),
+ ("M", "¿quiénes dirigen a los aviones desde el edificio más alto del aeropuerto?", "controlador*"), ("M", "¿qué viaja en la parte de abajo del avión?", "maletas"),
+ ("D", "¿el piloto conduce el avión?", "^si"), ("D", "¿las maletas viajan con los pasajeros?", "^no|bodega"),
+ ("N", "¿quién inventó el avión?", "ABST"), ("N", "¿cuánto cuesta un billete de avión?", "ABST"), ("N", "¿cuántos aviones hay en el aeropuerto?", "ABST"), ("N", "¿quién limpia la pista?", "ABST"),
+ ("C", "mi tío es mecánico", N), ("C", "¿mi tío repara los aviones?", "^si|repara*"),
+ ("G", "descríbeme la bodega", "parte|abajo|maletas"),
+ ("K", "un avión grande lleva más de mil pasajeros", K_ + "|trescientos"), ("K", "las maletas viajan en la cabina del avión", K_ + "|bodega"),
+])
+
+CASTORES = _tema("los castores", "Te voy a leer un texto sobre los castores.", [
+ ("Los castores son roedores que viven en los ríos.", [("V", "¿qué son los castores?", "roedor*"), ("L", "¿dónde viven los castores?", "rios")]),
+ ("Tienen los dientes de color naranja y muy fuertes.", [("L", "¿de qué color tienen los dientes los castores?", "naranja")]),
+ ("Con ellos cortan troncos y ramas.", [("L", "¿qué cortan los castores con los dientes?", "troncos|ramas")]),
+ ("Los castores construyen presas con ramas y barro.", [("L", "¿con qué construyen presas los castores?", "ramas|barro")]),
+ ("Una presa es un muro que frena el agua del río.", [("V", "¿qué es una presa?", "muro")]),
+ ("La casa de los castores se llama madriguera.", [("I", "¿cómo se llama la casa de los castores?", "madriguera")]),
+ ("Tiene la entrada debajo del agua.", [("L", "¿dónde tiene la entrada la madriguera?", "debajo|agua")]),
+ ("Los castores usan la cola como timón cuando nadan.", [("L", "¿para qué usan la cola los castores?", "timon")]),
+ ("Su cola es plana y ancha.", [("L", "¿cómo es la cola de los castores?", "plana|ancha")]),
+ ("Cuando hay peligro golpean el agua con la cola.", [("L", "¿qué hacen los castores cuando hay peligro?", "golpean|cola")]),
+ ("Los castores comen corteza y hojas.", [("L", "¿qué comen los castores?", "corteza|hojas")]),
+ ("Trabajan sobre todo de noche.", [("L", "¿cuándo trabajan los castores?", "noche")]),
+ ("El castor es el roedor más grande de Europa.", [("I", "¿cuál es el roedor más grande de Europa?", "castor")]),
+ ("Las crías de castor nacen en primavera.", [("I", "¿qué crías nacen en primavera?", "castor*"), ("L", "¿cuándo nacen las crías de castor?", "primavera")]),
+], [
+ ("H", "¿un castor es un roedor?", "^si"), ("H", "¿un castor es un animal?", "^si"), ("H", "¿una presa es un muro?", "^si"),
+ ("P", "¿con qué edifican presas los castores?", "ramas|barro"), ("P", "¿qué ingieren los castores?", "corteza|hojas"), ("P", "¿dónde habitan los castores?", "rios"), ("P", "¿para qué emplean la cola los castores?", "timon"),
+ ("M", "¿dónde tiene la entrada la casa de los castores?", "debajo|agua"), ("M", "¿qué come el roedor más grande de Europa?", "corteza|hojas"),
+ ("D", "¿los castores saben nadar?", "^si|nadan"), ("D", "¿los castores trabajan de día?", "^no|noche"),
+ ("N", "¿quién descubrió los castores?", "ABST"), ("N", "¿cuánto pesa un castor?", "ABST"), ("N", "¿cuántos castores hay en Europa?", "ABST"), ("N", "¿quién caza a los castores?", "ABST"),
+ ("C", "ayer vi un castor en el río", N), ("C", "¿qué vi ayer?", "castor"),
+ ("G", "descríbeme una presa", "muro|agua|rio"),
+ ("K", "las crías de castor nacen en otoño", K_ + "|primavera"), ("K", "los castores tienen los dientes de color azul", K_ + "|naranja"),
+])
+
+ARROZ = _tema("el arroz", "Te voy a leer un texto sobre el arroz.", [
+ ("El arroz es un cereal que se cultiva en campos inundados.", [("V", "¿qué es el arroz?", "cereal"), ("L", "¿dónde se cultiva el arroz?", "campos")]),
+ ("Los campos de arroz se llaman arrozales.", [("I", "¿cómo se llaman los campos de arroz?", "arrozal*")]),
+ ("El arroz se siembra en primavera y se recoge en otoño.", [("L", "¿cuándo se siembra el arroz?", "primavera"), ("L", "¿cuándo se recoge el arroz?", "otono")]),
+ ("La planta necesita mucha agua y mucho calor.", [("L", "¿qué necesita la planta del arroz?", "agua|calor")]),
+ ("Los granos crecen en una espiga.", [("L", "¿dónde crecen los granos de arroz?", "espiga")]),
+ ("Después de la cosecha los granos se secan al sol.", [("L", "¿dónde se secan los granos?", "sol")]),
+ ("La cáscara del grano se quita en un molino.", [("L", "¿dónde se quita la cáscara del grano?", "molino")]),
+ ("El arroz integral es el arroz que conserva la cáscara.", [("V", "¿qué es el arroz integral?", "arroz|cascara")]),
+ ("Tarda más en cocerse.", [("L", "¿el arroz integral tarda más en cocerse?", "^si")]),
+ ("China es el país que más arroz produce.", [("I", "¿qué país produce más arroz?", "china")]),
+ ("La paella es el plato de arroz más famoso de España.", [("I", "¿cuál es el plato de arroz más famoso de España?", "paella")]),
+ ("Se cocina en una sartén ancha y plana.", [("L", "¿dónde se cocina la paella?", "sarten")]),
+ ("En Japón el arroz se come con palillos.", [("L", "¿con qué se come el arroz en Japón?", "palillos")]),
+ ("Las personas que cultivan arroz se llaman arroceros.", [("L", "¿quiénes cultivan arroz?", "arrocero*")]),
+], [
+ ("H", "¿el arroz es un cereal?", "^si"), ("H", "¿la paella es un plato?", "^si"), ("H", "¿un arrocero es una persona?", "^si"),
+ ("P", "¿cuándo se planta el arroz?", "primavera"), ("P", "¿cuándo se cosecha el arroz?", "otono"), ("P", "¿dónde se prepara la paella?", "sarten"), ("P", "¿dónde se retira la cáscara del grano?", "molino"),
+ ("M", "¿dónde se cocina el plato de arroz más famoso de España?", "sarten"), ("M", "¿cuándo se siembra el cereal que se cultiva en campos inundados?", "primavera"),
+ ("D", "¿el arroz integral es un arroz?", "^si"), ("D", "¿el arroz necesita poca agua?", "^no|mucha"),
+ ("N", "¿quién inventó la paella?", "ABST"), ("N", "¿cuánto cuesta un kilo de arroz?", "ABST"), ("N", "¿cuántos arrozales hay en China?", "ABST"), ("N", "¿quién vende los palillos?", "ABST"),
+ ("C", "mi vecina es arrocera", N), ("C", "¿mi vecina cultiva arroz?", "^si|cultiva*"),
+ ("G", "descríbeme la paella", "plato|arroz|sarten"),
+ ("K", "el arroz se recoge en invierno", K_ + "|otono"), ("K", "en Japón el arroz se come con cuchara", K_ + "|palillos"),
+])
+
+CIRCO = _tema("el circo", "Te voy a leer un texto sobre el circo.", [
+ ("El circo es un espectáculo que viaja de ciudad en ciudad.", [("V", "¿qué es el circo?", "espectaculo")]),
+ ("Las funciones se hacen dentro de una carpa.", [("L", "¿dónde se hacen las funciones?", "carpa")]),
+ ("La carpa es una tienda enorme de lona.", [("V", "¿qué es la carpa?", "tienda")]),
+ ("El centro de la carpa se llama pista.", [("I", "¿cómo se llama el centro de la carpa?", "pista")]),
+ ("Los payasos hacen reír al público.", [("L", "¿quiénes hacen reír al público?", "payasos")]),
+ ("Llevan la nariz roja y unos zapatos enormes.", [("L", "¿de qué color llevan la nariz los payasos?", "roja")]),
+ ("Los trapecistas saltan de un trapecio a otro.", [("L", "¿quiénes saltan de un trapecio a otro?", "trapecista*")]),
+ ("Debajo hay una red por si se caen.", [("L", "¿qué hay debajo de los trapecistas?", "red")]),
+ ("Los malabaristas lanzan y recogen varias pelotas a la vez.", [("L", "¿qué lanzan los malabaristas?", "pelotas")]),
+ ("El equilibrista camina sobre un cable muy fino.", [("L", "¿sobre qué camina el equilibrista?", "cable")]),
+ ("El domador es el artista que trabaja con animales.", [("V", "¿quién es el domador?", "artista|animales")]),
+ ("La persona que presenta los números se llama maestro de ceremonias.", [("I", "¿cómo se llama la persona que presenta los números?", "maestro de ceremonias")]),
+ ("Los artistas ensayan cada mañana.", [("L", "¿cuándo ensayan los artistas?", "manana")]),
+ ("El circo se queda dos semanas en cada ciudad.", [("L", "¿cuánto se queda el circo en cada ciudad?", "dos semanas|2")]),
+ ("El número del trapecio es el número más peligroso del circo.", [("I", "¿cuál es el número más peligroso del circo?", "trapecio")]),
+], [
+ ("H", "¿la carpa es una tienda?", "^si"), ("H", "¿el domador es un artista?", "^si"), ("H", "¿un payaso es una persona?", "^si"),
+ ("P", "¿quiénes divierten al público?", "payasos"), ("P", "¿sobre qué anda el equilibrista?", "cable"), ("P", "¿qué arrojan los malabaristas?", "pelotas"), ("P", "¿cuánto permanece el circo en cada ciudad?", "dos semanas|2"),
+ ("M", "¿qué hay debajo del número más peligroso del circo?", "red|ABST"), ("M", "¿de qué es la tienda donde se hacen las funciones?", "lona"),
+ ("D", "¿el domador trabaja con animales?", "^si"), ("D", "¿el circo se queda siempre en la misma ciudad?", "^no|viaja"),
+ ("N", "¿quién inventó el circo?", "ABST"), ("N", "¿cuánto cuesta una entrada?", "ABST"), ("N", "¿cuántos payasos hay en el circo?", "ABST"), ("N", "¿quién cose la carpa?", "ABST"),
+ ("C", "mi primo es trapecista", N), ("C", "¿mi primo salta de un trapecio a otro?", "^si|salta*"),
+ ("G", "descríbeme a los payasos", "reir|nariz|zapatos"),
+ ("K", "los artistas ensayan cada noche", K_ + "|manana"), ("K", "el circo se queda dos meses en cada ciudad", K_ + "|semanas"),
+])
+
+RELOJES = _tema("los relojes", "Te voy a leer un texto sobre los relojes.", [
+ ("Un reloj es un aparato que mide el tiempo.", [("V", "¿qué es un reloj?", "aparato"), ("L", "¿qué mide un reloj?", "tiempo")]),
+ ("Los primeros relojes eran de sol y solo funcionaban de día.", [("L", "¿cuándo funcionaban los relojes de sol?", "dia")]),
+ ("El reloj de arena mide el tiempo con arena que cae.", [("L", "¿con qué mide el tiempo el reloj de arena?", "arena")]),
+ ("Los relojes mecánicos funcionan con muelles y ruedas dentadas.", [("L", "¿con qué funcionan los relojes mecánicos?", "muelles|ruedas")]),
+ ("A los relojes mecánicos hay que darles cuerda cada día.", [("L", "¿cada cuánto hay que dar cuerda a los relojes mecánicos?", "dia")]),
+ ("La aguja corta marca las horas y la larga marca los minutos.", [("L", "¿qué marca la aguja corta?", "horas"), ("L", "¿qué marca la aguja larga?", "minutos")]),
+ ("La parte del reloj donde están los números se llama esfera.", [("I", "¿cómo se llama la parte del reloj donde están los números?", "esfera")]),
+ ("El despertador es un reloj que suena a la hora elegida.", [("V", "¿qué es el despertador?", "reloj")]),
+ ("El reloj de cuco es el reloj más conocido de Suiza.", [("I", "¿cuál es el reloj más conocido de Suiza?", "cuco")]),
+ ("Tiene un pájaro de madera que sale cada hora.", [("L", "¿qué tiene el reloj de cuco?", "pajaro")]),
+ ("Los relojes de cuarzo funcionan con una pila.", [("L", "¿con qué funcionan los relojes de cuarzo?", "pila")]),
+ ("Las personas que arreglan relojes se llaman relojeros.", [("I", "¿cómo se llaman las personas que arreglan relojes?", "relojero*")]),
+ ("El cronómetro es un reloj que mide tiempos muy cortos.", [("V", "¿qué es el cronómetro?", "reloj")]),
+ ("Se usa en las carreras.", [("L", "¿dónde se usa el cronómetro?", "carreras")]),
+], [
+ ("H", "¿el despertador es un reloj?", "^si"), ("H", "¿el cronómetro es un aparato?", "^si"), ("H", "¿un relojero es una persona?", "^si"),
+ ("P", "¿quiénes reparan relojes?", "relojero*"), ("P", "¿dónde se emplea el cronómetro?", "carreras"), ("P", "¿qué señala la aguja corta?", "horas"), ("P", "¿con qué trabajan los relojes de cuarzo?", "pila"),
+ ("M", "¿qué tiene el reloj más conocido de Suiza?", "pajaro"), ("M", "¿dónde se usa el reloj que mide tiempos muy cortos?", "carreras"),
+ ("D", "¿un reloj de sol funciona de noche?", "^no|dia"), ("D", "¿el despertador mide el tiempo?", "^si"),
+ ("N", "¿quién inventó el reloj de arena?", "ABST"), ("N", "¿cuánto cuesta un reloj de cuco?", "ABST"), ("N", "¿cuántos relojes hay en Suiza?", "ABST"), ("N", "¿quién pinta las esferas?", "ABST"),
+ ("C", "mi abuela es relojera", N), ("C", "¿mi abuela arregla relojes?", "^si|arregla*"),
+ ("G", "descríbeme el despertador", "reloj|suena|hora"),
+ ("K", "los relojes de cuarzo funcionan con cuerda", K_ + "|pila"), ("K", "la aguja corta marca los minutos", K_ + "|horas"),
+])
+
+JABON = _tema("el jabón", "Te voy a leer un texto sobre el jabón.", [
+ ("El jabón es un producto que sirve para lavar.", [("V", "¿qué es el jabón?", "producto"), ("L", "¿para qué sirve el jabón?", "lavar")]),
+ ("Se fabrica mezclando grasa con sosa.", [("L", "¿con qué se mezcla la grasa?", "sosa")]),
+ ("La sosa es una sustancia que quema la piel.", [("V", "¿qué es la sosa?", "sustancia")]),
+ ("La mezcla se calienta en una caldera durante varias horas.", [("L", "¿dónde se calienta la mezcla?", "caldera")]),
+ ("Después se vierte en moldes y se deja endurecer.", [("L", "¿dónde se vierte la mezcla?", "moldes")]),
+ ("El jabón tarda un mes en estar listo.", [("L", "¿cuánto tarda el jabón en estar listo?", "mes")]),
+ ("El jabón de Marsella es el jabón más antiguo de Francia.", [("I", "¿cuál es el jabón más antiguo de Francia?", "marsella")]),
+ ("Se hace con aceite de oliva.", [("L", "¿con qué se hace el jabón de Marsella?", "aceite")]),
+ ("La espuma atrapa la suciedad y el agua se la lleva.", [("L", "¿qué atrapa la espuma?", "suciedad")]),
+ ("El champú es un jabón líquido para el pelo.", [("V", "¿qué es el champú?", "jabon")]),
+ ("Las personas que fabrican jabón se llaman jaboneros.", [("I", "¿cómo se llaman las personas que fabrican jabón?", "jabonero*")]),
+ ("El lugar donde se fabrica el jabón se llama jabonería.", [("I", "¿cómo se llama el lugar donde se fabrica el jabón?", "jaboneria"), ("L", "¿dónde se fabrica el jabón?", "jaboneria")]),
+ ("Los médicos recomiendan lavarse las manos antes de comer.", [("L", "¿cuándo recomiendan los médicos lavarse las manos?", "antes|comer")]),
+ ("Antiguamente la ropa se lavaba en el río.", [("L", "¿dónde se lavaba la ropa antiguamente?", "rio")]),
+], [
+ ("H", "¿el champú es un jabón?", "^si"), ("H", "¿la sosa es una sustancia?", "^si"), ("H", "¿un jabonero es una persona?", "^si"),
+ ("P", "¿dónde se elabora el jabón?", "jaboneria"), ("P", "¿quiénes elaboran jabón?", "jabonero*"), ("P", "¿cuánto demora el jabón en estar listo?", "mes"), ("P", "¿dónde se limpiaba la ropa antiguamente?", "rio"),
+ ("M", "¿con qué se hace el jabón más antiguo de Francia?", "aceite"), ("M", "¿qué quema la sustancia que se mezcla con la grasa?", "piel"),
+ ("D", "¿el champú sirve para lavar?", "^si"), ("D", "¿la sosa es buena para la piel?", "^no|quema"),
+ ("N", "¿quién inventó el jabón?", "ABST"), ("N", "¿cuánto cuesta el jabón de Marsella?", "ABST"), ("N", "¿cuántas jabonerías hay en Francia?", "ABST"), ("N", "¿quién vende el champú?", "ABST"),
+ ("C", "mi tía es jabonera", N), ("C", "¿mi tía fabrica jabón?", "^si|fabrica*"),
+ ("G", "descríbeme el champú", "jabon|liquido|pelo"),
+ ("K", "el jabón tarda un día en estar listo", K_ + "|mes"), ("K", "el jabón de Marsella se hace con aceite de girasol", K_ + "|oliva"),
+])
+
+TEMAS = [BALLENAS, DESIERTO, ORQUESTA, HOSPITAL, AEROPUERTO, CASTORES, ARROZ, CIRCO, RELOJES, JABON]

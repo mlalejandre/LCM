@@ -1,0 +1,100 @@
+"""APRENDER · banco de LECTURA, MEDIDA LIMPIA de la 2.23. Seis temas nuevos cargados de frases que no se sostienen solas. Escrito con el código
+congelado y sin ejecutarlo; se mide UNA vez en cada versión (2.22 y 2.23), con el texto pegado y frase a frase."""
+N = "!no lo he entendido;!no he entendido"
+K_ = "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*"
+
+TEMAS = [
+ {"nombre": "el violín", "intro": "Te voy a leer un texto sobre el violín.", "frases": [
+  ("El violín es un instrumento de cuerda pequeño.", [("V", "¿qué es el violín?", "instrumento")]),
+  ("Tiene cuatro cuerdas y se apoya en el hombro.", [("L", "¿cuántas cuerdas tiene el violín?", "cuatro|4"), ("L", "¿dónde se apoya el violín?", "hombro")]),
+  ("Se toca con un arco.", [("L", "¿con qué se toca el violín?", "arco")]),
+  ("El arco es una vara de madera con crines de caballo.", [("V", "¿qué es el arco?", "vara")]),
+  ("Se frota contra las cuerdas y las hace vibrar.", [("L", "¿contra qué se frota el arco?", "cuerdas")]),
+  ("Los violinistas estudian muchos años y ensayan cada día.", [("L", "¿cuándo ensayan los violinistas?", "dia")]),
+  ("Guardan el violín en un estuche.", [("L", "¿dónde guardan el violín los violinistas?", "estuche")]),
+  ("El Stradivarius es el violín más caro del mundo.", [("I", "¿cuál es el violín más caro del mundo?", "stradivarius")]),
+  ("Se fabricó hace trescientos años.", [("L", "¿cuándo se fabricó el Stradivarius?", "trescientos|300")]),
+ ], "extra": [
+  ("M", "¿cuándo se fabricó el violín más caro del mundo?", "trescientos|300"), ("K", "el violín tiene seis cuerdas", K_ + "|cuatro"),
+  ("N", "¿cuánto cuesta un arco?", "ABST"), ("N", "¿quién inventó el violín?", "ABST"),
+ ]},
+ {"nombre": "los lobos", "intro": "Te voy a leer un texto sobre los lobos.", "frases": [
+  ("Los lobos son mamíferos que viven en grupo.", [("V", "¿qué son los lobos?", "mamifero*")]),
+  ("Cazan de noche y duermen de día.", [("L", "¿cuándo cazan los lobos?", "noche"), ("L", "¿cuándo duermen los lobos?", "dia")]),
+  ("Un grupo de lobos se llama manada.", [("I", "¿cómo se llama un grupo de lobos?", "manada")]),
+  ("Tiene un jefe y recorre muchos kilómetros.", [("L", "¿qué recorre la manada?", "kilometros")]),
+  ("Las crías de los lobos se llaman lobeznos y nacen en primavera.", [("I", "¿cómo se llaman las crías de los lobos?", "lobezno*"), ("L", "¿cuándo nacen los lobeznos?", "primavera")]),
+  ("Viven en una cueva durante dos meses.", [("L", "¿dónde viven los lobeznos?", "cueva"), ("L", "¿cuánto tiempo viven los lobeznos en una cueva?", "dos")]),
+  ("Los lobos tienen colmillos largos y afilados.", [("L", "¿cómo son los colmillos de los lobos?", "largos|afilados")]),
+  ("Con ellos desgarran la carne.", [("L", "¿qué desgarran los lobos?", "carne")]),
+  ("Cuando hay peligro aúllan muy fuerte.", [("L", "¿qué hacen los lobos cuando hay peligro?", "aullan")]),
+  ("El lobo ártico es el lobo más blanco.", [("I", "¿cuál es el lobo más blanco?", "artico")]),
+  ("Vive en el norte y aguanta mucho frío.", [("L", "¿dónde vive el lobo ártico?", "norte")]),
+ ], "extra": [
+  ("M", "¿dónde vive el lobo más blanco?", "norte"), ("K", "los lobeznos viven en una cueva durante seis meses", K_ + "|dos"),
+  ("N", "¿cuánto pesa un lobo?", "ABST"), ("N", "¿quién cuida a los lobeznos?", "ABST"),
+ ]},
+ {"nombre": "la panadería", "intro": "Te voy a leer un texto sobre la panadería.", "frases": [
+  ("La panadería es la tienda donde se vende el pan.", [("V", "¿qué es la panadería?", "tienda")]),
+  ("Abre muy temprano y cierra a mediodía.", [("L", "¿cuándo cierra la panadería?", "mediodia")]),
+  ("El panadero amasa la harina y la deja reposar.", [("L", "¿qué amasa el panadero?", "harina")]),
+  ("Después mete la masa en el horno.", [("L", "¿dónde mete la masa el panadero?", "horno")]),
+  ("El horno es de leña y alcanza doscientos grados.", [("L", "¿cuántos grados alcanza el horno?", "doscientos|200")]),
+  ("Dentro hay una pala larga de madera.", [("L", "¿qué hay dentro del horno?", "pala")]),
+  ("El obrador es la sala donde se hace el pan.", [("V", "¿qué es el obrador?", "sala")]),
+  ("Allí trabajan tres panaderos y hace mucho calor.", [("L", "¿cuántos panaderos trabajan en el obrador?", "tres|3")]),
+  ("Las barras se colocan en cestas y se venden por la mañana.", [("L", "¿dónde se colocan las barras?", "cestas"), ("L", "¿cuándo se venden las barras?", "manana")]),
+  ("Las ensaimadas son bollos dulces en forma de espiral.", [("V", "¿qué son las ensaimadas?", "bollos")]),
+  ("Se cubren de azúcar.", [("L", "¿de qué se cubren las ensaimadas?", "azucar")]),
+ ], "extra": [
+  ("K", "la panadería cierra por la noche", K_ + "|mediodia"),
+  ("N", "¿cuánto cuesta una barra?", "ABST"), ("N", "¿quién limpia el horno?", "ABST"),
+ ]},
+ {"nombre": "el telescopio", "intro": "Te voy a leer un texto sobre el telescopio.", "frases": [
+  ("El telescopio es un aparato que sirve para ver objetos lejanos.", [("V", "¿qué es el telescopio?", "aparato")]),
+  ("Tiene dos lentes y un tubo largo.", [("L", "¿cuántas lentes tiene el telescopio?", "dos|2")]),
+  ("Las lentes son piezas de cristal curvo.", [("V", "¿qué son las lentes?", "piezas")]),
+  ("Aumentan la imagen y la acercan al ojo.", [("L", "¿qué aumentan las lentes?", "imagen")]),
+  ("Galileo fue el primer astrónomo que miró el cielo con un telescopio.", [("L", "¿quién fue el primer astrónomo que miró el cielo con un telescopio?", "galileo")]),
+  ("Los astrónomos son las personas que estudian las estrellas.", [("V", "¿quiénes son los astrónomos?", "personas|estudian")]),
+  ("Trabajan de noche y duermen por la mañana.", [("L", "¿cuándo trabajan los astrónomos?", "noche")]),
+  ("El observatorio es el edificio donde están los telescopios grandes.", [("V", "¿qué es el observatorio?", "edificio")]),
+  ("Suele estar en una montaña y tiene una cúpula que se abre.", [("L", "¿dónde suele estar el observatorio?", "montana")]),
+  ("El Hubble es el telescopio más famoso.", [("I", "¿cuál es el telescopio más famoso?", "hubble")]),
+  ("Gira alrededor de la Tierra y pesa once toneladas.", [("L", "¿cuánto pesa el Hubble?", "once|11")]),
+ ], "extra": [
+  ("M", "¿cuánto pesa el telescopio más famoso?", "once|11"), ("K", "el telescopio tiene cinco lentes", K_ + "|dos"),
+  ("N", "¿cuánto cuesta un telescopio?", "ABST"), ("N", "¿quién construyó el Hubble?", "ABST"),
+ ]},
+ {"nombre": "el chocolate", "intro": "Te voy a leer un texto sobre el chocolate.", "frases": [
+  ("El chocolate es un alimento que se hace con cacao.", [("V", "¿qué es el chocolate?", "alimento")]),
+  ("El cacao es el fruto de un árbol tropical.", [("V", "¿qué es el cacao?", "fruto")]),
+  ("Sus semillas se secan al sol y se tuestan.", [("L", "¿dónde se secan las semillas del cacao?", "sol")]),
+  ("Después se muelen hasta formar una pasta.", [("L", "¿qué forman las semillas al molerse?", "pasta")]),
+  ("La pasta se mezcla con azúcar y se vierte en moldes.", [("L", "¿con qué se mezcla la pasta?", "azucar"), ("L", "¿dónde se vierte la pasta?", "moldes")]),
+  ("El chocolate negro es el chocolate que lleva más cacao.", [("I", "¿qué chocolate lleva más cacao?", "negro")]),
+  ("Tiene un sabor amargo.", [("L", "¿qué sabor tiene el chocolate negro?", "amargo")]),
+  ("El chocolate blanco no lleva cacao en polvo.", [("L", "¿el chocolate blanco lleva cacao en polvo?", "^no")]),
+  ("Se hace con manteca de cacao y leche.", [("L", "¿con qué se hace el chocolate blanco?", "manteca|leche")]),
+  ("Los chocolateros trabajan en un obrador fresco.", [("L", "¿dónde trabajan los chocolateros?", "obrador")]),
+  ("Tardan dos días en hacer una tableta.", [("L", "¿cuánto tardan los chocolateros en hacer una tableta?", "dos")]),
+ ], "extra": [
+  ("M", "¿qué sabor tiene el chocolate que lleva más cacao?", "amargo"), ("K", "los chocolateros tardan dos horas en hacer una tableta", K_ + "|dias"),
+  ("N", "¿cuánto cuesta una tableta?", "ABST"), ("N", "¿quién descubrió el cacao?", "ABST"),
+ ]},
+ {"nombre": "los carpinteros", "intro": "Te voy a leer un texto sobre los carpinteros.", "frases": [
+  ("Los carpinteros son las personas que trabajan la madera.", [("V", "¿quiénes son los carpinteros?", "personas|madera")]),
+  ("Hacen mesas, sillas y puertas.", [("L", "¿qué hacen los carpinteros?", "mesas|sillas|puertas")]),
+  ("Usan un serrucho y llevan un lápiz en la oreja.", [("L", "¿qué usan los carpinteros?", "serrucho"), ("L", "¿dónde llevan un lápiz los carpinteros?", "oreja")]),
+  ("El serrucho es una sierra de mano con dientes de acero.", [("V", "¿qué es el serrucho?", "sierra")]),
+  ("Corta la madera cuando se mueve adelante y atrás.", [("L", "¿qué corta el serrucho?", "madera")]),
+  ("La carpintería es el taller donde trabajan los carpinteros.", [("V", "¿qué es la carpintería?", "taller")]),
+  ("Huele a madera y tiene el suelo lleno de serrín.", [("L", "¿a qué huele la carpintería?", "madera")]),
+  ("El serrín es el polvo que cae al cortar la madera.", [("V", "¿qué es el serrín?", "polvo")]),
+  ("Se recoge cada tarde y se usa para hacer tableros.", [("L", "¿cuándo se recoge el serrín?", "tarde"), ("L", "¿para qué se usa el serrín?", "tableros")]),
+  ("Las tablas se lijan antes de pintarlas.", [("L", "¿cuándo se lijan las tablas?", "antes")]),
+ ], "extra": [
+  ("K", "el serrín se recoge cada mañana", K_ + "|tarde"),
+  ("N", "¿cuánto cuesta un serrucho?", "ABST"), ("N", "¿quién barre la carpintería?", "ABST"),
+ ]},
+]

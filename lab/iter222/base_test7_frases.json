@@ -1,0 +1,938 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 70,
+    "ok": 59,
+    "falsas": 3,
+    "acierto": 84.3
+   },
+   "L": {
+    "n": 18,
+    "ok": 16,
+    "falsas": 1,
+    "acierto": 88.9
+   },
+   "I": {
+    "n": 9,
+    "ok": 8,
+    "falsas": 1,
+    "acierto": 88.9
+   },
+   "H": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "P": {
+    "n": 10,
+    "ok": 8,
+    "falsas": 0,
+    "acierto": 80.0
+   },
+   "M": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "D": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "N": {
+    "n": 8,
+    "ok": 8,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 6,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 83.3
+   },
+   "G": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 50.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   }
+  },
+  "frases_cubiertas": [
+   25,
+   28
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El papel es una lámina fina que se hace con fibras de madera.",
+   "r": "Entendido: el papel es una lámina fino; el papel se hace con fibras de madera.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "La madera se tritura y se mezcla con agua hasta formar una pasta.",
+   "r": "Entendido: la madera se tritura; la madera se mezcla con agua hasta formar una pasta.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "La pasta se extiende sobre una malla y se deja secar.",
+   "r": "Entendido: la pasta se extende sobre una malla.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El lugar donde se fabrica el papel se llama papelera.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El lugar donde se fabrica el papel se llama papelera».",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Los chinos inventaron el papel hace unos dos mil años.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Los chinos inventaron el papel hace unos dos mil años».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Antes se escribía sobre pergamino, que es piel de animal muy fina.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Antes se escribía sobre pergamino, que es piel de animal muy fina».",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El papel de periódico es el papel más barato.",
+   "r": "Entendido: el papel de periódico es un papel; el papel de periódico es muy barato.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Se vuelve amarillo con la luz del sol.",
+   "r": "Entendido: amarillo se vuelve con la luz del sol.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El cartón es un papel grueso y resistente.",
+   "r": "Entendido: el cartón es un papel grueso resistente.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Con cartón se hacen cajas.",
+   "r": "Entendido: el cartón se hace cajas con cartón.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El papel usado se echa al contenedor azul.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El papel usado se echa al contenedor azul».",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "El papel se puede reciclar unas seis veces.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El papel se puede reciclar unas seis veces».",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Una hoja de papel tarda unos tres meses en deshacerse en la naturaleza.",
+   "r": "Entendido: la hoja de papel tarda unos tres meses en deshacerse y la naturaleza.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el papel",
+   "t": "-",
+   "q": "Las personas que fabrican papel a mano se llaman papeleros.",
+   "r": "Entendido: los papeleros son personas; los papeleros fabrican papel a mano.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "el papel",
+   "t": "V",
+   "q": "¿qué es el papel?",
+   "crit": "lamina",
+   "r": "El papel es una lámina, como me dijiste; de fábrica sé además que es un material. Además, según lo que he aprendido, el papel es una lámina fina que se hace con fibras de madera.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿con qué se hace el papel?",
+   "crit": "fibras|madera",
+   "r": "El papel se hace con fibras de madera.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿con qué se mezcla la madera?",
+   "crit": "agua",
+   "r": "La madera se mezcla con agua hasta formar una pasta.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿sobre qué se extiende la pasta?",
+   "crit": "malla",
+   "r": "La pasta se extende sobre una malla.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el papel",
+   "t": "I",
+   "q": "¿cómo se llama el lugar donde se fabrica el papel?",
+   "crit": "papelera",
+   "r": "En el texto pone: «El lugar donde se fabrica el papel se llama papelera».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿dónde se fabrica el papel?",
+   "crit": "papelera",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿quiénes inventaron el papel?",
+   "crit": "chinos",
+   "r": "En el texto pone: «Los chinos inventaron el papel hace unos dos mil años».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el papel",
+   "t": "V",
+   "q": "¿qué es el pergamino?",
+   "crit": "piel",
+   "r": "En el texto pone, hablando de los chinos: «Antes se escribía sobre pergamino, que es piel de animal muy fina».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el papel",
+   "t": "I",
+   "q": "¿cuál es el papel más barato?",
+   "crit": "periodico",
+   "r": "El papel de periódico: según lo que he aprendido, es el papel más barato.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿con qué se vuelve amarillo el papel de periódico?",
+   "crit": "luz|sol",
+   "r": "En el texto pone, hablando del papel de periódico: «Se vuelve amarillo con la luz del sol».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el papel",
+   "t": "V",
+   "q": "¿qué es el cartón?",
+   "crit": "papel",
+   "r": "El cartón es un papel, como me dijiste; de fábrica sé además que es un material. Además, según lo que he aprendido, el cartón es un papel grueso y resistente.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿qué se hace con cartón?",
+   "crit": "cajas",
+   "r": "Suelen ser de carton, por ejemplo, las cajas.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿dónde se echa el papel usado?",
+   "crit": "contenedor|azul",
+   "r": "En el texto pone: «El papel usado se echa al contenedor azul».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿cuántas veces se puede reciclar el papel?",
+   "crit": "seis|6",
+   "r": "En el texto pone: «El papel se puede reciclar unas seis veces».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el papel",
+   "t": "L",
+   "q": "¿cuánto tarda una hoja de papel en deshacerse?",
+   "crit": "tres meses|3",
+   "r": "La hoja de papel tarda unos tres meses en deshacerse y la naturaleza.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el papel",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que fabrican papel a mano?",
+   "crit": "papelero*",
+   "r": "Papeleros. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el papel",
+   "t": "H",
+   "q": "¿el cartón es un papel?",
+   "crit": "^si",
+   "r": "No lo sé seguro: de fábrica sé que un cartón es un material, pero no si es un papel.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "H",
+   "q": "¿un papelero es una persona?",
+   "crit": "^si",
+   "r": "Sí, los papeleros son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "P",
+   "q": "¿dónde se elabora el papel?",
+   "crit": "papelera",
+   "r": "No lo sé. En lo que he aprendido no aparece «elaborar»; si es otra forma de decir algo, dímelo («elaborar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "P",
+   "q": "¿dónde se tira el papel usado?",
+   "crit": "contenedor|azul",
+   "r": "En el texto pone: «El papel usado se echa al contenedor azul». Entiendo «tirar» como «echar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "P",
+   "q": "¿quiénes crearon el papel?",
+   "crit": "chinos",
+   "r": "En el texto pone: «Los chinos inventaron el papel hace unos dos mil años». Entiendo «crear» como «inventar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "P",
+   "q": "¿cuánto demora una hoja de papel en deshacerse?",
+   "crit": "tres meses|3",
+   "r": "En el texto pone: «Una hoja de papel tarda unos tres meses en deshacerse en la naturaleza».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "M",
+   "q": "¿con qué se vuelve amarillo el papel más barato?",
+   "crit": "luz|sol",
+   "r": "En el texto pone, hablando del papel de periódico: «Se vuelve amarillo con la luz del sol».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "M",
+   "q": "¿qué se hace con el papel grueso y resistente?",
+   "crit": "cajas",
+   "r": "En el texto pone, hablando del cartón: «Con cartón se hacen cajas». Lo junto con otra cosa que aprendí: el cartón es «papel grueso y resistente».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "D",
+   "q": "¿una caja de cartón es de papel?",
+   "crit": "^si|papel",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "N",
+   "q": "¿quién inventó el cartón?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "N",
+   "q": "¿cuánto cuesta un periódico?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "N",
+   "q": "¿quién vende el pergamino?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («vender» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "N",
+   "q": "¿cuánto pesa una caja?",
+   "crit": "ABST",
+   "r": "No lo sé. («pesar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "C",
+   "q": "aplastar es lo mismo que triturar",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: «aplastar» significa triturar.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "P",
+   "q": "¿la madera se aplasta?",
+   "crit": "^si|tritura",
+   "r": "Sí, la madera se tritura.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "C",
+   "q": "mi abuela es papelera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuela es papelera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "C",
+   "q": "¿mi abuela fabrica papel?",
+   "crit": "^si|fabrica*",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu abuela sé que es papelera.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "G",
+   "q": "descríbeme el cartón",
+   "crit": "papel|grueso|resistente|cajas",
+   "r": "El cartón es un papel grueso y resistente. El cartón es un papel grueso resistente. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el papel",
+   "t": "K",
+   "q": "el papel usado se echa al contenedor verde",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|azul",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El papel usado se echa al contenedor verde».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "El queso es un alimento que se hace con leche.",
+   "r": "Entendido: el queso es un alimento; el queso se hace con leche.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "La leche puede ser de vaca, de oveja o de cabra.",
+   "r": "Entendido: la leche puede ser de vaca, de oveja o de cabra; lo apunto como una de esas posibilidades.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Para hacer queso se añade cuajo a la leche caliente.",
+   "r": "Entendido: la leche se añade cuajo a la leche caliente para hacer queso.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "El cuajo es una sustancia que separa la parte sólida de la leche.",
+   "r": "Entendido: el cuajo es una sustancia; el cuajo separa la parte sólida de la leche.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "La parte sólida se llama cuajada y la parte líquida se llama suero.",
+   "r": "Entendido: el cuajo parte la parte sólida de la leche sólida se llama cuajada; la parte de la leche se llama Suero.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "La cuajada se prensa en moldes para darle forma.",
+   "r": "Entendido: la cuajada se prensa en moldes para dar forma.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Después el queso se guarda en una cueva fresca durante varios meses.",
+   "r": "Entendido: el queso se guarda en una cueva fresca durante varios meses después.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Este proceso se llama curación.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "El queso fresco es el queso que no se cura.",
+   "r": "Entendido: el queso fresco es queso; el queso fresco no se cura el queso.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Se come a los pocos días y es muy blando.",
+   "r": "Entendido: el queso fresco se come a los pocos días; el queso fresco es muy blando.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "El queso curado es duro y tiene un sabor fuerte.",
+   "r": "Entendido: el queso es duro; el queso tiene un sabor fuerte; el sabor del queso es fuerte.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "El manchego es el queso más famoso de España.",
+   "r": "Entendido: el manchego es un queso; el manchego es muy famoso.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Se hace con leche de oveja.",
+   "r": "Entendido: el manchego se hace con leche de oveja.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el queso",
+   "t": "-",
+   "q": "Las personas que hacen queso se llaman queseros.",
+   "r": "Entendido: los queseros son personas; los queseros hacen queso.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "el queso",
+   "t": "V",
+   "q": "¿qué es el queso?",
+   "crit": "alimento",
+   "r": "El queso es un alimento, como me dijiste; de fábrica sé además que es un lácteo. Además, según lo que he aprendido, el queso es un alimento que se hace con leche.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿con qué se hace el queso?",
+   "crit": "leche",
+   "r": "El queso se hace con leche.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿de qué animales puede ser la leche?",
+   "crit": "vaca|oveja|cabra",
+   "r": "En el texto pone: «La leche puede ser de vaca, de oveja o de cabra».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿qué se añade a la leche caliente?",
+   "crit": "cuajo",
+   "r": "La leche añadir a la leche.",
+   "v": "MAL",
+   "k": 2
+  },
+  {
+   "tema": "el queso",
+   "t": "V",
+   "q": "¿qué es el cuajo?",
+   "crit": "sustancia",
+   "r": "El cuajo es una sustancia. Además, según lo que he aprendido, el cuajo es una sustancia que separa la parte sólida de la leche.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿cómo se llama la parte sólida?",
+   "crit": "cuajada",
+   "r": "Cuajo. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿cómo se llama la parte líquida?",
+   "crit": "suero",
+   "r": "La parte de la leche se llama Suero.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿dónde se prensa la cuajada?",
+   "crit": "moldes",
+   "r": "La cuajada se prensa en moldes para dar forma.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿dónde se guarda el queso?",
+   "crit": "cueva",
+   "r": "En el texto pone, hablando de la cuajada: «Después el queso se guarda en una cueva fresca durante varios meses».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿cómo se llama este proceso?",
+   "crit": "curacion",
+   "r": "En el texto pone: «Este proceso se llama curación».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿qué queso no se cura?",
+   "crit": "fresco",
+   "r": "El queso fresco no se cura el queso.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿cómo es el queso fresco?",
+   "crit": "blando",
+   "r": "El queso fresco es blando, duro y comestible.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿cómo es el queso curado?",
+   "crit": "duro|fuerte",
+   "r": "El queso es duro y comestible.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿cuál es el queso más famoso de España?",
+   "crit": "manchego",
+   "r": "El manchego: según lo que he aprendido, es el queso más famoso de España.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el queso",
+   "t": "L",
+   "q": "¿con qué leche se hace el manchego?",
+   "crit": "oveja",
+   "r": "El manchego se hace con leche de oveja.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el queso",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que hacen queso?",
+   "crit": "quesero*",
+   "r": "Queseros. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el queso",
+   "t": "H",
+   "q": "¿el queso es un alimento?",
+   "crit": "^si",
+   "r": "Sí, un queso es un alimento. Lo deduzco porque un queso es un lácteo y un lácteo es un alimento.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "H",
+   "q": "¿un quesero es una persona?",
+   "crit": "^si",
+   "r": "Sí, los queseros son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "P",
+   "q": "¿dónde se almacena el queso?",
+   "crit": "cueva",
+   "r": "En el texto pone, hablando de la cuajada: «Después el queso se guarda en una cueva fresca durante varios meses». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "P",
+   "q": "¿qué se agrega a la leche caliente?",
+   "crit": "cuajo",
+   "r": "No lo sé. En lo que he aprendido no aparece «agregar»; si es otra forma de decir algo, dímelo («agregar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "P",
+   "q": "¿quiénes elaboran queso?",
+   "crit": "quesero*",
+   "r": "Los queseros hacen queso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "P",
+   "q": "¿el queso fresco se ingiere a los pocos días?",
+   "crit": "^si|come",
+   "r": "Sí, el queso fresco se come a los pocos días. Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "M",
+   "q": "¿con qué leche se hace el queso más famoso de España?",
+   "crit": "oveja",
+   "r": "El manchego se hace con leche de oveja.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "M",
+   "q": "¿cómo es el queso que no se cura?",
+   "crit": "blando",
+   "r": "El queso es duro y comestible. Lo junto con otra cosa que aprendí: el queso fresco es «queso que no se cura».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "D",
+   "q": "¿el manchego es un queso?",
+   "crit": "^si",
+   "r": "Sí, el manchego es un queso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "N",
+   "q": "¿quién inventó el queso?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "N",
+   "q": "¿cuánto cuesta un queso curado?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "N",
+   "q": "¿quién ordeña las cabras?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («ordeñar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "N",
+   "q": "¿dónde duermen los queseros?",
+   "crit": "ABST",
+   "r": "No lo sé. («dormir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "C",
+   "q": "conservar es lo mismo que guardar",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: «conservar» significa guardar.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "P",
+   "q": "¿dónde se conserva el queso?",
+   "crit": "cueva",
+   "r": "En el texto pone, hablando de la cuajada: «Después el queso se guarda en una cueva fresca durante varios meses». Entiendo «conservar» como «guardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "C",
+   "q": "mi vecino es quesero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecino es quesero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "C",
+   "q": "¿mi vecino hace queso?",
+   "crit": "^si|hace*",
+   "r": "Sí, los queseros hacen queso. Lo deduzco porque tu vecino es quesero y eso vale para los queseros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "G",
+   "q": "descríbeme el queso curado",
+   "crit": "duro|fuerte",
+   "r": "Un queso es un lácteo. Suele ser de leche. Suele estar en la cocina. Los lácteos vienen de la leche. Los alimentos son comestibles. Los alimentos son comestibles.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el queso",
+   "t": "K",
+   "q": "el queso curado es blando",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|duro",
+   "r": "Antes me dijiste que el queso es duro. ¿Cuál vale: la anterior o la nueva?",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

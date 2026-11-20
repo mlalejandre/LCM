@@ -1,0 +1,243 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.22 · lo leído manda sobre la fábrica, sinónimos por otros idiomas y contraste de cantidades",
+ "analisis_previo_fallos_221_texto_732": {
+  "n": 732,
+  "fallos": {
+   "abstencion_L": 10,
+   "abstencion_D": 12,
+   "abstencion_C": 7,
+   "abstencion_P": 26,
+   "otra_P": 1,
+   "otra_M": 2,
+   "cita_equivocada": 9,
+   "abstencion_I": 1,
+   "otra_G": 2,
+   "afirmacion_sin_contraste": 5,
+   "abstencion_K": 1,
+   "abstencion_G": 2,
+   "fabrica_contra_texto": 3,
+   "otra_L": 2,
+   "otra_N": 3,
+   "abstencion_M": 4,
+   "abstencion_H": 1,
+   "afirmacion_mal_leida": 2,
+   "otra_H": 3,
+   "otra_C": 1,
+   "otra_V": 1
+  }
+ },
+ "temas_conocidos_texto_732": {
+  "2.21": {
+   "ok": 634,
+   "acierto": 86.6
+  },
+  "2.22": {
+   "ok": 652,
+   "acierto": 89.1
+  },
+  "ganadas": 18,
+  "perdidas": 0
+ },
+ "temas_conocidos_frases_605": {
+  "ganadas": 12,
+  "perdidas": 0
+ },
+ "temas_conocidos_texto_221_222": {
+  "dev": [
+   96.0,
+   97.0
+  ],
+  "test": [
+   88.4,
+   90.5
+  ],
+  "test2": [
+   94.8,
+   94.8
+  ],
+  "test3": [
+   93.3,
+   93.3
+  ],
+  "test4": [
+   89.2,
+   90.8
+  ],
+  "test5": [
+   81.9,
+   84.3
+  ],
+  "test6": [
+   81.6,
+   81.6
+  ],
+  "test7": [
+   94.3,
+   97.1
+  ],
+  "test8": [
+   60.0,
+   80.0
+  ],
+  "pdev": [
+   80.9,
+   85.3
+  ],
+  "setas": [
+   72.9,
+   72.9
+  ]
+ },
+ "temas_conocidos_frases_221_222": {
+  "dev": [
+   95.0,
+   96.0
+  ],
+  "test": [
+   91.6,
+   92.6
+  ],
+  "test2": [
+   86.2,
+   86.2
+  ],
+  "test3": [
+   85.0,
+   85.0
+  ],
+  "test4": [
+   86.2,
+   87.7
+  ],
+  "test5": [
+   77.1,
+   79.5
+  ],
+  "test6": [
+   78.9,
+   78.9
+  ],
+  "test7": [
+   84.3,
+   87.1
+  ],
+  "test8": [
+   60.0,
+   74.3
+  ]
+ },
+ "primera_medida_limpia_test9_66": {
+  "texto": {
+   "2.21": {
+    "acierto": 87.9,
+    "falsas": 6
+   },
+   "2.22_ciega": {
+    "acierto": 89.4,
+    "falsas": 5
+   },
+   "2.22_final_no_ciego": {
+    "acierto": 90.9,
+    "falsas": 3
+   }
+  },
+  "frases": {
+   "2.21": {
+    "acierto": 87.9,
+    "falsas": 6
+   },
+   "2.22_ciega": {
+    "acierto": 89.4,
+    "falsas": 5
+   },
+   "2.22_final_no_ciego": {
+    "acierto": 90.9,
+    "falsas": 3
+   }
+  },
+  "auditado_texto": {
+   "2.21": 89.4,
+   "2.22_ciega": 90.9
+  },
+  "combinar": {
+   "2.21": 100,
+   "2.22": 100
+  }
+ },
+ "segunda_medida_limpia_test10_32": {
+  "texto": {
+   "2.21": {
+    "acierto": 84.4,
+    "falsas": 2
+   },
+   "2.22": {
+    "acierto": 84.4,
+    "falsas": 2
+   }
+  },
+  "frases": {
+   "2.21": {
+    "acierto": 84.4,
+    "falsas": 2
+   },
+   "2.22": {
+    "acierto": 84.4,
+    "falsas": 2
+   }
+  },
+  "auditado": {
+   "2.21": 87.5,
+   "2.22": 87.5
+  }
+ },
+ "puentes_entre_idiomas": {
+  "parejas_nuevas": 15550,
+  "minimo_idiomas": 2,
+  "precision_a_ojo": "alrededor de la mitad"
+ },
+ "controles_221_222": {
+  "autor": [
+   90.04,
+   90.04
+  ],
+  "ciego2": [
+   94.68,
+   94.68
+  ],
+  "ciego6": [
+   82.09,
+   82.09
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "16b": [
+   96.48,
+   96.48
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas; iter222 t01 = 100 % (119 sondas)",
+ "pytest": "913 pasan, 3 fallos de entorno, 1 omitido"
+}

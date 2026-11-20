@@ -1,0 +1,685 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 65,
+    "ok": 59,
+    "falsas": 3,
+    "acierto": 90.8
+   },
+   "L": {
+    "n": 21,
+    "ok": 21,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "P": {
+    "n": 3,
+    "ok": 1,
+    "falsas": 2,
+    "acierto": 33.3
+   },
+   "I": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "D": {
+    "n": 5,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 40.0
+   },
+   "M": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 1,
+    "acierto": 75.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   27,
+   29
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el olivo",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 13; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "V",
+   "q": "¿qué es el olivo?",
+   "crit": "arbol",
+   "r": "El olivo es un árbol de hoja, como me dijiste; de fábrica sé además que es un árbol. Además, según lo que he aprendido, el olivo es un árbol de hoja perenne que crece en climas cálidos y secos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿dónde crece el olivo?",
+   "crit": "clima*|calido*|seco*",
+   "r": "Los olivos crecen en climas cálidos y secos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cuál es el fruto del olivo?",
+   "crit": "aceituna",
+   "r": "La fruta de los olivos es la aceituna.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cuándo se recogen las aceitunas verdes?",
+   "crit": "antes|madurar",
+   "r": "Los aceitunas verdes se recogen antes de madurar y las negras cuando ya están maduras.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cuándo se hace la recogida de la aceituna?",
+   "crit": "otono|invierno",
+   "r": "La recogida de las aceitunas se hace en otoño y en invierno.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el olivo",
+   "t": "P",
+   "q": "¿cómo se recogen las aceitunas?",
+   "crit": "varas|ramas|golpean",
+   "r": "En el texto pone: «Las aceitunas verdes se recogen antes de madurar y las negras, cuando ya están maduras».",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿qué se saca de las aceitunas?",
+   "crit": "aceite",
+   "r": "En el texto pone: «De las aceitunas se saca el aceite de oliva».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el olivo",
+   "t": "I",
+   "q": "¿cómo se llama el lugar donde se fabrica el aceite?",
+   "crit": "almazara",
+   "r": "Almazara. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el olivo",
+   "t": "V",
+   "q": "¿qué es una almazara?",
+   "crit": "lugar|aceite",
+   "r": "La almazara es un lugar. Además, según lo que he aprendido, la almazara es el lugar donde se fabrica el aceite.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el olivo",
+   "t": "I",
+   "q": "¿cuál es el aceite de mayor calidad?",
+   "crit": "virgen extra",
+   "r": "En el texto pone: «El aceite de oliva virgen extra es el aceite de mayor calidad».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cuánto puede vivir un olivo?",
+   "crit": "mil|1000",
+   "r": "En el texto pone: «Un olivo puede vivir más de mil años».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cuánto tardan los olivos en dar frutos?",
+   "crit": "cinco|5",
+   "r": "Los olivos tardan unos cinco años en dar sus primeros frutos.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el olivo",
+   "t": "I",
+   "q": "¿qué país produce más aceite de oliva?",
+   "crit": "espana",
+   "r": "En el texto pone: «España es el país que más aceite de oliva produce».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿para qué se usa la madera del olivo?",
+   "crit": "cucharas|cuencos",
+   "r": "En el texto pone: «La madera del olivo es muy dura y se usa para hacer cucharas y cuencos».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿cómo es la madera del olivo?",
+   "crit": "dura",
+   "r": "La madera de los olivos es muy dura.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el olivo",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que cultivan olivos?",
+   "crit": "olivarero*",
+   "r": "Olivareros. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el olivo",
+   "t": "L",
+   "q": "¿de qué es símbolo una rama de olivo?",
+   "crit": "paz",
+   "r": "La rama de olivo es un símbolo de paz.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "el olivo",
+   "t": "H",
+   "q": "¿el olivo es una planta?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el olivo es un árbol de hoja perenne que crece en climas cálidos y secos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "H",
+   "q": "¿un olivo es un ser vivo?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el olivo es un árbol de hoja perenne que crece en climas cálidos y secos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "H",
+   "q": "¿un olivo es un animal?",
+   "crit": "^no",
+   "r": "No, un olivo es una planta, no un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "P",
+   "q": "¿dónde se elabora el aceite?",
+   "crit": "almazara",
+   "r": "El aceite se fabrica en la almazara. Entiendo «elaborar» como «fabricar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "D",
+   "q": "¿el olivo pierde las hojas en invierno?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De los olivos sé que son árbol de hoja perennes y crecen en climas cálidos y secos. En lo que he aprendido no aparece «perder»; si es otra forma de decir algo, dímelo («perder es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "M",
+   "q": "¿de dónde se saca el aceite de mayor calidad?",
+   "crit": "aceituna*",
+   "r": "Sí: el texto dice «De las aceitunas se saca el aceite de oliva». Lo junto con otra cosa que aprendí: el aceite de oliva virgen extra es «aceite de mayor calidad».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "N",
+   "q": "¿cuántos olivos hay en España?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "N",
+   "q": "¿cuánto cuesta un litro de aceite?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "N",
+   "q": "¿quién plantó el primer olivo?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («plantar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "C",
+   "q": "mi abuelo era olivarero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuelo era olivarero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "C",
+   "q": "¿mi abuelo cultivaba olivos?",
+   "crit": "^si|cultiv*",
+   "r": "Sí, los olivareros cultivan olivos. Lo deduzco porque tu abuelo es olivarero y eso vale para los olivareros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "G",
+   "q": "dime dos tipos de aceitunas",
+   "crit": "verde*;negra*",
+   "r": "Aceituna verde. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "G",
+   "q": "descríbeme el olivo",
+   "crit": "arbol|aceituna|clima*|mil",
+   "r": "El olivo es un árbol de hoja perenne que crece en climas cálidos y secos. Los olivos son árbol de hoja perennes. Los olivos crecen en climas cálidos y secos. Los olivos pueden vivir más de mil años. Los olivos tardan unos cinco años en dar sus primeros frutos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el olivo",
+   "t": "K",
+   "q": "la madera del olivo es muy blanda",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|dura",
+   "r": "Antes me dijiste que la madera de los olivos es muy dura. ¿Cuál vale: la anterior o la nueva?",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 12; las otras 3 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "V",
+   "q": "¿qué es un tren?",
+   "crit": "vagones|locomotora",
+   "r": "Un tren es un conjunto de vagones y un transporte, como me dijiste; de fábrica sé además que es un vehículo. Además, según lo que he aprendido, el tren es un transporte muy ecológico.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los trenes",
+   "t": "V",
+   "q": "¿qué son las vías?",
+   "crit": "railes|acero",
+   "r": "Según lo que he aprendido, la vía es circulan sobre dos raíles de acero.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿sobre qué circulan los trenes?",
+   "crit": "railes|vias",
+   "r": "Los trenes circulan sobre dos raíles de acero.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿con qué funcionaban las primeras locomotoras?",
+   "crit": "vapor|carbon",
+   "r": "Las primeras locomotoras funcionaban con vapor.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los trenes",
+   "t": "D",
+   "q": "¿todos los trenes son eléctricos?",
+   "crit": "^no|mayoria|algunos",
+   "r": "No lo sé. Solo sé que los trenes son arrastrados y conjunto de vagones por una locomotora y los trenes son transportes.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "los trenes",
+   "t": "V",
+   "q": "¿qué es la catenaria?",
+   "crit": "cable",
+   "r": "Según lo que he aprendido, la catenaria es toman la corriente de un cable.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿de dónde toman la corriente los trenes eléctricos?",
+   "crit": "cable|catenaria",
+   "r": "Sí: el texto dice «Los trenes eléctricos toman la corriente de un cable llamado catenaria».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los trenes",
+   "t": "I",
+   "q": "¿cómo se llama la persona que conduce un tren?",
+   "crit": "maquinista",
+   "r": "Maquinista. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿quién comprueba los billetes?",
+   "crit": "revisor",
+   "r": "El revisor comprueba los billetes de los viajeros.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿dónde paran los trenes?",
+   "crit": "estacion*",
+   "r": "Los trenes paran para que suban en las estaciones.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿qué velocidad puede superar el tren de alta velocidad?",
+   "crit": "trescientos|300",
+   "r": "En el texto pone: «El tren de alta velocidad puede superar los trescientos kilómetros por hora».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿qué transporta un tren de mercancías?",
+   "crit": "productos|materiales",
+   "r": "El tren de mercancías transporta productos y materiales.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿un tren de mercancías lleva personas?",
+   "crit": "^no",
+   "r": "No, el tren de mercancías no lleva personas.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los trenes",
+   "t": "V",
+   "q": "¿qué es el metro?",
+   "crit": "tren",
+   "r": "Un metro es un tren, como me dijiste; de fábrica sé además que es un vehículo. Además, según lo que he aprendido, el metro es un tren que circula bajo tierra en las grandes ciudades.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿por dónde circula el metro?",
+   "crit": "bajo tierra|ciudades",
+   "r": "Sí: el texto dice «El metro es un tren que circula bajo tierra en las grandes ciudades».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los trenes",
+   "t": "I",
+   "q": "¿cuál es el recorrido en tren más largo del mundo?",
+   "crit": "transiberiano",
+   "r": "En el texto pone: «El Transiberiano es el recorrido en tren más largo del mundo».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿cuánto tarda el Transiberiano?",
+   "crit": "siete|7",
+   "r": "Transiberiano tarda siete días.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "los trenes",
+   "t": "L",
+   "q": "¿qué país cruza el Transiberiano?",
+   "crit": "rusia",
+   "r": "Transiberiano cruza Rusia de oeste a este.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "los trenes",
+   "t": "D",
+   "q": "¿qué pasa cuando un tren se acerca a un paso a nivel?",
+   "crit": "barreras",
+   "r": "Según lo que he aprendido: cuando un tren se acerca a un paso a nivel, bajan las barreras.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "los trenes",
+   "t": "D",
+   "q": "¿por qué es el tren un transporte ecológico?",
+   "crit": "contamina",
+   "r": "Porque El tren contamina menos que el coche. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "los trenes",
+   "t": "H",
+   "q": "¿el metro es un tren?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el metro es un tren que circula bajo tierra en las grandes ciudades.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "H",
+   "q": "¿un tren es un vehículo?",
+   "crit": "^si",
+   "r": "Sí, un tren es un vehículo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "H",
+   "q": "¿un maquinista es una persona?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, un maquinista es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "P",
+   "q": "¿quién lleva un tren?",
+   "crit": "maquinista",
+   "r": "En el texto pone: «Un tren de mercancías no lleva personas: transporta productos y materiales».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "M",
+   "q": "¿cuánto tarda el recorrido en tren más largo del mundo?",
+   "crit": "siete|7",
+   "r": "Transiberiano tarda siete días. Lo junto con otra cosa que aprendí: el Transiberiano es «recorrido en tren más largo del mundo».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "D",
+   "q": "¿el metro circula sobre vías?",
+   "crit": "^si",
+   "r": "No lo sé. Solo sé que el metro circula bajo tierra en las grandes ciudades.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "N",
+   "q": "¿cuántos trenes hay en España?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "N",
+   "q": "¿cuánto cuesta un billete de tren?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "N",
+   "q": "¿quién inventó la locomotora?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "C",
+   "q": "mi tía es maquinista",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tía es maquinista.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "C",
+   "q": "¿mi tía conduce un tren?",
+   "crit": "^si|conduce*",
+   "r": "Sí, el maquinista conduce un tren.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "G",
+   "q": "dime dos tipos de trenes",
+   "crit": "electrico*|mercancias|alta velocidad|metro",
+   "r": "Metro y trén eléctrico. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "G",
+   "q": "descríbeme el metro",
+   "crit": "tren|bajo tierra|ciudades",
+   "r": "El metro es un tren que circula bajo tierra en las grandes ciudades. El metro circula bajo tierra en las grandes ciudades. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los trenes",
+   "t": "K",
+   "q": "el Transiberiano tarda dos días",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|siete",
+   "r": "Entendido: Transiberiano tarda dos días. Pero ojo: en lo que leí ponía «Cruza Rusia de oeste a este y tarda siete días». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

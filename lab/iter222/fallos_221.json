@@ -1,0 +1,26 @@
+{
+ "n": 732,
+ "fallos": {
+  "abstencion_L": 10,
+  "abstencion_D": 12,
+  "abstencion_C": 7,
+  "abstencion_P": 26,
+  "otra_P": 1,
+  "otra_M": 2,
+  "cita_equivocada": 9,
+  "abstencion_I": 1,
+  "otra_G": 2,
+  "afirmacion_sin_contraste": 5,
+  "abstencion_K": 1,
+  "abstencion_G": 2,
+  "fabrica_contra_texto": 3,
+  "otra_L": 2,
+  "otra_N": 3,
+  "abstencion_M": 4,
+  "abstencion_H": 1,
+  "afirmacion_mal_leida": 2,
+  "otra_H": 3,
+  "otra_C": 1,
+  "otra_V": 1
+ }
+}

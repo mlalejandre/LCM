@@ -1,0 +1,818 @@
+{
+ "n_fallos": 45,
+ "por_proceso": {
+  "LECTURA": 12,
+  "EXPRESION": 4,
+  "FABRICA": 3,
+  "INTERCONEXION": 5,
+  "RAZONAMIENTO": 6,
+  "DICCIONARIO": 11,
+  "RECUPERACION": 1,
+  "EXAMEN": 1,
+  "CONSULTA": 2
+ },
+ "proceso_por_tipo": {
+  "LECTURA": {
+   "D": 2,
+   "L": 5,
+   "P": 2,
+   "K": 2,
+   "M": 1
+  },
+  "EXPRESION": {
+   "L": 1,
+   "D": 1,
+   "C": 1,
+   "N": 1
+  },
+  "FABRICA": {
+   "V": 1,
+   "N": 1,
+   "G": 1
+  },
+  "INTERCONEXION": {
+   "M": 4,
+   "C": 1
+  },
+  "RAZONAMIENTO": {
+   "D": 5,
+   "K": 1
+  },
+  "DICCIONARIO": {
+   "P": 11
+  },
+  "RECUPERACION": {
+   "N": 1
+  },
+  "EXAMEN": {
+   "M": 1
+  },
+  "CONSULTA": {
+   "L": 1,
+   "P": 1
+  }
+ },
+ "detalle": [
+  {
+   "tema": "las ballenas",
+   "t": "D",
+   "q": "¿la ballena azul respira aire?",
+   "r": "No lo sé: no me has dicho nada sobre eso. De la ballena azul sé que es un animal y es muy grande.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿las ballenas respiran aire?",
+     "ok": true,
+     "r": "Sí, los mamíferos respiran aire."
+    },
+    {
+     "q": "¿la ballena azul es una ballena?",
+     "ok": false,
+     "r": "No, una ballena azul es un animal."
+    }
+   ],
+   "nota": "la premisa ya falla preguntada directamente: ¿la ballena azul es una ballena?",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿llueve mucho en un desierto?",
+   "r": "Me dijiste: «Un desierto es un lugar donde casi nunca llueve».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "cita la frase correcta («casi nunca llueve») sin decir «no»",
+   "proceso": "EXPRESION"
+  },
+  {
+   "tema": "el desierto",
+   "t": "V",
+   "q": "¿qué son las dunas?",
+   "r": "Una duna es un paisaje.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "proceso": "FABRICA"
+  },
+  {
+   "tema": "el desierto",
+   "t": "M",
+   "q": "¿qué transportaba un grupo de camellos que viaja junto?",
+   "r": "En el texto pone: «Un grupo de camellos que viaja junto se llama caravana».",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cómo se llama un grupo de camellos que viaja junto?",
+     "ok": true,
+     "r": "Caravana. Lo he aprendido de lo que leí o me explicaste."
+    },
+    {
+     "q": "¿qué transportaban las caravanas?",
+     "ok": true,
+     "r": "Las caravanas transportaban sal y telas."
+    }
+   ],
+   "nota": "los dos pasos se aciertan por separado",
+   "proceso": "INTERCONEXION"
+  },
+  {
+   "tema": "el desierto",
+   "t": "D",
+   "q": "¿hay agua en un oasis?",
+   "r": "No, Sáhara está en el norte de África.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿qué es un oasis?",
+     "ok": true,
+     "r": "Un oasis es un paisaje. Además, según lo que he aprendido, el oasis es una zona del desier"
+    }
+   ],
+   "nota": "implicación: «zona donde hay agua» -> hay agua",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "el desierto",
+   "t": "D",
+   "q": "¿en el Sáhara llueve mucho?",
+   "r": "No lo sé: no tengo datos del tiempo, solo lo que tú me cuentes.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿el Sáhara es un desierto?",
+     "ok": true,
+     "r": "Sí: el texto dice «El Sáhara es el desierto cálido más grande del mundo»."
+    },
+    {
+     "q": "¿llueve mucho en un desierto?",
+     "ok": false,
+     "r": "Me dijiste: «Un desierto es un lugar donde casi nunca llueve»."
+    }
+   ],
+   "nota": "la premisa ya falla preguntada directamente: ¿llueve mucho en un desierto? (ese paso falla por EXPRESION)",
+   "proceso": "EXPRESION"
+  },
+  {
+   "tema": "el desierto",
+   "t": "C",
+   "q": "¿mi abuelo vivía en una tienda?",
+   "r": "No, los nómadas viven en tiendas de tela. Lo deduzco porque tu abuelo es nomado y eso vale para las nomadas.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿dónde viven los nómadas?",
+     "ok": true,
+     "r": "Los nómadas viven en tiendas de tela."
+    }
+   ],
+   "nota": "encuentra el dato y contesta «No, …» por el género («las nómadas») y el tiempo verbal",
+   "proceso": "EXPRESION"
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿con qué se pegan los timbales?",
+   "r": "Para pegar los timbales sirven, por ejemplo, los celos y los pegamentos.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿con qué se golpean los timbales?",
+     "ok": true,
+     "r": "En el texto pone: «Los timbales son tambores que se golpean con mazas»."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.21,
+    "vectores": 0.53,
+    "idiomas": 0
+   },
+   "nota": "hay enlace, pero débil o con un sentido minoritario: no pasa el umbral",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿cuánto tardan los ensayos?",
+   "r": "No lo sé. En lo que he aprendido no aparece «tardar»; si es otra forma de decir algo, dímelo («tardar es lo mismo que…»).",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuánto duran los ensayos?",
+     "ok": true,
+     "r": "Los ensayos duran tres horas."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.0,
+    "idiomas": 0
+   },
+   "nota": "falta el enlace en el léxico",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿cuándo ajustan los músicos sus instrumentos?",
+   "r": "No lo sé. («ajustar» no aparece en lo que he aprendido.)",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuándo afinan los músicos sus instrumentos?",
+     "ok": true,
+     "r": "En el texto pone: «Antes del concierto los músicos afinan sus instrumentos»."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.09,
+    "idiomas": 0
+   },
+   "nota": "falta el enlace en el léxico",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "la orquesta",
+   "t": "C",
+   "q": "¿mi prima usa una batuta?",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu prima sé que es director de orquesta.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿con qué marca el ritmo el director?",
+     "ok": true,
+     "r": "En el texto pone: «El director marca el ritmo con una batuta»."
+    }
+   ],
+   "nota": "clase + individuo con un nombre de varias palabras («directora de orquesta») y otro verbo («usa»)",
+   "proceso": "INTERCONEXION"
+  },
+  {
+   "tema": "la orquesta",
+   "t": "K",
+   "q": "el contrabajo se toca sentado",
+   "r": "Entendido: el contrabajo se toca sentado.",
+   "hecho_en_nucleo": "el contrabajo se toca de pie",
+   "pasos": [],
+   "nota": "exclusión: de pie / sentado",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "el hospital",
+   "t": "M",
+   "q": "¿qué lleva el vehículo que lleva a los enfermos al hospital?",
+   "r": "En el texto pone: «La ambulancia es el vehículo que lleva a los enfermos al hospital».",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿qué es la ambulancia?",
+     "ok": true,
+     "r": "Una ambulancia es un vehículo. Además, según lo que he aprendido, la ambulancia es el vehí"
+    },
+    {
+     "q": "¿qué lleva la ambulancia?",
+     "ok": true,
+     "r": "La ambulancia lleva una sirena para pedir paso."
+    }
+   ],
+   "nota": "los dos pasos se aciertan por separado",
+   "proceso": "INTERCONEXION"
+  },
+  {
+   "tema": "el hospital",
+   "t": "D",
+   "q": "¿las urgencias cierran por la noche?",
+   "r": "No lo sé: no me has dicho nada sobre eso. De las urgencias sé que están abiertas día y están abiertas noche. En lo que he aprendido no apare",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuándo están abiertas las urgencias?",
+     "ok": true,
+     "r": "En el texto pone: «Las urgencias están abiertas día y noche»."
+    }
+   ],
+   "nota": "exclusión: abiertas / cierran",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿quién conduce la ambulancia?",
+   "r": "Los médicos y los enfermeros.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "trampa: contesta «los médicos y los enfermeros» de fábrica",
+   "proceso": "FABRICA"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿cuántos pasajeros lleva un avión grande?",
+   "r": "No lo sé.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "la frase no llegó a ser un hecho del núcleo y la cita tampoco la encuentra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿dónde se arreglan los aviones?",
+   "r": "En el texto pone: «Los auxiliares de vuelo atienden a los pasajeros durante el viaje». Entiendo «arreglar» como «atender».",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿dónde se reparan los aviones?",
+     "ok": true,
+     "r": "Los aviones se reparan en el hangar."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.33,
+    "vectores": 0.46,
+    "idiomas": 0
+   },
+   "lexico_malo": {
+    "enlace": "igual",
+    "peso": 0.14,
+    "vectores": 0.73,
+    "idiomas": 0,
+    "pareja": [
+     "arreglar",
+     "atender"
+    ]
+   },
+   "nota": "el léxico enlaza la palabra con otra del texto que aquí no dice lo mismo",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿quiénes guían a los aviones?",
+   "r": "En el texto pone: «El piloto es la persona que conduce el avión». Entiendo «guiar» como «conducir».",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿quiénes dirigen a los aviones?",
+     "ok": true,
+     "r": "La torre de control dirige los controladores a los aviones por radio allí."
+    }
+   ],
+   "lexico": {
+    "enlace": "modo",
+    "peso": 0.33,
+    "vectores": 0.86,
+    "idiomas": 0
+   },
+   "lexico_malo": {
+    "enlace": "igual",
+    "peso": 0.33,
+    "vectores": 0.92,
+    "idiomas": 0,
+    "pareja": [
+     "guiar",
+     "conducir"
+    ]
+   },
+   "nota": "el léxico enlaza la palabra con otra del texto que aquí no dice lo mismo",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿cuántos pasajeros transporta un avión grande?",
+   "r": "No lo sé. En lo que he aprendido no aparece «transportar»; si es otra forma de decir algo, dímelo («transportar es lo mismo que…»).",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuántos pasajeros lleva un avión grande?",
+     "ok": false,
+     "r": "No lo sé."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.15,
+    "vectores": 0.5,
+    "idiomas": 0
+   },
+   "nota": "la pregunta literal equivalente también falla: el problema no es la palabra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "N",
+   "q": "¿cuántos aviones hay en el aeropuerto?",
+   "r": "En el texto pone: «Un avión grande lleva más de trescientos pasajeros».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "trampa: cita «…lleva más de trescientos pasajeros»; el número no cuenta aviones",
+   "proceso": "RECUPERACION"
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "K",
+   "q": "un avión grande lleva más de mil pasajeros",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Un avión grande lleva más de mil pasajeros».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "no entiende la afirmación",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿para qué usan la cola los castores?",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "la frase no llegó a ser un hecho del núcleo y la cita tampoco la encuentra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los castores",
+   "t": "P",
+   "q": "¿para qué emplean la cola los castores?",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿para qué usan la cola los castores?",
+     "ok": false,
+     "r": "No lo sé: eso no lo he leído ni me lo has explicado."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.33,
+    "vectores": 0.93,
+    "idiomas": 0
+   },
+   "nota": "la pregunta literal equivalente también falla: el problema no es la palabra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los castores",
+   "t": "D",
+   "q": "¿los castores saben nadar?",
+   "r": "No lo sé: no me has dicho nada sobre eso. De los castores sé que son roedores y tienen los dientes de color naranja y muy fuertes.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿para qué usan la cola los castores?",
+     "ok": false,
+     "r": "No lo sé: eso no lo he leído ni me lo has explicado."
+    }
+   ],
+   "nota": "la premisa ya falla preguntada directamente: ¿para qué usan la cola los castores?",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el arroz",
+   "t": "P",
+   "q": "¿cuándo se planta el arroz?",
+   "r": "No lo sé. En lo que he aprendido no aparece «plantar»; si es otra forma de decir algo, dímelo («plantar es lo mismo que…»).",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuándo se siembra el arroz?",
+     "ok": true,
+     "r": "El arroz se siembra en primavera (del 21 de marzo de 2027 al 20 de junio de 2027)."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.1,
+    "idiomas": 2
+   },
+   "nota": "hay enlace, pero débil o con un sentido minoritario: no pasa el umbral",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el arroz",
+   "t": "D",
+   "q": "¿el arroz necesita poca agua?",
+   "r": "No lo sé: no me has dicho nada sobre eso. Del arroz sé que es un cereal y se cultiva en campos inundados.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿qué necesita la planta del arroz?",
+     "ok": true,
+     "r": "En el texto pone: «La planta necesita mucha agua y mucho calor»."
+    }
+   ],
+   "nota": "exclusión: mucha / poca",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿quiénes divierten al público?",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «divertir»; si es otra forma de decir algo, dímelo («divertir es lo mismo",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿quiénes hacen reír al público?",
+     "ok": true,
+     "r": "En el texto pone: «Los payasos hacen reír al público»."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.0,
+    "idiomas": 0
+   },
+   "nota": "falta el enlace en el léxico",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿sobre qué anda el equilibrista?",
+   "r": "No lo sé seguro. ¿«andar» quiere decir aquí lo mismo que «caminar»? Si es así, dímelo y te contesto.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿sobre qué camina el equilibrista?",
+     "ok": true,
+     "r": "El equilibrista camina sobre un cable muy fino."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.5,
+    "vectores": 0.94,
+    "idiomas": 0
+   },
+   "nota": "hay enlace, pero débil o con un sentido minoritario: no pasa el umbral",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el circo",
+   "t": "M",
+   "q": "¿qué hay debajo del número más peligroso del circo?",
+   "r": "En el texto pone: «El número del trapecio es el número más peligroso del circo».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "pregunta mal planteada: el texto dice qué hay debajo de los trapecistas, no del «número»",
+   "proceso": "EXAMEN"
+  },
+  {
+   "tema": "el circo",
+   "t": "M",
+   "q": "¿de qué es la tienda donde se hacen las funciones?",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿dónde se hacen las funciones?",
+     "ok": true,
+     "r": "Las funciones se hacen dentro de una carpa."
+    },
+    {
+     "q": "¿qué es la carpa?",
+     "ok": true,
+     "r": "Una carpa es un pez. Además, según lo que he aprendido, la carpa es una tienda enorme de l"
+    }
+   ],
+   "nota": "los dos pasos se aciertan por separado",
+   "proceso": "INTERCONEXION"
+  },
+  {
+   "tema": "el circo",
+   "t": "D",
+   "q": "¿el circo se queda siempre en la misma ciudad?",
+   "r": "No lo sé. Solo sé que el circo se queda dos semanas en cada ciudad.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿qué es el circo?",
+     "ok": true,
+     "r": "Un circo es un espectáculo, como me dijiste; de fábrica sé además que es un edificio. Adem"
+    }
+   ],
+   "nota": "negación: viaja de ciudad en ciudad -> no se queda siempre en la misma",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "el circo",
+   "t": "N",
+   "q": "¿cuánto cuesta una entrada?",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, mú",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "se abstiene bien («eso queda fuera de lo que sé hacer»); el corrector no lo reconoce",
+   "proceso": "EXPRESION"
+  },
+  {
+   "tema": "el circo",
+   "t": "G",
+   "q": "descríbeme a los payasos",
+   "r": "Un payaso es un profesional. Los profesionales trabajan. Las personas hablan. Las personas hablan.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "proceso": "FABRICA"
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿cada cuánto hay que dar cuerda a los relojes mecánicos?",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "la frase no llegó a ser un hecho del núcleo y la cita tampoco la encuentra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿qué tiene el reloj de cuco?",
+   "r": "En el texto pone: «El reloj de cuco es el reloj más conocido de Suiza».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "la frase no llegó a ser un hecho del núcleo y la cita tampoco la encuentra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿quiénes reparan relojes?",
+   "r": "No lo sé seguro. ¿«reparar» quiere decir aquí lo mismo que «arreglar»? Si es así, dímelo y te contesto.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cómo se llaman las personas que arreglan relojes?",
+     "ok": true,
+     "r": "Relojeros. Lo he aprendido de lo que leí o me explicaste."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.33,
+    "vectores": 0.46,
+    "idiomas": 0
+   },
+   "nota": "hay enlace, pero débil o con un sentido minoritario: no pasa el umbral",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿con qué trabajan los relojes de cuarzo?",
+   "r": "No lo sé. En lo que he aprendido no aparece «trabajar»; si es otra forma de decir algo, dímelo («trabajar es lo mismo que…»).",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿con qué funcionan los relojes de cuarzo?",
+     "ok": true,
+     "r": "Los reloj de cuarzos funcionan con una pila."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.0,
+    "idiomas": 0
+   },
+   "nota": "falta el enlace en el léxico",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "los relojes",
+   "t": "M",
+   "q": "¿qué tiene el reloj más conocido de Suiza?",
+   "r": "En el texto pone: «Un reloj es un aparato que mide el tiempo». Lo junto con otra cosa que aprendí: el reloj de cuco es «reloj más conocido d",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuál es el reloj más conocido de Suiza?",
+     "ok": true,
+     "r": "El reloj de cuco: según lo que he aprendido, es el reloj más conocido de Suiza."
+    },
+    {
+     "q": "¿qué tiene el reloj de cuco?",
+     "ok": false,
+     "r": "En el texto pone: «El reloj de cuco es el reloj más conocido de Suiza»."
+    }
+   ],
+   "nota": "uno de los dos pasos falla ya por separado: ¿qué tiene el reloj de cuco?",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "los relojes",
+   "t": "D",
+   "q": "¿un reloj de sol funciona de noche?",
+   "r": "No lo sé.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuándo funcionaban los relojes de sol?",
+     "ok": true,
+     "r": "En el texto pone: «Los primeros relojes eran de sol y solo funcionaban de día»."
+    }
+   ],
+   "nota": "exclusión: «solo de día» -> de noche no",
+   "proceso": "RAZONAMIENTO"
+  },
+  {
+   "tema": "los relojes",
+   "t": "K",
+   "q": "la aguja corta marca los minutos",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La aguja corta marca los minutos».",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "no entiende la afirmación",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿dónde se vierte la mezcla?",
+   "r": "No lo sé.",
+   "hecho_en_nucleo": null,
+   "pasos": [],
+   "nota": "la frase no llegó a ser un hecho del núcleo y la cita tampoco la encuentra",
+   "proceso": "LECTURA"
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿cuánto tarda el jabón en estar listo?",
+   "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo.",
+   "hecho_en_nucleo": "el jabón tarda un mes en estar listo",
+   "pasos": [],
+   "nota": "el hecho está en el núcleo; la pregunta no llega a él",
+   "proceso": "CONSULTA"
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿cuánto demora el jabón en estar listo?",
+   "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo. En lo que he aprendido no aparece «demorar»; si es otra forma de deci",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿cuánto tarda el jabón en estar listo?",
+     "ok": false,
+     "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo."
+    }
+   ],
+   "lexico": {
+    "enlace": null,
+    "peso": 0.0,
+    "vectores": 0.04,
+    "idiomas": 2
+   },
+   "nota": "la pregunta literal equivalente también falla: el problema no es la palabra (ese paso falla por CONSULTA)",
+   "proceso": "CONSULTA"
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿dónde se limpiaba la ropa antiguamente?",
+   "r": "No lo sé. («limpiar» no aparece en lo que he aprendido.)",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿dónde se lavaba la ropa antiguamente?",
+     "ok": true,
+     "r": "La prenda se lavaba en el río antiguamente."
+    }
+   ],
+   "lexico": {
+    "enlace": "igual",
+    "peso": 0.29,
+    "vectores": 0.47,
+    "idiomas": 0
+   },
+   "nota": "hay enlace, pero débil o con un sentido minoritario: no pasa el umbral",
+   "proceso": "DICCIONARIO"
+  },
+  {
+   "tema": "el jabón",
+   "t": "M",
+   "q": "¿qué quema la sustancia que se mezcla con la grasa?",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "hecho_en_nucleo": null,
+   "pasos": [
+    {
+     "q": "¿qué es la sosa?",
+     "ok": true,
+     "r": "Según lo que he aprendido, la sosa es una sustancia que quema la piel."
+    },
+    {
+     "q": "¿con qué se mezcla la grasa?",
+     "ok": true,
+     "r": "En el texto pone, hablando del jabón: «Se fabrica mezclando grasa con sosa»."
+    }
+   ],
+   "nota": "los dos pasos se aciertan por separado además, el segundo paso («quema la piel») está dentro de la definición de la sosa",
+   "proceso": "INTERCONEXION"
+  }
+ ]
+}

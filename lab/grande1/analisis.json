@@ -1,0 +1,338 @@
+{
+ "n": 358,
+ "versiones": {
+  "219_texto": {
+   "ok": 263,
+   "acierto": 73.5,
+   "ic95": [
+    68.7,
+    77.8
+   ],
+   "mal_o_alucina": 31
+  },
+  "220_texto": {
+   "ok": 276,
+   "acierto": 77.1,
+   "ic95": [
+    72.5,
+    81.1
+   ],
+   "mal_o_alucina": 33
+  },
+  "221_texto": {
+   "ok": 280,
+   "acierto": 78.2,
+   "ic95": [
+    73.6,
+    82.2
+   ],
+   "mal_o_alucina": 32
+  },
+  "222_texto": {
+   "ok": 287,
+   "acierto": 80.2,
+   "ic95": [
+    75.7,
+    84.0
+   ],
+   "mal_o_alucina": 30
+  },
+  "219_frases": {
+   "ok": 236,
+   "acierto": 65.9,
+   "ic95": [
+    60.9,
+    70.6
+   ],
+   "mal_o_alucina": 38
+  },
+  "220_frases": {
+   "ok": 246,
+   "acierto": 68.7,
+   "ic95": [
+    63.7,
+    73.3
+   ],
+   "mal_o_alucina": 39
+  },
+  "221_frases": {
+   "ok": 282,
+   "acierto": 78.8,
+   "ic95": [
+    74.2,
+    82.7
+   ],
+   "mal_o_alucina": 33
+  },
+  "222_frases": {
+   "ok": 286,
+   "acierto": 79.9,
+   "ic95": [
+    75.4,
+    83.7
+   ],
+   "mal_o_alucina": 31
+  }
+ },
+ "pares": {
+  "219->220_texto": {
+   "ganadas": 13,
+   "perdidas": 0,
+   "p_mcnemar": 0.0002
+  },
+  "220->221_texto": {
+   "ganadas": 6,
+   "perdidas": 2,
+   "p_mcnemar": 0.2891
+  },
+  "221->222_texto": {
+   "ganadas": 7,
+   "perdidas": 0,
+   "p_mcnemar": 0.0156
+  },
+  "219->222_texto": {
+   "ganadas": 26,
+   "perdidas": 2,
+   "p_mcnemar": 0.0
+  },
+  "219->220_frases": {
+   "ganadas": 10,
+   "perdidas": 0,
+   "p_mcnemar": 0.002
+  },
+  "220->221_frases": {
+   "ganadas": 37,
+   "perdidas": 1,
+   "p_mcnemar": 0.0
+  },
+  "221->222_frases": {
+   "ganadas": 4,
+   "perdidas": 0,
+   "p_mcnemar": 0.125
+  },
+  "219->222_frases": {
+   "ganadas": 51,
+   "perdidas": 1,
+   "p_mcnemar": 0.0
+  }
+ },
+ "por_tipo_222_texto": {
+  "V": {
+   "ok": 26,
+   "n": 28,
+   "acierto": 92.9,
+   "ic95": [
+    77.4,
+    98.0
+   ]
+  },
+  "L": {
+   "ok": 85,
+   "n": 100,
+   "acierto": 85.0,
+   "ic95": [
+    76.7,
+    90.7
+   ]
+  },
+  "I": {
+   "ok": 30,
+   "n": 30,
+   "acierto": 100.0,
+   "ic95": [
+    88.6,
+    100.0
+   ]
+  },
+  "H": {
+   "ok": 30,
+   "n": 30,
+   "acierto": 100.0,
+   "ic95": [
+    88.6,
+    100.0
+   ]
+  },
+  "P": {
+   "ok": 24,
+   "n": 40,
+   "acierto": 60.0,
+   "ic95": [
+    44.6,
+    73.7
+   ]
+  },
+  "M": {
+   "ok": 11,
+   "n": 20,
+   "acierto": 55.0,
+   "ic95": [
+    34.2,
+    74.2
+   ]
+  },
+  "D": {
+   "ok": 8,
+   "n": 20,
+   "acierto": 40.0,
+   "ic95": [
+    21.9,
+    61.3
+   ]
+  },
+  "N": {
+   "ok": 37,
+   "n": 40,
+   "acierto": 92.5,
+   "ic95": [
+    80.1,
+    97.4
+   ]
+  },
+  "C": {
+   "ok": 18,
+   "n": 20,
+   "acierto": 90.0,
+   "ic95": [
+    69.9,
+    97.2
+   ]
+  },
+  "G": {
+   "ok": 9,
+   "n": 10,
+   "acierto": 90.0,
+   "ic95": [
+    59.6,
+    98.2
+   ]
+  },
+  "K": {
+   "ok": 9,
+   "n": 20,
+   "acierto": 45.0,
+   "ic95": [
+    25.8,
+    65.8
+   ]
+  }
+ },
+ "por_tema_222": {
+  "las ballenas": {
+   "texto": 89.2,
+   "frases": 86.5
+  },
+  "el desierto": {
+   "texto": 83.3,
+   "frases": 75.0
+  },
+  "la orquesta": {
+   "texto": 75.0,
+   "frases": 80.6
+  },
+  "el hospital": {
+   "texto": 88.6,
+   "frases": 85.7
+  },
+  "el aeropuerto": {
+   "texto": 77.1,
+   "frases": 77.1
+  },
+  "los castores": {
+   "texto": 86.1,
+   "frases": 86.1
+  },
+  "el arroz": {
+   "texto": 80.6,
+   "frases": 86.1
+  },
+  "el circo": {
+   "texto": 71.4,
+   "frases": 68.6
+  },
+  "los relojes": {
+   "texto": 72.2,
+   "frases": 77.8
+  },
+  "el jabón": {
+   "texto": 77.8,
+   "frases": 75.0
+  }
+ },
+ "por_tipo_texto_por_version": {
+  "219": {
+   "V": 93,
+   "L": 83,
+   "I": 100,
+   "H": 90,
+   "P": 28,
+   "M": 25,
+   "D": 45,
+   "N": 92,
+   "C": 90,
+   "G": 90,
+   "K": 40
+  },
+  "220": {
+   "V": 93,
+   "L": 84,
+   "I": 100,
+   "H": 90,
+   "P": 58,
+   "M": 25,
+   "D": 45,
+   "N": 92,
+   "C": 90,
+   "G": 90,
+   "K": 40
+  },
+  "221": {
+   "V": 93,
+   "L": 84,
+   "I": 100,
+   "H": 90,
+   "P": 60,
+   "M": 45,
+   "D": 40,
+   "N": 92,
+   "C": 90,
+   "G": 90,
+   "K": 40
+  },
+  "222": {
+   "V": 93,
+   "L": 85,
+   "I": 100,
+   "H": 100,
+   "P": 60,
+   "M": 55,
+   "D": 40,
+   "N": 92,
+   "C": 90,
+   "G": 90,
+   "K": 45
+  }
+ },
+ "sin_leer_222": {
+  "acierto": 21.5
+ },
+ "auditoria_222_texto": {
+  "fallos_automaticos": 71,
+  "correctas_que_el_corrector_rechaza": 3,
+  "acierto_auditado": 81.0,
+  "causas": {
+   "deduccion_no_hecha": 12,
+   "contradiccion_no_detectada": 11,
+   "parafrasis_sin_sinonimo": 13,
+   "parafrasis_con_sinonimo_equivocado": 3,
+   "combinar_cita_la_identidad": 6,
+   "combinar_no_encuentra": 3,
+   "literal_no_encontrado": 12,
+   "la_fabrica_tapa_el_texto": 5,
+   "charla_personal": 2,
+   "cita_equivocada_en_trampa": 1
+  },
+  "afirmaciones_realmente_falsas": 10,
+  "citas_reales_que_no_contestan": 7
+ }
+}

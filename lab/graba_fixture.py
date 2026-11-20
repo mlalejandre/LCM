@@ -3,7 +3,7 @@ import json, copy
 from lab import banco
 from lab import tanda01, tanda02, tanda03, tanda04, tanda05, tanda06, tanda07, tanda08, tanda09, tanda12, tanda13, tanda14, tanda15
 import importlib, os
-IT26 = [importlib.import_module(f"lab.{d}.t{k:02d}") for d in ("iter26", "iter27", "iter28", "iter29", "iter210", "iter211", "iter212", "iter213", "iter214", "iter215", "iter216", "iter217", "iter218", "iter219", "iter220", "iter221") for k in range(1, 100) if os.path.exists(f"lab/{d}/t{k:02d}.py")]
+IT26 = [importlib.import_module(f"lab.{d}.t{k:02d}") for d in ("iter26", "iter27", "iter28", "iter29", "iter210", "iter211", "iter212", "iter213", "iter214", "iter215", "iter216", "iter217", "iter218", "iter219", "iter220", "iter221", "iter222", "iter223") for k in range(1, 100) if os.path.exists(f"lab/{d}/t{k:02d}.py")]
 real = banco.parser()
 class Grabador:
     model = True

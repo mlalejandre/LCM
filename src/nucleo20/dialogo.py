@@ -79,6 +79,14 @@ def _es_finito(w):
 _EVENTOS_SIN_NOMBRE = {"santo", "cumpleanos", "boda", "fiesta", "cena", "comida", "reunion", "examen", "mudanza", "final", "partido", "viaje", "entierro", "bautizo", "comunion", "aniversario", "graduacion", "cita", "operacion"}
 
 
+def _Cp_tabla(nuc):
+    try:
+        from . import compuestos as _C
+        return {k for k in _C.tabla(nuc)}
+    except Exception:                                    # noqa
+        return set()
+
+
 class Conversador(Nucleo):
     # ================================================================== entrada
     def procesar(self, texto: str) -> Optional[dict]:
@@ -114,6 +122,8 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             r = None
         if r is None:
+            r = self._por_partes(texto)                  # 2.23: frase a frase, igual que al leer: cada frase completa antes de entenderla
+        if r is None:
             r = self._procesar_218(texto)
             if r_decl is not None and not (isinstance(r, dict) and r.get("estado") == "ok" and "no lo he entendido" not in sa((r.get("respuesta") or "").lower())):
                 r = r_decl                               # el núcleo no tenía nada que hacer con la frase: al menos queda aprendido el sinónimo
@@ -125,6 +135,101 @@ class Conversador(Nucleo):
             pass
         return r
 
+    def _por_partes(self, texto):
+        """2.23: una frase de la charla que explica algo y no se sostiene sola («Se toca de pie», «…y maman durante un año») se completa
+        con aquello de lo que se viene hablando y se lee por partes. Devuelve la respuesta, o None si la frase va por el camino normal."""
+        if not texto or "?" in texto or getattr(self, "_leyendo", False) or getattr(self, "_partiendo", False) or len(texto) > 240 or "\n" in texto:
+            return None
+        try:
+            from . import discurso as _D, exposicion as _X, lectura as _L
+            t = texto.strip()
+            if not _X._impersonal(t) or _X._personal(t):
+                self._disc = None                        # se ha pasado a hablar de uno mismo: lo que venga ya no sigue aquel tema («Tenía fiebre» soy yo)
+            if len(_L.frases(t)) != 1 or len(t.split()) < 2 or not _X._impersonal(t) or _X._personal(t) \
+                    or re.match(r"^\W*(?:dime|dame|cuenta|explica|describe|pon|haz|escribe|apunta|recuerda|olvida|hola|gracias|vale|no,|si,|sí,|perd[oó]n|adi[oó]s)", t, re.I) \
+                    or _X._nombra_persona(self, t[:1].upper() + t[1:]):
+                return None
+            est = getattr(self, "_disc", None)
+            if est is None or self.turno - getattr(self, "_disc_turno", -9) > 3:
+                est = self._disc = _D.Estado()
+            self._disc_turno = self.turno
+            T = t[:1].upper() + t[1:]
+            T = T if T.endswith(".") else T.rstrip("!") + "."
+            w_ini = T.split()[0]
+            if w_ini[:1].isupper() and sa(w_ini.lower()) not in _D._DET and not _D._fin3(w_ini) and sa(w_ini.lower()) not in (
+                    "se", "no", "con", "en", "debajo", "dentro", "despues", "antes", "tambien", "ademas", "luego", "hoy", "antiguamente", "cuando", "alli", "su", "sus", "para", "al", "a",
+                    "de", "por", "si", "durante", "desde", "encima", "detras", "delante", "cerca", "solo", "primero", "entonces"):
+                _D.prepara(T, est)                       # empieza por un nombre propio: solo se sigue el hilo; la frase la lee el núcleo como siempre
+                return None
+            piezas = _D.prepara(T, est)
+            if len(piezas) == 1 and piezas[0][0] == T:
+                return None
+            self._partiendo = True
+            resp, n_ok, n_f0 = [], 0, len(self.F)
+            tema = next((x[1] for x in piezas if x[1]), None)
+            for lista, _tema, _orig in piezas:
+                try:
+                    from . import compuestos as _Cp
+                    sn_p = _D._sujeto(lista.rstrip("."))[0]
+                    if sn_p and len(sn_p.split()) == 3:
+                        _Cp.aprende_clase(self, sn_p)    # «el pan integral»: en una explicación es una clase de pan, no «el pan» con un adjetivo
+                    lista = _Cp.codifica(self, lista)    # «el queso fresco» es una pieza si ya se presentó como tal
+                except Exception:                        # noqa
+                    pass
+                r_p = self._procesar_218(lista)
+                if isinstance(r_p, dict) and r_p.get("respuesta"):
+                    tx = r_p["respuesta"].strip()
+                    if not sa(tx.lower()).startswith("no lo he entendido"):
+                        n_ok += 1
+                        resp.append(re.sub(r"^Entendido(?:, me lo apunto)?[:.]?\s*", "", tx).rstrip("."))
+                    elif "Pero ojo" in tx or "no coincide" in tx:
+                        resp.append(tx.rstrip("."))
+            self._partiendo = False
+            for f_ in self.F[n_f0:]:
+                f_.setdefault("expo", True)              # son cosas explicadas: cuentan al describir y al contrastar
+            _X._apunta(self, T, tema=tema)               # y queda guardada entera, con su tema, para poder citarla
+            self.pend = None
+            cuerpo = "; ".join(x for x in resp if x)
+            if n_ok and cuerpo:
+                return {"respuesta": "Entendido: " + cuerpo + ".", "estado": "ok", "consultar": False, "tipo": "ack"}
+            if n_ok:
+                return {"respuesta": "Entendido, me lo apunto.", "estado": "ok", "consultar": False, "tipo": "ack"}
+            return {"respuesta": f"No lo he entendido del todo, pero me lo apunto tal como lo dices: «{T.rstrip('.')}».", "estado": "ok", "consultar": False, "tipo": "ack"}
+        except Exception:                                # noqa
+            return None
+        finally:
+            self._partiendo = False
+
+    def _encadenar(self, texto):
+        """2.21: ¿sale juntando dos cosas aprendidas? («el recorrido más largo» es el Transiberiano, y de él sí sé cuánto tarda).
+        2.23: se intenta ANTES que nada: si la pregunta nombra algo por su descripción, lo primero es saber de qué habla."""
+        if getattr(self, "_encadena", False) or getattr(self, "_leyendo", False) or not texto or "?" not in texto:
+            return None
+        try:
+            from . import cadena as _CD
+            cands = _CD.reformula(self, texto)
+            if not cands:
+                return None
+            self._encadena = True
+            for cand, nombre, desc in cands:
+                self.ult_just = None
+                r_c = self._procesar_218(cand)
+                if isinstance(r_c, dict) and r_c.get("estado") == "ok" and self._solo_fabrica():
+                    c_c = lectura.cita(self, cand, excluye=_CD.fuentes(self, nombre, desc))   # se encadena lo APRENDIDO: lo que «suele» pasar según la fábrica no vale como segundo paso
+                    r_c = {"respuesta": c_c, "estado": "ok", "consultar": False, "tipo": "resp"} if c_c else None
+                if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("tipo") != "ack" and r_c.get("respuesta") \
+                        and not any(sa(x.lower()) in sa(r_c["respuesta"].lower()) for x in _CD.fuentes(self, nombre, desc)):
+                    r_c = dict(r_c)
+                    r_c["respuesta"] = _CD.aviso(r_c["respuesta"], nombre, desc)
+                    r_c["encadenado"] = (nombre, desc)
+                    self.pend = None
+                    return r_c
+        except Exception:                                # noqa
+            pass
+        finally:
+            self._encadena = False
+        return None
+
     def _solo_fabrica(self):
         """¿La última respuesta salió solo del conocimiento de fábrica (lo que «suele» pasar), sin nada dicho o leído en la conversación?"""
         j = self.ult_just or {}
@@ -135,6 +240,10 @@ class Conversador(Nucleo):
         """2.16: la charla, más leer un texto inserto, seguir el hilo de quién va con quién y, si hace falta, citar lo leído."""
         from . import lectura, crear, relaciones as _rel
         _rel.ENSENADO.clear(); _rel.ENSENADO.update(self.usuario.get("rel") or {})
+        if texto and "?" in texto and len(texto) < 220 and (self.usuario.get("leido") or []) and not os.environ.get("LCM_CADENA_TARDE"):
+            r_cd = self._encadenar(texto)                # 2.23: lo primero, saber de qué habla una descripción («la sala más silenciosa»)
+            if r_cd is not None:
+                return r_cd
         if texto and not getattr(self, "_leyendo", False) and len(texto) < 220:
             # 2.19: «volviendo a las setas, ¿…?», «cambiando de tema, …»: el giro de la charla no es parte de lo que se dice
             m_g = re.match(r"^\s*(?:(?:y\s+)?volviendo a[^,:?]{2,40}|cambiando de tema|por cierto|otra cosa|a prop[oó]sito|una (?:pregunta|duda|cosa)(?: m[aá]s)?|oye|y otra cosa|hablando de[^,:?]{2,40})\s*[,:]\s*(\S.+)$", texto, re.I)
@@ -183,6 +292,7 @@ class Conversador(Nucleo):
                 return self._ok(rcr, tipo="crea")
         if texto and not getattr(self, "_leyendo", False) and lectura.es_texto(texto):
             return lectura.leer(self, texto)
+
         if texto and not getattr(self, "_leyendo", False) and "?" not in texto:
             try:
                 from . import exposicion as _X
@@ -289,7 +399,8 @@ class Conversador(Nucleo):
                     else:                                # 2.20: y si no, por el sentido: la palabra aprendida más cercana (vectores del léxico)
                         for cand, cambios in _S.por_sentido(self, texto):
                             r_c = self._procesar_charla(cand)
-                            if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("respuesta") and _S.casa_tiempo(cambios, r_c["respuesta"]):
+                            if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("respuesta") and _S.casa_tiempo(cambios, r_c["respuesta"]) and _S.casa_tipo(texto, r_c["respuesta"]) \
+                                    and _S.cita_firme(self, cand, cambios, r_c["respuesta"]):
                                 r = dict(r_c)
                                 r["respuesta"] = _S.aviso(cambios, r["respuesta"])
                                 r["por_sentido"] = cambios
@@ -338,26 +449,14 @@ class Conversador(Nucleo):
             del leidos[:-3]
         if texto and "?" in texto and not getattr(self, "_leyendo", False) and not getattr(self, "_encadena", False) \
                 and (r is None or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))):
-            try:                                         # 2.21: ¿sale juntando dos cosas aprendidas? («el recorrido más largo» es el Transiberiano, y de él sí sé cuánto tarda)
-                from . import cadena as _CD
-                self._encadena = True
-                for cand, nombre, desc in _CD.reformula(self, texto):
-                    self.ult_just = None
-                    r_c = self._procesar_218(cand)
-                    if isinstance(r_c, dict) and r_c.get("estado") == "ok" and self._solo_fabrica():
-                        c_c = lectura.cita(self, cand, excluye=_CD.fuentes(self, nombre, desc))   # se encadena lo APRENDIDO: lo que «suele» pasar según la fábrica no vale como segundo paso
-                        r_c = {"respuesta": c_c, "estado": "ok", "consultar": False, "tipo": "resp"} if c_c else None
-                    if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("tipo") != "ack" and r_c.get("respuesta"):
-                        r_c = dict(r_c)
-                        r_c["respuesta"] = _CD.aviso(r_c["respuesta"], nombre, desc)
-                        r_c["encadenado"] = (nombre, desc)
-                        self.pend = None
-                        return r_c
-            except Exception:                            # noqa
-                pass
-            finally:
-                self._encadena = False
-        de_fabrica = isinstance(r, dict) and r.get("estado") == "ok" and re.search(r"\bsuelen? \w+.*Lo sé porque\b", r.get("respuesta") or "") is not None
+            r_cd = self._encadenar(texto)
+            if r_cd is not None:
+                return r_cd
+        # 2.23: si la respuesta sale SOLO de la fábrica y lo leído o explicado dice algo sobre eso, manda lo leído
+        de_fabrica = isinstance(r, dict) and r.get("estado") == "ok" and r.get("tipo") not in ("ack", "crea") and "?" in (texto or "") \
+            and (re.search(r"\bsuelen? \w+.*Lo sé porque\b", r.get("respuesta") or "") is not None or (self._solo_fabrica() and not os.environ.get("LCM_FABRICA_MANDA")
+                                                                                                           and re.match(r"^\W*(?:y\s+)?(?:(?:a|de|con|en|por|para|sobre)\s+)?(?:qu[eé]|qui[eé]n|c[oó]mo|cu[aá]ndo|d[oó]nde|cu[aá]l|cu[aá]nt)", texto.strip(), re.I) is not None
+                                                                                                           and re.match(r"^\W*(?:y\s+)?qu[eé] (?:es|son|significa)\b", texto.strip(), re.I) is None))
         if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or de_fabrica or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))) \
                 and (self.usuario.get("leido") or []):
             c = lectura.cita(self, texto)                # el núcleo no lo sabe (o solo sabe lo que «suele» pasar): ¿lo dice lo leído o explicado?
@@ -366,7 +465,7 @@ class Conversador(Nucleo):
                     from . import sinonimia as _S
                     for cand, cambios in _S.por_sentido(self, texto):
                         c = lectura.cita(self, cand)
-                        if c and _S.casa_tiempo(cambios, c):
+                        if c and _S.casa_tiempo(cambios, c) and _S.casa_tipo(texto, c) and _S.cita_firme(self, cand, cambios, c):
                             c = _S.aviso(cambios, c)
                             break
                         c = None

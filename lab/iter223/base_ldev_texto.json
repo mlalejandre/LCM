@@ -1,0 +1,957 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 13,
+    "ok": 11,
+    "falsas": 2,
+    "acierto": 84.6
+   },
+   "TOTAL": {
+    "n": 95,
+    "ok": 79,
+    "falsas": 9,
+    "acierto": 83.2
+   },
+   "L": {
+    "n": 51,
+    "ok": 40,
+    "falsas": 4,
+    "acierto": 78.4
+   },
+   "I": {
+    "n": 9,
+    "ok": 9,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "M": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "K": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 3,
+    "acierto": 50.0
+   },
+   "N": {
+    "n": 12,
+    "ok": 12,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   52,
+   65
+  ]
+ },
+ "filas": [
+  {
+   "tema": "la guitarra",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (10 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la guitarra",
+   "t": "V",
+   "q": "¿qué es la guitarra?",
+   "crit": "instrumento",
+   "r": "Una guitarra es un instrumento de cuerda, como me dijiste; de fábrica sé además que es un instrumento.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿cuántas cuerdas tiene la guitarra?",
+   "crit": "seis|6",
+   "r": "La guitarra tiene seis cuerdas.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿con qué se toca la guitarra?",
+   "crit": "dedos|pua",
+   "r": "La guitarra se toca con los dedos o con una púa.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la guitarra",
+   "t": "V",
+   "q": "¿qué es la púa?",
+   "crit": "pieza",
+   "r": "La púa es una pieza pequeña de plástico.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿con qué se tensan las cuerdas?",
+   "crit": "clavijas",
+   "r": "Las cuerdas se tensan con las clavijas.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿cuándo suenan las cuerdas?",
+   "crit": "vibrar",
+   "r": "En el texto pone: «Las cuerdas se tensan con las clavijas y suenan al vibrar».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la guitarra",
+   "t": "I",
+   "q": "¿cuál es el antepasado de la guitarra?",
+   "crit": "laud",
+   "r": "El antepasado de la guitarra es el laúd.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿cuándo llegó el laúd a España?",
+   "crit": "mil",
+   "r": "En el texto pone, hablando del laúd: «Llegó a España hace más de mil años».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿cuándo afinan la guitarra los guitarristas?",
+   "crit": "antes",
+   "r": "Los guitarristas afinan la guitarra antes de tocar y la guardan en una funda.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿dónde guardan la guitarra los guitarristas?",
+   "crit": "funda",
+   "r": "En el texto pone: «Los guitarristas afinan la guitarra antes de tocar y la guardan en una funda».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la guitarra",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que fabrican guitarras?",
+   "crit": "lutier*",
+   "r": "Lutieres. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿dónde trabajan los lutieres?",
+   "crit": "taller",
+   "r": "Los lutieres trabajan en un taller.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la guitarra",
+   "t": "L",
+   "q": "¿cuánto tardan los lutieres en hacer una guitarra?",
+   "crit": "mes",
+   "r": "Los lutieres tardan un mes en hacer una guitarra.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la guitarra",
+   "t": "M",
+   "q": "¿cuándo llegó a España el antepasado de la guitarra?",
+   "crit": "mil",
+   "r": "En el texto pone, hablando del laúd: «Llegó a España hace más de mil años». Lo junto con otra cosa que aprendí: el laúd es «antepasado de la guitarra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la guitarra",
+   "t": "K",
+   "q": "la guitarra tiene cuatro cuerdas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|seis",
+   "r": "Eso no coincide con lo que aprendí: la guitarra tiene seis cuerdas. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la guitarra",
+   "t": "N",
+   "q": "¿cuánto cuesta una guitarra?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la guitarra",
+   "t": "N",
+   "q": "¿quién inventó la púa?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los osos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (12 frases). He entendido bien 11; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los osos",
+   "t": "V",
+   "q": "¿qué son los osos?",
+   "crit": "mamifero*",
+   "r": "Un oso es un mamífero. Los osos comen miel y peces.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿dónde viven los osos?",
+   "crit": "bosques|montanas",
+   "r": "Los osos suelen vivir en el bosque.",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿qué comen los osos?",
+   "crit": "frutos|miel|peces",
+   "r": "Los osos comen miel y peces.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿dónde duermen los osos en invierno?",
+   "crit": "cueva",
+   "r": "Los osos duermen en una cueva en invierno.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "los osos",
+   "t": "I",
+   "q": "¿cómo se llama este sueño largo?",
+   "crit": "hibernacion",
+   "r": "Hibernación. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los osos",
+   "t": "I",
+   "q": "¿cuál es el oso más grande del mundo?",
+   "crit": "polar",
+   "r": "El oso polar: según lo que he aprendido, es el oso más grande del mundo.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿dónde vive el oso polar?",
+   "crit": "artico",
+   "r": "El oso polar vive en el Ártico.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿qué caza el oso polar?",
+   "crit": "focas",
+   "r": "El oso polar caza focas.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿de qué color tiene el pelo el oso polar?",
+   "crit": "blanco",
+   "r": "El pelo del oso polar es blanco.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los osos",
+   "t": "I",
+   "q": "¿cómo se llaman las crías de los osos?",
+   "crit": "osezno*",
+   "r": "Oseznos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿cuándo nacen los oseznos?",
+   "crit": "invierno",
+   "r": "En el texto pone: «Las crías de los osos se llaman oseznos y nacen en invierno».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿cuánto tiempo se quedan los oseznos con su madre?",
+   "crit": "dos",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿cómo son las garras de los osos?",
+   "crit": "fuertes",
+   "r": "En el texto pone: «Los osos tienen garras muy fuertes».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los osos",
+   "t": "L",
+   "q": "¿a dónde trepan los osos?",
+   "crit": "arboles",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "los osos",
+   "t": "M",
+   "q": "¿qué caza el oso más grande del mundo?",
+   "crit": "focas",
+   "r": "El oso polar caza focas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los osos",
+   "t": "K",
+   "q": "los oseznos se quedan con su madre durante cinco años",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|dos",
+   "r": "Entendido: los oseznos se quedan con su madre durante cinco años.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "los osos",
+   "t": "N",
+   "q": "¿cuánto pesa un oso?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «pesar»; si es otra forma de decir algo, dímelo («pesar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los osos",
+   "t": "N",
+   "q": "¿quién cuida a los osos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («cuidar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el molino",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 9; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el molino",
+   "t": "V",
+   "q": "¿qué es un molino?",
+   "crit": "maquina",
+   "r": "Según lo que he aprendido, el molino es una máquina que muele el grano.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿cuántas aspas tienen los molinos de viento?",
+   "crit": "cuatro|4",
+   "r": "Los molino de vientos tienen cuatro aspas.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿cuándo giran las aspas?",
+   "crit": "viento",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿dónde se echa el grano?",
+   "crit": "tolva",
+   "r": "El grano se echa en la tolva.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el molino",
+   "t": "V",
+   "q": "¿qué es la tolva?",
+   "crit": "embudo",
+   "r": "La tolva es un embudo de madera.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿qué hay debajo de la tolva?",
+   "crit": "piedras|muelas",
+   "r": "No me has dicho qué hay debajo de la tolva.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿en qué convierten el grano las muelas?",
+   "crit": "harina",
+   "r": "El grano echar en la tolva.",
+   "v": "MAL",
+   "k": 6
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿dónde cae la harina?",
+   "crit": "saco",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "el molino",
+   "t": "V",
+   "q": "¿quién es el molinero?",
+   "crit": "persona",
+   "r": "El molinero vigila las muelas. El molinero carga los sacos. El molinero cobraba una parte de la harina antiguamente.",
+   "v": "MAL",
+   "k": 8
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿qué carga el molinero?",
+   "crit": "sacos",
+   "r": "El molinero carga los sacos.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el molino",
+   "t": "L",
+   "q": "¿qué cobraba el molinero antiguamente?",
+   "crit": "harina|parte",
+   "r": "El molinero cobraba una parte de la harina antiguamente.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el molino",
+   "t": "K",
+   "q": "los molinos de viento tienen ocho aspas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|cuatro",
+   "r": "Eso no coincide con lo que aprendí: los molino de vientos tienen cuatro aspas. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el molino",
+   "t": "N",
+   "q": "¿cuánto cuesta un saco de harina?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el molino",
+   "t": "N",
+   "q": "¿quién construyó el molino?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («construir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 7; las otras 4 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "V",
+   "q": "¿qué es la imprenta?",
+   "crit": "maquina",
+   "r": "La imprenta es una máquina y la imprenta era una orfebre alemana. Además, según lo que he aprendido, la imprenta es una máquina que sirve para hacer muchas copias de un texto.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿quién inventó la imprenta?",
+   "crit": "gutenberg",
+   "r": "En el texto pone: «Gutenberg la inventó hace más de quinientos años».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿qué era Gutenberg?",
+   "crit": "orfebre",
+   "r": "En el texto pone: «Gutenberg la inventó hace más de quinientos años».",
+   "v": "MAL",
+   "k": 2
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿cómo se copiaban los libros antes?",
+   "crit": "mano",
+   "r": "Los libros se copiaban a mano antes.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿cuánto tardaba un monje en copiar un libro?",
+   "crit": "ano",
+   "r": "El monje tardaba un año en copiar un libro.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la imprenta",
+   "t": "V",
+   "q": "¿qué son los tipos?",
+   "crit": "piezas",
+   "r": "En el texto pone: «Los tipos son piezas de metal con una letra cada una».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿de qué se cubren los tipos?",
+   "crit": "tinta",
+   "r": "En el texto pone: «Se colocan en fila y se cubren de tinta».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿qué se aprieta contra los tipos?",
+   "crit": "papel",
+   "r": "En el texto pone: «Después se aprieta el papel contra ellos».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la imprenta",
+   "t": "I",
+   "q": "¿cuál fue el primer libro impreso?",
+   "crit": "biblia",
+   "r": "En el texto pone: «La Biblia fue el primer libro impreso».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la imprenta",
+   "t": "L",
+   "q": "¿cuántas páginas tenía la Biblia?",
+   "crit": "mil",
+   "r": "En el texto pone, hablando de La Biblia: «Tenía más de mil páginas».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la imprenta",
+   "t": "I",
+   "q": "¿cómo se llamaban las personas que trabajaban en una imprenta?",
+   "crit": "impresor*",
+   "r": "En el texto pone: «Las personas que trabajaban en una imprenta se llamaban impresores».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la imprenta",
+   "t": "M",
+   "q": "¿cuántas páginas tenía el primer libro impreso?",
+   "crit": "mil",
+   "r": "En el texto pone, hablando de La Biblia: «Tenía más de mil páginas». Lo junto con otra cosa que aprendí: la Biblia es «primer libro impreso».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "K",
+   "q": "un monje tardaba un mes en copiar un libro",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|ano",
+   "r": "Entendido: el monje tardaba un mes en copiar un libro.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿cuánto costaba un libro?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿dónde nació Gutenberg?",
+   "crit": "ABST",
+   "r": "No sé quién es Gutenberg: todavía no me has hablado de él. («nacer» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el té",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (11 frases). He entendido bien 9; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el té",
+   "t": "V",
+   "q": "¿qué es el té?",
+   "crit": "bebida",
+   "r": "El té es una bebida. Además, según lo que he aprendido, el té es una bebida que se hace con las hojas de una planta.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿cómo se recogen las hojas?",
+   "crit": "mano",
+   "r": "Las hojas se recogen a mano.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿dónde se secan las hojas?",
+   "crit": "sol",
+   "r": "En el texto pone: «Las hojas se recogen a mano y se secan al sol».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿cuánto tiempo se meten las hojas en agua caliente?",
+   "crit": "tres|3",
+   "r": "Las hojas se meten en agua caliente durante tres minutos.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el té",
+   "t": "I",
+   "q": "¿qué té no se fermenta?",
+   "crit": "verde",
+   "r": "El té verde no se fermenta el té.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿qué sabor tiene el té verde?",
+   "crit": "suave",
+   "r": "El té verde tiene un sabor suave.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿cuánto se fermenta el té negro?",
+   "crit": "horas",
+   "r": "El té negro se fermenta durante varias horas.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿cómo es el té negro?",
+   "crit": "fuerte|oscuro",
+   "r": "Los tés negros son liquidos.",
+   "v": "MAL",
+   "k": 6
+  },
+  {
+   "tema": "el té",
+   "t": "I",
+   "q": "¿qué país produce más té?",
+   "crit": "china",
+   "r": "En el texto pone: «China es el país que más té produce».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿con qué se toma el té en Inglaterra?",
+   "crit": "leche",
+   "r": "En el texto pone: «En Inglaterra se toma con leche».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el té",
+   "t": "V",
+   "q": "¿qué es la tetera?",
+   "crit": "recipiente",
+   "r": "Una tetera es un utensilio. Además, según lo que he aprendido, la tetera es el recipiente donde se prepara el té.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el té",
+   "t": "L",
+   "q": "¿de qué suele ser la tetera?",
+   "crit": "porcelana",
+   "r": "La tetera suele ser de porcelana.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el té",
+   "t": "M",
+   "q": "¿qué sabor tiene el té que no se fermenta?",
+   "crit": "suave",
+   "r": "En el texto pone, hablando del té verde: «Tiene un sabor suave». Lo junto con otra cosa que aprendí: el té verde es «té que no se fermenta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el té",
+   "t": "K",
+   "q": "las hojas se meten en agua caliente durante diez minutos",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|tres",
+   "r": "Sí, ya lo sabía.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el té",
+   "t": "N",
+   "q": "¿cuánto cuesta una tetera?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el té",
+   "t": "N",
+   "q": "¿quién descubrió el té?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los bomberos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (10 frases). He entendido bien 4; las otras 6 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los bomberos",
+   "t": "V",
+   "q": "¿quiénes son los bomberos?",
+   "crit": "personas|apagan",
+   "r": "Los bomberos viajan en un camión rojo con una sirena.",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿qué llevan los bomberos?",
+   "crit": "casco|traje",
+   "r": "En el texto pone, hablando de los bomberos: «Llevan un casco y un traje que no se quema».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿en qué viajan los bomberos?",
+   "crit": "camion",
+   "r": "Los bomberos viajan en un camión rojo con una sirena.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿cuántos litros de agua lleva el camión?",
+   "crit": "mil",
+   "r": "El camión lleva mil litros de agua.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "los bomberos",
+   "t": "V",
+   "q": "¿qué es la manguera?",
+   "crit": "tubo",
+   "r": "Una manguera es una herramienta. Además, según lo que he aprendido, la manguera es el tubo por el que sale el agua.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿cuántos bomberos sujetan la manguera?",
+   "crit": "dos|2",
+   "r": "En el texto pone, hablando de la manguera: «Pesa mucho y la sujetan dos bomberos».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los bomberos",
+   "t": "V",
+   "q": "¿qué es el parque de bomberos?",
+   "crit": "edificio",
+   "r": "En el texto pone: «El parque de bomberos es el edificio donde esperan los avisos».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿dónde duermen los bomberos?",
+   "crit": "parque",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿cuándo entrenan los bomberos?",
+   "crit": "dia",
+   "r": "En el texto pone: «Allí duermen y entrenan cada día».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿por dónde bajan los bomberos cuando suena la alarma?",
+   "crit": "barra",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿a quién rescatan los bomberos?",
+   "crit": "personas",
+   "r": "En el texto pone: «También rescatan a personas atrapadas y a veces salvan animales».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los bomberos",
+   "t": "L",
+   "q": "¿qué salvan a veces los bomberos?",
+   "crit": "animales",
+   "r": "En el texto pone: «También rescatan a personas atrapadas y a veces salvan animales».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los bomberos",
+   "t": "K",
+   "q": "el camión lleva cien litros de agua",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|mil",
+   "r": "Entendido: el camión lleva cien litros de agua. Pero ojo: en lo que leí ponía «El camión lleva una escalera muy larga y mil litros de agua». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los bomberos",
+   "t": "N",
+   "q": "¿cuánto cobra un bombero?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «cobrar»; si es otra forma de decir algo, dímelo («cobrar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los bomberos",
+   "t": "N",
+   "q": "¿quién fabrica las mangueras?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

@@ -1,0 +1,688 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 66,
+    "ok": 59,
+    "falsas": 5,
+    "acierto": 89.4
+   },
+   "L": {
+    "n": 18,
+    "ok": 17,
+    "falsas": 1,
+    "acierto": 94.4
+   },
+   "I": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "P": {
+    "n": 8,
+    "ok": 4,
+    "falsas": 2,
+    "acierto": 50.0
+   },
+   "M": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "N": {
+    "n": 8,
+    "ok": 6,
+    "falsas": 2,
+    "acierto": 75.0
+   },
+   "C": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "K": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   25,
+   26
+  ]
+ },
+ "filas": [
+  {
+   "tema": "la biblioteca",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (13 frases). He entendido bien 11; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "V",
+   "q": "¿qué es la biblioteca?",
+   "crit": "edificio",
+   "r": "Una biblioteca es un edificio. Las bibliotecas tienen libros. Además, según lo que he aprendido, la biblioteca es un edificio donde se guardan libros.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿qué se guarda en la biblioteca?",
+   "crit": "libros",
+   "r": "En el texto pone: «La biblioteca es un edificio donde se guardan libros».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿dónde se ordenan los libros?",
+   "crit": "estanteria*",
+   "r": "En el texto pone: «Los libros se ordenan en estanterías según su tema».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿qué lleva cada libro?",
+   "crit": "etiqueta",
+   "r": "Libro llevan una etiqueta con un código.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿quiénes ayudan a los lectores?",
+   "crit": "bibliotecario*",
+   "r": "Los bibliotecarios ayudan a los lectores y encontrar libros.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿qué hace falta para llevarse un libro a casa?",
+   "crit": "carne",
+   "r": "En el texto pone, hablando de la biblioteca: «Para llevarse un libro a casa hace falta un carné».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿cuánto dura el préstamo?",
+   "crit": "tres semanas|3",
+   "r": "El préstamo dura tres semanas.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "I",
+   "q": "¿cuál es la sala más silenciosa de la biblioteca?",
+   "crit": "lectura",
+   "r": "La sala de lectura: según lo que he aprendido, es la sala más silenciosa de la biblioteca.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿dónde está la sala de lectura?",
+   "crit": "segundo|piso",
+   "r": "La sala de lectura está en el segundo piso.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "V",
+   "q": "¿qué es la hemeroteca?",
+   "crit": "sala",
+   "r": "Según lo que he aprendido, la hemeroteca es la sala donde se guardan los periódicos antiguos.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿cuándo abre la hemeroteca?",
+   "crit": "manana",
+   "r": "La hemeroteca abre por la mañana.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "L",
+   "q": "¿se puede comer en la biblioteca?",
+   "crit": "^no",
+   "r": "No: el texto dice «En la biblioteca no se puede comer».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "I",
+   "q": "¿cómo se llaman los libros más antiguos?",
+   "crit": "incunable*",
+   "r": "Incunables. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que restauran libros?",
+   "crit": "encuadernador*",
+   "r": "Encuadernadores. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "H",
+   "q": "¿la hemeroteca es una sala?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «La hemeroteca es la sala donde se guardan los periódicos antiguos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "H",
+   "q": "¿la biblioteca es un edificio?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la biblioteca es un edificio donde se guardan libros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "H",
+   "q": "¿un encuadernador es una persona?",
+   "crit": "^si",
+   "r": "Sí, los encuadernadores son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "P",
+   "q": "¿dónde se colocan los libros?",
+   "crit": "estanteria*",
+   "r": "Un libro suele estar en la biblioteca, la estantería o la librería.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "P",
+   "q": "¿quiénes auxilian a los lectores?",
+   "crit": "bibliotecario*",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «auxiliar»; si es otra forma de decir algo, dímelo («auxiliar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "P",
+   "q": "¿qué se almacena en la biblioteca?",
+   "crit": "libros",
+   "r": "En el texto pone: «La biblioteca es un edificio donde se guardan libros». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "P",
+   "q": "¿quiénes arreglan libros?",
+   "crit": "encuadernador*",
+   "r": "En el texto pone: «Los libros se ordenan en estanterías según su tema». Entiendo «arreglar» como «ordenar».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "M",
+   "q": "¿en qué piso está la sala más silenciosa de la biblioteca?",
+   "crit": "segundo",
+   "r": "En el texto pone, hablando de la sala de lectura: «Está en el segundo piso».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "M",
+   "q": "¿cuándo abre la sala donde se guardan los periódicos antiguos?",
+   "crit": "manana",
+   "r": "La hemeroteca abre por la mañana. Lo junto con otra cosa que aprendí: la hemeroteca es «sala donde se guardan los periódicos antiguos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "N",
+   "q": "¿quién fundó la biblioteca?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fundar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "N",
+   "q": "¿cuánto cuesta el carné?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "N",
+   "q": "¿quién escribe los libros?",
+   "crit": "ABST",
+   "r": "Los escritores escriben libros.",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "N",
+   "q": "¿cuántos libros hay en la hemeroteca?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "C",
+   "q": "mi hermana es bibliotecaria",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hermana es bibliotecaria.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "C",
+   "q": "¿mi hermana ayuda a los lectores?",
+   "crit": "^si|ayuda*",
+   "r": "Sí, los bibliotecarios ayudan a los lectores y encontrar libros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "C",
+   "q": "birlar es lo mismo que llevarse",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: «birlar» significa llevarse.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "G",
+   "q": "descríbeme la hemeroteca",
+   "crit": "sala|periodicos|manana",
+   "r": "La hemeroteca es la sala donde se guardan los periódicos antiguos. La hemeroteca abre por la mañana. La hemeroteca no se puede comer en la biblioteca. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "K",
+   "q": "el préstamo dura dos semanas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|tres",
+   "r": "Entendido: el préstamo dura dos semanas. Pero ojo: en lo que leí ponía «El préstamo dura tres semanas». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca",
+   "t": "K",
+   "q": "la hemeroteca abre por la tarde",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|manana",
+   "r": "Entendido: la hemeroteca abre por la tarde. Pero ojo: yo había aprendido que la hemeroteca abre por la mañana. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (13 frases). He entendido bien 12; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "V",
+   "q": "¿qué es un huerto?",
+   "crit": "terreno",
+   "r": "Un huerto es un lugar. Además, según lo que he aprendido, el huerto es un terreno pequeño donde se cultivan verduras.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿qué se cultiva en un huerto?",
+   "crit": "verduras",
+   "r": "En el texto pone: «Un huerto es un terreno pequeño donde se cultivan verduras».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿cuándo se siembran las semillas?",
+   "crit": "primavera",
+   "r": "Las semillas se siembran en primavera (del 21 de marzo de 2027 al 20 de junio de 2027).",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿quiénes riegan las plantas?",
+   "crit": "hortelano*",
+   "r": "Los hortelanos riegan las plantas cada tarde.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿cuándo riegan las plantas los hortelanos?",
+   "crit": "tarde",
+   "r": "En el texto pone: «Los hortelanos riegan las plantas cada tarde».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el huerto",
+   "t": "I",
+   "q": "¿cuál es la verdura más cultivada del huerto?",
+   "crit": "tomate",
+   "r": "El tomate: según lo que he aprendido, es la verdura más cultivada del huerto.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿cuándo se recoge el tomate?",
+   "crit": "verano",
+   "r": "El tomate se recoge en verano (del 21 de junio de 2027 al 22 de septiembre de 2027).",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿cómo crecen las lechugas?",
+   "crit": "rapido",
+   "r": "Las lechugas crecen muy rapidas.",
+   "v": "MAL",
+   "k": 5
+  },
+  {
+   "tema": "el huerto",
+   "t": "V",
+   "q": "¿qué es el estiércol?",
+   "crit": "abono",
+   "r": "El estiércol es un abono. Además, según lo que he aprendido, el estiércol es un abono que alimenta la tierra.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿quiénes remueven la tierra?",
+   "crit": "lombri*",
+   "r": "En el texto pone: «Las lombrices remueven la tierra y la hacen más fértil».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el huerto",
+   "t": "V",
+   "q": "¿qué es un espantapájaros?",
+   "crit": "muneco",
+   "r": "Los espantapájaros son muñecos. Además, según lo que he aprendido, el espantapájaro es un muñeco que asusta a los pájaros.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿qué se comen los caracoles?",
+   "crit": "hojas|lechugas",
+   "r": "Los caracoles se comen las hojas de las lechugas.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el huerto",
+   "t": "V",
+   "q": "¿qué es la azada?",
+   "crit": "herramienta",
+   "r": "Una azada es una herramienta. Además, según lo que he aprendido, la azada es la herramienta con la que se cava la tierra.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el huerto",
+   "t": "L",
+   "q": "¿cuándo descansa el huerto?",
+   "crit": "invierno",
+   "r": "En el texto pone: «En invierno el huerto descansa».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el huerto",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que cuidan un huerto?",
+   "crit": "hortelano*",
+   "r": "Hortelanos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el huerto",
+   "t": "H",
+   "q": "¿el estiércol es un abono?",
+   "crit": "^si",
+   "r": "Sí, el estiércol es un abono.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "H",
+   "q": "¿la azada es una herramienta?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la azada es la herramienta con la que se cava la tierra.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "H",
+   "q": "¿un hortelano es una persona?",
+   "crit": "^si",
+   "r": "Sí, los hortelanos son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "P",
+   "q": "¿cuándo se plantan las semillas?",
+   "crit": "primavera",
+   "r": "No lo sé. En lo que he aprendido no aparece «plantar»; si es otra forma de decir algo, dímelo («plantar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "P",
+   "q": "¿quiénes mojan las plantas?",
+   "crit": "hortelano*",
+   "r": "Los hortelanos riegan las plantas cada tarde. Entiendo «mojar» como «regar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "P",
+   "q": "¿qué se siembra en un huerto?",
+   "crit": "verduras",
+   "r": "En el texto pone: «Las semillas se siembran en primavera».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "P",
+   "q": "¿qué devoran los caracoles?",
+   "crit": "hojas|lechugas",
+   "r": "Los caracoles se comen las hojas de las lechugas. Entiendo «devorar» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "M",
+   "q": "¿cuándo se recoge la verdura más cultivada del huerto?",
+   "crit": "verano",
+   "r": "En el texto pone, hablando del tomate: «Necesita mucho sol y se recoge en verano».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "M",
+   "q": "¿qué necesita la verdura más cultivada del huerto?",
+   "crit": "sol",
+   "r": "En el texto pone, hablando del tomate: «Necesita mucho sol y se recoge en verano».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "N",
+   "q": "¿quién inventó la azada?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "N",
+   "q": "¿cuánto cuesta un tomate?",
+   "crit": "ABST",
+   "r": "El tomate necesita sol mucho. Entiendo «costar» como «necesitar».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "N",
+   "q": "¿quién vende las lechugas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («vender» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "N",
+   "q": "¿dónde duermen los caracoles?",
+   "crit": "ABST",
+   "r": "No lo sé. («dormir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "C",
+   "q": "mi abuelo es hortelano",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuelo es hortelano.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "C",
+   "q": "¿mi abuelo riega las plantas?",
+   "crit": "^si|riega*",
+   "r": "Sí, los hortelanos riegan las plantas cada tarde.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "G",
+   "q": "descríbeme el tomate",
+   "crit": "verdura|sol|verano",
+   "r": "El tomate es una verdura. El tomate es muy cultivado. El tomate necesita sol mucho. El tomate se recoge en verano. Es la verdura más cultivada del huerto. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "K",
+   "q": "las semillas se siembran en otoño",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|primavera",
+   "r": "Entendido: las semillas se siembran en otoño. Pero ojo: yo había aprendido que las semillas se siembran en primavera. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el huerto",
+   "t": "K",
+   "q": "los hortelanos riegan las plantas cada mañana",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|tarde",
+   "r": "Entendido: los hortelanos riegan las plantas cada mañana. Pero ojo: en lo que leí ponía «Los hortelanos riegan las plantas cada tarde». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

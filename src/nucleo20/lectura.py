@@ -65,6 +65,18 @@ def leer(nuc, texto):
         g = coloquial._parte_narracion(f)
         fs2 += frases(g) if g != f else [f]
     orig, fs = fs, fs2
+    tema_disc = {}
+    try:                                                # 2.23: cada frase, completa antes de leerla (sujeto que falta, segunda mitad con «y», pronombres)
+        from . import discurso as _D
+        est_d, fs3 = _D.Estado(), []
+        for f in fs:
+            for lista, tema_p, parte in _D.prepara(f, est_d):
+                fs3.append(lista)
+                if tema_p:
+                    tema_disc[f] = tema_p
+        fs = fs3
+    except Exception:                                   # noqa
+        pass
     entendidas, sueltas = 0, []
     tema = None
     from . import exposicion as X
@@ -145,6 +157,14 @@ def leer(nuc, texto):
             secuencias.registrar(nuc, None, pasos=list(fs), silencioso=True)
     except Exception:                                   # noqa
         pass
+    for k_, v_ in tema_disc.items():                    # 2.23: de qué habla cada frase que no lo decía; así la cita también lo sabe
+        if k_ in orig and k_ not in tema_de:
+            tema_de[k_] = v_
+    try:                                                # 2.22: los temas, con su forma de siempre («el mercado central», no la pieza interna)
+        from . import compuestos as _C2
+        tema_de = {k: _C2.decodifica(nuc, v) for k, v in tema_de.items()}
+    except Exception:                                   # noqa
+        pass
     leidos = nuc.usuario.setdefault("leido", [])
     leidos.append({"turno": nuc.turno, "frases": orig, "temas": tema_de})
     del leidos[:-12]
@@ -175,6 +195,8 @@ def cita(nuc, pregunta, excluye=()):
     if not cont:
         return None
     raices = {_raiz(w) for w in cont}
+    pares_q = [f"{m_.group(1)} {m_.group(2)[:5]}" for m_ in re.finditer(r"\b(con|de|en|para|por|sobre|desde|hasta)\s+(?:(?:el|la|los|las|un|una)\s+)?([a-zñ]{4,})", q)
+               if m_.group(2) not in ("que", "quien", "donde", "cuando", "como", "cual")]
     mejor = None
     for texto in reversed(leidos):
         fs_ = texto["frases"]
@@ -201,6 +223,8 @@ def cita(nuc, pregunta, excluye=()):
             n = sum(0.3 if w in _GEN_Q else 0.4 if w in tema else 1.0 for w in comunes) + (0.4 * len((raices & tema_i) - rf) if i > 0 and comunes - tema else 0)
             if f in temas_f and (raices & tema_i) - rf:
                 n += 0.5                                 # la frase habla (sin nombrarlo) de aquello por lo que se pregunta
+            if comunes and any(re.search(r"\b" + pp.split()[0] + r"\s+(?:(?:el|la|los|las|un|una)\s+)?" + re.escape(pp.split()[1]), sa(f.lower())) for pp in pares_q):
+                n += 0.3                                 # 2.23: la frase trae el mismo complemento que la pregunta («con vidrio»): desempata
             if not _responde(q, f, raices, rf | tema_i | (fondo if len(raices - fondo) >= 1 else set())):
                 continue
             if comunes and (mejor is None or n > mejor[0] + 1e-9):
@@ -283,11 +307,18 @@ def _responde(q, f, raices, cubre):
         return False
     if re.match(r"^\W*(?:y\s+)?(?:cuando|en que (?:epoca|momento|año|mes|estacion))\b", q) \
             and not re.search(r"\b(?:cuando|si|despues|antes|durante|mientras|en (?:otoño|otono|invierno|verano|primavera|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|\d{3,4})|"
-                              r"de \d{3,4}|\d{3,4}|siempre|nunca|cada|al [a-z]+r(?:se)?|lunes|martes|miercoles|jueves|viernes|sabado|domingo|mañana|tarde|noche|ayer|hoy|año|años|siglo|mes|meses|semana|semanas|dia|dias|hora|horas|verano|invierno|otoño|otono|primavera|proximo|proxima|pasado|pasada|navidad|temporada|epoca)\b", fs):
+                              r"de \d{3,4}|\d{3,4}|siempre|nunca|cada|al [a-z]+r(?:se)?|lunes|martes|miercoles|jueves|viernes|sabado|domingo|mañana|tarde|noche|madrugada|mediodia|medianoche|temprano|amanecer|anochecer|ayer|hoy|año|años|siglo|mes|meses|semana|semanas|dia|dias|hora|horas|verano|invierno|otoño|otono|primavera|proximo|proxima|pasado|pasada|navidad|temporada|epoca)\b", fs):
         return False
     if re.match(r"^\W*(?:y\s+)?para que\b", q) and not re.search(r"\bpara\b", fs):
         return False
-    if re.match(r"^\W*(?:y\s+)?como (?:es|son|era|eran)\b", q) and not re.search(r"\b(?:es|son|era|eran|esta|estan|parece|parecen|tiene|tienen)\b", fs):
+    if re.match(r"^\W*(?:y\s+)?quien(?:es)?\b", q):
+        m_se = re.search(r"\bse\s+[a-zñ]+(?:an|en|a|e)\b", fs)
+        if m_se:                                         # 2.22: «Los libros se ordenan en estanterías» no dice QUIÉN los ordena: lo preguntado va delante de «se» y no hay agente
+            antes, despues = {_raiz(w) for w in _contenido(fs[:m_se.start()])}, {_raiz(w) for w in _contenido(fs[m_se.end():])}
+            objs = {r for r in raices if r in antes | despues}
+            if objs and objs <= antes and not re.search(r"\bpor\s+(?:el|la|los|las|un|una)\b", fs[m_se.end():]):
+                return False
+    if re.match(r"^\W*(?:y\s+)?como (?:es|son|era|eran)\b", q) and not re.search(r"\b(?:es|son|era|eran|esta|estan|tiene|tienen)\b", fs):
         return False                                     # 2.21: «¿cómo es X?» pide una descripción
     if re.match(r"^\W*(?:y\s+)?(?:de que color|que color)\b", q):
         return bool(re.search(r"\b(?:color|roj|verd|azul|amarill|negr|blanc|marron|gris|naranja|rosa|morad|dorad|platead)", fs))

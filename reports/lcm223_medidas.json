@@ -1,0 +1,228 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.23 · leer las frases que no se sostienen solas",
+ "auditoria_previa": {
+  "temas_conocidos_literales_222": {
+   "n": 322,
+   "acierto": 95.7,
+   "frases_que_dejan_hecho": 68.6,
+   "sin_hecho": 26.7
+  },
+  "ldev_222": {
+   "texto": 83.2,
+   "frases": 76.8
+  }
+ },
+ "enfoques_ltest_ldev_texto": {
+  "nada_de_lo_nuevo": [
+   79.6,
+   86.3
+  ],
+  "solo_cita_y_orden": [
+   80.6,
+   88.4
+  ],
+  "A_sujeto": [
+   87.1,
+   92.6
+  ],
+  "A_sujeto_y": [
+   90.3,
+   93.7
+  ],
+  "A_sujeto_y_pron_lugar": [
+   91.4,
+   95.8
+  ],
+  "A_todo_con_relativas": [
+   91.4,
+   95.8
+  ],
+  "todo_sin_lo_leido_manda": [
+   90.3,
+   93.7
+  ],
+  "todo_encadenando_tarde": [
+   91.4,
+   95.8
+  ]
+ },
+ "examen_limpio_lectura_ltest_93": {
+  "texto": {
+   "2.22": {
+    "acierto": 78.5,
+    "falsas": 8
+   },
+   "2.23": {
+    "acierto": 91.4,
+    "falsas": 4
+   }
+  },
+  "frases": {
+   "2.22": {
+    "acierto": 82.8,
+    "falsas": 8
+   },
+   "2.23": {
+    "acierto": 91.4,
+    "falsas": 4
+   }
+  },
+  "literales": [
+   75,
+   91
+  ],
+  "contradicciones": [
+   50,
+   100
+  ],
+  "combinar": [
+   75,
+   100
+  ]
+ },
+ "examen_grande_grande1b_352": {
+  "texto": {
+   "2.22": {
+    "acierto": 82.7,
+    "falsas": 24
+   },
+   "2.23": {
+    "acierto": 87.2,
+    "falsas": 17,
+    "ic95": [
+     83.3,
+     90.3
+    ]
+   },
+   "ganadas": 16,
+   "perdidas": 0
+  },
+  "frases": {
+   "2.22": {
+    "acierto": 82.1,
+    "falsas": 26
+   },
+   "2.23": {
+    "acierto": 86.1,
+    "falsas": 18,
+    "ic95": [
+     82.1,
+     89.3
+    ]
+   },
+   "ganadas": 15,
+   "perdidas": 1
+  },
+  "por_tipo_texto": {
+   "literales": [
+    85,
+    93
+   ],
+   "contradicciones": [
+    57,
+    78
+   ],
+   "combinar": [
+    55,
+    70
+   ],
+   "parafrasis": [
+    60,
+    65
+   ],
+   "deducciones": [
+    60,
+    60
+   ]
+  },
+  "diagnostico": {
+   "2.22": {
+    "LECTURA": 16,
+    "EXPRESION": 4,
+    "FABRICA": 6,
+    "INTERCONEXION": 5,
+    "RAZONAMIENTO": 8,
+    "CONSULTA": 10,
+    "DICCIONARIO": 10,
+    "RECUPERACION": 1,
+    "EXAMEN": 1
+   },
+   "2.23": {
+    "LECTURA": 12,
+    "EXPRESION": 4,
+    "FABRICA": 3,
+    "INTERCONEXION": 5,
+    "RAZONAMIENTO": 6,
+    "DICCIONARIO": 11,
+    "RECUPERACION": 1,
+    "EXAMEN": 1,
+    "CONSULTA": 2
+   }
+  }
+ },
+ "temas_conocidos": {
+  "texto": {
+   "ganadas": 5,
+   "perdidas": 0
+  },
+  "frases": {
+   "ganadas": 15,
+   "perdidas": 0
+  },
+  "ldev": {
+   "texto": [
+    83.2,
+    95.8
+   ],
+   "frases": [
+    76.8,
+    93.7
+   ]
+  }
+ },
+ "controles_222_223": {
+  "autor": [
+   90.04,
+   90.18
+  ],
+  "ciego2": [
+   94.68,
+   94.68
+  ],
+  "ciego6": [
+   82.09,
+   82.09
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "16b": [
+   96.48,
+   96.48
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas; iter223 t01 = 100 % (188 sondas)",
+ "pytest": "925 pasan, 3 fallos de entorno, 1 omitido"
+}

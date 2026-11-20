@@ -1,0 +1,30 @@
+{
+ "creados": [
+  "docs/LCM_EXAMEN_GRANDE_1.md",
+  "lab/aprender/grande1.py",
+  "lab/aprender/grande1b.py",
+  "lab/grande1/analisis.json",
+  "lab/grande1/analisis_corregido.json",
+  "lab/grande1/diagnostico.py",
+  "lab/grande1/diagnostico_222.json",
+  "lab/grande1/res_219_frases.json",
+  "lab/grande1/res_219_texto.json",
+  "lab/grande1/res_220_frases.json",
+  "lab/grande1/res_220_texto.json",
+  "lab/grande1/res_221_frases.json",
+  "lab/grande1/res_221_texto.json",
+  "lab/grande1/res_222_base.json",
+  "lab/grande1/res_222_frases.json",
+  "lab/grande1/res_222_texto.json",
+  "lab/grande1/resb_219_frases.json",
+  "lab/grande1/resb_219_texto.json",
+  "lab/grande1/resb_220_frases.json",
+  "lab/grande1/resb_220_texto.json",
+  "lab/grande1/resb_221_frases.json",
+  "lab/grande1/resb_221_texto.json",
+  "lab/grande1/resb_222_frases.json",
+  "lab/grande1/resb_222_texto.json"
+ ],
+ "cambiados": [],
+ "borrados": []
+}

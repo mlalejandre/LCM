@@ -11,7 +11,7 @@ import re
 from . import morfo as M
 from .morfo import sa
 
-_VACIAS = {"el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "al", "a", "en", "por", "para", "con", "que", "y", "o", "mas", "menos", "muy", "su", "sus", "se", "es", "son", "lo"}
+_VACIAS = {"el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "al", "a", "en", "por", "para", "con", "que", "y", "o", "mas", "menos", "muy", "su", "sus", "se", "es", "son", "lo", "donde", "cuando", "como", "cual", "quien", "cuanto", "cuantos", "cuanta", "cuantas"}
 _GEN = {"persona", "personas", "cosa", "cosas", "lugar", "sitio", "tipo", "clase", "nombre", "parte"}
 
 

@@ -807,6 +807,34 @@ def _un_rel(t):
     return ("una " if w.endswith("a") else "un ") + w
 
 
+def _padres_aprendidos(nuc, x):
+    """[(clase, frase)] de lo leído o explicado: «El cartón es un papel grueso», «La lonja es el mercado donde…», «Los murciélagos son los
+    únicos mamíferos que…». Solo frases afirmativas cuyo sujeto es exactamente x."""
+    out = []
+    frases = []
+    for t in (getattr(nuc, "usuario", {}).get("leido") or []):
+        frases += t.get("frases") or []
+    frases += [f["src"] for f in getattr(nuc, "F", []) if f.get("src") and (f.get("leido") or f.get("expo"))]
+    try:
+        from . import compuestos as _C
+        dec = lambda t: _C.decodifica(nuc, t)
+    except Exception:                                    # noqa
+        dec = lambda t: t
+    for fr in dict.fromkeys(frases):
+        n = sa(dec(fr).lower()).strip(" .")
+        m = re.match(r"^(?:(?:el|la|los|las|un|una)\s+)?([a-zñ]+(?: [a-zñ]+)?)\s+(?:es|son)\s+(?:en realidad\s+)?(?:(?:un|una|el|la|los|las|unos|unas)\s+)?(?:unic[oa]s?\s+|primer[oa]?s?\s+)?([a-zñ]+)\b", n)
+        if not m or re.search(r"\bno\s+(?:es|son)\b", n):
+            continue
+        suj = m.group(1)
+        if sa(M.singular(suj)) != x and suj != x and _clase_de_texto(suj) != x:
+            continue
+        cand = m.group(2)
+        padre = _clase_de_texto(cand) or sa(M.singular(cand))
+        if padre and padre != x and (_kb_clase(padre) or any(g.get("s") == "K:" + padre for g in getattr(nuc, "F", []))):
+            out.append((padre, fr.strip()))
+    return out
+
+
 def _es_un(nuc, n, p=""):
     m = _ES_UN.match(n)
     if not m:
@@ -827,6 +855,26 @@ def _es_un(nuc, n, p=""):
         return None
     if "color" in ancestros(y) or y in ("color",) or "forma" in ancestros(y):
         return None                                      # «¿Los plátanos son azules?»: es un adjetivo de color, no una clase
+    try:
+        # 2.22: lo leído o explicado manda sobre la fábrica: «La lonja es el mercado donde…» -> la lonja es un mercado; y se encadena con
+        # lo demás: el vampiro es un murciélago (leído), el murciélago es un mamífero (leído), el mamífero es un animal (fábrica)
+        visto, cola, cadena = {x}, [(x, [])], None
+        while cola and cadena is None and len(visto) < 12:
+            c0, camino = cola.pop(0)
+            for padre, frase in _padres_aprendidos(nuc, c0):
+                if padre in visto:
+                    continue
+                visto.add(padre)
+                if padre == y or y in ancestros(padre):
+                    cadena = camino + [frase]
+                    break
+                cola.append((padre, camino + [frase]))
+        if cadena:
+            nuc.ult_just = {"dicho": cadena}
+            f0 = cadena[0]
+            return f"Sí: según lo que he aprendido, {f0[:1].lower() + f0[1:].rstrip('.')}." + (f" Lo deduzco encadenando {len(cadena)} cosas aprendidas." if len(cadena) > 1 else "")
+    except Exception:                                    # noqa
+        pass
     if p and any(k_.startswith("N:") and sa(k_[2:]) == x for k_ in nuc.E):
         return None                                      # un nombre propio de la charla no es la clase
     anc = ancestros(x)

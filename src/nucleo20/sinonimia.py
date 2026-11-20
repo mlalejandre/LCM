@@ -113,6 +113,7 @@ UMBRAL = 0.60        # parecido mínimo para dar dos palabras por intercambiable
 #                      los verbos sinónimos y el 85 % de los nombres sinónimos; de los que solo son «hermanos» (perro/gato), el 8 % y el 30 %
 UMBRAL_ENLACE = 0.50 # con enlace directo en el léxico basta este parecido
 UMBRAL_DUDA = 0.35   # por debajo de los umbrales pero por encima de esto: no se da por bueno, se PREGUNTA al usuario
+PUENTE_MIN = 2       # idiomas en que tienen que coincidir dos palabras que el léxico español no enlaza
 MARGEN = 0.05        # la elegida tiene que destacar sobre la siguiente palabra aprendida de otro sentido
 _FUNC = {"ser", "estar", "haber", "tener", "hacer", "poder", "soler", "ir", "decir", "saber", "querer", "deber", "dar", "ver", "pasar", "llamar"}
 
@@ -178,6 +179,11 @@ def vocabulario(nuc):
             lv = set() if (ant in _DETS or w in _NO_VERBO) else _lemas_v(w)
             if lv:
                 verbos |= {sa(x) for x in lv}
+                try:                                     # 2.22: «puesto», «hecho», «vista»: participios que también son nombres
+                    if len(w) > 3 and any(len(a_) > 1 and a_[1] == "part" for a_ in (M.analizar(w) or [])):
+                        nombres.add(sa(M.singular(w)))
+                except Exception:                        # noqa
+                    pass
             elif len(w) > 3:
                 nombres.add(sa(M.singular(w)))
             ant = w
@@ -196,7 +202,9 @@ def _afin(lema, c):
     from . import vectores as V
     tipo, peso = V.parentesco(lema, c)
     if not tipo:
-        return 0.0
+        n = 0 if os.environ.get("LCM_SIN_PUENTE") else V.puente(lema, c)
+        # 2.22: sin enlace en español, pero las dos comparten palabra en varios idiomas más («transformar» / «convertir»)
+        return min(0.75, UMBRAL_ENLACE + 0.05 * (n - PUENTE_MIN)) if n >= PUENTE_MIN else 0.0
     s = V.sim(lema, c)
     if tipo == "modo":
         return max(s, min(1.0, peso + 0.1) if peso >= 0.5 else 0.0)
@@ -320,6 +328,16 @@ def aviso(cambios, respuesta):
     return (r if r[-1:] in ".!?»" else r + ".") + " " + nota
 
 
+def casa_tipo(pregunta, respuesta):
+    """2.22: una pregunta rehecha por el sentido tiene que recibir el tipo de dato que pide: «¿cuánto…?» pide una cantidad."""
+    q = sa(pregunta.lower())
+    if re.match(r"^\W*(?:y\s+)?(?:con |de |en |a )?cuant[oa]s?\b", q):
+        from . import lectura as _L
+        r = sa((respuesta or "").lower())
+        return _L._NUM_RE.search(r) is not None or re.search(r"\b(?:semanas?|meses|anos?|dias?|horas?|minutos?|kilos?|metros?|litros?|euros?)\b", r) is not None
+    return True
+
+
 def casa_tiempo(cambios, respuesta):
     """Una pregunta por algo que PASÓ («¿quién inventó…?») no la contesta una costumbre en presente («se construyen…»), y al revés.
     Solo se exige a los verbos cambiados por el sentido: es donde hay riesgo de casar dos cosas que no son la misma."""
@@ -332,8 +350,8 @@ def casa_tiempo(cambios, respuesta):
                 ts |= {"pas" if a[1] in ("pret", "imp") else "pres" for a in (M.analizar(w) or []) if len(a) > 2 and sa(a[0]) == sa(c[1]) and a[1] in ("pres", "pret", "imp")}
             except Exception:                            # noqa
                 pass
-        if ts and c[3] not in ts:
-            return False
+        if not ts or c[3] not in ts:
+            return False                                 # 2.22: y la respuesta tiene que usar ese verbo: si no, no es la pregunta rehecha lo que se contesta
     return True
 
 
@@ -375,3 +393,18 @@ def desconocida(nuc, texto):
         if an and sa(an[0][0]) not in verbos and sa(an[0][0]) not in _FUNC and not any(sa(a[0]) in verbos or sa(a[0]) in _FUNC for a in an):
             fuera.append(an[0][0])
     return fuera[0] if len(set(fuera)) == 1 else None
+
+
+def cita_firme(nuc, pregunta, cambios, cita_):
+    """2.22: cuando el cambio de palabra se apoya solo en un indicio débil (los puentes entre idiomas, sin enlace en el léxico español ni
+    enseñado por el usuario), la frase citada tiene que traer ella misma todo lo demás que se pregunta; no vale «de eso va el texto»."""
+    from . import vectores as V
+    from . import lectura as L
+    _carga_apr(nuc)
+    debil = [c for c in cambios if not V.parentesco(c[0], c[1])[0] and (sa(c[0]), sa(c[1])) not in _APR]
+    if not debil:
+        return True
+    m = re.search(r"«([^»]+)»", cita_ or "")
+    rf = {L._raiz(w) for w in L._contenido(m.group(1) if m else (cita_ or ""))}   # sin comillas: es una respuesta del núcleo, vale entera
+    rq = {L._raiz(w) for w in L._contenido(pregunta)} - L._GEN_Q
+    return rq <= rf

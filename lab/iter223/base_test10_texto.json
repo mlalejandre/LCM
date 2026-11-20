@@ -1,0 +1,374 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 32,
+    "ok": 27,
+    "falsas": 2,
+    "acierto": 84.4
+   },
+   "L": {
+    "n": 9,
+    "ok": 9,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "I": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 4,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "P": {
+    "n": 3,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 33.3
+   },
+   "M": {
+    "n": 1,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "N": {
+    "n": 3,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 50.0
+   }
+  },
+  "frases_cubiertas": [
+   13,
+   13
+  ]
+ },
+ "filas": [
+  {
+   "tema": "el puerto",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (13 frases). He entendido bien 12; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "V",
+   "q": "¿qué es un puerto?",
+   "crit": "lugar",
+   "r": "Un puerto es un lugar. Además, según lo que he aprendido, el puerto es un lugar de la costa donde atracan los barcos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿qué atraca en un puerto?",
+   "crit": "barcos",
+   "r": "En el texto pone: «Un puerto es un lugar de la costa donde atracan los barcos».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿con qué se amarran los barcos?",
+   "crit": "cuerdas",
+   "r": "Los barcos se amarran al muelle con cuerdas gruesas.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el puerto",
+   "t": "V",
+   "q": "¿qué es el muelle?",
+   "crit": "plataforma",
+   "r": "Un muelle es una plataforma de piedra, como me dijiste; de fábrica sé además que es un objeto. Además, según lo que he aprendido, el muelle es una plataforma de piedra junto al agua.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿quiénes descargan las mercancías?",
+   "crit": "estibador*",
+   "r": "Los estibadores descargan las mercancías.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿en qué viajan las mercancías?",
+   "crit": "contenedor*",
+   "r": "Las mercancías viajan en contenedores de metal.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿qué levanta una grúa?",
+   "crit": "contenedor*",
+   "r": "En el texto pone: «Una grúa levanta los contenedores más pesados».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿cuándo avisa el faro a los barcos?",
+   "crit": "noche",
+   "r": "En el texto pone: «El faro avisa a los barcos durante la noche».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el puerto",
+   "t": "V",
+   "q": "¿qué es el práctico?",
+   "crit": "marino",
+   "r": "Según lo que he aprendido, el práctico es el marino que guía a los barcos grandes hasta el muelle.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿cuándo sube a bordo el práctico?",
+   "crit": "antes|entrar",
+   "r": "El práctico sube a bordo antes de entrar en el puerto.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el puerto",
+   "t": "V",
+   "q": "¿qué es el remolcador?",
+   "crit": "barco",
+   "r": "Según lo que he aprendido, el remolcador es un barco pequeño y muy potente.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿a quién empuja el remolcador?",
+   "crit": "barcos",
+   "r": "El remolcador empuja para que giren a los barcos grandes.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el puerto",
+   "t": "L",
+   "q": "¿a qué hora salen los pescadores?",
+   "crit": "cinco|5",
+   "r": "Los pescadores salen del puerto a las cinco de la mañana.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el puerto",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que arreglan las redes?",
+   "crit": "redera*",
+   "r": "Rederas. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el puerto",
+   "t": "H",
+   "q": "¿el remolcador es un barco?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El remolcador es un barco pequeño y muy potente».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "H",
+   "q": "¿el práctico es un marino?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El práctico es el marino que guía a los barcos grandes hasta el muelle».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "H",
+   "q": "¿el muelle es una plataforma?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el muelle es una plataforma de piedra junto al agua.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "H",
+   "q": "¿el práctico es una persona?",
+   "crit": "^si",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "P",
+   "q": "¿quiénes reparan las redes?",
+   "crit": "redera*",
+   "r": "No lo sé seguro. ¿«reparar» quiere decir aquí lo mismo que «arreglar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "P",
+   "q": "¿con qué se atan los barcos?",
+   "crit": "cuerdas",
+   "r": "Para atar los barcos sirve una cuerda.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "P",
+   "q": "¿qué alza una grúa?",
+   "crit": "contenedor*",
+   "r": "En el texto pone: «Una grúa levanta los contenedores más pesados». Entiendo «alzar» como «levantar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "M",
+   "q": "¿cuándo sube a bordo el marino que guía a los barcos grandes?",
+   "crit": "antes|entrar",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "N",
+   "q": "¿quién construyó el puerto?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «construir»; si es otra forma de decir algo, dímelo («construir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "N",
+   "q": "¿cuánto pesa un contenedor?",
+   "crit": "ABST",
+   "r": "No lo sé. («pesar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "N",
+   "q": "¿quién pinta los barcos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («pintar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "C",
+   "q": "mi tía es redera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tía es redera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "C",
+   "q": "¿mi tía arregla las redes?",
+   "crit": "^si|arregla*",
+   "r": "Sí, las rederas arreglan las redes.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "C",
+   "q": "mi primo es estibador",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu primo es estibador.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "C",
+   "q": "¿mi primo descarga las mercancías?",
+   "crit": "^si|descarga*",
+   "r": "Sí, los estibadores descargan las mercancías.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "G",
+   "q": "descríbeme el remolcador",
+   "crit": "barco|pequeno|potente",
+   "r": "El remolcador es un barco pequeño y muy potente. El remolcador empuja para que giren a los barcos grandes. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "K",
+   "q": "los pescadores salen del puerto a las ocho de la mañana",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|cinco",
+   "r": "Entendido: los pescadores salen del puerto a las ocho de la mañana.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el puerto",
+   "t": "K",
+   "q": "el faro avisa a los barcos durante el día",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|noche",
+   "r": "Entendido: el faro avisa a los barcos durante el día. Pero ojo: yo había aprendido que el faro avisa a los barcos durante la noche. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

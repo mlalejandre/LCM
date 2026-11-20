@@ -860,6 +860,14 @@ class Preguntador:
         if fs:
             f = fs[0]
             return self._ok(self._fin(("No, " if f.get("neg") else "Sí, ") + self.frase(f)), {"dicho": [f["src"]]})
+        if not ok and isinstance(s, str) and s.startswith("K:"):
+            # 2.22: lo leído o explicado manda sobre la fábrica: «La lonja es el mercado donde…» -> la lonja es un mercado, diga lo que diga el diccionario
+            pat = re.compile(r"\b(?:es|son)\s+(?:(?:un|una|el|la|los|las|unos|unas)\s+)?" + re.escape(sa(M.singular(cl) if len(cl) > 3 else cl)) + r"(?:s|es)?\b")
+            for f in self.marcos(v="ser", s=s, neg=False):
+                if (f.get("leido") or f.get("expo")) and f.get("src") and pat.search(sa(f["src"].lower())) \
+                        and not re.search(r"\bno\s+(?:es|son)\b", sa(f["src"].lower())):
+                    self.ult_just = {"dicho": [f["src"]]}
+                    return self._ok(self._fin(f"Sí: según lo que he aprendido, {f['src'][:1].lower() + f['src'][1:].rstrip('.')}"))
         if ok:
             self.ult_just = {"pasos": j}
             g = M.genero_sust(cl)
@@ -1907,6 +1915,13 @@ class Preguntador:
             if viejos:
                 f = viejos[-1]
                 return self._abst(self._fin("No sé dónde " + M.conjugar(v, "pres", self._persona_de(s)) + " ahora. " + _cap(self.frase(f, tiempo="imp", antes=True))))
+            if not prep and not pasado:
+                # 2.23: el sitio puede venir con «a», «hasta», «por» o «hacia» («la harina cae a un saco»)
+                otros = [f for f in self.marcos(v=v, s=s, vig=True, neg=False) if any(p2 in ("a", "hasta", "hacia", "por") and (d2 or e2) for p2, e2, d2 in f.get("comps", []))
+                         and (f.get("leido") or f.get("expo"))]
+                if otros:
+                    self.ult_just = {"dicho": [otros[-1]["src"]]}
+                    return self._ok(self._fin(_cap(self.frase(otros[-1]))))
             if getattr(self, "_preg_que_lugar", False):
                 con_obj = [f for f in self.marcos(v=v, s=s, vig=True, neg=False) if f.get("obj") or f.get("obj_cls")]
                 if con_obj:
