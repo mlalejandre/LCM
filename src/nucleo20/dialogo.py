@@ -92,7 +92,31 @@ class Conversador(Nucleo):
                     texto = _C.codifica(self, texto)
         except Exception:                                # noqa
             pass
-        r = self._procesar_218(texto)
+        r = r_decl = None
+        try:                                             # 2.21: sinónimos que enseña el usuario, y la duda que el modelo le planteó
+            from . import sinonimia as _S
+            if texto and not getattr(self, "_leyendo", False):
+                d_ = getattr(self, "_duda_sentido", None)
+                self._duda_sentido = None
+                if d_ and self.turno - d_["turno"] <= 1 and len(texto.split()) <= 6:
+                    n_ = _S.sa(texto.lower()).strip(" .!¡,")
+                    if re.match(r"^(?:si|claro|exacto|eso es|correcto|asi es|efectivamente|vale|eso|lo mismo|si,? (?:es )?lo mismo|si,? claro)\b", n_):
+                        for a_, b_ in d_["pares"]:
+                            _S.aprende(self, a_, b_)
+                        self.turno += 1
+                        r = {"respuesta": "Aprendido: " + " y ".join(f"«{a_}» es como «{b_}»" for a_, b_ in d_["pares"]) + ". Entonces: " + d_["respuesta"], "estado": "ok", "consultar": False, "tipo": "resp"}
+                    elif re.match(r"^no\b", n_):
+                        self.usuario.setdefault("no_sinonimos", []).extend([list(x) for x in d_["pares"]])
+                        self.turno += 1
+                        r = {"respuesta": "Vale, no es lo mismo. Entonces no lo sé.", "estado": "abst", "consultar": False, "tipo": "abst"}
+                if r is None:
+                    r_decl = _S.declara(self, texto)
+        except Exception:                                # noqa
+            r = None
+        if r is None:
+            r = self._procesar_218(texto)
+            if r_decl is not None and not (isinstance(r, dict) and r.get("estado") == "ok" and "no lo he entendido" not in sa((r.get("respuesta") or "").lower())):
+                r = r_decl                               # el núcleo no tenía nada que hacer con la frase: al menos queda aprendido el sinónimo
         try:
             if isinstance(r, dict) and r.get("respuesta") and _C.tabla(self):
                 r = dict(r, respuesta=_C.decodifica(self, r["respuesta"]))
@@ -100,6 +124,12 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             pass
         return r
+
+    def _solo_fabrica(self):
+        """¿La última respuesta salió solo del conocimiento de fábrica (lo que «suele» pasar), sin nada dicho o leído en la conversación?"""
+        j = self.ult_just or {}
+        d = j.get("dicho") or []
+        return bool(j.get("fabrica")) or (bool(d) and all(x == "fábrica" for x in d))
 
     def _procesar_218(self, texto: str) -> Optional[dict]:
         """2.16: la charla, más leer un texto inserto, seguir el hilo de quién va con quién y, si hace falta, citar lo leído."""
@@ -306,9 +336,31 @@ class Conversador(Nucleo):
             leidos = self.usuario.setdefault("leido", [])
             leidos.append({"turno": self.turno, "frases": lectura.frases(texto)})
             del leidos[:-3]
-        if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))) \
+        if texto and "?" in texto and not getattr(self, "_leyendo", False) and not getattr(self, "_encadena", False) \
+                and (r is None or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))):
+            try:                                         # 2.21: ¿sale juntando dos cosas aprendidas? («el recorrido más largo» es el Transiberiano, y de él sí sé cuánto tarda)
+                from . import cadena as _CD
+                self._encadena = True
+                for cand, nombre, desc in _CD.reformula(self, texto):
+                    self.ult_just = None
+                    r_c = self._procesar_218(cand)
+                    if isinstance(r_c, dict) and r_c.get("estado") == "ok" and self._solo_fabrica():
+                        c_c = lectura.cita(self, cand, excluye=_CD.fuentes(self, nombre, desc))   # se encadena lo APRENDIDO: lo que «suele» pasar según la fábrica no vale como segundo paso
+                        r_c = {"respuesta": c_c, "estado": "ok", "consultar": False, "tipo": "resp"} if c_c else None
+                    if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("tipo") != "ack" and r_c.get("respuesta"):
+                        r_c = dict(r_c)
+                        r_c["respuesta"] = _CD.aviso(r_c["respuesta"], nombre, desc)
+                        r_c["encadenado"] = (nombre, desc)
+                        self.pend = None
+                        return r_c
+            except Exception:                            # noqa
+                pass
+            finally:
+                self._encadena = False
+        de_fabrica = isinstance(r, dict) and r.get("estado") == "ok" and re.search(r"\bsuelen? \w+.*Lo sé porque\b", r.get("respuesta") or "") is not None
+        if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or de_fabrica or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))) \
                 and (self.usuario.get("leido") or []):
-            c = lectura.cita(self, texto)                # el núcleo no lo sabe: ¿lo dice el texto leído?
+            c = lectura.cita(self, texto)                # el núcleo no lo sabe (o solo sabe lo que «suele» pasar): ¿lo dice lo leído o explicado?
             if not c:
                 try:                                     # 2.20: ¿lo dice con otras palabras?
                     from . import sinonimia as _S
@@ -324,6 +376,40 @@ class Conversador(Nucleo):
                 self.ult_just = {"dicho": [c]}
                 self.pend = None
                 return {"respuesta": c, "estado": "ok", "consultar": False, "tipo": "resp"}
+        if texto and "?" in texto and not getattr(self, "_leyendo", False) and not getattr(self, "_encadena", False) and not getattr(self, "_reform", False) \
+                and (r is None or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))):
+            try:                                         # 2.21: hay una palabra leída que se parece, pero no lo bastante: se pregunta en vez de adivinar
+                from . import sinonimia as _S
+                self._reform = True
+                for cand, cambios in _S.por_sentido(self, texto, duda=True):
+                    if len(cambios) != 1:
+                        continue
+                    if [cambios[0][0], cambios[0][1]] in (self.usuario.get("no_sinonimos") or []):
+                        continue                         # ya dijo que no
+                    r_c = self._procesar_charla(cand)    # solo si el núcleo la contesta: ahí tienen que casar también quién y qué
+                    if not (isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("tipo") != "ack"):
+                        r_c = None
+                    if r_c and r_c.get("respuesta") and _S.casa_tiempo(cambios, r_c["respuesta"]):
+                        self._duda_sentido = {"turno": self.turno, "pares": [(cambios[0][0], cambios[0][1])], "respuesta": r_c["respuesta"]}
+                        self.pend = None
+                        return {"respuesta": f"No lo sé seguro. ¿«{cambios[0][0]}» quiere decir aquí lo mismo que «{cambios[0][1]}»? Si es así, dímelo y te contesto.",
+                                "estado": "abst", "consultar": False, "tipo": "abst"}
+            except Exception:                            # noqa
+                pass
+            finally:
+                self._reform = False
+            try:                                         # y si no hay candidata, al menos decir QUÉ palabra no aparece en lo aprendido
+                from . import sinonimia as _S
+                w_ = _S.desconocida(self, texto)
+                if w_ and isinstance(r, dict) and r.get("respuesta") and "«" + w_ + "»" not in r["respuesta"]:
+                    if not self.usuario.get("pista_sinonimo"):
+                        self.usuario["pista_sinonimo"] = True
+                        nota_ = f" En lo que he aprendido no aparece «{w_}»; si es otra forma de decir algo, dímelo («{w_} es lo mismo que…»)."
+                    else:
+                        nota_ = f" («{w_}» no aparece en lo que he aprendido.)"
+                    return dict(r, respuesta=r["respuesta"].rstrip() + nota_)
+            except Exception:                            # noqa
+                pass
         if r is None and texto and "?" in texto and not getattr(self, "_leyendo", False):
             try:
                 from . import exposicion as _X

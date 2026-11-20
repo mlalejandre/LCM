@@ -212,3 +212,18 @@ def parentesco(a, b):
     if par:
         return "igual", len(par) / len(sa_)              # adjetivos que el léxico da por parecidos («grande» ~ «enorme»)
     return None, 0.0
+
+
+def dos_pasos(a, b):
+    """¿Hay una tercera palabra que el léxico da por sinónima de las dos? («vigilar» ~ «guardar» ~ «cuidar»). Es un indicio, no una prueba."""
+    w2s, _ = _grafo()
+    if "s2w" not in _V:
+        s2w = {}
+        for w, ss in w2s.items():
+            for s in ss:
+                s2w.setdefault(s, set()).add(w)
+        _V["s2w"] = s2w
+    a, b = sa(a.lower()), sa(b.lower())
+    va = {w for s in w2s.get(a, ()) for w in _V["s2w"].get(s, ())}
+    vb = {w for s in w2s.get(b, ()) for w in _V["s2w"].get(s, ())}
+    return bool((va & vb) - {a, b})

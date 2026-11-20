@@ -1,0 +1,848 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 5,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 80.0
+   },
+   "TOTAL": {
+    "n": 58,
+    "ok": 46,
+    "falsas": 2,
+    "acierto": 79.3
+   },
+   "L": {
+    "n": 16,
+    "ok": 12,
+    "falsas": 0,
+    "acierto": 75.0
+   },
+   "D": {
+    "n": 6,
+    "ok": 3,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "I": {
+    "n": 7,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 85.7
+   },
+   "H": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "M": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 2,
+    "falsas": 1,
+    "acierto": 50.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 1,
+    "acierto": 50.0
+   }
+  },
+  "frases_cubiertas": [
+   20,
+   28
+  ]
+ },
+ "filas": [
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Un faro es una torre alta con una luz muy potente en la parte de arriba.",
+   "r": "Entendido: el faro es una torre alto con una luz muy potente en la parte de arriba.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Los faros se construyen en la costa, cerca de las rocas peligrosas.",
+   "r": "Entendido: los faros se construyen en la costa cerca de las rocas peligrosas.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Sirven para guiar a los barcos durante la noche.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Sirven para guiar a los barcos durante la noche».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La luz de un faro gira y se ve desde muy lejos.",
+   "r": "Entendido: la luz de los faros gira; la luz de los faros se ve desde muy lejos.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Cada faro tiene un ritmo de destellos distinto, y así los marineros saben dónde están.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Cada faro tiene un ritmo de destellos distinto, y así los marineros saben dónde están».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Cuando hay niebla, la luz no se ve y el faro hace sonar una sirena.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Antiguamente los faros funcionaban con fuego y aceite.",
+   "r": "Entendido: los faros funcionaban con fuego y aceite antiguamente.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Hoy casi todos son eléctricos y se encienden solos.",
+   "r": "No puedo identificar con seguridad el hecho temporal; no lo registraré.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La persona que cuidaba un faro se llamaba farero.",
+   "r": "Entendido: el farero es una persona; el farero cuidaba un faro.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "El farero vivía en el faro con su familia y encendía la luz cada tarde.",
+   "r": "Entendido: el farero vivía en el faro con su familia; el farero encendía la luz cada tarde.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Era un trabajo muy solitario.",
+   "r": "Entendido: el farero era un trabajo.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La Torre de Hércules es el faro más antiguo del mundo que todavía funciona.",
+   "r": "Entendido: la Torre de Hércules es un faro; la Torre de Hércules es muy antiguo.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Está en La Coruña y la construyeron los romanos.",
+   "r": "Entendido: la Torre de Hércules está en La Coruña.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Algunos faros viejos se han convertido en hoteles y otros en museos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Los faros pintados a rayas se distinguen mejor de día.",
+   "r": "Entendido: los faros pintan a rayas se distinguen mejor de día.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "faros",
+   "t": "V",
+   "q": "¿qué es un faro?",
+   "crit": "torre",
+   "r": "Un faro es una torre, como me dijiste; de fábrica sé además que es un edificio. Además, según lo que he aprendido, el faro es una torre alta con una luz muy potente en la parte de arriba.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde se construyen los faros?",
+   "crit": "costa|rocas",
+   "r": "Los faros se construyen en la costa cerca de las rocas peligrosas.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿para qué sirven los faros?",
+   "crit": "guiar|barcos",
+   "r": "En el texto pone, hablando de los faros: «Sirven para guiar a los barcos durante la noche».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿desde dónde se ve la luz de un faro?",
+   "crit": "lejos",
+   "r": "La luz de los faros se ve desde muy lejos.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿cómo saben los marineros dónde están?",
+   "crit": "ritmo|destellos",
+   "r": "En el texto pone: «Cada faro tiene un ritmo de destellos distinto, y así los marineros saben dónde están».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿qué hace el faro cuando hay niebla?",
+   "crit": "sirena",
+   "r": "Según lo que he aprendido: cuando hay niebla, la luz no se ve y el faro hace sonar una sirena.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿con qué funcionaban los faros antiguamente?",
+   "crit": "fuego|aceite",
+   "r": "Los faros funcionaban con fuego y aceite antiguamente.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿cómo se llamaba la persona que cuidaba un faro?",
+   "crit": "farero",
+   "r": "En el texto pone: «La persona que cuidaba un faro se llamaba farero».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde vivía el farero?",
+   "crit": "faro",
+   "r": "El farero vivía en el faro con su familia.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿cuándo encendía la luz el farero?",
+   "crit": "tarde",
+   "r": "En el texto pone: «El farero vivía en el faro con su familia y encendía la luz cada tarde».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿cuál es el faro más antiguo del mundo?",
+   "crit": "hercules",
+   "r": "La Torre de Hércules: según lo que he aprendido, es el faro más antiguo del mundo que todavía funciona.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿dónde está la Torre de Hércules?",
+   "crit": "coruna",
+   "r": "La Torre de Hércules está en La Coruña.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿quién construyó la Torre de Hércules?",
+   "crit": "romanos",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "D",
+   "q": "¿en qué se han convertido algunos faros viejos?",
+   "crit": "hotel*|museo*",
+   "r": "En el texto pone, hablando de Está en La Coruña y la: «Algunos faros viejos se han convertido en hoteles y otros en museos».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "faros",
+   "t": "L",
+   "q": "¿qué faros se distinguen mejor de día?",
+   "crit": "rayas|pintados",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 14
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿un faro es una torre?",
+   "crit": "^si",
+   "r": "Sí, los faros son torre altos con una luz muy potente en la parte de arriba.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿la Torre de Hércules es un faro?",
+   "crit": "^si",
+   "r": "Sí, la Torre de Hércules es un faro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "H",
+   "q": "¿un faro es un animal?",
+   "crit": "^no",
+   "r": "No, un faro es un edificio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "M",
+   "q": "¿dónde está el faro más antiguo del mundo?",
+   "crit": "coruna",
+   "r": "La Torre de Hércules está en La Coruña.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "I",
+   "q": "¿qué faro está en La Coruña?",
+   "crit": "hercules",
+   "r": "La Torre de Hércules está en La Coruña.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿cuántos faros hay en España?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿cuánto mide la Torre de Hércules?",
+   "crit": "ABST",
+   "r": "No lo sé. De la Torre de Hércules sé que es un faro y es muy antiguo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién inventó el faro?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "C",
+   "q": "mi bisabuelo era farero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu bisabuelo era farero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "C",
+   "q": "¿mi bisabuelo cuidaba un faro?",
+   "crit": "^si|cuidaba|faro",
+   "r": "Sí, el farero cuidaba un faro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "G",
+   "q": "dime un faro",
+   "crit": "hercules",
+   "r": "La Torre de Hércules. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "G",
+   "q": "descríbeme la Torre de Hércules",
+   "crit": "faro|antiguo|coruna|romanos",
+   "r": "La Torre de Hércules es un faro. La Torre de Hércules es muy antiguo. La Torre de Hércules está en La Coruña. Es el faro más antiguo del mundo que todavía funciona. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "K",
+   "q": "la Torre de Hércules está en Cádiz",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|coruna",
+   "r": "Eso no coincide con lo que aprendí: la Torre de Hércules está en La Coruña. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna es el único satélite natural de la Tierra.",
+   "r": "Entendido: Luna es el único satélite natural de la Tierra.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Tarda unos veintisiete días en dar una vuelta alrededor de nuestro planeta.",
+   "r": "Entendido: Luna tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "No tiene luz propia: brilla porque refleja la luz del Sol.",
+   "r": "Entendido: Luna no tiene luz propia brilla.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "En la Luna no hay aire ni agua líquida.",
+   "r": "Entendido: Luna no ha aire ni agua líquida en la.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Por eso allí no puede vivir ningún ser vivo.",
+   "r": "Entendido: Luna no puede vivir ningún ser vivo por eso allí.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Su superficie está cubierta de polvo gris y de cráteres.",
+   "r": "Entendido: la superficie de Luna está cubierta de polvo gris y de cráteres.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Los cráteres son agujeros que dejaron los meteoritos al chocar.",
+   "r": "Entendido: los cráteres son agujeros.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna siempre nos muestra la misma cara.",
+   "r": "Entendido: Luna nos muestra la misma cara siempre; Luna la misma cara muestra la misma cara siempre.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Según cuánta luz recibe, la vemos con formas distintas, llamadas fases.",
+   "r": "Eso expresa una atribución, posibilidad o apariencia; no lo guardaré como un hecho demostrado.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Cuando la vemos entera se llama luna llena.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Cuando la vemos entera se llama luna llena».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Cuando no se ve se llama luna nueva.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna provoca las mareas, que son las subidas y bajadas del mar.",
+   "r": "Entendido: Luna provoca las mareas.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Neil Armstrong fue la primera persona que pisó la Luna.",
+   "r": "Entendido: Neil Armstrong es una persona; Neil Armstrong pisó la Luna.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Llegó en 1969 en la nave Apolo 11.",
+   "r": "Entendido: Neil Armstrong llegó en la nave Apolo 11 en 1969.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "En la Luna las cosas pesan seis veces menos que en la Tierra.",
+   "r": "Entendido: En Luna las cosas pesan menos que en la Tierra seis veces; En la Tierra las cosas pesan menos que en la Tierra seis veces.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Las personas que viajan al espacio se llaman astronautas.",
+   "r": "Entendido: los astronautas son personas; los astronautas viajan al espacio.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué es la Luna?",
+   "crit": "satelite",
+   "r": "Luna es el único satélite natural de la Tierra.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿cuánto tarda la Luna en dar una vuelta a la Tierra?",
+   "crit": "veintisiete|27",
+   "r": "Luna tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿por qué brilla la Luna?",
+   "crit": "refleja|sol",
+   "r": "No lo sé: no me consta eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿la Luna tiene luz propia?",
+   "crit": "^no",
+   "r": "No, Luna no tiene luz propia brilla.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿hay aire en la Luna?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Luna sé que es el único satélite natural de la Tierra y tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿por qué no puede vivir ningún ser vivo en la Luna?",
+   "crit": "aire|agua",
+   "r": "No me has dicho por qué. Solo sé que Luna no puede vivir ningún ser vivo por eso allí.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿de qué está cubierta la superficie de la Luna?",
+   "crit": "polvo|crater*",
+   "r": "No lo sé: no me has dicho qué está la superficie de Luna. De la superficie de Luna sé que está cubierta de polvo gris y de cráteres.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son los cráteres?",
+   "crit": "agujero*",
+   "r": "Los cráteres son agujeros. Además, según lo que he aprendido, los cráteres son agujeros que dejaron los meteoritos al chocar.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son las fases de la Luna?",
+   "crit": "formas",
+   "r": "No lo sé: no me has dicho cuál es la fase de Luna.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llama la Luna cuando la vemos entera?",
+   "crit": "llena",
+   "r": "En el texto pone, hablando de los cráteres: «Cuando no se ve se llama luna nueva».",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llama la Luna cuando no se ve?",
+   "crit": "nueva",
+   "r": "Luna nueva. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la Luna",
+   "t": "V",
+   "q": "¿qué son las mareas?",
+   "crit": "subidas|bajadas|mar",
+   "r": "La marea es un fenómeno. Además, según lo que he aprendido, las mareas son las subidas y bajadas del mar.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿qué provoca la Luna?",
+   "crit": "marea*",
+   "r": "Luna provoca las mareas.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿quién fue la primera persona que pisó la Luna?",
+   "crit": "armstrong",
+   "r": "Neil Armstrong: según lo que he aprendido, fue la primera persona que pisó la Luna.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿en qué año llegó Armstrong a la Luna?",
+   "crit": "1969",
+   "r": "En el texto pone, hablando de Neil Armstrong: «Llegó en 1969 en la nave Apolo 11».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "la Luna",
+   "t": "L",
+   "q": "¿cuánto pesan las cosas en la Luna?",
+   "crit": "seis|menos",
+   "r": "Sí. En Luna las cosas pesan menos que en la Tierra seis veces.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "la Luna",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que viajan al espacio?",
+   "crit": "astronauta*",
+   "r": "Astronautas. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 15
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿la Luna es un satélite?",
+   "crit": "^si",
+   "r": "Sí, Luna es el único satélite natural de la Tierra.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿Neil Armstrong era una persona?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «Neil Armstrong fue la primera persona que pisó la Luna».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "H",
+   "q": "¿un astronauta es una persona?",
+   "crit": "^si",
+   "r": "Sí, un astronauta es una persona. Lo deduzco porque un astronauta es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "D",
+   "q": "¿hay vida en la Luna?",
+   "crit": "^no",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Luna sé que es el único satélite natural de la Tierra y tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "M",
+   "q": "¿en qué nave llegó la primera persona que pisó la Luna?",
+   "crit": "apolo",
+   "r": "Neil Armstrong llegó en la nave Apolo 11 en 1969.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿cuánto pesa la Luna?",
+   "crit": "ABST",
+   "r": "No lo sé. De Luna sé que es el único satélite natural de la Tierra y tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿a qué distancia está la Luna?",
+   "crit": "ABST",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿quién descubrió las mareas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "C",
+   "q": "mi vecina es astronauta",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecina es astronauto.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "C",
+   "q": "¿mi vecina viaja al espacio?",
+   "crit": "^si|viaja*",
+   "r": "Sí, los astronautas viajan al espacio. Lo deduzco porque tu vecina es astronauto y eso vale para los astronautas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "G",
+   "q": "dime las fases de la Luna",
+   "crit": "llena|nueva",
+   "r": "No conozco ningún ejemplo de «fases» todavía: si me cuentas alguno, lo recordaré.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "G",
+   "q": "descríbeme la Luna",
+   "crit": "satelite|polvo|crater*|tierra",
+   "r": "Luna provoca las mareas. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "K",
+   "q": "la Luna tiene luz propia",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|no tiene|refleja",
+   "r": "Entendido, lo actualizo: Luna tiene luz propia.",
+   "v": "MAL",
+   "k": -1
+  }
+ ]
+}

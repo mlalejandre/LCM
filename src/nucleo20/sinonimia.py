@@ -112,6 +112,7 @@ def alternativas(texto, maximo=6):
 UMBRAL = 0.60        # parecido mínimo para dar dos palabras por intercambiables. Calibrado con el propio léxico (lab/iter220/calibra.py): pasan el 69 % de
 #                      los verbos sinónimos y el 85 % de los nombres sinónimos; de los que solo son «hermanos» (perro/gato), el 8 % y el 30 %
 UMBRAL_ENLACE = 0.50 # con enlace directo en el léxico basta este parecido
+UMBRAL_DUDA = 0.35   # por debajo de los umbrales pero por encima de esto: no se da por bueno, se PREGUNTA al usuario
 MARGEN = 0.05        # la elegida tiene que destacar sobre la siguiente palabra aprendida de otro sentido
 _FUNC = {"ser", "estar", "haber", "tener", "hacer", "poder", "soler", "ir", "decir", "saber", "querer", "deber", "dar", "ver", "pasar", "llamar"}
 
@@ -154,6 +155,10 @@ def analiza(w):
     return an
 
 
+_DETS = {"el", "la", "los", "las", "un", "una", "unos", "unas", "su", "sus", "del", "al", "de", "este", "esta", "ese", "esa", "cada", "mucho", "mucha", "muchos", "muchas"}
+_NO_VERBO = {"para", "se", "como", "sobre", "entre", "bajo", "sal", "ve", "haz", "son", "era", "fue", "una", "uno", "cerca", "nada", "vino", "casa", "cara", "lado", "tarde", "modo"}
+
+
 def vocabulario(nuc):
     """Las palabras de lo que se ha leído o explicado en esta conversación: verbos (por lema) y nombres o adjetivos (en singular)."""
     textos = []
@@ -167,12 +172,15 @@ def vocabulario(nuc):
         return cache[1], cache[2]
     verbos, nombres = set(), set()
     for t in dict.fromkeys(textos):
+        ant = ""
         for w in re.findall(r"[a-záéíóúñü]+", t.lower()):
-            lv = _lemas_v(w)
+            # 2.21: «el pelo», «para», «se»… no son verbos aunque se escriban como uno
+            lv = set() if (ant in _DETS or w in _NO_VERBO) else _lemas_v(w)
             if lv:
                 verbos |= {sa(x) for x in lv}
             elif len(w) > 3:
                 nombres.add(sa(M.singular(w)))
+            ant = w
     nuc._vocab220 = (clave, verbos, nombres)
     return verbos, nombres
 
@@ -195,10 +203,38 @@ def _afin(lema, c):
     return s if s >= UMBRAL_ENLACE else 0.0
 
 
+_APR = set()          # parejas que el usuario ha enseñado en esta conversación (se cargan al empezar cada búsqueda)
+
+
+def aprendidos(nuc):
+    return nuc.usuario.setdefault("sinonimos", [])
+
+
+def aprende(nuc, a, b):
+    """El usuario enseña que dos palabras dicen lo mismo. Vale desde ese momento igual que un sinónimo del léxico, y también para
+    palabras que el léxico no tiene: la nueva hereda el sitio de la conocida."""
+    a, b = sa(a.lower()), sa(b.lower())
+    if a and b and a != b and [a, b] not in aprendidos(nuc) and [b, a] not in aprendidos(nuc):
+        aprendidos(nuc).append([a, b])
+        del aprendidos(nuc)[:-200]
+    nuc._vocab220 = None
+
+
+def _carga_apr(nuc):
+    _APR.clear()
+    for a, b in (nuc.usuario.get("sinonimos") or []):
+        _APR.add((a, b)); _APR.add((b, a))
+
+
 def _mejor(lema, candidatos):
     """La palabra aprendida que más se parece a esta por el sentido, si se parece lo bastante y destaca."""
     from . import vectores as V
-    if lema in candidatos or V.vector(lema) is None:
+    if lema in candidatos:
+        return None
+    for c in candidatos:
+        if (lema, c) in _APR:
+            return c, 1.0                                # enseñado por el usuario
+    if V.vector(lema) is None:
         return None
     ps = sorted(((_afin(lema, c), c) for c in candidatos if c != lema and c not in _FUNC and V.vector(c) is not None), reverse=True)[:3]
     if not ps or ps[0][0] < UMBRAL_ENLACE or V.antonimos(lema, ps[0][1]):
@@ -208,7 +244,17 @@ def _mejor(lema, candidatos):
     return ps[0][1], ps[0][0]
 
 
-def por_sentido(nuc, texto, maximo=4):
+def _casi(lema, candidatos):
+    """Candidatas que NO llegan para darlas por buenas, pero se parecen lo bastante para preguntar («vigilar» ~ «cuidar», 0,41).
+    Hasta tres: se preguntará por la primera con la que la pregunta tenga respuesta."""
+    from . import vectores as V
+    if lema in candidatos or V.vector(lema) is None:
+        return []
+    ps = sorted(((V.sim(lema, c), c) for c in candidatos if c != lema and c not in _FUNC and V.vector(c) is not None and not V.antonimos(lema, c)), reverse=True)[:3]
+    return [(c, s_) for s_, c in ps if s_ >= UMBRAL_DUDA and V.parentesco(lema, c)[0]]   # con algún enlace en el léxico, aunque sea débil: sin él, el parecido solo es ruido
+
+
+def por_sentido(nuc, texto, maximo=4, duda=False):
     """La misma pregunta dicha con las palabras de lo aprendido: cada palabra de la pregunta que no aparece en lo leído se cambia por
     la palabra leída de sentido más cercano. Devuelve [(pregunta, [(palabra, por, parecido)])]. Nada si no hay vectores."""
     from . import vectores as V
@@ -217,20 +263,23 @@ def por_sentido(nuc, texto, maximo=4):
     verbos, nombres = vocabulario(nuc)
     if not verbos and not nombres:
         return []
+    _carga_apr(nuc)
     ws = re.findall(r"[\wáéíóúñü]+|[^\w\s]", texto)
     cambios = []
     for i, w in enumerate(ws):
         wl = w.lower()
         if i == 0 or not wl.isalpha() or len(wl) < 4 or (w[:1].isupper() and i > 1):
             continue
-        an = analiza(wl)
+        an = [] if wl in _NO_VERBO else analiza(wl)
+        if an and ws[i - 1].lower() in ("el", "la", "los", "las", "un", "una", "unos", "unas", "su", "sus", "del", "al", "de"):
+            an = []                                      # 2.21: tras un determinante es un nombre («las crías»), no un verbo
         if an:
             a0 = an[0]
             lema = sa(a0[0])
             if lema in _FUNC or lema in verbos:
                 continue
-            m = _mejor(lema, verbos)
-            if m:
+            ms = _casi(lema, verbos) if duda else [x for x in [_mejor(lema, verbos)] if x]
+            for m in ms:
                 forma = m[0] if a0[1] == "inf" else M.conjugar(m[0], a0[1], a0[2]) if a0[1] != "part" else None
                 if forma:
                     cambios.append((i, forma, a0[0], m[0], m[1], "pas" if a0[1] in ("pret", "imp") else "pres" if a0[1] == "pres" else ""))
@@ -238,7 +287,7 @@ def por_sentido(nuc, texto, maximo=4):
         base = sa(M.singular(wl))
         if base in nombres or sa(wl) in nombres or K.kb().get("clases", {}).get(base):
             continue
-        m = _mejor(base, nombres)
+        m = _mejor(base, nombres) if not duda else None
         if m:
             pl = wl.endswith("s") and base != sa(wl)
             cambios.append((i, M.plural(m[0]) if pl else m[0], base, m[0], m[1], ""))
@@ -257,7 +306,7 @@ def por_sentido(nuc, texto, maximo=4):
                     ws2[i - 1] = {"el": "la", "la": "el", "los": "las", "las": "los", "un": "una", "una": "un"}[x]
         t2 = re.sub(r"\s+([?.,!])", r"\1", re.sub(r"([¿¡])\s+", r"\1", " ".join(ws2)))
         return re.sub(r"¿(\w)", lambda m_: "¿" + m_.group(1).upper(), t2), [(c[2], c[3], round(c[4], 2), c[5]) for c in cs]
-    if len(cambios) > 1:
+    if len(cambios) > 1 and not duda:
         out.append(_monta(cambios))
     for c in sorted(cambios, key=lambda c: -c[4]):
         out.append(_monta([c]))
@@ -286,3 +335,43 @@ def casa_tiempo(cambios, respuesta):
         if ts and c[3] not in ts:
             return False
     return True
+
+
+_DECL = re.compile(r"^\W*«?\"?(?:(?:un|una|el|la)\s+)?([a-záéíóúñü]+)»?\"?\s+(?:es lo mismo que|significa lo mismo que|quiere decir lo mismo que|significa|quiere decir|es sin[oó]nimo de|"
+                   r"es igual que|es como decir|es otra forma de decir|es otra manera de decir)\s+«?\"?(?:(?:un|una|el|la)\s+)?([a-záéíóúñü]+)»?\"?\W*$", re.I)
+
+
+def declara(nuc, texto):
+    """«Vigilar es lo mismo que cuidar», «un zarpo es lo mismo que un barco»: el usuario enseña un sinónimo. Devuelve la respuesta o None."""
+    m = _DECL.match(texto.strip())
+    if not m or "?" in texto:
+        return None
+    a, b = m.group(1).lower(), m.group(2).lower()
+    if sa(a) == sa(b) or len(a) < 3 or len(b) < 3:
+        return None
+    la, lb = (analiza(a) or [(a,)])[0][0], (analiza(b) or [(b,)])[0][0]
+    if a.endswith(("ar", "er", "ir")) != b.endswith(("ar", "er", "ir")):
+        return None                                      # un verbo y un nombre: eso no es un sinónimo, es otra cosa
+    if not a.endswith(("ar", "er", "ir")):
+        la, lb = sa(M.singular(a)), sa(M.singular(b))
+    aprende(nuc, la, lb)
+    return {"respuesta": f"Entendido: «{a}» y «{b}» quieren decir lo mismo. Lo tendré en cuenta cuando me preguntes.", "estado": "ok", "consultar": False, "tipo": "ack"}
+
+
+def desconocida(nuc, texto):
+    """El verbo de la pregunta que no aparece en nada de lo leído o explicado (si es justo uno y hay algo aprendido). Sirve para decir
+    por qué no se sabe contestar y para que el usuario pueda enseñar el sinónimo."""
+    if "?" not in texto or not (nuc.usuario.get("leido") or []):
+        return None
+    verbos, _ = vocabulario(nuc)
+    if len(verbos) < 3:
+        return None
+    ws = re.findall(r"[a-záéíóúñü]+", texto.lower())
+    fuera = []
+    for i, w in enumerate(ws):
+        if i == 0 or len(w) < 4 or w in _NO_VERBO or ws[i - 1] in _DETS:
+            continue
+        an = [a for a in analiza(w) if a[1] in ("pres", "pret", "imp", "fut")]
+        if an and sa(an[0][0]) not in verbos and sa(an[0][0]) not in _FUNC and not any(sa(a[0]) in verbos or sa(a[0]) in _FUNC for a in an):
+            fuera.append(an[0][0])
+    return fuera[0] if len(set(fuera)) == 1 else None

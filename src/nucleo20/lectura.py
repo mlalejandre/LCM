@@ -160,7 +160,7 @@ def leer(nuc, texto):
     return {"respuesta": txt, "estado": "ok", "consultar": False, "tipo": "ack"}
 
 
-def cita(nuc, pregunta):
+def cita(nuc, pregunta, excluye=()):
     """Frase del último texto leído que contesta a la pregunta, o None. Solo si casa de verdad con lo que se pregunta."""
     leidos = nuc.usuario.get("leido") or []
     if not leidos or "?" not in pregunta:
@@ -181,6 +181,9 @@ def cita(nuc, pregunta):
         tema = {_raiz(w) for w in _contenido(" ".join(fs_[0].split()[:4]))} if fs_ else set()   # de quién o de qué trata: está en todas las frases aunque no se repita
         if re.match(r"^\W*(?:y\s+)?como (?:es|son|era|eran)\b", q) and (raices & tema or len(raices) == 0):
             desc = [g for g in fs_ if re.match(r"^(?:es|son|era|eran)\b", sa(g.lower())) or re.search(r"\b(?:es|son|era|eran) (?:muy |bastante |un poco )?[a-zñ]+(?:o|a|e|os|as|es|l|z|r)(?: y | pero |[.,]|$)", sa(g.lower()))]
+            # 2.21: la frase tiene que hablar de lo que se pregunta («¿cómo es el queso fresco?» no lo contesta «el queso curado es duro»)
+            desc = [g for g in desc if g.strip().rstrip(".") not in excluye
+                    and raices <= ({_raiz(w) for w in _contenido(g)} | ({_raiz(w) for w in _contenido((texto.get("temas") or {}).get(g, ""))}) | {"como"})]
             if desc:
                 return f"En el texto pone: «{desc[-1].rstrip('.')}»."
         temas_f = texto.get("temas") or {}
@@ -190,10 +193,12 @@ def cita(nuc, pregunta):
                 cuenta[w] = cuenta.get(w, 0) + 1
         fondo = {w for w, c in cuenta.items() if c >= 3}   # de lo que trata todo el texto: no hace falta que cada frase lo repita
         for i, f in enumerate(fs_):
+            if f.strip().rstrip(".") in excluye:
+                continue
             rf = {_raiz(w) for w in _contenido(f)}
             tema_i = ({_raiz(w) for w in _contenido(temas_f[f])} if f in temas_f else set()) | tema
             comunes = raices & rf
-            n = sum(0.4 if w in tema else 1.0 for w in comunes) + (0.4 * len((raices & tema_i) - rf) if i > 0 and comunes - tema else 0)
+            n = sum(0.3 if w in _GEN_Q else 0.4 if w in tema else 1.0 for w in comunes) + (0.4 * len((raices & tema_i) - rf) if i > 0 and comunes - tema else 0)
             if f in temas_f and (raices & tema_i) - rf:
                 n += 0.5                                 # la frase habla (sin nombrarlo) de aquello por lo que se pregunta
             if not _responde(q, f, raices, rf | tema_i | (fondo if len(raices - fondo) >= 1 else set())):
@@ -209,6 +214,12 @@ def cita(nuc, pregunta):
     intro = re.sub(r"\bde el\b", "del", intro)
     si_no = not re.match(r"^\W*(?:y\s+)?(?:que|quien|quienes|como|cuando|donde|adonde|cual|cuales|cuant|por que|para que|con que|con quien|a quien|de que|de quien|a que|en que)", q)
     if si_no:
+        rf_ = {_raiz(w) for w in _contenido(f)} | ({_raiz(w) for w in _contenido(tema_f)} if tema_f else set())
+        if not raices <= rf_:
+            return None                                  # 2.21: para un sí o un no, la frase misma tiene que decir todo lo que se pregunta
+        if re.search(r"^(?:algun[oa]s?|much[oa]s|poc[oa]s|ciert[oa]s|la mayoria|casi tod[oa]s)\b|\b(?:a veces|a menudo|suelen?|puede que|quiza|quizas|casi nunca)\b", sa(f.lower())) \
+                and not re.search(r"\b(?:algun[oa]s?|much[oa]s|poc[oa]s|la mayoria|casi|a veces|suelen?)\b", q):
+            return None                                  # «algunos pájaros vuelan» no contesta con un sí a «¿vuelan los pájaros?»
         if n == len(raices) and n >= 2:
             neg = re.search(r"\b(?:no|nunca|jamas|tampoco)\b", sa(f.lower()))
             return f"{'No' if neg else 'Sí'}: el texto dice «{f.rstrip('.')}»."
@@ -276,6 +287,8 @@ def _responde(q, f, raices, cubre):
         return False
     if re.match(r"^\W*(?:y\s+)?para que\b", q) and not re.search(r"\bpara\b", fs):
         return False
+    if re.match(r"^\W*(?:y\s+)?como (?:es|son|era|eran)\b", q) and not re.search(r"\b(?:es|son|era|eran|esta|estan|parece|parecen|tiene|tienen)\b", fs):
+        return False                                     # 2.21: «¿cómo es X?» pide una descripción
     if re.match(r"^\W*(?:y\s+)?(?:de que color|que color)\b", q):
         return bool(re.search(r"\b(?:color|roj|verd|azul|amarill|negr|blanc|marron|gris|naranja|rosa|morad|dorad|platead)", fs))
     return True

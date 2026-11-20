@@ -510,6 +510,32 @@ def procesa(nuc, f, hilo, reg=True):
 
 
 # ------------------------------------------------------------------ contestar con lo guardado aparte
+def _verbos_casan(a, b):
+    """Si las dos descripciones traen verbo, alguno tiene que ser el mismo o decir lo mismo (por el sentido, con los vectores del léxico)."""
+    try:
+        from . import sinonimia as S
+    except Exception:                                    # noqa
+        return True
+
+    def verbos(t):
+        ws = re.findall(r"[a-záéíóúñü]+", t.lower())
+        out = set()
+        for i, w in enumerate(ws):
+            if i > 0 and ws[i - 1] in ("el", "la", "los", "las", "un", "una", "de", "del", "al", "su", "sus") or len(w) < 4:
+                continue
+            for an in S.analiza(w):
+                if an[1] in ("pres", "pret", "imp", "fut") and sa(an[0]) not in ("ser", "estar", "haber", "llamar"):
+                    out.add(sa(an[0]))
+        return out
+    va, vb = verbos(a), verbos(b)
+    if not va or not vb or va & vb:
+        return True
+    try:
+        return any(S._afin(x, y) >= S.UMBRAL_ENLACE for x in va for y in vb)
+    except Exception:                                    # noqa
+        return False
+
+
 def _solapa(q, d, minimo=0.6):
     if not q or not d:
         return 0.0
@@ -605,6 +631,8 @@ def responder(nuc, texto):
         mejor = None
         for d in ex["defs"]:
             s = _solapa(q, claves(d["d"]), 0.5)
+            if s and not _verbos_casan(m.group(1), d["d"]):
+                continue                                 # 2.21: «la persona que RECIBE la carta» no es «la persona que REPARTE las cartas»
             if s and (mejor is None or s > mejor[0]):
                 mejor = (s, d)
         if mejor:
@@ -855,23 +883,47 @@ def peticion_sin_atender(texto, nuc=None):
 _PERSONAL = re.compile(r"\b(?:yo|me|mi|mis|mio|mia|tu|tus|te|ti|tuyo|nos|nuestr[oa]s?|conmigo|contigo|usted|vosotros|os)\b")
 
 
-_NO_1S = {"como", "para", "sobre", "entre", "bajo", "una", "uno", "vino", "traje", "nada", "cara", "rio", "cocina", "casa", "camino", "cuenta", "compra", "trabajo", "juego", "paso", "cambio", "pago", "uso",
+_NO_1S = {"medio", "largo", "corto", "claro", "seco", "limpio", "lleno", "vivo", "junto", "bajo", "alto", "como", "para", "sobre", "entre", "bajo", "una", "uno", "vino", "traje", "nada", "cara", "rio", "cocina", "casa", "camino", "cuenta", "compra", "trabajo", "juego", "paso", "cambio", "pago", "uso",
           "canto", "baile", "sueño", "sueno", "paseo", "desayuno", "almuerzo", "regalo", "dibujo", "estudio", "peso", "abrigo", "saludo", "recibo", "techo", "seco", "limpio", "lleno", "solo", "fino", "vuelo",
           "cuento", "cierro", "tiro", "salto", "grito", "corte", "resto", "fin", "son", "sal", "ven", "ves", "das", "seas", "eras", "mides", "cabes", "cabe", "veo"}
 
 
+_TRAS_DET = {"el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "al", "a", "con", "sin", "su", "sus", "durante", "muy", "mas", "en", "por", "para", "sobre", "entre", "este", "esta",
+             "estos", "estas", "ese", "esa", "cada", "dos", "tres", "cuatro", "varios", "varias", "muchos", "muchas", "algunos", "algunas"}
+
+
 def _impersonal(t):
+    """¿Habla de las cosas en general y no de ti o de mí? 2.21: una palabra tras un determinante, una preposición, «es» o un infinitivo
+    es un nombre o un adjetivo aunque se escriba como un verbo («un traje», «varias semanas», «dibujar figuras», «es blando»)."""
     n = sa(t.lower())
     if _PERSONAL.search(n):
         return False
-    for w in re.findall(r"[a-záéíóúñü]+", t.lower())[:8]:
+    ws = re.findall(r"[a-záéíóúñü]+", t.lower())
+    for i, w in enumerate(ws[:10]):
+        ant = sa(ws[i - 1]) if i > 0 else ""
+        if w == "se" or len(w) < 3 or ant in _TRAS_DET or ant in ("es", "son", "era", "eran", "muy") or (len(ant) > 3 and ant.endswith(("ar", "er", "ir")) and w.endswith("s")):
+            continue
         try:
             an = M.analizar(w) or []
         except Exception:                                # noqa
             an = []
-        if an and all(len(a) > 2 and a[2] in ("1s", "2s", "1p", "2p") for a in an) and not K._kb_clase(sa(_sing(w))) and len(w) >= 3 and sa(w) not in _NO_1S:
+        if an and all(len(a) > 2 and a[2] in ("1s", "2s", "1p", "2p") for a in an) and not K._kb_clase(sa(_sing(w))) and sa(w) not in _NO_1S:
             return False
     return True
+
+
+def _nombra_persona(nuc, T):
+    """¿La frase habla de alguien con nombre («la casa de Bruno…»)? Eso no es una explicación general."""
+    for w in re.findall(r"\b[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+\b", T)[0 if T[:1].islower() else 0:]:
+        if T.startswith(w + " ") and not re.match(r"^[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+\s+(?:es|era|fue|vive|tiene|está)\b", T):
+            continue
+        e = "N:" + sa(w.lower())
+        try:
+            if e in nuc.E and nuc.es_persona(e):
+                return True
+        except Exception:                                # noqa
+            pass
+    return False
 
 
 def charla(nuc, texto):
@@ -890,6 +942,13 @@ def charla(nuc, texto):
     sin_suj = sn is None and (_fin3(w0) or w0 in ("Su", "Sus", "Es", "Son")) and getattr(nuc, "_hilo_mio", False) and nuc.turno - getattr(nuc, "_hilo_turno", -9) <= 2 and hilo.ult is not None
     define = sn is not None and re.search(r"\b(?:es|son|fue|era|fueron)\s+(?:el|la|los|las)\s+(?:únic[oa]s?|primer[oa]?s?|últim[oa]s?|[a-záéíóúñü]+\s+(?:más|menos)\s+[a-záéíóúñü]+)\b", T) is not None
     por_eso = re.match(r"^Por (?:eso|ello|esa razón|ese motivo)\b", T) is not None and bool(hilo.previa) and nuc.turno - getattr(nuc, "_hilo_turno", -9) <= 2
+    sigue = sn is None and hilo.ult is not None and nuc.turno - getattr(nuc, "_hilo_turno", -9) <= 2 \
+        and re.fullmatch(_DET, sa(hilo.ult.split()[0].lower())) is not None and not re.match(r"^(?:Yo|Tú|Él|Ella|Ayer|Hoy|Mañana)\b", T)
+    if generica or marca or sin_suj or define or por_eso or sigue:
+        # 2.21: lo que EXPLICA algo general queda guardado para poder citarlo, lo entienda quien lo entienda (como al leer un texto
+        # pegado). Lo que se cuenta de alguien con nombre propio no: eso es asunto del núcleo, que sabe olvidarlo y corregirlo.
+        if not _nombra_persona(nuc, T):
+            _apunta(nuc, T + ".", tema=hilo.ult if (sn is None and hilo.ult) else None)
     if not (generica or marca or sin_suj or define or por_eso):
         if sn is not None and not _PERSONAL.search(sa(T.lower())):
             hilo.pon(sn)                                 # se anota de qué se habla, aunque la frase la lea el núcleo
@@ -925,7 +984,8 @@ def charla(nuc, texto):
     if not leidos or not leidos[-1].get("charla"):
         leidos.append({"turno": nuc.turno, "frases": [], "temas": {}, "charla": True})
         del leidos[:-12]
-    leidos[-1]["frases"].append(T + ".")
+    if T + "." not in leidos[-1]["frases"]:
+        leidos[-1]["frases"].append(T + ".")
     del leidos[-1]["frases"][:-80]
     if sn is None and hilo.ult:
         leidos[-1]["temas"][T + "."] = hilo.ult

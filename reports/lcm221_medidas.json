@@ -1,0 +1,205 @@
+{
+ "fecha": "2026-11-20",
+ "campana": "2.21 · aprender frase a frase, encadenar dos cosas aprendidas y sinónimos que enseña el usuario",
+ "analisis_previo_500_preguntas_220": {
+  "aciertan_de_las_dos_maneras": 397,
+  "solo_con_texto_pegado": 49,
+  "fallan_de_las_dos": 51,
+  "solo_frase_a_frase": 3,
+  "solo_con_texto_pegado_tras_221": 19
+ },
+ "primera_medida_limpia_test7_70": {
+  "texto": {
+   "2.20": {
+    "acierto": 94.3,
+    "falsas": 2
+   },
+   "2.21_ciega": {
+    "acierto": 92.9,
+    "falsas": 2
+   },
+   "2.21_final_no_ciego": {
+    "acierto": 94.3,
+    "falsas": 0
+   }
+  },
+  "frases": {
+   "2.20": {
+    "acierto": 74.3,
+    "falsas": 7
+   },
+   "2.21_ciega": {
+    "acierto": 78.6,
+    "falsas": 8
+   },
+   "2.21_final_no_ciego": {
+    "acierto": 84.3,
+    "falsas": 3
+   }
+  },
+  "combinar": {
+   "2.20": 50,
+   "2.21_ciega": 50,
+   "2.21_final_no_ciego": 75
+  }
+ },
+ "segunda_medida_limpia_test8_35": {
+  "texto": {
+   "2.20": {
+    "acierto": 54.3,
+    "falsas": 5
+   },
+   "2.21": {
+    "acierto": 60.0,
+    "falsas": 5
+   },
+   "auditado": {
+    "2.20": [
+     57.1,
+     4
+    ],
+    "2.21": [
+     62.9,
+     4
+    ]
+   }
+  },
+  "frases": {
+   "2.20": {
+    "acierto": 48.6,
+    "falsas": 5
+   },
+   "2.21": {
+    "acierto": 60.0,
+    "falsas": 5
+   },
+   "auditado": {
+    "2.20": [
+     51.4,
+     4
+    ],
+    "2.21": [
+     62.9,
+     4
+    ]
+   }
+  },
+  "combinar": {
+   "2.20": 0,
+   "2.21": 0
+  },
+  "sinonimos_enseñados_que_resuelven": "1 de 3"
+ },
+ "temas_ya_conocidos_texto_220_221": {
+  "dev": [
+   96.0,
+   96.0
+  ],
+  "test": [
+   88.4,
+   88.4
+  ],
+  "test2": [
+   94.8,
+   94.8
+  ],
+  "test3": [
+   93.3,
+   93.3
+  ],
+  "test4": [
+   86.2,
+   89.2
+  ],
+  "test5": [
+   80.7,
+   81.9
+  ],
+  "test6": [
+   81.6,
+   81.6
+  ],
+  "pdev": [
+   80.9,
+   80.9
+  ],
+  "setas": [
+   72.9,
+   72.9
+  ]
+ },
+ "temas_ya_conocidos_frases_220_221": {
+  "dev": [
+   89.1,
+   95.0
+  ],
+  "test": [
+   85.3,
+   91.6
+  ],
+  "test2": [
+   79.3,
+   86.2
+  ],
+  "test3": [
+   81.7,
+   85.0
+  ],
+  "test4": [
+   75.4,
+   86.2
+  ],
+  "test5": [
+   71.1,
+   77.1
+  ],
+  "test6": [
+   68.4,
+   78.9
+  ]
+ },
+ "controles_220_221": {
+  "autor": [
+   89.9,
+   90.04
+  ],
+  "ciego2": [
+   94.68,
+   94.68
+  ],
+  "ciego6": [
+   82.09,
+   82.09
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   96.59
+  ],
+  "16b": [
+   96.48,
+   96.48
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas; iter221 t01 = 100 % (88 sondas)",
+ "pytest": "909 pasan, 3 fallos de entorno, 1 omitido"
+}
