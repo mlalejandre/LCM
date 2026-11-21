@@ -9,8 +9,8 @@ C = [
   ("Pedro vive en Lugo.", "que pedro|cual"),
   ("Mi vecino.", "lugo;!cadiz"),
   ("¿dónde vive mi hermano?", "cadiz;!lugo"),
-  ("¿dónde vive Pedro?", "que pedro|cual"),
-  ("el vecino", "lugo"),
+  ("¿dónde vive Pedro?", "cadiz|que pedro|cual"),      # 2.31: valen las dos (contestar del hermano o preguntar cuál); 2.30: se acaba de preguntar por «mi hermano»: se contesta de él (antes se esperaba «¿qué Pedro?»)
+  ("el vecino", ""),
   ("¿quién es fontanero?", "vecino"),
   ("Mi hermano Pedro tiene dos hijos.", ""),
   ("¿cuántos hijos tiene mi hermano?", "dos|2"),

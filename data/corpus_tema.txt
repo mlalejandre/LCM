@@ -1,0 +1,346 @@
+# LCM 2.30 · Texto inyectado para aprender QUÉ PALABRAS VAN JUNTAS (vectores de tema). No son hechos del mundo: son escenas corrientes,
+# dichas con frases simples. Una frase por línea o varias separadas por punto. Se puede ampliar: al cambiar este archivo se reentrena solo.
+# --- la casa
+En la cocina se cocina la comida con ollas y sartenes. La nevera guarda la comida fría. En el horno se hornea el pan y se asa la carne.
+Lavamos los platos y los vasos en el fregadero. La mesa de la cocina tiene sillas alrededor. Guardamos los cubiertos en un cajón.
+En el dormitorio hay una cama con sábanas y una almohada. Dormimos en la cama por la noche. El armario guarda la ropa y los abrigos.
+En el salón hay un sofá, una mesa baja y una televisión. Nos sentamos en el sofá a ver la televisión. La lámpara da luz al salón.
+En el baño hay una ducha, un lavabo y un espejo. Nos duchamos con agua caliente y jabón. Nos secamos con una toalla.
+El grifo del lavabo gotea agua. La tubería lleva el agua por la pared. El fontanero arregla las tuberías, los grifos y las fugas de agua.
+El fontanero repara la fuga del baño con sus herramientas. Una tubería rota inunda el baño. El fontanero cambia el grifo viejo.
+El electricista arregla los enchufes, los cables y la luz. El pintor pinta las paredes con brocha y pintura.
+Barremos el suelo con la escoba y lo fregamos con la fregona. Limpiamos el polvo de los muebles con un trapo.
+Los muebles de la casa son de madera: la mesa, la silla, el armario, la cama y el banco. Nos sentamos en una silla, en un sofá o en un banco.
+La puerta de casa se abre con la llave. Las ventanas dejan entrar la luz y el aire. El balcón tiene macetas con plantas y flores.
+# --- comer y beber
+Desayunamos café con leche, tostadas y zumo. El café se sirve en una taza. Bebemos agua en un vaso y vino en una copa de cristal.
+Brindamos con una copa de vino en la cena. La botella de vino se abre con un sacacorchos. Los vasos y las copas son recipientes de cristal.
+Comemos sopa con cuchara y carne con cuchillo y tenedor. De postre hay fruta, helado o un pastel. El queso se hace con leche.
+El panadero hace el pan con harina en la panadería. El pastelero hace pasteles, tartas y dulces en la pastelería. Los pasteles se hornean en bandejas.
+Encargamos una tarta en la pastelería para el cumpleaños. El pastelero decora la tarta con nata y chocolate. De postre tomamos un pastel con el café.
+El cocinero prepara los platos en el restaurante. El camarero sirve la comida y trae la cuenta. Pedimos el menú y elegimos un plato de la carta del restaurante.
+Compramos fruta, verdura, carne y pescado en el mercado. Las manzanas, las naranjas y los plátanos son frutas. La lechuga y el tomate van en la ensalada.
+Cocemos la pasta en agua hirviendo. Freímos las patatas en aceite. Cortamos la cebolla con un cuchillo. Echamos sal y aceite a la comida.
+# --- animales
+El gato maúlla, caza ratones y duerme mucho. El perro ladra, mueve la cola y pasea con su dueño. El gato y el perro son animales domésticos.
+El ratón es un animal pequeño que roe y come queso. Un ratón se ha colado en la cocina y se ha comido el queso. El gato persigue al ratón por la casa.
+Los ratones hacen agujeros y viven en madrigueras. Ponemos una trampa para cazar al ratón. El ratón tiene una cola larga y bigotes.
+El veterinario cura a los animales enfermos. Llevamos al perro enfermo al veterinario. El veterinario vacuna a los perros y a los gatos en la clínica.
+Si la mascota está enferma y no come, la llevamos al veterinario. El veterinario examina al gato y le da una medicina.
+Las vacas dan leche y las gallinas ponen huevos en la granja. El granjero cuida a los animales de la granja. Los caballos corren por el campo.
+Los pájaros vuelan, cantan y hacen nidos en los árboles. Los pájaros tienen plumas, alas y pico. Los peces nadan en el mar y en el río.
+Las abejas hacen miel y los osos duermen en invierno. El león y el tigre son animales salvajes. En el zoo vemos elefantes, monos y jirafas.
+# --- plantas y campo
+Las plantas necesitan agua, tierra y luz para crecer. Regamos las plantas del jardín cada día. Plantamos semillas en la tierra y crecen plantas.
+Los árboles tienen raíces, tronco, ramas y hojas. Las flores tienen pétalos y huelen bien. En otoño caen las hojas de los árboles.
+El jardinero cuida el jardín, riega las plantas y corta el césped. En la maceta crece una planta con flores. El agricultor siembra y cosecha en el campo.
+En el huerto crecen tomates, lechugas y zanahorias. El campo está lleno de hierba y flores en primavera. El bosque tiene muchos árboles.
+# --- dinero y banco
+Guardamos el dinero en el banco. En el banco abrimos una cuenta para ahorrar dinero. Sacamos dinero del cajero del banco con la tarjeta.
+El banco presta dinero y cobra intereses. Pedimos un préstamo al banco para comprar una casa. El banco es una oficina donde se guarda y se presta dinero.
+Pagamos la compra con dinero, con monedas y billetes, o con tarjeta. Ingresamos el sueldo en la cuenta del banco. El banco está en un edificio de la plaza.
+Ahorramos dinero cada mes. La hipoteca se paga al banco. El empleado del banco atiende a los clientes en la ventanilla.
+Compramos en la tienda y pagamos en la caja. El precio de las cosas sube. Las rebajas bajan los precios. El vendedor vende y el cliente compra.
+# --- parque y calle
+En el parque hay árboles, bancos, columpios y una fuente. Nos sentamos en un banco del parque a descansar. Los niños juegan en los columpios del parque.
+Paseamos por el parque y descansamos en un banco de madera. Los abuelos se sientan en el banco a tomar el sol. El banco del parque está a la sombra de un árbol.
+En la calle hay coches, semáforos, aceras y tiendas. Cruzamos la calle por el paso de peatones. La plaza tiene una fuente y una iglesia.
+# --- ordenador y tecnología
+El ordenador tiene pantalla, teclado y ratón. Movemos el ratón para mover el cursor por la pantalla. Hacemos clic con el ratón en un botón.
+Escribimos con el teclado del ordenador. El ratón del ordenador se conecta con un cable o sin cable. La pantalla muestra las ventanas y los programas.
+Con el ratón seleccionamos un archivo y hacemos doble clic para abrirlo. El ordenador, la impresora y el teléfono son aparatos. Los aparatos se enchufan a la corriente.
+Navegamos por internet con el ordenador o con el móvil. Enviamos mensajes y correos electrónicos. El móvil tiene batería, pantalla y cámara.
+Guardamos los documentos en una carpeta del ordenador. Imprimimos el documento con la impresora. Instalamos un programa nuevo en el ordenador.
+# --- cartas, correo y papeles
+Escribimos una carta en un papel y la metemos en un sobre. Pegamos un sello en el sobre y echamos la carta al buzón. El cartero reparte las cartas y los paquetes.
+Enviamos la carta por correo a un amigo. La abuela recibe una carta de su nieto y la lee. En la oficina de correos se envían cartas y paquetes.
+Una carta es un documento escrito que se envía a alguien. Firmamos el documento al final. El contrato, el recibo y el certificado son documentos.
+Rellenamos un formulario con nuestros datos. Guardamos los papeles importantes en una carpeta. El notario firma los documentos.
+# --- juegos, naipes y ocio
+Jugamos a las cartas con una baraja. Barajamos la baraja y repartimos las cartas a los jugadores. En la partida gana quien tiene la mejor carta.
+La baraja tiene cartas con reyes, caballos y ases. Jugamos una partida de cartas después de cenar. Me ha tocado una carta mala y he perdido la partida.
+Los naipes son las cartas de la baraja. El ajedrez, el parchís y las cartas son juegos de mesa. Los jugadores juegan por turnos y siguen las reglas del juego.
+Los niños juegan con juguetes, muñecas y pelotas. Jugamos al escondite en el patio. En la consola jugamos a videojuegos.
+Vemos una película en el cine y comemos palomitas. Leemos un libro o una novela en la biblioteca. Escuchamos música y vamos a un concierto.
+# --- deporte
+En el torneo de tenis el ganador recibe una copa. El equipo gana el partido y levanta la copa. La copa y la medalla son premios para los campeones.
+Jugamos al fútbol con un balón en el campo. El portero para el balón y el delantero marca un gol. El árbitro pita el final del partido.
+Ganamos la carrera y nos dan una medalla de oro. El campeón recibe el premio y el trofeo. El entrenador entrena al equipo cada tarde.
+Nadamos en la piscina y corremos por el parque. Montamos en bicicleta por el carril. En el gimnasio levantamos pesas y hacemos ejercicio.
+# --- escuela e idiomas
+El profesor enseña y los alumnos aprenden en la clase. El profesor da clases de inglés en la academia de idiomas. Los alumnos hacen los deberes y estudian para el examen.
+Nos apuntamos a un curso de idiomas para aprender inglés y francés. La maestra explica la lección en la pizarra. En el colegio hay aulas, patio y biblioteca.
+Los estudiantes escriben en el cuaderno con lápiz y bolígrafo. Aprobamos el examen con buena nota. La profesora de matemáticas enseña a sumar y a multiplicar.
+En la universidad se estudia una carrera. El alumno pregunta y el profesor responde. Estudiamos idiomas para hablar con gente de otros países.
+# --- trabajo y oficios
+El médico cura a los enfermos en el hospital. La enfermera pone inyecciones y cuida a los pacientes. El dentista arregla los dientes y las muelas.
+El carpintero hace muebles de madera con sierra, martillo y clavos. El albañil construye casas con ladrillos y cemento. El mecánico arregla coches en el taller.
+El taxista lleva pasajeros en su taxi por la ciudad. El conductor conduce el autobús y el camionero lleva mercancías en su camión.
+La jefa dirige la empresa y los empleados trabajan en la oficina. La empresa de transportes lleva paquetes en camiones. El director dirige las reuniones.
+El peluquero corta el pelo en la peluquería. El policía vigila las calles y el bombero apaga los incendios. El abogado defiende a sus clientes en el juicio.
+El periodista escribe noticias en el periódico. El cocinero trabaja en la cocina del restaurante. El agricultor trabaja en el campo y el pescador pesca en el mar.
+# --- salud y cuerpo
+Cuando estamos enfermos vamos al médico. El médico receta una medicina para la fiebre y la tos. Nos duele la cabeza, la garganta o la barriga.
+El cuerpo tiene cabeza, brazos, piernas, manos y pies. Vemos con los ojos, oímos con los oídos y olemos con la nariz. El corazón late y los pulmones respiran.
+Nos rompemos un brazo y nos ponen una escayola. La muñeca une la mano con el brazo. Nos lavamos los dientes con cepillo y pasta.
+Descansamos y dormimos para estar sanos. Hacemos ejercicio y comemos fruta y verdura. El enfermo guarda cama y toma un jarabe.
+# --- viajes y transporte
+Viajamos en tren, en avión, en barco o en coche. Compramos el billete en la estación y subimos al tren. El avión despega del aeropuerto y aterriza en otra ciudad.
+Hacemos la maleta con ropa para el viaje. En el hotel reservamos una habitación. Los turistas visitan museos y monumentos y hacen fotos.
+El coche tiene motor, ruedas, volante y frenos. Echamos gasolina en la gasolinera. Si pincha una rueda, la cambiamos con el gato del maletero.
+El barco navega por el mar y atraca en el puerto. Los marineros atan el barco con un cabo. La vela del barco se hincha con el viento.
+En la playa hay arena, olas y sombrillas. Nos bañamos en el mar y tomamos el sol. En la montaña subimos hasta la cima y vemos la nieve.
+# --- tiempo y estaciones
+En invierno hace frío, nieva y llevamos abrigo, bufanda y guantes. En verano hace calor, brilla el sol y vamos a la playa.
+Cuando llueve abrimos el paraguas. El viento sopla y mueve las nubes. Después de la lluvia sale el arco iris.
+Por la mañana sale el sol y por la noche salen la luna y las estrellas. Las estrellas brillan en el cielo de noche.
+# --- ropa
+Nos ponemos camisa, pantalón, calcetines y zapatos. Lavamos la ropa en la lavadora y la tendemos al sol. Planchamos la camisa con la plancha.
+El sastre cose trajes con aguja e hilo. Compramos un vestido y una falda en la tienda de ropa. En invierno llevamos jersey de lana y botas.
+# --- familia y fiestas
+En el cumpleaños soplamos las velas de la tarta y abrimos los regalos. Invitamos a los amigos a la fiesta. Los abuelos cuentan cuentos a los nietos.
+En la boda los novios se casan y los invitados bailan. En Navidad cenamos en familia y cantamos villancicos. Los padres cuidan de sus hijos.
+# --- escribir y arte
+Escribimos con pluma, tinta y papel. El escritor escribe novelas y el poeta escribe poemas. Mojamos la pluma en el bote de tinta para escribir.
+El pintor pinta un cuadro con pinceles y colores. El músico toca el piano, la guitarra o el violín. El actor actúa en el teatro y en el cine.
+La estrella de cine actúa en muchas películas. El cantante canta canciones en el escenario. El público aplaude al final de la obra.
+# --- herramientas
+El martillo clava clavos y el destornillador aprieta tornillos. La sierra corta la madera. Con el pico y la pala se cava la tierra.
+La llave inglesa aprieta las tuercas. Las tijeras cortan el papel y la tela. La escalera sirve para subir. Las herramientas se guardan en una caja.
+# --- clases de cosas (para qué palabras acompañan a cada clase)
+Un edificio tiene plantas, oficinas, puertas y ventanas. En los edificios de la ciudad hay oficinas, bancos, tiendas y viviendas. Entramos en el edificio por la puerta.
+Los muebles son de madera y sirven para sentarse, dormir o guardar cosas. Nos sentamos en muebles como la silla, el sofá o el banco. El carpintero hace muebles.
+Los aparatos tienen botones, cables y pantallas, y funcionan con electricidad. Encendemos y apagamos el aparato con un botón. Hacemos clic en los botones del aparato.
+Los animales comen, beben, duermen y se mueven. Los mamíferos tienen pelo y maman leche de su madre. Los animales pequeños se esconden y roen la comida.
+Un documento es un papel escrito que se firma, se guarda o se envía por correo. Escribimos y enviamos documentos y cartas.
+Los juegos tienen reglas, jugadores, partidas, turnos y un ganador. Jugamos una partida de un juego con la baraja.
+Los recipientes guardan líquidos o comida: el vaso, la copa, la botella, la olla y la taza. Llenamos el recipiente de agua o de vino.
+Los premios se ganan en torneos, concursos y campeonatos. El ganador del torneo recibe un premio. La copa del campeón es el premio del torneo.
+Los seres vivos nacen, crecen y mueren. Las plantas y los animales son seres vivos. Los instrumentos sirven para hacer algo: escribir, medir o tocar música.
+Una pluma, un lápiz y un bolígrafo son instrumentos para escribir con tinta sobre papel. Las herramientas sirven para arreglar, cortar o clavar.
+Los alimentos se comen: el pan, la pasta, el queso, la fruta y la carne. Los vehículos llevan personas o cosas: el coche, el tren, el camión y el barco.
+# === LCM 2.31 · Segunda tanda de texto inyectado. Escrita por escenas corrientes, ANTES de escribir el examen de la 2.31 y sin mirar qué palabras iba a probar.
+# --- la mañana
+Por la mañana suena el despertador y nos levantamos de la cama. Nos lavamos la cara y los dientes con el cepillo y la pasta de dientes.
+Nos peinamos el pelo con un peine delante del espejo. Nos vestimos con la ropa limpia y nos calzamos los zapatos.
+Preparamos el desayuno en la cocina: café, leche, pan tostado con mantequilla y mermelada. Calentamos la leche en un cazo o en el microondas.
+Salimos de casa con las llaves, la cartera y el teléfono. Cerramos la puerta con llave y bajamos por la escalera o en el ascensor.
+# --- la noche
+Por la noche cenamos algo ligero: una ensalada, una tortilla o una sopa. Después de cenar recogemos la mesa y fregamos los platos.
+Nos ponemos el pijama y nos metemos en la cama. Leemos un libro con la lámpara de la mesilla antes de dormir. Apagamos la luz y cerramos los ojos.
+Dormimos tapados con una manta cuando hace frío. Soñamos mientras dormimos. La luna y las estrellas brillan en el cielo de noche.
+# --- la compra
+Vamos al supermercado con una lista de la compra. Metemos la fruta, la verdura, la carne y el pescado en el carro. Pagamos en la caja con dinero o con tarjeta.
+La cajera pasa los productos y nos da el tique. Llevamos la compra a casa en bolsas. Guardamos la leche, los huevos y el queso en la nevera.
+En el mercado hay puestos de fruta, de verdura, de carne y de pescado. El frutero pesa las manzanas y las naranjas en la balanza. El carnicero corta la carne con un cuchillo grande.
+El pescadero limpia el pescado y le quita las espinas. La panadera vende barras de pan y bollos. En la tienda preguntamos el precio y pedimos el cambio.
+Las rebajas bajan el precio de la ropa. Una oferta es un precio más barato. Lo caro cuesta mucho dinero y lo barato cuesta poco.
+# --- cocinar
+Para cocinar pelamos las patatas, cortamos la cebolla y picamos el ajo. Freímos los huevos en la sartén con aceite. Hervimos la pasta y el arroz en una olla con agua y sal.
+Asamos el pollo en el horno. Batimos los huevos para hacer una tortilla. Echamos sal, pimienta y especias para dar sabor a la comida.
+La receta dice los ingredientes y los pasos para preparar un plato. Amasamos la harina con agua y levadura para hacer la masa del pan. La masa sube y se hornea.
+Una ensalada lleva lechuga, tomate, cebolla, aceite y vinagre. La salsa de tomate acompaña a la pasta. Servimos la comida en los platos y la llevamos a la mesa.
+El cuchillo corta, el tenedor pincha y la cuchara recoge la sopa. Un plato es un recipiente llano donde se sirve la comida. Un plato también es una comida preparada: un plato de lentejas, un plato de arroz.
+# --- frutas y verduras
+La manzana, la pera, la naranja, el plátano, la fresa y la uva son frutas. La fruta madura es dulce y la fruta verde es ácida. Pelamos la naranja y exprimimos su zumo.
+El tomate, la lechuga, la zanahoria, la cebolla, el pimiento y la patata son verduras y hortalizas. Las verduras crecen en el huerto. El hortelano riega y recoge las verduras.
+El limón es ácido y amarillo. La sandía y el melón son frutas grandes del verano. Las uvas crecen en racimos en la viña y con ellas se hace el vino.
+Las naranjas crecen en el naranjo y las manzanas en el manzano. La fruta tiene piel, pulpa y semillas o hueso.
+# --- bebidas
+Bebemos agua cuando tenemos sed. El zumo se hace exprimiendo fruta. La leche viene de la vaca. El té y el café se toman calientes en una taza.
+El vino y la cerveza son bebidas con alcohol. La cerveza se sirve fría en una jarra o en una caña. Un refresco lleva burbujas y azúcar.
+Servimos la bebida de la botella o de la jarra al vaso. Brindamos chocando las copas. El camarero trae las bebidas en una bandeja.
+# --- el cuerpo
+El cuerpo tiene cabeza, tronco, brazos y piernas. En la cabeza están los ojos, la nariz, la boca y las orejas. Vemos con los ojos, oímos con los oídos y olemos con la nariz.
+La mano tiene cinco dedos y cada dedo tiene una uña. La muñeca une la mano con el brazo y el codo dobla el brazo. La rodilla dobla la pierna y el tobillo une la pierna con el pie.
+El corazón late y mueve la sangre por las venas. Los pulmones respiran el aire. El estómago digiere la comida. Los huesos sostienen el cuerpo y los músculos lo mueven.
+La boca tiene lengua, dientes y labios. Masticamos la comida con los dientes y las muelas. La piel cubre el cuerpo. El pelo crece en la cabeza.
+La planta del pie pisa el suelo. La palma de la mano se abre y se cierra. Nos duele la espalda si cargamos mucho peso.
+# --- médico y enfermedad
+Cuando estamos enfermos vamos al médico. El médico nos examina en la consulta y nos receta un medicamento. Compramos el medicamento en la farmacia con la receta del médico.
+La fiebre sube la temperatura del cuerpo y se mide con el termómetro. La tos y los mocos vienen con el resfriado y la gripe. El jarabe calma la tos.
+La enfermera pone la inyección y la vacuna. El hospital tiene camas, quirófanos y urgencias. El cirujano opera a los enfermos en el quirófano.
+Una herida sangra y se cura con una venda o una tirita. Si nos rompemos un hueso nos ponen una escayola. El dentista arregla los dientes y saca las muelas.
+El oculista mira la vista y receta gafas. Las gafas tienen cristales y patillas y ayudan a ver bien. Las pastillas se tragan con agua.
+# --- animales de casa
+El perro ladra, mueve la cola y pasea con su correa. Le damos pienso y agua en su cuenco. El perro guarda la casa y juega con la pelota.
+El gato maúlla, ronronea y araña el sofá con sus uñas. El gato duerme al sol y se lava con la lengua. Los gatitos nacen de la gata.
+El canario canta en su jaula. El pez nada en la pecera. El hámster corre en su rueda. El veterinario cura a las mascotas enfermas y les pone vacunas.
+Sacamos al perro a pasear por el parque por la mañana y por la tarde. Cepillamos el pelo del perro. Una mascota es un animal que vive en casa con la familia.
+# --- animales de granja y campo
+La vaca da leche y el toro tiene cuernos. La gallina pone huevos y el gallo canta al amanecer. La oveja da lana y el cordero es su cría.
+El cerdo vive en la pocilga y el caballo en la cuadra. El granjero ordeña las vacas y da de comer a los animales. El pastor cuida el rebaño de ovejas con su perro.
+El burro carga sacos y el caballo tira del carro. El jinete monta a caballo con la silla y las riendas. Los conejos viven en madrigueras y comen hierba y zanahorias.
+El pato nada en el estanque y la oca grazna. Las abejas hacen miel en la colmena y el apicultor la recoge. El gallinero guarda las gallinas por la noche.
+# --- animales salvajes
+El león ruge y caza en la sabana. El elefante tiene trompa y colmillos. La jirafa tiene el cuello muy largo. El mono trepa por los árboles y come plátanos.
+El lobo aúlla en el monte y caza en manada. El oso duerme en su cueva en invierno. El zorro es astuto y roba gallinas. El ciervo tiene cuernos y corre por el bosque.
+La serpiente se arrastra y algunas tienen veneno. El cocodrilo vive en el río. El águila vuela alto y caza con sus garras. El búho caza de noche.
+El zoo tiene jaulas y recintos con animales salvajes. El cuidador da de comer a los animales del zoo. Los animales salvajes viven libres en la selva, la sabana o el bosque.
+# --- pájaros, insectos y bichos
+Los pájaros tienen plumas, pico y alas, vuelan y hacen nidos en los árboles. La golondrina vuelve en primavera. El gorrión come migas de pan. La paloma vive en las plazas.
+La mosca zumba y molesta. El mosquito pica y chupa sangre. La hormiga lleva comida al hormiguero. La araña teje su tela para cazar insectos.
+La mariposa tiene alas de colores y vuela de flor en flor. La abeja pica con su aguijón. El grillo canta de noche. El caracol lleva su concha y sale cuando llueve.
+# --- el mar y los peces
+En el mar hay olas, peces y barcos. Los peces tienen escamas y aletas y respiran en el agua. El tiburón tiene dientes afilados. La ballena y el delfín viven en el mar.
+El pescador pesca con caña, anzuelo y red. El barco de pesca sale del puerto al amanecer. La sardina, el atún y la merluza son pescados que se comen.
+En la playa hay arena, conchas y sombrillas. Nos bañamos en el mar y tomamos el sol en la toalla. El socorrista vigila a los bañistas. Las gaviotas vuelan sobre el puerto.
+El marinero trabaja en el barco. El capitán manda en el barco. El barco tiene velas o motor, ancla y timón. El faro alumbra la costa de noche con su luz.
+El cabo es una cuerda del barco que amarra las velas. El marinero ata el cabo al muelle con un nudo. Un cabo también es una punta de tierra que entra en el mar.
+# --- el campo y el bosque
+En el bosque hay árboles, setas, musgo y animales. El leñador corta los árboles con el hacha y la sierra. De los árboles sale la madera y de la madera se hacen muebles.
+El pino tiene piñas y agujas y el roble da bellotas. Las hojas de los árboles caen en otoño. La raíz del árbol está bajo la tierra, el tronco sostiene las ramas y la copa del árbol da sombra.
+El agricultor ara la tierra con el tractor, siembra las semillas y recoge la cosecha. El trigo crece en el campo y con el trigo se hace la harina.
+El río nace en la montaña y lleva agua hasta el mar. El puente cruza el río. En la montaña hay nieve, rocas y senderos. Subimos al monte con botas y mochila.
+# --- jardín y plantas
+En el jardín plantamos flores, árboles y césped. Regamos las plantas con la regadera o la manguera. Las plantas necesitan agua, tierra y luz del sol para crecer.
+La rosa tiene espinas y pétalos. El jardinero poda los rosales y corta el césped. Las flores huelen bien y atraen a las abejas. Una maceta es un recipiente con tierra para una planta.
+La semilla germina y sale un brote. La planta echa hojas, flores y frutos. Las plantas son seres vivos que crecen en la tierra. Abonamos la tierra para que las plantas crezcan fuertes.
+# --- la fábrica y la industria
+En la fábrica trabajan los obreros con las máquinas. La fábrica produce coches, muebles o ropa. Una planta industrial es una fábrica grande con máquinas y obreros.
+La planta de montaje fabrica coches con piezas y robots. El obrero trabaja en la cadena de montaje. El ingeniero diseña las máquinas. La chimenea de la fábrica echa humo.
+El almacén guarda la mercancía en cajas y estanterías. El camión lleva la mercancía de la fábrica a las tiendas. El turno de la fábrica empieza con la sirena.
+# --- edificios y pisos
+Un edificio tiene pisos, escaleras, ascensor y portal. Vivimos en el tercer piso. La planta baja está a la altura de la calle y la planta de arriba es el ático.
+El ascensor sube a la segunda planta del edificio. El garaje está en el sótano. El portero cuida el portal. El tejado cubre el edificio y la fachada da a la calle.
+El albañil construye las paredes con ladrillos y cemento. El arquitecto dibuja los planos del edificio. La grúa sube los materiales en la obra. El piso es una vivienda dentro de un edificio.
+Alquilamos un piso con dos habitaciones, cocina y baño. Pagamos el alquiler al casero cada mes. La hipoteca se paga al banco durante muchos años.
+# --- el banco y el dinero
+El banco es un edificio con oficinas, ventanillas y cajeros. En el banco guardamos el dinero en una cuenta. El empleado del banco atiende en la ventanilla.
+Sacamos dinero del cajero con la tarjeta. Ingresamos el sueldo en la cuenta del banco. El banco presta dinero y cobra intereses. Pedimos un préstamo al banco para comprar un piso.
+Ahorramos dinero en la cuenta de ahorro. Las monedas y los billetes son dinero. Pagamos las facturas de la luz y del agua por el banco. El director del banco firma el préstamo.
+Una moneda es de metal y un billete es de papel. La hucha guarda las monedas. Contamos el dinero de la cartera. Debemos dinero cuando tenemos una deuda.
+# --- la ciudad y la calle
+En la ciudad hay calles, plazas, edificios, tiendas y coches. Cruzamos la calle por el paso de peatones cuando el semáforo está verde. Caminamos por la acera.
+En la plaza hay una fuente, bancos para sentarse y palomas. Los niños juegan en el parque con los columpios y el tobogán. Los abuelos se sientan en un banco del parque a la sombra.
+El autobús para en la parada. El metro va por debajo de la tierra. El taxi lleva a los pasajeros y el taxista cobra la carrera. El guardia dirige el tráfico.
+La farola alumbra la calle de noche. El barrendero barre la calle con su escoba. El cartero reparte las cartas por los buzones del barrio.
+# --- el coche y la carretera
+El coche tiene motor, volante, ruedas, frenos y maletero. El conductor conduce el coche por la carretera. Echamos gasolina en la gasolinera.
+Si pincha una rueda la cambiamos con el gato y la rueda de repuesto. El gato levanta el coche para cambiar la rueda. El mecánico arregla el motor en el taller.
+Aparcamos el coche en el garaje o en la calle. La autopista tiene varios carriles y peajes. El camión lleva carga y el camionero conduce muchas horas.
+La moto tiene dos ruedas y el motorista lleva casco. La bicicleta tiene pedales, cadena, sillín y manillar. El ciclista pedalea por el carril bici.
+El semáforo en rojo manda parar. La multa castiga al que corre demasiado. El cinturón de seguridad protege en un accidente. La grúa se lleva el coche averiado al taller.
+# --- viajar
+Para viajar hacemos la maleta con ropa y compramos el billete. El tren sale de la estación por las vías y el revisor pide los billetes. El avión despega del aeropuerto y aterriza en la pista.
+El piloto maneja el avión y la azafata atiende a los pasajeros. Enseñamos el pasaporte en la frontera. El hotel tiene habitaciones, recepción y desayuno.
+El turista visita monumentos y museos y hace fotos con la cámara. El guía explica la historia de la ciudad. Miramos el mapa para no perdernos. Mandamos una postal desde el viaje.
+En vacaciones vamos a la playa o a la montaña. Reservamos una habitación en el hotel. El barco cruza el mar y el pasajero viaja en el camarote.
+# --- la escuela
+En la escuela los niños aprenden a leer, a escribir y a contar. El maestro explica la lección en la pizarra con una tiza. Los alumnos se sientan en los pupitres del aula.
+Escribimos en el cuaderno con lápiz o bolígrafo y borramos con la goma. Llevamos los libros y el estuche en la mochila. Hacemos los deberes en casa por la tarde.
+El examen pone nota: aprobado o suspenso. En el recreo los niños juegan en el patio. La profesora de inglés enseña idiomas y la de matemáticas enseña números y problemas.
+La biblioteca presta libros. El estudiante estudia para el examen en la biblioteca. En la universidad se estudia una carrera. El curso empieza en septiembre y acaba en junio.
+# --- libros, leer y escribir
+Un libro tiene tapas, hojas y páginas. El escritor escribe novelas, cuentos y poemas. El lector lee el libro página a página. La librería vende libros y la biblioteca los presta.
+Las hojas del cuaderno son de papel. Escribimos una frase con palabras y las palabras con letras. Una letra es un signo del alfabeto: la a, la b, la c.
+La letra de una canción son las palabras que se cantan. El cantante canta la letra con la música. La letra de alguien es su manera de escribir a mano.
+El periódico trae noticias y el periodista las escribe. La revista tiene fotos y artículos. El cuento tiene un principio, un nudo y un final. El poema tiene versos y rima.
+La pluma del escritor escribe con tinta. Antes se escribía con una pluma de ave mojada en un tintero. La pluma de un pájaro es ligera y suave.
+# --- cartas, correo y mensajes
+Escribimos una carta en una hoja, la metemos en un sobre y le pegamos un sello. Echamos la carta al buzón y el cartero la reparte. Una carta es un papel escrito que se envía a alguien.
+El paquete llega por correo o lo trae el mensajero. Firmamos al recibir el paquete. La dirección dice la calle, el número y la ciudad.
+Mandamos un mensaje por el teléfono o un correo por el ordenador. Llamamos por teléfono y hablamos. El teléfono suena, vibra y tiene pantalla y batería.
+# --- el restaurante
+En el restaurante el camarero trae la carta con los platos y los precios. Pedimos de la carta un primer plato, un segundo y un postre. La carta del restaurante es la lista de platos.
+El cocinero cocina en la cocina del restaurante. El camarero sirve la comida, trae la cuenta y recibe la propina. Reservamos mesa para cenar.
+El menú del día es más barato. En el bar tomamos un café, una caña o una tapa en la barra. El camarero limpia la barra con un trapo.
+# --- juegos de mesa y naipes
+La baraja tiene cartas o naipes con oros, copas, espadas y bastos. Barajamos las cartas y repartimos a cada jugador. Jugamos una partida de cartas en la mesa después de comer.
+Gana la partida quien tiene la mejor carta o más puntos. El as es la carta más alta. En el ajedrez hay rey, reina, torres, alfiles, caballos y peones sobre un tablero.
+El dado tiene seis caras con puntos. Tiramos el dado y movemos la ficha por el tablero. El dominó se juega con fichas. El rompecabezas tiene muchas piezas que encajan.
+Los niños juegan al escondite, a la comba y a la pelota. Un juguete sirve para jugar: la muñeca, el coche de juguete, la peonza y la cometa.
+# --- deporte y competición
+El fútbol se juega con un balón entre dos equipos. El portero para el balón y el delantero marca goles. El árbitro pita las faltas con el silbato.
+El equipo que gana el torneo recibe una copa. El campeón levanta la copa y recibe una medalla de oro. La copa del torneo es un trofeo de metal.
+El tenis se juega con raqueta, pelota y red. El baloncesto se juega con canasta. El nadador nada en la piscina y el corredor corre en la pista.
+El entrenador entrena al equipo. Los aficionados animan en el estadio. El partido tiene dos partes y un descanso. Empatar es acabar con los mismos goles.
+El ciclista gana la etapa y el atleta bate el récord. En el gimnasio hacemos ejercicio con pesas. El deporte fortalece los músculos y el corazón.
+# --- música
+La guitarra tiene cuerdas y el piano tiene teclas. El músico toca un instrumento y el cantante canta canciones. La orquesta toca en el concierto y el director la dirige con la batuta.
+El tambor y la batería marcan el ritmo. La flauta y la trompeta se tocan soplando. El violín se toca con un arco. La banda toca en la fiesta del pueblo.
+Escuchamos música por la radio o con auriculares. Bailamos al ritmo de la música. Una canción tiene letra y melodía. El coro canta a varias voces.
+La batería de un grupo de música lleva tambores y platillos. El batería golpea los tambores con las baquetas.
+# --- electricidad y aparatos
+La batería del teléfono guarda electricidad y se carga con el cargador enchufado. La pila da energía a la linterna y al mando. El enchufe da corriente a los aparatos.
+La bombilla da luz cuando pasa la corriente. El interruptor enciende y apaga la luz. Un cable lleva la electricidad. Si salta el fusible se va la luz.
+La lavadora lava la ropa y la secadora la seca. El lavavajillas lava los platos. La aspiradora aspira el polvo. La plancha quita las arrugas de la ropa.
+Un aparato es una máquina que funciona con electricidad o con pilas: la radio, la televisión, la tostadora, el ordenador y el teléfono. Los aparatos se enchufan, se encienden y se apagan.
+# --- el ordenador
+El ordenador tiene pantalla, teclado y ratón. Movemos el ratón sobre la alfombrilla y hacemos clic con el botón. El cursor se mueve por la pantalla cuando movemos el ratón.
+Escribimos con el teclado pulsando las teclas. Guardamos los archivos en carpetas. La impresora imprime los documentos en papel. El programa se abre en una ventana de la pantalla.
+Navegamos por internet y buscamos páginas. La contraseña protege la cuenta. Descargamos un archivo y lo abrimos. El informático arregla los ordenadores y las redes.
+La memoria del ordenador guarda los datos. El portátil funciona con batería. La tableta y el móvil tienen pantalla táctil. El virus estropea el ordenador.
+La red une los ordenadores de la oficina. La red de pesca atrapa peces. La red de la portería para el balón.
+# --- trabajo y oficina
+En la oficina trabajamos con ordenadores, papeles y teléfonos. El jefe dirige la empresa y los empleados hacen su trabajo. La secretaria organiza la agenda y las reuniones.
+Cobramos el sueldo a final de mes. Firmamos un contrato al empezar un trabajo. El despido deja al trabajador sin empleo. Las vacaciones son días de descanso pagados.
+La empresa vende productos o servicios a sus clientes. El vendedor atiende a los clientes y el contable lleva las cuentas. El transportista reparte la mercancía con su camión.
+El abogado defiende a su cliente en el juicio y el juez dicta la sentencia. El policía detiene al ladrón. El bombero apaga el fuego con la manguera.
+# --- oficios de las manos
+El carpintero hace muebles de madera con sierra, martillo y clavos. El herrero trabaja el hierro en la fragua. El zapatero arregla los zapatos y el sastre cose los trajes.
+El peluquero corta el pelo con tijeras y lo peina con el secador. El barbero afeita la barba con la navaja. La modista cose vestidos con aguja, hilo y máquina de coser.
+El fontanero arregla tuberías y grifos. El electricista pone enchufes y cables. El pintor pinta paredes con rodillo y brocha. El cerrajero abre puertas y cambia cerraduras.
+El relojero arregla relojes. El joyero vende anillos, collares y pendientes de oro y plata. El panadero madruga para hornear el pan.
+# --- herramientas
+El martillo clava clavos y el destornillador aprieta tornillos. La sierra corta la madera. El taladro hace agujeros con la broca. Los alicates sujetan y cortan alambre.
+La llave inglesa aprieta tuercas. La llave de la puerta abre la cerradura. La pala cava la tierra y el rastrillo recoge las hojas. La escalera sirve para subir a lo alto.
+Guardamos las herramientas en la caja de herramientas. La cinta métrica mide y el nivel comprueba si algo está recto. La lima alisa el metal y la lija alisa la madera.
+Una lima es una herramienta de acero con dientes. La lima también es una fruta verde y ácida parecida al limón.
+# --- ropa y calzado
+Nos ponemos camisa, pantalón, falda o vestido. En invierno llevamos abrigo, bufanda, guantes y gorro. En verano llevamos camiseta, pantalón corto y sandalias.
+Los zapatos se atan con cordones. Las botas protegen de la lluvia. Los calcetines abrigan los pies. La chaqueta tiene botones, bolsillos y mangas.
+Lavamos la ropa sucia, la tendemos y la planchamos. Doblamos la ropa y la guardamos en el armario. La tela puede ser de lana, de algodón o de seda.
+La manga de la camisa cubre el brazo. El cuello de la camisa rodea el cuello. El cinturón sujeta el pantalón. El sastre toma medidas con la cinta.
+# --- el tiempo y el clima
+Cuando llueve abrimos el paraguas y nos ponemos el impermeable. Las nubes traen lluvia y la tormenta trae rayos y truenos. Después de la lluvia sale el arcoíris.
+En invierno hace frío, nieva y hiela. En verano hace calor y brilla el sol. En otoño caen las hojas y sopla el viento. En primavera salen las flores.
+La niebla no deja ver. El granizo son bolas de hielo. El termómetro marca la temperatura. El hombre del tiempo anuncia si lloverá mañana.
+# --- el calendario y el reloj
+El reloj marca las horas, los minutos y los segundos. El día tiene mañana, tarde y noche. La semana tiene siete días y el año tiene doce meses.
+El calendario marca los días y las fiestas. Apuntamos las citas en la agenda. El despertador suena a la hora. Llegamos tarde si perdemos el autobús.
+El cumpleaños se celebra una vez al año. Ayer ya pasó, hoy es ahora y mañana vendrá. El fin de semana descansamos el sábado y el domingo.
+# --- familia y casa
+La familia tiene padres, hijos, abuelos, tíos y primos. La madre y el padre cuidan de los hijos. Los abuelos cuentan cuentos a los nietos.
+El bebé llora, mama y duerme en la cuna. Cambiamos el pañal al bebé y lo paseamos en el carrito. El niño crece y aprende a andar y a hablar.
+Los novios se casan en la boda y son marido y mujer. Los hermanos comparten habitación y juguetes. Los vecinos viven en la casa de al lado.
+# --- fiestas y celebraciones
+En el cumpleaños soplamos las velas de la tarta y abrimos los regalos. Invitamos a los amigos a la fiesta. Hay globos, música y dulces.
+En Navidad ponemos el árbol con luces y bolas y cenamos en familia. En la boda los novios se dan los anillos y los invitados brindan con copas de cava.
+En la feria hay atracciones, casetas y algodón de azúcar. Los fuegos artificiales estallan en el cielo. En carnaval nos ponemos un disfraz y una máscara.
+# --- sentimientos
+Estamos contentos cuando algo sale bien y tristes cuando algo sale mal. Lloramos de pena y reímos de alegría. El miedo nos hace temblar y el enfado nos hace gritar.
+Echamos de menos a quien está lejos. Un abrazo consuela al que está triste. Nos aburrimos cuando no hay nada que hacer. Nos sorprende lo que no esperamos.
+Tener vergüenza es ponerse rojo. Estar nervioso es no poder estar quieto. Estar tranquilo es estar en calma. Querer a alguien es sentir cariño o amor.
+# --- conversar
+Saludamos con un hola y nos despedimos con un adiós. Preguntamos lo que no sabemos y respondemos lo que nos preguntan. Damos las gracias y pedimos perdón.
+Contamos lo que nos ha pasado y escuchamos lo que nos cuentan. Opinamos, dudamos y nos ponemos de acuerdo. Una broma hace reír y un secreto no se cuenta.
+Explicamos lo difícil con un ejemplo. Una palabra puede tener varios sentidos y el tema de la conversación dice cuál. Si no entendemos, preguntamos.
+# --- arte e imágenes
+El pintor pinta un cuadro con pinceles y pintura sobre un lienzo. El cuadro se cuelga en la pared con un marco. El museo guarda cuadros y estatuas.
+El escultor talla una estatua en piedra o en madera. El fotógrafo hace fotos con la cámara. Dibujamos con lápices de colores en una hoja de papel.
+En el cine vemos una película en la pantalla grande. El actor actúa en el teatro sobre el escenario. El público aplaude al final de la obra.
+Una imagen muestra formas y colores: el rojo, el azul, el verde y el amarillo. Un dibujo tiene líneas y una foto tiene luz y sombra.
+# --- formas, tamaños y materiales
+Un círculo es redondo y un cuadrado tiene cuatro lados iguales. Una caja es un cubo y una pelota es una esfera. Lo grande ocupa mucho y lo pequeño ocupa poco.
+La madera viene de los árboles, el vidrio es transparente y el hierro es duro y pesado. El plástico es ligero. El papel se rompe y la piedra no.
+El oro y la plata son metales que brillan. El cristal de la ventana se rompe con un golpe. La lana abriga y el algodón es suave. El cuero viene de la piel de los animales.
+# --- clases de cosas (para acompañar a los nombres de clase)
+Un mueble sirve para sentarse, dormir o guardar cosas: la silla, el sofá, el banco, la cama, el armario y la mesa son muebles.
+Un edificio tiene paredes, puertas y pisos: la casa, la escuela, el hospital, el banco, la iglesia y el hotel son edificios.
+Un animal nace, come, se mueve y respira: el perro, el gato, el ratón, el caballo y el pájaro son animales. Un ratón es un animal pequeño que roe queso y huye del gato.
+Un aparato se enchufa o lleva pilas: el ordenador, el teléfono, la radio y el ratón del ordenador son aparatos.
+Una herramienta sirve para trabajar con las manos: el martillo, la sierra, la lima, el gato del coche y la llave inglesa son herramientas.
+Un documento es un papel escrito: la carta, el contrato, la factura, el pasaporte y el recibo son documentos.
+Un recipiente guarda o contiene algo: el vaso, la copa, la taza, el plato, la botella, la olla y la caja son recipientes.
+Un trofeo se gana en una competición: la copa, la medalla y el premio son trofeos.
+Un alimento se come: el pan, la carne, el pescado, la fruta, el queso y la pasta son alimentos. La pasta se hierve y se come con salsa.
+Un vehículo lleva personas o carga: el coche, el autobús, el tren, el barco, la moto y el avión son vehículos.
+Un instrumento de música se toca: la guitarra, el piano, la flauta, el violín y la batería son instrumentos.
+Un oficio es un trabajo: el fontanero, el carpintero, el médico, el maestro, el panadero y el taxista tienen un oficio.
+Una prenda se viste: la camisa, el pantalón, el abrigo, la falda y el calcetín son prendas de ropa.
+Una fruta crece en un árbol o en una planta y se come: la manzana, la pera, la lima y el limón son frutas.
+Una planta es un ser vivo con raíz, tallo y hojas: el árbol, el rosal, la hierba y el trigo son plantas.
+Una fábrica es un edificio donde se fabrican cosas con máquinas: la planta industrial es una fábrica.
+Un juego tiene reglas y jugadores: las cartas, el ajedrez, el dominó y el escondite son juegos.
+Una cuerda ata y sujeta: el cabo, la soga y el cordón son cuerdas.

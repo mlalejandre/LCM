@@ -174,6 +174,12 @@ class Conversador(Nucleo):
             r = self._procesar_218(texto)
             if r_decl is not None and not (isinstance(r, dict) and r.get("estado") == "ok" and "no lo he entendido" not in sa((r.get("respuesta") or "").lower())):
                 r = r_decl                               # el núcleo no tenía nada que hacer con la frase: al menos queda aprendido el sinónimo
+        try:                                             # 2.30: lo que se oye o se lee (también un texto largo) enseña qué palabras van juntas
+            if texto and len(texto) < 8000 and not any(getattr(self, x, False) for x in ("_partiendo", "_componiendo", "_siguiendo", "_reform", "_tocando", "_sentando")):
+                from . import tema as _T
+                _T.aprende(self, texto)
+        except Exception:                                # noqa
+            pass
         try:                                             # 2.29: la caché corta de contexto (palabras y entidades de este turno)
             if texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform")) and len(texto) < 300:
                 from . import contexto as _X
@@ -181,13 +187,18 @@ class Conversador(Nucleo):
                 ents_ = [self.can(e_) for e_ in (self.menc[-3:] if getattr(self, "menc", None) else []) if isinstance(e_, str)]
                 if not getattr(self, "_tocando", False):
                     ents_ = [e_ for e_ in ents_ if self.E.get(e_, {}).get("t_menc229") != self.turno]
+                _X._NUC[0] = self
                 _A.apunta(self, texto)
                 for ops_ in (self.usuario.get("tocayos") or {}).values():   # los tocayos, por su papel («mi hermana», «el vecino»)
                     for o_ in ops_:
                         if re.search(r"\b(?:mi|el|la|al|del|tu)\s+" + re.escape(sa(o_["dice"].split(" ", 1)[1])) + r"\b", sa(texto.lower())):
                             ents_.append(o_["id"])
                 definicion = re.match(r"^(?:un|una|el|la)\s+\w+\s+(?:tambi[eé]n\s+)?es\s+(?:un|una)\s", texto.strip(), re.I)   # una definición no es «de lo que se habla»
-                _X.apunta(self, "" if definicion else texto, [e_ for e_ in ents_ if self._menc_ahora229(e_, texto)])
+                ded_ = getattr(self, "_ded231", None) or set()   # 2.31: los que eligió el modelo entre tocayos en este turno cuentan la mitad
+                self._ded231 = set()
+                _X.apunta(self, "" if definicion else texto, [e_ for e_ in ents_ if self._menc_ahora229(e_, texto) and e_ not in ded_])
+                if ded_:
+                    _X.apunta(self, "", [e_ for e_ in ents_ if e_ in ded_], deducida=True)
         except Exception:                                # noqa
             pass
         try:                                             # 2.27: lo que se deduce por el grafo de relaciones (y lo que el núcleo contestó peor)

@@ -194,7 +194,16 @@ def firmas(nuc, w):
         d = out.setdefault(ya or sa(a["et"]), [set(), False, 0.15])
         d[0] |= set(a["bolsa"])
         d[1] = d[1] or any(es_persona(s) for s in sentidos(a["et"]))
-    return [(et, b, per, pr) for et, (b, per, pr) in out.items()]
+    res = [(et, b, per, pr) for et, (b, per, pr) in out.items()]
+    if sum(1 for f in res if f[3] >= 0.15) >= 2 and not os.environ.get("LCM_SIN_CLASE"):
+        try:                                             # 2.31: con dos sentidos de la base o enseñados, uno que solo trae el léxico entra al reparto
+            from . import tema as T                      # únicamente si el texto leído lo respalda (la palabra va con el vocabulario de ese sentido).
+            def _resp(f):                                # «copa»–trofeo sí; «salmón»–río o «rosa»–ventana no: eran ruido
+                return any(T.tema(nuc, w0, x, True) >= 0.25 for x in ({f[0]} | f[1]) if " " not in x)
+            res = [f for f in res if f[3] >= 0.15 or _resp(f)]
+        except Exception:                                # noqa
+            pass
+    return res
 
 
 def _de_un_todo(w0, c):
@@ -226,6 +235,69 @@ def reparto(nuc, w, frase="", ctx=None):
             if (_de_un_todo(w0, c) - _VAGOS) & (b | {et}):
                 pt += 2.0 * p
         puntos.append(pt)
+    try:                                                 # 2.31: por la CLASE de cada sentido. Una palabra del contexto apoya un sentido si va con otros miembros de esa clase
+        from . import tema as T
+        if not os.environ.get("LCM_SIN_TEMA") and not os.environ.get("LCM_SIN_CLASE"):
+            for i_, (et, b, _, _) in enumerate(fs):
+                v = 0.0
+                for c, p in ctx.items():
+                    t = T.afin_clase(nuc, c, et, sin=(w0,))
+                    if t >= 0.2:
+                        v += p * t
+                puntos[i_] += 1.5 * v
+    except Exception:                                    # noqa
+        pass
+    try:                                                 # 2.30: por las COMPAÑÍAS de la palabra, agrupadas. El contexto elige un grupo y el grupo dice el sentido
+        from . import tema as T
+        if not os.environ.get("LCM_SIN_TEMA"):
+            gs = T.grupos(nuc, w0)
+            apr = {sa(a["et"]): set(a["bolsa"]) for a in (nuc.usuario.get("acepciones") or {}).get(w0, [])}
+            def _etiqueta(g):
+                sol = {et: len(g & b_) for et, b_ in apr.items() if g & b_}            # lo aprendido del usuario manda
+                if sol:
+                    return max(sol, key=sol.get)
+                en = [f[0] for f in fs if f[0] in g or (f[3] >= 0.15 and f[1] & g)]    # el nombre de un sentido está entre las compañías del grupo
+                if len(en) == 1:
+                    return en[0]
+                if en:
+                    return None
+                todo = [f[0] for f in fs if f[3] >= 0.15 and any((_de_un_todo(w0, n) - _VAGOS) & (f[1] | {f[0]}) for n in g)]
+                if len(todo) == 1:
+                    return todo[0]                                                     # la palabra es PARTE de algo del grupo, y eso es de esa clase (ratón: ordenador: aparato)
+                af = sorted(((sum(T.tema(nuc, n, f[0]) for n in g), f[0]) for f in fs if f[3] >= 0.15), reverse=True)
+                if af and af[0][0] >= 0.8 and (len(af) < 2 or af[0][0] >= 2.0 * af[1][0]):
+                    return af[0][1]                                                    # o el grupo entero va claramente con el nombre de un sentido
+                return None
+            ets = [_etiqueta(g) for g in gs]
+            if not os.environ.get("LCM_SIN_CLASE"):                                    # 2.31: a un grupo sin nombre se le pone el del sentido con cuya CLASE van sus palabras
+                for i_, g in enumerate(gs):                                            # («dinero, prestar, interés» van con oficinas y tiendas: es el edificio)
+                    if ets[i_]:
+                        continue
+                    af = sorted(((sum(T.afin_clase(nuc, n_, f[0], sin=(w0,)) for n_ in g), f[0]) for f in fs if f[3] >= 0.15), reverse=True)
+                    if af and af[0][0] >= 0.4 and (len(af) < 2 or af[0][0] >= 2.0 * af[1][0]):
+                        ets[i_] = af[0][1]
+            _et_de = {id(g): e for g, e in zip(gs, ets)}
+            por = {}                                                                   # votos del contexto, sumados por sentido («sin» = grupos sin sentido conocido)
+            for g in gs:
+                v = sum(p * (1.0 if c in g else max((t for t in (T.tema(nuc, c, n) for n in g) if t >= 0.2), default=0.0)) for c, p in ctx.items())
+                if v > 0:
+                    e_ = _et_de.get(id(g)) or "sin"
+                    d_ = por.setdefault(e_, [0.0, set()])
+                    d_[0] += v
+                    d_[1] |= g
+            if por:
+                orden_ = sorted(por.items(), key=lambda x: -x[1][0])
+                e_, (v_, g_) = orden_[0]
+                seg = orden_[1][1][0] if len(orden_) > 1 else 0.0
+                if v_ >= 0.8 and v_ >= 1.3 * seg:
+                    dest = next((i_ for i_, f in enumerate(fs) if f[0] == e_ or e_ in f[1]), None) if e_ != "sin" else None
+                    if dest is not None:
+                        puntos[dest] += 2.0 * v_
+                        nuc._grupo230 = (w0, None, g_)
+                    else:
+                        nuc._grupo230 = (w0, "sin", g_)                                 # hay un grupo claro pero no se sabe qué sentido es: habrá que preguntar
+    except Exception:                                    # noqa
+        pass
     ps = X.reparte(puntos, [f[3] for f in fs])
     return sorted(zip([f[0] for f in fs], ps, puntos), key=lambda x: -x[1])
 
@@ -266,7 +338,11 @@ def _aprende(nuc, w0, et, ctx):
     if a is None:
         a = {"et": et, "bolsa": [et]}
         A.append(a)
-    a["bolsa"] = sorted(set(a["bolsa"]) | {c for c, p in (ctx or {}).items() if p >= 0.4 and len(c) > 3})[:40]
+    extra = set()
+    g = getattr(nuc, "_grupo230", None)
+    if g and g[0] == w0:
+        extra = set(g[2])                                # y todo el grupo de compañías en el que caía la frase: se aprende el sentido entero, no una frase
+    a["bolsa"] = sorted(set(a["bolsa"]) | extra | {c for c, p in (ctx or {}).items() if p >= 0.4 and len(c) > 3})[:60]
 
 
 def _aclara(nuc, q, r_nucleo):
@@ -309,17 +385,28 @@ def _aclara(nuc, q, r_nucleo):
         return bool(f) and (z == et or zc == et or z in et.split() or z in f[1] or zc in f[1] or X.parecido(z, et) >= 0.6 or any(X.parecido(z, b) >= 0.75 for b in f[1]))
     e1, p1, pt1 = orden[0]
     defecto = next((f[0] for f in fl if f[3] >= 0.5), None)
-    if defecto and es(defecto) and not (p1 >= X.SEGURO and e1 != defecto and pt1 > 0):
-        if e1 == defecto and p1 >= X.SEGURO and pt1 > 0 and re.match(r"^No\b", (r_nucleo or {}).get("respuesta") or ""):
-            return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {e1}.")
+    # 2.31: lo que decide no es el sentido más probable, sino la SUMA de los sentidos en que la respuesta es «sí» frente a la de los que es «no».
+    # Así dos caras del mismo sentido («documento» y «medio de comunicación» para la carta del buzón) no se quitan votos entre sí.
+    si_ = [x for x in orden if es(x[0])]
+    no_ = [x for x in orden if not es(x[0])]
+    p_si, p_no = sum(x[1] for x in si_), sum(x[1] for x in no_)
+    if os.environ.get("LCM_SIN_CLASE"):                  # como en la 2.30: solo cuenta el primero
+        p_si, p_no = (p1, 0.0) if es(e1) else (0.0, p1)
+        si_, no_ = ([orden[0]] if es(e1) else []), ([] if es(e1) else [orden[0]])
+    pista_si = bool(si_) and (max(x[2] for x in si_) > 0 or bool(d.get("fijo")))
+    pista_no = bool(no_) and (max(x[2] for x in no_) > 0 or bool(d.get("fijo")))
+    r0 = (r_nucleo or {}).get("respuesta") or ""
+    if defecto and es(defecto) and not (p_no >= X.SEGURO and pista_no):
+        if p_si >= X.SEGURO and pista_si and re.match(r"^No\b", r0):
+            return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {si_[0][0]}.")
         return None                                      # lo que se pregunta encaja con el sentido de siempre y nada dice otra cosa: ni se duda ni se pregunta
     nuc._ult_prob229 = (w0, [(e, round(p, 2)) for e, p, _ in orden[:3]])
     otros = [e for e, _, _ in orden[1:] if es(e)]
-    if p1 >= X.SEGURO and (pt1 > 0 or d.get("fijo")):
-        if es(e1):
-            return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {e1}.")
-        if otros or re.match(r"^S[ií]\b", (r_nucleo or {}).get("respuesta") or ""):
-            return _ok(f"No: por lo que me has contado, hablamos de «{w0}» en el sentido de {e1}, no de {_un(m.group(2).lower().strip())}.")
+    if p_si >= X.SEGURO and pista_si:
+        return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {si_[0][0]}.")
+    if p_no >= X.SEGURO and pista_no:
+        if si_ or re.match(r"^S[ií]\b", r0):
+            return _ok(f"No: por lo que me has contado, hablamos de «{w0}» en el sentido de {no_[0][0]}, no de {_un(m.group(2).lower().strip())}.")
         return None
     if not defecto and pt1 <= 0 and not (nuc.usuario.get("acepciones") or {}).get(w0):
         return None                                      # ni sentido de fábrica, ni enseñado, ni pista: no hay base para dudar

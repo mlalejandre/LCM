@@ -28,36 +28,29 @@ def _cache(nuc):
 
 
 def lemas(texto):
-    """Las palabras de contenido de una frase, en su forma de diccionario."""
-    from . import lectura as L
-    out = []
-    for w in re.findall(r"[a-záéíóúñü]+", (texto or "").lower()):
-        if sa(w) in L._VACIAS or len(w) < 3:
-            continue
-        try:
-            an = M.analizar(w) or []
-        except Exception:                                # noqa
-            an = []
-        l = next((a[0] for a in an if len(a) > 2 and a[1] in ("pres", "pret", "imp", "fut", "inf", "part", "ger")), None)
-        out.append(sa(l) if l else sa(M.singular(w)))
-    return out
+    """Las palabras de contenido de una frase, en su forma de diccionario (las mismas que usan los vectores de tema)."""
+    from . import tema as T
+    return T.lemas(texto)
 
 
-def apunta(nuc, texto, entidades=()):
-    """Guarda lo que se acaba de decir. La caché es corta a propósito."""
+def apunta(nuc, texto, entidades=(), deducida=False):
+    """Guarda lo que se acaba de decir. La caché es corta a propósito.
+    2.31: con deducida=True la persona no la nombró el usuario: la eligió el modelo entre tocayos. Cuenta la mitad, para que una elección
+    suya no pese lo mismo que lo que el usuario dice después con todas las letras."""
     c = _cache(nuc)
     t = nuc.turno
+    _NUC[0] = nuc
     for l in dict.fromkeys(lemas(texto)):
         c.append((t, "w", l))
     for e in dict.fromkeys(entidades):
         if e and e not in ("U", "L"):
-            c.append((t, "e", e))
+            c.append((t, "e", e, 0.5) if deducida and not os.environ.get("LCM_SIN_CLASE") else (t, "e", e))
     c[:] = [x for x in c if t - x[0] <= VENTANA][-MAXIMO:]
 
 
 def peso_entidad(nuc, e):
     t = nuc.turno
-    return max((OLVIDO ** max(0, t - x[0]) for x in _cache(nuc) if x[1] == "e" and x[2] == e and t - x[0] <= VENTANA), default=0.0)   # cuenta la última vez que se habló de él
+    return max(((x[3] if len(x) > 3 else 1.0) * OLVIDO ** max(0, t - x[0]) for x in _cache(nuc) if x[1] == "e" and x[2] == e and t - x[0] <= VENTANA), default=0.0)   # cuenta la última vez que se habló de él
 
 
 def palabras(nuc, frase=""):
@@ -72,16 +65,32 @@ def palabras(nuc, frase=""):
     return out
 
 
+_NUC = [None]                                           # el conversador de ahora, para la capa de tema del usuario
+
+
 def parecido(a, b):
-    """Cuánto se parecen dos palabras: 1 si son la misma, y si no lo que digan los vectores del léxico (0 si poco)."""
+    """Cuánto tienen que ver dos palabras: 1 si son la misma; si no, lo que digan los vectores de sinonimia (léxico) o los de TEMA
+    (aprendidos leyendo y conversando, 2.30): «tubería» y «fontanero» no significan lo mismo, pero van juntas."""
     if a == b or (len(a) > 4 and len(b) > 4 and a[:5] == b[:5]):
         return 1.0
+    s = 0.0
     try:
         from . import vectores as V
         s = V.sim(a, b)
-        return s if s >= 0.45 else 0.0
+        s = s if s >= 0.45 else 0.0
     except Exception:                                    # noqa
-        return 0.0
+        s = 0.0
+    try:
+        from . import tema as T
+        t = T.tema(_NUC[0], a, b)
+        for a2, b2 in ((a, b[:-1] + "o"), (a[:-1] + "o", b)):   # «veterinaria» va con lo que va «veterinario»
+            if (b2 != b and len(b) > 5 and b.endswith("a")) or (a2 != a and len(a) > 5 and a.endswith("a")):
+                t = max(t, T.tema(_NUC[0], a2, b2))
+        if t >= 0.25:
+            s = max(s, 0.9 * t)
+    except Exception:                                    # noqa
+        pass
+    return s
 
 
 def casa(ctx, bolsa):

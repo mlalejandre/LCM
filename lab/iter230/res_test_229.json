@@ -1,0 +1,310 @@
+[
+ {
+  "id": "banco_dinero",
+  "q": "He ido al banco a sacar dinero de mi cuenta.",
+  "crit": "",
+  "r": "Entendido: fuiste al banco y sacar dinero de tu cuenta.",
+  "v": null
+ },
+ {
+  "id": "banco_dinero",
+  "q": "¿el banco es un mueble?",
+  "crit": "^no",
+  "r": "Sí, un banco es un mueble.",
+  "v": "MAL"
+ },
+ {
+  "id": "banco_dinero",
+  "q": "¿el banco es un edificio?",
+  "crit": "^si",
+  "r": "«banco» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mueble o edificio?",
+  "v": "MAL"
+ },
+ {
+  "id": "banco_parque",
+  "q": "Me he sentado a descansar en un banco de madera del parque.",
+  "crit": "",
+  "r": "Entendido: te sentaste a descansar en un banco de madera del parque.",
+  "v": null
+ },
+ {
+  "id": "banco_parque",
+  "q": "¿el banco es un mueble?",
+  "crit": "^si",
+  "r": "Sí, un banco es un mueble.",
+  "v": "OK"
+ },
+ {
+  "id": "banco_parque",
+  "q": "¿el banco es un edificio?",
+  "crit": "^no",
+  "r": "«banco» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mueble o edificio?",
+  "v": "MAL"
+ },
+ {
+  "id": "raton_queso",
+  "q": "Hay un ratón en la cocina y se ha comido el queso.",
+  "crit": "",
+  "r": "Entendido: en la cocina hay un ratón; No tengo claro de quién hablas. ¿A quién te refieres?.",
+  "v": null
+ },
+ {
+  "id": "raton_queso",
+  "q": "¿el ratón es un animal?",
+  "crit": "^si",
+  "r": "Sí, un ratón es un animal. Lo deduzco porque un ratón es un mamífero y un mamífero es un animal.",
+  "v": "OK"
+ },
+ {
+  "id": "raton_queso",
+  "q": "¿el ratón es un aparato?",
+  "crit": "^no",
+  "r": "«raton» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mamifero o aparato?",
+  "v": "MAL"
+ },
+ {
+  "id": "raton_pantalla",
+  "q": "Muevo el ratón y hago clic en la pantalla.",
+  "crit": "",
+  "r": "Entendido: mueves el ratón; haces clic en la pantalla.",
+  "v": null
+ },
+ {
+  "id": "raton_pantalla",
+  "q": "¿el ratón es un aparato?",
+  "crit": "^si",
+  "r": "«raton» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mamifero o aparato?",
+  "v": "MAL"
+ },
+ {
+  "id": "raton_pantalla",
+  "q": "¿el ratón es un animal?",
+  "crit": "^no",
+  "r": "Sí, un ratón es un animal. Lo deduzco porque un ratón es un mamífero y un mamífero es un animal.",
+  "v": "MAL"
+ },
+ {
+  "id": "carta_baraja",
+  "q": "Hemos jugado una partida y me ha tocado una carta muy mala de la baraja.",
+  "crit": "",
+  "r": "Entendido: jugaste una partida. No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "carta_baraja",
+  "q": "¿la carta es un juego?",
+  "crit": "^si",
+  "r": "«carta» tiene varios sentidos y no tengo claro de cuál hablamos: ¿documento o juego?",
+  "v": "MAL"
+ },
+ {
+  "id": "carta_baraja",
+  "q": "¿la carta es un documento?",
+  "crit": "^no",
+  "r": "Sí, una carta es un documento.",
+  "v": "MAL"
+ },
+ {
+  "id": "carta_correo",
+  "q": "He escrito una carta a mi abuela y la he enviado por correo.",
+  "crit": "",
+  "r": "Entendido: escribiste una carta a tu abuela; enviaste a tu abuela por correo.",
+  "v": null
+ },
+ {
+  "id": "carta_correo",
+  "q": "¿la carta es un documento?",
+  "crit": "^si",
+  "r": "Sí, una carta es un documento.",
+  "v": "OK"
+ },
+ {
+  "id": "carta_correo",
+  "q": "¿la carta es un juego?",
+  "crit": "^no",
+  "r": "«carta» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mapa o juego?",
+  "v": "MAL"
+ },
+ {
+  "id": "fontanero",
+  "q": "Mi cuñado se llama Andrés y es fontanero.",
+  "crit": "",
+  "r": "Entendido: tu cuñado se llama Andrés; Andrés es fontanero.",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "Mi profesor también se llama Andrés.",
+  "crit": "",
+  "r": "Entendido: tu profesor también se llama Andrés. Es otra persona, no tu cuñado.",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "Mi profesor da clases de inglés.",
+  "crit": "",
+  "r": "Entendido: tu profesor Andrés da clases de inglés.",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "Hace días que no hablamos de ninguno de los dos.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Hace días que no hablamos de ninguno de los dos».",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "Me he apuntado a un curso de idiomas.",
+  "crit": "",
+  "r": "Entendido: te apuntaste a un curso de idiomas.",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "Se ha roto una tubería del baño.",
+  "crit": "",
+  "r": "Vaya, lo siento. Entendido: la tubería del baño se rompió.",
+  "v": null
+ },
+ {
+  "id": "fontanero",
+  "q": "¿a qué se dedica Andrés?",
+  "crit": "fontanero",
+  "r": "No lo sé: no me has dicho a qué se dedica tu profesor Andrés. De tu profesor Andrés sé que profesor Andrés es tu profesor y da clases de inglés.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "profesor",
+  "q": "Mi tía se llama Marta y es veterinaria.",
+  "crit": "",
+  "r": "Entendido: tu tía se llama Marta; Marta es veterinaria.",
+  "v": null
+ },
+ {
+  "id": "profesor",
+  "q": "Mi jefa también se llama Marta.",
+  "crit": "",
+  "r": "Entendido: tu jefa también se llama Marta. Es otra persona, no tu tía.",
+  "v": null
+ },
+ {
+  "id": "profesor",
+  "q": "Mi jefa dirige una empresa de transportes.",
+  "crit": "",
+  "r": "Entendido: tu jefa Marta dirige una empresa de transportes.",
+  "v": null
+ },
+ {
+  "id": "profesor",
+  "q": "Ayer no pasó nada especial.",
+  "crit": "",
+  "r": "Entendido: tu jefa Marta no pasó nada especial ayer.",
+  "v": null
+ },
+ {
+  "id": "profesor",
+  "q": "Mi perro está enfermo y no quiere comer.",
+  "crit": "",
+  "r": "Entendido: tu perro está enfermo; tu jefa Marta no quiere comer.",
+  "v": null
+ },
+ {
+  "id": "profesor",
+  "q": "¿a qué se dedica Marta?",
+  "crit": "veterinaria",
+  "r": "No lo sé: no me has dicho a qué se dedica tu jefa Marta. De tu jefa Marta sé que jefa Marta es tu jefa y dirige una empresa de transportes.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "Tengo un gato muy tranquilo.",
+  "crit": "",
+  "r": "Entendido: tienes un gato muy tranquilo. ¿Cómo se llama?",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿mi gato es un animal?",
+  "crit": "^si",
+  "r": "Sí, tu gato es un animal. Lo deduzco porque tu gato es un gato, un gato es un mamífero y un mamífero es un animal.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "He comprado una copa de cristal.",
+  "crit": "",
+  "r": "Entendido: compraste una copa de cristal.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿la copa es un recipiente?",
+  "crit": "^si",
+  "r": "Sí, una copa es un recipiente.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "He plantado una planta en el jardín.",
+  "crit": "",
+  "r": "Entendido: plantaste una planta en el jardín.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿la planta es un ser vivo?",
+  "crit": "^si",
+  "r": "Sí, una planta es un ser vivo.",
+  "v": "OK"
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Te voy a leer un texto sobre los zurbos.\nLos zurbos son unos pasteles de almendra.\nLos zurbos se hornean en bandejas.\nEn la pastelería venden zurbos recién hechos.\nLos zurbos se comen de postre con el café.",
+  "crit": "",
+  "r": "He leído el texto (4 frases). He entendido bien 3; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Mi amigo se llama Nico y es pastelero.",
+  "crit": "",
+  "r": "Entendido: tu amigo se llama Nico; Nico es pastelero.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Mi vecino también se llama Nico.",
+  "crit": "",
+  "r": "Entendido: tu vecino también se llama Nico. Es otra persona, no tu amigo.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Mi vecino es taxista.",
+  "crit": "",
+  "r": "Entendido: tu vecino Nico es taxista.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Hoy no he visto a nadie.",
+  "crit": "",
+  "r": "Entendido: no viste a nadie hoy.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "Quiero encargar unos zurbos para el domingo.",
+  "crit": "",
+  "r": "Entendido: quieres encargar unos zurbos paral domingo.",
+  "v": null
+ },
+ {
+  "id": "aprende_texto",
+  "q": "¿a qué se dedica Nico?",
+  "crit": "pastelero",
+  "r": "Tu vecino Nico es taxista.",
+  "v": "MAL"
+ }
+]

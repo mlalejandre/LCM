@@ -28,8 +28,8 @@ C = [
  ]},
  {"id": "copa", "ctx": "preguntar, aprender y no volver a preguntar", "turnos": [
   ("He ganado una copa en el torneo de tenis.", ""),
-  ("¿mi copa es un premio?", "varios sentidos|cual"),
-  ("premio", "^si"),
+  ("¿mi copa es un premio?", "^si|varios sentidos|cual"),   # 2.30: con los vectores de tema ya no hace falta preguntar («torneo» va con «premio»)
+  ("premio", ""),
   ("¿mi copa es un recipiente?", "^no"),
   ("Mi hermano ha ganado otra copa en el torneo.", ""),
   ("¿la copa es un premio?", "^si"),

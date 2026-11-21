@@ -1,0 +1,84 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.30 · vectores de tema entrenados con texto inyectado y con la conversación",
+ "medida_limpia_18": {
+  "2.29": {
+   "acierto": 33.3,
+   "falsas": 10,
+   "bien": 6,
+   "pregunta": 6,
+   "mal_o_calla": 6
+  },
+  "2.30_medida_unica": {
+   "acierto": 61.1,
+   "falsas": 7,
+   "bien": 11,
+   "pregunta": 4,
+   "mal_o_calla": 3
+  },
+  "2.30_final_no_ciego": {
+   "acierto": 66.7,
+   "falsas": 5,
+   "bien": 12,
+   "pregunta": 3,
+   "mal_o_calla": 3
+  }
+ },
+ "desarrollo_18": {
+  "2.29": {
+   "acierto": 27.8,
+   "falsas": 13
+  },
+  "2.30": {
+   "acierto": 66.7,
+   "falsas": 6
+  }
+ },
+ "ablacion_limpia": {
+  "todo": 66.7,
+  "sin_tema": 33.3
+ },
+ "nota_falsas": "el arnés cuenta como 'falsa' también la pregunta aclaratoria; el desglose bien/pregunta/mal está hecho a mano sobre las respuestas",
+ "entrenamiento": {
+  "frases_inyectadas": 270,
+  "frases_total_con_base": 1632,
+  "palabras": 1212,
+  "parejas": 3065,
+  "tope_usuario": 6000,
+  "peso_usuario": 3
+ },
+ "sin_regresion": {
+  "regresiones": "solo los 4 fallos conocidos",
+  "controles": "idénticos a 2.29 (autor 90.18)",
+  "ddev": 89.0,
+  "dtest": 82.2,
+  "ltest": 91.4,
+  "grande1b_texto": 88.4,
+  "charla225_test": 91.5,
+  "charla226_test2": 92.9,
+  "charla227": [
+   100,
+   100
+  ],
+  "charla228": [
+   100,
+   92.6
+  ],
+  "charla229": [
+   100,
+   100
+  ],
+  "pytest": "1029 pasan, 3 fallos de entorno"
+ },
+ "expectativas_actualizadas": [
+  "iter228 dev: «¿dónde vive Pedro?» tras hablar de mi hermano",
+  "iter229 dev: la copa del torneo ya no pregunta"
+ ],
+ "limites": [
+  "corpus pequeño",
+  "enlace grupo-sentido débil",
+  "umbrales ajustados con desarrollo",
+  "examen de 18 turnos",
+  "aprender de texto del usuario (zurbos) no decide"
+ ]
+}

@@ -1,0 +1,982 @@
+[
+ {
+  "id": "alianza_1",
+  "q": "En la boda mi marido me puso la alianza de oro en el dedo.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "alianza_1",
+  "q": "¿la alianza es una joya?",
+  "crit": "^si",
+  "r": "Sí, una alianza es una joya.",
+  "v": "OK"
+ },
+ {
+  "id": "alianza_1",
+  "q": "¿la alianza es un acuerdo?",
+  "crit": "^no",
+  "r": "«alianza» tiene varios sentidos y no tengo claro de cuál hablamos: ¿anillo o acuerdo?",
+  "v": "MAL"
+ },
+ {
+  "id": "alianza_2",
+  "q": "Los dos países han firmado una alianza para ayudarse y no pelear.",
+  "crit": "",
+  "r": "Entendido: los dos país firmaron una alianza para ayudarse y no pelear.",
+  "v": null
+ },
+ {
+  "id": "alianza_2",
+  "q": "¿la alianza es un acuerdo?",
+  "crit": "^si",
+  "r": "«alianza» tiene varios sentidos y no tengo claro de cuál hablamos: ¿Joya o acuerdo?",
+  "v": "MAL"
+ },
+ {
+  "id": "alianza_2",
+  "q": "¿la alianza es una joya?",
+  "crit": "^no",
+  "r": "Sí, una alianza es una joya.",
+  "v": "MAL"
+ },
+ {
+  "id": "bote_1",
+  "q": "Hemos salido a remar por el lago en un bote pequeño.",
+  "crit": "",
+  "r": "Entendido: saliste a remar por el lago en un bote pequeño.",
+  "v": null
+ },
+ {
+  "id": "bote_1",
+  "q": "¿el bote es un barco?",
+  "crit": "^si",
+  "r": "Sí, un bote es un barco.",
+  "v": "OK"
+ },
+ {
+  "id": "bote_1",
+  "q": "¿el bote es un recipiente?",
+  "crit": "^no",
+  "r": "«bote» tiene varios sentidos y no tengo claro de cuál hablamos: ¿barco o recipiente?",
+  "v": "MAL"
+ },
+ {
+  "id": "bote_2",
+  "q": "He guardado las galletas en un bote de cristal con tapa.",
+  "crit": "",
+  "r": "Entendido: guardaste las galletas en un bote de cristal con tapa.",
+  "v": null
+ },
+ {
+  "id": "bote_2",
+  "q": "¿el bote es un recipiente?",
+  "crit": "^si",
+  "r": "Sí, un bote es un recipiente.",
+  "v": "OK"
+ },
+ {
+  "id": "bote_2",
+  "q": "¿el bote es un barco?",
+  "crit": "^no",
+  "r": "Sí, un bote es un barco.",
+  "v": "MAL"
+ },
+ {
+  "id": "caqui_1",
+  "q": "De postre me he comido un caqui maduro y muy dulce.",
+  "crit": "",
+  "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+  "v": null
+ },
+ {
+  "id": "caqui_1",
+  "q": "¿el caqui es una fruta?",
+  "crit": "^si",
+  "r": "Sí, un caqui es una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "caqui_1",
+  "q": "¿el caqui es un color?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «caqui» en el sentido de fruta, no de un color.",
+  "v": "OK"
+ },
+ {
+  "id": "caqui_2",
+  "q": "He pintado la pared de caqui y combina bien con el verde.",
+  "crit": "",
+  "r": "Entendido: pintaste la pared de caqui. No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "caqui_2",
+  "q": "¿el caqui es un color?",
+  "crit": "^si",
+  "r": "Sí, un caqui es un color.",
+  "v": "OK"
+ },
+ {
+  "id": "caqui_2",
+  "q": "¿el caqui es una fruta?",
+  "crit": "^no",
+  "r": "Sí, un caqui es una fruta.",
+  "v": "MAL"
+ },
+ {
+  "id": "cometa_1",
+  "q": "Los niños vuelan una cometa de papel en la playa con el viento.",
+  "crit": "",
+  "r": "Entendido: los niños vuelan una cometa de papel en la playa con el viento.",
+  "v": null
+ },
+ {
+  "id": "cometa_1",
+  "q": "¿la cometa es un juguete?",
+  "crit": "^si",
+  "r": "Sí, un cometa es un juguete.",
+  "v": "OK"
+ },
+ {
+  "id": "cometa_1",
+  "q": "¿la cometa es un astro?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «cometa» en el sentido de juguete, no de un astro.",
+  "v": "OK"
+ },
+ {
+  "id": "cometa_2",
+  "q": "Anoche con el telescopio vimos un cometa cruzando el cielo entre las estrellas.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Anoche con el telescopio vimos un cometa cruzando el cielo entre las estrellas».",
+  "v": null
+ },
+ {
+  "id": "cometa_2",
+  "q": "¿la cometa es un astro?",
+  "crit": "^si",
+  "r": "No: por lo que me has contado, hablamos de «cometa» en el sentido de juguete, no de un astro.",
+  "v": "MAL"
+ },
+ {
+  "id": "cometa_2",
+  "q": "¿la cometa es un juguete?",
+  "crit": "^no",
+  "r": "Sí, un cometa es un juguete.",
+  "v": "MAL"
+ },
+ {
+  "id": "cubo_1",
+  "q": "He llenado el cubo de agua para fregar el suelo.",
+  "crit": "",
+  "r": "Entendido: llenaste el cubo de agua para fregar el suelo.",
+  "v": null
+ },
+ {
+  "id": "cubo_1",
+  "q": "¿el cubo es un recipiente?",
+  "crit": "^si",
+  "r": "Sí, un cubo es un recipiente.",
+  "v": "OK"
+ },
+ {
+  "id": "cubo_1",
+  "q": "¿el cubo es una forma?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «cubo» en el sentido de recipiente, no de una forma.",
+  "v": "OK"
+ },
+ {
+  "id": "cubo_2",
+  "q": "En clase de geometría hemos dibujado un cubo con sus seis caras cuadradas.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "cubo_2",
+  "q": "¿el cubo es una forma?",
+  "crit": "^si",
+  "r": "«cubo» tiene varios sentidos y no tengo claro de cuál hablamos: ¿recipiente o forma?",
+  "v": "MAL"
+ },
+ {
+  "id": "cubo_2",
+  "q": "¿el cubo es un recipiente?",
+  "crit": "^no",
+  "r": "Sí, un cubo es un recipiente.",
+  "v": "MAL"
+ },
+ {
+  "id": "estrella_1",
+  "q": "De noche miramos una estrella que brillaba mucho en el cielo junto a la luna.",
+  "crit": "",
+  "r": "Entendido: De noche miramos una estrella que brillaba mucho en el cielo junto a la luna.",
+  "v": null
+ },
+ {
+  "id": "estrella_1",
+  "q": "¿la estrella es un astro?",
+  "crit": "^si",
+  "r": "«estrella» tiene varios sentidos y no tengo claro de cuál hablamos: ¿forma o astro?",
+  "v": "MAL"
+ },
+ {
+  "id": "estrella_1",
+  "q": "¿la estrella es una forma?",
+  "crit": "^no",
+  "r": "Sí, una estrella es una forma.",
+  "v": "MAL"
+ },
+ {
+  "id": "estrella_2",
+  "q": "He recortado una estrella de cinco puntas en cartulina, y también un círculo y un cuadrado.",
+  "crit": "",
+  "r": "Entendido: recortaste una estrella de cinco puntas en cartulina, y también un círculo y un cuadrado.",
+  "v": null
+ },
+ {
+  "id": "estrella_2",
+  "q": "¿la estrella es una forma?",
+  "crit": "^si",
+  "r": "Sí, una estrella es una forma.",
+  "v": "OK"
+ },
+ {
+  "id": "estrella_2",
+  "q": "¿la estrella es un astro?",
+  "crit": "^no",
+  "r": "«estrella» tiene varios sentidos y no tengo claro de cuál hablamos: ¿forma o astro?",
+  "v": "MAL"
+ },
+ {
+  "id": "flamenco_1",
+  "q": "En el lago vimos un flamenco rosa de patas largas metiendo el pico en el agua.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Vimos un flamenco rosa de patas largas metiendo el pico en el agua en el lago».",
+  "v": null
+ },
+ {
+  "id": "flamenco_1",
+  "q": "¿el flamenco es un ave?",
+  "crit": "^si",
+  "r": "Sí, un flamenco es un ave.",
+  "v": "OK"
+ },
+ {
+  "id": "flamenco_1",
+  "q": "¿el flamenco es un baile?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «flamenco» en el sentido de ave, no de un baile.",
+  "v": "OK"
+ },
+ {
+  "id": "flamenco_2",
+  "q": "Mi prima baila flamenco con la guitarra y las palmas en la fiesta.",
+  "crit": "",
+  "r": "Entendido: tu prima baila flamenco con la guitarra y las palmas en la fiesta.",
+  "v": null
+ },
+ {
+  "id": "flamenco_2",
+  "q": "¿el flamenco es un baile?",
+  "crit": "^si",
+  "r": "«flamenco» tiene varios sentidos y no tengo claro de cuál hablamos: ¿ave o baile?",
+  "v": "MAL"
+ },
+ {
+  "id": "flamenco_2",
+  "q": "¿el flamenco es un ave?",
+  "crit": "^no",
+  "r": "Sí, un flamenco es un ave.",
+  "v": "MAL"
+ },
+ {
+  "id": "granada_1",
+  "q": "He pelado una granada y me he comido sus granos rojos de postre.",
+  "crit": "",
+  "r": "Entendido: pelaste una granada. No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "granada_1",
+  "q": "¿la granada es una fruta?",
+  "crit": "^si",
+  "r": "Sí, una granada es una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "granada_1",
+  "q": "¿la granada es un arma?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «granada» en el sentido de fruta, no de una arma.",
+  "v": "OK"
+ },
+ {
+  "id": "granada_2",
+  "q": "El soldado lanzó una granada y explotó en la guerra.",
+  "crit": "",
+  "r": "Entendido: el soldado lanzó una granada; el soldado explotó en la guerra.",
+  "v": null
+ },
+ {
+  "id": "granada_2",
+  "q": "¿la granada es un arma?",
+  "crit": "^si",
+  "r": "Sí, una granada es un arma.",
+  "v": "OK"
+ },
+ {
+  "id": "granada_2",
+  "q": "¿la granada es una fruta?",
+  "crit": "^no",
+  "r": "Sí, una granada es una fruta.",
+  "v": "MAL"
+ },
+ {
+  "id": "lima_1",
+  "q": "El carpintero alisa el borde del metal con una lima de acero.",
+  "crit": "",
+  "r": "Entendido: el carpintero alisa el borde del metal con una lima de acero.",
+  "v": null
+ },
+ {
+  "id": "lima_1",
+  "q": "¿la lima es una herramienta?",
+  "crit": "^si",
+  "r": "Sí, una lima es una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "lima_1",
+  "q": "¿la lima es una fruta?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «lima» en el sentido de herramienta, no de una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "lima_2",
+  "q": "He exprimido una lima verde para echar su zumo ácido en la bebida.",
+  "crit": "",
+  "r": "Lo siento. Entendido: exprimiste una lima verde para echar su zumo ácido en la bebida.",
+  "v": null
+ },
+ {
+  "id": "lima_2",
+  "q": "¿la lima es una fruta?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «lima» en el sentido de fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "lima_2",
+  "q": "¿la lima es una herramienta?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «lima» en el sentido de fruta, no de una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "naranja_1",
+  "q": "He pelado una naranja y he exprimido su zumo para desayunar.",
+  "crit": "",
+  "r": "Entendido: pelaste una naranja. No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "naranja_1",
+  "q": "¿la naranja es una fruta?",
+  "crit": "^si",
+  "r": "Sí, una naranja es una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "naranja_1",
+  "q": "¿la naranja es un color?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «naranja» en el sentido de fruta, no de un color.",
+  "v": "OK"
+ },
+ {
+  "id": "naranja_2",
+  "q": "He pintado la puerta de naranja, entre el rojo y el amarillo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He pintado la puerta de naranja, entre el rojo y el amarillo».",
+  "v": null
+ },
+ {
+  "id": "naranja_2",
+  "q": "¿la naranja es un color?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «naranja» en el sentido de color.",
+  "v": "OK"
+ },
+ {
+  "id": "naranja_2",
+  "q": "¿la naranja es una fruta?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «naranja» en el sentido de color, no de una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "palmera_1",
+  "q": "En la playa hay una palmera muy alta con hojas largas que da sombra.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En la playa hay una palmera muy alta con hojas largas que da sombra».",
+  "v": null
+ },
+ {
+  "id": "palmera_1",
+  "q": "¿la palmera es un árbol?",
+  "crit": "^si",
+  "r": "Sí, una palmera es un árbol.",
+  "v": "OK"
+ },
+ {
+  "id": "palmera_1",
+  "q": "¿la palmera es un dulce?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «palmera» en el sentido de arbol, no de un dulce.",
+  "v": "OK"
+ },
+ {
+  "id": "palmera_2",
+  "q": "En la pastelería he comprado una palmera de chocolate para merendar.",
+  "crit": "",
+  "r": "Entendido: compraste una palmera de chocolate para merendar en la pastelería.",
+  "v": null
+ },
+ {
+  "id": "palmera_2",
+  "q": "¿la palmera es un dulce?",
+  "crit": "^si",
+  "r": "«palmera» tiene varios sentidos y no tengo claro de cuál hablamos: ¿arbol o dulce?",
+  "v": "MAL"
+ },
+ {
+  "id": "palmera_2",
+  "q": "¿la palmera es un árbol?",
+  "crit": "^no",
+  "r": "Sí, una palmera es un árbol.",
+  "v": "MAL"
+ },
+ {
+  "id": "regla_1",
+  "q": "He medido el papel con la regla y he trazado una línea recta con el lápiz.",
+  "crit": "",
+  "r": "Entendido: mediste el papel con la regla; trazaste una línea recta con el lápiz.",
+  "v": null
+ },
+ {
+  "id": "regla_1",
+  "q": "¿la regla es una herramienta?",
+  "crit": "^si",
+  "r": "Sí, una regla es una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "regla_1",
+  "q": "¿la regla es una norma?",
+  "crit": "^no",
+  "r": "«regla» tiene varios sentidos y no tengo claro de cuál hablamos: ¿herramienta o norma?",
+  "v": "MAL"
+ },
+ {
+  "id": "regla_2",
+  "q": "En este juego hay una regla que todos los jugadores deben cumplir.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En este juego hay una regla que todos los jugadores deben cumplir».",
+  "v": null
+ },
+ {
+  "id": "regla_2",
+  "q": "¿la regla es una norma?",
+  "crit": "^si",
+  "r": "«regla» tiene varios sentidos y no tengo claro de cuál hablamos: ¿herramienta o norma?",
+  "v": "MAL"
+ },
+ {
+  "id": "regla_2",
+  "q": "¿la regla es una herramienta?",
+  "crit": "^no",
+  "r": "Sí, una regla es una herramienta.",
+  "v": "MAL"
+ },
+ {
+  "id": "rosa_1",
+  "q": "El jardinero ha cortado una rosa del rosal con cuidado de las espinas.",
+  "crit": "",
+  "r": "Entendido: el jardinero cortó una rosa del rosal con cuidado de las espinas.",
+  "v": null
+ },
+ {
+  "id": "rosa_1",
+  "q": "¿la rosa es una flor?",
+  "crit": "^si",
+  "r": "Sí, una rosa es una flor.",
+  "v": "OK"
+ },
+ {
+  "id": "rosa_1",
+  "q": "¿la rosa es un color?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «rosa» en el sentido de flor, no de un color.",
+  "v": "OK"
+ },
+ {
+  "id": "rosa_2",
+  "q": "He pintado la habitación de rosa, un tono suave entre el rojo y el blanco.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He pintado la habitación de rosa, un tono suave entre el rojo y el blanco».",
+  "v": null
+ },
+ {
+  "id": "rosa_2",
+  "q": "¿la rosa es un color?",
+  "crit": "^si",
+  "r": "«rosa» tiene varios sentidos y no tengo claro de cuál hablamos: ¿flor o color?",
+  "v": "MAL"
+ },
+ {
+  "id": "rosa_2",
+  "q": "¿la rosa es una flor?",
+  "crit": "^no",
+  "r": "Sí, una rosa es una flor.",
+  "v": "MAL"
+ },
+ {
+  "id": "salmon_1",
+  "q": "El pescador ha pescado un salmón enorme en el río con su caña.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "salmon_1",
+  "q": "¿el salmón es un pez?",
+  "crit": "^si",
+  "r": "No: por lo que me has contado, hablamos de «salmon» en el sentido de rio, no de un pez.",
+  "v": "MAL"
+ },
+ {
+  "id": "salmon_1",
+  "q": "¿el salmón es un color?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «salmon» en el sentido de rio, no de un color.",
+  "v": "OK"
+ },
+ {
+  "id": "salmon_2",
+  "q": "He elegido una camisa de color salmón, parecido al rosa y al naranja.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He elegido una camisa de color salmón, parecido al rosa y al naranja».",
+  "v": null
+ },
+ {
+  "id": "salmon_2",
+  "q": "¿el salmón es un color?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «salmon» en el sentido de color.",
+  "v": "OK"
+ },
+ {
+  "id": "salmon_2",
+  "q": "¿el salmón es un pez?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «salmon» en el sentido de color, no de un pez.",
+  "v": "OK"
+ },
+ {
+  "id": "salsa_1",
+  "q": "He echado salsa de tomate a la pasta antes de servirla en el plato.",
+  "crit": "",
+  "r": "Lo siento. Entendido: echaste salsa de tomate a la pasta antes de servir en el plato.",
+  "v": null
+ },
+ {
+  "id": "salsa_1",
+  "q": "¿la salsa es un alimento?",
+  "crit": "^si",
+  "r": "Sí, una salsa es un alimento.",
+  "v": "OK"
+ },
+ {
+  "id": "salsa_1",
+  "q": "¿la salsa es un baile?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «salsa» en el sentido de alimento, no de un baile.",
+  "v": "OK"
+ },
+ {
+  "id": "salsa_2",
+  "q": "Los sábados vamos a bailar salsa con música en la academia.",
+  "crit": "",
+  "r": "Entendido: bailarás salsa con música en la academia los sábados. ¿Qué es un salso? Es la primera vez que oigo esa palabra.",
+  "v": null
+ },
+ {
+  "id": "salsa_2",
+  "q": "¿la salsa es un baile?",
+  "crit": "^si",
+  "r": "«salsa» tiene varios sentidos y no tengo claro de cuál hablamos: ¿alimento o baile?",
+  "v": "MAL"
+ },
+ {
+  "id": "salsa_2",
+  "q": "¿la salsa es un alimento?",
+  "crit": "^no",
+  "r": "Sí, una salsa es un alimento.",
+  "v": "MAL"
+ },
+ {
+  "id": "zapatero_1",
+  "q": "He llevado las botas rotas al zapatero para que les arregle la suela.",
+  "crit": "",
+  "r": "Entendido: llevaste las botas rotas para que les arreglaste la suela al zapatero.",
+  "v": null
+ },
+ {
+  "id": "zapatero_1",
+  "q": "¿el zapatero es un profesional?",
+  "crit": "^si",
+  "r": "«zapatero» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mueble o profesional?",
+  "v": "MAL"
+ },
+ {
+  "id": "zapatero_1",
+  "q": "¿el zapatero es un mueble?",
+  "crit": "^no",
+  "r": "Sí, un zapatero es un mueble.",
+  "v": "MAL"
+ },
+ {
+  "id": "zapatero_2",
+  "q": "Al entrar en casa dejo los zapatos en el zapatero de madera del recibidor, junto al armario.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Al entrar en casa dejo los zapatos en el zapatero de madera del recibidor. Junto al armario».",
+  "v": null
+ },
+ {
+  "id": "zapatero_2",
+  "q": "¿el zapatero es un mueble?",
+  "crit": "^si",
+  "r": "Sí, un zapatero es un mueble.",
+  "v": "OK"
+ },
+ {
+  "id": "zapatero_2",
+  "q": "¿el zapatero es un profesional?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «zapatero» en el sentido de mueble, no de un profesional.",
+  "v": "OK"
+ },
+ {
+  "id": "flecha_1",
+  "q": "El arquero disparó una flecha con su arco y dio en el blanco.",
+  "crit": "",
+  "r": "Entendido: No tengo claro de quién hablas. ¿A quién te refieres?; el arquero dio en el blanco.",
+  "v": null
+ },
+ {
+  "id": "flecha_1",
+  "q": "¿la flecha es un arma?",
+  "crit": "^si",
+  "r": "«flecha» tiene varios sentidos y no tengo claro de cuál hablamos: ¿forma o arma?",
+  "v": "MAL"
+ },
+ {
+  "id": "flecha_1",
+  "q": "¿la flecha es una forma?",
+  "crit": "^no",
+  "r": "Sí, una flecha es una forma.",
+  "v": "MAL"
+ },
+ {
+  "id": "flecha_2",
+  "q": "En el cartel hay dibujada una flecha que señala la salida, junto a un círculo y un triángulo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En el cartel hay dibujada una flecha que señala la salida, junto a un círculo y un triángulo».",
+  "v": null
+ },
+ {
+  "id": "flecha_2",
+  "q": "¿la flecha es una forma?",
+  "crit": "^si",
+  "r": "Sí, una flecha es una forma.",
+  "v": "OK"
+ },
+ {
+  "id": "flecha_2",
+  "q": "¿la flecha es un arma?",
+  "crit": "^no",
+  "r": "«flecha» tiene varios sentidos y no tengo claro de cuál hablamos: ¿forma o arma?",
+  "v": "MAL"
+ },
+ {
+  "id": "p_mecanico",
+  "q": "Mi primo se llama Raúl y es mecánico.",
+  "crit": "",
+  "r": "Entendido: tu primo se llama Raúl; Raúl es mecánico.",
+  "v": null
+ },
+ {
+  "id": "p_mecanico",
+  "q": "Mi vecino también se llama Raúl.",
+  "crit": "",
+  "r": "Entendido: tu vecino también se llama Raúl. Es otra persona, no tu primo.",
+  "v": null
+ },
+ {
+  "id": "p_mecanico",
+  "q": "Mi vecino es cocinero.",
+  "crit": "",
+  "r": "Entendido: tu vecino Raúl es cocinero.",
+  "v": null
+ },
+ {
+  "id": "p_mecanico",
+  "q": "Esta semana ha hecho mucho calor.",
+  "crit": "",
+  "r": "Vale, lo apunto: «Esta semana ha hecho mucho calor».",
+  "v": null
+ },
+ {
+  "id": "p_mecanico",
+  "q": "Mi coche hace un ruido raro y no arranca.",
+  "crit": "",
+  "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+  "v": null
+ },
+ {
+  "id": "p_mecanico",
+  "q": "¿a qué se dedica Raúl?",
+  "crit": "mecanico",
+  "r": "Tu vecino Raúl es cocinero.",
+  "v": "MAL"
+ },
+ {
+  "id": "p_medica",
+  "q": "Mi hermana se llama Elena y es médica.",
+  "crit": "",
+  "r": "Entendido: tu hermana se llama Elena; Elena es médica.",
+  "v": null
+ },
+ {
+  "id": "p_medica",
+  "q": "Mi compañera de piso también se llama Elena.",
+  "crit": "",
+  "r": "Entendido: tu compañera de piso también se llama Elena. Es otra persona, no tu hermana.",
+  "v": null
+ },
+ {
+  "id": "p_medica",
+  "q": "Mi compañera de piso es abogada.",
+  "crit": "",
+  "r": "Entendido: tu compañera de piso Elena es abogada.",
+  "v": null
+ },
+ {
+  "id": "p_medica",
+  "q": "El domingo estuve en casa.",
+  "crit": "",
+  "r": "Entendido: estuviste en casa el domingo.",
+  "v": null
+ },
+ {
+  "id": "p_medica",
+  "q": "Tengo fiebre y me duele mucho la garganta.",
+  "crit": "",
+  "r": "Entendido: te duele mucho la garganta. Vaya, cuídate y descansa. Me lo apunto: tienes fiebre.",
+  "v": null
+ },
+ {
+  "id": "p_medica",
+  "q": "¿a qué se dedica Elena?",
+  "crit": "medica",
+  "r": "¿Qué Elena: tu hermana o tu compañera de piso?",
+  "v": "MAL"
+ },
+ {
+  "id": "p_peluquero",
+  "q": "Mi tío se llama Julio y es carpintero.",
+  "crit": "",
+  "r": "Entendido: tu tío se llama Julio; Julio es carpintero.",
+  "v": null
+ },
+ {
+  "id": "p_peluquero",
+  "q": "Mi amigo también se llama Julio.",
+  "crit": "",
+  "r": "Entendido: tu amigo también se llama Julio. Es otra persona, no tu tío.",
+  "v": null
+ },
+ {
+  "id": "p_peluquero",
+  "q": "Mi amigo es peluquero.",
+  "crit": "",
+  "r": "Entendido: tu amigo Julio es peluquero.",
+  "v": null
+ },
+ {
+  "id": "p_peluquero",
+  "q": "Ayer llovió toda la tarde.",
+  "crit": "",
+  "r": "Vale, lo apunto: «Ayer llovió toda la tarde».",
+  "v": null
+ },
+ {
+  "id": "p_peluquero",
+  "q": "Tengo el pelo muy largo y quiero cortármelo.",
+  "crit": "",
+  "r": "Entendido: tienes el pelo muy largo; quieres cortármelo.",
+  "v": null
+ },
+ {
+  "id": "p_peluquero",
+  "q": "¿a qué se dedica Julio?",
+  "crit": "peluquero",
+  "r": "No lo sé: no me has dicho a qué se dedica el julio.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "p_jardinera",
+  "q": "Mi prima se llama Rosa y es jardinera.",
+  "crit": "",
+  "r": "Entendido: tu prima se llama Rosa; Rosa es jardinera.",
+  "v": null
+ },
+ {
+  "id": "p_jardinera",
+  "q": "Mi jefa también se llama Rosa.",
+  "crit": "",
+  "r": "Entendido: tu jefa también se llama Rosa. Es otra persona, no tu prima.",
+  "v": null
+ },
+ {
+  "id": "p_jardinera",
+  "q": "Mi jefa es contable.",
+  "crit": "",
+  "r": "Entendido: tu jefa Rosa es contable.",
+  "v": null
+ },
+ {
+  "id": "p_jardinera",
+  "q": "No tengo planes para mañana.",
+  "crit": "",
+  "r": "Entendido: no tienes planes para mañana.",
+  "v": null
+ },
+ {
+  "id": "p_jardinera",
+  "q": "Se me han secado las plantas del balcón y no sé cómo regarlas.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "p_jardinera",
+  "q": "¿a qué se dedica Rosa?",
+  "crit": "jardinera",
+  "r": "¿Qué Rosa: tu prima o tu jefa?",
+  "v": "MAL"
+ },
+ {
+  "id": "p_maestro",
+  "q": "Mi cuñado se llama Tomás y es camionero.",
+  "crit": "",
+  "r": "Entendido: tu cuñado se llama Tomás; Tomás es camionero.",
+  "v": null
+ },
+ {
+  "id": "p_maestro",
+  "q": "Mi vecino también se llama Tomás.",
+  "crit": "",
+  "r": "Entendido: tu vecino también se llama Tomás. Es otra persona, no tu cuñado.",
+  "v": null
+ },
+ {
+  "id": "p_maestro",
+  "q": "Mi vecino es maestro.",
+  "crit": "",
+  "r": "Entendido: tu vecino Tomás es maestro.",
+  "v": null
+ },
+ {
+  "id": "p_maestro",
+  "q": "Hoy me he levantado temprano.",
+  "crit": "",
+  "r": "Entendido: te levantaste hoy temprano.",
+  "v": null
+ },
+ {
+  "id": "p_maestro",
+  "q": "Mi hijo no entiende la lección y tiene un examen en el colegio.",
+  "crit": "",
+  "r": "Entendido: tu hijo no entiende la lección; tu hijo tiene un examen en el colegio.",
+  "v": null
+ },
+ {
+  "id": "p_maestro",
+  "q": "¿a qué se dedica Tomás?",
+  "crit": "maestro",
+  "r": "Tu vecino Tomás es maestro.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "He comprado una silla nueva.",
+  "crit": "",
+  "r": "Entendido: compraste una silla nueva.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿la silla es un mueble?",
+  "crit": "^si",
+  "r": "Sí, una silla es un mueble.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "Tengo un perro que ladra mucho.",
+  "crit": "",
+  "r": "Entendido: tienes un perro; tu perro ladra mucho.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿mi perro es un animal?",
+  "crit": "^si",
+  "r": "Sí, tu perro es un animal. Lo deduzco porque tu perro es un perro, un perro es un mamífero y un mamífero es un animal.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "He comido una manzana.",
+  "crit": "",
+  "r": "Entendido: comiste una manzana.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿la manzana es una fruta?",
+  "crit": "^si",
+  "r": "Sí, una manzana es una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_motivo",
+  "q": "Me he comprado un martillo.",
+  "crit": "",
+  "r": "Entendido: te compraste un martillo.",
+  "v": null
+ },
+ {
+  "id": "sin_motivo",
+  "q": "¿el martillo es una herramienta?",
+  "crit": "^si",
+  "r": "Sí, un martillo es una herramienta.",
+  "v": "OK"
+ }
+]

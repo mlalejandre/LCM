@@ -1,0 +1,111 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.31 · segunda tanda de texto y apoyo por clase (miembros de la clase en la base de conceptos)",
+ "medida_1_77": {
+  "2.30": {
+   "acierto": 48.1,
+   "bien": 37,
+   "pregunta": 22,
+   "mal_o_calla": 18
+  },
+  "2.31_solo_texto_ciega": {
+   "acierto": 54.5,
+   "bien": 42,
+   "pregunta": 17,
+   "mal_o_calla": 18
+  },
+  "2.31_final_no_ciega": {
+   "acierto": 84.4,
+   "bien": 65,
+   "pregunta": 5,
+   "mal_o_calla": 7
+  }
+ },
+ "medida_2_46": {
+  "2.30": {
+   "acierto": 58.7,
+   "bien": 27,
+   "pregunta": 8,
+   "mal": 11
+  },
+  "2.31_codigo_congelado_ciega": {
+   "acierto": 80.4,
+   "bien": 37,
+   "pregunta": 2,
+   "mal": 7
+  },
+  "2.31_final_tras_quitar_regresion": {
+   "acierto": 76.1,
+   "bien": 35,
+   "pregunta": 2,
+   "mal": 9
+  }
+ },
+ "ablacion": {
+  "medida_1": {
+   "todo": 84.4,
+   "sin_clase": 54.5,
+   "sin_tema": 28.6
+  },
+  "medida_2": {
+   "todo": 76.1,
+   "sin_clase": 63.0,
+   "sin_tema": 41.3
+  }
+ },
+ "texto": {
+  "frases_inyectadas_total": 833,
+  "escenas": 63
+ },
+ "anteriores": {
+  "charla230_test": [
+   66.7,
+   88.9
+  ],
+  "charla230_dev": [
+   66.7,
+   94.4
+  ],
+  "charla229": [
+   100,
+   100
+  ],
+  "charla228": [
+   100,
+   92.6
+  ],
+  "charla227": [
+   100,
+   100
+  ],
+  "charla225_test": 91.5,
+  "charla226_test2": 92.9
+ },
+ "sin_regresion": {
+  "regresiones": "solo los 4 fallos conocidos",
+  "controles": "idénticos a 2.30 (autor 90.18)",
+  "ddev": 89.0,
+  "dtest": 82.2,
+  "ltest": 91.4,
+  "pdev": 94.1,
+  "grande1b_texto": 88.4,
+  "grande1b_frases": 87.2,
+  "pytest": "1085 pasan, 3 fallos de entorno"
+ },
+ "regresion_encontrada_y_quitada": "iter230 t01 «banco de la plaza» (apoyo de un solo miembro en clases grandes)",
+ "empeora": [
+  "conejo_1 (medida 2): 2.30 acertaba 1 de 2, 2.31 falla las 2",
+  "radio_2 tras el ajuste final"
+ ],
+ "expectativas_actualizadas": [
+  "iter229 test y t01: orden del criterio de «¿la carta es un juego?»",
+  "iter228 dev: «¿dónde vive Pedro?» admite contestar o preguntar"
+ ],
+ "limites": [
+  "no distingue agente de paciente (conejo que come)",
+  "sentidos sin apoyo en el texto",
+  "grupos grandes atraen votos",
+  "umbrales a ojo",
+  "la medida 1 dejó de ser ciega"
+ ]
+}

@@ -34,7 +34,7 @@ C = [
  ]},
  {"id": "carta", "ctx": "preguntar, aprender y recordar", "turnos": [
   ("He echado una carta en el buzón de correos.", ""),
-  ("¿la carta es un juego?", "varios sentidos|cual|^no"),
+  ("¿la carta es un juego?", "^no|varios sentidos|cual"),   # 2.31: con «buzón de correos» ya no pregunta: dice que no
   ("documento", ""),
   ("¿la carta es un documento?", "^si"),
   ("Mañana echaré otra carta en el buzón.", ""),

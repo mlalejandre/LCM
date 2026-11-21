@@ -436,18 +436,59 @@ def _ficha(nuc, e):
     """Las palabras de lo que se sabe de un nodo (su ficha), para ver si una frase habla de él."""
     from . import contexto as X
     txt = []
+    d = nuc.E.get(e, {})
+    marcas = [sa(x.lower())[:5] for x in (d.get("tocayo"), d.get("clase")) if x]
     for f in nuc.F:
         if f.get("vig", True) and (nuc.can(f.get("s") or "") == e or nuc.can(f.get("obj") or "") == e):
-            txt.append(f.get("src") or "")
+            src = f.get("src") or ""
+            if marcas and not any(m_ in sa(src.lower()) for m_ in marcas) and not (
+                    f.get("turno") is not None and f.get("turno") == d.get("t_nuevo") and not os.environ.get("LCM_SIN_CLASE")):   # 2.31: …o en la misma frase en que se le presentó («Mi primo se llama Raúl Y ES MECÁNICO»)
+                continue                                 # solo lo que se dijo NOMBRÁNDOLO: una frase sin sujeto que el núcleo le colgó no es su ficha
+            txt.append(src)
     txt.append(nuc.E.get(e, {}).get("tocayo") or "")
     return set(X.lemas(" ".join(txt)))
+
+
+def _papel_sin_tema(rol):
+    """2.31 · «vecino», «hermano», «amigo» dicen la relación, no de qué se habla: no cuentan como tema de la ficha (si no, «¿dónde VIVE Pedro?»
+    apuntaba al vecino porque los vecinos «viven al lado»). Un oficio («profesor», «médico») sí es tema."""
+    if not rol or os.environ.get("LCM_SIN_CLASE"):
+        return set()
+    from . import contexto as X
+    try:
+        from . import conceptos as K
+        from . import morfo as M_
+        r = sa(M_.singular(rol.lower()))
+        if "profesional" in [sa(a_) for a_ in K.ancestros(r)]:
+            return set()
+    except Exception:                                    # noqa
+        pass
+    return set(X.lemas(rol)) | {sa(rol.lower())}
 
 
 def probabilidades(nuc, t, forma, ops):
     """La probabilidad de cada tocayo: de quién se venía hablando (caché) y con la ficha de quién casa la frase."""
     from . import contexto as X
-    frase = {l: 1.0 for l in X.lemas(re.sub(r"\b" + forma + r"\b", " ", t)) if l != sa(forma.lower())}
-    puntos = [X.peso_entidad(nuc, o["id"]) + 0.8 * X.casa(frase, _ficha(nuc, o["id"]) - {sa(forma.lower())}) for o in ops]
+    fichas = [_ficha(nuc, o["id"]) - {sa(forma.lower()), "tener"} - _papel_sin_tema(o.get("rol")) for o in ops]
+    todas = set().union(*fichas) if fichas else set()
+    # 2.30: también de lo que se venía hablando («se ha roto una tubería»), pero no las palabras con que se habló de ellos mismos: eso ya lo cuenta la recencia
+    for o in ops:
+        todas |= set(X.lemas(o["dice"])) | {sa(o["rol"])}
+    raices = {x[:5] for x in todas}
+    ids = {o["id"] for o in ops}
+    turnos_suyos = {x[0] for x in X._cache(nuc) if x[1] == "e" and nuc.can(x[2]) in ids}   # los turnos en que se habló de alguno de ellos no cuentan como «tema»
+    tn = nuc.turno
+    frase = {}
+    for x in X._cache(nuc):
+        if x[1] == "w" and x[0] not in turnos_suyos and tn - x[0] <= X.VENTANA and x[2] not in todas and x[2][:5] not in raices:
+            frase[x[2]] = max(frase.get(x[2], 0.0), min(1.0, 0.84 * X.OLVIDO ** max(0, tn - x[0])))
+    frase.update({l: 1.0 for l in X.lemas(re.sub(r"\b" + forma + r"\b", " ", t))})
+    for vago in ("dedicar", "llamar", sa(forma.lower())):
+        frase.pop(vago, None)
+    rec = [X.peso_entidad(nuc, o["id"]) for o in ops]
+    tem = [1.5 * X.casa(frase, f_) for f_ in fichas]
+    nuc._pt_tema230 = tem
+    puntos = [r_ + t_ for r_, t_ in zip(rec, tem)]
     return X.reparte(puntos), puntos
 
 
@@ -459,7 +500,9 @@ def _probable(nuc, t, forma, ops):
     k = max(range(len(ops)), key=lambda i: ps[i])
     umbral = X.SEGURO if "?" in t else X.SEGURO_DICHO
     nuc._ult_prob229 = (forma, [round(p, 2) for p in ps])
-    return ops[k] if ps[k] >= umbral and puntos[k] > 0 else None
+    tem = getattr(nuc, "_pt_tema230", None) or [0.0] * len(ops)
+    claro = puntos[k] >= 0.5 or tem[k] >= 0.25           # o se habló de él hace nada, o la frase casa con su ficha: un recuerdo lejano no basta
+    return ops[k] if ps[k] >= umbral and claro else None
 
 
 def tocayos(nuc, texto):
@@ -515,6 +558,11 @@ def tocayos(nuc, texto):
             if re.search(pat, t, re.I):
                 return {"texto": re.sub(pat, forma, t, count=1, flags=re.I), "foco": {"N:" + nom: op["id"]}}
         el = _probable(nuc, t, forma, ops)               # 2.29: ¿de cuál se venía hablando? Si está claro, no se pregunta
+        if el is not None and not os.environ.get("LCM_SIN_CLASE"):
+            try:                                         # 2.31: a este lo ha elegido el modelo, no lo ha nombrado el usuario: en la caché cuenta la mitad
+                nuc._ded231 = (getattr(nuc, "_ded231", None) or set()) | {nuc.can(el["id"])}
+            except Exception:                            # noqa
+                pass
         if el is not None:
             return {"texto": t, "foco": {"N:" + nom: el["id"]}}
         nuc._toc_pend = {"tipo": "cual", "turno": nuc.turno, "texto": t, "forma": forma, "nombre": nom}
