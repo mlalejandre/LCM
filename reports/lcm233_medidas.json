@@ -1,0 +1,81 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.33 · pronombres con antecedentes probables, sinónimos por concepto, concordancia",
+ "examen_limpio_56": {
+  "2.32": {
+   "lit": 17,
+   "sin": 11,
+   "pro": 10,
+   "abs": 6,
+   "total": 44,
+   "mal": 0
+  },
+  "2.33_ciega": {
+   "lit": 17,
+   "sin": 11,
+   "pro": 15,
+   "abs": 6,
+   "total": 49,
+   "mal": 0
+  },
+  "sin_pronombres": 44,
+  "sin_concordancia": {
+   "total": 48,
+   "mal": 1
+  }
+ },
+ "sinonimos_calibracion_dev": {
+  "vector_0.8": [
+   11,
+   0
+  ],
+  "union_2.33": [
+   13,
+   0
+  ],
+  "concepto_sin_umbral": [
+   17,
+   2
+  ],
+  "nota": "aceptados de 18 sinónimos, de 18 falsos amigos"
+ },
+ "aumento_preguntas_descartado": {
+  "corpus_cab_func": [
+   85.6,
+   84.9
+  ],
+  "preguntas_habladas_cab_func": [
+   63.4,
+   63.4
+  ],
+  "siete_textos": [
+   69,
+   70
+  ],
+  "solar": [
+   17,
+   16
+  ]
+ },
+ "sin_regresion": {
+  "bancos": {
+   "ddev": 91.0,
+   "dtest": 84.2,
+   "ltest": 94.6,
+   "pdev": 94.1,
+   "grande1b_texto": 88.9,
+   "grande1b_frases": 87.2
+  },
+  "siete_textos": "69/72",
+  "solar": "14/26",
+  "conversacion_manuel": 95.1,
+  "regresiones": "solo los 4 fallos conocidos",
+  "controles": "idénticos a 2.32",
+  "pytest": "1092 pasan, 3 de entorno"
+ },
+ "limites": [
+  "sinónimos que el léxico no tiene",
+  "posesivos",
+  "pesos de pronombres a ojo con 3 textos"
+ ]
+}

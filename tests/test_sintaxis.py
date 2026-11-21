@@ -37,3 +37,19 @@ def test_relaciones_y_pregunta():
     r = M.pregunta("¿Quién inventó la imprenta?")
     assert r and "gutenberg" in r["respuesta"].lower()
     assert M.pregunta("¿Quién inventó el telégrafo?") is None
+
+
+@pytest.mark.skipif(not ENTRENADO, reason="analizador sin entrenar")
+def test_pronombres_y_concordancia():
+    from src.sintaxis.relaciones import Memoria
+    M = Memoria().lee("Los bomberos llegaron al incendio en diez minutos. Ellos apagaron el fuego con agua. Una vecina los llamó desde su balcón.", limpiar=False)
+    r = M.pregunta("¿Quiénes apagaron el fuego?")
+    assert r and "bomberos" in r["respuesta"].lower()
+    r = M.pregunta("¿Quién llamó a los bomberos?")
+    assert r and "vecina" in r["respuesta"].lower()
+
+
+def test_sinonimos_no_confunde_contrarios():
+    from src.sintaxis.relaciones import sim_concepto
+    assert sim_concepto("comprar", "vender") == 0.0
+    assert sim_concepto("abrir", "cerrar") == 0.0

@@ -7,7 +7,7 @@ import os, sys
 from .datos import frases_de, trocea
 
 _C = {}
-RUTA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analizador.pt")
+RUTA = os.environ.get("LCM_ANALIZADOR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "analizador.pt")
 
 
 def _carga():

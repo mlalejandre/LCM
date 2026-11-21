@@ -7,6 +7,7 @@ lugar, cantidad) y se contesta con lo que llena ese hueco en una relación guard
 No hay patrones de frase: lo que decide es la función que el analizador aprendió para cada palabra."""
 from __future__ import annotations
 
+import os
 import re
 
 from .analiza import palabras
@@ -58,6 +59,20 @@ def _mismo_verbo(a, b):
     return k >= 5 or (k >= 4 and k >= n - 2)
 
 
+def _numero_verbo(forma):
+    """'s' o 'p' si el verbo (o su auxiliar) está en tercera persona del singular o del plural; '' si no se sabe."""
+    try:
+        from ..nucleo20 import morfo as M
+        ps = {a[2] for a in (M.analizar(forma.lower()) or []) if len(a) > 2 and a[1] in ("pres", "pret", "imp", "fut")}
+    except Exception:                                    # noqa
+        return ""
+    if ps == {"3s"} or ps <= {"1s", "3s"} and "3s" in ps:
+        return "s"
+    if ps == {"3p"}:
+        return "p"
+    return ""
+
+
 def _persona(forma):
     """'1' si el verbo está en primera persona («tengo», «vamos»), '3' si en tercera, '' si no se sabe."""
     try:
@@ -76,13 +91,54 @@ def sim_concepto(a, b):
     """Cuánto se parecen dos conceptos (0–1) según los vectores del LCM: los de significado (léxico) y los de tema. 1 si son el mismo."""
     if _mismo_verbo(a, b):
         return 1.0
+    if os.environ.get("LCM_SIN_SINONIMOS"):
+        return 0.0
     s_ = 0.0
     try:
         from ..nucleo20 import vectores as V
-        s_ = max(s_, float(V.sim(a, b)))
+        s_ = float(V.sim(a, b))
     except Exception:                                    # noqa
-        pass
-    return s_ if s_ >= 0.8 else 0.0                    # medido: los sinónimos de verdad pasan de 0,85 (descubrir/encontrar); con 0,5 entraba «vigilar»/«poner»
+        return 0.0
+    if s_ >= 0.8:
+        return s_                                        # se parecen mucho (la regla de la 2.32: «dar»/«ofrecer» 0,80)
+    if s_ >= SINONIMO_VECTOR and _comparten_concepto(a, b):
+        return s_                                        # 2.33: comparten un concepto del léxico Y se parecen (medido con 18 + 18 parejas de desarrollo)
+    return 0.0
+
+
+SINONIMO_VECTOR = 0.70
+
+
+def _comparten_concepto(a, b):
+    try:
+        from ..nucleo20 import acepciones as AC
+        w2s, _ = AC._lex(); pos = AC._pos()
+        A_ = {x for x in w2s.get(sa(a), ()) if pos.get(x) == "v"}
+        B_ = {x for x in w2s.get(sa(b), ()) if pos.get(x) == "v"}
+        return bool(A_ & B_)
+    except Exception:                                    # noqa
+        return False
+
+
+_PRON = {"lo": ("m", "s", "obj"), "la": ("f", "s", "obj"), "los": ("m", "p", "obj"), "las": ("f", "p", "obj"), "le": ("", "s", "dat"), "les": ("", "p", "dat"),
+         "el": ("m", "s", "suj"), "ella": ("f", "s", "suj"), "ellos": ("m", "p", "suj"), "ellas": ("f", "p", "suj"),
+         "este": ("m", "s", "suj"), "esta": ("f", "s", "suj"), "estos": ("m", "p", "suj"), "estas": ("f", "p", "suj"),
+         "ese": ("m", "s", "suj"), "esa": ("f", "s", "suj"), "esos": ("m", "p", "suj"), "esas": ("f", "p", "suj"), "aquel": ("m", "s", "suj"), "aquella": ("f", "s", "suj")}
+_DET_G = {"el": ("m", "s"), "la": ("f", "s"), "los": ("m", "p"), "las": ("f", "p"), "un": ("m", "s"), "una": ("f", "s"), "unos": ("m", "p"), "unas": ("f", "p"),
+          "este": ("m", "s"), "esta": ("f", "s"), "estos": ("m", "p"), "estas": ("f", "p"), "ese": ("m", "s"), "esa": ("f", "s"), "esos": ("m", "p"), "esas": ("f", "p"),
+          "nuestro": ("m", "s"), "nuestra": ("f", "s"), "nuestros": ("m", "p"), "nuestras": ("f", "p"), "varios": ("m", "p"), "varias": ("f", "p"), "muchos": ("m", "p"), "muchas": ("f", "p"),
+          "pocos": ("m", "p"), "pocas": ("f", "p"), "todos": ("m", "p"), "todas": ("f", "p"), "otro": ("m", "s"), "otra": ("f", "s"), "otros": ("m", "p"), "otras": ("f", "p"), "al": ("m", "s"), "del": ("m", "s")}
+RECENCIA = [1.0, 0.7, 0.45, 0.3]                       # misma frase, la anterior, dos antes, tres antes
+
+
+def _es_persona(lema, cat):
+    if cat == "PROPN":
+        return True
+    try:
+        from ..nucleo20 import acepciones as AC
+        return any(AC.es_persona(x) for x in AC.sentidos(lema))
+    except Exception:                                    # noqa
+        return False
 
 
 class Memoria:
@@ -92,8 +148,14 @@ class Memoria:
         self.frases = 0
         self.vistas = set()
         self.ultimo_sujeto = None
+        self.disc = []                                   # lo mencionado antes: [(sintagma, género, número, papel, nº de frase, persona, posición)]
+        self._cur = []
 
     # ------------------------------------------------------------------ leer
+    def _cierra(self):
+        self.disc = [x for x in self.disc + self._cur if self.frases - x[4] < len(RECENCIA)]
+        self._cur = []
+
     def lee(self, texto, limpiar=True):
         t = limpia(texto) if limpiar else texto
         for f in frases_de(t):
@@ -104,6 +166,7 @@ class Memoria:
                     self._frase(f)
                 except Exception:                        # noqa
                     pass
+                self._cierra()
         return self
 
     @staticmethod
@@ -134,7 +197,63 @@ class Memoria:
             out += self._miembros(ps, h)
         return out
 
+    def _gn(self, ps, n):
+        """Género y número de un sintagma: por su determinante; si no, por la terminación del nombre."""
+        dets = [p for p in ps if p["cabeza"] == n["i"] and p["funcion"] == "det"]
+        for d in dets:
+            g = _DET_G.get(sa(d["forma"]))
+            if g:
+                return g
+        def por_final(w, cat):
+            num_ = "p" if w.endswith("s") and cat != "PROPN" else "s"
+            base = w[:-1] if num_ == "p" else w
+            gen_ = "f" if base.endswith(("a", "cion", "dad", "tud")) else ("m" if base.endswith(("o", "or", "an", "on")) else "")
+            return gen_, num_
+        gen, num = por_final(sa(n["forma"]), n["cat"])
+        if n["cat"] == "PROPN" or not gen:               # «Mi vecina Carmen»: el nombre propio no dice nada; lo dice «vecina»
+            for q in ps:
+                if q["cabeza"] == n["i"] and q["funcion"] in ("amod", "appos", "flat", "nmod") and q["cat"] in ("NOUN", "ADJ"):
+                    g2, n2 = por_final(sa(q["forma"]), q["cat"])
+                    if g2:
+                        return g2, num
+        return gen, num
+
+    def _antecedentes(self, ps, n):
+        """Candidatos para un pronombre, con su probabilidad: concuerdan en género y número; pesa lo reciente, el mismo papel y si es persona."""
+        g, num, tipo = _PRON[sa(n["forma"])]
+        verbo = n["cabeza"]
+        cand = []
+        for (sn, ga, na, rol, k, per, pos) in self.disc + self._cur:
+            if k == self.frases and pos >= n["i"]:
+                continue                                 # de la misma frase, solo lo que va antes
+            if k == self.frases and rol == "nsubj" and sn.get("_verbo") == verbo:
+                continue                                 # «el macho LO protege»: lo no es el macho
+            d = self.frases - k
+            if d >= len(RECENCIA) or na != num or (g and ga and ga != g):
+                continue
+            pt = RECENCIA[d]
+            if tipo == "suj":
+                pt *= (1.0 + (0.5 if rol == "nsubj" else 0.0) + (0.4 if per else 0.0)) * (1.0 if per else 0.4)
+            elif tipo == "obj":
+                pt *= 1.0 + (0.4 if rol == "obj" else 0.0)
+            else:
+                pt *= 1.0 + (0.5 if per else -0.5)
+            cand.append((pt, sn))
+        mejor = {}
+        for pt, sn in cand:
+            k_ = sn["txt"].lower()
+            if k_ not in mejor or pt > mejor[k_][0]:
+                mejor[k_] = (pt, sn)
+        tot = sum(x[0] for x in mejor.values())
+        return sorted(((x[0] / tot, x[1]) for x in mejor.values()), key=lambda z: -z[0]) if tot else []
+
     def _sn(self, ps, n, fuera=()):
+        if n["cat"] == "PRON" and sa(n["forma"]) in _PRON and not os.environ.get("LCM_SIN_PRONOMBRES"):
+            alts = self._antecedentes(ps, n)
+            if alts:
+                top = alts[0][1]
+                return {"txt": top["txt"], "h": top["h"], "hs": top["hs"], "lemas": top["lemas"], "prep": " ".join(sa(p["forma"]) for p in self._hijos(ps, n["i"], ("case",))),
+                        "cat": top["cat"], "alts": [(round(p_, 3), a_) for p_, a_ in alts[:4]], "p": round(alts[0][0], 3)}
         r = self._rama(ps, n["i"])
         ms = self._miembros(ps, n)
         todo = self._rama(ps, n["i"], sin=("acl", "advcl", "parataxis"))
@@ -162,12 +281,31 @@ class Memoria:
                 n = por_i[p["cabeza"]]
                 self.N.append((p["forma"].lower(), _lema(n["forma"]), self._sn(ps, n), f))
         ctx = {_lema(p["forma"]) for p in ps if p["cat"] in ("NOUN", "PROPN", "VERB", "ADJ", "NUM")}
+        self._cur = []
+        for p in ps:                                     # lo que se menciona en esta frase, para los pronombres que vengan
+            if p["cat"] in ("NOUN", "PROPN") and p["funcion"] in ("nsubj", "obj", "obl", "iobj", "nmod", "root", "dislocated"):
+                sn_ = self._sn(ps, p)
+                sn_["_verbo"] = p["cabeza"]
+                g_, n_ = self._gn(ps, p)
+                self._cur.append((sn_, g_, n_, "nsubj" if p["funcion"] == "dislocated" else p["funcion"], self.frases, _es_persona(_lema(p["forma"]), p["cat"]), p["i"]))
         hechas = {}
         nucleos = [p for p in ps if (p["cat"] in ("VERB", "AUX") and p["funcion"] not in ("aux", "cop")) or self._hijos(ps, p["i"], ("cop",))]
         for v in sorted(nucleos, key=lambda p: (p["funcion"] != "root", p["i"])):
             hijos = self._hijos(ps, v["i"])
             cop = next((h for h in hijos if h["funcion"] == "cop"), None)
             suj = next((h for h in hijos if h["funcion"] == "nsubj"), None)
+            if not os.environ.get("LCM_SIN_CONCORDANCIA"):
+                nv = _numero_verbo(next((h["forma"] for h in hijos if h["funcion"] in ("aux", "cop")), v["forma"]))
+                rechazado = False
+                if suj is not None and suj["cat"] in ("NOUN", "PROPN") and nv and self._gn(ps, suj)[1] != nv and not self._hijos(ps, suj["i"], ("conj",)):
+                    suj = None; rechazado = True                          # «Su hijo lo conduce LOS DOMINGOS»: un sujeto plural no va con «conduce»
+                if suj is None:
+                    dis = next((h for h in hijos if h["funcion"] == "dislocated" and h["cat"] in ("NOUN", "PROPN") and (not nv or self._gn(ps, h)[1] == nv or self._hijos(ps, h["i"], ("conj",)))), None)
+                    if dis is not None:
+                        cl = next((h for h in hijos if h["funcion"] == "obj" and h["cat"] == "PRON" and sa(h["forma"]) in _PRON), None)
+                        doble = cl is not None and self._gn(ps, dis) == _PRON[sa(cl["forma"])][:2] and any(h["funcion"] == "nsubj" for h in hijos) and not rechazado
+                        if not doble:
+                            suj = dis                    # «Una vecina LOS llamó»: lo dislocado es el sujeto si no es el objeto repetido por el pronombre
             S = None
             if suj is not None and sa(suj["forma"]) in ("que", "quien", "cual", "cuales") and v["funcion"] == "acl" and v["cabeza"] in por_i:
                 S = self._sn(ps, por_i[v["cabeza"]])     # relativa: el sujeto es aquello de lo que se habla
@@ -185,7 +323,7 @@ class Memoria:
                 per = _persona(next((h["forma"] for h in hijos if h["funcion"] in ("aux", "cop")), v["forma"]))
                 if per == "1":
                     S = {"txt": "yo", "h": "yo", "hs": ["yo"], "lemas": {"yo"}, "prep": "", "cat": "PRON"}
-                elif per == "3" and self.ultimo_sujeto is not None and not any(sa(h["forma"]) == "se" for h in hijos):
+                elif per == "3" and self.ultimo_sujeto is not None and not (any(sa(h["forma"]) == "se" for h in hijos) and not any(sa(h["forma"]) in ("lo", "la", "los", "las") for h in hijos)):
                     S = self.ultimo_sujeto; heredado = True          # «Tienen dos hijos…»: se sigue hablando de los mismos
             r = {"S": S, "src": f, "ctx": ctx, "seg": v["seguro"] * (0.8 if heredado else 1.0), "neg": any(sa(h["forma"]) in ("no", "nunca", "jamas") for h in hijos if h["funcion"] == "advmod"), "C": [], "O": None, "A": None}
             if cop is not None and v["cat"] in ("NOUN", "PROPN", "PRON", "NUM") or (cop is not None and v["cat"] == "ADJ" and _lema(cop["forma"]) == "ser" and not self._hijos(ps, v["i"], ("obl",))):
@@ -235,6 +373,12 @@ class Memoria:
             hechas[v["i"]] = r
             if v["funcion"] == "root" and suj is not None and S is not None and S["cat"] in ("NOUN", "PROPN"):
                 self.ultimo_sujeto = S
+            for x_ in [r["S"], r["O"]] + r["C"]:            # un pronombre ya resuelto también puede ser antecedente («se LO entrega… el macho LO protege»)
+                if x_ is not None and x_.get("alts"):
+                    pron_ = next((p for p in ps if p["cat"] == "PRON" and sa(p["forma"]) in _PRON and _PRON[sa(p["forma"])][2] != "dat"), None)
+                    if pron_ is not None:
+                        g_, n_, t_ = _PRON[sa(pron_["forma"])]
+                        self._cur.append((dict(x_, alts=None), g_, n_, "obj" if t_ == "obj" else "nsubj", self.frases, False, pron_["i"]))
             if v["funcion"] == "acl" and v["seguro"] < 0.70:
                 continue                                 # no está claro de quién se dice: no se guarda
             if r["S"] is not None or r["O"] is not None or r["A"] is not None or r["C"]:
@@ -242,9 +386,12 @@ class Memoria:
 
     # ------------------------------------------------------------------ preguntar
     def _casa_sn(self, sn, lemas, cabeza=None):
-        """¿Habla este sintagma de lo que se pregunta? Todas las palabras de la pregunta deben estar en él (o ser uno de sus miembros)."""
+        """¿Habla este sintagma de lo que se pregunta? Todas las palabras de la pregunta deben estar en él (o ser uno de sus miembros).
+        Si es un pronombre, cada antecedente posible cuenta con su probabilidad."""
         if sn is None or not lemas:
             return 0.0
+        if sn.get("alts"):
+            return max((p_ * self._casa_sn(dict(a_, alts=None), lemas, cabeza) for p_, a_ in sn["alts"] if p_ >= 0.1), default=0.0)
         if cabeza and cabeza not in sn["hs"] and cabeza not in sn["lemas"]:
             return 0.0
         dentro = sum(1 for l in lemas if l in sn["lemas"])
@@ -401,6 +548,7 @@ class Memoria:
         if causa:
             pre = "Porque "
         txt = (pre + resp["txt"]).strip()
+        txt = re.sub(r"\b([Aa]) el\b", lambda m: m.group(1) + "l", re.sub(r"\b([Dd]e) el\b", lambda m: m.group(1) + "l", txt))
         return {"respuesta": txt[:1].upper() + txt[1:] + ".", "fuente": r["src"], "seguro": round(float(min(1.0, r["seg"]) * prob), 2), "prob": round(prob, 2), "verbo": vl,
                 "otras": [x[2]["txt"] for x in mejores[1:3] if x[2]["lemas"] != resp["lemas"]]}
 

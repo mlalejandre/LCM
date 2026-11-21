@@ -1,0 +1,450 @@
+[
+ {
+  "texto": "pinguinos",
+  "q": "¿Dónde vive el pingüino emperador?",
+  "tipo": "lit",
+  "crit": "antartida",
+  "r": "El pingüino emperador vive en la Antártida.",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Qué pone la hembra?",
+  "tipo": "lit",
+  "crit": "huevo",
+  "r": "La hembra pone un huevo en invierno.",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Dónde habita el pingüino emperador?",
+  "tipo": "sin",
+  "crit": "antartida",
+  "r": "El pingüino emperador vive en la Antártida.",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Qué aguanta el pingüino emperador?",
+  "tipo": "sin",
+  "crit": "temperaturas|cuarenta",
+  "r": "El pingüino emperador soporta temperaturas de cuarenta grados bajo cero. Entiendo «aguantar» como «soportar».",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Quién protege el huevo?",
+  "tipo": "pro",
+  "crit": "macho",
+  "r": "No lo sé: nadie me ha dicho eso.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿A quién entrega la hembra el huevo?",
+  "tipo": "pro",
+  "crit": "macho",
+  "r": "No lo sé. De la hembra sé que pone un huevo en invierno y regresa al mar para alimentarse.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Quién alimenta al polluelo?",
+  "tipo": "pro",
+  "crit": "madre|hembra|ella",
+  "r": "Ella.",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Quiénes cazan a los pingüinos?",
+  "tipo": "pro",
+  "crit": "focas",
+  "r": "En el texto pone: «Las focas leopardo los cazan cerca de la costa».",
+  "v": "bien"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Quién defiende el huevo?",
+  "tipo": "sin",
+  "crit": "macho",
+  "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «defender»; si es otra forma de decir algo, dímelo («defender es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "pinguinos",
+  "q": "¿Qué comen las focas leopardo?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No lo sé.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Qué abrió Rosa?",
+  "tipo": "lit",
+  "crit": "libreria",
+  "r": "Rosa abrió una librería en el centro de Zamora hace diez años.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Dónde abrió Rosa la librería?",
+  "tipo": "lit",
+  "crit": "zamora|centro",
+  "r": "Rosa abrió una librería en el centro de Zamora hace diez años.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Qué adquirió Rosa?",
+  "tipo": "sin",
+  "crit": "imprenta",
+  "r": "Rosa compró una pequeña imprenta. Entiendo «adquirir» como «comprar».",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Qué empezó a editar Rosa?",
+  "tipo": "sin",
+  "crit": "guias",
+  "r": "Publicar guías de la provincia.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Quién ayuda a Rosa?",
+  "tipo": "pro",
+  "crit": "pablo|hermano",
+  "r": "En el texto pone: «Su hermano Pablo la ayuda los fines de semana».",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿De qué se encarga Pablo?",
+  "tipo": "pro",
+  "crit": "cuentas|almacen",
+  "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Dónde recogió Rosa el premio?",
+  "tipo": "pro",
+  "crit": "teatro",
+  "r": "Rosa recogió el premio en el teatro de la ciudad.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Quién le concedió un premio a Rosa?",
+  "tipo": "lit",
+  "crit": "ayuntamiento",
+  "r": "El ayuntamiento concedió un premio a Rosa por su labor cultural.",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Quién le otorgó un premio a Rosa?",
+  "tipo": "sin",
+  "crit": "ayuntamiento",
+  "r": "El ayuntamiento concedió un premio a Rosa por su labor cultural. Entiendo «otorgar» como «conceder».",
+  "v": "bien"
+ },
+ {
+  "texto": "tienda",
+  "q": "¿Qué vende Pablo?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Cuándo entró en erupción el volcán Teneguía?",
+  "tipo": "lit",
+  "crit": "1971",
+  "r": "Teneguía entró en erupción y la isla de La Palma en 1971.",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Qué formó la lava?",
+  "tipo": "lit",
+  "crit": "playas",
+  "r": "La lava formó nuevas playas.",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Qué creó la lava?",
+  "tipo": "sin",
+  "crit": "playas",
+  "r": "La lava formó nuevas playas. Entiendo «crear» como «formar».",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Quiénes vigilaron el volcán?",
+  "tipo": "pro",
+  "crit": "cientificos",
+  "r": "En el texto pone: «Los científicos lo vigilaron durante semanas desde un observatorio cercano».",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Qué midieron los científicos?",
+  "tipo": "pro",
+  "crit": "temperatura",
+  "r": "No lo sé.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Cuánto duró la erupción?",
+  "tipo": "lit",
+  "crit": "veinticuatro",
+  "r": "La erupción duró veinticuatro días.",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Qué atrae el volcán?",
+  "tipo": "lit",
+  "crit": "turistas",
+  "r": "Muchos turistas.",
+  "v": "bien"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Quiénes visitan el cráter?",
+  "tipo": "sin",
+  "crit": "turistas",
+  "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «visitar»; si es otra forma de decir algo, dímelo («visitar es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "volcan",
+  "q": "¿Cuántos pescadores salvaron los científicos?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No lo sé. («salvar» no aparece en lo que he aprendido.)",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Qué limpia el robot aspirador?",
+  "tipo": "lit",
+  "crit": "suelo",
+  "r": "El suelo de la casa.",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Qué detecta el sensor?",
+  "tipo": "lit",
+  "crit": "obstaculos",
+  "r": "El sensor del robot aspirador detecta los obstáculos.",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Qué localiza el sensor?",
+  "tipo": "sin",
+  "crit": "obstaculos",
+  "r": "No lo sé: no me has dicho qué localiza el sensor del robot aspirador. Del sensor del robot aspirador sé que detecta los obstáculos. En lo que he aprendido no aparece «localizar»; si es otra forma de decir algo, dímelo («localizar es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Qué esquiva el robot?",
+  "tipo": "pro",
+  "crit": "pared",
+  "r": "En el texto pone: «Cuando encuentra una pared, la esquiva y cambia de dirección».",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Cuánto dura la batería?",
+  "tipo": "lit",
+  "crit": "dos horas",
+  "r": "La batería del robot aspirador dura unas dos horas.",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Adónde regresa el robot al terminar?",
+  "tipo": "sin",
+  "crit": "base",
+  "r": "En el texto pone: «Al terminar, vuelve solo a su base y allí se recarga». Entiendo «regresar» como «volver».",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Desde dónde programan los usuarios el robot?",
+  "tipo": "pro",
+  "crit": "telefono|movil",
+  "r": "No lo sé.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Qué aconseja el fabricante?",
+  "tipo": "sin",
+  "crit": "vaciar|deposito",
+  "r": "Vaciar el depósito después de cada uso.",
+  "v": "bien"
+ },
+ {
+  "texto": "robot",
+  "q": "¿Cuánto cuesta el robot?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Dónde vive Óscar?",
+  "tipo": "lit",
+  "crit": "bilbao",
+  "r": "Óscar vive en Bilbao con su mujer.",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Cómo se llama la mujer de Óscar?",
+  "tipo": "lit",
+  "crit": "ane",
+  "r": "En el texto pone: «Mi primo Óscar vive en Bilbao con su mujer, que se llama Ane».",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Qué diseña Ane?",
+  "tipo": "pro",
+  "crit": "colegios",
+  "r": "No lo sé: no me has dicho qué diseña Ane. De Ane sé que quiere comprar un piso más grande.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Qué proyecta Ane?",
+  "tipo": "sin",
+  "crit": "colegios",
+  "r": "No lo sé: no me has dicho qué proyecta Ane. De Ane sé que quiere comprar un piso más grande. En lo que he aprendido no aparece «proyectar»; si es otra forma de decir algo, dímelo («proyectar es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Dónde trabaja Óscar?",
+  "tipo": "lit",
+  "crit": "taller",
+  "r": "Óscar trabaja en un taller de bicicletas.",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Con quién abrió Óscar el taller?",
+  "tipo": "pro",
+  "crit": "amigo",
+  "r": "Óscar abrió a Óscar con un amigo de la universidad hace cuatro años tienen una hija pequeña Lur.",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Quiénes recogen a Lur?",
+  "tipo": "pro",
+  "crit": "abuelos",
+  "r": "No lo sé: nadie me ha dicho eso.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Qué quiere adquirir Ane?",
+  "tipo": "sin",
+  "crit": "piso",
+  "r": "Ane quiere comprar un piso más grande.",
+  "v": "bien"
+ },
+ {
+  "texto": "familia",
+  "q": "¿Dónde trabaja Lur?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho dónde trabaja Lur. De Lur sé que va a una guardería del barrio.",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Dónde nace el río Duero?",
+  "tipo": "lit",
+  "crit": "urbion|soria",
+  "r": "Duero nace en los Picos de Urbión en la provincia de Soria.",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Qué atraviesa el Duero?",
+  "tipo": "lit",
+  "crit": "meseta",
+  "r": "Duero atraviesa la meseta castellana de este a oeste.",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Qué cruza el Duero?",
+  "tipo": "sin",
+  "crit": "meseta",
+  "r": "Duero atraviesa la meseta castellana de este a oeste. Entiendo «cruzar» como «atravesar».",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Dónde desemboca el Duero?",
+  "tipo": "pro",
+  "crit": "atlantico|oporto",
+  "r": "En el texto pone: «En Portugal lo llaman Douro y allí desemboca en el océano Atlántico, junto a la ciudad de Oporto».",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Cómo llaman al Duero en Portugal?",
+  "tipo": "pro",
+  "crit": "douro",
+  "r": "En el texto pone: «En Portugal lo llaman Douro y allí desemboca en el océano Atlántico, junto a la ciudad de Oporto».",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Quiénes construyeron puentes sobre el Duero?",
+  "tipo": "pro",
+  "crit": "romanos",
+  "r": "Los romanos construyeron varios puentes sobre Duero.",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Qué generan las presas?",
+  "tipo": "sin",
+  "crit": "electricidad",
+  "r": "No lo sé. En lo que he aprendido no aparece «generar»; si es otra forma de decir algo, dímelo («generar es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Quiénes edificaron puentes sobre el Duero?",
+  "tipo": "sin",
+  "crit": "romanos",
+  "r": "Los romanos construyeron varios puentes sobre Duero.",
+  "v": "bien"
+ },
+ {
+  "texto": "rio",
+  "q": "¿Cuántos peces viven en el Duero?",
+  "tipo": "abs",
+  "crit": "ABST",
+  "r": "No lo sé. («vivir» no aparece en lo que he aprendido.)",
+  "v": "bien"
+ }
+]

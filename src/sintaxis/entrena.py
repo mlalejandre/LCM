@@ -51,7 +51,97 @@ def descuidada(f):
     return out or f
 
 
-def lotes(fs, V, tam=48, orden="largo", baraja=True, ruido=0.0):
+def _rama_ids(f, i):
+    """Los índices (0..n-1) que cuelgan de la palabra i (ella incluida)."""
+    ids, cambio = {i}, True
+    while cambio:
+        cambio = False
+        for j, (w, u, h, r) in enumerate(f):
+            if h - 1 in ids and j not in ids:
+                ids.add(j); cambio = True
+    return ids
+
+
+def _reordena(f, orden, nuevos):
+    """Frase nueva con las palabras de `f` en `orden` (índices viejos o None para las de `nuevos`), recolocando las cabezas."""
+    mapa = {}
+    k = 0
+    for x in orden:
+        k += 1
+        if isinstance(x, int):
+            mapa[x + 1] = k
+    out, cola = [], iter(nuevos)
+    for x in orden:
+        if isinstance(x, int):
+            w, u, h, r = f[x]
+            out.append((w, u, mapa.get(h, 0) if h else 0, r))
+        else:
+            w, u, h_viejo, r = next(cola)
+            out.append((w, u, mapa.get(h_viejo, 0) if h_viejo else 0, r))
+    return out
+
+
+def sa_(w):
+    return w.lower().translate(_SIN_TILDE)
+
+
+def pregunta_de(f):
+    """De una frase analizada a mano, una PREGUNTA con su análisis correcto (aumento de datos; el corpus casi no trae preguntas).
+    Se pregunta por el sujeto («¿Quién compró la casa?») o por el objeto («¿Qué compró Rosa?»). No inventa análisis: mueve las
+    piezas del árbol que ya estaba bien analizado."""
+    n = len(f)
+    raiz = next((j for j, x in enumerate(f) if x[2] == 0), None)
+    if raiz is None or f[raiz][1] not in ("VERB",) or sa_(f[raiz][0]) in ("hay", "habia", "hubo") or n > 30 or any(w in ('"', "«", "»", "-", "—", ":", ";", "(") for w, *_ in f):
+        return None
+    hijos = [j for j, x in enumerate(f) if x[2] == raiz + 1]
+    if any(f[j][3] in ("cop", "mark") for j in hijos):
+        return None
+    suj = next((j for j in hijos if f[j][3] == "nsubj" and f[j][1] in ("NOUN", "PROPN")), None)
+    obj = next((j for j in hijos if f[j][3] == "obj" and f[j][1] in ("NOUN", "PROPN") and not any(f[k][3] == "case" and f[k][2] == j + 1 for k in range(n))), None)
+    fin = [j for j in range(n) if f[j][1] == "PUNCT" and j >= n - 1]
+    cuerpo = [j for j in range(n) if j not in fin and f[j][0] not in ("¿", "?", "¡", "!")]
+    if random.random() < 0.5 and suj is not None:
+        rama = _rama_ids(f, suj)
+        if max(rama) - min(rama) + 1 != len(rama):
+            return None
+        persona = f[suj][1] in ("PROPN", "PRON")
+        wh = ("quién" if persona else "qué")
+        orden = ["Q0"] + [j for j in cuerpo if j < min(rama)] + ["Q1"] + [j for j in cuerpo if j > max(rama)] + ["Q2"]
+        nuevos = [("¿", "PUNCT", raiz + 1, "punct"), (wh, "PRON", raiz + 1, "nsubj"), ("?", "PUNCT", raiz + 1, "punct")]
+    elif obj is not None:
+        rama = _rama_ids(f, obj)
+        if max(rama) - min(rama) + 1 != len(rama):
+            return None
+        grupo_v = sorted({raiz} | {j for j in hijos if f[j][3] in ("aux", "expl", "iobj") and f[j][1] in ("AUX", "PRON") and j < raiz})
+        resto = [j for j in cuerpo if j not in rama and j not in grupo_v]
+        sujeto = sorted(_rama_ids(f, suj)) if suj is not None and suj < raiz else []
+        resto = [j for j in resto if j not in sujeto]
+        orden = ["Q0", "Q1"] + grupo_v + sujeto + [j for j in resto] + ["Q2"]
+        nuevos = [("¿", "PUNCT", raiz + 1, "punct"), ("Qué", "PRON", raiz + 1, "obj"), ("?", "PUNCT", raiz + 1, "punct")]
+    else:
+        return None
+    marcas = iter(nuevos)
+    orden2 = [x if isinstance(x, int) else None for x in orden]
+    nv = [nuevos[int(x[1])] for x in orden if not isinstance(x, int)]
+    out = _reordena(f, orden2, nv)
+    if out and out[1][0][:1].islower() and random.random() < 0.8:
+        w, u, h, r = out[1]; out[1] = (w[:1].upper() + w[1:], u, h, r)
+    for j in range(2, len(out)):                         # la palabra que abría la frase ya no va en mayúscula (salvo nombres)
+        w, u, h, r = out[j]
+        if w[:1].isupper() and u not in ("PROPN",) and j > 1 and f[0][0] == w:
+            out[j] = (w[:1].lower() + w[1:], u, h, r)
+    return out
+
+
+def lotes(fs, V, tam=48, orden="largo", baraja=True, ruido=0.0, preguntas=0.0):
+    if preguntas:
+        extra = []
+        for f in fs:
+            if random.random() < preguntas:
+                g = pregunta_de(f)
+                if g:
+                    extra.append(g)
+        fs = list(fs) + extra
     if ruido:
         fs = [descuidada(f) if random.random() < ruido else f for f in fs]
     idx = sorted(range(len(fs)), key=lambda i: len(fs[i]))
@@ -148,7 +238,7 @@ def main():
     for ep in range(ep0 + 1, a.epocas + 1):
         modelo.train()
         tot = 0.0; nb = 0
-        for b, X, U, H, R in lotes(train, V, orden="curriculo" if ep == 1 else "largo", ruido=0.3):   # la primera pasada, de las frases cortas a las largas
+        for b, X, U, H, R in lotes(train, V, orden="curriculo" if ep == 1 else "largo", ruido=0.3, preguntas=float(os.environ.get("LCM_PREGUNTAS_AUMENTO", "0"))):   # 2.33: aumento con preguntas probado y descartado (no mejoró); queda a 0   # la primera pasada, de las frases cortas a las largas
             # palabras poco vistas pasan a «desconocida» a veces, para que aprenda a apoyarse en la forma
             Xw = X.clone()
             azar = torch.rand(Xw[..., 0].shape) < 0.15
