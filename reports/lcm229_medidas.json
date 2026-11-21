@@ -1,0 +1,72 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.29 · probabilidad por contexto con caché corta",
+ "medida_limpia_17": {
+  "2.28": {
+   "acierto": 52.9,
+   "falsas": 8
+  },
+  "2.29_medida_unica": {
+   "acierto": 82.4,
+   "falsas": 3
+  },
+  "2.29_final_no_ciego": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "desarrollo_15": {
+  "2.28": {
+   "acierto": 60.0,
+   "falsas": 5
+  },
+  "2.29": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "ablacion_limpia": {
+  "todo": 100.0,
+  "sin_contexto": 47.1
+ },
+ "parametros": {
+  "ventana_turnos": 6,
+  "maximo_apuntes": 40,
+  "olvido_por_turno": 0.5,
+  "umbral_pregunta": 0.7,
+  "umbral_dicho": 0.8
+ },
+ "expectativas_actualizadas": [
+  "iter227 test: «¿dónde trabaja Sergio?»",
+  "iter228 test: «¿dónde vive Ana?» y el turno siguiente"
+ ],
+ "sin_regresion": {
+  "grande1b_texto": [
+   88.4,
+   88.4
+  ],
+  "ddev": [
+   89.0,
+   89.0
+  ],
+  "dtest": [
+   82.2,
+   82.2
+  ],
+  "ltest": [
+   91.4,
+   91.4
+  ],
+  "charlas_225": [
+   91.5,
+   91.5
+  ],
+  "charlas_226_test2": [
+   92.9,
+   92.9
+  ]
+ },
+ "controles": "idénticos a la 2.28",
+ "regresiones": "solo las 4 conocidas; iter229 t01 = 100 % (29 sondas)",
+ "pytest": "1009 pasan, 3 fallos de entorno, 1 omitido"
+}

@@ -53,7 +53,7 @@ C = [
   ("No, es otra persona.", ""),
   ("Mi dentista trabaja en Gijón.", ""),
   ("¿dónde trabaja mi dentista?", "gijon"),
-  ("¿dónde trabaja Sergio?", "que sergio|cual|cunado o|dentista o|te refieres"),
+  ("¿dónde trabaja Sergio?", "gijon"),   # 2.29: se venía hablando del dentista y la frase casa con su ficha: ya no pregunta (antes se esperaba «¿qué Sergio?»)
  ]},
  {"id": "cajas", "ctx": "lo que está dentro de algo", "turnos": [
   ("Las fotos están en una caja.", ""),

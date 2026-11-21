@@ -1,0 +1,289 @@
+[
+ {
+  "id": "lauras",
+  "q": "Mi hermana se llama Laura y vive en Oviedo.",
+  "crit": "",
+  "r": "Entendido: tu hermana se llama Laura; Laura vive en Oviedo.",
+  "v": null
+ },
+ {
+  "id": "lauras",
+  "q": "Mi dentista también se llama Laura.",
+  "crit": "",
+  "r": "Entendido: tu dentista también se llama Laura. Es otra persona, no tu hermana.",
+  "v": null
+ },
+ {
+  "id": "lauras",
+  "q": "Mi dentista trabaja en una clínica.",
+  "crit": "",
+  "r": "Entendido: tu dentista Laura trabaja en una clínica.",
+  "v": null
+ },
+ {
+  "id": "lauras",
+  "q": "Esta mañana he ido a ver a mi dentista.",
+  "crit": "",
+  "r": "Entendido: fuiste a ver a tu dentista esta mañana.",
+  "v": null
+ },
+ {
+  "id": "lauras",
+  "q": "¿dónde trabaja Laura?",
+  "crit": "clinica",
+  "r": "Tu dentista Laura trabaja en una clínica.",
+  "v": "OK"
+ },
+ {
+  "id": "lauras",
+  "q": "Luego he comido con mi hermana.",
+  "crit": "",
+  "r": "Entendido: comiste con tu hermana luego.",
+  "v": null
+ },
+ {
+  "id": "lauras",
+  "q": "¿dónde vive Laura?",
+  "crit": "oviedo",
+  "r": "Tu hermana Laura vive en Oviedo.",
+  "v": "OK"
+ },
+ {
+  "id": "lauras",
+  "q": "¿mi dentista vive en Oviedo?",
+  "crit": "ABST|^no",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu dentista Laura sé que dentista Laura es tu dentista y trabaja en una clínica.",
+  "v": "OK"
+ },
+ {
+  "id": "ficha",
+  "q": "Mi tío se llama Ramón y es carpintero.",
+  "crit": "",
+  "r": "Entendido: tu tío se llama Ramón; Ramón es carpintero.",
+  "v": null
+ },
+ {
+  "id": "ficha",
+  "q": "Mi profesor también se llama Ramón.",
+  "crit": "",
+  "r": "Entendido: tu profesor también se llama Ramón. Es otra persona, no tu tío.",
+  "v": null
+ },
+ {
+  "id": "ficha",
+  "q": "Mi profesor enseña matemáticas.",
+  "crit": "",
+  "r": "Entendido: tu profesor Ramón enseña matemáticas.",
+  "v": null
+ },
+ {
+  "id": "ficha",
+  "q": "Hace mucho que no hablamos de ninguno.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Hace mucho que no hablamos de ninguno».",
+  "v": null
+ },
+ {
+  "id": "ficha",
+  "q": "Hoy toca clase.",
+  "crit": "",
+  "r": "Entendido: tu profesor Ramón toca clase hoy.",
+  "v": null
+ },
+ {
+  "id": "ficha",
+  "q": "¿qué enseña Ramón?",
+  "crit": "matematicas",
+  "r": "Tu profesor Ramón enseña matemáticas y los profesores enseñan a los alumnos.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_pistas",
+  "q": "Mi cuñada se llama Eva.",
+  "crit": "",
+  "r": "Entendido: tu cuñada se llama Eva.",
+  "v": null
+ },
+ {
+  "id": "sin_pistas",
+  "q": "Mi médica también se llama Eva.",
+  "crit": "",
+  "r": "Entendido: tu médica también se llama Eva. Es otra persona, no tu cuñada.",
+  "v": null
+ },
+ {
+  "id": "sin_pistas",
+  "q": "¿cuántos años tiene Eva?",
+  "crit": "que eva|cual",
+  "r": "¿Qué Eva: tu cuñada o tu médica?",
+  "v": "OK"
+ },
+ {
+  "id": "sin_pistas",
+  "q": "mi cuñada",
+  "crit": "",
+  "r": "No sé cuántos años tiene tu cuñada Eva: no me lo has dicho.",
+  "v": null
+ },
+ {
+  "id": "sin_pistas",
+  "q": "Eva tiene cuarenta años.",
+  "crit": "",
+  "r": "Entendido: tu cuñada Eva tiene cuarenta años.",
+  "v": null
+ },
+ {
+  "id": "sin_pistas",
+  "q": "¿cuántos años tiene mi cuñada?",
+  "crit": "cuarenta|40",
+  "r": "Tu cuñada Eva tiene 40 años.",
+  "v": "OK"
+ },
+ {
+  "id": "sin_pistas",
+  "q": "¿cuántos años tiene mi médica?",
+  "crit": "ABST",
+  "r": "No sé cuántos años tiene tu médica Eva: no me lo has dicho.",
+  "v": "OK"
+ },
+ {
+  "id": "teclado",
+  "q": "Se me ha roto el ratón del ordenador.",
+  "crit": "",
+  "r": "Lo siento. Entendido: se te rompió el ratón del ordenador.",
+  "v": null
+ },
+ {
+  "id": "teclado",
+  "q": "¿el ratón es un mamífero?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «raton» en el sentido de aparato, no de un mamífero.",
+  "v": "OK"
+ },
+ {
+  "id": "teclado",
+  "q": "¿el ratón es un aparato?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «raton» en el sentido de aparato.",
+  "v": "OK"
+ },
+ {
+  "id": "carta",
+  "q": "He echado una carta en el buzón de correos.",
+  "crit": "",
+  "r": "Lo siento. Entendido: echaste una carta en el buzón de correos.",
+  "v": null
+ },
+ {
+  "id": "carta",
+  "q": "¿la carta es un juego?",
+  "crit": "varios sentidos|cual|^no",
+  "r": "«carta» tiene varios sentidos y no tengo claro de cuál hablamos: ¿documento o juego?",
+  "v": "OK"
+ },
+ {
+  "id": "carta",
+  "q": "documento",
+  "crit": "",
+  "r": "No: por lo que me has contado, hablamos de «carta» en el sentido de documento, no de un juego.",
+  "v": null
+ },
+ {
+  "id": "carta",
+  "q": "¿la carta es un documento?",
+  "crit": "^si",
+  "r": "Sí, una carta es un documento.",
+  "v": "OK"
+ },
+ {
+  "id": "carta",
+  "q": "Mañana echaré otra carta en el buzón.",
+  "crit": "",
+  "r": "Lo siento. Entendido: echarás otra carta en el buzón mañana.",
+  "v": null
+ },
+ {
+  "id": "carta",
+  "q": "¿la carta es un juego?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «carta» en el sentido de documento, no de un juego.",
+  "v": "OK"
+ },
+ {
+  "id": "normal",
+  "q": "Tengo una copa en la mesa.",
+  "crit": "",
+  "r": "Entendido: tienes una copa en la mesa.",
+  "v": null
+ },
+ {
+  "id": "normal",
+  "q": "¿mi copa es un recipiente?",
+  "crit": "^si",
+  "r": "Sí, tu copa es un recipiente. Lo deduzco porque tu copa es una copa y una copa es un recipiente.",
+  "v": "OK"
+ },
+ {
+  "id": "normal",
+  "q": "Tengo un ratón en casa.",
+  "crit": "",
+  "r": "Entendido: tienes un ratón en casa. ¿Cómo se llama?",
+  "v": null
+ },
+ {
+  "id": "normal",
+  "q": "¿el ratón es un animal?",
+  "crit": "^si",
+  "r": "Sí, un ratón es un animal. Lo deduzco porque un ratón es un mamífero y un mamífero es un animal.",
+  "v": "OK"
+ },
+ {
+  "id": "normal",
+  "q": "He comprado una planta.",
+  "crit": "",
+  "r": "Entendido: compraste una planta.",
+  "v": null
+ },
+ {
+  "id": "normal",
+  "q": "¿la planta es un ser vivo?",
+  "crit": "^si",
+  "r": "Sí, una planta es un ser vivo.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenado",
+  "q": "Una pluma es una pieza del ala de un pájaro.",
+  "crit": "",
+  "r": "Entendido: la pluma es una pieza del ala de un pájaro.",
+  "v": null
+ },
+ {
+  "id": "ensenado",
+  "q": "Una pluma también es un instrumento para escribir con tinta.",
+  "crit": "",
+  "r": "Entendido, me lo apunto.",
+  "v": null
+ },
+ {
+  "id": "ensenado",
+  "q": "He comprado una pluma y un bote de tinta para escribir.",
+  "crit": "",
+  "r": "Entendido: compraste una pluma y un bote de tinta para escribir.",
+  "v": null
+ },
+ {
+  "id": "ensenado",
+  "q": "¿la pluma es un instrumento?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «pluma» en el sentido de instrumento de escritura.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenado",
+  "q": "¿la pluma es una pieza?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «pluma» en el sentido de instrumento de escritura, no de una pieza.",
+  "v": "OK"
+ }
+]

@@ -432,6 +432,36 @@ def _otro(nuc, texto, rol_txt, nombre, resto=""):
     return _ok(f"Entendido: tu {rol_txt} también se llama {nombre}. Es otra persona, no {ops[0]['dice']}." + cola)
 
 
+def _ficha(nuc, e):
+    """Las palabras de lo que se sabe de un nodo (su ficha), para ver si una frase habla de él."""
+    from . import contexto as X
+    txt = []
+    for f in nuc.F:
+        if f.get("vig", True) and (nuc.can(f.get("s") or "") == e or nuc.can(f.get("obj") or "") == e):
+            txt.append(f.get("src") or "")
+    txt.append(nuc.E.get(e, {}).get("tocayo") or "")
+    return set(X.lemas(" ".join(txt)))
+
+
+def probabilidades(nuc, t, forma, ops):
+    """La probabilidad de cada tocayo: de quién se venía hablando (caché) y con la ficha de quién casa la frase."""
+    from . import contexto as X
+    frase = {l: 1.0 for l in X.lemas(re.sub(r"\b" + forma + r"\b", " ", t)) if l != sa(forma.lower())}
+    puntos = [X.peso_entidad(nuc, o["id"]) + 0.8 * X.casa(frase, _ficha(nuc, o["id"]) - {sa(forma.lower())}) for o in ops]
+    return X.reparte(puntos), puntos
+
+
+def _probable(nuc, t, forma, ops):
+    from . import contexto as X
+    if X.apagado():
+        return None
+    ps, puntos = probabilidades(nuc, t, forma, ops)
+    k = max(range(len(ops)), key=lambda i: ps[i])
+    umbral = X.SEGURO if "?" in t else X.SEGURO_DICHO
+    nuc._ult_prob229 = (forma, [round(p, 2) for p in ps])
+    return ops[k] if ps[k] >= umbral and puntos[k] > 0 else None
+
+
 def tocayos(nuc, texto):
     """Antes de entender la frase: ¿habla de un nombre que llevan dos personas? Devuelve None, {"respuesta": …} o {"texto": frase rehecha}.
     Si no se sabe a cuál se refiere, SE PREGUNTA."""
@@ -441,7 +471,7 @@ def tocayos(nuc, texto):
     t = texto.strip()
     pend = getattr(nuc, "_toc_pend", None)
     nuc._toc_pend = None
-    if pend and nuc.turno - pend["turno"] <= 1 and len(t.split()) <= 6:
+    if pend and nuc.turno - pend["turno"] <= 1 and len(t.split()) <= (3 if pend["tipo"] == "cual" else 6):
         n = sa(t.lower()).strip(" .!¡¿?,")
         if pend["tipo"] == "cual":
             for op in T.get(pend["nombre"], []):
@@ -484,6 +514,9 @@ def tocayos(nuc, texto):
             pat = r"(?:\b(?:mi|el|la|tu)\s+" + rol + r"\s+" + forma + r"\b|\b" + forma + r",?\s+(?:mi|el|la)\s+" + rol + r"\b)"
             if re.search(pat, t, re.I):
                 return {"texto": re.sub(pat, forma, t, count=1, flags=re.I), "foco": {"N:" + nom: op["id"]}}
+        el = _probable(nuc, t, forma, ops)               # 2.29: ¿de cuál se venía hablando? Si está claro, no se pregunta
+        if el is not None:
+            return {"texto": t, "foco": {"N:" + nom: el["id"]}}
         nuc._toc_pend = {"tipo": "cual", "turno": nuc.turno, "texto": t, "forma": forma, "nombre": nom}
         return {"respuesta": f"¿Qué {forma}: {' o '.join(o['dice'] for o in ops)}?", "estado": "ok", "consultar": False, "tipo": "pregunta"}
     m = re.match(r"^¿?\s*cu[aá]nt[oa]s\s+([A-ZÁÉÍÓÚÑa-záéíóúñ]+?)s?\s+(?:conozco|hay|tengo)\s*\?$", t)

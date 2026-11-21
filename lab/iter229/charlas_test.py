@@ -1,0 +1,58 @@
+"""2.29 · MEDIDA LIMPIA: probabilidad por contexto. Escrita con el código congelado y sin ejecutarla. Se mide UNA vez en 2.28 y en 2.29."""
+C = [
+ {"id": "lauras", "ctx": "de quién se venía hablando", "turnos": [
+  ("Mi hermana se llama Laura y vive en Oviedo.", ""),
+  ("Mi dentista también se llama Laura.", ""),
+  ("Mi dentista trabaja en una clínica.", ""),
+  ("Esta mañana he ido a ver a mi dentista.", ""),
+  ("¿dónde trabaja Laura?", "clinica"),
+  ("Luego he comido con mi hermana.", ""),
+  ("¿dónde vive Laura?", "oviedo"),
+  ("¿mi dentista vive en Oviedo?", "ABST|^no"),
+ ]},
+ {"id": "ficha", "ctx": "la frase casa con lo que se sabe de uno de ellos", "turnos": [
+  ("Mi tío se llama Ramón y es carpintero.", ""),
+  ("Mi profesor también se llama Ramón.", ""),
+  ("Mi profesor enseña matemáticas.", ""),
+  ("Hace mucho que no hablamos de ninguno.", ""),
+  ("Hoy toca clase.", ""),
+  ("¿qué enseña Ramón?", "matematicas"),
+ ]},
+ {"id": "sin_pistas", "ctx": "sin contexto, pregunta", "turnos": [
+  ("Mi cuñada se llama Eva.", ""),
+  ("Mi médica también se llama Eva.", ""),
+  ("¿cuántos años tiene Eva?", "que eva|cual"),
+  ("mi cuñada", ""),
+  ("Eva tiene cuarenta años.", ""),
+  ("¿cuántos años tiene mi cuñada?", "cuarenta|40"),
+  ("¿cuántos años tiene mi médica?", "ABST"),
+ ]},
+ {"id": "teclado", "ctx": "el sentido por lo que hay alrededor", "turnos": [
+  ("Se me ha roto el ratón del ordenador.", ""),
+  ("¿el ratón es un mamífero?", "^no"),
+  ("¿el ratón es un aparato?", "^si"),
+ ]},
+ {"id": "carta", "ctx": "preguntar, aprender y recordar", "turnos": [
+  ("He echado una carta en el buzón de correos.", ""),
+  ("¿la carta es un juego?", "varios sentidos|cual|^no"),
+  ("documento", ""),
+  ("¿la carta es un documento?", "^si"),
+  ("Mañana echaré otra carta en el buzón.", ""),
+  ("¿la carta es un juego?", "^no"),
+ ]},
+ {"id": "normal", "ctx": "sin nada en contra, no se pregunta", "turnos": [
+  ("Tengo una copa en la mesa.", ""),
+  ("¿mi copa es un recipiente?", "^si"),
+  ("Tengo un ratón en casa.", ""),
+  ("¿el ratón es un animal?", "^si"),
+  ("He comprado una planta.", ""),
+  ("¿la planta es un ser vivo?", "^si"),
+ ]},
+ {"id": "ensenado", "ctx": "sentidos enseñados y su contexto", "turnos": [
+  ("Una pluma es una pieza del ala de un pájaro.", ""),
+  ("Una pluma también es un instrumento para escribir con tinta.", ""),
+  ("He comprado una pluma y un bote de tinta para escribir.", ""),
+  ("¿la pluma es un instrumento?", "^si"),
+  ("¿la pluma es una pieza?", "^no"),
+ ]},
+]

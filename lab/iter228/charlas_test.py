@@ -12,8 +12,8 @@ C = [
   ("Mi jefa.", ""),
   ("¿quién tiene un gato?", "jefa"),
   ("¿mi madre tiene un gato?", "ABST|^no"),
-  ("¿dónde vive Ana?", "que ana|cual"),
-  ("mi madre", "burgos"),
+  ("¿dónde vive Ana?", "burgos"),        # 2.29: se acaba de preguntar por «mi madre» y solo de ella se sabe dónde vive: ya no pregunta
+  ("mi madre", ""),
   ("¿cuántas Anas conozco?", "tres|3"),
  ]},
  {"id": "mismo", "ctx": "mismo nombre y sí es la misma persona", "turnos": [

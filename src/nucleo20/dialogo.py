@@ -101,6 +101,14 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             pass
         r = r_decl = None
+        try:                                             # 2.29: la respuesta a «¿de qué sentido hablamos?» retoma la pregunta que quedó pendiente
+            if texto and getattr(self, "_sent_pend229", None) and not getattr(self, "_leyendo", False):
+                from . import acepciones as _A
+                t_p = _A.pendiente(self, texto)
+                if t_p:
+                    texto = t_p
+        except Exception:                                # noqa
+            pass
         try:                                             # 2.27: dos personas con el mismo nombre: se abre otro nodo, y si no se sabe cuál, se pregunta
             if texto and not getattr(self, "_foco228", None) and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform", "_tocando")):
                 from . import grafo as _G
@@ -111,6 +119,8 @@ class Conversador(Nucleo):
                         self._foco228 = dict(tp["foco"])
                         self._tocando = True
                         try:
+                            from . import contexto as _X
+                            _X.apunta(self, "", list(tp["foco"].values()))   # 2.29: de este se está hablando
                             return self.procesar(texto)
                         finally:
                             self._foco228 = None
@@ -164,6 +174,22 @@ class Conversador(Nucleo):
             r = self._procesar_218(texto)
             if r_decl is not None and not (isinstance(r, dict) and r.get("estado") == "ok" and "no lo he entendido" not in sa((r.get("respuesta") or "").lower())):
                 r = r_decl                               # el núcleo no tenía nada que hacer con la frase: al menos queda aprendido el sinónimo
+        try:                                             # 2.29: la caché corta de contexto (palabras y entidades de este turno)
+            if texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform")) and len(texto) < 300:
+                from . import contexto as _X
+                from . import acepciones as _A
+                ents_ = [self.can(e_) for e_ in (self.menc[-3:] if getattr(self, "menc", None) else []) if isinstance(e_, str)]
+                if not getattr(self, "_tocando", False):
+                    ents_ = [e_ for e_ in ents_ if self.E.get(e_, {}).get("t_menc229") != self.turno]
+                _A.apunta(self, texto)
+                for ops_ in (self.usuario.get("tocayos") or {}).values():   # los tocayos, por su papel («mi hermana», «el vecino»)
+                    for o_ in ops_:
+                        if re.search(r"\b(?:mi|el|la|al|del|tu)\s+" + re.escape(sa(o_["dice"].split(" ", 1)[1])) + r"\b", sa(texto.lower())):
+                            ents_.append(o_["id"])
+                definicion = re.match(r"^(?:un|una|el|la)\s+\w+\s+(?:tambi[eé]n\s+)?es\s+(?:un|una)\s", texto.strip(), re.I)   # una definición no es «de lo que se habla»
+                _X.apunta(self, "" if definicion else texto, [e_ for e_ in ents_ if self._menc_ahora229(e_, texto)])
+        except Exception:                                # noqa
+            pass
         try:                                             # 2.27: lo que se deduce por el grafo de relaciones (y lo que el núcleo contestó peor)
             if texto and "?" in texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform")):
                 from . import grafo as _G
@@ -186,6 +212,16 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             pass
         return r
+
+    def _menc_ahora229(self, e, texto):
+        """¿Se ha hablado de esta entidad en esta frase? (por su nombre o por su papel)"""
+        d = self.E.get(e, {})
+        n = sa(texto.lower())
+        nom = sa((d.get("nombre") or "").lower())
+        rol = sa((d.get("tocayo") or d.get("clase") or "").lower())
+        if d.get("tocayo"):
+            return bool(rol and re.search(r"\b" + re.escape(rol), n)) or bool(getattr(self, "_foco228", None) and e in self._foco228.values())
+        return bool(nom and re.search(r"\b" + re.escape(nom) + r"\b", n)) or bool(rol and re.search(r"\b" + re.escape(rol[:5]), n))
 
     _WH225 = r"(?:(?:desde|hasta|con|para|por|de|a|en)\s+)?(?:qu[eé]|qui[eé]n(?:es)?|cu[aá]ndo|d[oó]nde|c[oó]mo|cu[aá]nt[oa]s?|cu[aá]l(?:es)?)"
 
