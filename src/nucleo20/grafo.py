@@ -386,23 +386,41 @@ def _roles(nuc, k):
 
 
 def _otro(nuc, texto, rol_txt, nombre, resto=""):
-    """Abre un nodo NUEVO para «mi <rol>» que se llama igual que alguien ya conocido, sin unirlos."""
-    k = "N:" + sa(nombre.lower())
-    r0 = _roles(nuc, k)
+    """Abre un NODO NUEVO para «mi <rol>» que se llama igual que alguien ya conocido. Desde la 2.28 es un nodo con su nombre propio
+    (N:pedro#2): el nombre deja de ser la identidad."""
+    k0 = "N:" + sa(nombre.lower())
+    primero = nuc.can(k0)
+    r0 = _roles(nuc, k0)
     T = nuc.usuario.setdefault("tocayos", {})
     ops = T.setdefault(sa(nombre.lower()), [])
     if not ops:
-        ops.append({"rol": r0[0], "ref": nombre, "dice": "tu " + _nombre_rel(nuc, r0[0], nuc.can(k))})
+        rol0 = _nombre_rel(nuc, r0[0], primero)
+        if primero == k0:                                # el primero también deja de ser «el nombre»: pasa a su propio nodo, y N:pedro queda solo como nombre
+            nid1 = k0 + "#1"
+            nuc.E[nid1] = dict(nuc.E[k0])
+            nuc.unir(k0, nid1)
+            primero = nid1
+        ops.append({"rol": r0[0], "dice": "tu " + rol0, "id": primero})
+        nuc.E[primero]["tocayo"] = rol0
     fem = sa(rol_txt.split()[0]).endswith("a")
+    antes = set(nuc.E)
     nuc._tocando = True
     try:
         nuc.procesar(f"Tengo {'una' if fem else 'un'} {rol_txt}.")
     finally:
         nuc._tocando = False
-    ops.append({"rol": _canon(rol_txt.split()[0]) or sa(rol_txt.split()[0]), "ref": "mi " + rol_txt, "dice": "tu " + rol_txt})
-    for e, d in nuc.E.items():
-        if e.startswith("I:") and d.get("dueno") == "U" and sa(d.get("clase") or "") == sa(ops[-1]["rol"]) and not d.get("nombre"):
-            d["nombre_tocayo"] = nombre
+    rc = _canon(rol_txt.split()[0]) or sa(rol_txt.split()[0])
+    inst = next((e for e in nuc.E if e not in antes and e.startswith("I:")), None) \
+        or next((e for e, d in nuc.E.items() if e.startswith("I:") and d.get("dueno") == "U" and sa(d.get("clase") or "") in (sa(rc), sa(rol_txt.split()[0])) and e not in nuc.eq), None)
+    nid = f"N:{sa(nombre.lower())}#{len(ops) + 1}"
+    nuc._ent(nid, nombre=nombre, clase=(nuc.E.get(inst, {}).get("clase") or rc), dueno="U", gen="f" if fem else (nuc.E.get(inst, {}).get("gen") or "m"))
+    nuc.E[nid]["tocayo"] = rol_txt
+    if inst:
+        nuc.unir(inst, nid)
+    else:
+        nuc._rel(rc, nid, "U", texto, "f" if fem else "m")
+    ops.append({"rol": rc, "dice": "tu " + rol_txt, "id": nid})
+    nuc._grafo227 = None
     cola = ""
     if resto.strip(" .,"):
         nuc._tocando = True
@@ -428,7 +446,7 @@ def tocayos(nuc, texto):
         if pend["tipo"] == "cual":
             for op in T.get(pend["nombre"], []):
                 if re.search(r"\b" + re.escape(sa(op["dice"].split(" ", 1)[1])) + r"\b", n):
-                    return {"texto": re.sub(r"\b" + pend["forma"] + r"\b", op["ref"], pend["texto"], count=1)}
+                    return {"texto": pend["texto"], "foco": {"N:" + pend["nombre"]: op["id"]}}
         elif pend["tipo"] == "mismo":
             if re.match(r"^(?:si|el mismo|la misma|es el mismo|es la misma|claro|eso es)\b", n):
                 nuc._tocando = True
@@ -465,7 +483,7 @@ def tocayos(nuc, texto):
             rol = re.escape(op["dice"].split(" ", 1)[1])
             pat = r"(?:\b(?:mi|el|la|tu)\s+" + rol + r"\s+" + forma + r"\b|\b" + forma + r",?\s+(?:mi|el|la)\s+" + rol + r"\b)"
             if re.search(pat, t, re.I):
-                return {"texto": re.sub(pat, op["ref"] if op is not ops[0] else forma, t, count=1, flags=re.I)}
+                return {"texto": re.sub(pat, forma, t, count=1, flags=re.I), "foco": {"N:" + nom: op["id"]}}
         nuc._toc_pend = {"tipo": "cual", "turno": nuc.turno, "texto": t, "forma": forma, "nombre": nom}
         return {"respuesta": f"¿Qué {forma}: {' o '.join(o['dice'] for o in ops)}?", "estado": "ok", "consultar": False, "tipo": "pregunta"}
     m = re.match(r"^¿?\s*cu[aá]nt[oa]s\s+([A-ZÁÉÍÓÚÑa-záéíóúñ]+?)s?\s+(?:conozco|hay|tengo)\s*\?$", t)
@@ -473,3 +491,8 @@ def tocayos(nuc, texto):
         ops = T[sa(m.group(1).lower())]
         return _ok(f"{_cap(_num(len(ops)))}: {_N.Nucleo._lista([o['dice'] for o in ops])}.")
     return None
+
+
+def pule(txt):
+    """«Tu vecino Pedro es tu vecino» -> «Pedro es tu vecino»: con tocayos el nodo se nombra con su papel, y a veces sobra."""
+    return re.sub(r"\b[Tt]u ([a-záéíóúñ]+(?: de [a-záéíóúñ]+)?) ([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+) es tu \1\b", r"\2 es tu \1", txt)

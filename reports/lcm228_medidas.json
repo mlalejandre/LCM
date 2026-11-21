@@ -1,0 +1,68 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.28 · el nodo no es el nombre",
+ "medida_limpia_28": {
+  "2.27": {
+   "acierto": 78.6,
+   "falsas": 2
+  },
+  "2.28_medida_unica": {
+   "acierto": 92.9,
+   "falsas": 0,
+   "ganadas": 4,
+   "perdidas": 0
+  }
+ },
+ "desarrollo_24": {
+  "2.27": {
+   "acierto": 83.3,
+   "falsas": 4
+  },
+  "2.28": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "ablacion_limpia": {
+  "todo": 92.9,
+  "sin_acepciones": 78.6,
+  "sin_tocayos": 53.6
+ },
+ "sin_regresion": {
+  "grande1b_texto": [
+   88.4,
+   88.4
+  ],
+  "ddev": [
+   89.0,
+   89.0
+  ],
+  "dtest": [
+   82.2,
+   82.2
+  ],
+  "ltest": [
+   91.4,
+   91.4
+  ],
+  "pdev": [
+   94.1,
+   94.1
+  ],
+  "charlas_225": [
+   91.5,
+   91.5
+  ],
+  "charlas_226": [
+   100.0,
+   100.0
+  ],
+  "charlas_227": [
+   100.0,
+   100.0
+  ]
+ },
+ "controles": "idénticos a la 2.27",
+ "regresiones": "solo las 4 conocidas; iter228 t01 = 100 % (47 sondas)",
+ "pytest": "997 pasan, 3 fallos de entorno, 1 omitido"
+}

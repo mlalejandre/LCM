@@ -182,6 +182,9 @@ class Nucleo:
 
     # ------------------------------------------------------------------ entidades
     def can(self, e):
+        f = getattr(self, "_foco228", None)              # 2.28: el nodo no es el nombre: mientras se habla de «el otro Pedro», su nombre lleva a su nodo
+        if f and e in f:
+            e = f[e]
         while e in self.eq:
             e = self.eq[e]
         return e
@@ -251,7 +254,9 @@ class Nucleo:
         if e == "L":
             return "yo"
         if e.startswith("N:"):
-            return d.get("nombre") or e[2:].title()
+            if d.get("tocayo"):                          # 2.28: hay otro nodo con el mismo nombre: se dice cuál («tu vecino Pedro»)
+                return f"tu {d['tocayo']} {d.get('nombre') or e[2:].split('#')[0].title()}"
+            return d.get("nombre") or e[2:].split("#")[0].title()
         cl = d.get("clase") or e.split(":", 1)[1].split("@")[0]
         g = d.get("gen") or M.genero_sust(cl)
         pl = d.get("pl")

@@ -1,0 +1,324 @@
+[
+ {
+  "id": "tres_anas",
+  "q": "Mi madre se llama Ana y vive en Burgos.",
+  "crit": "",
+  "r": "Entendido: tu madre se llama Ana; Ana vive en Burgos.",
+  "v": null
+ },
+ {
+  "id": "tres_anas",
+  "q": "Mi jefa también se llama Ana.",
+  "crit": "",
+  "r": "Entendido: tu jefa también se llama Ana. Es otra persona, no tu madre.",
+  "v": null
+ },
+ {
+  "id": "tres_anas",
+  "q": "Mi jefa trabaja en Madrid.",
+  "crit": "",
+  "r": "Entendido: tu jefa trabaja en Madrid.",
+  "v": null
+ },
+ {
+  "id": "tres_anas",
+  "q": "Mi médica se llama Ana.",
+  "crit": "misma|otra persona",
+  "r": "Ya conozco a un Ana: tu madre. ¿Tu médica es el mismo Ana o es otra persona?",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "Es otra persona.",
+  "crit": "",
+  "r": "Entendido: tu médica también se llama Ana. Es otra persona, no tu madre.",
+  "v": null
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿dónde vive mi madre?",
+  "crit": "burgos",
+  "r": "Ana vive en Burgos.",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿dónde trabaja mi jefa?",
+  "crit": "madrid",
+  "r": "Tu jefa trabaja en Madrid.",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "Ana tiene un gato.",
+  "crit": "que ana|cual",
+  "r": "¿Qué Ana: tu madre o tu jefa o tu médica?",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "Mi jefa.",
+  "crit": "",
+  "r": "Entendido: tu jefa tiene un gato.",
+  "v": null
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿quién tiene un gato?",
+  "crit": "jefa",
+  "r": "Tu jefa tiene un gato.",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿mi madre tiene un gato?",
+  "crit": "ABST|^no",
+  "r": "No lo sé: no me has dicho qué tiene Ana.",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿dónde vive Ana?",
+  "crit": "que ana|cual",
+  "r": "¿Qué Ana: tu madre o tu jefa o tu médica?",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "mi madre",
+  "crit": "burgos",
+  "r": "Ana vive en Burgos.",
+  "v": "OK"
+ },
+ {
+  "id": "tres_anas",
+  "q": "¿cuántas Anas conozco?",
+  "crit": "tres|3",
+  "r": "Tres: tu madre, tu jefa y tu médica.",
+  "v": "OK"
+ },
+ {
+  "id": "mismo",
+  "q": "Mi amigo se llama Óscar.",
+  "crit": "",
+  "r": "Entendido: tu amigo se llama Óscar.",
+  "v": null
+ },
+ {
+  "id": "mismo",
+  "q": "Mi socio se llama Óscar.",
+  "crit": "mismo|otra persona",
+  "r": "Ya conozco a un Óscar: tu amigo. ¿Tu socio es el mismo Óscar o es otra persona?",
+  "v": "OK"
+ },
+ {
+  "id": "mismo",
+  "q": "Sí, es el mismo.",
+  "crit": "",
+  "r": "Entendido: tu socio se llama Óscar.",
+  "v": null
+ },
+ {
+  "id": "mismo",
+  "q": "¿qué es Óscar de mí?",
+  "crit": "amigo;socio",
+  "r": "Óscar es tu amigo y tu socio.",
+  "v": "OK"
+ },
+ {
+  "id": "mismo",
+  "q": "Óscar vive en Vigo.",
+  "crit": "",
+  "r": "Entendido: Óscar vive en Vigo.",
+  "v": null
+ },
+ {
+  "id": "mismo",
+  "q": "¿dónde vive mi socio?",
+  "crit": "vigo",
+  "r": "Óscar vive en Vigo.",
+  "v": "OK"
+ },
+ {
+  "id": "mismo",
+  "q": "¿dónde vive mi amigo?",
+  "crit": "vigo",
+  "r": "Óscar vive en Vigo.",
+  "v": "OK"
+ },
+ {
+  "id": "explicito",
+  "q": "Mi tío se llama Manuel.",
+  "crit": "",
+  "r": "Entendido: tu tío se llama Manuel.",
+  "v": null
+ },
+ {
+  "id": "explicito",
+  "q": "Mi profesor también se llama Manuel.",
+  "crit": "",
+  "r": "Entendido: tu profesor también se llama Manuel. Es otra persona, no tu tío.",
+  "v": null
+ },
+ {
+  "id": "explicito",
+  "q": "Mi tío Manuel tiene una moto.",
+  "crit": "",
+  "r": "Entendido: Manuel tiene una moto.",
+  "v": null
+ },
+ {
+  "id": "explicito",
+  "q": "El profesor Manuel tiene un coche.",
+  "crit": "",
+  "r": "Entendido: tu profesor tiene un coche.",
+  "v": null
+ },
+ {
+  "id": "explicito",
+  "q": "¿qué tiene mi tío?",
+  "crit": "moto;!coche",
+  "r": "Manuel tiene una moto.",
+  "v": "OK"
+ },
+ {
+  "id": "explicito",
+  "q": "¿qué tiene mi profesor?",
+  "crit": "coche;!moto",
+  "r": "Tu profesor tiene un coche.",
+  "v": "OK"
+ },
+ {
+  "id": "explicito",
+  "q": "Manuel, el profesor, vive en Reus.",
+  "crit": "",
+  "r": "Entendido: tu profesor vive en Reus.",
+  "v": null
+ },
+ {
+  "id": "explicito",
+  "q": "¿dónde vive mi profesor?",
+  "crit": "reus",
+  "r": "Tu profesor vive en Reus.",
+  "v": "OK"
+ },
+ {
+  "id": "explicito",
+  "q": "¿dónde vive mi tío?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho dónde vive Manuel. De Manuel sé que es tu tío y tiene una moto.",
+  "v": "OK"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una sierra es una herramienta?",
+  "crit": "^si",
+  "r": "Sí, una sierra es una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una hoja es un papel?",
+  "crit": "^si",
+  "r": "No lo sé.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una carta es un naipe?",
+  "crit": "^si",
+  "r": "No lo sé.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "palabras",
+  "q": "¿un pico es una herramienta?",
+  "crit": "^si",
+  "r": "Sí, un pico es una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una vela es una tela?",
+  "crit": "^si",
+  "r": "No, una vela es un objeto.",
+  "v": "MAL"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una vela es un animal?",
+  "crit": "^no",
+  "r": "No, una vela es un objeto.",
+  "v": "OK"
+ },
+ {
+  "id": "palabras",
+  "q": "¿una hoja es un vehículo?",
+  "crit": "^no",
+  "r": "No lo sé.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "palabras",
+  "q": "¿un perro es un mueble?",
+  "crit": "^no",
+  "r": "No, un perro es un mamífero.",
+  "v": "OK"
+ },
+ {
+  "id": "oficios",
+  "q": "Un botones es un empleado de hotel.",
+  "crit": "",
+  "r": "Entendido: los botones son empleado de hoteles.",
+  "v": null
+ },
+ {
+  "id": "oficios",
+  "q": "Mi tío es botones.",
+  "crit": "",
+  "r": "Entendido: tu tío es botón.",
+  "v": null
+ },
+ {
+  "id": "oficios",
+  "q": "¿mi tío es un empleado?",
+  "crit": "^si",
+  "r": "No lo sé. Solo sé que tu tío es botón.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "oficios",
+  "q": "Una estrella es un astro.",
+  "crit": "",
+  "r": "Entendido: la estrella es un astro.",
+  "v": null
+ },
+ {
+  "id": "oficios",
+  "q": "Una estrella también es una artista famosa.",
+  "crit": "",
+  "r": "Entendido: la estrella es un artista; la estrella es famosa.",
+  "v": null
+ },
+ {
+  "id": "oficios",
+  "q": "Mi hermana es una estrella.",
+  "crit": "",
+  "r": "Entendido: tu hermana es una estrella.",
+  "v": null
+ },
+ {
+  "id": "oficios",
+  "q": "¿mi hermana es un astro?",
+  "crit": "^no",
+  "r": "Sí, tu hermana es un astro. Lo deduzco porque tu hermana es una estrella y la estrella es un astro.",
+  "v": "MAL"
+ },
+ {
+  "id": "oficios",
+  "q": "¿mi hermana es una artista?",
+  "crit": "^si",
+  "r": "Sí, tu hermana es un artista. Lo deduzco porque tu hermana es una estrella y la estrella es un artista.",
+  "v": "OK"
+ }
+]
