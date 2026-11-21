@@ -1,0 +1,48 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.27 · grafo de entidades y relaciones",
+ "medida_limpia_45": {
+  "2.26": {
+   "acierto": 40.0,
+   "falsas": 8
+  },
+  "2.27_medida_unica": {
+   "acierto": 88.9,
+   "falsas": 3,
+   "ganadas": 22,
+   "perdidas": 0
+  },
+  "2.27_final_no_ciego": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "desarrollo_52": {
+  "2.26": {
+   "acierto": 57.7,
+   "falsas": 7
+  },
+  "2.27": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "ablacion_limpia": {
+  "todo": 100.0,
+  "sin_grafo": 44.4,
+  "sin_tocayos": 86.7
+ },
+ "conversaciones_anteriores": {
+  "2.25_test": [
+   91.5,
+   91.5
+  ],
+  "2.26_test2": [
+   92.9,
+   92.9
+  ]
+ },
+ "controles": "idénticos a la 2.26",
+ "regresiones": "solo las 4 conocidas; iter227 t01 = 100 % (95 sondas)",
+ "pytest": "989 pasan, 3 fallos de entorno, 1 omitido"
+}

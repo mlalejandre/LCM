@@ -1,0 +1,520 @@
+[
+ {
+  "id": "familia1",
+  "q": "Vivo con mi marido Luis y mi hija Clara.",
+  "crit": "",
+  "r": "Entendido: vives con tu marido Luis y tu hija Clara.",
+  "v": null
+ },
+ {
+  "id": "familia1",
+  "q": "Mi madre se llama Carmen y mi padre Antonio.",
+  "crit": "",
+  "r": "Entendido: tu madre se llama Carmen; tu padre se llama Antonio.",
+  "v": null
+ },
+ {
+  "id": "familia1",
+  "q": "Luis tiene un hermano que se llama Jorge.",
+  "crit": "",
+  "r": "Entendido: Luis tiene un hermano; el hermano de Luis se llama Jorge.",
+  "v": null
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es el padre de Clara?",
+  "crit": "luis",
+  "r": "Eres el padre de Clara. Lo deduzco porque Clara es tu hija.",
+  "v": "MAL"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es la abuela de Clara?",
+  "crit": "carmen",
+  "r": "Carmen es la abuela de Clara. Lo deduzco porque Carmen es tu madre y Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es el abuelo de Clara?",
+  "crit": "antonio",
+  "r": "Antonio es el abuelo de Clara. Lo deduzco porque Antonio es tu padre y Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es el tío de Clara?",
+  "crit": "jorge",
+  "r": "No lo sé: no me has dicho quién es el tio de Clara.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es la suegra de Luis?",
+  "crit": "carmen",
+  "r": "Carmen es la suegra de Luis. Lo deduzco porque Carmen es tu madre y Luis es tu marido.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es el cuñado de Jorge?",
+  "crit": "tu|yo|eres",
+  "r": "Eres el cuñado de Jorge. Lo deduzco porque Jorge es el hermano de Luis y Luis es tu marido.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿qué es Jorge de Clara?",
+  "crit": "tio",
+  "r": "No lo sé: no conozco ninguna relación entre Jorge y Clara.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia1",
+  "q": "¿qué es Carmen de Luis?",
+  "crit": "suegra",
+  "r": "Carmen es la suegra de Luis. Lo deduzco porque Carmen es tu madre y Luis es tu marido.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿qué es Clara de Antonio?",
+  "crit": "nieta",
+  "r": "Clara es la nieta de Antonio. Lo deduzco porque Antonio es tu padre y Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es el yerno de Carmen?",
+  "crit": "luis",
+  "r": "No lo sé: no me has dicho quién es el yerno de Carmen.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia1",
+  "q": "¿cuántos somos en casa?",
+  "crit": "tres|3",
+  "r": "No lo sé. De ti sé que vives con tu marido Luis y tu hija Clara y Luis es tu marido.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia1",
+  "q": "¿quién es la sobrina de Jorge?",
+  "crit": "clara",
+  "r": "No lo sé: no me has dicho quién es la sobrina de Jorge.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia2",
+  "q": "Mi hermana Elena tiene dos hijos, Hugo y Vera.",
+  "crit": "",
+  "r": "Entendido: Elena tiene dos hijos; los hijos de Elena se llaman Hugo y Vera.",
+  "v": null
+ },
+ {
+  "id": "familia2",
+  "q": "El marido de Elena se llama Raúl.",
+  "crit": "",
+  "r": "Entendido: el marido de Elena se llama Raúl.",
+  "v": null
+ },
+ {
+  "id": "familia2",
+  "q": "Mi hijo se llama Dani.",
+  "crit": "",
+  "r": "Entendido: tu hijo se llama Dani.",
+  "v": null
+ },
+ {
+  "id": "familia2",
+  "q": "¿quiénes son mis sobrinos?",
+  "crit": "hugo;vera",
+  "r": "Hugo y Vera son tus sobrinos. Lo deduzco porque Elena es tu hermana, Hugo es el hijo de Elena y Vera es la hija de Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿quién es el padre de Hugo?",
+  "crit": "raul",
+  "r": "No lo sé: no me has dicho quién es el padre de Hugo.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia2",
+  "q": "¿quién es mi cuñado?",
+  "crit": "raul",
+  "r": "Raúl es tu cuñado. Lo deduzco porque Elena es tu hermana y Raúl es el marido de Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿qué es Dani de Hugo?",
+  "crit": "primo",
+  "r": "Dani es el primo de Hugo. Lo deduzco porque Dani es tu hijo, Hugo es el hijo de Elena y Elena es tu hermana.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿quién es la tía de Dani?",
+  "crit": "elena",
+  "r": "Elena es la tía de Dani. Lo deduzco porque Elena es tu hermana y Dani es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿quién es el hermano de Vera?",
+  "crit": "hugo",
+  "r": "Hugo es el hermano de Vera. Lo deduzco porque Hugo es el hijo de Elena y Vera es la hija de Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿qué es Elena de Dani?",
+  "crit": "tia",
+  "r": "Elena es la tía de Dani. Lo deduzco porque Elena es tu hermana y Dani es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿cuántos primos tiene Dani?",
+  "crit": "dos|2",
+  "r": "Que yo sepa, dos: Hugo y Vera.",
+  "v": "OK"
+ },
+ {
+  "id": "familia2",
+  "q": "¿qué soy yo de Vera?",
+  "crit": "tio|tia",
+  "r": "Eres el tio de Vera. Lo deduzco porque Elena es tu hermana y Vera es la hija de Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "varias",
+  "q": "Marta es mi hermana.",
+  "crit": "",
+  "r": "Entendido: Marta es tu hermana.",
+  "v": null
+ },
+ {
+  "id": "varias",
+  "q": "Marta también es mi compañera de piso.",
+  "crit": "",
+  "r": "Entendido: Marta es tu compañera de piso.",
+  "v": null
+ },
+ {
+  "id": "varias",
+  "q": "Pablo es mi jefe y también mi vecino.",
+  "crit": "",
+  "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+  "v": null
+ },
+ {
+  "id": "varias",
+  "q": "¿qué es Marta de mí?",
+  "crit": "hermana;companera",
+  "r": "Marta es tu hermana.",
+  "v": "MAL"
+ },
+ {
+  "id": "varias",
+  "q": "¿qué es Pablo de mí?",
+  "crit": "jefe;vecino",
+  "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "varias",
+  "q": "¿quién es mi compañera de piso?",
+  "crit": "marta",
+  "r": "Marta es tu compañera de piso.",
+  "v": "OK"
+ },
+ {
+  "id": "varias",
+  "q": "¿quién es mi vecino?",
+  "crit": "pablo",
+  "r": "No lo sé: no me has dicho quién es tu vecino.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "varias",
+  "q": "¿con quién vivo?",
+  "crit": "marta",
+  "r": "No lo sé. De ti sé que Marta es tu hermana y Marta es tu compañera de piso.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "varias",
+  "q": "¿Marta es mi hermana?",
+  "crit": "^si",
+  "r": "Sí, Marta es tu hermana.",
+  "v": "OK"
+ },
+ {
+  "id": "varias",
+  "q": "¿Pablo es mi hermano?",
+  "crit": "ABST|^no",
+  "r": "¿Cómo te llamas? Así sabré a quién te refieres con «mi» o «yo».",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos",
+  "q": "Mi hermano se llama Pedro y vive en Cádiz.",
+  "crit": "",
+  "r": "Entendido: tu hermano se llama Pedro; Pedro vive en Cádiz.",
+  "v": null
+ },
+ {
+  "id": "tocayos",
+  "q": "Mi vecino también se llama Pedro.",
+  "crit": "",
+  "r": "Entendido: tu vecino se llama Pedro.",
+  "v": null
+ },
+ {
+  "id": "tocayos",
+  "q": "El vecino Pedro es fontanero.",
+  "crit": "",
+  "r": "Entendido: Pedro es fontanero.",
+  "v": null
+ },
+ {
+  "id": "tocayos",
+  "q": "¿dónde vive mi hermano?",
+  "crit": "cadiz",
+  "r": "Pedro vive en Cádiz.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos",
+  "q": "¿a qué se dedica mi vecino?",
+  "crit": "fontanero",
+  "r": "Pedro es fontanero.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos",
+  "q": "¿dónde vive Pedro?",
+  "crit": "cual|que pedro|hermano o|vecino o|te refieres",
+  "r": "Pedro vive en Cádiz.",
+  "v": "MAL"
+ },
+ {
+  "id": "tocayos",
+  "q": "Pedro me ha llamado.",
+  "crit": "cual|que pedro|hermano o|vecino o|te refieres",
+  "r": "Entendido: Pedro te llamó.",
+  "v": "MAL"
+ },
+ {
+  "id": "tocayos",
+  "q": "Mi hermano.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Mi hermano».",
+  "v": null
+ },
+ {
+  "id": "tocayos",
+  "q": "¿cuántos Pedros conozco?",
+  "crit": "dos|2",
+  "r": "No lo sé: no me has dicho cuántos pedros conoces. De ti sé que Pedro es tu hermano y Pedro es tu vecino.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "dentro",
+  "q": "Las llaves están en el cajón.",
+  "crit": "",
+  "r": "Entendido: las llaves están en el cajón.",
+  "v": null
+ },
+ {
+  "id": "dentro",
+  "q": "El cajón está en la cocina.",
+  "crit": "",
+  "r": "Entendido: el cajón está en la cocina.",
+  "v": null
+ },
+ {
+  "id": "dentro",
+  "q": "La cocina está en la planta baja.",
+  "crit": "",
+  "r": "Entendido: la cocina está en la planta baja.",
+  "v": null
+ },
+ {
+  "id": "dentro",
+  "q": "¿las llaves están en la cocina?",
+  "crit": "^si",
+  "r": "Sí: las llaves están en el cajón y el cajón está en la cocina.",
+  "v": "OK"
+ },
+ {
+  "id": "dentro",
+  "q": "¿en qué habitación están las llaves?",
+  "crit": "cocina",
+  "r": "Una llave suele estar en el taller o el caja de herramientas. Lo sé porque una llave es una herramienta.",
+  "v": "MAL"
+ },
+ {
+  "id": "dentro",
+  "q": "¿las llaves están en la planta baja?",
+  "crit": "^si",
+  "r": "No, las llaves están en el cajón.",
+  "v": "MAL"
+ },
+ {
+  "id": "dentro",
+  "q": "¿qué hay en la cocina?",
+  "crit": "cajon|llaves",
+  "r": "El cajón está en la cocina.",
+  "v": "OK"
+ },
+ {
+  "id": "dentro",
+  "q": "¿las llaves están en el salón?",
+  "crit": "^no|ABST",
+  "r": "No, las llaves están en el cajón.",
+  "v": "OK"
+ },
+ {
+  "id": "dentro",
+  "q": "El pasaporte está en la mochila y la mochila está en el coche.",
+  "crit": "",
+  "r": "Entendido: el pasaporte está en la mochila; la mochila está en el coche.",
+  "v": null
+ },
+ {
+  "id": "dentro",
+  "q": "¿el pasaporte está en el coche?",
+  "crit": "^si",
+  "r": "Sí: el pasaporte está en la mochila y la mochila está en el coche.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "Mi jefa se llama Nuria.",
+  "crit": "",
+  "r": "Entendido: tu jefa se llama Nuria.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "La jefa de Nuria se llama Olga.",
+  "crit": "",
+  "r": "Entendido: la jefa de Nuria se llama Olga.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "Trabajo con Iván y con Sonia.",
+  "crit": "",
+  "r": "Entendido: trabajas con Iván y Sonia. ¿Quién es Iván?",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "¿quién es mi jefa?",
+  "crit": "nuria",
+  "r": "Nuria es tu jefa.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿quién es la jefa de Nuria?",
+  "crit": "olga",
+  "r": "Olga es la jefa de Nuria.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿quién es la jefa de mi jefa?",
+  "crit": "olga",
+  "r": "Olga es la jefa de Nuria.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿qué soy yo de Nuria?",
+  "crit": "emplead*",
+  "r": "No lo sé: no conozco ninguna relación entre tú y Nuria.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿quiénes son mis compañeros?",
+  "crit": "ivan;sonia",
+  "r": "No lo sé: no me has dicho quién es tu compañero.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿qué es Iván de mí?",
+  "crit": "companero",
+  "r": "En el texto pone, hablando de La jefa de Nuria: «Trabajo con Iván y con Sonia».",
+  "v": "MAL"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿Olga es mi jefa?",
+  "crit": "ABST|^no|jefa de nuria|jefa de tu jefa",
+  "r": "No, Nuria es tu jefa.",
+  "v": "MAL"
+ },
+ {
+  "id": "amigos",
+  "q": "Mi amiga Sara sale con Tomás.",
+  "crit": "",
+  "r": "Entendido: Sara sale con Tomás.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "Tomás es hermano de mi compañero Álex.",
+  "crit": "",
+  "r": "Entendido: Tomás es el hermano de Álex.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "¿quién es la novia de Tomás?",
+  "crit": "sara",
+  "r": "No lo sé: no me has dicho quién es la novia de Tomás.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "amigos",
+  "q": "¿quién es el novio de Sara?",
+  "crit": "tomas",
+  "r": "No lo sé seguro. ¿«novio» quiere decir aquí lo mismo que «amiga»? Si es así, dímelo y te contesto.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "amigos",
+  "q": "¿qué es Álex de Tomás?",
+  "crit": "hermano",
+  "r": "Álex es el hermano de Tomás. Lo deduzco porque Tomás es el hermano de Álex.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿qué es Sara de mí?",
+  "crit": "amiga",
+  "r": "Sara es tu amiga.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿quién es el hermano de Álex?",
+  "crit": "tomas",
+  "r": "Tomás es el hermano de Álex.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿qué es Sara de Álex?",
+  "crit": "cunada|novia de su hermano|novia de tomas",
+  "r": "No lo sé: no conozco ninguna relación entre Sara y Álex.",
+  "v": "ABST_INDEBIDA"
+ }
+]

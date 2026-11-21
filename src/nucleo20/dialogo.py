@@ -101,6 +101,18 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             pass
         r = r_decl = None
+        try:                                             # 2.27: dos personas con el mismo nombre: se abre otro nodo, y si no se sabe cuál, se pregunta
+            if texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform", "_tocando")):
+                from . import grafo as _G
+                tp = _G.tocayos(self, texto)
+                if isinstance(tp, dict) and tp.get("texto"):
+                    texto = tp["texto"]
+                elif isinstance(tp, dict) and tp.get("respuesta"):
+                    self.turno += 1
+                    self._ult_resp = tp["respuesta"]
+                    return tp
+        except Exception:                                # noqa
+            pass
         try:                                             # 2.21: sinónimos que enseña el usuario, y la duda que el modelo le planteó
             from . import sinonimia as _S
             if texto and not getattr(self, "_leyendo", False):
@@ -144,6 +156,16 @@ class Conversador(Nucleo):
             r = self._procesar_218(texto)
             if r_decl is not None and not (isinstance(r, dict) and r.get("estado") == "ok" and "no lo he entendido" not in sa((r.get("respuesta") or "").lower())):
                 r = r_decl                               # el núcleo no tenía nada que hacer con la frase: al menos queda aprendido el sinónimo
+        try:                                             # 2.27: lo que se deduce por el grafo de relaciones (y lo que el núcleo contestó peor)
+            if texto and "?" in texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo", "_reform")):
+                from . import grafo as _G
+                r_g = _G.responde(self, texto, r)
+                if r_g is not None:
+                    r = r_g
+                    self.pend = None
+                    self._ult_resp = r["respuesta"]
+        except Exception:                                # noqa
+            pass
         try:
             if isinstance(r, dict) and r.get("respuesta") and _C.tabla(self):
                 r = dict(r, respuesta=_C.decodifica(self, r["respuesta"]))

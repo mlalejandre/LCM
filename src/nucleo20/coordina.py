@@ -144,6 +144,10 @@ def _hueco(izq, der):
         return f"a {m2.group(1)} {m1.group(2)} {m1.group(3)} {m2.group(2)}"
     if m1 and m2:
         return None
+    m4 = re.match(r"^(.+?)\s+(es|son|era)\s+(?:mi|mis|un|una|el|la)\s+.+$", izq, re.I)
+    m5 = re.match(r"^(?:tambi[eé]n\s+|adem[aá]s\s+)?((?:mi|mis|un|una)\s+[a-záéíóúñü]+(?:\s+de\s+[a-záéíóúñü]+)?)$", der, re.I)
+    if m4 and m5:
+        return f"{m4.group(1)} {m4.group(2)} {m5.group(1)}"   # «Pablo es mi jefe y también mi vecino»: dos relaciones con la misma persona
     wi = izq.split()
     k, an = _primer_verbo(wi)
     if k <= 0 or k >= len(wi) - 1:

@@ -1,0 +1,471 @@
+[
+ {
+  "id": "abuelos",
+  "q": "Mi mujer se llama Inés y nuestro hijo se llama Mateo.",
+  "crit": "",
+  "r": "Entendido: tu mujer se llama Inés; tu hijo se llama Mateo.",
+  "v": null
+ },
+ {
+  "id": "abuelos",
+  "q": "El padre de Inés se llama Ramón.",
+  "crit": "",
+  "r": "Entendido: el padre de Inés se llama Ramón.",
+  "v": null
+ },
+ {
+  "id": "abuelos",
+  "q": "Mi hermana se llama Lola.",
+  "crit": "",
+  "r": "Entendido: tu hermana se llama Lola.",
+  "v": null
+ },
+ {
+  "id": "abuelos",
+  "q": "¿quién es la madre de Mateo?",
+  "crit": "ines",
+  "r": "Que yo sepa, Inés es la madre de Mateo. Lo supongo porque Inés es tu mujer y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿quién es el abuelo de Mateo?",
+  "crit": "ramon",
+  "r": "Que yo sepa, Ramón es el abuelo de Mateo. Lo supongo porque Ramón es el padre de Inés, Inés es tu mujer y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿quién es mi suegro?",
+  "crit": "ramon",
+  "r": "Ramón es tu suegro. Lo deduzco porque Ramón es el padre de Inés e Inés es tu mujer.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿quién es la tía de Mateo?",
+  "crit": "lola",
+  "r": "Lola es la tía de Mateo. Lo deduzco porque Lola es tu hermana y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿qué es Mateo de Lola?",
+  "crit": "sobrino",
+  "r": "Mateo es el sobrino de Lola. Lo deduzco porque Lola es tu hermana y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿qué es Mateo de Ramón?",
+  "crit": "nieto",
+  "r": "Mateo es el nieto de Ramón. Lo supongo porque Ramón es el padre de Inés, Inés es tu mujer y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿qué soy yo de Ramón?",
+  "crit": "yerno|nuera",
+  "r": "Eres el yerno de Ramón. Lo deduzco porque Ramón es el padre de Inés e Inés es tu mujer.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿qué es Lola de Inés?",
+  "crit": "cunada",
+  "r": "Lola es la cuñada de Inés. Lo deduzco porque Lola es tu hermana e Inés es tu mujer.",
+  "v": "OK"
+ },
+ {
+  "id": "abuelos",
+  "q": "¿quién es el nieto de Ramón?",
+  "crit": "mateo",
+  "r": "Que yo sepa, Mateo es el nieto de Ramón. Lo supongo porque Ramón es el padre de Inés, Inés es tu mujer y Mateo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "Mi padre se llama Julio y tiene una hermana que se llama Rosa.",
+  "crit": "",
+  "r": "Entendido: tu padre se llama Julio; Julio tiene una hermana; la hermana de Julio se llama Rosa.",
+  "v": null
+ },
+ {
+  "id": "primos",
+  "q": "Rosa tiene una hija que se llama Alba.",
+  "crit": "",
+  "r": "Entendido: Rosa tiene una hija; la hija de Rosa se llama Alba.",
+  "v": null
+ },
+ {
+  "id": "primos",
+  "q": "¿quién es mi tía?",
+  "crit": "rosa",
+  "r": "Rosa es tu tía. Lo deduzco porque Rosa es la hermana de Julio y Julio es tu padre.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿quién es mi prima?",
+  "crit": "alba",
+  "r": "Alba es tu prima. Lo deduzco porque Alba es la hija de Rosa, Julio es tu padre y Rosa es la hermana de Julio.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿qué es Alba de mí?",
+  "crit": "prima",
+  "r": "Alba es tu prima.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿qué es Julio de Alba?",
+  "crit": "tio",
+  "r": "Julio es el tio de Alba. Lo deduzco porque Rosa es la hermana de Julio y Alba es la hija de Rosa.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿qué soy yo de Rosa?",
+  "crit": "sobrin*",
+  "r": "Eres el sobrino de Rosa. Lo deduzco porque Rosa es la hermana de Julio y Julio es tu padre.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿quién es la sobrina de Julio?",
+  "crit": "alba",
+  "r": "Alba es la sobrina de Julio. Lo deduzco porque Rosa es la hermana de Julio y Alba es la hija de Rosa.",
+  "v": "OK"
+ },
+ {
+  "id": "primos",
+  "q": "¿quién es el hermano de Rosa?",
+  "crit": "julio",
+  "r": "Julio es el hermano de Rosa. Lo deduzco porque Rosa es la hermana de Julio.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "Iván es mi primo.",
+  "crit": "",
+  "r": "Entendido: Iván es tu primo.",
+  "v": null
+ },
+ {
+  "id": "dobles",
+  "q": "Iván también es mi socio.",
+  "crit": "",
+  "r": "Entendido: Iván es tu socio.",
+  "v": null
+ },
+ {
+  "id": "dobles",
+  "q": "Carla es mi vecina y también mi profesora.",
+  "crit": "",
+  "r": "Entendido: Carla es tu vecina; Carla es tu profesora.",
+  "v": null
+ },
+ {
+  "id": "dobles",
+  "q": "¿qué es Iván de mí?",
+  "crit": "primo;socio",
+  "r": "Iván es tu primo y tu socio.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "¿qué es Carla de mí?",
+  "crit": "vecina;profesora",
+  "r": "Carla es tu vecina y tu profesora.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "¿quién es mi socio?",
+  "crit": "ivan",
+  "r": "Iván es tu socio.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "¿quién es mi profesora?",
+  "crit": "carla",
+  "r": "Carla es tu profesora.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "¿quién es mi vecina?",
+  "crit": "carla",
+  "r": "Carla es tu vecina.",
+  "v": "OK"
+ },
+ {
+  "id": "dobles",
+  "q": "¿Iván es mi primo?",
+  "crit": "^si",
+  "r": "Sí, Iván es tu primo.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayas",
+  "q": "Mi prima se llama Lucía y vive en Soria.",
+  "crit": "",
+  "r": "Entendido: tu prima se llama Lucía; Lucía vive en Soria.",
+  "v": null
+ },
+ {
+  "id": "tocayas",
+  "q": "Mi jefa también se llama Lucía.",
+  "crit": "",
+  "r": "Entendido: tu jefa también se llama Lucía. Es otra persona, no tu prima.",
+  "v": null
+ },
+ {
+  "id": "tocayas",
+  "q": "Mi jefa vive en Teruel.",
+  "crit": "",
+  "r": "Entendido: tu jefa vive en Teruel.",
+  "v": null
+ },
+ {
+  "id": "tocayas",
+  "q": "¿dónde vive mi prima?",
+  "crit": "soria",
+  "r": "Lucía vive en Soria.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayas",
+  "q": "¿dónde vive mi jefa?",
+  "crit": "teruel",
+  "r": "Tu jefa vive en Teruel.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayas",
+  "q": "¿dónde vive Lucía?",
+  "crit": "que lucia|cual|prima o|jefa o|te refieres",
+  "r": "¿Qué Lucía: tu prima o tu jefa?",
+  "v": "OK"
+ },
+ {
+  "id": "tocayas",
+  "q": "Mi jefa.",
+  "crit": "teruel",
+  "r": "Tu jefa vive en Teruel.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayas",
+  "q": "¿cuántas Lucías conozco?",
+  "crit": "dos|2",
+  "r": "Dos: tu prima y tu jefa.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos2",
+  "q": "Mi cuñado se llama Sergio.",
+  "crit": "",
+  "r": "Entendido: tu cuñado se llama Sergio.",
+  "v": null
+ },
+ {
+  "id": "tocayos2",
+  "q": "Mi dentista se llama Sergio.",
+  "crit": "mismo|otra persona|otro",
+  "r": "Ya conozco a un Sergio: tu cuñado. ¿Tu dentista es el mismo Sergio o es otra persona?",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos2",
+  "q": "No, es otra persona.",
+  "crit": "",
+  "r": "Entendido: tu dentista también se llama Sergio. Es otra persona, no tu cuñado.",
+  "v": null
+ },
+ {
+  "id": "tocayos2",
+  "q": "Mi dentista trabaja en Gijón.",
+  "crit": "",
+  "r": "Entendido: tu dentista trabaja en Gijón.",
+  "v": null
+ },
+ {
+  "id": "tocayos2",
+  "q": "¿dónde trabaja mi dentista?",
+  "crit": "gijon",
+  "r": "Tu dentista trabaja en Gijón.",
+  "v": "OK"
+ },
+ {
+  "id": "tocayos2",
+  "q": "¿dónde trabaja Sergio?",
+  "crit": "que sergio|cual|cunado o|dentista o|te refieres",
+  "r": "¿Qué Sergio: tu cuñado o tu dentista?",
+  "v": "OK"
+ },
+ {
+  "id": "cajas",
+  "q": "Las fotos están en una caja.",
+  "crit": "",
+  "r": "Entendido: las fotos están en una caja.",
+  "v": null
+ },
+ {
+  "id": "cajas",
+  "q": "La caja está en el armario.",
+  "crit": "",
+  "r": "Entendido: la caja está en el armario.",
+  "v": null
+ },
+ {
+  "id": "cajas",
+  "q": "El armario está en el dormitorio.",
+  "crit": "",
+  "r": "Entendido: el armario está en el dormitorio.",
+  "v": null
+ },
+ {
+  "id": "cajas",
+  "q": "¿las fotos están en el armario?",
+  "crit": "^si",
+  "r": "Sí: las fotos están en una caja y la caja está en el armario.",
+  "v": "OK"
+ },
+ {
+  "id": "cajas",
+  "q": "¿las fotos están en el dormitorio?",
+  "crit": "^si",
+  "r": "Sí: las fotos están en una caja y la caja está en el armario y el armario está en el dormitorio.",
+  "v": "OK"
+ },
+ {
+  "id": "cajas",
+  "q": "¿en qué habitación están las fotos?",
+  "crit": "dormitorio",
+  "r": "Las fotos están en una caja, la caja está en el armario y el armario está en el dormitorio.",
+  "v": "OK"
+ },
+ {
+  "id": "cajas",
+  "q": "¿las fotos están en el garaje?",
+  "crit": "^no",
+  "r": "No, las fotos están en una caja.",
+  "v": "OK"
+ },
+ {
+  "id": "cajas",
+  "q": "¿dónde están las fotos?",
+  "crit": "caja",
+  "r": "Las fotos están en una caja.",
+  "v": "OK"
+ },
+ {
+  "id": "oficina",
+  "q": "Mi jefe se llama Darío.",
+  "crit": "",
+  "r": "Entendido: tu jefe se llama Darío.",
+  "v": null
+ },
+ {
+  "id": "oficina",
+  "q": "Comparto piso con Noelia y con Fran.",
+  "crit": "",
+  "r": "Entendido: compartes un piso con Noelia y Fran. ¿Quién es Noelia?",
+  "v": null
+ },
+ {
+  "id": "oficina",
+  "q": "Trabajo con Berta.",
+  "crit": "",
+  "r": "Entendido: trabajas con Berta.",
+  "v": null
+ },
+ {
+  "id": "oficina",
+  "q": "¿qué soy yo de Darío?",
+  "crit": "emplead*",
+  "r": "Eres el empleado de Darío.",
+  "v": "OK"
+ },
+ {
+  "id": "oficina",
+  "q": "¿qué es Berta de mí?",
+  "crit": "companera",
+  "r": "Berta es tu compañera.",
+  "v": "OK"
+ },
+ {
+  "id": "oficina",
+  "q": "¿quién es mi compañera?",
+  "crit": "berta",
+  "r": "Berta es tu compañera.",
+  "v": "OK"
+ },
+ {
+  "id": "oficina",
+  "q": "¿cuántos somos en casa?",
+  "crit": "tres|3",
+  "r": "Tres: tú, Fran y Noelia.",
+  "v": "OK"
+ },
+ {
+  "id": "oficina",
+  "q": "¿con quién vivo?",
+  "crit": "noelia;fran",
+  "r": "Vives con Fran y Noelia.",
+  "v": "OK"
+ },
+ {
+  "id": "parejas",
+  "q": "Mi hermano Quique sale con Paula.",
+  "crit": "",
+  "r": "Entendido: Quique sale con Paula.",
+  "v": null
+ },
+ {
+  "id": "parejas",
+  "q": "Paula tiene una hermana que se llama Irene.",
+  "crit": "",
+  "r": "Entendido: Paula tiene una hermana; la hermana de Paula se llama Irene.",
+  "v": null
+ },
+ {
+  "id": "parejas",
+  "q": "¿quién es la novia de Quique?",
+  "crit": "paula",
+  "r": "Paula es la novia de Quique.",
+  "v": "OK"
+ },
+ {
+  "id": "parejas",
+  "q": "¿quién es el novio de Paula?",
+  "crit": "quique",
+  "r": "Quique es el novio de Paula.",
+  "v": "OK"
+ },
+ {
+  "id": "parejas",
+  "q": "¿qué es Paula de mí?",
+  "crit": "cunada|novia de tu hermano|novia de quique",
+  "r": "Paula es tu cuñada. Lo supongo porque Quique sale con Paula y Quique es tu hermano.",
+  "v": "OK"
+ },
+ {
+  "id": "parejas",
+  "q": "¿quién es la hermana de Paula?",
+  "crit": "irene",
+  "r": "Irene es la hermana de Paula.",
+  "v": "OK"
+ },
+ {
+  "id": "parejas",
+  "q": "¿qué es Irene de Quique?",
+  "crit": "cunada|hermana de su novia|hermana de paula",
+  "r": "Irene es la cuñada de Quique. Lo supongo porque Quique sale con Paula e Irene es la hermana de Paula.",
+  "v": "OK"
+ }
+]
