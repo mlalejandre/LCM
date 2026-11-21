@@ -1,0 +1,85 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.25 · conversar con frases compuestas",
+ "conversaciones_limpias_71": {
+  "2.24": {
+   "acierto": 64.8,
+   "falsas": 6
+  },
+  "2.25_medida_unica": {
+   "acierto": 88.7,
+   "falsas": 1,
+   "ganadas": 17,
+   "perdidas": 0
+  },
+  "2.25_final_no_ciego": {
+   "acierto": 91.5,
+   "falsas": 1
+  }
+ },
+ "conversaciones_desarrollo_80": {
+  "2.24": {
+   "acierto": 68.8,
+   "falsas": 3
+  },
+  "2.25": {
+   "acierto": 82.5,
+   "falsas": 1
+  }
+ },
+ "ablacion_limpias": {
+  "todo": 91.5,
+  "sin_coordina": 76.1,
+  "sin_seguimiento": 85.9
+ },
+ "bancos_sin_cambio": {
+  "ddev_texto": 89.0,
+  "dtest_texto": 82.2,
+  "pdev_texto": 94.1,
+  "ltest_texto": 91.4
+ },
+ "controles_224_225": {
+  "autor": [
+   90.18,
+   90.18
+  ],
+  "ciego2": [
+   95.02,
+   95.02
+  ],
+  "ciego6": [
+   82.09,
+   83.58
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   97.07,
+   97.07
+  ],
+  "16b": [
+   96.48,
+   97.18
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas; iter225 t01 = 100 % (206 sondas)",
+ "pytest": "958 pasan, 3 fallos de entorno, 1 omitido"
+}

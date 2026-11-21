@@ -1,0 +1,884 @@
+[
+ {
+  "id": "vecina",
+  "q": "Hola, soy Marta.",
+  "crit": "marta|hola",
+  "r": "Encantado, Marta.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "Vivo en Zaragoza con mi marido Luis y mi hija Clara.",
+  "crit": "",
+  "r": "Entendido: vives en Zaragoza con tu marido Luis y tu hija Clara.",
+  "v": null
+ },
+ {
+  "id": "vecina",
+  "q": "Clara tiene nueve años y va al colegio San Jorge.",
+  "crit": "",
+  "r": "Entendido: Clara tiene nueve años; Clara va al colegio San Jorge.",
+  "v": null
+ },
+ {
+  "id": "vecina",
+  "q": "Luis trabaja en una farmacia.",
+  "crit": "",
+  "r": "Entendido: Luis trabaja en una farmacia.",
+  "v": null
+ },
+ {
+  "id": "vecina",
+  "q": "¿dónde vivo?",
+  "crit": "zaragoza",
+  "r": "Vives en Zaragoza con tu marido Luis y tu hija Clara.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿cómo se llama mi marido?",
+  "crit": "luis",
+  "r": "Tu marido se llama Luis.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿a qué colegio va mi hija?",
+  "crit": "san jorge",
+  "r": "Clara va al colegio San Jorge.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿dónde trabaja el padre de Clara?",
+  "crit": "farmacia",
+  "r": "No sé nada de el padre de Clara: no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "vecina",
+  "q": "¿cuántos años tiene mi hija?",
+  "crit": "nueve|9",
+  "r": "Clara tiene 9 años.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "El año que viene Clara cumplirá diez.",
+  "crit": "",
+  "r": "¡Felicidades! Entendido: Clara cumplirá diez el próximo año.",
+  "v": null
+ },
+ {
+  "id": "vecina",
+  "q": "¿cuántos somos en casa?",
+  "crit": "tres|3",
+  "r": "No lo sé. De ti sé que te llamas Marta y vives en Zaragoza con tu marido Luis y tu hija Clara.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "vecina",
+  "q": "¿quién es Luis?",
+  "crit": "marido",
+  "r": "Luis es tu marido. Luis trabaja en una farmacia.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿tengo hijos?",
+  "crit": "^si|clara",
+  "r": "Sí, Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿tengo perro?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho qué tienes.",
+  "v": "OK"
+ },
+ {
+  "id": "vecina",
+  "q": "¿qué sabes de mí?",
+  "crit": "zaragoza|luis|clara",
+  "r": "Te llamas Marta. Vives en Zaragoza con tu marido Luis y tu hija Clara. Luis es tu marido. Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "planes",
+  "q": "Mañana tengo médico a las diez.",
+  "crit": "",
+  "r": "Entendido: tienes médico mañana a las diez.",
+  "v": null
+ },
+ {
+  "id": "planes",
+  "q": "Después comeré con mi hermana Julia en su casa.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "planes",
+  "q": "Por la tarde tengo que recoger un paquete en correos.",
+  "crit": "",
+  "r": "Entendido: tienes que recoger un paquete en correos por la tarde.",
+  "v": null
+ },
+ {
+  "id": "planes",
+  "q": "¿qué tengo mañana por la mañana?",
+  "crit": "medico",
+  "r": "Tienes médico.",
+  "v": "OK"
+ },
+ {
+  "id": "planes",
+  "q": "¿con quién como mañana?",
+  "crit": "julia|hermana",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "planes",
+  "q": "¿dónde como mañana?",
+  "crit": "casa",
+  "r": "No lo sé: no me has dicho dónde comes. De ti sé que tienes médico mañana a las diez y tienes que recoger un paquete en correos por la tarde.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "planes",
+  "q": "Al final el médico es a las once, no a las diez.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Al final el médico es a las once, no a las diez».",
+  "v": null
+ },
+ {
+  "id": "planes",
+  "q": "¿a qué hora tengo médico?",
+  "crit": "once|11;!diez",
+  "r": "Tienes médico mañana a las diez.",
+  "v": "MAL"
+ },
+ {
+  "id": "planes",
+  "q": "¿qué tengo que recoger?",
+  "crit": "paquete",
+  "r": "Tienes que recoger un paquete en correos por la tarde.",
+  "v": "OK"
+ },
+ {
+  "id": "planes",
+  "q": "¿dónde lo recojo?",
+  "crit": "correos",
+  "r": "No lo sé: no me has dicho dónde recoges. De ti sé que tienes médico mañana a las diez y tienes que recoger un paquete en correos por la tarde.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "planes",
+  "q": "¿tengo algo el jueves?",
+  "crit": "ABST|no me has",
+  "r": "No lo sé. Solo sé que tienes médico mañana a las diez y tienes que recoger un paquete en correos por la tarde.",
+  "v": "OK"
+ },
+ {
+  "id": "planes",
+  "q": "He cancelado la comida con Julia.",
+  "crit": "",
+  "r": "Entendido: cancelaste la comida con Julia.",
+  "v": null
+ },
+ {
+  "id": "planes",
+  "q": "¿con quién como mañana?",
+  "crit": "nadie|cancel*|ya no|ABST",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "OK"
+ },
+ {
+  "id": "animo",
+  "q": "Hoy estoy bastante cansado.",
+  "crit": "",
+  "r": "Lo siento. Si te apetece, cuéntame por qué estás cansado.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "He dormido solo cuatro horas.",
+  "crit": "",
+  "r": "Entendido: dormiste cuatro horas.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "¿cómo estoy hoy?",
+  "crit": "cansado",
+  "r": "Estás bastante cansado hoy.",
+  "v": "OK"
+ },
+ {
+  "id": "animo",
+  "q": "¿por qué estoy cansado?",
+  "crit": "dormi*|cuatro",
+  "r": "No me has dicho por qué. Solo sé que estás bastante cansado hoy.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "animo",
+  "q": "Además me duele la cabeza.",
+  "crit": "",
+  "r": "Lo siento. Entendido: te duele la cabeza.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "¿qué me duele?",
+  "crit": "cabeza",
+  "r": "Te duele la cabeza.",
+  "v": "OK"
+ },
+ {
+  "id": "animo",
+  "q": "Gracias por escucharme.",
+  "crit": "",
+  "r": "De nada, para eso estoy.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "¿tú cómo estás?",
+  "crit": "",
+  "r": "Bien, gracias. Aquí estoy, atento a lo que me cuentes.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "¿qué puedo hacer para descansar?",
+  "crit": "",
+  "r": "No lo sé. De ti sé que estás bastante cansado hoy y dormiste cuatro horas.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "Ya me encuentro mejor.",
+  "crit": "",
+  "r": "¡Me alegro! Entendido: estás mejor.",
+  "v": null
+ },
+ {
+  "id": "animo",
+  "q": "¿cómo estoy ahora?",
+  "crit": "mejor",
+  "r": "Estás mejor.",
+  "v": "OK"
+ },
+ {
+  "id": "animo",
+  "q": "¿sigo cansado?",
+  "crit": "ABST|mejor|^no|ya no",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que dormiste cuatro horas y te duele la cabeza.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "Un zumbel es una cuerda para hacer bailar la peonza.",
+  "crit": "",
+  "r": "Entendido, me lo apunto.",
+  "v": null
+ },
+ {
+  "id": "ensenar",
+  "q": "¿qué es un zumbel?",
+  "crit": "cuerda",
+  "r": "Según lo que he aprendido, el zumbel es una cuerda para hacer bailar la peonza.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿para qué sirve un zumbel?",
+  "crit": "peonza|bailar",
+  "r": "En el texto pone: «Un zumbel es una cuerda para hacer bailar la peonza».",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "La peonza es un juguete que gira.",
+  "crit": "",
+  "r": "Entendido: la peonza es un juguete; la peonza gira.",
+  "v": null
+ },
+ {
+  "id": "ensenar",
+  "q": "¿qué es la peonza?",
+  "crit": "juguete",
+  "r": "Una peonza es un juguete. Además, según lo que he aprendido, la peonza es un juguete que gira.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "Mi abuelo me regaló una peonza de madera.",
+  "crit": "",
+  "r": "Entendido: tu abuelo regaló una peonza de madera a ti.",
+  "v": null
+ },
+ {
+  "id": "ensenar",
+  "q": "¿quién me regaló la peonza?",
+  "crit": "abuelo",
+  "r": "Tu abuelo regaló una peonza de madera a ti.",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿de qué es mi peonza?",
+  "crit": "madera",
+  "r": "En el texto pone: «Un zumbel es una cuerda para hacer bailar la peonza».",
+  "v": "MAL"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿mi peonza es un juguete?",
+  "crit": "^si",
+  "r": "Sí: el texto dice «La peonza es un juguete que gira».",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿mi peonza gira?",
+  "crit": "^si",
+  "r": "Sí: el texto dice «La peonza es un juguete que gira».",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿con qué se hace bailar la peonza?",
+  "crit": "zumbel|cuerda",
+  "r": "En el texto pone: «Un zumbel es una cuerda para hacer bailar la peonza».",
+  "v": "OK"
+ },
+ {
+  "id": "ensenar",
+  "q": "¿un zumbel es un juguete?",
+  "crit": "ABST|^no",
+  "r": "No lo sé.",
+  "v": "OK"
+ },
+ {
+  "id": "receta",
+  "q": "Te explico cómo hago la tortilla.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te explico cómo hago la tortilla».",
+  "v": null
+ },
+ {
+  "id": "receta",
+  "q": "Primero pelo las patatas y las corto en rodajas.",
+  "crit": "",
+  "r": "Entendido: Primero pela las patatas y las corto en rodajas.",
+  "v": null
+ },
+ {
+  "id": "receta",
+  "q": "Luego las frío en aceite a fuego lento.",
+  "crit": "",
+  "r": "Entendido: fries las corto en aceite a fuego lento luego.",
+  "v": null
+ },
+ {
+  "id": "receta",
+  "q": "Después bato seis huevos y los mezclo con las patatas.",
+  "crit": "",
+  "r": "Entendido: bates seis huevos y los mezclo con las patatas después.",
+  "v": null
+ },
+ {
+  "id": "receta",
+  "q": "Al final cuajo la mezcla en la sartén.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Cuajo la mezcla en la sartén».",
+  "v": null
+ },
+ {
+  "id": "receta",
+  "q": "¿qué hago primero?",
+  "crit": "pel*|patatas",
+  "r": "Fries las corto en aceite a fuego lento luego, bates seis huevos con las patatas después y bates los mezclo con las patatas después.",
+  "v": "OK"
+ },
+ {
+  "id": "receta",
+  "q": "¿qué hago después de freír las patatas?",
+  "crit": "bat*|huevos",
+  "r": "Fries las corto en aceite a fuego lento luego, bates seis huevos con las patatas después y bates los mezclo con las patatas después.",
+  "v": "OK"
+ },
+ {
+  "id": "receta",
+  "q": "¿cuántos huevos uso?",
+  "crit": "seis|6",
+  "r": "No lo sé: no me has dicho cuántos huevos usas. De ti sé que fries las corto en aceite a fuego lento luego y bates seis huevos con las patatas después.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "receta",
+  "q": "¿dónde cuajo la mezcla?",
+  "crit": "sarten",
+  "r": "No lo tengo del todo claro, pero me dijiste: «Cuajo la mezcla en la sartén».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "receta",
+  "q": "¿cómo frío las patatas?",
+  "crit": "fuego lento|aceite",
+  "r": "No lo sé. De ti sé que fries las corto en aceite a fuego lento luego y bates seis huevos con las patatas después.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "receta",
+  "q": "¿qué es lo último que hago?",
+  "crit": "cuaj*",
+  "r": "No lo sé. No conozco «que»: ¿me lo explicas?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "receta",
+  "q": "¿le pongo cebolla?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que fries las corto en aceite a fuego lento luego y bates seis huevos con las patatas después.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "Te voy a leer un texto sobre los gatos.\nLos gatos son animales domésticos muy limpios.\nDuermen unas quince horas al día.\nCazan ratones y pájaros pequeños.\nVen muy bien en la oscuridad.\nRonronean cuando están contentos.",
+  "crit": "",
+  "r": "He leído el texto (5 frases). Pregúntame lo que quieras sobre él.",
+  "v": null
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "Yo tengo un gato que se llama Milo.",
+  "crit": "",
+  "r": "Entendido: tienes un gato; tu gato se llama Milo.",
+  "v": null
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿cuánto duermen los gatos?",
+  "crit": "quince|15",
+  "r": "Los gatos duermen unas quince horas al día.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿cómo se llama mi gato?",
+  "crit": "milo",
+  "r": "Tu gato se llama Milo.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿Milo ve bien en la oscuridad?",
+  "crit": "^si",
+  "r": "Sí, los gatos ven en la oscuridad muy bien.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿qué caza Milo?",
+  "crit": "ratones|pajaros",
+  "r": "Los gatos cazan ratones y pájaros pequeños.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿cuándo ronronea Milo?",
+  "crit": "contento*",
+  "r": "No lo sé. De Milo sé que es tu gato.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "Milo tiene tres años.",
+  "crit": "",
+  "r": "Entendido: Milo tiene tres años.",
+  "v": null
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿cuántos años tiene Milo?",
+  "crit": "tres|3",
+  "r": "Milo tiene 3 años.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿Milo es un animal?",
+  "crit": "^si",
+  "r": "Sí, Milo es un animal. Lo deduzco porque Milo es un gato y los gatos son muy limpios y animal domésticos.",
+  "v": "OK"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿Milo ladra?",
+  "crit": "ABST|^no",
+  "r": "No: los gatos maúllan.",
+  "v": "MAL"
+ },
+ {
+  "id": "texto_y_charla",
+  "q": "¿qué sabes de Milo?",
+  "crit": "gato",
+  "r": "Milo es tu gato. Milo tiene tres años.",
+  "v": "OK"
+ },
+ {
+  "id": "comparar",
+  "q": "Mi hermano Pablo mide un metro ochenta.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Mi hermano Pablo mide un metro ochenta».",
+  "v": null
+ },
+ {
+  "id": "comparar",
+  "q": "Yo mido un metro setenta.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Estoy mido un metro setenta».",
+  "v": null
+ },
+ {
+  "id": "comparar",
+  "q": "Mi madre mide un metro sesenta.",
+  "crit": "",
+  "r": "Entendido: tu madre mide un metro sesenta.",
+  "v": null
+ },
+ {
+  "id": "comparar",
+  "q": "¿quién es más alto, Pablo o yo?",
+  "crit": "pablo",
+  "r": "No lo sé.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "¿quién es el más bajo de los tres?",
+  "crit": "madre",
+  "r": "No lo sé: no tengo comparaciones sobre eso.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "¿cuánto mide Pablo?",
+  "crit": "ochenta|1,80|180",
+  "r": "No lo tengo del todo claro, pero me dijiste: «Mi hermano Pablo mide un metro ochenta».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "Pablo tiene treinta años y yo veinticinco.",
+  "crit": "",
+  "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+  "v": null
+ },
+ {
+  "id": "comparar",
+  "q": "¿quién es mayor?",
+  "crit": "pablo",
+  "r": "No lo sé: no tengo comparaciones sobre eso.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "¿cuántos años me saca Pablo?",
+  "crit": "cinco|5",
+  "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "¿cuántos años tengo?",
+  "crit": "veinticinco|25",
+  "r": "No sé cuántos años tienes: no me lo has dicho.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "comparar",
+  "q": "¿cuánto pesa Pablo?",
+  "crit": "ABST",
+  "r": "No sé quién es Pablo: todavía no me has hablado de él.",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "Mi coche es rojo.",
+  "crit": "",
+  "r": "Entendido: tu coche es rojo.",
+  "v": null
+ },
+ {
+  "id": "correcciones",
+  "q": "Lo compré en 2019.",
+  "crit": "",
+  "r": "Entendido: compraste tu coche en 2019.",
+  "v": null
+ },
+ {
+  "id": "correcciones",
+  "q": "¿de qué color es mi coche?",
+  "crit": "rojo",
+  "r": "Tu coche es rojo.",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "Perdona, me he equivocado: mi coche es azul.",
+  "crit": "",
+  "r": "Corregido: tu coche es azul (antes me dijiste que era rojo).",
+  "v": null
+ },
+ {
+  "id": "correcciones",
+  "q": "¿de qué color es mi coche?",
+  "crit": "azul;!rojo",
+  "r": "Tu coche es azul.",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "¿cuándo lo compré?",
+  "crit": "2019",
+  "r": "Compraste tu coche en 2019.",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "¿cómo lo sabes?",
+  "crit": "dij*|contaste|me lo",
+  "r": "Porque me lo dijiste tú: «Compré mi coche en 2019».",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "Mi coche está en el taller desde ayer.",
+  "crit": "",
+  "r": "Entendido: tu coche está en el taller desde ayer.",
+  "v": null
+ },
+ {
+  "id": "correcciones",
+  "q": "¿dónde está mi coche?",
+  "crit": "taller",
+  "r": "Tu coche está en el taller desde ayer.",
+  "v": "OK"
+ },
+ {
+  "id": "correcciones",
+  "q": "¿desde cuándo?",
+  "crit": "ayer",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "correcciones",
+  "q": "Ya lo he recogido.",
+  "crit": "",
+  "r": "Entendido: has tu coche recogido.",
+  "v": null
+ },
+ {
+  "id": "correcciones",
+  "q": "¿sigue en el taller mi coche?",
+  "crit": "^no|ya no|recog*",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu coche sé que es azul y está en el taller desde ayer.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "amigos",
+  "q": "Mis amigos se llaman Sara, Hugo y Elena.",
+  "crit": "",
+  "r": "Entendido: tus amigos se llaman Sara, Hugo y Elena.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "A Sara le gusta el cine y a Hugo el fútbol.",
+  "crit": "",
+  "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "Elena es médica y trabaja de noche.",
+  "crit": "",
+  "r": "Entendido: Elena es médica; Elena trabaja de noche.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "Hugo y Elena son hermanos.",
+  "crit": "",
+  "r": "Entendido: Hugo y Elena son hermanos.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "¿cómo se llaman mis amigos?",
+  "crit": "sara;hugo;elena",
+  "r": "Tus amigos se llaman Sara, Hugo y Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿qué le gusta a Sara?",
+  "crit": "cine",
+  "r": "No lo sé: no me has dicho qué le gusta a Sara.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "amigos",
+  "q": "¿a quién le gusta el fútbol?",
+  "crit": "hugo",
+  "r": "No lo sé: nadie me ha dicho eso.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "amigos",
+  "q": "¿a qué se dedica Elena?",
+  "crit": "medic*",
+  "r": "Elena es médica y Elena trabaja de noche.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿quién es la hermana de Hugo?",
+  "crit": "elena",
+  "r": "Elena es la hermana de Hugo. Lo deduzco porque Hugo es el hermano de Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿cuándo trabaja Elena?",
+  "crit": "noche",
+  "r": "Elena trabaja de noche.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿a Elena le gusta el cine?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho qué le gusta a Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿cuántos amigos tengo?",
+  "crit": "tres|3",
+  "r": "Que yo sepa, tres: Sara, Hugo y Elena.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "El sábado voy al cine con Sara.",
+  "crit": "",
+  "r": "Entendido: vas al cine con Sara el sábado.",
+  "v": null
+ },
+ {
+  "id": "amigos",
+  "q": "¿con quién voy al cine?",
+  "crit": "sara",
+  "r": "Vas al cine con Sara el sábado.",
+  "v": "OK"
+ },
+ {
+  "id": "amigos",
+  "q": "¿cuándo voy al cine?",
+  "crit": "sabado",
+  "r": "Vas al cine con Sara el sábado (sábado 21 de noviembre de 2026).",
+  "v": "OK"
+ },
+ {
+  "id": "casa",
+  "q": "Las llaves están en el cajón de la entrada.",
+  "crit": "",
+  "r": "Entendido: las llaves están en el cajón de la entrada.",
+  "v": null
+ },
+ {
+  "id": "casa",
+  "q": "El cajón de la entrada está debajo del espejo.",
+  "crit": "",
+  "r": "Entendido: el cajón de la entrada está debajo del espejo.",
+  "v": null
+ },
+ {
+  "id": "casa",
+  "q": "He dejado el paraguas detrás de la puerta.",
+  "crit": "",
+  "r": "Entendido: dejaste el paraguas detrás de la puerta.",
+  "v": null
+ },
+ {
+  "id": "casa",
+  "q": "Las gafas están encima de la mesa del salón.",
+  "crit": "",
+  "r": "Entendido: las gafas están encima de la mesa del salón.",
+  "v": null
+ },
+ {
+  "id": "casa",
+  "q": "¿dónde están las llaves?",
+  "crit": "cajon",
+  "r": "Las llaves están en el cajón de la entrada.",
+  "v": "OK"
+ },
+ {
+  "id": "casa",
+  "q": "¿qué hay en el cajón de la entrada?",
+  "crit": "llaves",
+  "r": "Las llaves están en el cajón de la entrada.",
+  "v": "OK"
+ },
+ {
+  "id": "casa",
+  "q": "¿dónde está el paraguas?",
+  "crit": "puerta",
+  "r": "El paraguas está detrás de la puerta.",
+  "v": "OK"
+ },
+ {
+  "id": "casa",
+  "q": "¿qué hay encima de la mesa del salón?",
+  "crit": "gafas",
+  "r": "Las gafas están encima de la mesa del salón.",
+  "v": "OK"
+ },
+ {
+  "id": "casa",
+  "q": "¿las llaves están debajo del espejo?",
+  "crit": "^si|cajon",
+  "r": "No lo sé. Solo sé que las llaves están en el cajón de la entrada.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "casa",
+  "q": "He cogido las llaves y las he metido en el bolso.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He cogido las llaves y las he metido en el bolso».",
+  "v": null
+ },
+ {
+  "id": "casa",
+  "q": "¿dónde están las llaves ahora?",
+  "crit": "bolso;!cajon",
+  "r": "Las llaves están en el cajón de la entrada.",
+  "v": "MAL"
+ },
+ {
+  "id": "casa",
+  "q": "¿dónde está el móvil?",
+  "crit": "ABST",
+  "r": "No lo sé.",
+  "v": "OK"
+ }
+]

@@ -180,11 +180,49 @@ def _normaliza_217(t):
     return _pasiva_impersonal(t)
 
 
+def _es_yo_verbo(w):
+    """«mido», «pido», «decido»: acaban como un participio pero son un verbo en primera persona («yo mido…» no es «estoy mido»)."""
+    try:
+        from . import morfo as _M
+        an = _M.analizar(w.lower()) or []
+        return any(len(a) > 2 and a[1] == "pres" and a[2] == "1s" for a in an) and not any(len(a) > 1 and a[1] == "part" for a in an)
+    except Exception:                                    # noqa
+        return False
+
+
+def _medidas(t):
+    """2.25 · «un metro ochenta», «metro y medio», «dos kilos y medio»: la medida dicha de palabra, en cifras con su unidad."""
+    from . import numerales as _N
+
+    def _dec(m_):
+        ent = {"un": 1, "uno": 1, "dos": 2, "tres": 3}.get(m_.group(1).lower(), 1) if m_.group(1) else 1
+        cola = m_.group(2).strip()
+        if cola.lower() in ("y medio", "medio"):
+            return f"{ent},50 metros"
+        try:
+            c = _N.a_cifras(re.sub(r"^y\s+", "", cola, flags=re.I)).strip()
+        except Exception:                                # noqa
+            return m_.group(0)
+        if re.fullmatch(r"\d{1,2}", c):
+            return f"{ent},{int(c):02d} metros"
+        return m_.group(0)
+    t = re.sub(r"\b(?:(un|uno|dos|tres)\s+)?metros?\s+(y medio|(?:y\s+)?(?:\d{1,2}|[a-záéíóúñ]+(?:\s+y\s+[a-záéíóúñ]+)?))(?=[\s.,;!?]|$)(?!\s+(?:cent[ií]metros|metros|de\b))",
+               _dec, t, flags=re.I)
+    t = re.sub(r"\b(un|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)\s+(kilos?|litros?|horas?)\s+y\s+(?:medio|media)\b",
+               lambda m_: f"{ {'un': 1, 'dos': 2, 'tres': 3, 'cuatro': 4, 'cinco': 5, 'seis': 6, 'siete': 7, 'ocho': 8, 'nueve': 9, 'diez': 10}[m_.group(1).lower()] },5 "
+                          + (m_.group(2) if m_.group(2).endswith("s") else m_.group(2) + "s"), t, flags=re.I)
+    return t
+
+
 def normaliza(raw: str) -> str:
     """Quita muletillas, corrige erratas frecuentes y pone signos a las preguntas que no los traen."""
     t = raw.strip()
     if not t:
         return t
+    try:
+        t = _medidas(t)
+    except Exception:                                    # noqa
+        pass
     letras = [c for c in t if c.isalpha()]
     if len(letras) > 6 and sum(c.isupper() for c in letras) > 0.8 * len(letras):
         t = t[:1].upper() + t[1:].lower()               # 2.16: TODO EN MAYÚSCULAS es la misma frase dicha más alto
@@ -263,7 +301,7 @@ def normaliza(raw: str) -> str:
                lambda m_: ("Estoy " if m_.group(1).lower() == "llevo" else "Estamos ") + m_.group(3) + m_.group(4).rstrip(" .!") + " " + (m_.group(2) if re.match(r"tod", m_.group(2), re.I) else "desde hace " + m_.group(2)), t, flags=re.I) if not re.search(r"[¿?]", t) else t
     # «Yo un poco agobiado con el trabajo»: estado de ánimo sin verbo
     t = re.sub(r"^(?:pues |bueno,? )?yo\s+((?:un poco|algo|muy|bastante|super|tan)\s+)?([a-záéíóúñ]+(?:ado|ada|ido|ida|oso|osa))\b(.*)$",
-               lambda m_: "Estoy " + (m_.group(1) or "") + m_.group(2) + m_.group(3), t, flags=re.I) if not re.search(r"[¿?]", t) else t
+               lambda m_: m_.group(0) if _es_yo_verbo(m_.group(2)) else "Estoy " + (m_.group(1) or "") + m_.group(2) + m_.group(3), t, flags=re.I) if not re.search(r"[¿?]", t) else t
     # «Yo fatal, mi vecino…»: respuesta corta al «¿qué tal?» seguida de lo que cuenta
     t = re.sub(r"^(?:pues |yo |pues yo )?(?:fatal|bien|mal|regular|genial|muy bien|muy mal|de maravilla|hecho polvo|hecha polvo|reventad[oa]|cansad[oa]|agotad[oa])\s*[,.;:]\s+(?=\S+\s+\S+)", "", t, flags=re.I) or t
     t = re.sub(r"^(?:menos mal que|por suerte|afortunadamente|al menos|encima|lo bueno es que|lo malo es que|ya está|ya esta|nada|pues nada|en fin)\s*[,.]?\s+(?=\S+\s+\S+)", "", t, flags=re.I) or t

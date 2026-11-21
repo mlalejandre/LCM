@@ -1,0 +1,786 @@
+[
+ {
+  "id": "familia",
+  "q": "Hola, me llamo Andrés.",
+  "crit": "andres|hola|encantad*",
+  "r": "Encantado, Andrés.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "Vivo en Bilbao con mi mujer Rosa y mi hijo Dani.",
+  "crit": "",
+  "r": "Entendido: vives en Bilbao con tu mujer Rosa y tu hijo Dani.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "Dani tiene doce años y juega al baloncesto.",
+  "crit": "",
+  "r": "Entendido: Dani tiene doce años; Dani juega al baloncesto.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "Rosa es profesora y trabaja en un instituto.",
+  "crit": "",
+  "r": "Entendido: Rosa es profesora; Rosa trabaja en un instituto.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "¿dónde vivo?",
+  "crit": "bilbao",
+  "r": "Vives en Bilbao con tu mujer Rosa y tu hijo Dani.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿cómo se llama mi mujer?",
+  "crit": "rosa",
+  "r": "Tu mujer se llama Rosa.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿a qué juega mi hijo?",
+  "crit": "baloncesto",
+  "r": "Dani juega al baloncesto.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿dónde trabaja Rosa?",
+  "crit": "instituto",
+  "r": "Rosa trabaja en un instituto.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿cuántos años tiene Dani?",
+  "crit": "doce|12",
+  "r": "Dani tiene 12 años.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿a qué se dedica mi mujer?",
+  "crit": "profesora",
+  "r": "Rosa es profesora y Rosa trabaja en un instituto.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿tengo hijas?",
+  "crit": "ABST|^no",
+  "r": "Sí, Dani es tu hijo.",
+  "v": "MAL"
+ },
+ {
+  "id": "familia",
+  "q": "¿quién es Dani?",
+  "crit": "hijo",
+  "r": "Dani es tu hijo. Dani tiene doce años. Dani juega al baloncesto.",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "El lunes tengo dentista a las cinco.",
+  "crit": "",
+  "r": "Entendido: tienes dentista el lunes a las cinco.",
+  "v": null
+ },
+ {
+  "id": "agenda",
+  "q": "El martes ceno con mi primo Óscar.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "agenda",
+  "q": "¿qué tengo el lunes?",
+  "crit": "dentista",
+  "r": "Tienes dentista el lunes a las cinco.",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "¿a qué hora tengo dentista?",
+  "crit": "cinco|5",
+  "r": "Tienes dentista el lunes a las cinco.",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "¿con quién ceno el martes?",
+  "crit": "oscar|primo",
+  "r": "No lo sé. De ti sé que tienes dentista el lunes a las cinco.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "agenda",
+  "q": "El dentista es a las seis, no a las cinco.",
+  "crit": "",
+  "r": "Corregido: tienes dentista el lunes a las seis.",
+  "v": null
+ },
+ {
+  "id": "agenda",
+  "q": "¿a qué hora tengo dentista?",
+  "crit": "seis|6;!cinco",
+  "r": "Tienes dentista el lunes a las seis.",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "¿cuándo ceno con Óscar?",
+  "crit": "martes",
+  "r": "No lo sé. De ti sé que tienes dentista el lunes a las cinco y tienes dentista el lunes a las seis.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "agenda",
+  "q": "El miércoles voy al gimnasio con Nuria.",
+  "crit": "",
+  "r": "Entendido: vas al gimnasio con Nuria el miércoles. ¿Quién es Nuria?",
+  "v": null
+ },
+ {
+  "id": "agenda",
+  "q": "¿con quién voy al gimnasio?",
+  "crit": "nuria",
+  "r": "Vas al gimnasio con Nuria el miércoles.",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "¿cuándo?",
+  "crit": "miercoles",
+  "r": "Vas al gimnasio con Nuria el miércoles (miércoles 18 de noviembre de 2026).",
+  "v": "OK"
+ },
+ {
+  "id": "agenda",
+  "q": "¿tengo algo el domingo?",
+  "crit": "ABST|no me has",
+  "r": "No lo sé. Solo sé que tienes dentista el lunes a las cinco y tienes dentista el lunes a las seis.",
+  "v": "OK"
+ },
+ {
+  "id": "bricolaje",
+  "q": "Te cuento cómo monto la estantería.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te cuento cómo monto la estantería».",
+  "v": null
+ },
+ {
+  "id": "bricolaje",
+  "q": "Primero saco las tablas de la caja y las ordeno por tamaño.",
+  "crit": "",
+  "r": "Entendido: ordenas las tablas por tamaño. ",
+  "v": null
+ },
+ {
+  "id": "bricolaje",
+  "q": "Luego cojo los tornillos y los separo en montones.",
+  "crit": "",
+  "r": "Entendido: coges los tornillos luego; separas los tornillos en montones.",
+  "v": null
+ },
+ {
+  "id": "bricolaje",
+  "q": "Después uno las tablas con los tornillos.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Después uno las tablas con los tornillos».",
+  "v": null
+ },
+ {
+  "id": "bricolaje",
+  "q": "Al final cuelgo la estantería en la pared.",
+  "crit": "",
+  "r": "Entendido: cuelgas la estantería en la pared.",
+  "v": null
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿de dónde saco las tablas?",
+  "crit": "caja",
+  "r": "No lo sé: no me has dicho dónde sacas. De ti sé que ordenas las tablas por tamaño y coges los tornillos luego. En lo que he aprendido no aparece «sacar»; si es otra forma de decir algo, dímelo («sacar es lo mismo que…»).",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿cómo ordeno las tablas?",
+  "crit": "tamano",
+  "r": "Ordenas las tablas por tamaño.",
+  "v": "OK"
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿qué separo en montones?",
+  "crit": "tornillos",
+  "r": "Separas los tornillos en montones.",
+  "v": "OK"
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿con qué uno las tablas?",
+  "crit": "tornillos",
+  "r": "En el texto pone: «Después uno las tablas con los tornillos».",
+  "v": "OK"
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿dónde cuelgo la estantería?",
+  "crit": "pared",
+  "r": "Cuelgas la estantería en la pared.",
+  "v": "OK"
+ },
+ {
+  "id": "bricolaje",
+  "q": "¿pinto la estantería?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que ordenas las tablas por tamaño y coges los tornillos luego.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "Mis hermanas se llaman Irene y Noa.",
+  "crit": "",
+  "r": "Entendido: tus hermanas se llaman Irene y Noa.",
+  "v": null
+ },
+ {
+  "id": "gustos",
+  "q": "A Irene le gusta la montaña y a Noa la playa.",
+  "crit": "",
+  "r": "Entendido: a Irene le gusta la montaña; a Noa le gusta la playa.",
+  "v": null
+ },
+ {
+  "id": "gustos",
+  "q": "Irene vive en Jaca y Noa en Cádiz.",
+  "crit": "",
+  "r": "Entendido: Irene vive en Jaca; Noa vive en Cádiz.",
+  "v": null
+ },
+ {
+  "id": "gustos",
+  "q": "Irene tiene cuarenta años y Noa treinta y cinco.",
+  "crit": "",
+  "r": "Entendido: Irene tiene cuarenta años; Noa tiene 35 años.",
+  "v": null
+ },
+ {
+  "id": "gustos",
+  "q": "¿qué le gusta a Noa?",
+  "crit": "playa",
+  "r": "A Noa le gusta la playa.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿a quién le gusta la montaña?",
+  "crit": "irene",
+  "r": "A Irene le gusta la montaña.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿dónde vive Noa?",
+  "crit": "cadiz",
+  "r": "Noa vive en Cádiz.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿dónde vive Irene?",
+  "crit": "jaca",
+  "r": "Irene vive en Jaca.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿cuántos años tiene Noa?",
+  "crit": "treinta y cinco|35",
+  "r": "Noa tiene 35 años.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿quién es mayor, Irene o Noa?",
+  "crit": "irene",
+  "r": "Irene es mayor que Noa.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿a Irene le gusta la playa?",
+  "crit": "ABST",
+  "r": "No lo sé. Solo sé que a Irene le gusta la montaña.",
+  "v": "OK"
+ },
+ {
+  "id": "gustos",
+  "q": "¿cuántas hermanas tengo?",
+  "crit": "dos|2",
+  "r": "Que yo sepa, dos: Irene y Noa.",
+  "v": "OK"
+ },
+ {
+  "id": "medidas",
+  "q": "Mi hijo Leo mide un metro cuarenta.",
+  "crit": "",
+  "r": "Entendido: Leo mide 1,40 metros.",
+  "v": null
+ },
+ {
+  "id": "medidas",
+  "q": "Mi hija Vera mide un metro veinticinco.",
+  "crit": "",
+  "r": "Entendido: Vera mide 1,25 metros.",
+  "v": null
+ },
+ {
+  "id": "medidas",
+  "q": "Yo mido un metro setenta y dos.",
+  "crit": "",
+  "r": "Entendido: mides 1,72 metros.",
+  "v": null
+ },
+ {
+  "id": "medidas",
+  "q": "¿cuánto mide Leo?",
+  "crit": "1,40|cuarenta|140",
+  "r": "Leo mide 1,40 metros.",
+  "v": "OK"
+ },
+ {
+  "id": "medidas",
+  "q": "¿cuánto mido?",
+  "crit": "1,72|setenta y dos|172",
+  "r": "Mides 1,72 metros.",
+  "v": "OK"
+ },
+ {
+  "id": "medidas",
+  "q": "¿quién es más alto, Leo o Vera?",
+  "crit": "leo",
+  "r": "Leo es más alto: Leo mide 1,40 metros.",
+  "v": "OK"
+ },
+ {
+  "id": "medidas",
+  "q": "¿quién es más bajo, Vera o yo?",
+  "crit": "vera",
+  "r": "Vera es más baja: Vera mide 1,25 metros.",
+  "v": "OK"
+ },
+ {
+  "id": "medidas",
+  "q": "Leo pesa treinta y cinco kilos y Vera veintiocho.",
+  "crit": "",
+  "r": "Entendido: Leo pesar Treinta Cinco Kilos; Leo pesar Vera.",
+  "v": null
+ },
+ {
+  "id": "medidas",
+  "q": "¿cuánto pesa Vera?",
+  "crit": "veintiocho|28",
+  "r": "No lo sé. De Vera sé que es tu hija y mide 1,25 metros.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "medidas",
+  "q": "¿cuánto pesa Leo?",
+  "crit": "treinta y cinco|35",
+  "r": "No lo sé. De Leo sé que es tu hijo y mide 1,40 metros.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "medidas",
+  "q": "¿cuánto peso yo?",
+  "crit": "ABST",
+  "r": "No lo sé. De ti sé que mides 1,72 metros y Leo es tu hijo.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "El pasaporte está en el cajón del escritorio.",
+  "crit": "",
+  "r": "Entendido: el pasaporte está en el cajón del escritorio.",
+  "v": null
+ },
+ {
+  "id": "objetos",
+  "q": "He dejado las botas debajo de la cama.",
+  "crit": "",
+  "r": "Entendido: dejaste las botas debajo de la cama.",
+  "v": null
+ },
+ {
+  "id": "objetos",
+  "q": "La maleta está encima del armario.",
+  "crit": "",
+  "r": "Entendido: la maleta está encima del armario.",
+  "v": null
+ },
+ {
+  "id": "objetos",
+  "q": "¿dónde está el pasaporte?",
+  "crit": "cajon",
+  "r": "El pasaporte está en el cajón del escritorio.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "¿qué hay debajo de la cama?",
+  "crit": "botas",
+  "r": "Dejaste las botas debajo de la cama.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "¿dónde está la maleta?",
+  "crit": "armario",
+  "r": "La maleta está encima del armario.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "He sacado el pasaporte y lo he guardado en la mochila.",
+  "crit": "",
+  "r": "Entendido: sacaste el pasaporte; guardaste el pasaporte en la mochila.",
+  "v": null
+ },
+ {
+  "id": "objetos",
+  "q": "¿dónde está el pasaporte ahora?",
+  "crit": "mochila;!cajon",
+  "r": "El pasaporte está en la mochila.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "He bajado la maleta y la he puesto junto a la puerta.",
+  "crit": "",
+  "r": "Entendido: bajaste la maleta; pusiste la maleta junto a la puerta.",
+  "v": null
+ },
+ {
+  "id": "objetos",
+  "q": "¿dónde está la maleta?",
+  "crit": "puerta;!armario",
+  "r": "La maleta está junto a la puerta.",
+  "v": "OK"
+ },
+ {
+  "id": "objetos",
+  "q": "¿dónde está el cargador?",
+  "crit": "ABST",
+  "r": "No lo sé.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "Trabajo en una librería del centro.",
+  "crit": "",
+  "r": "Entendido: trabajas en una librería del centro.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "Empecé en marzo.",
+  "crit": "",
+  "r": "Entendido: empezaste en marzo.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "¿dónde trabajo?",
+  "crit": "libreria",
+  "r": "Trabajas en una librería del centro.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿desde cuándo?",
+  "crit": "marzo",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "trabajo",
+  "q": "Mi jefa se llama Pilar.",
+  "crit": "",
+  "r": "Entendido: tu jefa se llama Pilar.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "¿cómo se llama mi jefa?",
+  "crit": "pilar",
+  "r": "Tu jefa se llama Pilar.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "Entro a las nueve, no a las ocho.",
+  "crit": "",
+  "r": "Entendido: entras a las nueve.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "¿a qué hora entro?",
+  "crit": "nueve|9;!ocho",
+  "r": "Entras a las nueve.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "Los sábados trabajo solo por la mañana.",
+  "crit": "",
+  "r": "Entendido: trabajas los sábados por la mañana.",
+  "v": null
+ },
+ {
+  "id": "trabajo",
+  "q": "¿cuándo trabajo los sábados?",
+  "crit": "manana",
+  "r": "Trabajas los sábados por la mañana.",
+  "v": "OK"
+ },
+ {
+  "id": "trabajo",
+  "q": "¿cuánto cobro?",
+  "crit": "ABST",
+  "r": "No lo sé. De ti sé que trabajas en una librería del centro y empezaste en marzo.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "Te voy a leer un texto sobre los perros.\nLos perros son animales muy fieles.\nTienen un olfato excelente.\nNecesitan pasear todos los días.\nMueven la cola cuando están contentos.\nLadran cuando oyen ruidos extraños.",
+  "crit": "",
+  "r": "He leído el texto (5 frases). Pregúntame lo que quieras sobre él.",
+  "v": null
+ },
+ {
+  "id": "mascota",
+  "q": "Yo tengo una perra que se llama Kira.",
+  "crit": "",
+  "r": "Entendido: tienes una perra; tu perra se llama Kira.",
+  "v": null
+ },
+ {
+  "id": "mascota",
+  "q": "¿cómo se llama mi perra?",
+  "crit": "kira",
+  "r": "Tu perra se llama Kira.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿cómo es el olfato de los perros?",
+  "crit": "excelente",
+  "r": "El olfato de los perros es excelente.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿Kira necesita pasear?",
+  "crit": "^si",
+  "r": "Sí, los perros necesitan pasear todos los días.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿cuándo ladran los perros?",
+  "crit": "ruidos",
+  "r": "Cuando oyen ruidos extraños. Lo he aprendido de lo que leí o me explicaste.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "Kira tiene cinco años y duerme en el salón.",
+  "crit": "",
+  "r": "Entendido: Kira tiene cinco años; Kira duerme en el salón.",
+  "v": null
+ },
+ {
+  "id": "mascota",
+  "q": "¿cuántos años tiene Kira?",
+  "crit": "cinco|5",
+  "r": "Kira tiene 5 años.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿dónde duerme Kira?",
+  "crit": "salon",
+  "r": "Kira duerme en el salón.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿Kira es un animal?",
+  "crit": "^si",
+  "r": "Sí, Kira es un animal. Lo deduzco porque Kira es una perra y los perros son animales.",
+  "v": "OK"
+ },
+ {
+  "id": "mascota",
+  "q": "¿Kira maúlla?",
+  "crit": "^no",
+  "r": "No: los perros ladran.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "Mi madre compró una tarta y la llevó a la fiesta.",
+  "crit": "",
+  "r": "Entendido: tu madre compró una tarta; tu madre llevó la tarta a la fiesta.",
+  "v": null
+ },
+ {
+  "id": "compras",
+  "q": "Mi padre hizo una paella y la sirvió en el jardín.",
+  "crit": "",
+  "r": "Entendido: tu padre hizo una paella; tu padre sirvió la paella en el jardín.",
+  "v": null
+ },
+ {
+  "id": "compras",
+  "q": "Mi tío trajo dos botellas y las dejó en la nevera.",
+  "crit": "",
+  "r": "Entendido: tu tío trajo dos botellas; tu tío dejó las botellas en la nevera.",
+  "v": null
+ },
+ {
+  "id": "compras",
+  "q": "¿qué compró mi madre?",
+  "crit": "tarta",
+  "r": "Tu madre compró una tarta.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "¿adónde llevó la tarta mi madre?",
+  "crit": "fiesta",
+  "r": "Tu madre llevó la tarta a la fiesta.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "¿quién hizo la paella?",
+  "crit": "padre",
+  "r": "Tu padre hizo una paella.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "¿dónde sirvió la paella mi padre?",
+  "crit": "jardin",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "compras",
+  "q": "¿dónde dejó las botellas mi tío?",
+  "crit": "nevera",
+  "r": "Tu tío dejó las botellas en la nevera.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "¿cuántas botellas trajo mi tío?",
+  "crit": "dos|2",
+  "r": "Tu tío trajo dos botellas.",
+  "v": "OK"
+ },
+ {
+  "id": "compras",
+  "q": "¿quién trajo el pan?",
+  "crit": "ABST",
+  "r": "No lo sé: nadie me ha dicho eso.",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "Hoy me duele la espalda.",
+  "crit": "",
+  "r": "Lo siento. Entendido: te duele la espalda.",
+  "v": null
+ },
+ {
+  "id": "salud",
+  "q": "Ayer cargué muchas cajas.",
+  "crit": "",
+  "r": "Entendido: cargaste muchas cajas ayer.",
+  "v": null
+ },
+ {
+  "id": "salud",
+  "q": "¿qué me duele?",
+  "crit": "espalda",
+  "r": "Te duele la espalda.",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "¿qué hice ayer?",
+  "crit": "cajas|cargu*|cargaste",
+  "r": "Cargaste muchas cajas ayer.",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "Tengo cita con el fisio el viernes.",
+  "crit": "",
+  "r": "Entendido: tienes cita con el fisio el viernes. ¿Qué es un fisio? Es la primera vez que oigo esa palabra.",
+  "v": null
+ },
+ {
+  "id": "salud",
+  "q": "¿cuándo tengo cita con el fisio?",
+  "crit": "viernes",
+  "r": "Tienes cita con el fisio el viernes (viernes 20 de noviembre de 2026).",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "La cita es el jueves, no el viernes.",
+  "crit": "",
+  "r": "Corregido: tienes cita con el fisio el jueves.",
+  "v": null
+ },
+ {
+  "id": "salud",
+  "q": "¿cuándo tengo cita con el fisio?",
+  "crit": "jueves;!viernes",
+  "r": "Tienes cita con el fisio el jueves (jueves 19 de noviembre de 2026).",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "Ya no me duele la espalda.",
+  "crit": "",
+  "r": "Entendido, lo actualizo: no te duele la espalda.",
+  "v": null
+ },
+ {
+  "id": "salud",
+  "q": "¿me duele la espalda?",
+  "crit": "^no|ya no",
+  "r": "No, no te duele la espalda.",
+  "v": "OK"
+ },
+ {
+  "id": "salud",
+  "q": "¿me duele la rodilla?",
+  "crit": "ABST|^no",
+  "r": "No lo sé. Solo sé que no te duele la espalda.",
+  "v": "OK"
+ }
+]

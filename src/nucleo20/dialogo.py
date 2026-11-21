@@ -122,6 +122,10 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             r = None
         if r is None:
+            r = self._sigue_hilo(texto)                  # 2.25: «¿desde cuándo?» tras otra pregunta; «…a las once, no a las diez»
+        if r is None:
+            r = self._compuesta(texto)                   # 2.25: una frase compuesta de la charla («…y las corto», «…y a Hugo el fútbol») se entiende por sus simples
+        if r is None:
             r = self._por_partes(texto)                  # 2.23: frase a frase, igual que al leer: cada frase completa antes de entenderla
         if r is None:
             r = self._procesar_218(texto)
@@ -134,6 +138,96 @@ class Conversador(Nucleo):
         except Exception:                                # noqa
             pass
         return r
+
+    _WH225 = r"(?:(?:desde|hasta|con|para|por|de|a|en)\s+)?(?:qu[eé]|qui[eé]n(?:es)?|cu[aá]ndo|d[oó]nde|c[oó]mo|cu[aá]nt[oa]s?|cu[aá]l(?:es)?)"
+
+    def _sigue_hilo(self, texto):
+        """2.25 · Dos formas de seguir el hilo sin repetir la frase entera:
+        - una pregunta de una o dos palabras («¿desde cuándo?», «¿y con quién?») continúa la pregunta anterior: se rehace con ella;
+        - «…a las once, no a las diez» corrige lo último que se dijo con «a las diez»."""
+        if getattr(self, "_leyendo", False) or getattr(self, "_partiendo", False) or getattr(self, "_componiendo", False) or getattr(self, "_siguiendo", False) or not texto:
+            return None
+        ant, self._hist225 = getattr(self, "_hist225", None), texto
+        if os.environ.get("LCM_SIN_SEGUIMIENTO"):
+            return None
+        try:
+            t = texto.strip()
+            m = re.match(r"^¿?\s*(?:y\s+)?(" + self._WH225 + r")\s*\?$", t, re.I)
+            if m and ant and "?" in ant:
+                ma = re.match(r"^¿?\s*(?:y\s+)?" + self._WH225 + r"\s+(.+?)\s*\?\s*$", ant.strip(), re.I)
+                if ma and len(ma.group(1).split()) >= 2:
+                    nueva = "¿" + m.group(1).lower() + " " + ma.group(1) + "?"
+                    self._siguiendo = True
+                    try:
+                        r = self.procesar(nueva)
+                    finally:
+                        self._siguiendo = False
+                    self._hist225 = nueva
+                    if isinstance(r, dict) and r.get("estado") == "ok":
+                        return r
+                return None
+            mc = re.match(r"^(?:al final\s+|bueno,?\s+|perd[oó]n,?\s+|no,\s+)?(.+?),\s+(?:y\s+)?no\s+((?:a|en|de|con|el|la|los|las|un|una|para|por)\s+.{2,40}?)\.?$", t, re.I)
+            if mc and "?" not in t:
+                a_, b_ = mc.group(1).strip(), mc.group(2).strip()
+                p0 = b_.split()[0].lower()
+                k = a_.lower().rfind(" " + p0 + " ")
+                if k < 0:
+                    return None
+                nuevo = a_[k + 1:].strip()
+                if len(nuevo.split()) > 5 or sa(nuevo.lower()) == sa(b_.lower()):
+                    return None
+                for f in reversed(self.F):
+                    src = f.get("src") or ""
+                    if f.get("vig", True) and re.search(r"\b" + re.escape(b_) + r"(?=\W|$)", src, re.I):
+                        corregida = re.sub(r"\b" + re.escape(b_) + r"(?=\W|$)", nuevo, src, count=1, flags=re.I).rstrip(".")
+                        self._siguiendo = True
+                        try:
+                            r = self.procesar("Perdona, me he equivocado: " + corregida[:1].lower() + corregida[1:] + ".")
+                        finally:
+                            self._siguiendo = False
+                        if isinstance(r, dict) and r.get("estado") == "ok":
+                            return r
+                        return None
+                self._siguiendo = True                   # nada que corregir: vale la parte afirmada («Vivo en Madrid, no en Sevilla» -> «Vivo en Madrid»)
+                try:
+                    r = self.procesar(a_.rstrip(".") + ".")
+                finally:
+                    self._siguiendo = False
+                return r if isinstance(r, dict) and r.get("estado") == "ok" and not sa((r.get("respuesta") or "").lower()).startswith("no lo he entendido") else None
+        except Exception:                                # noqa
+            return None
+        return None
+
+    def _compuesta(self, texto):
+        """2.25: «Pelo las patatas y las corto en rodajas» = «Pelo las patatas.» + «Corto las patatas en rodajas.». El núcleo entiende
+        cada simple; aquí se parten (coordina.py) y se juntan las respuestas. None si no hay nada que partir."""
+        if not texto or getattr(self, "_leyendo", False) or getattr(self, "_partiendo", False) or getattr(self, "_componiendo", False):
+            return None
+        try:
+            from . import coordina as _K
+            piezas = _K.partes(texto)
+            if not piezas or len(piezas) < 2:
+                return None
+            self._componiendo = True
+            resp, n_ok, raro = [], 0, None
+            for pz in piezas:
+                r_p = self.procesar(pz)
+                tx = (r_p or {}).get("respuesta") or ""
+                if isinstance(r_p, dict) and r_p.get("estado") == "ok" and tx and not sa(tx.lower()).startswith("no lo he entendido"):
+                    n_ok += 1
+                    resp.append(re.sub(r"^(?:¡[^!]+!\s*|Lo siento\.\s*)?Entendido(?:, me lo apunto)?[:.]?\s*", "", tx).rstrip("."))
+                elif tx and raro is None:
+                    raro = tx
+            cuerpo = "; ".join(x for x in resp if x)
+            if n_ok == len(piezas) and cuerpo:
+                return {"respuesta": "Entendido: " + cuerpo + ".", "estado": "ok", "consultar": False, "tipo": "ack"}
+            if n_ok and cuerpo:
+                return {"respuesta": "Entendido: " + cuerpo + ". " + (raro or ""), "estado": "ok", "consultar": False, "tipo": "ack"}
+            return {"respuesta": raro, "estado": "ok", "consultar": False, "tipo": "ack"} if raro else None
+        except Exception:                                # noqa
+            return None
+        finally:
+            self._componiendo = False
 
     def _por_partes(self, texto):
         """2.23: una frase de la charla que explica algo y no se sostiene sola («Se toca de pie», «…y maman durante un año») se completa

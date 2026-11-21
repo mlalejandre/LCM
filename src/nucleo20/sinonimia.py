@@ -537,10 +537,13 @@ def apoyo(nuc, pregunta, cambios, fuente):
     dest = {sa(c[1]) for c in cambios}
     fondo = _fondo(nuc)
     rq = set()
+    propios = {w.lower() for w in re.findall(r"(?<![¿?¡!.]\s)(?<!^)(?<![¿¡])\b[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+", pregunta)}
     ws_ = re.findall(r"[a-záéíóúñü0-9]+", pregunta.lower())
     for k_, w in enumerate(ws_):
         if sa(w) in L._VACIAS or len(w) < 2:
             continue
+        if w in propios:
+            continue                                     # 2.25: de quién se habla (un nombre propio) no es apoyo: «Pablo mide…» no contesta «¿cuánto pesa Pablo?»
         if k_ > 0 and sa(ws_[k_ - 1]) in ("que", "cual", "cuales", "cuanto", "cuanta", "cuantos", "cuantas") and k_ <= 2:
             continue                                     # «¿qué PIEZA…?», «¿qué PAÍS…?»: dice de qué tipo es lo que se pide, no algo que la frase tenga que repetir
         if {sa(a_[0]) for a_ in analiza(w)} & dest or _base_n(w) in dest:
