@@ -121,6 +121,19 @@ class Conversador(Nucleo):
                     r_decl = _S.declara(self, texto)
         except Exception:                                # noqa
             r = None
+        if r is None and texto and not any(getattr(self, x, False) for x in ("_leyendo", "_partiendo", "_componiendo", "_siguiendo")):
+            try:                                         # 2.26: el orden de los pasos, las tareas que faltan y lo que «ya» no es verdad
+                from . import hilo as _H
+                if "?" in texto:
+                    r = _H.responde(self, texto)
+                    if r is not None:
+                        self.turno += 1
+                        self.pend = None
+                        self._ult_resp = r["respuesta"]
+                elif not os.environ.get("LCM_SIN_HILO"):
+                    _H.apunta_paso(self, texto)
+            except Exception:                            # noqa
+                r = None
         if r is None:
             r = self._sigue_hilo(texto)                  # 2.25: «¿desde cuándo?» tras otra pregunta; «…a las once, no a las diez»
         if r is None:

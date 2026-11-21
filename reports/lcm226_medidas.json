@@ -1,0 +1,47 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.26 · el hilo de la conversación",
+ "primera_medida_limpia_28": {
+  "2.25": {
+   "acierto": 35.7,
+   "falsas": 1
+  },
+  "2.26_medida_unica": {
+   "acierto": 75.0,
+   "falsas": 2,
+   "ganadas": 11,
+   "perdidas": 0
+  },
+  "2.26_final_no_ciego": {
+   "acierto": 100.0,
+   "falsas": 0
+  }
+ },
+ "segunda_medida_limpia_14": {
+  "2.25": {
+   "acierto": 7.1,
+   "falsas": 3
+  },
+  "2.26": {
+   "acierto": 92.9,
+   "falsas": 1
+  }
+ },
+ "desarrollo_33": {
+  "2.25": {
+   "acierto": 63.6,
+   "falsas": 3
+  },
+  "2.26": {
+   "acierto": 87.9,
+   "falsas": 2
+  }
+ },
+ "conversaciones_limpias_225": [
+  91.5,
+  91.5
+ ],
+ "controles": "idénticos a la 2.25",
+ "regresiones": "solo las 4 conocidas; iter226 t01 = 100 % (70 sondas)",
+ "pytest": "974 pasan, 3 fallos de entorno, 1 omitido"
+}

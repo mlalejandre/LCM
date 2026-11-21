@@ -1,0 +1,219 @@
+[
+ {
+  "id": "mudanza",
+  "q": "Esta semana tengo que embalar los libros, avisar al casero y contratar un camión.",
+  "crit": "",
+  "r": "Entendido: tienes que embalar los libros avisar al casero y contratar un camión esta semana.",
+  "v": null
+ },
+ {
+  "id": "mudanza",
+  "q": "¿qué tengo que hacer esta semana?",
+  "crit": "libros;casero;camion",
+  "r": "Tienes que embalar los libros avisar al casero y contratar un camión esta semana.",
+  "v": "OK"
+ },
+ {
+  "id": "mudanza",
+  "q": "Ya he avisado al casero.",
+  "crit": "",
+  "r": "Entendido: avisaste al casero.",
+  "v": null
+ },
+ {
+  "id": "mudanza",
+  "q": "¿qué me falta por hacer?",
+  "crit": "libros;camion;!casero",
+  "r": "Te falta embalar los libros y contratar un camión.",
+  "v": "OK"
+ },
+ {
+  "id": "mudanza",
+  "q": "Ayer embalé los libros.",
+  "crit": "",
+  "r": "Entendido: embalaste los libros ayer.",
+  "v": null
+ },
+ {
+  "id": "mudanza",
+  "q": "¿qué me queda por hacer?",
+  "crit": "camion;!libros",
+  "r": "Te falta contratar un camión.",
+  "v": "OK"
+ },
+ {
+  "id": "mudanza",
+  "q": "Mi gato está en casa de mi madre.",
+  "crit": "",
+  "r": "Entendido: tu gato está en casa de tu madre.",
+  "v": null
+ },
+ {
+  "id": "mudanza",
+  "q": "¿sigue en casa de mi madre mi gato?",
+  "crit": "^si|que yo sepa",
+  "r": "Que yo sepa, sí: tu gato está en casa de tu madre.",
+  "v": "OK"
+ },
+ {
+  "id": "mudanza",
+  "q": "Ya lo he traído al piso nuevo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Ya lo he traído al piso nuevo».",
+  "v": null
+ },
+ {
+  "id": "mudanza",
+  "q": "¿sigue en casa de mi madre mi gato?",
+  "crit": "^no|ya no|traj*|traido",
+  "r": "Que yo sepa, sí: tu gato está en casa de tu madre.",
+  "v": "MAL"
+ },
+ {
+  "id": "bizcocho",
+  "q": "Te explico cómo hago el bizcocho.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te explico cómo hago el bizcocho».",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "Primero enciendo el horno.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Primero enciendo el horno».",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "Luego bato los huevos con el azúcar.",
+  "crit": "",
+  "r": "Entendido: bates los huevos con el azúcar luego.",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "Después añado la harina.",
+  "crit": "",
+  "r": "Entendido: añades la harina después.",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "Más tarde vierto la masa en un molde.",
+  "crit": "",
+  "r": "Entendido: Más vorme la masa en un molde tarde.",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "Finalmente horneo el bizcocho media hora.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Horneo el bizcocho media hora».",
+  "v": null
+ },
+ {
+  "id": "bizcocho",
+  "q": "¿cuál es el primer paso?",
+  "crit": "horno|enciend*",
+  "r": "Primero enciendes el horno.",
+  "v": "OK"
+ },
+ {
+  "id": "bizcocho",
+  "q": "¿qué hago después de añadir la harina?",
+  "crit": "molde|masa|viert*",
+  "r": "Después viertes la masa en un molde.",
+  "v": "OK"
+ },
+ {
+  "id": "bizcocho",
+  "q": "¿qué hago antes de batir los huevos?",
+  "crit": "horno|enciend*",
+  "r": "Antes enciendes el horno.",
+  "v": "OK"
+ },
+ {
+  "id": "bizcocho",
+  "q": "¿qué hago al final?",
+  "crit": "horne*",
+  "r": "Lo último: horneas el bizcocho media hora.",
+  "v": "OK"
+ },
+ {
+  "id": "bizcocho",
+  "q": "¿cuántos pasos son?",
+  "crit": "cinco|5",
+  "r": "Cinco pasos: enciendes el horno; bates los huevos con el azúcar; añades la harina; viertes la masa en un molde; horneas el bizcocho media hora.",
+  "v": "OK"
+ },
+ {
+  "id": "estados",
+  "q": "Mi hija está nerviosa por el examen.",
+  "crit": "",
+  "r": "Espero que vaya bien. Entendido: tu hija está nerviosa por el examen.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "¿sigue nerviosa mi hija?",
+  "crit": "^si|que yo sepa",
+  "r": "Que yo sepa, sí: tu hija está nerviosa por el examen.",
+  "v": "OK"
+ },
+ {
+  "id": "estados",
+  "q": "Ya ha hecho el examen.",
+  "crit": "",
+  "r": "Entendido: tu hija hizo el examen.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "Mi jefe está de baja.",
+  "crit": "",
+  "r": "Entendido: tu jefe está de baja.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "Mi jefe ya se ha incorporado.",
+  "crit": "",
+  "r": "Entendido: tu jefe se incorporó.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "¿sigue de baja mi jefe?",
+  "crit": "^no|ya no|incorpor*",
+  "r": "No, ya no: tu jefe se incorporó.",
+  "v": "OK"
+ },
+ {
+  "id": "estados",
+  "q": "Estoy preocupado por el trabajo.",
+  "crit": "",
+  "r": "Entendido: estás preocupado por el trabajo.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "¿sigo preocupado?",
+  "crit": "^si|que yo sepa|preocupado",
+  "r": "Que yo sepa, sí: estás preocupado por el trabajo.",
+  "v": "OK"
+ },
+ {
+  "id": "estados",
+  "q": "Ya estoy más tranquilo.",
+  "crit": "",
+  "r": "¡Me alegro! Entendido: estás tranquilo.",
+  "v": null
+ },
+ {
+  "id": "estados",
+  "q": "¿sigo preocupado?",
+  "crit": "^no|ya no|tranquilo",
+  "r": "No, ya no: ahora estás tranquilo.",
+  "v": "OK"
+ }
+]

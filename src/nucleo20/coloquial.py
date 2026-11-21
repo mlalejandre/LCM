@@ -190,6 +190,25 @@ def _es_yo_verbo(w):
         return False
 
 
+def _clitico_perfecto(t):
+    """2.26 · «Ya lo he recogido» = «Ya lo recogí»: con el pronombre delante del auxiliar el núcleo colocaba mal el objeto
+    («he mi coche recogido»). El pretérito simple dice lo mismo y lo entiende bien."""
+    from . import morfo as _M
+    if "?" in t or "¿" in t:
+        return t
+
+    def _f(m_):
+        try:
+            lem = next((a[0] for a in (_M.analizar(m_.group(3).lower()) or []) if len(a) > 1 and a[1] == "part"), None)
+            forma = _M.conjugar(lem, "pret", {"he": "1s", "has": "2s", "ha": "3s", "hemos": "1p", "han": "3p"}[m_.group(2).lower()]) if lem else None
+        except Exception:                                # noqa
+            forma = None
+        return f"{m_.group(1)} {forma}" if forma else m_.group(0)
+    if not re.match(r"^\W*ya\s+(?:lo|la|los|las)\s+(?:he|has|ha|hemos|han)\b", t, re.I):
+        return t                                         # solo el caso que fallaba («Ya lo he recogido»); «hoy la he llamado…» el núcleo ya lo entiende
+    return re.sub(r"\b(lo|la|los|las)\s+(he|has|ha|hemos|han)\s+([a-záéíóúñ]+(?:ado|ido|to|so|cho))\b", _f, t, count=1, flags=re.I)
+
+
 def _medidas(t):
     """2.25 · «un metro ochenta», «metro y medio», «dos kilos y medio»: la medida dicha de palabra, en cifras con su unidad."""
     from . import numerales as _N
@@ -221,6 +240,7 @@ def normaliza(raw: str) -> str:
         return t
     try:
         t = _medidas(t)
+        t = _clitico_perfecto(t)
     except Exception:                                    # noqa
         pass
     letras = [c for c in t if c.isalpha()]

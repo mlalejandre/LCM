@@ -1,0 +1,401 @@
+[
+ {
+  "id": "maleta",
+  "q": "Te cuento cómo preparo la maleta.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te cuento cómo preparo la maleta».",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "Primero hago una lista de la ropa.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Primero hago una lista de la ropa».",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "Luego doblo las camisas.",
+  "crit": "",
+  "r": "Entendido: doblas las camisas luego.",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "Después meto los zapatos en una bolsa.",
+  "crit": "",
+  "r": "Entendido: metes los zapatos en una bolsa después.",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "A continuación guardo el neceser.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "Por último cierro la maleta con un candado.",
+  "crit": "",
+  "r": "Entendido: cierras la maleta con un candado por último.",
+  "v": null
+ },
+ {
+  "id": "maleta",
+  "q": "¿qué hago primero?",
+  "crit": "lista",
+  "r": "Doblas las camisas luego, metes los zapatos en una bolsa después y cierras la maleta con un candado por último.",
+  "v": "MAL"
+ },
+ {
+  "id": "maleta",
+  "q": "¿qué hago después de doblar las camisas?",
+  "crit": "zapatos|bolsa",
+  "r": "Doblas las camisas luego, metes los zapatos en una bolsa después y cierras la maleta con un candado por último.",
+  "v": "OK"
+ },
+ {
+  "id": "maleta",
+  "q": "¿qué hago antes de guardar el neceser?",
+  "crit": "zapatos|bolsa",
+  "r": "Doblas las camisas luego, metes los zapatos en una bolsa después y cierras la maleta con un candado por último.",
+  "v": "OK"
+ },
+ {
+  "id": "maleta",
+  "q": "¿cuál es el último paso?",
+  "crit": "cierr*|candado",
+  "r": "No lo sé. No conozco «último paso»: ¿me lo explicas?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "maleta",
+  "q": "¿cuántos pasos son?",
+  "crit": "cinco|5",
+  "r": "No lo sé: no me has dicho cuántos pasos eres. De ti sé que doblas las camisas luego y metes los zapatos en una bolsa después.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "maleta",
+  "q": "¿qué hago después de cerrar la maleta?",
+  "crit": "nada|ultimo",
+  "r": "Doblas las camisas luego, metes los zapatos en una bolsa después y cierras la maleta con un candado por último.",
+  "v": "OK"
+ },
+ {
+  "id": "ensalada",
+  "q": "Así hago la ensalada.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Así hago la ensalada».",
+  "v": null
+ },
+ {
+  "id": "ensalada",
+  "q": "Primero lavo la lechuga y la corto en trozos.",
+  "crit": "",
+  "r": "Entendido: cortas la lechuga en trozos. ",
+  "v": null
+ },
+ {
+  "id": "ensalada",
+  "q": "Luego pelo un tomate.",
+  "crit": "",
+  "r": "Entendido: pelas un tomate luego.",
+  "v": null
+ },
+ {
+  "id": "ensalada",
+  "q": "Después añado aceite y sal.",
+  "crit": "",
+  "r": "Entendido: añades aceite y sal después.",
+  "v": null
+ },
+ {
+  "id": "ensalada",
+  "q": "Al final lo mezclo todo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Lo mezclo todo».",
+  "v": null
+ },
+ {
+  "id": "ensalada",
+  "q": "¿por dónde empiezo?",
+  "crit": "lav*|lechuga",
+  "r": "No lo sé: no me has dicho dónde empiezas. De ti sé que cortas la lechuga en trozos y pelas un tomate luego.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ensalada",
+  "q": "¿qué hago después de pelar el tomate?",
+  "crit": "aceite|sal",
+  "r": "Cortas la lechuga en trozos, pelas un tomate luego, añades aceite después y añades sal después.",
+  "v": "OK"
+ },
+ {
+  "id": "ensalada",
+  "q": "¿qué es lo último que hago?",
+  "crit": "mezcl*",
+  "r": "No lo sé. No conozco «que»: ¿me lo explicas?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ensalada",
+  "q": "¿qué hago antes de añadir el aceite?",
+  "crit": "tomate|pel*",
+  "r": "Cortas la lechuga en trozos, pelas un tomate luego, añades aceite después y añades sal después.",
+  "v": "OK"
+ },
+ {
+  "id": "recados",
+  "q": "Hoy tengo que pagar el alquiler, regar las plantas y escribir a Marcos.",
+  "crit": "",
+  "r": "No puedo identificar con seguridad el hecho temporal; no lo registraré.",
+  "v": null
+ },
+ {
+  "id": "recados",
+  "q": "¿qué tengo que hacer hoy?",
+  "crit": "alquiler;plantas;marcos",
+  "r": "No lo sé.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "recados",
+  "q": "Ya he regado las plantas.",
+  "crit": "",
+  "r": "Entendido: regaste las plantas.",
+  "v": null
+ },
+ {
+  "id": "recados",
+  "q": "¿qué me falta por hacer?",
+  "crit": "alquiler;marcos;!plantas",
+  "r": "No lo sé: no me has dicho qué te falta.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "recados",
+  "q": "He pagado el alquiler.",
+  "crit": "",
+  "r": "Entendido: pagaste el alquiler.",
+  "v": null
+ },
+ {
+  "id": "recados",
+  "q": "¿qué me queda por hacer?",
+  "crit": "marcos;!alquiler",
+  "r": "No lo sé: no me has dicho qué quedas. De ti sé que regaste las plantas y pagaste el alquiler.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "recados",
+  "q": "¿he regado las plantas?",
+  "crit": "^si",
+  "r": "Sí, regaste las plantas.",
+  "v": "OK"
+ },
+ {
+  "id": "recados",
+  "q": "Ya he escrito a Marcos.",
+  "crit": "",
+  "r": "Entendido: escribiste a Marcos. ¿Quién es Marcos?",
+  "v": null
+ },
+ {
+  "id": "recados",
+  "q": "¿me falta algo?",
+  "crit": "^no|nada",
+  "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_1",
+  "q": "Mi móvil está en la tienda de reparaciones.",
+  "crit": "",
+  "r": "Entendido: tu móvil está en la tienda de reparaciones.",
+  "v": null
+ },
+ {
+  "id": "ya_no_1",
+  "q": "¿dónde está mi móvil?",
+  "crit": "tienda",
+  "r": "Tu móvil está en la tienda de reparaciones.",
+  "v": "OK"
+ },
+ {
+  "id": "ya_no_1",
+  "q": "Ya lo he recogido.",
+  "crit": "",
+  "r": "Entendido: has tu móvil recogido.",
+  "v": null
+ },
+ {
+  "id": "ya_no_1",
+  "q": "¿sigue en la tienda mi móvil?",
+  "crit": "^no|ya no|recog*",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu móvil sé que está en la tienda de reparaciones.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_1",
+  "q": "Mi hermana está de vacaciones.",
+  "crit": "",
+  "r": "Entendido: tu hermana está de vacaciones.",
+  "v": null
+ },
+ {
+  "id": "ya_no_1",
+  "q": "¿sigue de vacaciones mi hermana?",
+  "crit": "^si|que yo sepa|vacaciones",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu hermana sé que está de vacaciones.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_1",
+  "q": "Mi hermana ya ha vuelto.",
+  "crit": "",
+  "r": "Entendido: tu hermana volvió.",
+  "v": null
+ },
+ {
+  "id": "ya_no_1",
+  "q": "¿sigue de vacaciones mi hermana?",
+  "crit": "^no|ya no|volvi*|vuelto",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu hermana sé que está de vacaciones y volvió.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_2",
+  "q": "Estoy enfadado con mi vecino.",
+  "crit": "",
+  "r": "Entendido: estás enfadado con tu vecino.",
+  "v": null
+ },
+ {
+  "id": "ya_no_2",
+  "q": "¿cómo estoy?",
+  "crit": "enfadado",
+  "r": "Estás enfadado con tu vecino.",
+  "v": "OK"
+ },
+ {
+  "id": "ya_no_2",
+  "q": "Ya estoy tranquilo.",
+  "crit": "",
+  "r": "¡Me alegro! Entendido: estás tranquilo.",
+  "v": null
+ },
+ {
+  "id": "ya_no_2",
+  "q": "¿sigo enfadado?",
+  "crit": "^no|ya no|tranquilo",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que estás tranquilo.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_2",
+  "q": "Mi padre está en el hospital.",
+  "crit": "",
+  "r": "Entendido: tu padre está en el hospital.",
+  "v": null
+ },
+ {
+  "id": "ya_no_2",
+  "q": "Ya le han dado el alta.",
+  "crit": "",
+  "r": "Entendido: tú y tu vecino diste el alta a tu padre.",
+  "v": null
+ },
+ {
+  "id": "ya_no_2",
+  "q": "¿sigue en el hospital mi padre?",
+  "crit": "^no|ya no|alta",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu padre sé que está en el hospital.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "ya_no_2",
+  "q": "La carretera está cortada.",
+  "crit": "",
+  "r": "Entendido: la carretera está cortada.",
+  "v": null
+ },
+ {
+  "id": "ya_no_2",
+  "q": "¿sigue cortada la carretera?",
+  "crit": "^si|que yo sepa|cortada",
+  "r": "No lo sé: no me has dicho nada sobre eso. De la carretera sé que está cortada.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "mezcla",
+  "q": "Mañana tengo que llevar el coche al taller y comprar un regalo.",
+  "crit": "",
+  "r": "Entendido: tienes que llevar el coche al taller y comprar un regalo mañana.",
+  "v": null
+ },
+ {
+  "id": "mezcla",
+  "q": "El regalo es para mi sobrina Lucía.",
+  "crit": "",
+  "r": "Entendido: el regalo es para tu sobrina Lucía.",
+  "v": null
+ },
+ {
+  "id": "mezcla",
+  "q": "¿para quién es el regalo?",
+  "crit": "lucia|sobrina",
+  "r": "El regalo es para tu sobrina Lucía.",
+  "v": "OK"
+ },
+ {
+  "id": "mezcla",
+  "q": "Ya he comprado el regalo.",
+  "crit": "",
+  "r": "¡Qué bien! Entendido: compraste el regalo.",
+  "v": null
+ },
+ {
+  "id": "mezcla",
+  "q": "¿qué me falta por hacer?",
+  "crit": "coche|taller;!regalo",
+  "r": "No lo sé: no me has dicho qué te falta.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "mezcla",
+  "q": "He llevado el coche al taller.",
+  "crit": "",
+  "r": "Entendido: llevaste el coche al taller.",
+  "v": null
+ },
+ {
+  "id": "mezcla",
+  "q": "¿me queda algo por hacer?",
+  "crit": "^no|nada",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que tienes que llevar el coche al taller y comprar un regalo mañana y compraste el regalo.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "mezcla",
+  "q": "¿dónde está el coche?",
+  "crit": "taller",
+  "r": "Lo último que sé es que el taller tiene el coche.",
+  "v": "OK"
+ },
+ {
+  "id": "mezcla",
+  "q": "Ya lo he recogido.",
+  "crit": "",
+  "r": "Entendido: has el coche recogido.",
+  "v": null
+ },
+ {
+  "id": "mezcla",
+  "q": "¿sigue en el taller el coche?",
+  "crit": "^no|ya no|recog*",
+  "r": "No lo sé: no me has dicho nada sobre eso.",
+  "v": "ABST_INDEBIDA"
+ }
+]

@@ -1,0 +1,450 @@
+[
+ {
+  "id": "cambios1",
+  "q": "Mi coche está en el taller.",
+  "crit": "",
+  "r": "Entendido: tu coche está en el taller.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "Ya lo he recogido.",
+  "crit": "",
+  "r": "Entendido: has tu coche recogido.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "¿sigue en el taller mi coche?",
+  "crit": "^no|ya no|recog*",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu coche sé que está en el taller.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "cambios1",
+  "q": "Tengo una bici roja.",
+  "crit": "",
+  "r": "Entendido: tienes una bici roja; tu bici es roja.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "He vendido la bici.",
+  "crit": "",
+  "r": "Entendido: vendiste la bici.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "¿tengo bici?",
+  "crit": "^no|ya no|vend*",
+  "r": "No, ya no: vendiste la bici.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios1",
+  "q": "Vivo en Lugo.",
+  "crit": "",
+  "r": "Entendido: vives en Lugo.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "Me he mudado a Vigo.",
+  "crit": "",
+  "r": "Entendido: te mudaste a Vigo.",
+  "v": null
+ },
+ {
+  "id": "cambios1",
+  "q": "¿dónde vivo?",
+  "crit": "vigo;!lugo",
+  "r": "Vives en Vigo.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios1",
+  "q": "¿dónde vivía antes?",
+  "crit": "lugo",
+  "r": "Antes vivías en Lugo.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios2",
+  "q": "Tengo que comprar pan y llamar a mi madre.",
+  "crit": "",
+  "r": "Entendido: tienes que comprar pan y llamar a tu madre.",
+  "v": null
+ },
+ {
+  "id": "cambios2",
+  "q": "¿qué tengo que hacer?",
+  "crit": "pan;madre",
+  "r": "Tienes que comprar pan y llamar a tu madre.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios2",
+  "q": "Ya he comprado el pan.",
+  "crit": "",
+  "r": "Entendido: compraste el pan.",
+  "v": null
+ },
+ {
+  "id": "cambios2",
+  "q": "¿qué me falta por hacer?",
+  "crit": "madre;!pan",
+  "r": "No lo sé: no me has dicho qué te falta.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "cambios2",
+  "q": "¿he comprado el pan?",
+  "crit": "^si",
+  "r": "Sí, compraste el pan.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios2",
+  "q": "Ya he llamado a mi madre.",
+  "crit": "",
+  "r": "Entendido: llamaste a tu madre.",
+  "v": null
+ },
+ {
+  "id": "cambios2",
+  "q": "¿me queda algo por hacer?",
+  "crit": "^no|nada",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que tienes que comprar pan y llamar a tu madre y compraste el pan.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "cambios3",
+  "q": "Estoy resfriado.",
+  "crit": "",
+  "r": "Entendido: estás resfriado.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "¿cómo estoy?",
+  "crit": "resfriado",
+  "r": "Estás resfriado.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios3",
+  "q": "Ya estoy curado.",
+  "crit": "",
+  "r": "¡Me alegro! Entendido: estás curado.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "¿sigo resfriado?",
+  "crit": "^no|ya no|curado",
+  "r": "No lo sé: no me has dicho nada sobre eso. De ti sé que estás resfriado y estás curado.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "cambios3",
+  "q": "La tienda está cerrada.",
+  "crit": "",
+  "r": "Entendido: la tienda está cerrada.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "Ya han abierto la tienda.",
+  "crit": "",
+  "r": "Entendido: la tienda abrió la tienda.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "¿está abierta la tienda?",
+  "crit": "^si",
+  "r": "Sí, la tienda está abierta.",
+  "v": "OK"
+ },
+ {
+  "id": "cambios3",
+  "q": "Mi hermano está de viaje.",
+  "crit": "",
+  "r": "Entendido: tu hermano está de viaje.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "Mi hermano ya ha vuelto.",
+  "crit": "",
+  "r": "Entendido: tu hermano volvió.",
+  "v": null
+ },
+ {
+  "id": "cambios3",
+  "q": "¿sigue de viaje mi hermano?",
+  "crit": "^no|ya no|vuelto|volvi*",
+  "r": "No lo sé: no me has dicho nada sobre eso. De tu hermano sé que está de viaje y volvió.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia",
+  "q": "Vivo con mi marido Luis y mi hija Clara.",
+  "crit": "",
+  "r": "Entendido: vives con tu marido Luis y tu hija Clara.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "Luis trabaja en una farmacia.",
+  "crit": "",
+  "r": "Entendido: Luis trabaja en una farmacia.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "¿dónde trabaja el padre de Clara?",
+  "crit": "farmacia",
+  "r": "No lo sé: no me has dicho dónde trabajas. De ti sé que vives con tu marido Luis y tu hija Clara y Luis es tu marido.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia",
+  "q": "¿quién es el padre de Clara?",
+  "crit": "luis",
+  "r": "Eres el padre de Clara. Lo deduzco porque Clara es tu hija.",
+  "v": "MAL"
+ },
+ {
+  "id": "familia",
+  "q": "¿quién es la madre de Clara?",
+  "crit": "tu|eres|yo",
+  "r": "Eres el padre de Clara. Lo deduzco porque Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿cuántos somos en casa?",
+  "crit": "tres|3",
+  "r": "No lo sé. De ti sé que vives con tu marido Luis y tu hija Clara y Luis es tu marido.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "familia",
+  "q": "Mi madre se llama Carmen.",
+  "crit": "",
+  "r": "Entendido: tu madre se llama Carmen.",
+  "v": null
+ },
+ {
+  "id": "familia",
+  "q": "¿quién es la abuela de Clara?",
+  "crit": "carmen",
+  "r": "Carmen es la abuela de Clara. Lo deduzco porque Carmen es tu madre y Clara es tu hija.",
+  "v": "OK"
+ },
+ {
+  "id": "familia",
+  "q": "¿quién es la suegra de Luis?",
+  "crit": "carmen",
+  "r": "Carmen es la suegra de Luis. Lo deduzco porque Carmen es tu madre y Luis es tu marido.",
+  "v": "OK"
+ },
+ {
+  "id": "lugares",
+  "q": "Las llaves están en el cajón.",
+  "crit": "",
+  "r": "Entendido: las llaves están en el cajón.",
+  "v": null
+ },
+ {
+  "id": "lugares",
+  "q": "El cajón está en la cocina.",
+  "crit": "",
+  "r": "Entendido: el cajón está en la cocina.",
+  "v": null
+ },
+ {
+  "id": "lugares",
+  "q": "¿las llaves están en la cocina?",
+  "crit": "^si",
+  "r": "Sí: las llaves están en el cajón y el cajón está en la cocina.",
+  "v": "OK"
+ },
+ {
+  "id": "lugares",
+  "q": "¿en qué habitación están las llaves?",
+  "crit": "cocina",
+  "r": "Una llave suele estar en el taller o el caja de herramientas. Lo sé porque una llave es una herramienta.",
+  "v": "MAL"
+ },
+ {
+  "id": "lugares",
+  "q": "El pasaporte está en la mochila.",
+  "crit": "",
+  "r": "Entendido: el pasaporte está en la mochila.",
+  "v": null
+ },
+ {
+  "id": "lugares",
+  "q": "La mochila está en el coche.",
+  "crit": "",
+  "r": "Entendido: la mochila está en el coche.",
+  "v": null
+ },
+ {
+  "id": "lugares",
+  "q": "¿dónde está el pasaporte?",
+  "crit": "mochila|coche",
+  "r": "El pasaporte está en la mochila.",
+  "v": "OK"
+ },
+ {
+  "id": "lugares",
+  "q": "¿el pasaporte está en el coche?",
+  "crit": "^si",
+  "r": "Sí: el pasaporte está en la mochila y la mochila está en el coche.",
+  "v": "OK"
+ },
+ {
+  "id": "pasos",
+  "q": "Te explico cómo hago el café.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Te explico cómo hago el café».",
+  "v": null
+ },
+ {
+  "id": "pasos",
+  "q": "Primero caliento el agua.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Primero caliento el agua».",
+  "v": null
+ },
+ {
+  "id": "pasos",
+  "q": "Luego muelo el café.",
+  "crit": "",
+  "r": "Entendido: muelas el café luego.",
+  "v": null
+ },
+ {
+  "id": "pasos",
+  "q": "Después echo el agua sobre el café.",
+  "crit": "",
+  "r": "Vaya, lo siento. Entendido: echas el agua sobre el café después.",
+  "v": null
+ },
+ {
+  "id": "pasos",
+  "q": "Al final añado azúcar.",
+  "crit": "",
+  "r": "Entendido: añades azúcar.",
+  "v": null
+ },
+ {
+  "id": "pasos",
+  "q": "¿qué hago primero?",
+  "crit": "calient*|agua",
+  "r": "Muelas el café luego, echas el agua sobre el café después y añades azúcar.",
+  "v": "OK"
+ },
+ {
+  "id": "pasos",
+  "q": "¿qué hago después de calentar el agua?",
+  "crit": "muel*",
+  "r": "Muelas el café luego, echas el agua sobre el café después y añades azúcar.",
+  "v": "OK"
+ },
+ {
+  "id": "pasos",
+  "q": "¿qué hago al final?",
+  "crit": "azucar",
+  "r": "No tengo gustos ni experiencia propia para recomendarte nada con fundamento. Lo que sí puedo es recordarte lo que me has contado sobre el tema.",
+  "v": "MAL"
+ },
+ {
+  "id": "pasos",
+  "q": "¿qué hago antes de echar el agua?",
+  "crit": "muel*",
+  "r": "Muelas el café luego, echas el agua sobre el café después y añades azúcar.",
+  "v": "OK"
+ },
+ {
+  "id": "pasos",
+  "q": "¿cuántos pasos son?",
+  "crit": "cuatro|4",
+  "r": "No lo sé: no me has dicho cuántos pasos eres. De ti sé que muelas el café luego y echas el agua sobre el café después.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "pasos",
+  "q": "¿qué es lo último que hago?",
+  "crit": "azucar",
+  "r": "No lo sé. No conozco «que»: ¿me lo explicas?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "causas",
+  "q": "Estoy cansado porque he dormido poco.",
+  "crit": "",
+  "r": "Entendido: estás cansado.",
+  "v": null
+ },
+ {
+  "id": "causas",
+  "q": "¿por qué estoy cansado?",
+  "crit": "dormi*",
+  "r": "Porque has dormido poco.",
+  "v": "OK"
+ },
+ {
+  "id": "causas",
+  "q": "He llegado tarde porque había atasco.",
+  "crit": "",
+  "r": "Entendido: llegaste tarde.",
+  "v": null
+ },
+ {
+  "id": "causas",
+  "q": "¿por qué he llegado tarde?",
+  "crit": "atasco",
+  "r": "Porque había atasco.",
+  "v": "OK"
+ },
+ {
+  "id": "causas",
+  "q": "No voy a la fiesta porque tengo que estudiar.",
+  "crit": "",
+  "r": "Entendido: no vas a la fiesta.",
+  "v": null
+ },
+ {
+  "id": "causas",
+  "q": "¿voy a la fiesta?",
+  "crit": "^no",
+  "r": "No, no vas a la fiesta.",
+  "v": "OK"
+ },
+ {
+  "id": "causas",
+  "q": "¿por qué no voy a la fiesta?",
+  "crit": "estudiar",
+  "r": "Porque tienes que estudiar.",
+  "v": "OK"
+ },
+ {
+  "id": "causas",
+  "q": "Mi hija está contenta porque ha aprobado.",
+  "crit": "",
+  "r": "Entendido: tu hija está contenta.",
+  "v": null
+ },
+ {
+  "id": "causas",
+  "q": "¿por qué está contenta mi hija?",
+  "crit": "aprob*",
+  "r": "Porque ha aprobado.",
+  "v": "OK"
+ }
+]
