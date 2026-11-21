@@ -344,3 +344,96 @@ Una planta es un ser vivo con raíz, tallo y hojas: el árbol, el rosal, la hier
 Una fábrica es un edificio donde se fabrican cosas con máquinas: la planta industrial es una fábrica.
 Un juego tiene reglas y jugadores: las cartas, el ajedrez, el dominó y el escondite son juegos.
 Una cuerda ata y sujeta: el cabo, la soga y el cordón son cuerdas.
+# === LCM 2.32 · Tercera tanda, dirigida a las CLASES de las que el texto conocía pocos miembros (lista sacada por programa).
+# --- bailes y música
+El tango, el vals, la jota, la salsa y el flamenco son bailes. Bailamos un vals en la boda y una jota en la fiesta del pueblo. La pareja baila un tango en la pista de baile.
+En la academia de baile enseñan salsa, bachata y tango. El bailarín baila flamenco con palmas y guitarra. Para bailar hace falta música, ritmo y una pareja.
+El jazz, el rock, el pop y el blues son tipos de música. Escuchamos rock en el concierto y jazz en el bar. La banda de rock toca la guitarra eléctrica y la batería. La ópera se canta en el teatro.
+El bolero y la cumbia se cantan y se bailan. El cantante de pop canta sus canciones en la radio.
+# --- acuerdos
+Un acuerdo se firma entre dos partes: el contrato, el pacto, el tratado, el convenio y la alianza son acuerdos. Los dos países firmaron un tratado de paz y una alianza.
+Los gobiernos firman un pacto para no pelear. La empresa y los trabajadores firman un convenio. Los ejércitos acordaron una tregua y dejaron de pelear.
+Cumplimos el trato que hicimos. Romper un pacto es faltar a la palabra. Un compromiso es una promesa entre dos personas. Los socios cierran un trato con un apretón de manos.
+# --- normas
+Una norma dice lo que se debe hacer: la ley, la regla, la orden, la obligación y la costumbre son normas. Todos deben cumplir la ley y obedecer las normas.
+El juez aplica la ley. El que no cumple la norma recibe una multa o un castigo. Las reglas del juego dicen lo que puede hacer cada jugador. Saltarse una regla es hacer trampa.
+El decreto y el estatuto son normas escritas. La constitución es la ley más importante de un país. Un permiso deja hacer lo que la norma prohíbe. Está prohibido fumar: es una norma del hospital.
+# --- barcos
+La barca, el bote, la canoa, el velero, el yate, el ferry y el buque son barcos. Remamos en una barca por el lago. La canoa se mueve con remos por el río.
+El velero navega con el viento en las velas. El ferry cruza el mar con coches y pasajeros. El crucero es un barco grande para viajar de vacaciones. La balsa flota en el agua.
+El pescador sale a pescar en su barca. Los barcos navegan, flotan y atracan en el puerto. El remo mueve la barca y el timón la dirige.
+# --- flores
+La rosa, el clavel, la margarita, el tulipán, la amapola, la violeta, la lila y la azucena son flores. Cortamos un clavel y una margarita del jardín para hacer un ramo.
+Las amapolas rojas crecen en el campo en primavera. El tulipán sale de un bulbo. Regalamos un ramo de flores: rosas, claveles y violetas. Ponemos las flores en un jarrón con agua.
+La floristería vende ramos de flores. Las flores tienen pétalos, tallo y perfume. El girasol mira al sol. El jazmín y el azahar huelen muy bien por la noche.
+# --- colores
+El rojo, el azul, el verde, el amarillo, el naranja, el rosa, el violeta, el lila, el morado, el marrón, el gris, el blanco y el negro son colores.
+Pintamos la pared de azul y la puerta de verde. La camisa es de color rosa y el pantalón de color gris. El jersey es de color mostaza y la falda de color salmón.
+Un tono es un color más claro o más oscuro. Mezclamos el rojo y el amarillo para hacer el naranja. El color caqui es un verde apagado y el color crema es un blanco amarillento.
+Teñimos la tela de morado. Elegimos el color de las cortinas. Combinar colores es ponerlos juntos: el beige combina con el marrón.
+# --- astros
+El sol, la luna, las estrellas, los planetas y los cometas son astros. De noche miramos el cielo con el telescopio y vemos planetas, estrellas y cometas.
+El cometa cruza el cielo con su cola brillante. Los planetas giran alrededor del sol. La Tierra es un planeta y la luna gira a su alrededor. El astrónomo estudia los astros con el telescopio.
+Una estrella brilla con luz propia. Un eclipse tapa el sol o la luna. El satélite gira alrededor de un planeta. La galaxia tiene millones de estrellas.
+# --- armas
+La pistola, el fusil, la espada, el cuchillo, la lanza, el arco, la flecha, la bomba y la granada son armas. El soldado dispara el fusil y lanza una granada en la guerra.
+El arquero dispara flechas con el arco. El guerrero lucha con espada y escudo. La bomba explota y destruye el edificio. El cazador dispara la escopeta.
+Las armas hieren y matan. El ejército tiene soldados, tanques y armas. La navaja corta y pincha. El policía lleva una pistola.
+# --- dulces y postres
+El pastel, la tarta, el bombón, el caramelo, la galleta, el helado, la magdalena, la palmera y el turrón son dulces. Merendamos una palmera de chocolate y unas galletas.
+Mordemos una tableta de chocolate con almendras. Los bombones son de chocolate. El caramelo se chupa. El turrón se come en Navidad. Los dulces llevan azúcar.
+En la pastelería venden palmeras, magdalenas y tartas. El niño come un helado de fresa de postre. Demasiados dulces pican los dientes.
+# --- bebidas
+El agua, la leche, el zumo, el café, el té, el batido, el vino, la cerveza y el chocolate caliente son bebidas. Bebemos un batido de fresa con una pajita.
+Tomamos una taza de chocolate caliente con churros. El té se bebe caliente con limón. Nos bebemos un zumo de naranja en el desayuno. La bebida se sirve en un vaso, una taza o una copa.
+La limonada es una bebida fría de limón. La horchata se bebe en verano. El camarero sirve las bebidas en la barra.
+# --- carnes y embutidos
+El pollo, el conejo, la ternera, el cordero, el cerdo, la chuleta, el filete y el lomo son carnes. Asamos el pollo en el horno y guisamos el conejo con verduras.
+El carnicero corta filetes de ternera y chuletas de cordero. Freímos el filete en la sartén. El chorizo, el jamón, el salchichón, la morcilla y la salchicha son embutidos.
+Hacemos un bocadillo de jamón o de chorizo. Las albóndigas se hacen con carne picada. La carne se asa, se fríe o se guisa y se sirve en un plato.
+# --- aves
+La gallina, el pollo, el pato, la paloma, el flamenco, el loro, el águila y el búho son aves. Las aves tienen plumas, pico y alas y ponen huevos.
+El pollo es la cría de la gallina y picotea el grano en el corral. El flamenco es un ave rosa de patas largas que vive en lagos y marismas. El loro repite palabras.
+# --- medios de comunicación
+La radio, la televisión, el periódico, la prensa, la revista e internet son medios de comunicación. Las noticias llegan por la prensa, la radio y la televisión.
+El locutor habla por la radio y el presentador da las noticias en la televisión. El periodista escribe en el periódico. Los medios informan de lo que pasa en el mundo.
+La carta, el teléfono y el correo sirven para comunicarse con quien está lejos. Escuchamos el programa de radio por la mañana.
+# --- artes
+La pintura, la escultura, la música, la danza, la literatura, la poesía, el teatro y el cine son artes. El artista crea obras de arte.
+Estudiamos teatro, danza o pintura en la escuela de arte. El cine es el arte de hacer películas. La poesía y la novela son literatura. El director de cine rueda una película con actores.
+El actor ensaya la obra de teatro. La escultura se talla y la pintura se pinta. Nos gusta el cine tanto como la música.
+# --- organizaciones
+La policía, el ejército, el gobierno, el ayuntamiento, la iglesia, el sindicato y la empresa son organizaciones. Una organización tiene jefes, miembros y normas.
+La policía tiene comisarías, agentes y coches patrulla. El ayuntamiento gobierna la ciudad y el alcalde lo dirige. El ejército tiene soldados, generales y cuarteles.
+El sindicato defiende a los trabajadores. El club tiene socios. El partido político tiene militantes y un líder.
+# --- formas
+El círculo, el cuadrado, el triángulo, el rectángulo, el rombo, la estrella, la flecha, el cubo y la esfera son formas. Dibujamos un triángulo y un rectángulo con la regla.
+El triángulo tiene tres lados y el cuadrado cuatro. Recortamos una estrella y un círculo de cartulina. En el cartel hay una flecha que señala el camino. El hexágono tiene seis lados.
+En geometría estudiamos las formas, los lados y los ángulos. El cubo tiene seis caras cuadradas. Una figura es una forma dibujada.
+# --- recipientes
+El cubo, el bote, la lata, el tarro, el frasco, la botella, la caja y el barreño son recipientes. Llenamos el cubo de agua para fregar. Guardamos las galletas en un bote y la mermelada en un tarro.
+El bote tiene tapa y el frasco tiene tapón. Vaciamos el cubo en el fregadero. La lata guarda la conserva. Un recipiente se llena, se vacía, se tapa y se destapa.
+# --- juguetes
+La muñeca, la pelota, la cometa, el triciclo, la peonza, el yoyó, el puzle y el osito de peluche son juguetes. Los niños vuelan una cometa con hilo cuando hace viento.
+El niño monta en su triciclo. La peonza gira en el suelo. Los juguetes se guardan en un baúl. En la juguetería venden muñecas, cometas y pelotas.
+# --- joyas
+El anillo, la alianza, el collar, la pulsera, los pendientes y el broche son joyas. Los novios se ponen la alianza en el dedo el día de la boda.
+El joyero vende joyas de oro y plata. El collar se lleva en el cuello y la pulsera en la muñeca. El anillo lleva un diamante.
+# --- idiomas
+El español, el inglés, el francés, el alemán, el italiano, el chino y el árabe son idiomas. Hablamos español en casa y estudiamos inglés en la academia.
+Traducir es pasar un texto de un idioma a otro. El traductor traduce del francés al español. Aprender un idioma lleva años. El diccionario explica las palabras de un idioma.
+# --- sentimientos
+El amor, el cariño, la alegría, la tristeza, el miedo, la ilusión, el orgullo, la nostalgia y la envidia son sentimientos. Sentimos nostalgia de la infancia y orgullo de los hijos.
+La amistad une a los amigos. Tenemos ilusión por el viaje. La envidia hace daño. Un sentimiento se siente por dentro.
+# --- hierbas, condimentos y salsas
+El perejil, el orégano, la albahaca, la menta y el romero son hierbas aromáticas. Echamos orégano a la pizza y perejil al pescado. La sal, la pimienta, la mostaza y el vinagre son condimentos.
+Ponemos mostaza en la salchicha y sal en la carne. La mayonesa, el alioli, el pesto y la salsa de tomate son salsas. Mojamos el pan en la salsa. Echamos salsa a la pasta y a la carne.
+# --- maderas y metales
+El pino, el roble, el nogal, el haya, el cerezo y la caoba dan madera para hacer muebles. La mesa es de madera de roble y el armario de madera de pino.
+El hierro, el acero, el cobre, el aluminio, el bronce, el oro y la plata son metales. El cable es de cobre y la lata de aluminio. Los metales se funden con calor.
+# --- muebles y oficios con el mismo nombre
+El zapatero es un mueble para guardar los zapatos en el recibidor. Guardamos los zapatos en el zapatero y los abrigos en el perchero. El zapatero también es el hombre que arregla zapatos, suelas y tacones en su taller.
+El librero es un mueble con estantes para los libros, y también el que vende libros. La estantería y el zapatero son muebles del recibidor.
+# --- celebraciones
+La boda, el bautizo, la comunión, el cumpleaños, el aniversario y la graduación son celebraciones. Celebramos el aniversario con una cena. En el bautizo se bautiza al bebé.
+En la graduación los estudiantes reciben su título. El funeral y el entierro despiden a quien ha muerto. La misa se celebra en la iglesia.

@@ -100,6 +100,44 @@ class Conversador(Nucleo):
                     texto = _C.codifica(self, texto)
         except Exception:                                # noqa
             pass
+        try:                                             # 2.32: «he aprendido que…», «tengo un amigo que se llama X que…»: se deshace antes de mirar tocayos
+            if texto and not getattr(self, "_leyendo", False):
+                import os as _os232
+                libre_ = not any(getattr(self, x, False) for x in ("_partiendo", "_componiendo", "_siguiendo", "_reform", "_tocando", "_sint_dentro"))
+                if _os232.environ.get("LCM_SINTAXIS") and libre_:
+                    from ..sintaxis import puente as _PU          # el analizador ENTRENADO parte la frase en oraciones simples con su sujeto
+                    pend_ = getattr(self, "_sint_pend", None)     # quedaban oraciones por entender tras una pregunta del modelo («¿es el mismo Manuel?»)
+                    self._sint_pend = None
+                    partes_ = _PU.partes(texto) if len(texto.split()) >= 5 else [texto]
+                    if pend_ or len(partes_) > 1:
+                        self._sint_dentro = True
+                        try:
+                            resp_, ult_ = [], None
+                            cola_ = list(partes_) + list(pend_ or [])
+                            while cola_:
+                                s_ = cola_.pop(0)
+                                ult_ = self.procesar(s_)
+                                if ult_ and ult_.get("respuesta"):
+                                    resp_.append(ult_["respuesta"])
+                                if ult_ and ult_.get("tipo") == "pregunta" and cola_:
+                                    self._sint_pend = cola_      # el modelo pregunta: el resto se entiende después de la respuesta
+                                    break
+                        finally:
+                            self._sint_dentro = False
+                        if ult_ is not None:
+                            ult_ = dict(ult_)
+                            vistos_ = []
+                            for x_ in resp_:
+                                x_ = x_.strip()
+                                if x_ and x_ not in vistos_:
+                                    vistos_.append(x_)
+                            ult_["respuesta"] = " ".join(vistos_)
+                        return ult_
+                else:
+                    from . import coloquial as _Q232
+                    texto = _Q232._noticia232(texto)
+        except Exception:                                # noqa
+            pass
         r = r_decl = None
         try:                                             # 2.29: la respuesta a «¿de qué sentido hablamos?» retoma la pregunta que quedó pendiente
             if texto and getattr(self, "_sent_pend229", None) and not getattr(self, "_leyendo", False):
@@ -178,6 +216,9 @@ class Conversador(Nucleo):
             if texto and len(texto) < 8000 and not any(getattr(self, x, False) for x in ("_partiendo", "_componiendo", "_siguiendo", "_reform", "_tocando", "_sentando")):
                 from . import tema as _T
                 _T.aprende(self, texto)
+                _T.aprende_clase(self, texto)
+                from . import papeles as _P
+                _P.aprende(self, texto)
         except Exception:                                # noqa
             pass
         try:                                             # 2.29: la caché corta de contexto (palabras y entidades de este turno)

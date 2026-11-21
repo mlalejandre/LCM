@@ -227,8 +227,30 @@ def tema(nuc, a, b, firme=False):
     return max(directo, cos, medio)
 
 
-def miembros(et):
-    """Los conceptos que la base de fábrica pone dentro de una clase («baile»: tango, jota, salsa…), con sus descendientes."""
+def aprende_clase(nuc, texto):
+    """2.32 · «La bachata es un baile»: lo que el usuario dice que es de una clase entra en ella, y desde ese momento sirve de apoyo
+    («bailamos bachata y salsa» -> esa salsa es un baile)."""
+    if os.environ.get("LCM_SIN_CLASE_USUARIO") or not texto or "?" in texto:
+        return
+    for frase in re.split(r"(?<=[.!?])\s+|\n", texto.strip())[:20]:
+        m = re.match(r"^(?:un|una|el|la|los|las)\s+([a-záéíóúñü]+)\s+(?:tambi[eé]n\s+)?(?:es|son)\s+(?:un|una|unos|unas)\s+([a-záéíóúñü]+)\b", frase.strip(), re.I)
+        if not m:
+            continue
+        x, y = sa(M.singular(m.group(1).lower())), sa(M.singular(m.group(2).lower()))
+        if x == y or len(x) < 3 or len(y) < 3:
+            continue
+        C = nuc.usuario.setdefault("clases", {})
+        L = C.setdefault(y, [])
+        if x not in L:
+            L.append(x)
+            del L[:-60]
+        if len(C) > 200:
+            del C[next(iter(C))]
+
+
+def miembros(et, nuc=None):
+    """Los conceptos que la base de fábrica pone dentro de una clase («baile»: tango, jota, salsa…), con sus descendientes,
+    más los que haya enseñado el usuario."""
     c = _M.get("m")
     if c is None:
         c = {}
@@ -237,12 +259,16 @@ def miembros(et):
             for hijo, padres in K.kb()["isa"].items():
                 for p_ in padres:
                     c.setdefault(sa(p_), set()).add(sa(hijo))
+                if len({sa(p_) for p_ in padres}) > 1:
+                    _M.setdefault("varios", set()).add(sa(hijo))   # está en varias clases: sus hijos son de UNO solo de sus sentidos
         except Exception:                                # noqa
             pass
         _M["m"] = c
+    u = ((nuc.usuario.get("clases") if nuc is not None else None) or {}) if not os.environ.get("LCM_SIN_CLASE_USUARIO") else {}
     out, f = set(), {sa(et)}
     for _ in range(3):
-        f = {h for x in f for h in c.get(x, ())} - out
+        f = {h for x in f if x == sa(et) or x not in _M.get("varios", ()) or os.environ.get("LCM_SIN_PAPELES")   # 2.32: no se baja a través de una palabra de varios sentidos
+             for h in set(c.get(x, ())) | set(u.get(x, ()))} - out                                          # (los alioli son «salsa», pero no son «baile»; el verano no es un «edificio»)
         if not f:
             break
         out |= f
@@ -264,7 +290,7 @@ def afin_clase(nuc, c, et, sin=()):
     if os.environ.get("LCM_SIN_TEMA") or os.environ.get("LCM_SIN_CLASE"):
         return 0.0
     c, et = sa(c), sa(et)
-    ms = miembros(et) - {sa(x) for x in sin}
+    ms = miembros(et, nuc) - {sa(x) for x in sin}
     if c == et or c in ms:
         return 1.5
     if _familia(c, et) or any(_familia(c, m) for m in ms):

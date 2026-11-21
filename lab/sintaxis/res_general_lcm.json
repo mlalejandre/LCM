@@ -1,0 +1,506 @@
+[
+ {
+  "texto": "abejas",
+  "q": "¿Qué son las abejas?",
+  "crit": "insectos",
+  "r": "Una abeja es un insecto. Las abejas vuelan y hacen miel. Además, según lo que he aprendido, las abejas son insectos sociales que viven en colonias muy organizadas.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Dónde viven las abejas?",
+  "crit": "colonias",
+  "r": "En el texto pone: «Las abejas son insectos sociales que viven en colonias muy organizadas».",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Quién pone los huevos?",
+  "crit": "reina",
+  "r": "La reina pone los huevos.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Qué recogen las obreras?",
+  "crit": "nectar",
+  "r": "Las obreras recogen el néctar de las flores.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Dónde se almacena la miel?",
+  "crit": "celdas",
+  "r": "En el texto pone: «La miel se almacena en celdas de cera que las propias obreras construyen».",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Cuánto puede vivir la reina?",
+  "crit": "cinco años",
+  "r": "En el texto pone, hablando de la reina: «La reina pone los huevos y puede vivir hasta cinco años».",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Con qué avisa una obrera a sus compañeras?",
+  "crit": "danza",
+  "r": "En el texto pone: «Cuando una obrera encuentra flores, avisa a sus compañeras con una danza».",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿De qué se alimenta la colonia en invierno?",
+  "crit": "miel",
+  "r": "En el texto pone: «En invierno la colonia se alimenta de la miel almacenada».",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Qué comen las avispas?",
+  "crit": "ABST",
+  "r": "No lo sé. En lo que he aprendido no aparece «comer»; si es otra forma de decir algo, dímelo («comer es lo mismo que…»).",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quién inventó la imprenta?",
+  "crit": "gutenberg",
+  "r": "Johannes Gutenberg inventó la imprenta de tipos móviles en la ciudad de Maguncia hacia 1450.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Dónde inventó Gutenberg la imprenta?",
+  "crit": "maguncia",
+  "r": "Johannes Gutenberg inventó la imprenta de tipos móviles en la ciudad de Maguncia hacia 1450.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuándo inventó Gutenberg la imprenta?",
+  "crit": "1450",
+  "r": "Johannes Gutenberg inventó la imprenta de tipos móviles en la ciudad de Maguncia hacia 1450.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quiénes copiaban los libros antes de la imprenta?",
+  "crit": "monjes",
+  "r": "En el texto pone: «Antes de la imprenta, los monjes copiaban los libros a mano en los monasterios».",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuánto tardaba un copista en terminar un libro?",
+  "crit": "meses",
+  "r": "El copista tardaba varios meses en terminar un libro.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuál fue el primer libro impreso por Gutenberg?",
+  "crit": "biblia",
+  "r": "En el texto pone: «El primer libro impreso por Gutenberg fue una Biblia».",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Qué compraron las universidades?",
+  "crit": "libros",
+  "r": "Las universidades compraron muchos libros impresos durante el siglo XVI.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Dónde fundaron talleres los impresores?",
+  "crit": "venecia|paris|sevilla",
+  "r": "Los impresores fundaron talleres en Venecia, París y Sevilla.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Por qué temían la imprenta algunos gobernantes?",
+  "crit": "ideas",
+  "r": "Porque difundía ideas nuevas. Lo dice el texto: «Algunos gobernantes temían la imprenta porque difundía ideas nuevas».",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quién inventó el telégrafo?",
+  "crit": "ABST",
+  "r": "No lo sé: nadie me ha dicho eso.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Dónde se encuentra el valle de Arnedal?",
+  "crit": "norte|tovera",
+  "r": "El valle de Arnedal está al norte de la provincia de Tovera.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué río atraviesa el valle?",
+  "crit": "lizana",
+  "r": "Lizana atraviesa el valle de oeste a este.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Dónde desemboca el río Lizana?",
+  "crit": "murel",
+  "r": "Lizana desemboca en el lago Murel.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuántas personas viven en el valle?",
+  "crit": "tres mil",
+  "r": "En el texto pone: «En el valle viven unas tres mil personas repartidas en seis pueblos».",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuál es el pueblo más grande?",
+  "crit": "castrolin",
+  "r": "En el texto pone: «El pueblo más grande es Castrolín, que tiene un mercado cada sábado».",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué cultivan los habitantes?",
+  "crit": "manzanos",
+  "r": "Los habitantes cultivan manzanos.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuándo se construyó la carretera?",
+  "crit": "1962",
+  "r": "En el texto pone: «La carretera que une Castrolín con la capital se construyó en 1962».",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué corta la nieve en invierno?",
+  "crit": "puerto|valdeces",
+  "r": "En el texto pone: «En invierno la nieve corta a menudo el puerto de Valdeces».",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué celebra el valle cada otoño?",
+  "crit": "sidra",
+  "r": "El valle de Arnedal celebra la fiesta de la sidra cada otoño.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuántos hospitales hay en el valle?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho qué hay ahí.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué combina una bicicleta eléctrica?",
+  "crit": "pedales|motor",
+  "r": "La bicicleta eléctrica combina los pedales con un motor alimentado por una batería.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué mide el sensor?",
+  "crit": "fuerza",
+  "r": "El sensor mide la fuerza del pedaleo.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué regula el controlador?",
+  "crit": "potencia",
+  "r": "En el texto pone: «El controlador regula la potencia que el motor entrega a la rueda».",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Dónde se recarga la batería?",
+  "crit": "enchufe",
+  "r": "La batería se recarga en un enchufe normal.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuánto tarda la batería en cargarse?",
+  "crit": "cuatro horas",
+  "r": "La batería tarda unas cuatro horas en cargarse.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuántos kilómetros recorre la bicicleta con una carga completa?",
+  "crit": "ochenta",
+  "r": "No lo sé.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué muestra la pantalla del manillar?",
+  "crit": "velocidad|carga",
+  "r": "La pantalla del manillar muestra la velocidad y la carga restante.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué detienen los frenos de disco?",
+  "crit": "bicicleta",
+  "r": "Los freno de discos detenen la bicicleta con lluvia.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué recomienda el fabricante?",
+  "crit": "cadena",
+  "r": "En el texto pone: «El fabricante recomienda revisar la cadena cada mil kilómetros».",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuánto pesa la bicicleta?",
+  "crit": "ABST",
+  "r": "No lo sé. En lo que he aprendido no aparece «pesar»; si es otra forma de decir algo, dímelo («pesar es lo mismo que…»).",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿De qué trabajaba Elvira?",
+  "crit": "farera",
+  "r": "Elvira trabajaba de farera en la isla de Corvo desde hacía veinte años.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Dónde trabajaba Elvira?",
+  "crit": "corvo|isla|faro",
+  "r": "Elvira trabajaba de farera en la isla de Corvo desde hacía veinte años.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué encendía Elvira cada tarde?",
+  "crit": "lampara",
+  "r": "En el texto pone: «Cada tarde subía los cien escalones del faro y encendía la lámpara».",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué perdió el pesquero?",
+  "crit": "rumbo",
+  "r": "En el texto pone: «Una noche de tormenta, un pesquero perdió el rumbo cerca de los arrecifes».",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué tocó Elvira durante una hora?",
+  "crit": "sirena",
+  "r": "Elvira tocó la sirena durante una hora.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Quién reconoció la señal?",
+  "crit": "anselmo|patron",
+  "r": "En el texto pone: «El patrón del pesquero, un hombre llamado Anselmo, reconoció la señal y viró hacia el puerto».",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Cuántos marineros llegaron a tierra?",
+  "crit": "siete",
+  "r": "En el texto pone: «Los siete marineros llegaron a tierra sin un rasguño».",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué le regaló Anselmo a Elvira?",
+  "crit": "sardinas|brujula",
+  "r": "Anselmo regaló una caja de sardinas y una brújula antigua a Elvira.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Dónde guardó Elvira la brújula?",
+  "crit": "cajon",
+  "r": "Elvira guardó la brújula en un cajón de su escritorio.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Quién le entregó una medalla a Elvira?",
+  "crit": "alcalde",
+  "r": "El alcalde de la isla de Corvo entregó una medalla a Elvira en verano.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Cómo se llamaba el perro de Elvira?",
+  "crit": "ABST",
+  "r": "No sé nada del perro de Elvira: no me has hablado de él.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué anunció la empresa Talvera?",
+  "crit": "apertura|fabrica",
+  "r": "Talvera anunció la apertura de una fábrica de paneles solares en Albacete ayer.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Dónde abrirá Talvera la fábrica?",
+  "crit": "albacete",
+  "r": "No lo sé: no me has dicho dónde abre Talvera. De Talvera sé que anunció la apertura de una fábrica de paneles solares en Albacete ayer y exporta la mitad de su producción a Portugal y Francia. En lo que he aprendido no aparece «abrir»; si es otra forma de decir algo, dímelo («abrir es lo mismo que…»).",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿A cuántas personas empleará la nueva planta?",
+  "crit": "trescientas",
+  "r": "No lo sé. («personar» no aparece en lo que he aprendido.)",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuánto invertirá la compañía?",
+  "crit": "cuarenta millones",
+  "r": "La compañía invertirá cuarenta millones de euros en la construcción.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Quién presentó el proyecto?",
+  "crit": "olmedo|directora",
+  "r": "En el texto pone: «La directora general, Marta Olmedo, presentó el proyecto en el ayuntamiento».",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué prometió el alcalde?",
+  "crit": "accesos",
+  "r": "En el texto pone, hablando del alcalde: «El alcalde agradeció la inversión y prometió mejorar los accesos por carretera».",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿A dónde exporta Talvera su producción?",
+  "crit": "portugal|francia",
+  "r": "Sí: el texto dice «Talvera exporta la mitad de su producción a Portugal y Francia».",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuántos paneles producirá la fábrica al día?",
+  "crit": "dos mil",
+  "r": "No lo sé.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué pidieron los sindicatos?",
+  "crit": "contratos|indefinidos",
+  "r": "En el texto pone: «Los sindicatos pidieron que los contratos sean indefinidos».",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuándo fue fundada la empresa?",
+  "crit": "2009",
+  "r": "Talvera fue fundada por dos ingenieros de Valencia en 2009.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Quién es el dueño de la fábrica de Lugo?",
+  "crit": "ABST",
+  "r": "No lo sé.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "donde vive Lola?",
+  "crit": "granada",
+  "r": "Lola vive en Granada.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "donde trabaja Lola?",
+  "crit": "hospital",
+  "r": "Lola trabaja en un hospital.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "como se llama el marido de Lola?",
+  "crit": "iñigo",
+  "r": "El marido de Lola se llama Íñigo.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que es Íñigo?",
+  "crit": "cocinero",
+  "r": "Íñigo es tu cuñado y el marido de Lola.",
+  "v": "mal"
+ },
+ {
+  "texto": "charla",
+  "q": "que toca Bruno?",
+  "crit": "violin",
+  "r": "En el texto pone, hablando de El marido de Lola: «El marido de Lola se llama Íñigo y es cocinero en un hotel. tienen dos hijos que estudian en el mismo colegio. el mayor, que se llama Bruno, toca el violín desde los seis años. a la pequeña le encantan los caballos y monta todos los sábados».",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que le encanta a la pequeña?",
+  "crit": "caballos",
+  "r": "En el texto pone, hablando de El marido de Lola: «El marido de Lola se llama Íñigo y es cocinero en un hotel. tienen dos hijos que estudian en el mismo colegio. el mayor, que se llama Bruno, toca el violín desde los seis años. a la pequeña le encantan los caballos y monta todos los sábados».",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "quien visita a Lola cada verano?",
+  "crit": "padres",
+  "r": "Tus padres visitan a Lola cada verano.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que abrió Íñigo el año pasado?",
+  "crit": "restaurante",
+  "r": "En el texto pone: «Mis padres visitan a Lola cada verano y se quedan dos semanas. el año pasado Íñigo abrió un restaurante cerca de la catedral».",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que ganó Bruno?",
+  "crit": "concurso",
+  "r": "Bruno ganó un concurso de música en mayo tú voy a Granada en tren cuando tienes vacaciones.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "a donde quiere mudarse Lola?",
+  "crit": "casa",
+  "r": "Lola quiere mudarse a una casa con jardín.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "donde vive Bruno ahora?",
+  "crit": "ABST",
+  "r": "No lo sé: no me has dicho dónde vive Bruno. De Bruno sé que ganó un concurso de música en mayo tú voy a Granada en tren cuando tienes vacaciones.",
+  "v": "bien"
+ }
+]

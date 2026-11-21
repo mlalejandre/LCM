@@ -1,0 +1,65 @@
+"""2.32 · La conversación que falló al usuario (Manuel, el tío y el amigo), tal cual, más las mismas frases con otras palabras.
+La primera es de DESARROLLO (se arregló mirándola). Las demás las escribí después de arreglar y sin ejecutarlas: son la medida limpia."""
+C = [
+ {"id": "usuario_manuel", "ctx": "desarrollo: la conversación del usuario", "turnos": [
+  ("hoy he aprendido que mi tío Manuel es carpintero. Que vive en Navarra y que le gusta cazar jabalíes.", "carpintero;navarra"),
+  ("que le gusta a Manuel?", "jabali"),
+  ("quien es Manuel?", "tio;carpintero"),
+  ("Tengo un amigo que se llama Manuel Pérez que le gustan muchos los gatos", "mismo|otra persona"),
+  ("es otra persona", "gatos"),
+  ("que le gusta a mi tío Manuel?", "jabali;!gatos"),
+  ("que le gusta a mi amigo Manuel?", "gatos;!jabali"),
+ ]},
+ {"id": "limpia_marco1", "ctx": "medida limpia: marcos de noticia", "turnos": [
+  ("Ayer me enteré de que mi prima Sara es enfermera. Que trabaja en Vigo y que le encanta nadar.", "enfermera;vigo"),
+  ("¿a qué se dedica Sara?", "enfermera"),
+  ("¿dónde trabaja Sara?", "vigo"),
+  ("¿qué le encanta a Sara?", "nadar"),
+ ]},
+ {"id": "limpia_marco2", "ctx": "medida limpia: marcos de noticia", "turnos": [
+  ("Me han contado que mi vecino Andrés tiene tres gatos.", "gatos"),
+  ("He descubierto que Andrés vive en Cuenca y que es taxista.", "cuenca;taxista"),
+  ("¿cuántos gatos tiene Andrés?", "tres|3"),
+  ("¿dónde vive Andrés?", "cuenca"),
+  ("¿a qué se dedica Andrés?", "taxista"),
+ ]},
+ {"id": "limpia_relativa1", "ctx": "medida limpia: tengo un X que se llama N que…", "turnos": [
+  ("Tengo una hermana que se llama Olga que vive en Teruel.", "olga;teruel"),
+  ("¿dónde vive Olga?", "teruel"),
+  ("¿cómo se llama mi hermana?", "olga"),
+  ("Tengo un perro que se llama Rufo y que le gustan mucho los huesos.", "rufo"),
+  ("¿qué le gusta a Rufo?", "huesos"),
+ ]},
+ {"id": "limpia_tocayo_relativa", "ctx": "medida limpia: el segundo del mismo nombre, dicho de corrido", "turnos": [
+  ("Mi abuelo Julián es pescador y vive en Cádiz.", ""),
+  ("Tengo un compañero que se llama Julián García que le gusta mucho el ajedrez", "mismo|otra persona"),
+  ("es otro", "ajedrez"),
+  ("¿qué le gusta a mi compañero Julián?", "ajedrez"),
+  ("¿dónde vive mi abuelo Julián?", "cadiz"),
+  ("¿a qué se dedica mi abuelo Julián?", "pescador"),
+  ("¿dónde vive Julián?", "cadiz|que julian|cual"),
+ ]},
+ {"id": "limpia_tocayo_aposicion", "ctx": "medida limpia: «mi jefa Nuria…» cuando Nuria ya era mi prima", "turnos": [
+  ("Mi prima Nuria es abogada.", ""),
+  ("Mi jefa Nuria vive en Lugo.", "misma|otra persona"),
+  ("otra", "lugo"),
+  ("¿dónde vive mi jefa Nuria?", "lugo"),
+  ("¿a qué se dedica mi prima Nuria?", "abogada"),
+  ("Mi jefa Nuria tiene dos hijos.", "hijos"),
+  ("¿quién tiene dos hijos?", "jefa"),
+ ]},
+ {"id": "limpia_mismo", "ctx": "medida limpia: es la misma persona", "turnos": [
+  ("Mi vecino Ramiro es electricista.", ""),
+  ("Mi amigo Ramiro juega al tenis.", "mismo|otra persona"),
+  ("es el mismo", "tenis"),
+  ("¿a qué juega Ramiro?", "tenis"),
+  ("¿a qué se dedica Ramiro?", "electricista"),
+ ]},
+ {"id": "limpia_sin_cambio", "ctx": "medida limpia: lo que no debe cambiar", "turnos": [
+  ("Sé que mañana llueve.", ""),
+  ("Mi hermano Mario vive en Jaén.", "jaen"),
+  ("Mi hermano Mario tiene un coche rojo.", "coche"),
+  ("¿dónde vive Mario?", "jaen"),
+  ("Mañana Mario viene a comer.", "mario"),
+ ]},
+]

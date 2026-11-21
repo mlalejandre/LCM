@@ -1,0 +1,149 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.32 · análisis sintáctico entrenado e integración con los conceptos",
+ "analizador": {
+  "frases_entrenamiento": 28473,
+  "minutos": 26,
+  "comparacion_v1_v2": {
+   "analizador_v1.pt": {
+    "prensa y web (corpus)": {
+     "categoria": 97.3,
+     "cabeza": 89.6,
+     "cabeza_y_funcion": 84.6,
+     "verbo_principal": 93.9,
+     "sujeto_F1": 85.4,
+     "objeto_F1": 78.5
+    },
+    "escrito con descuido": {
+     "categoria": 95.2,
+     "cabeza": 89.4,
+     "cabeza_y_funcion": 83.4,
+     "verbo_principal": 90.1,
+     "sujeto_F1": 79.9,
+     "objeto_F1": 76.7
+    },
+    "PUD (otro origen)": {
+     "categoria": 94.3,
+     "cabeza": 90.3,
+     "cabeza_y_funcion": 83.9,
+     "verbo_principal": 93.5,
+     "sujeto_F1": 88.6,
+     "objeto_F1": 83.5
+    },
+    "COSER (hablado)": {
+     "categoria": 92.3,
+     "cabeza": 73.6,
+     "cabeza_y_funcion": 62.3,
+     "verbo_principal": 77.0,
+     "sujeto_F1": 58.4,
+     "objeto_F1": 64.4
+    },
+    "COSER solo preguntas": {
+     "categoria": 90.8,
+     "cabeza": 76.0,
+     "cabeza_y_funcion": 64.6,
+     "verbo_principal": 79.4,
+     "sujeto_F1": 59.7,
+     "objeto_F1": 64.6
+    }
+   },
+   "analizador_v2.pt": {
+    "prensa y web (corpus)": {
+     "categoria": 97.5,
+     "cabeza": 90.1,
+     "cabeza_y_funcion": 85.6,
+     "verbo_principal": 93.8,
+     "sujeto_F1": 86.1,
+     "objeto_F1": 80.0
+    },
+    "escrito con descuido": {
+     "categoria": 96.8,
+     "cabeza": 91.4,
+     "cabeza_y_funcion": 86.6,
+     "verbo_principal": 93.2,
+     "sujeto_F1": 86.5,
+     "objeto_F1": 80.7
+    },
+    "PUD (otro origen)": {
+     "categoria": 94.3,
+     "cabeza": 90.5,
+     "cabeza_y_funcion": 83.4,
+     "verbo_principal": 93.7,
+     "sujeto_F1": 88.2,
+     "objeto_F1": 79.5
+    },
+    "COSER (hablado)": {
+     "categoria": 92.5,
+     "cabeza": 74.4,
+     "cabeza_y_funcion": 63.5,
+     "verbo_principal": 76.8,
+     "sujeto_F1": 56.7,
+     "objeto_F1": 62.1
+    },
+    "COSER solo preguntas": {
+     "categoria": 91.1,
+     "cabeza": 75.5,
+     "cabeza_y_funcion": 63.4,
+     "verbo_principal": 77.1,
+     "sujeto_F1": 56.1,
+     "objeto_F1": 55.5
+    }
+   }
+  }
+ },
+ "bancos_lcm": {
+  "sin_capa": {
+   "ddev": 89.0,
+   "dtest": 82.2,
+   "ltest": 91.4,
+   "pdev": 94.1,
+   "grande1b_texto": 88.4
+  },
+  "con_capa": {
+   "ddev": 91.0,
+   "dtest": 84.2,
+   "ltest": 94.6,
+   "pdev": 94.1,
+   "grande1b_texto": 88.9
+  },
+  "memoria_primero_descartado": {
+   "ddev": 88.0,
+   "dtest": 80.2,
+   "ltest": 89.2,
+   "pdev": 73.5,
+   "grande1b_texto": 84.1
+  }
+ },
+ "textos_generales_72": {
+  "lcm_sin_capa": 67,
+  "memoria_sola_ciega": 57,
+  "memoria_sola_errores": 0,
+  "lcm_con_capa": 69
+ },
+ "sistema_solar_26": {
+  "lcm_sin_capa": 2,
+  "lcm_con_capa": 14,
+  "memoria_sola": 19
+ },
+ "conversacion_usuario_41": {
+  "lcm_2.31": 34.1,
+  "reglas_2.32": 95.1,
+  "analizador_sin_reglas": 92.7
+ },
+ "examen_2.32_papeles_53": {
+  "2.31": 75.5,
+  "2.32_ciega": 77.4,
+  "2.32_final_no_ciega": 81.1
+ },
+ "sin_regresion": {
+  "regresiones": "solo los 4 fallos conocidos",
+  "controles": "idénticos a 2.31",
+  "pytest": "1090 pasan, 3 de entorno"
+ },
+ "limites": [
+  "habla transcrita 63 %",
+  "preguntas poco representadas en el corpus",
+  "sinónimos y pronombres",
+  "umbrales de integración elegidos mirando 3 de 5 bancos"
+ ]
+}

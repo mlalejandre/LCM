@@ -1,0 +1,506 @@
+[
+ {
+  "texto": "abejas",
+  "q": "¿Qué son las abejas?",
+  "crit": "insectos",
+  "r": "Insectos sociales que viven en colonias muy organizadas.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Dónde viven las abejas?",
+  "crit": "colonias",
+  "r": "En colonias muy organizadas.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Quién pone los huevos?",
+  "crit": "reina",
+  "r": "La reina.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Qué recogen las obreras?",
+  "crit": "nectar",
+  "r": "El néctar de las flores.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Dónde se almacena la miel?",
+  "crit": "celdas",
+  "r": "En celdas de cera.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Cuánto puede vivir la reina?",
+  "crit": "cinco años",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Con qué avisa una obrera a sus compañeras?",
+  "crit": "danza",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿De qué se alimenta la colonia en invierno?",
+  "crit": "miel",
+  "r": "De la miel almacenada.",
+  "v": "bien"
+ },
+ {
+  "texto": "abejas",
+  "q": "¿Qué comen las avispas?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quién inventó la imprenta?",
+  "crit": "gutenberg",
+  "r": "Johannes Gutenberg.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Dónde inventó Gutenberg la imprenta?",
+  "crit": "maguncia",
+  "r": "En la ciudad de Maguncia.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuándo inventó Gutenberg la imprenta?",
+  "crit": "1450",
+  "r": "Hacia 1450.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quiénes copiaban los libros antes de la imprenta?",
+  "crit": "monjes",
+  "r": "Los monjes.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuánto tardaba un copista en terminar un libro?",
+  "crit": "meses",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Cuál fue el primer libro impreso por Gutenberg?",
+  "crit": "biblia",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Qué compraron las universidades?",
+  "crit": "libros",
+  "r": "Muchos libros impresos.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Dónde fundaron talleres los impresores?",
+  "crit": "venecia|paris|sevilla",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Por qué temían la imprenta algunos gobernantes?",
+  "crit": "ideas",
+  "r": "Porque difundía ideas nuevas.",
+  "v": "bien"
+ },
+ {
+  "texto": "imprenta",
+  "q": "¿Quién inventó el telégrafo?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Dónde se encuentra el valle de Arnedal?",
+  "crit": "norte|tovera",
+  "r": "A el norte de la provincia de Tovera.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué río atraviesa el valle?",
+  "crit": "lizana",
+  "r": "El río Lizana.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Dónde desemboca el río Lizana?",
+  "crit": "murel",
+  "r": "En el lago Murel.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuántas personas viven en el valle?",
+  "crit": "tres mil",
+  "r": "Unas tres mil personas.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuál es el pueblo más grande?",
+  "crit": "castrolin",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué cultivan los habitantes?",
+  "crit": "manzanos",
+  "r": "Manzanos.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuándo se construyó la carretera?",
+  "crit": "1962",
+  "r": "En 1962.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué corta la nieve en invierno?",
+  "crit": "puerto|valdeces",
+  "r": "El puerto de Valdeces.",
+  "v": "bien"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Qué celebra el valle cada otoño?",
+  "crit": "sidra",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "valle",
+  "q": "¿Cuántos hospitales hay en el valle?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué combina una bicicleta eléctrica?",
+  "crit": "pedales|motor",
+  "r": "Los pedales.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué mide el sensor?",
+  "crit": "fuerza",
+  "r": "La fuerza del pedaleo.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué regula el controlador?",
+  "crit": "potencia",
+  "r": "La potencia.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Dónde se recarga la batería?",
+  "crit": "enchufe",
+  "r": "En un enchufe normal.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuánto tarda la batería en cargarse?",
+  "crit": "cuatro horas",
+  "r": "Unas cuatro horas.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuántos kilómetros recorre la bicicleta con una carga completa?",
+  "crit": "ochenta",
+  "r": "Unos ochenta kilómetros.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué muestra la pantalla del manillar?",
+  "crit": "velocidad|carga",
+  "r": "La velocidad y la carga restante.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué detienen los frenos de disco?",
+  "crit": "bicicleta",
+  "r": "La bicicleta.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Qué recomienda el fabricante?",
+  "crit": "cadena",
+  "r": "Revisar la cadena cada mil kilómetros.",
+  "v": "bien"
+ },
+ {
+  "texto": "bici",
+  "q": "¿Cuánto pesa la bicicleta?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿De qué trabajaba Elvira?",
+  "crit": "farera",
+  "r": "De farera.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Dónde trabajaba Elvira?",
+  "crit": "corvo|isla|faro",
+  "r": "En la isla de Corvo.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué encendía Elvira cada tarde?",
+  "crit": "lampara",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué perdió el pesquero?",
+  "crit": "rumbo",
+  "r": "El rumbo.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué tocó Elvira durante una hora?",
+  "crit": "sirena",
+  "r": "La sirena.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Quién reconoció la señal?",
+  "crit": "anselmo|patron",
+  "r": "El patrón del pesquero, un hombre.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Cuántos marineros llegaron a tierra?",
+  "crit": "siete",
+  "r": "Los siete marineros.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Qué le regaló Anselmo a Elvira?",
+  "crit": "sardinas|brujula",
+  "r": "Una caja de sardinas y una brújula antigua.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Dónde guardó Elvira la brújula?",
+  "crit": "cajon",
+  "r": "En un cajón de su escritorio.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Quién le entregó una medalla a Elvira?",
+  "crit": "alcalde",
+  "r": "El alcalde de la isla.",
+  "v": "bien"
+ },
+ {
+  "texto": "cuento",
+  "q": "¿Cómo se llamaba el perro de Elvira?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué anunció la empresa Talvera?",
+  "crit": "apertura|fabrica",
+  "r": "La apertura de una fábrica de paneles solares en Albacete.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Dónde abrirá Talvera la fábrica?",
+  "crit": "albacete",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿A cuántas personas empleará la nueva planta?",
+  "crit": "trescientas",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuánto invertirá la compañía?",
+  "crit": "cuarenta millones",
+  "r": "Cuarenta millones de euros.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Quién presentó el proyecto?",
+  "crit": "olmedo|directora",
+  "r": "La directora general, Marta Olmedo.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué prometió el alcalde?",
+  "crit": "accesos",
+  "r": "Mejorar los accesos por carretera.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿A dónde exporta Talvera su producción?",
+  "crit": "portugal|francia",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuántos paneles producirá la fábrica al día?",
+  "crit": "dos mil",
+  "r": "Dos mil paneles.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Qué pidieron los sindicatos?",
+  "crit": "contratos|indefinidos",
+  "r": "Los contratos sean indefinidos.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Cuándo fue fundada la empresa?",
+  "crit": "2009",
+  "r": "En 2009.",
+  "v": "bien"
+ },
+ {
+  "texto": "empresa",
+  "q": "¿Quién es el dueño de la fábrica de Lugo?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "donde vive Lola?",
+  "crit": "granada",
+  "r": "En Granada.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "donde trabaja Lola?",
+  "crit": "hospital",
+  "r": "En un hospital.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "como se llama el marido de Lola?",
+  "crit": "iñigo",
+  "r": "Íñigo.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que es Íñigo?",
+  "crit": "cocinero",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "charla",
+  "q": "que toca Bruno?",
+  "crit": "violin",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "charla",
+  "q": "que le encanta a la pequeña?",
+  "crit": "caballos",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "charla",
+  "q": "quien visita a Lola cada verano?",
+  "crit": "padres",
+  "r": "Mis padres.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que abrió Íñigo el año pasado?",
+  "crit": "restaurante",
+  "r": "Un restaurante cerca de la catedral.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "que ganó Bruno?",
+  "crit": "concurso",
+  "r": "Un concurso de música en mayo.",
+  "v": "bien"
+ },
+ {
+  "texto": "charla",
+  "q": "a donde quiere mudarse Lola?",
+  "crit": "casa",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "se abstiene"
+ },
+ {
+  "texto": "charla",
+  "q": "donde vive Bruno ahora?",
+  "crit": "ABST",
+  "r": "No lo sé: eso no lo he leído.",
+  "v": "bien"
+ }
+]

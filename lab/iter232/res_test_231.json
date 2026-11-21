@@ -1,0 +1,842 @@
+[
+ {
+  "id": "a_cordero_1",
+  "q": "Un cordero también es una carne.",
+  "crit": "",
+  "r": "Entendido: el cordero es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_cordero_1",
+  "q": "En el prado un cordero salta, corre detrás de su madre y bebe agua del río.",
+  "crit": "",
+  "r": "Entendido: el cordero bebe agua del río.",
+  "v": null
+ },
+ {
+  "id": "a_cordero_1",
+  "q": "¿el cordero es un mamífero?",
+  "crit": "^si",
+  "r": "Sí, un cordero es un mamífero.",
+  "v": "OK"
+ },
+ {
+  "id": "a_cordero_1",
+  "q": "¿el cordero es una carne?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «cordero» en el sentido de mamifero, no de una carne.",
+  "v": "OK"
+ },
+ {
+  "id": "a_cordero_2",
+  "q": "Un cordero también es una carne.",
+  "crit": "",
+  "r": "Entendido: el cordero es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_cordero_2",
+  "q": "He asado el cordero en el horno y lo he servido con patatas.",
+  "crit": "",
+  "r": "Entendido: asaste el cordero en el horno; serviste el horno con patatas.",
+  "v": null
+ },
+ {
+  "id": "a_cordero_2",
+  "q": "¿el cordero es una carne?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «cordero» en el sentido de carne.",
+  "v": "OK"
+ },
+ {
+  "id": "a_cordero_2",
+  "q": "¿el cordero es un mamífero?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «cordero» en el sentido de carne, no de un mamífero.",
+  "v": "OK"
+ },
+ {
+  "id": "a_pato_1",
+  "q": "Un pato también es una carne.",
+  "crit": "",
+  "r": "Entendido: el pato es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_pato_1",
+  "q": "En el estanque un pato nada, mueve las alas y persigue a los otros patos.",
+  "crit": "",
+  "r": "Entendido: el pato persigue a los otros patos.",
+  "v": null
+ },
+ {
+  "id": "a_pato_1",
+  "q": "¿el pato es un ave?",
+  "crit": "^si",
+  "r": "Sí, un pato es un ave.",
+  "v": "OK"
+ },
+ {
+  "id": "a_pato_1",
+  "q": "¿el pato es una carne?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «pato» en el sentido de ave, no de una carne.",
+  "v": "OK"
+ },
+ {
+  "id": "a_pato_2",
+  "q": "Un pato también es una carne.",
+  "crit": "",
+  "r": "Entendido: el pato es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_pato_2",
+  "q": "Hemos cocinado el pato con naranja y nos lo hemos comido en la cena.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Hemos cocinado el pato con naranja y nos lo hemos comido en la cena».",
+  "v": null
+ },
+ {
+  "id": "a_pato_2",
+  "q": "¿el pato es una carne?",
+  "crit": "^si",
+  "r": "«pato» tiene varios sentidos y no tengo claro de cuál hablamos: ¿ave o carne?",
+  "v": "MAL"
+ },
+ {
+  "id": "a_pato_2",
+  "q": "¿el pato es un ave?",
+  "crit": "^no",
+  "r": "Sí, un pato es un ave.",
+  "v": "MAL"
+ },
+ {
+  "id": "a_cerdo_1",
+  "q": "Un cerdo también es una carne.",
+  "crit": "",
+  "r": "Entendido: el cerdo es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_cerdo_1",
+  "q": "En la granja un cerdo gruñe, duerme en el barro y busca comida.",
+  "crit": "",
+  "r": "Entendido: el cerdo busca comida.",
+  "v": null
+ },
+ {
+  "id": "a_cerdo_1",
+  "q": "¿el cerdo es un mamífero?",
+  "crit": "^si",
+  "r": "Sí, un cerdo es un mamífero.",
+  "v": "OK"
+ },
+ {
+  "id": "a_cerdo_1",
+  "q": "¿el cerdo es una carne?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «cerdo» en el sentido de mamifero, no de una carne.",
+  "v": "OK"
+ },
+ {
+  "id": "a_cerdo_2",
+  "q": "Un cerdo también es una carne.",
+  "crit": "",
+  "r": "Entendido: el cerdo es una carne.",
+  "v": null
+ },
+ {
+  "id": "a_cerdo_2",
+  "q": "El carnicero ha cortado el cerdo en filetes y los hemos frito en la sartén.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El carnicero ha cortado el cerdo en filetes y los hemos frito en la sartén».",
+  "v": null
+ },
+ {
+  "id": "a_cerdo_2",
+  "q": "¿el cerdo es una carne?",
+  "crit": "^si",
+  "r": "«cerdo» tiene varios sentidos y no tengo claro de cuál hablamos: ¿mamifero o carne?",
+  "v": "MAL"
+ },
+ {
+  "id": "a_cerdo_2",
+  "q": "¿el cerdo es un mamífero?",
+  "crit": "^no",
+  "r": "Sí, un cerdo es un mamífero.",
+  "v": "MAL"
+ },
+ {
+  "id": "b_bachata",
+  "q": "La bachata es un baile.",
+  "crit": "",
+  "r": "Entendido: la bachata es un baile.",
+  "v": null
+ },
+ {
+  "id": "b_bachata",
+  "q": "El merengue es un baile.",
+  "crit": "",
+  "r": "Entendido: el merengue es un baile.",
+  "v": null
+ },
+ {
+  "id": "b_bachata",
+  "q": "En la fiesta sonaron una bachata, un merengue y un flamenco.",
+  "crit": "",
+  "r": "Entendido: el merengue sonó una bachata, un merengue y un flamenco en la fiesta.",
+  "v": null
+ },
+ {
+  "id": "b_bachata",
+  "q": "¿el flamenco es un baile?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «flamenco» en el sentido de baile.",
+  "v": "OK"
+ },
+ {
+  "id": "b_bachata",
+  "q": "¿el flamenco es un ave?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «flamenco» en el sentido de baile, no de una ave.",
+  "v": "OK"
+ },
+ {
+  "id": "b_obus",
+  "q": "El obús es un arma.",
+  "crit": "",
+  "r": "Entendido: el obús es una arma.",
+  "v": null
+ },
+ {
+  "id": "b_obus",
+  "q": "El mortero es un arma.",
+  "crit": "",
+  "r": "Entendido: el mortero es una arma.",
+  "v": null
+ },
+ {
+  "id": "b_obus",
+  "q": "En la vitrina del museo había un obús, un mortero y una granada.",
+  "crit": "",
+  "r": "Entendido: en la vitrina del museo hay un obús.",
+  "v": null
+ },
+ {
+  "id": "b_obus",
+  "q": "¿la granada es un arma?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «granada» en el sentido de arma.",
+  "v": "OK"
+ },
+ {
+  "id": "b_obus",
+  "q": "¿la granada es una fruta?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «granada» en el sentido de arma, no de una fruta.",
+  "v": "OK"
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "Un trelo es una herramienta.",
+  "crit": "",
+  "r": "Entendido: el trelo es una herramienta.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "Un trelo también es un pez.",
+  "crit": "",
+  "r": "Entendido: el trelo es un pez.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "La mubia es un pez.",
+  "crit": "",
+  "r": "Entendido: la mubia es un pez.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "En el acuario había una mubia, una sardina y un trelo.",
+  "crit": "",
+  "r": "Entendido: en el acuario hay una mubia.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "¿el trelo es un pez?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «trelo» en el sentido de pez.",
+  "v": "OK"
+ },
+ {
+  "id": "b_trelo_pez",
+  "q": "¿el trelo es una herramienta?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «trelo» en el sentido de pez, no de una herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "Un trelo es una herramienta.",
+  "crit": "",
+  "r": "Entendido: el trelo es una herramienta.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "Un trelo también es un pez.",
+  "crit": "",
+  "r": "Entendido: el trelo es un pez.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "El gurbio es una herramienta.",
+  "crit": "",
+  "r": "Entendido: el gurbio es una herramienta.",
+  "v": null
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "En la caja guardo un gurbio, un martillo y un trelo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Guardo un gurbio, un martillo y un trelo en la caja».",
+  "v": null
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "¿el trelo es una herramienta?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «trelo» en el sentido de herramienta.",
+  "v": "OK"
+ },
+ {
+  "id": "b_trelo_herr",
+  "q": "¿el trelo es un pez?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «trelo» en el sentido de herramienta, no de un pez.",
+  "v": "OK"
+ },
+ {
+  "id": "b_sin_ensenar",
+  "q": "En la fiesta sonaron una bachata, un merengue y un flamenco.",
+  "crit": "",
+  "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "b_sin_ensenar",
+  "q": "¿el flamenco es un ave?",
+  "crit": "^si|varios sentidos|cual",
+  "r": "Sí, un flamenco es un ave.",
+  "v": "OK"
+ },
+ {
+  "id": "c_crema_1",
+  "q": "Me pongo crema en las manos y en la cara después de la ducha.",
+  "crit": "",
+  "r": "Entendido: te pones crema en las manos y en la cara después de la ducha. ¿Qué es un cremar? Es la primera vez que oigo esa palabra.",
+  "v": null
+ },
+ {
+  "id": "c_crema_1",
+  "q": "¿la crema es un objeto de aseo?",
+  "crit": "^si",
+  "r": "Sí, un crema es un objeto de aseo.",
+  "v": "OK"
+ },
+ {
+  "id": "c_crema_1",
+  "q": "¿la crema es un color?",
+  "crit": "^no",
+  "r": "«crema» tiene varios sentidos y no tengo claro de cuál hablamos: ¿objeto de aseo o color?",
+  "v": "MAL"
+ },
+ {
+  "id": "c_crema_2",
+  "q": "He pintado el salón de color crema, un blanco algo amarillo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He pintado el salón de color crema, un blanco algo amarillo».",
+  "v": null
+ },
+ {
+  "id": "c_crema_2",
+  "q": "¿la crema es un color?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «crema» en el sentido de color.",
+  "v": "OK"
+ },
+ {
+  "id": "c_crema_2",
+  "q": "¿la crema es un objeto de aseo?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «crema» en el sentido de color, no de un objeto de aseo.",
+  "v": "OK"
+ },
+ {
+  "id": "c_iglesia_1",
+  "q": "El albañil ha arreglado el tejado y la torre de la iglesia del pueblo.",
+  "crit": "",
+  "r": "Entendido: el albañil arregló el tejado y la torre de la iglesia del pueblo.",
+  "v": null
+ },
+ {
+  "id": "c_iglesia_1",
+  "q": "¿la iglesia es un edificio?",
+  "crit": "^si",
+  "r": "Sí, una iglesia es un edificio.",
+  "v": "OK"
+ },
+ {
+  "id": "c_iglesia_1",
+  "q": "¿la iglesia es una organización?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «iglesia» en el sentido de edificio, no de una organización.",
+  "v": "OK"
+ },
+ {
+  "id": "c_iglesia_2",
+  "q": "La iglesia es una organización con jefes, miembros y normas en muchos países.",
+  "crit": "",
+  "r": "Entendido, me lo apunto.",
+  "v": null
+ },
+ {
+  "id": "c_iglesia_2",
+  "q": "¿la iglesia es una organización?",
+  "crit": "^si",
+  "r": "Sí: según lo que he aprendido, la iglesia es una organización con jefes, miembros y normas en muchos países.",
+  "v": "OK"
+ },
+ {
+  "id": "c_iglesia_2",
+  "q": "¿la iglesia es un edificio?",
+  "crit": "^no",
+  "r": "Sí, una iglesia es un edificio.",
+  "v": "MAL"
+ },
+ {
+  "id": "c_ayuntamiento_1",
+  "q": "Han pintado la fachada del ayuntamiento y han cambiado las ventanas del segundo piso.",
+  "crit": "",
+  "r": "Entendido: No tengo claro de quién hablas. ¿A quién te refieres?; No tengo claro de quién hablas. ¿A quién te refieres?.",
+  "v": null
+ },
+ {
+  "id": "c_ayuntamiento_1",
+  "q": "¿el ayuntamiento es un edificio?",
+  "crit": "^si",
+  "r": "Sí, un ayuntamiento es un edificio.",
+  "v": "OK"
+ },
+ {
+  "id": "c_ayuntamiento_1",
+  "q": "¿el ayuntamiento es una organización?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «ayuntamiento» en el sentido de edificio, no de una organización.",
+  "v": "OK"
+ },
+ {
+  "id": "c_ayuntamiento_2",
+  "q": "El ayuntamiento gobierna la ciudad junto con el gobierno y los sindicatos.",
+  "crit": "",
+  "r": "Entendido: el ayuntamiento gobierna la ciudad junto con el gobierno y los sindicatos.",
+  "v": null
+ },
+ {
+  "id": "c_ayuntamiento_2",
+  "q": "¿el ayuntamiento es una organización?",
+  "crit": "^si",
+  "r": "Sí, un ayuntamiento es una organización.",
+  "v": "OK"
+ },
+ {
+  "id": "c_ayuntamiento_2",
+  "q": "¿el ayuntamiento es un edificio?",
+  "crit": "^no",
+  "r": "Sí, un ayuntamiento es un edificio.",
+  "v": "MAL"
+ },
+ {
+  "id": "c_permiso_1",
+  "q": "He guardado el permiso firmado en la carpeta con el contrato y el pasaporte.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «He guardado el permiso firmado en la carpeta con el contrato y el pasaporte».",
+  "v": null
+ },
+ {
+  "id": "c_permiso_1",
+  "q": "¿el permiso es un documento?",
+  "crit": "^si",
+  "r": "Sí, un permiso es un documento.",
+  "v": "OK"
+ },
+ {
+  "id": "c_permiso_1",
+  "q": "¿el permiso es una norma?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «permiso» en el sentido de documento, no de una norma.",
+  "v": "OK"
+ },
+ {
+  "id": "c_permiso_2",
+  "q": "En este hospital hay un permiso que todos deben cumplir, igual que las leyes y las reglas.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En este hospital hay un permiso que todos deben cumplir, igual que las leyes y las reglas».",
+  "v": null
+ },
+ {
+  "id": "c_permiso_2",
+  "q": "¿el permiso es una norma?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «permiso» en el sentido de norma.",
+  "v": "OK"
+ },
+ {
+  "id": "c_permiso_2",
+  "q": "¿el permiso es un documento?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «permiso» en el sentido de norma, no de un documento.",
+  "v": "OK"
+ },
+ {
+  "id": "c_piel_1",
+  "q": "Me he quemado la piel del brazo y de la espalda con el sol.",
+  "crit": "",
+  "r": "Lo siento. Entendido: te quemaste la piel del brazo y de la espalda con el sol.",
+  "v": null
+ },
+ {
+  "id": "c_piel_1",
+  "q": "¿la piel es una parte del cuerpo?",
+  "crit": "^si",
+  "r": "Eso no me consta; solo sé Un ojo es parte del cuerpo; Una mano es parte del cuerpo; Un pie es parte del cuerpo.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "c_piel_1",
+  "q": "¿la piel es un material?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «piel» en el sentido de parte del cuerpo, no de un material.",
+  "v": "OK"
+ },
+ {
+  "id": "c_piel_2",
+  "q": "El bolso es de piel, igual que el cuero y la lana de mi abrigo.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El bolso es de piel, igual que el cuero y la lana de mi abrigo».",
+  "v": null
+ },
+ {
+  "id": "c_piel_2",
+  "q": "¿la piel es un material?",
+  "crit": "^si",
+  "r": "«piel» tiene varios sentidos y no tengo claro de cuál hablamos: ¿cuero o material?",
+  "v": "MAL"
+ },
+ {
+  "id": "c_piel_2",
+  "q": "¿la piel es una parte del cuerpo?",
+  "crit": "^no",
+  "r": "Eso no me consta; solo sé Un ojo es parte del cuerpo; Una mano es parte del cuerpo; Un pie es parte del cuerpo.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "c_billete_1",
+  "q": "He pagado el pan con un billete y me han devuelto dos monedas.",
+  "crit": "",
+  "r": "Entendido: pagaste el pan con un billete. No tengo claro de quién hablas. ¿A quién te refieres?",
+  "v": null
+ },
+ {
+  "id": "c_billete_1",
+  "q": "¿el billete es un dinero?",
+  "crit": "^si",
+  "r": "Sí: por lo que me has contado, hablamos de «billete» en el sentido de dinero.",
+  "v": "OK"
+ },
+ {
+  "id": "c_billete_1",
+  "q": "¿el billete es un documento?",
+  "crit": "^no",
+  "r": "No: por lo que me has contado, hablamos de «billete» en el sentido de dinero, no de un documento.",
+  "v": "OK"
+ },
+ {
+  "id": "c_billete_2",
+  "q": "El revisor del tren me ha pedido el billete y el pasaporte.",
+  "crit": "",
+  "r": "Entendido: el revisor del tren pidió el billete y el pasaporte.",
+  "v": null
+ },
+ {
+  "id": "c_billete_2",
+  "q": "¿el billete es un documento?",
+  "crit": "^si",
+  "r": "No: por lo que me has contado, hablamos de «billete» en el sentido de dinero, no de un documento.",
+  "v": "MAL"
+ },
+ {
+  "id": "c_billete_2",
+  "q": "¿el billete es un dinero?",
+  "crit": "^no",
+  "r": "Sí: por lo que me has contado, hablamos de «billete» en el sentido de dinero.",
+  "v": "MAL"
+ },
+ {
+  "id": "d_fontanera",
+  "q": "Mi cuñada se llama Irene y es fontanera.",
+  "crit": "",
+  "r": "Entendido: tu cuñada se llama Irene; Irene es fontanera.",
+  "v": null
+ },
+ {
+  "id": "d_fontanera",
+  "q": "Mi amiga también se llama Irene.",
+  "crit": "",
+  "r": "Entendido: tu amiga también se llama Irene. Es otra persona, no tu cuñada.",
+  "v": null
+ },
+ {
+  "id": "d_fontanera",
+  "q": "Mi amiga es profesora.",
+  "crit": "",
+  "r": "Entendido: tu amiga Irene es profesora.",
+  "v": null
+ },
+ {
+  "id": "d_fontanera",
+  "q": "Esta mañana he ido andando.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Esta mañana he ido andando».",
+  "v": null
+ },
+ {
+  "id": "d_fontanera",
+  "q": "El grifo de la cocina gotea y hay una fuga de agua.",
+  "crit": "",
+  "r": "Entendido: el grifo de la cocina gotea.",
+  "v": null
+ },
+ {
+  "id": "d_fontanera",
+  "q": "¿a qué se dedica Irene?",
+  "crit": "fontanera",
+  "r": "Tu cuñada Irene es fontanera.",
+  "v": "OK"
+ },
+ {
+  "id": "d_profesora",
+  "q": "Mi cuñada se llama Irene y es fontanera.",
+  "crit": "",
+  "r": "Entendido: tu cuñada se llama Irene; Irene es fontanera.",
+  "v": null
+ },
+ {
+  "id": "d_profesora",
+  "q": "Mi amiga también se llama Irene.",
+  "crit": "",
+  "r": "Entendido: tu amiga también se llama Irene. Es otra persona, no tu cuñada.",
+  "v": null
+ },
+ {
+  "id": "d_profesora",
+  "q": "Mi amiga es profesora.",
+  "crit": "",
+  "r": "Entendido: tu amiga Irene es profesora.",
+  "v": null
+ },
+ {
+  "id": "d_profesora",
+  "q": "Esta mañana he ido andando.",
+  "crit": "",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Esta mañana he ido andando».",
+  "v": null
+ },
+ {
+  "id": "d_profesora",
+  "q": "Mi sobrina tiene un examen y no entiende la lección.",
+  "crit": "",
+  "r": "Entendido: tu sobrina tiene un examen; tu sobrina no entiende la lección.",
+  "v": null
+ },
+ {
+  "id": "d_profesora",
+  "q": "¿a qué se dedica Irene?",
+  "crit": "profesora",
+  "r": "Tu amiga Irene es profesora.",
+  "v": "OK"
+ },
+ {
+  "id": "d_veterinario",
+  "q": "Mi vecino se llama Hugo y es veterinario.",
+  "crit": "",
+  "r": "Entendido: tu vecino se llama Hugo; Hugo es veterinario.",
+  "v": null
+ },
+ {
+  "id": "d_veterinario",
+  "q": "Mi primo también se llama Hugo.",
+  "crit": "",
+  "r": "Entendido: tu primo también se llama Hugo. Es otra persona, no tu vecino.",
+  "v": null
+ },
+ {
+  "id": "d_veterinario",
+  "q": "Mi primo es electricista.",
+  "crit": "",
+  "r": "Entendido: tu primo Hugo es electricista.",
+  "v": null
+ },
+ {
+  "id": "d_veterinario",
+  "q": "Ayer cené pronto.",
+  "crit": "",
+  "r": "Entendido: cenaste ayer pronto.",
+  "v": null
+ },
+ {
+  "id": "d_veterinario",
+  "q": "Mi gato está enfermo y hay que ponerle una vacuna.",
+  "crit": "",
+  "r": "He registrado dos proposiciones conectadas por «y» y he conservado sus sujetos.",
+  "v": null
+ },
+ {
+  "id": "d_veterinario",
+  "q": "¿a qué se dedica Hugo?",
+  "crit": "veterinario",
+  "r": "Tu vecino Hugo es veterinario.",
+  "v": "OK"
+ },
+ {
+  "id": "d_cocinero",
+  "q": "Mi suegro se llama Mateo y es cocinero.",
+  "crit": "",
+  "r": "Entendido: tu suegro se llama Mateo; Mateo es cocinero.",
+  "v": null
+ },
+ {
+  "id": "d_cocinero",
+  "q": "Mi jefe también se llama Mateo.",
+  "crit": "",
+  "r": "Entendido: tu jefe también se llama Mateo. Es otra persona, no tu suegro.",
+  "v": null
+ },
+ {
+  "id": "d_cocinero",
+  "q": "Mi jefe es abogado.",
+  "crit": "",
+  "r": "Entendido: tu jefe Mateo es abogado.",
+  "v": null
+ },
+ {
+  "id": "d_cocinero",
+  "q": "El martes llovió.",
+  "crit": "",
+  "r": "Vale, lo apunto: «El martes llovió».",
+  "v": null
+ },
+ {
+  "id": "d_cocinero",
+  "q": "Quiero preparar un plato especial en el restaurante para la cena.",
+  "crit": "",
+  "r": "Entendido: quieres preparar un plato especial en el restaurante para la cena.",
+  "v": null
+ },
+ {
+  "id": "d_cocinero",
+  "q": "¿a qué se dedica Mateo?",
+  "crit": "cocinero",
+  "r": "Tu suegro Mateo es cocinero.",
+  "v": "OK"
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "Mi tío se llama Óscar y es pintor.",
+  "crit": "",
+  "r": "Entendido: tu tío se llama Óscar; Óscar es pintor.",
+  "v": null
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "Mi vecino también se llama Óscar.",
+  "crit": "",
+  "r": "Entendido: tu vecino también se llama Óscar. Es otra persona, no tu tío.",
+  "v": null
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "Mi vecino es dentista.",
+  "crit": "",
+  "r": "Entendido: tu vecino Óscar es dentista.",
+  "v": null
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "El lunes fue un día normal.",
+  "crit": "",
+  "r": "Entendido: tu vecino Óscar fue un día el lunes; tu vecino Óscar fue normal.",
+  "v": null
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "Hoy no tengo nada que contar.",
+  "crit": "",
+  "r": "No puedo identificar con seguridad el hecho temporal; no lo registraré.",
+  "v": null
+ },
+ {
+  "id": "d_sin_tema",
+  "q": "¿a qué se dedica Óscar?",
+  "crit": "que oscar|cual",
+  "r": "Tu tío Óscar es pintor.",
+  "v": "MAL"
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "He comprado una mesa.",
+  "crit": "",
+  "r": "Entendido: compraste una mesa.",
+  "v": null
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "¿la mesa es un mueble?",
+  "crit": "^si",
+  "r": "Sí, una mesa es un mueble.",
+  "v": "OK"
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "Tengo una gallina.",
+  "crit": "",
+  "r": "Entendido: tienes una gallina. ¿Cómo se llama?",
+  "v": null
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "¿mi gallina es un animal?",
+  "crit": "^si",
+  "r": "Sí, tu gallina es un animal. Lo deduzco porque tu gallina es una gallina, una gallina es un ave y un ave es un animal.",
+  "v": "OK"
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "Me he bebido un zumo.",
+  "crit": "",
+  "r": "Entendido: te bebiste un zumo.",
+  "v": null
+ },
+ {
+  "id": "e_sin_motivo",
+  "q": "¿el zumo es una bebida?",
+  "crit": "^si",
+  "r": "Sí, un zumo es una bebida.",
+  "v": "OK"
+ }
+]

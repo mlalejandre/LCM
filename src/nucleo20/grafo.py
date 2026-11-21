@@ -425,7 +425,11 @@ def _otro(nuc, texto, rol_txt, nombre, resto=""):
     if resto.strip(" .,"):
         nuc._tocando = True
         try:
-            r2 = nuc.procesar(_cap("mi " + rol_txt + " " + re.sub(r"^\s*(?:y|,)\s*", "", resto).strip()))
+            resto_ = re.sub(r"^\s*(?:y|,)\s*", "", resto).strip()
+            if re.match(r"^(?:no\s+)?les?\s+[a-záéíóúñ]+", resto_):   # «le gustan los gatos» -> «A mi amigo le gustan los gatos»
+                r2 = nuc.procesar(_cap("a mi " + rol_txt + " " + resto_))
+            else:
+                r2 = nuc.procesar(_cap("mi " + rol_txt + " " + resto_))
             cola = " " + ((r2 or {}).get("respuesta") or "")
         finally:
             nuc._tocando = False
@@ -449,6 +453,13 @@ def _ficha(nuc, e):
     return set(X.lemas(" ".join(txt)))
 
 
+def PESO_TEMA_PERSONA():
+    """Cuánto pesa que la frase case con la ficha de uno frente a de quién se habló hace unos turnos. 2.32: medido (ver docs/LCM_232)."""
+    if os.environ.get("LCM_W_TEMA_PERS"):
+        return float(os.environ["LCM_W_TEMA_PERS"])
+    return 1.5 if os.environ.get("LCM_SIN_PAPELES") else 2.5   # barrido 1,5 / 2,5 / 3 / 4 en 10 conjuntos: 2,5 y 3 ganan 5 turnos sin perder ninguno; 4 rompe dos
+
+
 def _papel_sin_tema(rol):
     """2.31 · «vecino», «hermano», «amigo» dicen la relación, no de qué se habla: no cuentan como tema de la ficha (si no, «¿dónde VIVE Pedro?»
     apuntaba al vecino porque los vecinos «viven al lado»). Un oficio («profesor», «médico») sí es tema."""
@@ -469,7 +480,7 @@ def _papel_sin_tema(rol):
 def probabilidades(nuc, t, forma, ops):
     """La probabilidad de cada tocayo: de quién se venía hablando (caché) y con la ficha de quién casa la frase."""
     from . import contexto as X
-    fichas = [_ficha(nuc, o["id"]) - {sa(forma.lower()), "tener"} - _papel_sin_tema(o.get("rol")) for o in ops]
+    fichas = [_ficha(nuc, o["id"]) - {sa(forma.lower()), "tener"} - _papel_sin_tema(o.get("rol")) - (_papel_sin_tema(o.get("dice")) if not os.environ.get("LCM_SIN_PAPELES") else set()) for o in ops]
     todas = set().union(*fichas) if fichas else set()
     # 2.30: también de lo que se venía hablando («se ha roto una tubería»), pero no las palabras con que se habló de ellos mismos: eso ya lo cuenta la recencia
     for o in ops:
@@ -482,11 +493,12 @@ def probabilidades(nuc, t, forma, ops):
     for x in X._cache(nuc):
         if x[1] == "w" and x[0] not in turnos_suyos and tn - x[0] <= X.VENTANA and x[2] not in todas and x[2][:5] not in raices:
             frase[x[2]] = max(frase.get(x[2], 0.0), min(1.0, 0.84 * X.OLVIDO ** max(0, tn - x[0])))
-    frase.update({l: 1.0 for l in X.lemas(re.sub(r"\b" + forma + r"\b", " ", t))})
+    if "?" not in t or os.environ.get("LCM_SIN_PAPELES"):    # 2.32: lo que se PREGUNTA no es tema («¿dónde VIVE Pedro?» no apunta al Pedro del que se sabe dónde vive)
+        frase.update({l: 1.0 for l in X.lemas(re.sub(r"\b" + forma + r"\b", " ", t))})
     for vago in ("dedicar", "llamar", sa(forma.lower())):
         frase.pop(vago, None)
     rec = [X.peso_entidad(nuc, o["id"]) for o in ops]
-    tem = [1.5 * X.casa(frase, f_) for f_ in fichas]
+    tem = [PESO_TEMA_PERSONA() * X.casa(frase, f_) for f_ in fichas]
     nuc._pt_tema230 = tem
     puntos = [r_ + t_ for r_, t_ in zip(rec, tem)]
     return X.reparte(puntos), puntos
@@ -528,8 +540,16 @@ def tocayos(nuc, texto):
                 finally:
                     nuc._tocando = False
             if re.match(r"^(?:no|otro|otra|es otro|es otra|otra persona|distint[oa])\b", n):
+                if pend.get("apos"):                     # se dijo «mi amigo Manuel …»: se abre el nodo y luego se entiende la frase, ya de él
+                    _otro(nuc, f"Mi {pend['rol']} también se llama {pend['forma']}.", pend["rol"], pend["forma"], "")
+                    nid = (T.get(pend["nombre"]) or [{}])[-1].get("id")
+                    if nid:
+                        pat = r"\b(?:[Aa]\s+)?[Mm]i\s+" + re.escape(pend["rol"]) + r"\s+" + re.escape(pend["forma"]) + r"\b"
+                        m3 = re.search(pat, pend["texto"])
+                        txt = pend["texto"][:m3.start()] + (("a " if m3.group(0).lower().startswith("a ") else "") + pend["forma"]) + pend["texto"][m3.end():] if m3 else pend["texto"]
+                        return {"texto": txt[:1].upper() + txt[1:], "foco": {"N:" + pend["nombre"]: nid}}
                 return _otro(nuc, pend["texto"], pend["rol"], pend["forma"], pend["resto"])
-    m = re.match(r"^(?:[Yy]\s+)?(?:[Mm]i|[Ee]l|[Ll]a)\s+" + _ROL + r"\s+(tambi[eé]n\s+)?se\s+llama\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)\b(.*)$", t)
+    m = re.match(r"^(?:[Yy]\s+)?(?:[Mm]i|[Ee]l|[Ll]a)\s+" + _ROL + r"\s+(tambi[eé]n\s+)?se\s+llama\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)\b(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){0,2}(.*)$", t)
     if m and "?" not in t and len(m.group(1).split()[0]) > 2 and sa(m.group(1).split()[0]) not in ("nombre", "apellido", "mote", "perro", "gato", "perra", "gata", "calle", "pueblo", "ciudad"):
         rol_txt, tam, nombre, resto = m.group(1), m.group(2), m.group(3), m.group(4)
         k = "N:" + sa(nombre.lower())
@@ -543,11 +563,23 @@ def tocayos(nuc, texto):
                 return {"respuesta": f"Ya conozco a un {nombre}: tu {_nombre_rel(nuc, r0[0], nuc.can(k))}. ¿Tu {rol_txt} es el mismo {nombre} o es otra persona?",
                         "estado": "ok", "consultar": False, "tipo": "pregunta"}
         return None
+    if "?" not in t and not os.environ.get("LCM_SIN_PAPELES"):
+        m2 = re.search(r"\b(?:[Mm]i)\s+([a-záéíóúñ]+)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)\b", t)
+        if m2 and len(m2.group(1)) > 2:
+            rol_txt, nombre = m2.group(1), m2.group(2)
+            k = "N:" + sa(nombre.lower())
+            rc = _canon(rol_txt) or None
+            if rc and (k in nuc.E or k in getattr(nuc, "eq", {})):
+                r0 = _roles(nuc, k)
+                if r0 and rc not in r0 and not any(o["rol"] == rc for o in T.get(sa(nombre.lower()), [])):
+                    nuc._toc_pend = {"tipo": "mismo", "turno": nuc.turno, "texto": t, "rol": rol_txt, "forma": nombre, "resto": "", "nombre": sa(nombre.lower()), "apos": True}
+                    return {"respuesta": f"Ya conozco a {'una' if sa(rol_txt).endswith('a') else 'un'} {nombre}: tu {_nombre_rel(nuc, r0[0], nuc.can(k))}. ¿Tu {rol_txt} {nombre} es {'la misma' if sa(rol_txt).endswith('a') else 'el mismo'} o es otra persona?",
+                            "estado": "ok", "consultar": False, "tipo": "pregunta"}
     for nom, ops in T.items():
         if len(ops) < 2:
             continue
-        mm = re.search(r"\b(" + nom[:1].upper() + r"\w*)\b", t)
-        if not mm or sa(mm.group(1).lower()) != nom:
+        mm = next((x for x in re.finditer(r"\b(" + nom[:1].upper() + r"\w*)\b", t) if sa(x.group(1).lower()) == nom), None)
+        if not mm:                                       # 2.32: antes miraba solo la PRIMERA palabra con esa inicial: en «Mi amigo Manuel…» veía «Mi» y lo dejaba pasar
             continue
         forma = mm.group(1)
         if re.match(r"^¿?\s*cu[aá]nt[oa]s\s+" + forma, t, re.I):

@@ -1,0 +1,317 @@
+[
+ {
+  "id": "usuario_manuel",
+  "q": "hoy he aprendido que mi tío Manuel es carpintero. Que vive en Navarra y que le gusta cazar jabalíes.",
+  "crit": "carpintero;navarra",
+  "r": "No puedo identificar con seguridad el hecho temporal; no lo registraré.",
+  "v": "MAL"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "que le gusta a Manuel?",
+  "crit": "jabali",
+  "r": "No sé quién es Manuel: todavía no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "quien es Manuel?",
+  "crit": "tio;carpintero",
+  "r": "No sé quién es Manuel: todavía no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "Tengo un amigo que se llama Manuel Pérez que le gustan muchos los gatos",
+  "crit": "mismo|otra persona",
+  "r": "Entendido: Tengo un amigo que se llama Manuel Pérez que le gustan muchos los gatos.",
+  "v": "MAL"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "es otra persona",
+  "crit": "gatos",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Es otra persona».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "que le gusta a mi tío Manuel?",
+  "crit": "jabali;!gatos",
+  "r": "No lo sé: no me has dicho qué le gusta a Manuel.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "usuario_manuel",
+  "q": "que le gusta a mi amigo Manuel?",
+  "crit": "gatos;!jabali",
+  "r": "No lo sé: no me has dicho qué le gusta a Manuel.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco1",
+  "q": "Ayer me enteré de que mi prima Sara es enfermera. Que trabaja en Vigo y que le encanta nadar.",
+  "crit": "enfermera;vigo",
+  "r": "No puedo identificar con seguridad el hecho temporal; no lo registraré.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_marco1",
+  "q": "¿a qué se dedica Sara?",
+  "crit": "enfermera",
+  "r": "No sé quién es Sara: todavía no me has hablado de ella.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco1",
+  "q": "¿dónde trabaja Sara?",
+  "crit": "vigo",
+  "r": "No sé quién es Sara: todavía no me has hablado de ella.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco1",
+  "q": "¿qué le encanta a Sara?",
+  "crit": "nadar",
+  "r": "No sé quién es Sara: todavía no me has hablado de ella.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco2",
+  "q": "Me han contado que mi vecino Andrés tiene tres gatos.",
+  "crit": "gatos",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Me han contado que mi vecino Andrés tiene tres gatos».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco2",
+  "q": "He descubierto que Andrés vive en Cuenca y que es taxista.",
+  "crit": "cuenca;taxista",
+  "r": "He registrado dos proposiciones conectadas por «y» y he conservado sus sujetos.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_marco2",
+  "q": "¿cuántos gatos tiene Andrés?",
+  "crit": "tres|3",
+  "r": "No lo tengo del todo claro, pero me dijiste: «Me han contado que mi vecino Andrés tiene tres gatos».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_marco2",
+  "q": "¿dónde vive Andrés?",
+  "crit": "cuenca",
+  "r": "Cuenca. Consta Andres vivir en Cuenca, por «He descubierto que Andrés vive en Cuenca y que es taxista.».",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_marco2",
+  "q": "¿a qué se dedica Andrés?",
+  "crit": "taxista",
+  "r": "Andres es Taxista.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_relativa1",
+  "q": "Tengo una hermana que se llama Olga que vive en Teruel.",
+  "crit": "olga;teruel",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Tengo una hermana que se llama Olga que vive en Teruel».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_relativa1",
+  "q": "¿dónde vive Olga?",
+  "crit": "teruel",
+  "r": "No lo tengo del todo claro, pero me dijiste: «Tengo una hermana que se llama Olga que vive en Teruel».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_relativa1",
+  "q": "¿cómo se llama mi hermana?",
+  "crit": "olga",
+  "r": "No lo tengo del todo claro, pero me dijiste: «Tengo una hermana que se llama Olga que vive en Teruel».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_relativa1",
+  "q": "Tengo un perro que se llama Rufo y que le gustan mucho los huesos.",
+  "crit": "rufo",
+  "r": "Entendido: Huesos gustar.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_relativa1",
+  "q": "¿qué le gusta a Rufo?",
+  "crit": "huesos",
+  "r": "No sé quién es Rufo: todavía no me has hablado de él.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "Mi abuelo Julián es pescador y vive en Cádiz.",
+  "crit": "",
+  "r": "Entendido: Julián es pescador; Julián vive en Cádiz.",
+  "v": null
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "Tengo un compañero que se llama Julián García que le gusta mucho el ajedrez",
+  "crit": "mismo|otra persona",
+  "r": "Entendido: Tengo un compañero que se llama Julián García que le gusta mucho el ajedrez.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "es otro",
+  "crit": "ajedrez",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Es otro».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "¿qué le gusta a mi compañero Julián?",
+  "crit": "ajedrez",
+  "r": "No lo sé: no me has dicho qué le gusta a Julián.",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "¿dónde vive mi abuelo Julián?",
+  "crit": "cadiz",
+  "r": "Julián vive en Cádiz.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "¿a qué se dedica mi abuelo Julián?",
+  "crit": "pescador",
+  "r": "Julián es pescador.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_relativa",
+  "q": "¿dónde vive Julián?",
+  "crit": "cadiz|que julian|cual",
+  "r": "Julián vive en Cádiz.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "Mi prima Nuria es abogada.",
+  "crit": "",
+  "r": "Entendido: Nuria es abogada.",
+  "v": null
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "Mi jefa Nuria vive en Lugo.",
+  "crit": "misma|otra persona",
+  "r": "Entendido: Nuria vive en Lugo.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "otra",
+  "crit": "lugo",
+  "r": "No he entendido «otra». ¿Puedes decirlo con una frase más simple, por ejemplo «Ana ama a Luis»?",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "¿dónde vive mi jefa Nuria?",
+  "crit": "lugo",
+  "r": "Nuria vive en Lugo.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "¿a qué se dedica mi prima Nuria?",
+  "crit": "abogada",
+  "r": "Nuria es abogada.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "Mi jefa Nuria tiene dos hijos.",
+  "crit": "hijos",
+  "r": "Entendido: Nuria tiene dos hijos.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_tocayo_aposicion",
+  "q": "¿quién tiene dos hijos?",
+  "crit": "jefa",
+  "r": "Nuria tiene dos hijos.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_mismo",
+  "q": "Mi vecino Ramiro es electricista.",
+  "crit": "",
+  "r": "Entendido: Ramiro es electricista.",
+  "v": null
+ },
+ {
+  "id": "limpia_mismo",
+  "q": "Mi amigo Ramiro juega al tenis.",
+  "crit": "mismo|otra persona",
+  "r": "Entendido: Ramiro juega al tenis.",
+  "v": "MAL"
+ },
+ {
+  "id": "limpia_mismo",
+  "q": "es el mismo",
+  "crit": "tenis",
+  "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Es el mismo».",
+  "v": "ABST_INDEBIDA"
+ },
+ {
+  "id": "limpia_mismo",
+  "q": "¿a qué juega Ramiro?",
+  "crit": "tenis",
+  "r": "Ramiro juega al tenis.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_mismo",
+  "q": "¿a qué se dedica Ramiro?",
+  "crit": "electricista",
+  "r": "Ramiro es electricista.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_sin_cambio",
+  "q": "Sé que mañana llueve.",
+  "crit": "",
+  "r": "Vale, lo apunto: «Sé que mañana llueve».",
+  "v": null
+ },
+ {
+  "id": "limpia_sin_cambio",
+  "q": "Mi hermano Mario vive en Jaén.",
+  "crit": "jaen",
+  "r": "Entendido: Mario vive en Jaén.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_sin_cambio",
+  "q": "Mi hermano Mario tiene un coche rojo.",
+  "crit": "coche",
+  "r": "Entendido: Mario tiene un coche rojo; el coche de Mario es rojo.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_sin_cambio",
+  "q": "¿dónde vive Mario?",
+  "crit": "jaen",
+  "r": "Mario vive en Jaén.",
+  "v": "OK"
+ },
+ {
+  "id": "limpia_sin_cambio",
+  "q": "Mañana Mario viene a comer.",
+  "crit": "mario",
+  "r": "Entendido: Mario viene a comer mañana.",
+  "v": "OK"
+ }
+]

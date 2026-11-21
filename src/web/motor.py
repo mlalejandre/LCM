@@ -124,6 +124,27 @@ class Motor:
         return n or None
 
     def chat(self, texto, imagen=None, nombre='imagen'):
+        """La conversación de siempre y, después, la capa de SINTAXIS: si se ha leído un texto, el analizador entrenado saca sus relaciones;
+        si se pregunta, contesta primero esa memoria de relaciones (ver src/sintaxis/integra.py). Se apaga con LCM_SIN_SINTAXIS=1."""
+        out = self._chat_base(texto, imagen, nombre)
+        try:
+            if texto and not imagen and isinstance(out, dict):
+                from src.sintaxis import integra as _SI
+                if _SI.activo():
+                    n20 = self._nucleo20()
+                    if n20 is not None and not _SI.lee(n20, texto):
+                        rs = _SI.responde(n20, texto, out)
+                        if rs is not None:
+                            out = dict(out, respuesta=rs["respuesta"], origen_sintaxis=True, fuente_texto=rs.get("fuente_texto"), seguridad=rs.get("seguridad"))
+                            try:
+                                n20.ult_resp = out["respuesta"]
+                            except Exception:            # noqa
+                                pass
+        except Exception:                                # noqa
+            pass
+        return out
+
+    def _chat_base(self, texto, imagen=None, nombre='imagen'):
         if imagen is not None:
             return self._chat_imagen(texto, imagen, nombre)
         n20 = self._nucleo20()

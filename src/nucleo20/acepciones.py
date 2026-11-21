@@ -176,6 +176,22 @@ def firmas(nuc, w):
             anc = []
         if any(set([sa(p)] + anc) - _VAGOS <= set(b_) for _, (b_, _, _) in out.items()):
             continue                                     # misma rama que un sentido ya puesto («recipiente» y «vajilla»)
+        cara = None
+        if not os.environ.get("LCM_SIN_PAPELES"):        # 2.32: dos clases que comparten varios miembros son dos CARAS del mismo sentido, no dos sentidos
+            try:                                         # (una regla de medir es «herramienta» y «material de oficina», como las tijeras y la grapadora)
+                from . import tema as T
+                mp = T.miembros(sa(p)) - {w0}
+                for e_ in out:
+                    me = T.miembros(e_) - {w0}
+                    com = len(mp & me)
+                    if com >= 2 and com >= 0.15 * min(len(mp), len(me)):
+                        cara = e_
+                        break
+            except Exception:                            # noqa
+                cara = None
+        if cara:
+            out[cara][0] |= set([sa(p)] + anc) - _VAGOS
+            continue
         out[sa(p)] = [set([sa(p)] + anc) - _VAGOS, "persona" in anc, 0.5 if n_ == 0 else 0.15]
     for s in sorted(sentidos(w)):
         ps_ = [p for p in hyp.get(s, ())]
@@ -218,7 +234,7 @@ def _de_un_todo(w0, c):
     return set()
 
 
-def reparto(nuc, w, frase="", ctx=None):
+def reparto(nuc, w, frase="", ctx=None, papeles=None):
     """[(etiqueta, probabilidad, puntos)] de mayor a menor, con la frase de ahora y la caché de contexto."""
     from . import contexto as X
     fs = firmas(nuc, w)
@@ -235,6 +251,16 @@ def reparto(nuc, w, frase="", ctx=None):
             if (_de_un_todo(w0, c) - _VAGOS) & (b | {et}):
                 pt += 2.0 * p
         puntos.append(pt)
+    traza = [{"lit": round(x, 2)} for x in puntos]       # de dónde sale cada punto, para auditar
+    nuc._traza232 = (w0, [f[0] for f in fs], traza)
+    try:                                                 # 2.32: por el PAPEL que hace la palabra (el que come no es lo comido)
+        from . import papeles as P
+        if papeles:
+            for i_, (pt_, _) in enumerate(P.apoyo(nuc, papeles, [f[1] | {f[0]} for f in fs], sin=(w0,))):
+                puntos[i_] += pt_
+                traza[i_]["papel"] = pt_
+    except Exception:                                    # noqa
+        pass
     try:                                                 # 2.31: por la CLASE de cada sentido. Una palabra del contexto apoya un sentido si va con otros miembros de esa clase
         from . import tema as T
         if not os.environ.get("LCM_SIN_TEMA") and not os.environ.get("LCM_SIN_CLASE"):
@@ -245,6 +271,7 @@ def reparto(nuc, w, frase="", ctx=None):
                     if t >= 0.2:
                         v += p * t
                 puntos[i_] += 1.5 * v
+                traza[i_]["clase"] = round(1.5 * v, 2)
     except Exception:                                    # noqa
         pass
     try:                                                 # 2.30: por las COMPAÑÍAS de la palabra, agrupadas. El contexto elige un grupo y el grupo dice el sentido
@@ -278,8 +305,28 @@ def reparto(nuc, w, frase="", ctx=None):
                         ets[i_] = af[0][1]
             _et_de = {id(g): e for g, e in zip(gs, ets)}
             por = {}                                                                   # votos del contexto, sumados por sentido («sin» = grupos sin sentido conocido)
-            for g in gs:
-                v = sum(p * (1.0 if c in g else max((t for t in (T.tema(nuc, c, n) for n in g) if t >= 0.2), default=0.0)) for c, p in ctx.items())
+            from . import papeles as _P232
+            nuevo_ = not _P232.apagado()
+            if nuevo_:
+                # 2.32: (1) cada palabra del contexto vota a UN grupo, el suyo (antes sumaba en todos, y un grupo grande se lo llevaba todo);
+                #       (2) si los grupos no reparten al menos dos sentidos distintos, no dicen nada sobre cuál es (un solo grupo no elige).
+                votos_ = [0.0] * len(gs)
+                for c, p in ctx.items():
+                    a_ = [1.0 if c in g else max((t for t in (T.tema(nuc, c, n) for n in g) if t >= 0.45), default=0.0) for g in gs]
+                    if not a_ or max(a_) <= 0:
+                        continue
+                    k_ = max(range(len(gs)), key=lambda i_: a_[i_])
+                    otro_ = max((a_[i_] for i_ in range(len(gs)) if (_et_de.get(id(gs[i_])) or "sin") != (_et_de.get(id(gs[k_])) or "sin")), default=0.0)
+                    if a_[k_] >= 1.3 * otro_:
+                        votos_[k_] += p * a_[k_]
+                if len({e for e in ets if e}) < 2 or os.environ.get("LCM_SIN_GRUPO"):
+                    votos_ = [0.0] * len(gs)
+                votos_ = [v_ * PESO_GRUPO() for v_ in votos_]
+            for ig_, g in enumerate(gs):
+                if nuevo_:
+                    v = votos_[ig_]
+                else:
+                    v = sum(p * (1.0 if c in g else max((t for t in (T.tema(nuc, c, n) for n in g) if t >= 0.2), default=0.0)) for c, p in ctx.items())
                 if v > 0:
                     e_ = _et_de.get(id(g)) or "sin"
                     d_ = por.setdefault(e_, [0.0, set()])
@@ -293,6 +340,7 @@ def reparto(nuc, w, frase="", ctx=None):
                     dest = next((i_ for i_, f in enumerate(fs) if f[0] == e_ or e_ in f[1]), None) if e_ != "sin" else None
                     if dest is not None:
                         puntos[dest] += 2.0 * v_
+                        traza[dest]["grupo"] = round(2.0 * v_, 2)
                         nuc._grupo230 = (w0, None, g_)
                     else:
                         nuc._grupo230 = (w0, "sin", g_)                                 # hay un grupo claro pero no se sabe qué sentido es: habrá que preguntar
@@ -326,6 +374,11 @@ def apunta(nuc, texto):
             continue
         if len(firmas(nuc, w)) >= 2:
             S[w0] = {"ctx": {c: p for c, p in ctx.items() if c != w0}, "turno": nuc.turno}
+            try:                                         # 2.32: y el papel que hace en la frase (sujeto u objeto de qué verbo)
+                from . import papeles as P
+                S[w0]["papeles"] = [(v_, r_) for v_, r_, n_ in P.analiza(t) if n_ == w0]
+            except Exception:                            # noqa
+                pass
     if len(S) > 12:
         for k_ in sorted(S, key=lambda k_: S[k_]["turno"])[:-12]:
             del S[k_]
@@ -343,6 +396,24 @@ def _aprende(nuc, w0, et, ctx):
     if g and g[0] == w0:
         extra = set(g[2])                                # y todo el grupo de compañías en el que caía la frase: se aprende el sentido entero, no una frase
     a["bolsa"] = sorted(set(a["bolsa"]) | extra | {c for c, p in (ctx or {}).items() if p >= 0.4 and len(c) > 3})[:60]
+
+
+def _comparten(w0, a, b):
+    """¿Comparten dos clases al menos dos miembros además de la palabra? (documento y medio de comunicación: periódico, revista)."""
+    try:
+        from . import tema as T
+        ma, mb = T.miembros(a) - {w0}, T.miembros(b) - {w0}
+        com = len(ma & mb)
+        return com >= 2 and com >= 0.10 * min(len(ma), len(mb))   # flor y color comparten rosa, lila y violeta, pero son 2 de 29: no son la misma cosa
+    except Exception:                                    # noqa
+        return False
+
+
+def PESO_GRUPO():
+    return float(os.environ.get("LCM_W_GRUPO", "1.0" if os.environ.get("LCM_SIN_PAPELES") else "0.5"))   # barrido 1 / 0,5 / 0,25 / 0 en 8 conjuntos: 0,5 no pierde nada; 0 rompe dos turnos de la 2.30
+
+
+SEGURO_SENTIDO = 0.62   # 2.32: medido en 136 preguntas de desarrollo: de 0,62 a 0,70 la respuesta más probable acertó 8 de 8; por debajo de 0,45 falla
 
 
 def _aclara(nuc, q, r_nucleo):
@@ -376,12 +447,19 @@ def _aclara(nuc, q, r_nucleo):
     if d.get("fijo"):
         orden = [(d["fijo"], 1.0, 9.0)]
     else:
-        orden = reparto(nuc, w0, ctx=d.get("ctx") or {})
+        orden = reparto(nuc, w0, ctx=d.get("ctx") or {}, papeles=d.get("papeles"))
     if not orden:
         return None
 
     def es(et):
         f = fs.get(et)
+        if f and not os.environ.get("LCM_SIN_PAPELES"):
+            try:                                         # 2.32: «cuero» es un material según la base: ese sentido también cumple «¿es un material?»
+                from . import conceptos as K
+                if z in [sa(a_) for a_ in K.ancestros(et)] or zc in [sa(a_) for a_ in K.ancestros(et)]:
+                    return True
+            except Exception:                            # noqa
+                pass
         return bool(f) and (z == et or zc == et or z in et.split() or z in f[1] or zc in f[1] or X.parecido(z, et) >= 0.6 or any(X.parecido(z, b) >= 0.75 for b in f[1]))
     e1, p1, pt1 = orden[0]
     defecto = next((f[0] for f in fl if f[3] >= 0.5), None)
@@ -396,15 +474,21 @@ def _aclara(nuc, q, r_nucleo):
     pista_si = bool(si_) and (max(x[2] for x in si_) > 0 or bool(d.get("fijo")))
     pista_no = bool(no_) and (max(x[2] for x in no_) > 0 or bool(d.get("fijo")))
     r0 = (r_nucleo or {}).get("respuesta") or ""
-    if defecto and es(defecto) and not (p_no >= X.SEGURO and pista_no):
-        if p_si >= X.SEGURO and pista_si and re.match(r"^No\b", r0):
+    seg_ = X.SEGURO if (os.environ.get("LCM_SIN_PAPELES") or d.get("fijo")) else SEGURO_SENTIDO
+    if seg_ < X.SEGURO and max((x[2] for x in orden), default=0.0) < 1.0:
+        seg_ = X.SEGURO                                  # con poca pista (menos de un punto) se exige lo de antes: «un banco de la plaza» no basta para decir edificio
+    nuc._medida232 = (w0, round(p_si, 3), round(p_no, 3), pista_si, pista_no)   # para medir la calibración
+    if defecto and es(defecto) and not (p_no >= seg_ and pista_no):
+        if p_si >= seg_ and pista_si and re.match(r"^No\b", r0):
             return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {si_[0][0]}.")
         return None                                      # lo que se pregunta encaja con el sentido de siempre y nada dice otra cosa: ni se duda ni se pregunta
     nuc._ult_prob229 = (w0, [(e, round(p, 2)) for e, p, _ in orden[:3]])
     otros = [e for e, _, _ in orden[1:] if es(e)]
-    if p_si >= X.SEGURO and pista_si:
+    if p_si >= seg_ and pista_si:
         return _ok(f"Sí: por lo que me has contado, hablamos de «{w0}» en el sentido de {si_[0][0]}.")
-    if p_no >= X.SEGURO and pista_no:
+    if p_no >= seg_ and pista_no:
+        if not os.environ.get("LCM_SIN_PAPELES") and si_ and max(x[2] for x in si_) >= 0.3 * max(x[2] for x in no_) and _comparten(w0, si_[0][0], no_[0][0]):
+            return None                                  # 2.32: dos clases con miembros comunes y pista para las dos (la carta del buzón es «medio de comunicación» Y «documento»): no se niega
         if si_ or re.match(r"^S[ií]\b", r0):
             return _ok(f"No: por lo que me has contado, hablamos de «{w0}» en el sentido de {no_[0][0]}, no de {_un(m.group(2).lower().strip())}.")
         return None

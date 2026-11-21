@@ -233,11 +233,43 @@ def _medidas(t):
     return t
 
 
+_MARCO232 = (r"^(?:(?:hoy|ayer|anoche|esta mañana|esta tarde|esta semana|antes|ahora)\s*,?\s+)?(?:he aprendido|aprend[ií]|he sabido|me he enterado de|me enter[eé] de|he descubierto|"
+             r"descubr[ií]|me han dicho|me han contado|me dijeron|me contaron|he o[ií]do|he le[ií]do|resulta)\s+que\s+")
+
+
+def _noticia232(t):
+    """2.32 · Maneras corrientes de contar algo que el núcleo no entendía:
+    «Hoy he aprendido que mi tío es carpintero. Que vive en Navarra y que le gusta cazar» -> «Mi tío es carpintero. Vive en Navarra y le gusta cazar.»
+    «Tengo un amigo que se llama Manuel Pérez que le gustan mucho los gatos»        -> «Mi amigo se llama Manuel y le gustan mucho los gatos.»"""
+    import os
+    if os.environ.get("LCM_SIN_PAPELES") or "?" in t or "¿" in t or "\n" in t or len(t) > 300:
+        return t
+    t0 = t
+    t = re.sub(r"\b(gustan?|encantan?|interesan?)\s+muchos\s+(?=(?:los|las|el|la)\b)", r"\1 mucho ", t, flags=re.I)
+    marco = bool(re.match(_MARCO232, t, re.I))
+    if marco:
+        t = re.sub(_MARCO232, "", t, flags=re.I)
+        t = t[:1].upper() + t[1:]
+    if marco or re.search(r"[.!]\s+Que\s+[a-záéíóúñ]", t):
+        t = re.sub(r"([.!])\s+Que\s+([a-záéíóúñ])", lambda m: m.group(1) + " " + m.group(2).upper(), t)   # «. Que vive en…» sigue contando lo mismo
+        t = re.sub(r"(\s+y|,)\s+que\s+(?=[a-záéíóúñ])", r"\1 ", t)
+    m = re.match(r"^(?:tengo|conozco a)\s+(un|una)\s+([a-záéíóúñ]+)\s+(?:que\s+se\s+llama|llamad[oa])\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)((?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){0,2})"
+                 r"(?:\s*(?:,|\by\b)?\s*(?:y\s+)?(?:que|al que|a la que|a quien)\s+(.+?))?[.!]?$", t, re.I)
+    if m and m.group(3)[:1].isupper():
+        rol, nombre, resto = m.group(2).lower(), m.group(3), (m.group(5) or "").strip()
+        t = f"Mi {rol} se llama {nombre}" + (f" y {resto}" if resto else "") + "."
+    return t if t else t0
+
+
 def normaliza(raw: str) -> str:
     """Quita muletillas, corrige erratas frecuentes y pone signos a las preguntas que no los traen."""
     t = raw.strip()
     if not t:
         return t
+    try:
+        t = _noticia232(t)
+    except Exception:                                    # noqa
+        pass
     try:
         t = _medidas(t)
         t = _clitico_perfecto(t)
