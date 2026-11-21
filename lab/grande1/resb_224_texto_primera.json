@@ -1,0 +1,3386 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 28,
+    "ok": 27,
+    "falsas": 1,
+    "acierto": 96.4
+   },
+   "TOTAL": {
+    "n": 352,
+    "ok": 308,
+    "falsas": 18,
+    "acierto": 87.5
+   },
+   "L": {
+    "n": 100,
+    "ok": 92,
+    "falsas": 2,
+    "acierto": 92.0
+   },
+   "I": {
+    "n": 30,
+    "ok": 30,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 30,
+    "ok": 30,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "P": {
+    "n": 40,
+    "ok": 30,
+    "falsas": 3,
+    "acierto": 75.0
+   },
+   "M": {
+    "n": 20,
+    "ok": 14,
+    "falsas": 3,
+    "acierto": 70.0
+   },
+   "D": {
+    "n": 20,
+    "ok": 12,
+    "falsas": 1,
+    "acierto": 60.0
+   },
+   "N": {
+    "n": 40,
+    "ok": 35,
+    "falsas": 5,
+    "acierto": 87.5
+   },
+   "C": {
+    "n": 20,
+    "ok": 18,
+    "falsas": 1,
+    "acierto": 90.0
+   },
+   "G": {
+    "n": 10,
+    "ok": 9,
+    "falsas": 1,
+    "acierto": 90.0
+   },
+   "K": {
+    "n": 14,
+    "ok": 11,
+    "falsas": 1,
+    "acierto": 78.6
+   }
+  },
+  "frases_cubiertas": [
+   132,
+   141
+  ]
+ },
+ "filas": [
+  {
+   "tema": "las ballenas",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 13; las otras 3 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "V",
+   "q": "¿qué son las ballenas?",
+   "crit": "mamifero*",
+   "r": "Una ballena es un mamífero. Las ballenas viven en el mar y nadan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿dónde viven las ballenas?",
+   "crit": "mar",
+   "r": "En el texto pone: «Las ballenas son mamíferos que viven en el mar».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿por dónde respiran las ballenas?",
+   "crit": "orificio|cabeza",
+   "r": "Sí: el texto dice «Respiran aire por un orificio que tienen en la cabeza».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "I",
+   "q": "¿cuál es el animal más grande del planeta?",
+   "crit": "ballena azul",
+   "r": "La ballena azul: según lo que he aprendido, es el animal más grande del planeta.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿cuánto mide la ballena azul?",
+   "crit": "treinta|30",
+   "r": "La ballena azul mide unos treinta metros.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿de qué se alimentan las ballenas?",
+   "crit": "krill",
+   "r": "Las ballenas se alimentan de krill.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "las ballenas",
+   "t": "V",
+   "q": "¿qué es el krill?",
+   "crit": "crustaceo",
+   "r": "El krill es un crustáceo parecido a una gamba. Además, según lo que he aprendido, el krill es un crustáceo muy pequeño parecido a una gamba.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "las ballenas",
+   "t": "V",
+   "q": "¿qué son las barbas?",
+   "crit": "laminas",
+   "r": "Según lo que he aprendido, la barba es filtran el agua con unas láminas.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿con qué filtran el agua las ballenas?",
+   "crit": "barbas|laminas",
+   "r": "En el texto pone, hablando del krill: «Para comer filtran el agua con unas láminas llamadas barbas».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "las ballenas",
+   "t": "I",
+   "q": "¿cómo se llaman las crías de las ballenas?",
+   "crit": "ballenato*",
+   "r": "Ballenatos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿cuánto tiempo maman los ballenatos?",
+   "crit": "ano",
+   "r": "Los ballenatos maman durante un año.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿con qué se comunican las ballenas?",
+   "crit": "cantos",
+   "r": "En el texto pone: «Las ballenas se comunican con cantos que se oyen a muchos kilómetros».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿cuándo viajan las ballenas hacia aguas cálidas?",
+   "crit": "invierno",
+   "r": "En el texto pone: «En invierno viajan hacia aguas cálidas».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "las ballenas",
+   "t": "I",
+   "q": "¿cómo se llama un grupo de ballenas?",
+   "crit": "manada",
+   "r": "Manada. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿dónde duermen las ballenas?",
+   "crit": "superficie",
+   "r": "Las ballenas duermen cerca de la superficie.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿quiénes estudian las ballenas?",
+   "crit": "cetologo*",
+   "r": "Los cetólogos estudian las ballenas.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "las ballenas",
+   "t": "L",
+   "q": "¿para qué se cazaban ballenas antiguamente?",
+   "crit": "aceite",
+   "r": "Los cetólogos se cazaban ballenas para obtener aceite antiguamente.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "las ballenas",
+   "t": "H",
+   "q": "¿una ballena es un animal?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, las ballenas son mamíferos que viven en el mar.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "H",
+   "q": "¿el krill es un crustáceo?",
+   "crit": "^si",
+   "r": "Sí, el krill es un crustáceo parecido a una gamba.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "H",
+   "q": "¿un cetólogo es una persona?",
+   "crit": "^si",
+   "r": "Sí, los cetólogos son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "P",
+   "q": "¿de qué se nutren las ballenas?",
+   "crit": "krill",
+   "r": "Las ballenas se alimentan de krill. Entiendo «nutrir» como «alimentar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "P",
+   "q": "¿dónde habitan las ballenas?",
+   "crit": "mar",
+   "r": "En el texto pone: «Las ballenas son mamíferos que viven en el mar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "P",
+   "q": "¿quiénes investigan las ballenas?",
+   "crit": "cetologo*",
+   "r": "Los cetólogos estudian las ballenas. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "P",
+   "q": "¿dónde descansan las ballenas?",
+   "crit": "superficie",
+   "r": "Las ballenas duermen cerca de la superficie. Entiendo «descansar» como «dormir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "M",
+   "q": "¿cuánto mide el animal más grande del planeta?",
+   "crit": "treinta|30",
+   "r": "En el texto pone, hablando de la ballena azul: «Mide unos treinta metros y pesa más de cien toneladas». Lo junto con otra cosa que aprendí: la ballena azul es «animal más grande del planeta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "M",
+   "q": "¿cuánto pesa el animal más grande del planeta?",
+   "crit": "cien|100",
+   "r": "En el texto pone, hablando de la ballena azul: «Mide unos treinta metros y pesa más de cien toneladas». Lo junto con otra cosa que aprendí: la ballena azul es «animal más grande del planeta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "D",
+   "q": "¿la ballena azul respira aire?",
+   "crit": "^si",
+   "r": "No lo sé: no me has dicho nada sobre eso. De la ballena azul sé que es un animal y es muy grande.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "D",
+   "q": "¿una ballena es un pez?",
+   "crit": "^no|mamifero*",
+   "r": "No, una ballena es un mamífero, no un pez.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "N",
+   "q": "¿quién descubrió la ballena azul?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "N",
+   "q": "¿cuánto cuesta el aceite de ballena?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "N",
+   "q": "¿cuántas ballenas quedan en el mundo?",
+   "crit": "ABST",
+   "r": "No lo sé. («quedar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "N",
+   "q": "¿quién pinta las ballenas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («pintar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "C",
+   "q": "mi hermano es cetólogo",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hermano es cetólogo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "C",
+   "q": "¿mi hermano estudia las ballenas?",
+   "crit": "^si|estudia*",
+   "r": "Sí, los cetólogos estudian las ballenas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "G",
+   "q": "descríbeme el krill",
+   "crit": "crustaceo|pequeno|gamba",
+   "r": "El krill es un crustáceo muy pequeño parecido a una gamba. El krill es un crustáceo parecido a una gamba. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "K",
+   "q": "las ballenas viajan hacia aguas cálidas en verano",
+   "crit": "ANY",
+   "r": "Entendido: las ballenas viajan hacia aguas cálidas en verano.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "las ballenas",
+   "t": "K",
+   "q": "los ballenatos maman durante tres años",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|un ano",
+   "r": "Sí, ya lo sabía. Pero ojo: en lo que leí ponía «Las crías se llaman ballenatos y maman durante un año». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 10; las otras 5 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "V",
+   "q": "¿qué es un desierto?",
+   "crit": "lugar",
+   "r": "Un desierto es un paisaje. Además, según lo que he aprendido, el desierto es un lugar donde casi nunca llueve.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿llueve mucho en un desierto?",
+   "crit": "^no|casi nunca",
+   "r": "Me dijiste: «Un desierto es un lugar donde casi nunca llueve».",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿cuándo hace frío en el desierto?",
+   "crit": "noche",
+   "r": "En el texto pone: «De día hace mucho calor y de noche hace frío».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el desierto",
+   "t": "I",
+   "q": "¿cuál es el desierto cálido más grande del mundo?",
+   "crit": "sahara",
+   "r": "En el texto pone: «El Sáhara es el desierto cálido más grande del mundo».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿dónde está el Sáhara?",
+   "crit": "africa|norte",
+   "r": "Sáhara está en el norte de África.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el desierto",
+   "t": "V",
+   "q": "¿qué son las dunas?",
+   "crit": "montanas|arena",
+   "r": "Una duna es un paisaje.",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿qué mueve las dunas?",
+   "crit": "viento",
+   "r": "En el texto pone: «Las dunas son montañas de arena que mueve el viento».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el desierto",
+   "t": "V",
+   "q": "¿qué es un oasis?",
+   "crit": "zona|agua|palmeras",
+   "r": "Un oasis es un paisaje. Además, según lo que he aprendido, el oasis es una zona del desierto donde hay agua y palmeras.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿cuánto aguantan los camellos sin beber?",
+   "crit": "dias",
+   "r": "Los camellos aguantan muchos días sin beber.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿dónde guardan grasa los camellos?",
+   "crit": "joroba",
+   "r": "Los camellos guardan grasa en la joroba.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿dónde almacenan agua los cactus?",
+   "crit": "tallo",
+   "r": "Los cactus almacenan agua en el tallo.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el desierto",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que viven en el desierto y se mueven de un sitio a otro?",
+   "crit": "nomada*",
+   "r": "En el texto pone, hablando de las personas: «Las personas que viven en el desierto y se mueven de un sitio a otro se llaman nómadas».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿dónde viven los nómadas?",
+   "crit": "tiendas",
+   "r": "Los nómadas viven en tiendas de tela.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el desierto",
+   "t": "I",
+   "q": "¿cómo se llama un grupo de camellos que viaja junto?",
+   "crit": "caravana",
+   "r": "Caravana. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿qué transportaban las caravanas?",
+   "crit": "sal|telas",
+   "r": "Las caravanas transportaban sal y telas.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el desierto",
+   "t": "L",
+   "q": "¿cuándo salen muchos animales del desierto?",
+   "crit": "noche",
+   "r": "En el texto pone: «Muchos animales del desierto salen solo de noche».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el desierto",
+   "t": "H",
+   "q": "¿el Sáhara es un desierto?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El Sáhara es el desierto cálido más grande del mundo».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "H",
+   "q": "¿un camello es un animal?",
+   "crit": "^si",
+   "r": "Sí, un camello es un animal. Lo deduzco porque un camello es un mamífero y un mamífero es un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "H",
+   "q": "¿un nómada es una persona?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «Las personas que viven en el desierto y se mueven de un sitio a otro se llaman nómadas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "P",
+   "q": "¿dónde guardan agua los cactus?",
+   "crit": "tallo",
+   "r": "Los cactus almacenan agua en el tallo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "P",
+   "q": "¿qué llevaban las caravanas?",
+   "crit": "sal|telas",
+   "r": "Las caravanas transportaban sal y telas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "P",
+   "q": "¿dónde habitan los nómadas?",
+   "crit": "tiendas",
+   "r": "Los nómadas viven en tiendas de tela.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "P",
+   "q": "¿qué desplaza las dunas?",
+   "crit": "viento",
+   "r": "En el texto pone: «Las dunas son montañas de arena que mueve el viento». Entiendo «desplazar» como «mover».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "M",
+   "q": "¿dónde está el desierto cálido más grande del mundo?",
+   "crit": "africa|norte",
+   "r": "Sáhara está en el norte de África. Lo junto con otra cosa que aprendí: el Sáhara es «desierto cálido más grande del mundo».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "M",
+   "q": "¿qué transportaba un grupo de camellos que viaja junto?",
+   "crit": "sal|telas",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "D",
+   "q": "¿hay agua en un oasis?",
+   "crit": "^si",
+   "r": "No, Sáhara está en el norte de África.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "D",
+   "q": "¿en el Sáhara llueve mucho?",
+   "crit": "^no|casi nunca",
+   "r": "No lo sé: no tengo datos del tiempo, solo lo que tú me cuentes.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "N",
+   "q": "¿quién descubrió el Sáhara?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "N",
+   "q": "¿cuánto cuesta un camello?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "N",
+   "q": "¿cuántos oasis hay en África?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "N",
+   "q": "¿quién riega los cactus?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («regar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "C",
+   "q": "mi abuelo era nómada",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuelo era nomado.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "C",
+   "q": "¿mi abuelo vivía en una tienda?",
+   "crit": "^si|tienda*",
+   "r": "No, los nómadas viven en tiendas de tela. Lo deduzco porque tu abuelo es nomado y eso vale para las nomadas.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "G",
+   "q": "descríbeme un oasis",
+   "crit": "zona|agua|palmeras",
+   "r": "El oasis es una zona del desierto donde hay agua y palmeras. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "K",
+   "q": "los camellos guardan grasa en las patas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|joroba",
+   "r": "Eso no coincide con lo que aprendí: la grasa está en la joroba. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el desierto",
+   "t": "K",
+   "q": "el Sáhara está en el sur de África",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|norte",
+   "r": "Eso no coincide con lo que aprendí: Sáhara está en el norte de África. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 12; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "V",
+   "q": "¿qué es una orquesta?",
+   "crit": "grupo|musicos",
+   "r": "Una orquesta es un grupo, como me dijiste; de fábrica sé además que es una organización. Además, según lo que he aprendido, la orquesta es un grupo grande de músicos que tocan juntos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿con qué marca el ritmo el director?",
+   "crit": "batuta",
+   "r": "En el texto pone: «El director marca el ritmo con una batuta».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿quién marca el ritmo?",
+   "crit": "director",
+   "r": "El director marca el ritmo con una batuta.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "V",
+   "q": "¿qué es la batuta?",
+   "crit": "palo",
+   "r": "La batuta es una palo fina corta.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿dónde se sientan los violines?",
+   "crit": "delante|izquierda",
+   "r": "Los violines se sientan delante a la izquierda del director.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿con qué se toca el violín?",
+   "crit": "arco",
+   "r": "Los violines se tocan con un arco.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la orquesta",
+   "t": "I",
+   "q": "¿cuál es el instrumento de cuerda más grande de la orquesta?",
+   "crit": "contrabajo",
+   "r": "En el texto pone: «El contrabajo es el instrumento de cuerda más grande de la orquesta».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿cómo se toca el contrabajo?",
+   "crit": "pie",
+   "r": "El contrabajo se toca de pie.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la orquesta",
+   "t": "V",
+   "q": "¿qué son los timbales?",
+   "crit": "tambores",
+   "r": "Un timbal es un instrumento. Además, según lo que he aprendido, los timbales son tambores que se golpean con mazas.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿con qué se golpean los timbales?",
+   "crit": "mazas",
+   "r": "En el texto pone: «Los timbales son tambores que se golpean con mazas».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿cuándo afinan los músicos sus instrumentos?",
+   "crit": "antes|concierto",
+   "r": "En el texto pone: «Antes del concierto los músicos afinan sus instrumentos».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿qué instrumento da la nota para afinar?",
+   "crit": "oboe",
+   "r": "No lo sé. En lo que he aprendido no aparece «instrumentar»; si es otra forma de decir algo, dímelo («instrumentar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "la orquesta",
+   "t": "I",
+   "q": "¿cómo se llama la hoja donde están escritas las notas?",
+   "crit": "partitura",
+   "r": "Partitura. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la orquesta",
+   "t": "I",
+   "q": "¿cómo se llama el primer violín?",
+   "crit": "concertino",
+   "r": "Concertino. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿cuánto duran los ensayos?",
+   "crit": "tres|3",
+   "r": "Los ensayos duran tres horas.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "la orquesta",
+   "t": "L",
+   "q": "¿cuándo aplaude el público?",
+   "crit": "terminar|concierto",
+   "r": "En el texto pone: «Al terminar el concierto el público aplaude».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "la orquesta",
+   "t": "H",
+   "q": "¿el contrabajo es un instrumento?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el contrabajo es el instrumento de cuerda más grande de la orquesta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "H",
+   "q": "¿los timbales son tambores?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, los timbales son tambores que se golpean con mazas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "H",
+   "q": "¿el director es una persona?",
+   "crit": "^si",
+   "r": "Sí, un director es una persona. Lo deduzco porque un director es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿con qué se pegan los timbales?",
+   "crit": "mazas",
+   "r": "En el texto pone: «Los timbales son tambores que se golpean con mazas». Entiendo «pegar» como «golpear».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿cuánto tardan los ensayos?",
+   "crit": "tres|3",
+   "r": "No lo sé. («tardar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿quién señala el ritmo?",
+   "crit": "director",
+   "r": "El director marca el ritmo con una batuta. Entiendo «señalar» como «marcar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "P",
+   "q": "¿cuándo ajustan los músicos sus instrumentos?",
+   "crit": "antes|concierto",
+   "r": "No lo sé. («ajustar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "M",
+   "q": "¿cómo se toca el instrumento de cuerda más grande de la orquesta?",
+   "crit": "pie",
+   "r": "El contrabajo se toca de pie. Lo junto con otra cosa que aprendí: el contrabajo es «instrumento de cuerda más grande de la orquesta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "M",
+   "q": "¿qué es el palo con el que el director marca el ritmo?",
+   "crit": "batuta|fino|corto",
+   "r": "En el texto pone: «El director marca el ritmo con una batuta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "D",
+   "q": "¿el violín es un instrumento de cuerda?",
+   "crit": "^si|ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "D",
+   "q": "¿el público aplaude antes del concierto?",
+   "crit": "terminar|ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "N",
+   "q": "¿quién inventó el violín?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "N",
+   "q": "¿cuánto cuesta un contrabajo?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "N",
+   "q": "¿cuántos músicos hay en la orquesta?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "N",
+   "q": "¿quién limpia los timbales?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («limpiar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "C",
+   "q": "mi prima es directora de orquesta",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu prima es director de orquesta.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "C",
+   "q": "¿mi prima usa una batuta?",
+   "crit": "^si|batuta",
+   "r": "No lo sé: no me has dicho nada sobre eso. De tu prima sé que es director de orquesta.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "G",
+   "q": "descríbeme los timbales",
+   "crit": "tambores|mazas",
+   "r": "El timbal es tambores que se golpean con mazas. Los timbales son tambores. Los timbales están escritos las notas en la partitura. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "K",
+   "q": "los ensayos duran cinco horas",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|tres",
+   "r": "Entendido: los ensayos duran cinco horas. Pero ojo: en lo que leí ponía «Los ensayos duran tres horas». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la orquesta",
+   "t": "K",
+   "q": "el contrabajo se toca sentado",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|pie",
+   "r": "Entendido: el contrabajo se toca sentado.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "V",
+   "q": "¿qué es un hospital?",
+   "crit": "edificio",
+   "r": "Un hospital es un edificio. Los hospitales atienden enfermos. Además, según lo que he aprendido, el hospital es un edificio donde se cura a los enfermos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿a quién se cura en un hospital?",
+   "crit": "enfermos",
+   "r": "En el texto pone: «Un hospital es un edificio donde se cura a los enfermos».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿quiénes examinan a los pacientes?",
+   "crit": "medicos",
+   "r": "Los médicos examinan a los pacientes.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿quiénes ponen las inyecciones?",
+   "crit": "enfermera*",
+   "r": "Las enfermeras ponen las inyecciones.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el hospital",
+   "t": "I",
+   "q": "¿cómo se llama la sala donde se opera?",
+   "crit": "quirofano",
+   "r": "Quirófano. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿cómo tiene que estar todo en el quirófano?",
+   "crit": "limpio",
+   "r": "En el texto pone: «En el quirófano todo tiene que estar muy limpio».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el hospital",
+   "t": "V",
+   "q": "¿qué son los cirujanos?",
+   "crit": "medico*",
+   "r": "Un cirujano es un médico, como me dijiste; de fábrica sé además que es un profesional.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿cuánto tiempo se lavan las manos los cirujanos?",
+   "crit": "cinco|5",
+   "r": "Los médicos se lavan las manos durante cinco minutos antes de operar.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el hospital",
+   "t": "V",
+   "q": "¿qué es la ambulancia?",
+   "crit": "vehiculo",
+   "r": "Una ambulancia es un vehículo. Además, según lo que he aprendido, la ambulancia es el vehículo que lleva a los enfermos al hospital.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿para qué lleva una sirena la ambulancia?",
+   "crit": "paso",
+   "r": "Para pedir paso.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿cuándo están abiertas las urgencias?",
+   "crit": "dia|noche",
+   "r": "En el texto pone: «Las urgencias están abiertas día y noche».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿de qué es una foto una radiografía?",
+   "crit": "huesos",
+   "r": "En el texto pone: «Una radiografía es una foto de los huesos».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿dónde nacen los bebés?",
+   "crit": "maternidad",
+   "r": "Los bebés nacen en la planta de maternidad.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el hospital",
+   "t": "I",
+   "q": "¿cómo se llaman los médicos que cuidan a los niños?",
+   "crit": "pediatra*",
+   "r": "Pediatras. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el hospital",
+   "t": "I",
+   "q": "¿cómo se llama el aparato con el que el médico escucha el corazón?",
+   "crit": "fonendo",
+   "r": "Fonendo. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el hospital",
+   "t": "H",
+   "q": "¿un cirujano es un médico?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, los cirujanos son los médicos que operan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "H",
+   "q": "¿la ambulancia es un vehículo?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la ambulancia es el vehículo que lleva a los enfermos al hospital.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "H",
+   "q": "¿un pediatra es un médico?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, un pediatra es un médico.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes revisan a los pacientes?",
+   "crit": "medicos",
+   "r": "Los médicos examinan a los pacientes. Entiendo «revisar» como «examinar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes atienden a los niños?",
+   "crit": "pediatra*",
+   "r": "Los pediatras cuidan a los niños.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿qué transporta a los enfermos al hospital?",
+   "crit": "ambulancia",
+   "r": "En el texto pone: «La ambulancia es el vehículo que lleva a los enfermos al hospital».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿a quién se sana en un hospital?",
+   "crit": "enfermos",
+   "r": "En el texto pone: «Un hospital es un edificio donde se cura a los enfermos». Entiendo «sanar» como «curar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "M",
+   "q": "¿cómo tiene que estar todo en la sala donde se opera?",
+   "crit": "limpio",
+   "r": "En el texto pone: «En el quirófano todo tiene que estar muy limpio». Lo junto con otra cosa que aprendí: el quirófano es «sala donde se opera».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "M",
+   "q": "¿qué lleva el vehículo que lleva a los enfermos al hospital?",
+   "crit": "sirena",
+   "r": "En el texto pone: «La ambulancia es el vehículo que lleva a los enfermos al hospital».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "D",
+   "q": "¿un cirujano opera?",
+   "crit": "^si",
+   "r": "Sí, los médicos operan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "D",
+   "q": "¿las urgencias cierran por la noche?",
+   "crit": "^no|dia y noche",
+   "r": "No lo sé: no me has dicho nada sobre eso. De las urgencias sé que están abiertas día y están abiertas noche. En lo que he aprendido no aparece «cerrar»; si es otra forma de decir algo, dímelo («cerrar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿quién construyó el hospital?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («construir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿cuánto cuesta una radiografía?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿cuántos médicos hay en el hospital?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿quién conduce la ambulancia?",
+   "crit": "ABST",
+   "r": "En el texto pone: «La ambulancia es el vehículo que lleva a los enfermos al hospital». Entiendo «conducir» como «llevar».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "C",
+   "q": "mi madre es cirujana",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu madre es cirujana.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "C",
+   "q": "¿mi madre opera?",
+   "crit": "^si|opera*",
+   "r": "Sí, los médicos operan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "G",
+   "q": "descríbeme la ambulancia",
+   "crit": "vehiculo|enfermos|sirena",
+   "r": "La ambulancia es el vehículo que lleva a los enfermos al hospital. La ambulancia es vehículo. La ambulancia lleva una sirena para pedir paso. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "K",
+   "q": "los cirujanos se lavan las manos durante un minuto",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|cinco",
+   "r": "Eso no coincide con lo que aprendí: la mano está limpia. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el hospital",
+   "t": "K",
+   "q": "los bebés nacen en el quirófano",
+   "crit": "ANY",
+   "r": "Eso no coincide con lo que aprendí: los bebés nacen en la planta de maternidad. Me quedo con lo aprendido; si estaba mal, dime «corrígelo» y lo cambio.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 13; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "V",
+   "q": "¿qué es un aeropuerto?",
+   "crit": "lugar",
+   "r": "Un aeropuerto es un edificio. Además, según lo que he aprendido, el aeropuerto es un lugar donde despegan y aterrizan los aviones.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿qué despega en un aeropuerto?",
+   "crit": "aviones",
+   "r": "En el texto pone: «Un aeropuerto es un lugar donde despegan y aterrizan los aviones».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿dónde aterrizan los aviones?",
+   "crit": "pista",
+   "r": "En el texto pone: «Los aviones despegan y aterrizan en la pista».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "I",
+   "q": "¿cuál es el edificio más alto del aeropuerto?",
+   "crit": "torre de control",
+   "r": "La torre de control: según lo que he aprendido, es el edificio más alto del aeropuerto.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿quiénes dirigen a los aviones?",
+   "crit": "controlador*",
+   "r": "La torre de control dirige los controladores a los aviones por radio allí.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿dónde enseñan su billete los pasajeros?",
+   "crit": "mostrador",
+   "r": "En el texto pone: «Los pasajeros enseñan su billete en el mostrador».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿dónde viajan las maletas?",
+   "crit": "bodega",
+   "r": "Las maletas viajan en la bodega del avión.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "V",
+   "q": "¿qué es la bodega?",
+   "crit": "parte|abajo",
+   "r": "Una bodega es un edificio. Además, según lo que he aprendido, la bodega es la parte de abajo del avión.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "V",
+   "q": "¿quién es el piloto?",
+   "crit": "persona|conduce",
+   "r": "Según lo que he aprendido, el piloto es la persona que conduce el avión.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿quiénes atienden a los pasajeros?",
+   "crit": "auxiliar*",
+   "r": "Los auxiliar de vuelos atienden a los pasajeros durante el viaje.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿cuándo pasan los pasajeros un control de seguridad?",
+   "crit": "antes|subir",
+   "r": "En el texto pone: «Antes de subir al avión los pasajeros pasan un control de seguridad».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "I",
+   "q": "¿cómo se llama el pasillo que une la terminal con el avión?",
+   "crit": "pasarela",
+   "r": "Pasarela. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿cuántos pasajeros lleva un avión grande?",
+   "crit": "trescientos|300",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 11
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "L",
+   "q": "¿dónde se reparan los aviones?",
+   "crit": "hangar",
+   "r": "Los aviones se reparan en el hangar.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que reparan los aviones?",
+   "crit": "mecanico*",
+   "r": "Mecánicos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "H",
+   "q": "¿la torre de control es un edificio?",
+   "crit": "^si",
+   "r": "Sí, la torre de control es un edificio.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "H",
+   "q": "¿el piloto es una persona?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el piloto es la persona que conduce el avión.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "H",
+   "q": "¿un mecánico es una persona?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, un mecánico es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿dónde se arreglan los aviones?",
+   "crit": "hangar",
+   "r": "En el texto pone: «Los auxiliares de vuelo atienden a los pasajeros durante el viaje». Entiendo «arreglar» como «atender».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿quiénes guían a los aviones?",
+   "crit": "controlador*",
+   "r": "En el texto pone: «El piloto es la persona que conduce el avión». Entiendo «guiar» como «conducir».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿dónde muestran su billete los pasajeros?",
+   "crit": "mostrador",
+   "r": "En el texto pone: «Los pasajeros enseñan su billete en el mostrador».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "P",
+   "q": "¿cuántos pasajeros transporta un avión grande?",
+   "crit": "trescientos|300",
+   "r": "No lo sé. En lo que he aprendido no aparece «transportar»; si es otra forma de decir algo, dímelo («transportar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "M",
+   "q": "¿quiénes dirigen a los aviones desde el edificio más alto del aeropuerto?",
+   "crit": "controlador*",
+   "r": "En el texto pone: «Desde allí los controladores dirigen a los aviones por radio». Lo junto con otra cosa que aprendí: la torre de control es «edificio más alto del aeropuerto».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "M",
+   "q": "¿qué viaja en la parte de abajo del avión?",
+   "crit": "maletas",
+   "r": "En el texto pone: «Las maletas viajan en la bodega del avión». Lo junto con otra cosa que aprendí: la bodega es «parte de abajo del avión».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "D",
+   "q": "¿el piloto conduce el avión?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El piloto es la persona que conduce el avión».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "D",
+   "q": "¿las maletas viajan con los pasajeros?",
+   "crit": "bodega|ABST",
+   "r": "No lo sé. Solo sé que las maletas viajan en la bodega del avión.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "N",
+   "q": "¿quién inventó el avión?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "N",
+   "q": "¿cuánto cuesta un billete de avión?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "N",
+   "q": "¿cuántos aviones hay en el aeropuerto?",
+   "crit": "ABST",
+   "r": "En el texto pone: «Un avión grande lleva más de trescientos pasajeros».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "N",
+   "q": "¿quién limpia la pista?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («limpiar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "C",
+   "q": "mi tío es mecánico",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tío es mecánico.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "C",
+   "q": "¿mi tío repara los aviones?",
+   "crit": "^si|repara*",
+   "r": "Sí, los mecánicos reparan los aviones.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "G",
+   "q": "descríbeme la bodega",
+   "crit": "parte|abajo|maletas",
+   "r": "La bodega es la parte de abajo del avión. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "K",
+   "q": "un avión grande lleva más de mil pasajeros",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|trescientos",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Un avión grande lleva más de mil pasajeros».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el aeropuerto",
+   "t": "K",
+   "q": "las maletas viajan en la cabina del avión",
+   "crit": "ANY",
+   "r": "Entendido: las maletas viajan en la cabina del avión.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "V",
+   "q": "¿qué son los castores?",
+   "crit": "roedor*",
+   "r": "Un castor es un roedor, como me dijiste; de fábrica sé además que es un mamífero. Además, según lo que he aprendido, los castores son roedores que viven en los ríos.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿dónde viven los castores?",
+   "crit": "rios",
+   "r": "En el texto pone: «Los castores son roedores que viven en los ríos».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿de qué color tienen los dientes los castores?",
+   "crit": "naranja",
+   "r": "En el texto pone, hablando de los castores: «Tienen los dientes de color naranja y muy fuertes».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿qué cortan los castores con los dientes?",
+   "crit": "troncos|ramas",
+   "r": "Los castores cortan troncos y ramas con los dientes.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿con qué construyen presas los castores?",
+   "crit": "ramas|barro",
+   "r": "Los castores construyen presas con ramas y barro.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "los castores",
+   "t": "V",
+   "q": "¿qué es una presa?",
+   "crit": "muro",
+   "r": "La presa es un muro. Además, según lo que he aprendido, la presa es un muro que frena el agua del río.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "los castores",
+   "t": "I",
+   "q": "¿cómo se llama la casa de los castores?",
+   "crit": "madriguera",
+   "r": "Madriguera. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿dónde tiene la entrada la madriguera?",
+   "crit": "debajo|agua",
+   "r": "La madriguera tiene la entrada debajo del agua.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿para qué usan la cola los castores?",
+   "crit": "timon",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿cómo es la cola de los castores?",
+   "crit": "plana|ancha",
+   "r": "La cola de los castores es plana y ancha.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿qué hacen los castores cuando hay peligro?",
+   "crit": "golpean|cola",
+   "r": "Según lo que he aprendido: cuando hay peligro, Los castores golpean el agua con la cola.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿qué comen los castores?",
+   "crit": "corteza|hojas",
+   "r": "Los castores comen corteza y hojas.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿cuándo trabajan los castores?",
+   "crit": "noche",
+   "r": "Los castores trabajan de noche.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "los castores",
+   "t": "I",
+   "q": "¿cuál es el roedor más grande de Europa?",
+   "crit": "castor",
+   "r": "El castor: según lo que he aprendido, es el roedor más grande de Europa.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "los castores",
+   "t": "I",
+   "q": "¿qué crías nacen en primavera?",
+   "crit": "castor*",
+   "r": "Las cria de castores nacen en primavera.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "los castores",
+   "t": "L",
+   "q": "¿cuándo nacen las crías de castor?",
+   "crit": "primavera",
+   "r": "Las cria de castores nacen en primavera (del 21 de marzo de 2027 al 20 de junio de 2027).",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "los castores",
+   "t": "H",
+   "q": "¿un castor es un roedor?",
+   "crit": "^si",
+   "r": "Sí, los castores son roedores.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "H",
+   "q": "¿un castor es un animal?",
+   "crit": "^si",
+   "r": "Sí, un castor es un animal. Lo deduzco porque un castor es un mamífero y un mamífero es un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "H",
+   "q": "¿una presa es un muro?",
+   "crit": "^si",
+   "r": "Sí, la presa es un muro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "P",
+   "q": "¿con qué edifican presas los castores?",
+   "crit": "ramas|barro",
+   "r": "Los castores construyen presas con ramas y barro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "P",
+   "q": "¿qué ingieren los castores?",
+   "crit": "corteza|hojas",
+   "r": "Los castores comen corteza y hojas. Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "P",
+   "q": "¿dónde habitan los castores?",
+   "crit": "rios",
+   "r": "En el texto pone: «Los castores son roedores que viven en los ríos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "P",
+   "q": "¿para qué emplean la cola los castores?",
+   "crit": "timon",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "M",
+   "q": "¿dónde tiene la entrada la casa de los castores?",
+   "crit": "debajo|agua",
+   "r": "La madriguera tiene la entrada debajo del agua. Lo junto con otra cosa que aprendí: la madriguera es «casa de los castores».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "M",
+   "q": "¿qué come el roedor más grande de Europa?",
+   "crit": "corteza|hojas",
+   "r": "Los castores comen corteza y hojas. Lo junto con otra cosa que aprendí: el castor es «roedor más grande de Europa».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "D",
+   "q": "¿los castores saben nadar?",
+   "crit": "^si|nadan",
+   "r": "No lo sé: no me has dicho nada sobre eso. De los castores sé que son roedores y tienen los dientes de color naranja y muy fuertes.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "D",
+   "q": "¿los castores trabajan de día?",
+   "crit": "noche|ABST",
+   "r": "No lo sé. Solo sé que los castores trabajan de noche.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "N",
+   "q": "¿quién descubrió los castores?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "N",
+   "q": "¿cuánto pesa un castor?",
+   "crit": "ABST",
+   "r": "No lo sé. («pesar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "N",
+   "q": "¿cuántos castores hay en Europa?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "N",
+   "q": "¿quién caza a los castores?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («cazar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "C",
+   "q": "ayer vi un castor en el río",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: viste un castor en el río ayer.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "C",
+   "q": "¿qué vi ayer?",
+   "crit": "castor",
+   "r": "Viste un castor en el río ayer.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "G",
+   "q": "descríbeme una presa",
+   "crit": "muro|agua|rio",
+   "r": "La presa es un muro que frena el agua del río. La presa frena el agua del río. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "K",
+   "q": "las crías de castor nacen en otoño",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|primavera",
+   "r": "Entendido: las cria de castores nacen en otoño. Pero ojo: yo había aprendido que las cria de castores nacen en primavera. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los castores",
+   "t": "K",
+   "q": "los castores tienen los dientes de color azul",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|naranja",
+   "r": "Entendido: los castores tienen los dientes de color azul. Pero ojo: en lo que leí ponía «Tienen los dientes de color naranja y muy fuertes». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 12; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "V",
+   "q": "¿qué es el arroz?",
+   "crit": "cereal",
+   "r": "El arroz es un cereal. Además, según lo que he aprendido, el arroz es un cereal que se cultiva en campos inundados.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿dónde se cultiva el arroz?",
+   "crit": "campos",
+   "r": "El arroz se cultiva en campos inundados.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el arroz",
+   "t": "I",
+   "q": "¿cómo se llaman los campos de arroz?",
+   "crit": "arrozal*",
+   "r": "Arrozales. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿cuándo se siembra el arroz?",
+   "crit": "primavera",
+   "r": "El arroz se siembra en primavera (del 21 de marzo de 2027 al 20 de junio de 2027).",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿cuándo se recoge el arroz?",
+   "crit": "otono",
+   "r": "El arroz se recoge en otoño (del 23 de septiembre de 2026 al 20 de diciembre de 2026).",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿qué necesita la planta del arroz?",
+   "crit": "agua|calor",
+   "r": "En el texto pone: «La planta necesita mucha agua y mucho calor».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿dónde crecen los granos de arroz?",
+   "crit": "espiga",
+   "r": "En el texto pone: «Los granos crecen en una espiga».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿dónde se secan los granos?",
+   "crit": "sol",
+   "r": "Los granos se secan de la cosecha al sol.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿dónde se quita la cáscara del grano?",
+   "crit": "molino",
+   "r": "La cáscara de los granos se quita en un molino.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el arroz",
+   "t": "V",
+   "q": "¿qué es el arroz integral?",
+   "crit": "arroz|cascara",
+   "r": "El arroz integral es arroz. Además, según lo que he aprendido, el arroz integral es el arroz que conserva la cáscara.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿el arroz integral tarda más en cocerse?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «Tarda más en cocerse».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el arroz",
+   "t": "I",
+   "q": "¿qué país produce más arroz?",
+   "crit": "china",
+   "r": "En el texto pone: «China es el país que más arroz produce».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el arroz",
+   "t": "I",
+   "q": "¿cuál es el plato de arroz más famoso de España?",
+   "crit": "paella",
+   "r": "En el texto pone: «La paella es el plato de arroz más famoso de España».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿dónde se cocina la paella?",
+   "crit": "sarten",
+   "r": "La paella se cocina en una sartén ancha y plana.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿con qué se come el arroz en Japón?",
+   "crit": "palillos",
+   "r": "En el texto pone: «En Japón el arroz se come con palillos».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el arroz",
+   "t": "L",
+   "q": "¿quiénes cultivan arroz?",
+   "crit": "arrocero*",
+   "r": "Los arroceros cultivan arroz.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el arroz",
+   "t": "H",
+   "q": "¿el arroz es un cereal?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el arroz es un cereal que se cultiva en campos inundados.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "H",
+   "q": "¿la paella es un plato?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la paella es el plato de arroz más famoso de España.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "H",
+   "q": "¿un arrocero es una persona?",
+   "crit": "^si",
+   "r": "Sí, los arroceros son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "P",
+   "q": "¿cuándo se planta el arroz?",
+   "crit": "primavera",
+   "r": "No lo sé seguro. ¿«plantar» quiere decir aquí lo mismo que «sembrar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "P",
+   "q": "¿cuándo se cosecha el arroz?",
+   "crit": "otono",
+   "r": "En el texto pone: «Después de la cosecha los granos se secan al sol».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "P",
+   "q": "¿dónde se prepara la paella?",
+   "crit": "sarten",
+   "r": "La paella se cocina en una sartén ancha y plana. Entiendo «preparar» como «cocinar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "P",
+   "q": "¿dónde se retira la cáscara del grano?",
+   "crit": "molino",
+   "r": "La cáscara de los granos se quita en un molino. Entiendo «retirar» como «quitar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "M",
+   "q": "¿dónde se cocina el plato de arroz más famoso de España?",
+   "crit": "sarten",
+   "r": "La paella se cocina en una sartén ancha y plana. Lo junto con otra cosa que aprendí: la paella es «plato de arroz más famoso de España».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "M",
+   "q": "¿cuándo se siembra el cereal que se cultiva en campos inundados?",
+   "crit": "primavera",
+   "r": "El arroz se siembra en primavera (del 21 de marzo de 2027 al 20 de junio de 2027). Lo junto con otra cosa que aprendí: el arroz es «cereal que se cultiva en campos inundados».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "D",
+   "q": "¿el arroz integral es un arroz?",
+   "crit": "^si",
+   "r": "Sí, el arroz integral es arroz.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "D",
+   "q": "¿el arroz necesita poca agua?",
+   "crit": "^no|mucha",
+   "r": "No lo sé: no me has dicho nada sobre eso. Del arroz sé que es un cereal y se cultiva en campos inundados.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "N",
+   "q": "¿quién inventó la paella?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "N",
+   "q": "¿cuánto cuesta un kilo de arroz?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "N",
+   "q": "¿cuántos arrozales hay en China?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "N",
+   "q": "¿quién vende los palillos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («vender» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "C",
+   "q": "mi vecina es arrocera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu vecina es arrocera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "C",
+   "q": "¿mi vecina cultiva arroz?",
+   "crit": "^si|cultiva*",
+   "r": "Sí, los arroceros cultivan arroz. Lo deduzco porque tu vecina es arrocero y eso vale para los arroceros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "G",
+   "q": "descríbeme la paella",
+   "crit": "plato|arroz|sarten",
+   "r": "La paella es el plato de arroz más famoso de España. La paella se cocina en una sartén ancha y plana. La paella se come el arroz con palillos en Japón. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "K",
+   "q": "el arroz se recoge en invierno",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|otono",
+   "r": "Entendido: el arroz se recoge en invierno. Pero ojo: yo había aprendido que el arroz se recoge en otoño. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el arroz",
+   "t": "K",
+   "q": "en Japón el arroz se come con cuchara",
+   "crit": "ANY",
+   "r": "Entendido: el arroz se come el arroz con cuchara en Japón.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 14; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "V",
+   "q": "¿qué es el circo?",
+   "crit": "espectaculo",
+   "r": "Un circo es un espectáculo, como me dijiste; de fábrica sé además que es un edificio. Además, según lo que he aprendido, el circo es un espectáculo que viaja de ciudad en ciudad.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿dónde se hacen las funciones?",
+   "crit": "carpa",
+   "r": "Las funciones se hacen dentro de una carpa.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el circo",
+   "t": "V",
+   "q": "¿qué es la carpa?",
+   "crit": "tienda",
+   "r": "Una carpa es un pez. Además, según lo que he aprendido, la carpa es una tienda enorme de lona.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el circo",
+   "t": "I",
+   "q": "¿cómo se llama el centro de la carpa?",
+   "crit": "pista",
+   "r": "Pista. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿quiénes hacen reír al público?",
+   "crit": "payasos",
+   "r": "En el texto pone: «Los payasos hacen reír al público».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿de qué color llevan la nariz los payasos?",
+   "crit": "roja",
+   "r": "En el texto pone, hablando de los payasos: «Llevan la nariz roja y unos zapatos enormes».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿quiénes saltan de un trapecio a otro?",
+   "crit": "trapecista*",
+   "r": "En el texto pone: «Los trapecistas saltan de un trapecio a otro».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿qué hay debajo de los trapecistas?",
+   "crit": "red",
+   "r": "En el texto pone, hablando de los trapecistas: «Debajo hay una red por si se caen».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿qué lanzan los malabaristas?",
+   "crit": "pelotas",
+   "r": "Los malabaristas lanzan varias pelotas a la vez.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿sobre qué camina el equilibrista?",
+   "crit": "cable",
+   "r": "El equilibrista camina sobre un cable muy fino.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el circo",
+   "t": "V",
+   "q": "¿quién es el domador?",
+   "crit": "artista|animales",
+   "r": "El domador es artista. Además, según lo que he aprendido, el domador es el artista que trabaja con animales.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el circo",
+   "t": "I",
+   "q": "¿cómo se llama la persona que presenta los números?",
+   "crit": "maestro de ceremonias",
+   "r": "Maestro de ceremonias. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿cuándo ensayan los artistas?",
+   "crit": "manana",
+   "r": "En el texto pone: «Los artistas ensayan cada mañana».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el circo",
+   "t": "L",
+   "q": "¿cuánto se queda el circo en cada ciudad?",
+   "crit": "dos semanas|2",
+   "r": "El circo se queda dos semanas en cada ciudad.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el circo",
+   "t": "I",
+   "q": "¿cuál es el número más peligroso del circo?",
+   "crit": "trapecio",
+   "r": "El número del trapecio: según lo que he aprendido, es el número más peligroso del circo.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "el circo",
+   "t": "H",
+   "q": "¿la carpa es una tienda?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, la carpa es una tienda enorme de lona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "H",
+   "q": "¿el domador es un artista?",
+   "crit": "^si",
+   "r": "Sí, el domador es artista.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "H",
+   "q": "¿un payaso es una persona?",
+   "crit": "^si",
+   "r": "Sí, un payaso es una persona. Lo deduzco porque un payaso es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿quiénes divierten al público?",
+   "crit": "payasos",
+   "r": "En el texto pone: «Los payasos hacen reír al público».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿sobre qué anda el equilibrista?",
+   "crit": "cable",
+   "r": "El equilibrista camina sobre un cable muy fino. Entiendo «andar» como «caminar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿qué arrojan los malabaristas?",
+   "crit": "pelotas",
+   "r": "Los malabaristas lanzan varias pelotas a la vez. Entiendo «arrojar» como «lanzar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "P",
+   "q": "¿cuánto permanece el circo en cada ciudad?",
+   "crit": "dos semanas|2",
+   "r": "En el texto pone: «El circo se queda dos semanas en cada ciudad».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "M",
+   "q": "¿qué hay debajo del número más peligroso del circo?",
+   "crit": "red|ABST",
+   "r": "En el texto pone: «El número del trapecio es el número más peligroso del circo».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "M",
+   "q": "¿de qué es la tienda donde se hacen las funciones?",
+   "crit": "lona",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "D",
+   "q": "¿el domador trabaja con animales?",
+   "crit": "^si",
+   "r": "Sí, los artistas trabajan con animales.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "D",
+   "q": "¿el circo se queda siempre en la misma ciudad?",
+   "crit": "^no|viaja",
+   "r": "No lo sé. Solo sé que el circo se queda dos semanas en cada ciudad.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "N",
+   "q": "¿quién inventó el circo?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "N",
+   "q": "¿cuánto cuesta una entrada?",
+   "crit": "ABST",
+   "r": "Eso queda fuera de lo que sé hacer: no tengo acceso a internet ni a datos del exterior (tiempo, noticias, precios, resultados deportivos, música...). Sí puedo aprender lo que me cuentes, contestar sobre ello, razonar con reglas, calcular fechas y operaciones y decirte la hora.",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "N",
+   "q": "¿cuántos payasos hay en el circo?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "N",
+   "q": "¿quién cose la carpa?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («coser» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "C",
+   "q": "mi primo es trapecista",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu primo es trapecista.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "C",
+   "q": "¿mi primo salta de un trapecio a otro?",
+   "crit": "^si|salta*",
+   "r": "Sí: el texto dice «Los trapecistas saltan de un trapecio a otro». Lo deduzco porque tu primo es trapecista y eso vale para las trapecistas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "G",
+   "q": "descríbeme a los payasos",
+   "crit": "reir|nariz|zapatos",
+   "r": "Un payaso es un profesional. Los profesionales trabajan. Las personas hablan. Las personas hablan.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "K",
+   "q": "los artistas ensayan cada noche",
+   "crit": "ANY",
+   "r": "Entendido: los artistas ensayan cada noche.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el circo",
+   "t": "K",
+   "q": "el circo se queda dos meses en cada ciudad",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|semanas",
+   "r": "Entendido: el circo se queda dos meses en cada ciudad. Pero ojo: en lo que leí ponía «El circo se queda dos semanas en cada ciudad». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 10; las otras 4 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "V",
+   "q": "¿qué es un reloj?",
+   "crit": "aparato",
+   "r": "Un reloj es un aparato, como me dijiste; de fábrica sé además que es un accesorio. Además, según lo que he aprendido, el reloj es un aparato que mide el tiempo.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿qué mide un reloj?",
+   "crit": "tiempo",
+   "r": "El reloj mide el tiempo.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿cuándo funcionaban los relojes de sol?",
+   "crit": "dia",
+   "r": "En el texto pone: «Los primeros relojes eran de sol y solo funcionaban de día».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿con qué mide el tiempo el reloj de arena?",
+   "crit": "arena",
+   "r": "En el texto pone: «El reloj de arena mide el tiempo con arena que cae».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿con qué funcionan los relojes mecánicos?",
+   "crit": "muelles|ruedas",
+   "r": "Los relojes mecánicos funcionan con muelles y ruedas dentadas.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿cada cuánto hay que dar cuerda a los relojes mecánicos?",
+   "crit": "dia",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿qué marca la aguja corta?",
+   "crit": "horas",
+   "r": "En el texto pone: «La aguja corta marca las horas y la larga marca los minutos».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿qué marca la aguja larga?",
+   "crit": "minutos",
+   "r": "En el texto pone: «La aguja corta marca las horas y la larga marca los minutos».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "los relojes",
+   "t": "I",
+   "q": "¿cómo se llama la parte del reloj donde están los números?",
+   "crit": "esfera",
+   "r": "Esfera. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "los relojes",
+   "t": "V",
+   "q": "¿qué es el despertador?",
+   "crit": "reloj",
+   "r": "Un despertador es un reloj, como me dijiste; de fábrica sé además que es un aparato. Además, según lo que he aprendido, el despertador es un reloj que suena a la hora elegida.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "los relojes",
+   "t": "I",
+   "q": "¿cuál es el reloj más conocido de Suiza?",
+   "crit": "cuco",
+   "r": "El reloj de cuco: según lo que he aprendido, es el reloj más conocido de Suiza.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿qué tiene el reloj de cuco?",
+   "crit": "pajaro",
+   "r": "En el texto pone: «El reloj de cuco es el reloj más conocido de Suiza».",
+   "v": "MAL",
+   "k": 9
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿con qué funcionan los relojes de cuarzo?",
+   "crit": "pila",
+   "r": "Los reloj de cuarzos funcionan con una pila.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "los relojes",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que arreglan relojes?",
+   "crit": "relojero*",
+   "r": "Relojeros. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "los relojes",
+   "t": "V",
+   "q": "¿qué es el cronómetro?",
+   "crit": "reloj",
+   "r": "El cronómetro es un reloj. Además, según lo que he aprendido, el cronómetro es un reloj que mide tiempos muy cortos.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "los relojes",
+   "t": "L",
+   "q": "¿dónde se usa el cronómetro?",
+   "crit": "carreras",
+   "r": "En el texto pone, hablando del cronómetro: «Se usa en las carreras».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "los relojes",
+   "t": "H",
+   "q": "¿el despertador es un reloj?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el despertador es un reloj que suena a la hora elegida.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "H",
+   "q": "¿el cronómetro es un aparato?",
+   "crit": "^si",
+   "r": "Sí, un cronómetro es un aparato. Lo deduzco porque el cronómetro es un reloj y el reloj es un aparato.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "H",
+   "q": "¿un relojero es una persona?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, un relojero es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿quiénes reparan relojes?",
+   "crit": "relojero*",
+   "r": "No lo sé seguro. ¿«reparar» quiere decir aquí lo mismo que «arreglar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿dónde se emplea el cronómetro?",
+   "crit": "carreras",
+   "r": "En el texto pone, hablando del cronómetro: «Se usa en las carreras». Entiendo «emplear» como «usar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿qué señala la aguja corta?",
+   "crit": "horas",
+   "r": "En el texto pone: «La aguja corta marca las horas y la larga marca los minutos». Entiendo «señalar» como «marcar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "P",
+   "q": "¿con qué trabajan los relojes de cuarzo?",
+   "crit": "pila",
+   "r": "Los reloj de cuarzos funcionan con una pila. Entiendo «trabajar» como «funcionar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "M",
+   "q": "¿qué tiene el reloj más conocido de Suiza?",
+   "crit": "pajaro",
+   "r": "En el texto pone: «Un reloj es un aparato que mide el tiempo». Lo junto con otra cosa que aprendí: el reloj de cuco es «reloj más conocido de Suiza».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "M",
+   "q": "¿dónde se usa el reloj que mide tiempos muy cortos?",
+   "crit": "carreras",
+   "r": "En el texto pone, hablando del cronómetro: «Se usa en las carreras». Lo junto con otra cosa que aprendí: el cronómetro es «reloj que mide tiempos muy cortos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "D",
+   "q": "¿un reloj de sol funciona de noche?",
+   "crit": "^no|dia",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "D",
+   "q": "¿el despertador mide el tiempo?",
+   "crit": "^si",
+   "r": "Sí, el reloj mide el tiempo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "N",
+   "q": "¿quién inventó el reloj de arena?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "N",
+   "q": "¿cuánto cuesta un reloj de cuco?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "N",
+   "q": "¿cuántos relojes hay en Suiza?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "N",
+   "q": "¿quién pinta las esferas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («pintar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "C",
+   "q": "mi abuela es relojera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu abuela es relojera.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "C",
+   "q": "¿mi abuela arregla relojes?",
+   "crit": "^si|arregla*",
+   "r": "Sí, los relojeros arreglan relojes.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "G",
+   "q": "descríbeme el despertador",
+   "crit": "reloj|suena|hora",
+   "r": "El despertador es un reloj que suena a la hora elegida. El despertador suena a la hora elegida. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "K",
+   "q": "los relojes de cuarzo funcionan con cuerda",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|pila",
+   "r": "Entendido: los reloj de cuarzos funcionan con cuerda. Pero ojo: yo había aprendido que los reloj de cuarzos funcionan con una pila. Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "los relojes",
+   "t": "K",
+   "q": "la aguja corta marca los minutos",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|horas",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La aguja corta marca los minutos».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (14 frases). He entendido bien 10; las otras 4 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "V",
+   "q": "¿qué es el jabón?",
+   "crit": "producto",
+   "r": "Un jabón es un producto, como me dijiste; de fábrica sé además que es un objeto de aseo. Además, según lo que he aprendido, el jabón es un producto que sirve para lavar.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿para qué sirve el jabón?",
+   "crit": "lavar",
+   "r": "En el texto pone: «El jabón es un producto que sirve para lavar».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿con qué se mezcla la grasa?",
+   "crit": "sosa",
+   "r": "En el texto pone, hablando del jabón: «Se fabrica mezclando grasa con sosa».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el jabón",
+   "t": "V",
+   "q": "¿qué es la sosa?",
+   "crit": "sustancia",
+   "r": "Según lo que he aprendido, la sosa es una sustancia que quema la piel.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿dónde se calienta la mezcla?",
+   "crit": "caldera",
+   "r": "La mezcla se calienta en una caldera durante varias horas.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿dónde se vierte la mezcla?",
+   "crit": "moldes",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿cuánto tarda el jabón en estar listo?",
+   "crit": "mes",
+   "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "el jabón",
+   "t": "I",
+   "q": "¿cuál es el jabón más antiguo de Francia?",
+   "crit": "marsella",
+   "r": "El jabón de Marsella: según lo que he aprendido, es el jabón más antiguo de Francia.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿con qué se hace el jabón de Marsella?",
+   "crit": "aceite",
+   "r": "El jabón de Marsella se hace con aceite de oliva.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿qué atrapa la espuma?",
+   "crit": "suciedad",
+   "r": "En el texto pone: «La espuma atrapa la suciedad y el agua se la lleva».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el jabón",
+   "t": "V",
+   "q": "¿qué es el champú?",
+   "crit": "jabon",
+   "r": "Un champú es un jabón, como me dijiste; de fábrica sé además que es un objeto de aseo. Además, según lo que he aprendido, el champú es un jabón líquido para el pelo.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el jabón",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que fabrican jabón?",
+   "crit": "jabonero*",
+   "r": "Jaboneros. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el jabón",
+   "t": "I",
+   "q": "¿cómo se llama el lugar donde se fabrica el jabón?",
+   "crit": "jaboneria",
+   "r": "Jabonería. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿dónde se fabrica el jabón?",
+   "crit": "jaboneria",
+   "r": "El jabón de Marsella se fabrica en la jabonería.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿cuándo recomiendan los médicos lavarse las manos?",
+   "crit": "antes|comer",
+   "r": "En el texto pone: «Los médicos recomiendan lavarse las manos antes de comer».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el jabón",
+   "t": "L",
+   "q": "¿dónde se lavaba la ropa antiguamente?",
+   "crit": "rio",
+   "r": "La prenda se lavaba en el río antiguamente.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el jabón",
+   "t": "H",
+   "q": "¿el champú es un jabón?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, el champú es un jabón líquido para el pelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "H",
+   "q": "¿la sosa es una sustancia?",
+   "crit": "^si",
+   "r": "Sí, la soso es una sustancia.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "H",
+   "q": "¿un jabonero es una persona?",
+   "crit": "^si",
+   "r": "Sí, los jaboneros son personas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿dónde se elabora el jabón?",
+   "crit": "jaboneria",
+   "r": "El jabón de Marsella se fabrica en la jabonería. Entiendo «elaborar» como «fabricar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿quiénes elaboran jabón?",
+   "crit": "jabonero*",
+   "r": "Los jaboneros fabrican jabón.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿cuánto demora el jabón en estar listo?",
+   "crit": "mes",
+   "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo. En lo que he aprendido no aparece «demorar»; si es otra forma de decir algo, dímelo («demorar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "P",
+   "q": "¿dónde se limpiaba la ropa antiguamente?",
+   "crit": "rio",
+   "r": "La prenda se lavaba en el río antiguamente. Entiendo «limpiar» como «lavar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "M",
+   "q": "¿con qué se hace el jabón más antiguo de Francia?",
+   "crit": "aceite",
+   "r": "El jabón de Marsella se hace con aceite de oliva. Lo junto con otra cosa que aprendí: el jabón de Marsella es «jabón más antiguo de Francia».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "M",
+   "q": "¿qué quema la sustancia que se mezcla con la grasa?",
+   "crit": "piel",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "D",
+   "q": "¿el champú sirve para lavar?",
+   "crit": "^si",
+   "r": "Sí, los champús sirven para lavarse el pelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "D",
+   "q": "¿la sosa es buena para la piel?",
+   "crit": "^no|quema|ABST",
+   "r": "No lo sé. Solo sé que la soso es una sustancia.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "N",
+   "q": "¿quién inventó el jabón?",
+   "crit": "ABST",
+   "r": "Los jaboneros fabrican jabón. Entiendo «inventar» como «hacer».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "N",
+   "q": "¿cuánto cuesta el jabón de Marsella?",
+   "crit": "ABST",
+   "r": "No lo sé. De el jabón de Marsella sé que es un jabón y es muy antiguo. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "N",
+   "q": "¿cuántas jabonerías hay en Francia?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "N",
+   "q": "¿quién vende el champú?",
+   "crit": "ABST",
+   "r": "En el texto pone: «El champú es un jabón líquido para el pelo». Entiendo «vender» como «liquidar».",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "C",
+   "q": "mi tía es jabonera",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tía es jabonero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "C",
+   "q": "¿mi tía fabrica jabón?",
+   "crit": "^si|fabrica*",
+   "r": "Sí, los jaboneros fabrican jabón.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "G",
+   "q": "descríbeme el champú",
+   "crit": "jabon|liquido|pelo",
+   "r": "El champú es un jabón líquido para el pelo. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "K",
+   "q": "el jabón tarda un día en estar listo",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|mes",
+   "r": "Entendido: el jabón de Marsella tarda un día en estar listo. Pero ojo: en lo que leí ponía «El jabón tarda un mes en estar listo». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el jabón",
+   "t": "K",
+   "q": "el jabón de Marsella se hace con aceite de girasol",
+   "crit": "ANY",
+   "r": "Entendido: el jabón de Marsella se hace con aceite de girasol.",
+   "v": null,
+   "k": -1
+  }
+ ]
+}

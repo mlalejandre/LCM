@@ -105,6 +105,90 @@ def alternativas(texto, maximo=6):
                     t2 = re.sub(r"\s+([?.,!])", r"\1", re.sub(r"([¿¡])\s+", r"\1", " ".join(ws2)))
                     if t2 not in out and sa(t2) != sa(texto):
                         out.append(t2)
+    for t2 in ([] if os.environ.get("LCM_SIN_LOCUCIONES") else locuciones(texto)):
+        if t2 not in out:
+            out.append(t2)
+    return out[:maximo + 2]
+
+
+_T_PERS = ("pres", "pret", "imp", "fut")
+
+
+def ancla(original, rehecha, cita_):
+    """¿Trae la frase citada la palabra NUEVA de la pregunta rehecha? Si no, la cita no viene de la equivalencia y no vale
+    («¿quién fabrica las colmenas?» -> «¿quién hace…?» no lo contesta «cada colonia vive en una colmena»)."""
+    from . import lectura as L
+    viejas = {L._raiz(w) for w in L._contenido(original)}
+    nuevas = [w for w in re.findall(r"[a-zñ]+", sa(rehecha.lower())) if len(w) > 2 and L._raiz(w) not in viejas and w not in ("que", "del", "los", "las", "una", "uno")]
+    if not nuevas:
+        return True
+    m = re.search(r"«([^»]+)»", cita_ or "")
+    frase = m.group(1) if m else (cita_ or "")
+    rf = {w[:4] for w in re.findall(r"[a-zñ]+", sa(frase.lower()))}
+    if not any(w[:4] in rf for w in nuevas):
+        return False
+    for w in re.findall(r"[a-záéíóúñü]+", rehecha.lower()):   # y en el mismo tiempo: lo que PASÓ no lo contesta una costumbre («¿quién levantó el puerto?» / «una grúa levanta…»)
+        if L._raiz(w) in viejas:
+            continue
+        for a_ in analiza(w):
+            if len(a_) > 2 and a_[1] in ("pres", "pret", "imp") and sa(a_[0]) not in _FUNC:
+                if not casa_tiempo([(a_[0], a_[0], 1.0, "pas" if a_[1] in ("pret", "imp") else "pres")], frase):
+                    return False
+    return True
+
+
+def _formas_de(w, lema):
+    try:
+        return [a for a in (M.analizar(w) or []) if len(a) > 2 and a[1] in _T_PERS and sa(a[0]) == sa(lema)]
+    except Exception:                                    # noqa
+        return []
+
+
+def locuciones(texto, maximo=4):
+    """2.24 · La misma pregunta cambiando una locución por su verbo o al revés («¿qué da vueltas?» = «¿qué gira?»,
+    «¿quién se ocupa del faro?» = «¿quién cuida el faro?»). La lista está en la base de conceptos ([locuciones])."""
+    loc = K.kb().get("locuciones") or {}
+    if not loc or "?" not in texto:
+        return []
+    ws = re.findall(r"[\wáéíóúñü]+|[^\w\s]", texto)
+    low = [sa(w.lower()) for w in ws]
+    out = []
+
+    def _sale(ws2):
+        t2 = re.sub(r"\s+([?.,!])", r"\1", re.sub(r"([¿¡])\s+", r"\1", " ".join(x for x in ws2 if x)))
+        t2 = re.sub(r"\b(de|a) el\b", lambda m_: "del" if m_.group(1) == "de" else "al", t2)
+        t2 = re.sub(r"¿(\w)", lambda m_: "¿" + m_.group(1).upper(), t2)
+        if t2 not in out and sa(t2.lower()) != sa(texto.lower()):
+            out.append(t2)
+    for clave, verbos in loc.items():
+        partes = clave.split()
+        refl = partes[0].endswith("se") and len(partes[0]) > 4
+        lema = partes[0][:-2] if refl else partes[0]
+        resto = [sa(x) for x in partes[1:]]
+        for i in range(1, len(ws)):
+            # la locución está en la pregunta -> el verbo solo
+            an = _formas_de(ws[i].lower(), lema)
+            j = i + 1 + len(resto)
+            cola = low[i + 1:j]
+            if resto and resto[-1] == "de" and cola[:-1] == resto[:-1] and cola[-1:] == ["del"]:
+                cola, del_ = resto, True                 # «se ocupa DEL faro» -> «cuida EL faro»
+            else:
+                del_ = False
+            if an and cola == resto and (not refl or low[i - 1] == "se"):
+                for dest in verbos:
+                    drefl = dest.endswith("se") and len(dest) > 4
+                    f = M.conjugar(dest[:-2] if drefl else dest, an[0][1], an[0][2])
+                    if f:
+                        _sale(ws[:i - (1 if refl else 0)] + (["se"] if drefl else []) + [f] + (["el"] if del_ else []) + ws[j:])
+            # el verbo solo está en la pregunta -> la locución
+            for dest in verbos:
+                drefl = dest.endswith("se") and len(dest) > 4
+                an2 = _formas_de(ws[i].lower(), dest[:-2] if drefl else dest)
+                if an2 and (not drefl or low[i - 1] == "se") and (drefl or low[i - 1] != "se" or refl):
+                    f = M.conjugar(lema, an2[0][1], an2[0][2])
+                    if f:
+                        ws2 = ws[:i - (1 if drefl else 0)] + (["se"] if refl else []) + [f] + partes[1:] + ws[i + 1:]
+                        _sale(ws2)
     return out[:maximo]
 
 
@@ -126,7 +210,7 @@ def _lemas_v(w):
     return r or {a[0] for a in analiza(w)}
 
 
-_ALT = (("ie", "e"), ("ue", "o"), ("i", "e"), ("ue", "u"))
+_ALT = (("ie", "e"), ("ue", "o"), ("i", "e"), ("ue", "u"), ("ie", "i"), ("uy", "u"), ("qu", "c"), ("gu", "g"), ("c", "z"), ("zc", "c"))
 _TERM = (("an", "ar", "pres", "3p"), ("a", "ar", "pres", "3s"), ("en", "er", "pres", "3p"), ("e", "er", "pres", "3s"), ("en", "ir", "pres", "3p"), ("e", "ir", "pres", "3s"),
          ("aron", "ar", "pret", "3p"), ("ó", "ar", "pret", "3s"), ("ieron", "er", "pret", "3p"), ("ió", "er", "pret", "3s"), ("ieron", "ir", "pret", "3p"), ("ió", "ir", "pret", "3s"))
 
@@ -171,14 +255,19 @@ def vocabulario(nuc):
     cache = getattr(nuc, "_vocab220", None)
     if cache and cache[0] == clave:
         return cache[1], cache[2]
-    verbos, nombres = set(), set()
+    verbos, nombres, formas_, acentos_ = set(), set(), {}, {}
     for t in dict.fromkeys(textos):
         ant = ""
         for w in re.findall(r"[a-záéíóúñü]+", t.lower()):
             # 2.21: «el pelo», «para», «se»… no son verbos aunque se escriban como uno
             lv = set() if (ant in _DETS or w in _NO_VERBO) else _lemas_v(w)
+            if lv and _solo_yo(w):
+                lv = set()                               # 2.24: «líquido», «instrumento»: solo serían verbo en primera persona, y el léxico los tiene como nombre o adjetivo
             if lv:
                 verbos |= {sa(x) for x in lv}
+                for a_ in analiza(w):                    # 2.24: la forma tal como se leyó («muelen», «siembran»): la morfología no sabe todas las irregulares
+                    if len(a_) > 2 and a_[1] in ("pres", "pret", "imp", "fut"):
+                        formas_.setdefault(sa(a_[0]), {}).setdefault((a_[1], a_[2]), w)
                 try:                                     # 2.22: «puesto», «hecho», «vista»: participios que también son nombres
                     if len(w) > 3 and any(len(a_) > 1 and a_[1] == "part" for a_ in (M.analizar(w) or [])):
                         nombres.add(sa(M.singular(w)))
@@ -186,9 +275,47 @@ def vocabulario(nuc):
                     pass
             elif len(w) > 3:
                 nombres.add(sa(M.singular(w)))
+                acentos_.setdefault(sa(M.singular(w)), M.singular(w))
             ant = w
     nuc._vocab220 = (clave, verbos, nombres)
+    nuc._formas224 = formas_
+    nuc._acentos224 = acentos_
     return verbos, nombres
+
+
+def _solo_yo(w):
+    """¿Esta palabra solo es verbo leída como «yo …» o «tú …» y además el léxico la conoce tal cual (nombre o adjetivo)?"""
+    from . import vectores as V
+    try:
+        an = [a for a in (M.analizar(w) or []) if len(a) > 2 and not (a[1] == "pret" and a[2] == "3s" and not w.endswith("ó"))]   # «líquido» no es «liquidó»
+    except Exception:                                    # noqa
+        an = []
+    return bool(an) and all(a[1] in ("pres", "pret", "imp", "fut") and a[2] in ("1s", "2s") for a in an) and V.vector(sa(M.singular(w))) is not None
+
+
+def conjuga(nuc, lema, t, p):
+    """2.24: la forma de un verbo APRENDIDO. Si el texto la trae, esa; si trae otra persona del mismo tiempo, se saca de ella
+    («muelen» -> «muele»); y si no, la regular."""
+    fs = (getattr(nuc, "_formas224", None) or {}).get(sa(lema), {})
+    if (t, p) in fs:
+        return fs[(t, p)]
+    if t == "pres" and p in ("3s", "3p"):
+        otra = fs.get((t, "3p" if p == "3s" else "3s"))
+        if otra:
+            return otra[:-1] if p == "3s" and otra.endswith("n") else otra + "n" if p == "3p" else otra
+    return M.conjugar(lema, t, p)
+
+
+def _base_n(w, nombres=()):
+    """Nombre en singular; si así no está en el léxico y en masculino sí («maestra» -> «maestro»), el masculino."""
+    from . import vectores as V
+    b = sa(M.singular(w))
+    if b in nombres or V.vector(b) is not None:
+        return b
+    for x in ((b[:-1] + "o",) if b.endswith("a") else ()) + ((b[:-1],) if b.endswith("ora") else ()):
+        if x in nombres or V.vector(x) is not None:
+            return x
+    return b
 
 
 def _afin(lema, c):
@@ -250,6 +377,186 @@ def _mejor(lema, candidatos):
     if len(ps) > 1 and ps[1][0] > ps[0][0] - MARGEN and _afin(ps[0][1], ps[1][1]) < UMBRAL_ENLACE:
         return None                                      # dos candidatas de sentido distinto igual de cerca: no se sabe cuál
     return ps[0][1], ps[0][0]
+
+
+def evidencia(lema, c):
+    """2.24 · Qué indicio hay de que `c` diga lo mismo que `lema`: (valor, clase). Clases:
+      "S" segura: enseñada por el usuario, o enlace directo que abarca al menos la mitad de los sentidos y con vectores cercanos;
+      "F" firme a medias: pasa el umbral de siempre, pero el enlace es de un sentido entre varios («guiar»/«conducir»);
+      "D" débil: hay enlace pero no llega («lavar»/«limpiar»), o solo una cadena de sinónimos con vectores cercanos («surgir»/«nacer»),
+          o solo coinciden en otros idiomas. Las débiles nunca valen solas: el resto de la pregunta tiene que estar en la frase.
+    None si no hay nada."""
+    from . import vectores as V
+    if (lema, c) in _APR:
+        return 1.0, "S"
+    if V.vector(lema) is None or V.vector(c) is None or V.antonimos(lema, c):
+        return 0.0, None
+    a = _afin(lema, c)
+    tipo, peso = V.parentesco(lema, c)
+    s = V.sim(lema, c)
+    if tipo:
+        if a >= UMBRAL and peso >= 0.5 and tipo == "igual":
+            return a, "S"
+        if a >= UMBRAL_ENLACE:
+            return a, "F"
+        return max(0.2, 0.5 * (s + peso)), "D"
+    if a >= UMBRAL_ENLACE:
+        return a, ("F" if a >= UMBRAL else "D")          # puentes entre idiomas: con cuatro o más idiomas de acuerdo pasa el umbral
+    if s >= UMBRAL and V.dos_pasos(lema, c):
+        return 0.5 * s, "D"
+    if V.puente(lema, c) == 1 and not os.environ.get("LCM_SIN_PUENTE1") and not os.environ.get("LCM_SIN_PUENTE"):
+        return 0.36, "D"                                 # coinciden en un solo idioma más («trabajar» / «funcionar»: ing. work): lo justo para probar, o para preguntar
+    return 0.0, None
+
+
+def candidatas(lema, candidatos, k=3, solo_seguras=False):
+    """Las palabras aprendidas que podrían decir lo mismo que `lema`, de más a menos indicio: [(palabra, valor, clase)]."""
+    if os.environ.get("LCM_SENTIDO_UNA"):                # (interruptor de medida: la conducta de la 2.23, una sola candidata)
+        m = _mejor(lema, candidatos) if lema not in candidatos else None
+        return [(m[0], m[1], "S")] if m and not solo_seguras else []
+    out = []
+    for c in candidatos:
+        if c == lema or (c in _FUNC and c != "hacer"):   # «hacer» sí: «fabricar», «elaborar», «construir» son maneras de hacer
+            continue
+        v, cl = evidencia(lema, c)
+        if c == "hacer" and cl:                          # casi todo es una manera de hacer: solo vale de entrada si lo es en TODOS sus sentidos («fabricar»)
+            from . import vectores as V
+            tipo, peso = V.parentesco(lema, c)
+            v, cl = (v, "F") if (tipo == "modo" and peso >= 0.9) else (0.25 * v, "D")
+        if solo_seguras and cl == "F" and v >= 0.8:
+            cl = "D"                                     # una palabra que SÍ está en lo aprendido solo se cambia por otra con apoyo en la frase
+        elif solo_seguras and cl != "S":
+            cl = None
+        if cl:
+            out.append((c, v, cl))
+    out.sort(key=lambda x: ({"S": 0, "F": 1, "D": 2}[x[2]], -x[1]))
+    if len(out) > 1 and out[0][2] == "F" and out[1][2] == "F" and out[1][1] > out[0][1] - MARGEN and evidencia(out[0][0], out[1][0])[1] not in ("S", "F"):
+        out = [(c, v, "D") if cl == "F" else (c, v, cl) for c, v, cl in out]   # dos candidatas de sentido distinto igual de cerca: ninguna vale sin apoyo en la frase
+    return out[:k]
+
+
+def propuestas(nuc, texto, maximo=8):
+    """2.24 · La pregunta rehecha con palabras de lo aprendido, UNA palabra cada vez y con VARIAS candidatas por palabra: quién decide
+    entre ellas es el texto (la que deja una pregunta que lo aprendido contesta). Devuelve [(pregunta, cambios, clase, valor)].
+    También se prueban las palabras que SÍ están en lo aprendido si tienen allí un sinónimo seguro («pacientes» / «enfermos»)."""
+    from . import vectores as V
+    if "?" not in texto or os.environ.get("LCM_SIN_SENTIDO") or not V.disponible():
+        return []
+    verbos, nombres = vocabulario(nuc)
+    if not verbos and not nombres:
+        return []
+    _carga_apr(nuc)
+    ws = re.findall(r"[\wáéíóúñü]+|[^\w\s]", texto)
+    out = []
+    for i, w in enumerate(ws):
+        wl = w.lower()
+        if i == 0 or not wl.isalpha() or len(wl) < 4 or (w[:1].isupper() and i > 1):
+            continue
+        an = [] if (wl in _NO_VERBO or _solo_yo(wl)) else analiza(wl)
+        if an and ws[i - 1].lower() in ("el", "la", "los", "las", "un", "una", "unos", "unas", "su", "sus", "del", "al", "de") \
+                and not (i > 1 and ws[i - 2].lower() in ("qué", "que", "quién", "quien", "no", "se", "cuándo", "dónde", "cómo")):
+            an = []                                      # tras un determinante es un nombre («las crías»); tras «qué los…» es un verbo con su pronombre
+        if an:
+            a0 = an[0]
+            lema = sa(a0[0])
+            if lema in _FUNC:
+                continue
+            dentro = lema in verbos
+            if dentro and os.environ.get("LCM_SENTIDO_FUERA"):
+                continue
+            for k_, (c, v, cl) in enumerate(candidatas(lema, verbos, solo_seguras=dentro)):
+                forma = c if a0[1] == "inf" else conjuga(nuc, c, a0[1], a0[2]) if a0[1] != "part" else None
+                if forma:
+                    out.append((i, forma, a0[0], c, v, "pas" if a0[1] in ("pret", "imp") else "pres" if a0[1] == "pres" else "", cl, dentro, k_))
+            continue
+        base = _base_n(wl, nombres)
+        if K.kb().get("clases", {}).get(base) and base not in nombres and V.vector(base) is None:
+            continue
+        dentro = base in nombres or sa(wl) in nombres
+        if dentro and os.environ.get("LCM_SENTIDO_FUERA"):
+            continue
+        pl = wl.endswith("s") and sa(M.singular(wl)) != sa(wl)
+        ac_ = getattr(nuc, "_acentos224", None) or {}
+        for k_, (c, v, cl) in enumerate(candidatas(base, nombres, solo_seguras=dentro)):
+            c_ = ac_.get(c, c)                           # tal como se leyó, con su tilde
+            out.append((i, M.plural(c_) if pl else c_, M.singular(wl) if sa(M.singular(wl)) == base else base, c_, v, "", cl, dentro, k_))
+    res = []
+    orden_cl = {"S": 0, "F": 1, "D": 2}
+
+    def _monta(cs):
+        ws2 = list(ws)
+        for c in cs:
+            i, forma, dest = c[0], c[1], c[3]
+            ws2[i] = forma
+            if i > 0 and ws2[i - 1].lower() in ("el", "la", "los", "las", "un", "una") and not analiza(ws[i].lower()):
+                fem = M.genero_sust(sa(dest)) == "f"
+                x = ws2[i - 1].lower()
+                if (x in ("la", "las", "una")) != fem:
+                    ws2[i - 1] = {"el": "la", "la": "el", "los": "las", "las": "los", "un": "una", "una": "un"}[x]
+        t2 = re.sub(r"\s+([?.,!])", r"\1", re.sub(r"([¿¡])\s+", r"\1", " ".join(ws2)))
+        t2 = re.sub(r"¿(\w)", lambda m_: "¿" + m_.group(1).upper(), t2)
+        return (t2, [(c[2], c[3], round(c[4], 2), c[5]) for c in cs], max((c[6] for c in cs), key=lambda x: orden_cl[x]), min(c[4] for c in cs), max(c[8] for c in cs))
+    fuera = [c for c in out if not c[7] and c[8] == 0]
+    if len({c[0] for c in fuera}) > 1:                   # dos palabras de la pregunta que no están en lo aprendido: las dos a la vez, cada una con su mejor candidata
+        res.append(_monta(sorted(fuera, key=lambda c: c[0])))
+    for c in sorted(out, key=lambda c: (c[7], orden_cl[c[6]], -c[4])):
+        res.append(_monta([c]))
+    return res[:maximo]
+
+
+def _entera(w):
+    w = sa(w.lower())
+    return sa(M.singular(w)) if len(w) > 3 else w
+
+
+def _fondo(nuc):
+    """De lo que trata todo lo leído (lo que sale en muchas frases): que la frase lo traiga no prueba nada. Palabras enteras, no raíces:
+    «cafeto» y «cafetería» no son lo mismo."""
+    from . import lectura as L
+    cuenta = {}
+    for t in (nuc.usuario.get("leido") or []):
+        temas = t.get("temas") or {}
+        for f in (t.get("frases") or []):
+            for r in {_entera(w) for w in L._contenido(f + " " + (temas.get(f) or ""))}:   # con su tema: «Viven en colonias» también habla de los pingüinos
+                cuenta[r] = cuenta.get(r, 0) + 1
+        fs = t.get("frases") or []
+        if fs:
+            for r in {_entera(w) for w in L._contenido(" ".join(fs[0].split()[:4]))}:
+                cuenta[r] = cuenta.get(r, 0) + 99
+    return {r for r, c in cuenta.items() if c >= 3}
+
+
+def apoyo(nuc, pregunta, cambios, fuente):
+    """¿Trae la frase (o la respuesta con sus fuentes) lo demás que se pregunta? Es la prueba que hace valer un indicio débil.
+      "firme":  trae todo lo demás, y es algo más que el tema del texto («¿quiénes mueven las camillas por los pasillos?» con
+                «…empujan las camillas por los pasillos»);
+      "neutro": no hay nada más que comprobar («¿qué beben los pingüinos?» con «usan sus alas…»: solo coincide el tema);
+      "falla":  la pregunta pide algo que la frase no trae («¿qué PAÍS prepara MÁS café?» con «los baristas preparan café»)."""
+    from . import lectura as L
+    rf = {_entera(w)[:6] for w in L._contenido(fuente or "")}   # seis letras: con cinco, «cafeto» y «cafetería» serían la misma
+    dest = {sa(c[1]) for c in cambios}
+    fondo = _fondo(nuc)
+    rq = set()
+    ws_ = re.findall(r"[a-záéíóúñü0-9]+", pregunta.lower())
+    for k_, w in enumerate(ws_):
+        if sa(w) in L._VACIAS or len(w) < 2:
+            continue
+        if k_ > 0 and sa(ws_[k_ - 1]) in ("que", "cual", "cuales", "cuanto", "cuanta", "cuantos", "cuantas") and k_ <= 2:
+            continue                                     # «¿qué PIEZA…?», «¿qué PAÍS…?»: dice de qué tipo es lo que se pide, no algo que la frase tenga que repetir
+        if {sa(a_[0]) for a_ in analiza(w)} & dest or _base_n(w) in dest:
+            continue                                     # la palabra cambiada, en la forma que sea
+        if _entera(w) not in fondo and L._raiz(w) not in L._GEN_Q:   # el tema del texto no hace falta que cada frase lo repita, y que lo traiga no prueba nada
+            rq.add(_entera(w)[:6])
+    if not rq:
+        return "neutro"
+    return "firme" if rq <= rf else "falla"
+
+
+def dos_lecturas(palabra, a, b):
+    """Dos palabras aprendidas pueden ser la que se pregunta y cada una lleva a una respuesta distinta: se dan las dos, dicho así."""
+    def _limpia(r):
+        return re.sub(r"\s*Entiendo «[^»]+» como «[^»]+»\.$", "", (r or "").strip())
+    return f"Depende de qué quiera decir «{palabra}». Si es «{a[0]}»: {_limpia(a[1])} Si es «{b[0]}»: {_limpia(b[1])}"
 
 
 def _casi(lema, candidatos):
@@ -323,7 +630,15 @@ def por_sentido(nuc, texto, maximo=4, duda=False):
 
 def aviso(cambios, respuesta):
     """La respuesta y, detrás, con qué palabra se ha entendido la pregunta: quien pregunta puede ver si el parecido era bueno."""
-    nota = "Entiendo " + " y ".join(f"«{c[0]}» como «{c[1]}»" for c in cambios) + "."
+    from . import vectores as V
+    def _una(c):                                         # 2.24: si una es un tipo de la otra, se dice así («paciente» no es otra forma de decir «enfermo»: es un enfermo)
+        try:
+            if len(c) > 3 and c[3] == "" and not c[0].endswith(("ar", "er", "ir")) and V.tipo_de(c[0], c[1]):
+                return f"«{c[0]}» como un tipo de «{c[1]}»"
+        except Exception:                                # noqa
+            pass
+        return f"«{c[0]}» como «{c[1]}»"
+    nota = "Entiendo " + " y ".join(_una(c) for c in cambios) + "."
     r = (respuesta or "").rstrip()
     return (r if r[-1:] in ".!?»" else r + ".") + " " + nota
 
@@ -347,7 +662,7 @@ def casa_tiempo(cambios, respuesta):
         ts = set()
         for w in re.findall(r"[a-záéíóúñü]+", (respuesta or "").lower()):
             try:
-                ts |= {"pas" if a[1] in ("pret", "imp") else "pres" for a in (M.analizar(w) or []) if len(a) > 2 and sa(a[0]) == sa(c[1]) and a[1] in ("pres", "pret", "imp")}
+                ts |= {"pas" if a[1] in ("pret", "imp") else "pres" for a in ((M.analizar(w) or []) + analiza(w)) if len(a) > 2 and sa(a[0]) == sa(c[1]) and a[1] in ("pres", "pret", "imp")}
             except Exception:                            # noqa
                 pass
         if not ts or c[3] not in ts:

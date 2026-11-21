@@ -230,6 +230,98 @@ class Conversador(Nucleo):
             self._encadena = False
         return None
 
+    def _sentido(self, texto):
+        """2.24 · La pregunta usa una palabra que no está en lo aprendido (o que allí se dice de otra manera). Se prueba con cada palabra
+        aprendida que podría decir lo mismo y DECIDE EL TEXTO: vale la que deja una pregunta que lo aprendido contesta. Un indicio seguro
+        basta con que haya respuesta; uno débil necesita que la frase traiga todo lo demás que se pregunta. Si dos lecturas distintas
+        quedan igual de bien apoyadas, se dan las dos."""
+        from . import sinonimia as _S
+        from . import lectura
+        cache = getattr(self, "_sent224", None)
+        if cache and cache[0] == (self.turno, texto):
+            return cache[1]
+        res = None
+        ant_reform, ant_just, ant_pend = getattr(self, "_reform", False), getattr(self, "ult_just", None), getattr(self, "pend", None)
+        try:
+            hechos = []
+            for cand, cambios, clase, valor, orden in _S.propuestas(self, texto):
+                vistos = [cand] + ([] if os.environ.get("LCM_SENTIDO_SIN_TABLA") else _S.alternativas(cand)[:2])
+                for q2 in vistos:
+                    resp, fuente = None, ""
+                    self._reform = True
+                    self.ult_just = None
+                    try:
+                        r_c = self._procesar_charla(q2)
+                    except Exception:                    # noqa
+                        r_c = None
+                    finally:
+                        self._reform = ant_reform
+                    if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("respuesta") and r_c.get("tipo") not in ("ack", "crea") and not self._solo_fabrica():
+                        resp = r_c["respuesta"]
+                        fuente = resp + " " + " ".join(x for x in ((self.ult_just or {}).get("dicho") or []) if isinstance(x, str))
+                    tabla = q2 is not cand               # rehecha además con la tabla de equivalencias («comen» -> «se alimentan de»): el verbo ya no es el de la candidata
+                    def _tiempo(x):                      # …pero el tiempo sí tiene que casar: lo que PASÓ no lo contesta una costumbre
+                        return _S.ancla(texto, q2, x) if tabla else _S.casa_tiempo(cambios, x)
+                    if resp is None or not (_tiempo(resp) and _S.casa_tipo(texto, resp)):
+                        resp = lectura.cita(self, q2)
+                        fuente = resp or ""
+                        if resp and not (_tiempo(resp) and _S.casa_tipo(texto, resp)):
+                            resp = None
+                    if not resp or not _S.cita_firme(self, q2, cambios, fuente):
+                        continue
+                    hechos.append({"resp": resp, "cambios": cambios, "clase": clase, "valor": valor, "apoyo": _S.apoyo(self, q2, cambios, fuente), "just": self.ult_just, "orden": orden})
+                    break
+                if hechos and hechos[-1]["clase"] == "S" and hechos[-1]["cambios"] is cambios:
+                    break                                # indicio seguro y con respuesta: no hace falta mirar más
+            el = None
+            if hechos and hechos[-1]["clase"] == "S":
+                el = hechos[-1]
+            else:
+                # con apoyo en la frase vale cualquier indicio; sin nada que comprobar, solo la primera candidata y de las que pasan el umbral
+                bolsa = [h for h in hechos if h["apoyo"] == "firme"] or [h for h in hechos if h["clase"] == "F" and h["orden"] == 0 and h["apoyo"] == "neutro"]
+                if os.environ.get("LCM_SENTIDO_SIN_APOYO"):
+                    bolsa = [h for h in hechos if h["clase"] in ("S", "F")]
+                bolsa.sort(key=lambda h: (h["cambios"][0][1] == "hacer", {"S": 0, "F": 1, "D": 2}[h["clase"]], -h["valor"]))   # «hacer» vale por casi todo: detrás de cualquier palabra más precisa
+                distintas = []
+                for h in bolsa:
+                    if not any(sa(h["resp"].lower()) == sa(o["resp"].lower()) for o in distintas):
+                        distintas.append(h)
+                if len(distintas) > 1 and distintas[0]["cambios"][0][0] == distintas[1]["cambios"][0][0] \
+                        and _S.evidencia(sa(distintas[0]["cambios"][0][1]), sa(distintas[1]["cambios"][0][1]))[1] in ("S", "F"):
+                    distintas = distintas[:1]            # las dos candidatas dicen lo mismo entre sí («terminar» y «acabar»): no hay dos lecturas
+                if len(distintas) == 1 or (len(distintas) > 1 and (distintas[0]["valor"] >= distintas[1]["valor"] + 0.1 or distintas[0]["clase"] != distintas[1]["clase"]
+                                                                   or os.environ.get("LCM_SENTIDO_SIN_DOS"))):
+                    el = distintas[0]
+                elif len(distintas) > 1:
+                    a_, b_ = distintas[0], distintas[1]
+                    if a_["cambios"][0][0] == b_["cambios"][0][0]:
+                        res = {"respuesta": _S.dos_lecturas(a_["cambios"][0][0], (a_["cambios"][0][1], a_["resp"]), (b_["cambios"][0][1], b_["resp"])),
+                               "estado": "ok", "consultar": False, "tipo": "resp", "por_sentido": a_["cambios"] + b_["cambios"], "dos_lecturas": True}
+                        self.ult_just = {"dicho": [a_["resp"], b_["resp"]]}
+                    else:
+                        el = a_
+            if el is not None:
+                res = {"respuesta": _S.aviso(el["cambios"], el["resp"]), "estado": "ok", "consultar": False, "tipo": "resp", "por_sentido": el["cambios"],
+                       "clase_sentido": el["clase"] if not any(sa(c_[0]) in _S.vocabulario(self)[0] or sa(c_[0]) in _S.vocabulario(self)[1] for c_ in el["cambios"]) else "dentro"}
+                self.ult_just = el["just"] or {"dicho": [el["resp"]]}
+            if res is not None:
+                self.pend = None
+            self._duda224 = None
+            vb_, nm_ = _S.vocabulario(self)               # solo se pregunta por palabras que NO están en lo aprendido
+            dudas = [h for h in hechos if len(h["cambios"]) == 1 and h["valor"] >= _S.UMBRAL_DUDA and h["apoyo"] != "falla"
+                     and sa(h["cambios"][0][0]) not in vb_ and sa(h["cambios"][0][0]) not in nm_]
+            if res is None and dudas:
+                h = sorted(dudas, key=lambda h: -h["valor"])[0]   # hay candidata con respuesta, pero el indicio no basta: se preguntará
+                self._duda224 = (self.turno, texto, h["cambios"], h["resp"])
+        except Exception:                                # noqa
+            res = None
+        finally:
+            self._reform = ant_reform
+            if res is None:
+                self.ult_just, self.pend = ant_just, ant_pend
+        self._sent224 = ((self.turno, texto), res)
+        return res
+
     def _solo_fabrica(self):
         """¿La última respuesta salió solo del conocimiento de fábrica (lo que «suele» pasar), sin nada dicho o leído en la conversación?"""
         j = self.ult_just or {}
@@ -397,14 +489,18 @@ class Conversador(Nucleo):
                             r = r_c
                             break
                     else:                                # 2.20: y si no, por el sentido: la palabra aprendida más cercana (vectores del léxico)
-                        for cand, cambios in _S.por_sentido(self, texto):
-                            r_c = self._procesar_charla(cand)
-                            if isinstance(r_c, dict) and r_c.get("estado") == "ok" and r_c.get("respuesta") and _S.casa_tiempo(cambios, r_c["respuesta"]) and _S.casa_tipo(texto, r_c["respuesta"]) \
-                                    and _S.cita_firme(self, cand, cambios, r_c["respuesta"]):
-                                r = dict(r_c)
-                                r["respuesta"] = _S.aviso(cambios, r["respuesta"])
-                                r["por_sentido"] = cambios
-                                break
+                        r_s = self._sentido(texto)       # 2.24: varias candidatas, y decide el texto
+                        c_t = None
+                        if not (r_s is not None and r_s.get("clase_sentido") == "S") and (self.usuario.get("leido") or []) and not getattr(self, "_leyendo", False):
+                            c_t = lectura.cita(self, texto)   # salvo sinónimo seguro, antes lo que el texto dice tal cual o con una equivalencia de la lengua
+                            if not c_t and not os.environ.get("LCM_SIN_TABLA_CITA"):
+                                for cand in _S.alternativas(texto):
+                                    c_t = lectura.cita(self, cand)
+                                    if c_t and _S.ancla(texto, cand, c_t) and _S.apoyo(self, cand, [], c_t) != "falla":
+                                        break
+                                    c_t = None
+                        if not c_t and r_s is not None:
+                            r = r_s
                 except Exception:                        # noqa
                     pass
                 finally:
@@ -460,15 +556,21 @@ class Conversador(Nucleo):
         if texto and "?" in texto and not getattr(self, "_leyendo", False) and (r is None or de_fabrica or (isinstance(r, dict) and r.get("estado") in ("abst", "aclara"))) \
                 and (self.usuario.get("leido") or []):
             c = lectura.cita(self, texto)                # el núcleo no lo sabe (o solo sabe lo que «suele» pasar): ¿lo dice lo leído o explicado?
+            if not c and not os.environ.get("LCM_SIN_TABLA_CITA"):
+                try:                                     # 2.24: ¿lo dice con una equivalencia de la lengua? («¿de qué se alimentan?» con «…comen pienso»; «¿qué da vueltas?» con «…gira»)
+                    from . import sinonimia as _S
+                    for cand in _S.alternativas(texto):
+                        c = lectura.cita(self, cand)
+                        if c and _S.ancla(texto, cand, c) and _S.apoyo(self, cand, [], c) != "falla":
+                            break
+                        c = None
+                except Exception:                        # noqa
+                    c = None
             if not c:
                 try:                                     # 2.20: ¿lo dice con otras palabras?
                     from . import sinonimia as _S
-                    for cand, cambios in _S.por_sentido(self, texto):
-                        c = lectura.cita(self, cand)
-                        if c and _S.casa_tiempo(cambios, c) and _S.casa_tipo(texto, c) and _S.cita_firme(self, cand, cambios, c):
-                            c = _S.aviso(cambios, c)
-                            break
-                        c = None
+                    r_s = self._sentido(texto)
+                    c = r_s["respuesta"] if r_s is not None else None
                 except Exception:                        # noqa
                     c = None
             if c:
@@ -480,6 +582,12 @@ class Conversador(Nucleo):
             try:                                         # 2.21: hay una palabra leída que se parece, pero no lo bastante: se pregunta en vez de adivinar
                 from . import sinonimia as _S
                 self._reform = True
+                d224 = getattr(self, "_duda224", None)
+                if d224 and d224[0] == self.turno and d224[1] == texto and [d224[2][0][0], d224[2][0][1]] not in (self.usuario.get("no_sinonimos") or []):
+                    self._duda_sentido = {"turno": self.turno, "pares": [(d224[2][0][0], d224[2][0][1])], "respuesta": d224[3]}
+                    self.pend = None
+                    return {"respuesta": f"No lo sé seguro. ¿«{d224[2][0][0]}» quiere decir aquí lo mismo que «{d224[2][0][1]}»? Si es así, dímelo y te contesto.",
+                            "estado": "abst", "consultar": False, "tipo": "abst"}
                 for cand, cambios in _S.por_sentido(self, texto, duda=True):
                     if len(cambios) != 1:
                         continue

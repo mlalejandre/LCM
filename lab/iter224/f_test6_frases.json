@@ -1,0 +1,538 @@
+{
+ "resumen": {
+  "tipos": {
+   "V": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "TOTAL": {
+    "n": 38,
+    "ok": 31,
+    "falsas": 1,
+    "acierto": 81.6
+   },
+   "L": {
+    "n": 10,
+    "ok": 8,
+    "falsas": 1,
+    "acierto": 80.0
+   },
+   "I": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "D": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "P": {
+    "n": 8,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "M": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "C": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 1,
+    "ok": 0,
+    "falsas": 0,
+    "acierto": 0.0
+   },
+   "K": {
+    "n": 1,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   12,
+   14
+  ]
+ },
+ "filas": [
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "La lana es el pelo de las ovejas.",
+   "r": "Entendido: la lana es el pelo de las ovejas.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Los pastores cuidan los rebaños en el campo.",
+   "r": "Entendido: los pastores cuidan los rebaños en el campo.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Un rebaño es un grupo de ovejas.",
+   "r": "Entendido: el rebaño es un grupo de ovejas.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "En primavera se corta la lana a las ovejas con unas tijeras grandes.",
+   "r": "Entendido: el rebaño se corta la lana a las ovejas con unas tijeras grandes en primavera.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Este trabajo se llama esquila.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "La esquila no hace daño al animal.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La esquila no hace daño al animal».",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Después la lana se lava para quitarle la grasa.",
+   "r": "Entendido: la lana se lava para quitar la grasa después.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "La lana limpia se peina y se convierte en hilo.",
+   "r": "Entendido: la lana se convierte en hilo.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "El lugar donde se teje el hilo se llama telar.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El lugar donde se teje el hilo se llama telar».",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Con lana se hacen jerséis, bufandas y mantas.",
+   "r": "Entendido: la lana se hace jerséys, bufandas y mantas con lana.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "La lana abriga mucho, por eso se usa en invierno.",
+   "r": "Entendido: la lana abriga mucho; la lana se usa en invierno.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "La oveja merina es la oveja que da la lana más fina.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Una oveja da unos cuatro kilos de lana al año.",
+   "r": "Entendido: la oveja da unos cuatro kilos de lana al año.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "la lana",
+   "t": "-",
+   "q": "Las crías de la oveja se llaman corderos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "la lana",
+   "t": "V",
+   "q": "¿qué es la lana?",
+   "crit": "pelo",
+   "r": "La lana es un pelo, como me dijiste; de fábrica sé además que es un material. Además, según lo que he aprendido, la lana es el pelo de las ovejas.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿de qué animal es la lana?",
+   "crit": "oveja*",
+   "r": "En el texto pone: «La esquila no hace daño al animal».",
+   "v": "MAL",
+   "k": 0
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿quiénes cuidan los rebaños?",
+   "crit": "pastor*",
+   "r": "Los pastores cuidan los rebaños en el campo.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la lana",
+   "t": "V",
+   "q": "¿qué es un rebaño?",
+   "crit": "grupo|ovejas",
+   "r": "El rebaño es un grupo de ovejas.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿cuándo se corta la lana?",
+   "crit": "primavera",
+   "r": "En el texto pone, hablando de un rebaño: «En primavera se corta la lana a las ovejas con unas tijeras grandes».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿con qué se corta la lana?",
+   "crit": "tijeras",
+   "r": "En el texto pone, hablando de un rebaño: «En primavera se corta la lana a las ovejas con unas tijeras grandes».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la lana",
+   "t": "I",
+   "q": "¿cómo se llama este trabajo?",
+   "crit": "esquila",
+   "r": "En el texto pone: «Este trabajo se llama esquila».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿la esquila hace daño al animal?",
+   "crit": "^no",
+   "r": "No: el texto dice «La esquila no hace daño al animal».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿para qué se lava la lana?",
+   "crit": "grasa|quitar*",
+   "r": "Para quitar la grasa.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿en qué se convierte la lana limpia?",
+   "crit": "hilo",
+   "r": "La lana se convierte en hilo.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la lana",
+   "t": "I",
+   "q": "¿cómo se llama el lugar donde se teje el hilo?",
+   "crit": "telar",
+   "r": "En el texto pone: «El lugar donde se teje el hilo se llama telar».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿dónde se teje el hilo?",
+   "crit": "telar",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿qué se hace con lana?",
+   "crit": "jerseis|bufandas|mantas",
+   "r": "En el texto pone, hablando de la lana: «Con lana se hacen jerséis, bufandas y mantas».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la lana",
+   "t": "D",
+   "q": "¿por qué se usa la lana en invierno?",
+   "crit": "abriga",
+   "r": "Porque La lana abriga mucho. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "la lana",
+   "t": "I",
+   "q": "¿qué oveja da la lana más fina?",
+   "crit": "merina",
+   "r": "En el texto pone: «La oveja merina es la oveja que da la lana más fina».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "la lana",
+   "t": "L",
+   "q": "¿cuánta lana da una oveja al año?",
+   "crit": "cuatro|4",
+   "r": "En el texto pone: «Una oveja da unos cuatro kilos de lana al año».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "la lana",
+   "t": "I",
+   "q": "¿cómo se llaman las crías de la oveja?",
+   "crit": "cordero*",
+   "r": "Corderos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "la lana",
+   "t": "H",
+   "q": "¿un pastor es una persona?",
+   "crit": "^si",
+   "r": "Sí, un pastor es una persona. Lo deduzco porque un pastor es un profesional y un profesional es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "H",
+   "q": "¿una oveja es un animal?",
+   "crit": "^si",
+   "r": "Sí, una oveja es un animal. Lo deduzco porque una oveja es un mamífero y un mamífero es un animal.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿quiénes vigilan los rebaños?",
+   "crit": "pastor*",
+   "r": "No lo sé seguro. ¿«vigilar» quiere decir aquí lo mismo que «cuidar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿para qué se limpia la lana?",
+   "crit": "grasa|quitar*",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿en qué se transforma la lana limpia?",
+   "crit": "hilo",
+   "r": "La lana convertir en Hilo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿la esquila lastima al animal?",
+   "crit": "^no",
+   "r": "No lo sé seguro. ¿«lastima» quiere decir aquí lo mismo que «daño»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿qué se fabrica con lana?",
+   "crit": "jerseis|bufandas|mantas",
+   "r": "En el texto pone, hablando de la lana: «Con lana se hacen jerséis, bufandas y mantas». Entiendo «fabricar» como «hacer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿cuándo se emplea la lana?",
+   "crit": "invierno",
+   "r": "En el texto pone: «La lana abriga mucho, por eso se usa en invierno». Entiendo «emplear» como «usar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿la lana calienta mucho?",
+   "crit": "^si|abriga",
+   "r": "No lo sé: no me has dicho nada sobre eso. De la lana sé que es el pelo de las ovejas y se lava para quitar la grasa después. («calentar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "P",
+   "q": "¿cuánta lana produce una oveja al año?",
+   "crit": "cuatro|4",
+   "r": "En el texto pone: «Una oveja da unos cuatro kilos de lana al año».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "M",
+   "q": "¿cómo se llama el trabajo de cortar la lana?",
+   "crit": "esquila",
+   "r": "En el texto pone: «Este trabajo se llama esquila».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿quién inventó el telar?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿cuánto cuesta un jersey?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿quién compra la lana?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («comprar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿dónde duermen los pastores?",
+   "crit": "ABST",
+   "r": "No lo sé. («dormir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿qué beben las ovejas?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "N",
+   "q": "¿quién pinta las mantas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («pintar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "C",
+   "q": "mi tío es pastor",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu tío es pastor.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "C",
+   "q": "¿mi tío cuida rebaños?",
+   "crit": "^si|cuida*",
+   "r": "Sí, los pastores cuidan los rebaños en el campo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "G",
+   "q": "dime dos cosas que se hacen con lana",
+   "crit": "jerseis|bufandas|mantas",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dime dos cosas que se hacen con lana».",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la lana",
+   "t": "K",
+   "q": "la lana se corta en otoño",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|primavera",
+   "r": "Entendido: la lana se corta en otoño. Pero ojo: en lo que leí ponía «En primavera se corta la lana a las ovejas con unas tijeras grandes». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

@@ -1,0 +1,714 @@
+{
+ "resumen": {
+  "tipos": {
+   "P": {
+    "n": 48,
+    "ok": 44,
+    "falsas": 1,
+    "acierto": 91.7
+   },
+   "TOTAL": {
+    "n": 68,
+    "ok": 64,
+    "falsas": 1,
+    "acierto": 94.1
+   },
+   "N": {
+    "n": 20,
+    "ok": 20,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   0,
+   0
+  ]
+ },
+ "filas": [
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (20 frases). He entendido bien 20; las otras 4 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿quién vigila las colmenas?",
+   "crit": "apicultor*",
+   "r": "No lo sé seguro. ¿«vigilar» quiere decir aquí lo mismo que «proteger»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué emplea el apicultor para calmar a las abejas?",
+   "crit": "humo",
+   "r": "En el texto pone: «El apicultor usa humo para calmar a las abejas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿dónde se almacena la miel?",
+   "crit": "panal",
+   "r": "En el texto pone: «La miel se guarda en el panal, una estructura de celdas de cera». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué transportan las abejas de una flor a otra?",
+   "crit": "polen",
+   "r": "En el texto pone: «Las abejas llevan el polen de una flor a otra, por eso son muy importantes para las plantas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿cuándo fallece la abeja obrera?",
+   "crit": "picar",
+   "r": "En el texto pone: «Después de picar, la abeja obrera muere». Entiendo «fallecer» como «morir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué utiliza el apicultor para tranquilizar a las abejas?",
+   "crit": "humo",
+   "r": "En el texto pone: «El apicultor usa humo para calmar a las abejas». Entiendo «utilizar» como «usar» y «tranquilizar» como «calmar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿las abejas residen en colmenas?",
+   "crit": "^si|colmena",
+   "r": "Sí, las abejas viven en la colmena.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién fabrica las colmenas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «fabricar»; si es otra forma de decir algo, dímelo («fabricar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién descubrió la miel?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿qué beben las abejas?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (19 frases). He entendido bien 18; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿quiénes investigan los volcanes?",
+   "crit": "vulcanologo*",
+   "r": "Los vulcanólogos estudian los volcanes. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué aparatos emplean los vulcanólogos?",
+   "crit": "sismografo*",
+   "r": "En el texto pone, hablando de los vulcanólogos: «Usan sismógrafos, unos aparatos que miden los temblores de la tierra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿por dónde brota la lava?",
+   "crit": "crater",
+   "r": "La lava sale por el cráter. Entiendo «brotar» como «salir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿en qué se transforma la lava al enfriarse?",
+   "crit": "roca",
+   "r": "En el texto pone: «Al enfriarse, la lava se convierte en roca dura». Entiendo «transformar» como «convertir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué miden los sismógrafos?",
+   "crit": "temblores",
+   "r": "En el texto pone, hablando de los vulcanólogos: «Usan sismógrafos, unos aparatos que miden los temblores de la tierra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿cuánto mide el Teide?",
+   "crit": "3715",
+   "r": "Teide mide 3715 metros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién descubrió el Teide?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuánto pesa la lava?",
+   "crit": "ABST",
+   "r": "No lo sé. («pesar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién fabrica los sismógrafos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (18 frases). He entendido bien 15; las otras 3 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿con cuántas piezas comienza cada jugador?",
+   "crit": "dieciseis|16",
+   "r": "Sí: el texto dice «Cada jugador empieza con dieciséis piezas». Entiendo «comenzar» como «empezar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿qué pieza se desplaza en diagonal?",
+   "crit": "alfil",
+   "r": "En el texto pone: «El alfil se mueve en diagonal». Entiendo «desplazar» como «mover».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿qué emplean los jugadores profesionales para medir el tiempo?",
+   "crit": "reloj",
+   "r": "En el texto pone: «Los jugadores profesionales usan un reloj para medir el tiempo».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿cuándo finaliza la partida?",
+   "crit": "jaque mate|escapar",
+   "r": "En el texto pone: «Si el rey no puede escapar, es jaque mate y la partida termina».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿en qué se transforma el peón?",
+   "crit": "dama",
+   "r": "En el texto pone: «El peón es la pieza menos valiosa, pero si llega al otro lado del tablero se convierte en dama». Entiendo «transformar» como «convertir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿quién inventó el ajedrez?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿cuánto cuesta un tablero?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (18 frases). He entendido bien 15; las otras 4 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿qué ingieren los murciélagos?",
+   "crit": "insectos|fruta",
+   "r": "En el texto pone: «La mayoría de los murciélagos comen insectos, pero algunos comen fruta». Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿cuándo descansan los murciélagos?",
+   "crit": "dia",
+   "r": "En el texto pone, hablando de los murciélagos: «Duermen de día, colgados boca abajo en cuevas y árboles huecos». Entiendo «descansar» como «dormir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿quiénes investigan los murciélagos?",
+   "crit": "quiropterologo*",
+   "r": "Los quiropterólogos estudian los murciélagos. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿cuándo salen a capturar?",
+   "crit": "noche",
+   "r": "En el texto pone, hablando de los murciélagos: «Salen a cazar por la noche». Entiendo «capturar» como «cazar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿quién pinta a los murciélagos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «pintar»; si es otra forma de decir algo, dímelo («pintar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿qué beben los murciélagos?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (17 frases). He entendido bien 14; las otras 5 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿dónde se tuestan los granos?",
+   "crit": "horno",
+   "r": "Los granos se tuestan en un horno después.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿qué país fabrica más café?",
+   "crit": "brasil",
+   "r": "En el texto pone: «Brasil es el país que más café produce».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿qué sustancia tiene el café?",
+   "crit": "cafeina",
+   "r": "En el texto pone: «El café contiene cafeína, una sustancia que quita el sueño».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿quiénes elaboran café en las cafeterías?",
+   "crit": "barista*",
+   "r": "Las baristas preparan café en las cafeterías. Entiendo «elaborar» como «preparar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿cuándo lo bebe mucha gente?",
+   "crit": "manana",
+   "r": "En el texto pone: «Por eso mucha gente lo toma por la mañana». Entiendo «beber» como «tomar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿los granos tostados se trituran?",
+   "crit": "^si|polvo|muelen",
+   "r": "Sí: el texto dice «Los granos tostados se muelen hasta convertirlos en polvo». Entiendo «triturar» como «moler».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿quién descubrió el café?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿cuánto cuesta un café?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 17; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿dónde se edifican los faros?",
+   "crit": "costa",
+   "r": "Los faros se construyen en la costa cerca de las rocas peligrosas. Entiendo «edificar» como «construir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿dónde residía el farero?",
+   "crit": "faro",
+   "r": "El farero vivía en el faro con su familia.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿quiénes edificaron la Torre de Hércules?",
+   "crit": "romanos",
+   "r": "Los romanos construyeron la Torre de Hércules.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿para qué se utilizan los faros?",
+   "crit": "guiar|barcos",
+   "r": "Un faro sirve para guiar a los barcos durante la noche.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿en qué se han transformado algunos faros viejos?",
+   "crit": "hoteles|museos",
+   "r": "En el texto pone: «Algunos faros viejos se han convertido en hoteles y otros en museos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién inventó el faro?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién derribó la Torre de Hércules?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («derribar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (16 frases). He entendido bien 13; las otras 3 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿cuánto demora la Luna en dar una vuelta?",
+   "crit": "veintisiete|27",
+   "r": "En el texto pone, hablando de La Luna: «Tarda unos veintisiete días en dar una vuelta alrededor de nuestro planeta».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿qué causa las mareas?",
+   "crit": "luna",
+   "r": "En el texto pone: «La Luna provoca las mareas, que son las subidas y bajadas del mar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿quién fue la primera persona que caminó sobre la Luna?",
+   "crit": "armstrong",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿cuándo arribó Armstrong a la Luna?",
+   "crit": "1969",
+   "r": "En el texto pone, hablando de Neil Armstrong: «Llegó en 1969 en la nave Apolo 11». Entiendo «arribar» como «llegar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿hay vida en Marte?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Neil Armstrong sé que es una persona y pisó la Luna. En lo que he aprendido no aparece «martir»; si es otra forma de decir algo, dímelo («martir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿quién descubrió la Luna?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (16 frases). He entendido bien 10; las otras 7 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué ingieren los pingüinos?",
+   "crit": "peces|calamares|crustaceos",
+   "r": "Los pingüinos se alimentan de peces, calamares y pequeños crustáceos. Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué los resguarda del frío?",
+   "crit": "grasa",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿quiénes investigan las aves?",
+   "crit": "ornitologo*",
+   "r": "Los ornitólogos estudian las aves. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿quién vigila el huevo?",
+   "crit": "macho",
+   "r": "En el texto pone: «La hembra pone un solo huevo y el macho lo cuida durante dos meses». Entiendo «vigilar» como «cuidar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿dónde habitan casi todos los pingüinos?",
+   "crit": "sur|antartida",
+   "r": "Los pingüinos viven en grupos muy grandes.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿quién caza a los ornitólogos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «cazar»; si es otra forma de decir algo, dímelo («cazar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿qué beben los pingüinos?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 12; las otras 5 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿con qué se elabora el pan?",
+   "crit": "harina",
+   "r": "El pan hacer con Harina. El pan hacer con agua. El pan hacer con Sal. El pan hacer con Levaduro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿quiénes elaboran el pan?",
+   "crit": "panadero*",
+   "r": "Los panaderos hacen pan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿cuándo comienza a trabajar un panadero?",
+   "crit": "madrugada",
+   "r": "Los panaderos empiezan para que el pan esté listo por la mañana a trabajar de madrugada.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿dónde se cocina la masa?",
+   "crit": "horno",
+   "r": "La masa se cuece en un horno muy caliente. Entiendo «cocinar» como «cocer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿qué genera la levadura?",
+   "crit": "gas",
+   "r": "En el texto pone: «Durante el reposo la levadura produce gas, y por eso la masa crece». Entiendo «generar» como «producir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿para qué se utiliza el pan duro?",
+   "crit": "torrijas|sopas",
+   "r": "Un pan duro sirve para hacer torrijas y sopas.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿quién inventó el pan?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuánto cuesta una barra de pan?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

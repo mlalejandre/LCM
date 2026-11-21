@@ -86,11 +86,11 @@ def entrenar(dim=DIM, semilla=7, guardar=True, log=None, p_sim=P_SIM):
     signo = (U * Vt).sum(0).sign()
     X = torch.nn.functional.normalize(U * (S.clamp_min(0) * (signo > 0)).sqrt(), dim=1)
     if guardar:
-        torch.save({"palabras": palabras, "X": X.half(), "dim": dim, "fuente": L.get("fuente", ""), "puentes": puentes(log=log)}, RUTA_VEC)
+        torch.save({"palabras": palabras, "X": X.half(), "dim": dim, "fuente": L.get("fuente", ""), "puentes": puentes(log=log), "puentes1": puentes(minimo=1, solo=1)}, RUTA_VEC)
     return palabras, X
 
 
-def puentes(minimo=2, log=None):
+def puentes(minimo=2, log=None, solo=None):
     """2.22 · Sinónimos que el léxico español no enlaza, sacados de los otros idiomas de la base de conceptos (data/conceptos.json.gz).
     Si dos sentidos distintos comparten palabra en varios idiomas («transformar» y «convertir»: it. trasformare, pt. modificar), es un
     indicio de que dicen lo mismo. Devuelve {palabra: {otra: n.º de idiomas}} con n >= minimo. Es un indicio ruidoso (a ojo, la mitad
@@ -128,7 +128,7 @@ def puentes(minimo=2, log=None):
             w2s.setdefault(w, set()).add(s)
     out = {}
     for (a, b), n in par.items():
-        if n < minimo:
+        if n < minimo or (solo is not None and n != solo):
             continue
         for x in es.get(a, ()):
             for y in es.get(b, ()):
@@ -144,7 +144,8 @@ def puentes(minimo=2, log=None):
 def puente(a, b):
     """N.º de idiomas en que dos palabras sin sentido común en español comparten palabra (0 si ninguno o si no hay datos)."""
     _carga()
-    return (_V.get("puentes") or {}).get(sa(a.lower()), {}).get(sa(b.lower()), 0)
+    a, b = sa(a.lower()), sa(b.lower())
+    return (_V.get("puentes") or {}).get(a, {}).get(b, 0) or (_V.get("puentes1") or {}).get(a, {}).get(b, 0)
 
 
 def _carga():
@@ -161,13 +162,25 @@ def _carga():
                     torch.save(d, RUTA_VEC)
                 except Exception:                        # noqa
                     pass
+            if "puentes1" not in d:                      # 2.24: parejas que coinciden en UN solo idioma (indicio débil: nunca vale solo)
+                d["puentes1"] = puentes(minimo=1, solo=1)
+                try:
+                    torch.save(d, RUTA_VEC)
+                except Exception:                        # noqa
+                    pass
             _V["puentes"] = d["puentes"]
+            _V["puentes1"] = d["puentes1"]
         else:
             r = entrenar()
             if r is None:
                 _V["sin"] = True
                 return
             palabras, X = r
+            try:                                         # recién entrenados: los puentes están en el fichero que se acaba de guardar
+                d = torch.load(RUTA_VEC, map_location="cpu")
+                _V["puentes"], _V["puentes1"] = d.get("puentes") or {}, d.get("puentes1") or {}
+            except Exception:                            # noqa
+                pass
         _V["X"] = X
         _V["idx"] = {w: k for k, w in enumerate(palabras)}
         _V["palabras"] = palabras
@@ -292,3 +305,12 @@ def dos_pasos(a, b):
     va = {w for s in w2s.get(a, ()) for w in _V["s2w"].get(s, ())}
     vb = {w for s in w2s.get(b, ()) for w in _V["s2w"].get(s, ())}
     return bool((va & vb) - {a, b})
+
+
+def tipo_de(a, b):
+    """¿Es `a` un tipo de `b` según el léxico (algún sentido de `a` tiene por padre un sentido de `b`) y no al revés ni lo mismo?"""
+    w2s, hyp = _grafo()
+    sa_, sb_ = w2s.get(sa(a.lower()), set()), w2s.get(sa(b.lower()), set())
+    if not sa_ or not sb_ or sa_ & sb_:
+        return False
+    return any(p in sb_ for s in sa_ for p in hyp.get(s, ()))

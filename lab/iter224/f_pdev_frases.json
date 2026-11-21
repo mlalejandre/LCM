@@ -1,0 +1,1874 @@
+{
+ "resumen": {
+  "tipos": {
+   "P": {
+    "n": 48,
+    "ok": 41,
+    "falsas": 2,
+    "acierto": 85.4
+   },
+   "TOTAL": {
+    "n": 68,
+    "ok": 61,
+    "falsas": 2,
+    "acierto": 89.7
+   },
+   "N": {
+    "n": 20,
+    "ok": 20,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   0,
+   0
+  ]
+ },
+ "filas": [
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las abejas son insectos que viven en grandes grupos llamados colonias.",
+   "r": "Entendido: las abejas son insectos.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Cada colonia vive en una colmena.",
+   "r": "Entendido: la colonia vive en una colmena.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "En una colmena hay tres tipos de abejas: la reina, las obreras y los zánganos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "La reina es la única que pone huevos.",
+   "r": "Entendido: la reina pone huevos.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las obreras son hembras y hacen casi todo el trabajo.",
+   "r": "Entendido: las obreras son hembras.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Los zánganos son los machos y no tienen aguijón.",
+   "r": "Entendido: los zánganos son machos; los zánganos no tienen aguijón.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las obreras recogen el néctar de las flores y lo convierten en miel.",
+   "r": "Entendido: las obreras recogen el néctar de las flores; las obreras convierten el néctar en miel.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "La miel se guarda en el panal, una estructura de celdas de cera.",
+   "r": "Entendido: el panal es una estructura de celdas de cera.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las celdas tienen seis lados.",
+   "r": "Entendido: las celdas tienen seis lados.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Cuando una abeja encuentra flores, avisa a las demás con un baile.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las abejas llevan el polen de una flor a otra, por eso son muy importantes para las plantas.",
+   "r": "Entendido: las abejas llevan el polen de una flor a otra; las abejas son muy importantes para las plantas.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Este trabajo se llama polinización.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Una abeja solo pica si se siente amenazada.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Después de picar, la abeja obrera muere.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Las personas que cuidan las colmenas se llaman apicultores.",
+   "r": "Entendido: los apicultores son personas; los apicultores cuidan las colmenas.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "El apicultor usa humo para calmar a las abejas.",
+   "r": "Entendido: los apicultores usan humo para calmar a las abejas.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Lleva un traje blanco y un velo que le protege la cara.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Lleva un traje blanco y un velo que le protege la cara».",
+   "v": null,
+   "k": 16
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "En invierno las abejas no salen de la colmena y se alimentan de la miel que guardaron.",
+   "r": "Entendido: las abejas no salen de la colmena en invierno.",
+   "v": null,
+   "k": 17
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "La jalea real es el alimento de la reina.",
+   "r": "Entendido: la jalea real es el alimento de la reina; la reina come la jalea real.",
+   "v": null,
+   "k": 18
+  },
+  {
+   "tema": "abejas",
+   "t": "-",
+   "q": "Una reina puede vivir cinco años, mientras que una obrera vive solo unas semanas.",
+   "r": "Entendido: la reina puede vivir cinco años; las obreras viven unas semanas.",
+   "v": null,
+   "k": 19
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿quién vigila las colmenas?",
+   "crit": "apicultor*",
+   "r": "No lo sé seguro. ¿«vigilar» quiere decir aquí lo mismo que «proteger»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué emplea el apicultor para calmar a las abejas?",
+   "crit": "humo",
+   "r": "En el texto pone: «El apicultor usa humo para calmar a las abejas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿dónde se almacena la miel?",
+   "crit": "panal",
+   "r": "En el texto pone: «La miel se guarda en el panal, una estructura de celdas de cera». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué transportan las abejas de una flor a otra?",
+   "crit": "polen",
+   "r": "En el texto pone: «Las abejas llevan el polen de una flor a otra, por eso son muy importantes para las plantas».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿cuándo fallece la abeja obrera?",
+   "crit": "picar",
+   "r": "Después de picar. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿qué utiliza el apicultor para tranquilizar a las abejas?",
+   "crit": "humo",
+   "r": "En el texto pone: «El apicultor usa humo para calmar a las abejas». Entiendo «utilizar» como «usar» y «tranquilizar» como «calmar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "P",
+   "q": "¿las abejas residen en colmenas?",
+   "crit": "^si|colmena",
+   "r": "Sí, las abejas viven en la colmena.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién fabrica las colmenas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «fabricar»; si es otra forma de decir algo, dímelo («fabricar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿quién descubrió la miel?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "abejas",
+   "t": "N",
+   "q": "¿qué beben las abejas?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Un volcán es una abertura de la corteza terrestre por la que sale roca fundida.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Debajo de la corteza hay roca fundida muy caliente, llamada magma.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Debajo de la corteza hay roca fundida muy caliente, llamada magma».",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Cuando el magma sale al exterior se llama lava.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "La lava sale por el cráter, que es la boca del volcán.",
+   "r": "Entendido: la lava sale por el cráter; el cráter es la boca del volcán.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "La salida violenta de lava, gases y ceniza se llama erupción.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Algunos volcanes están activos y otros están dormidos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Un volcán dormido puede despertar después de cientos de años.",
+   "r": "Entendido: el volcán dormido es un volcán; el volcán dormido puede despertar después de cientos de años.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Los volcanes extinguidos ya no entran en erupción.",
+   "r": "Entendido: los volcanes extinguidos son volcanes; los volcanes extinguidos no entran en erupción.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "La lava puede alcanzar más de mil grados.",
+   "r": "Entendido: la lava puede alcanzar más de mil grados.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Al enfriarse, la lava se convierte en roca dura.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Al enfriarse, la lava se convierte en roca dura».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "La ceniza de los volcanes hace que la tierra sea muy fértil, por eso mucha gente cultiva cerca de ellos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Las personas que estudian los volcanes se llaman vulcanólogos.",
+   "r": "Entendido: los vulcanólogos son personas; los vulcanólogos estudian los volcanes.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Usan sismógrafos, unos aparatos que miden los temblores de la tierra.",
+   "r": "Entendido: los vulcanólogos usan sismógrafos; los sismógrafos son aparatos.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Antes de una erupción suele temblar la tierra.",
+   "r": "Entendido: los sismógrafos suelen temblar la tierra antes de una erupción.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "El Teide es el volcán más alto de España.",
+   "r": "Entendido: Teide es un volcán; Teide es muy alto.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Está en la isla de Tenerife y mide 3715 metros.",
+   "r": "Entendido: Teide está en la isla de Tenerife; Teide mide 3715 metros.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "El Krakatoa es un volcán de Indonesia.",
+   "r": "Entendido: Krakatoa es un volcán de Indonesia.",
+   "v": null,
+   "k": 16
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Su erupción de 1883 se oyó a miles de kilómetros.",
+   "r": "Entendido: Su erupción de 1883 se oyó a miles de kilómetros.",
+   "v": null,
+   "k": 17
+  },
+  {
+   "tema": "volcanes",
+   "t": "-",
+   "q": "Un volcán submarino puede formar una isla nueva.",
+   "r": "Entendido: el volcán submarino es un volcán; el volcán submarino puede formar una isla nueva.",
+   "v": null,
+   "k": 18
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿quiénes investigan los volcanes?",
+   "crit": "vulcanologo*",
+   "r": "Los vulcanólogos estudian los volcanes. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué aparatos emplean los vulcanólogos?",
+   "crit": "sismografo*",
+   "r": "En el texto pone, hablando de los vulcanólogos: «Usan sismógrafos, unos aparatos que miden los temblores de la tierra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿por dónde brota la lava?",
+   "crit": "crater",
+   "r": "La lava sale por el cráter. Entiendo «brotar» como «salir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿en qué se transforma la lava al enfriarse?",
+   "crit": "roca",
+   "r": "En el texto pone, hablando de la lava: «Al enfriarse, la lava se convierte en roca dura». Entiendo «transformar» como «convertir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿qué miden los sismógrafos?",
+   "crit": "temblores",
+   "r": "En el texto pone, hablando de los vulcanólogos: «Usan sismógrafos, unos aparatos que miden los temblores de la tierra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "P",
+   "q": "¿cuánto mide el Teide?",
+   "crit": "3715",
+   "r": "Teide mide 3715 metros.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién descubrió el Teide?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿cuánto pesa la lava?",
+   "crit": "ABST",
+   "r": "No lo sé. («pesar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "volcanes",
+   "t": "N",
+   "q": "¿quién fabrica los sismógrafos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El ajedrez es un juego de mesa para dos jugadores.",
+   "r": "Entendido: el ajedrez es un juego de mesa para dos jugadores.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Se juega sobre un tablero de sesenta y cuatro casillas.",
+   "r": "Entendido: el ajedrez se juega sobre un tablero de 64 casillas.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Cada jugador empieza con dieciséis piezas.",
+   "r": "Entendido: jugador empieza con dieciséis piezas.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Hay seis tipos de piezas: el rey, la dama, la torre, el alfil, el caballo y el peón.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Un jugador lleva las piezas blancas y el otro las negras.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Un jugador lleva las piezas blancas y el otro las negras».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Las blancas siempre mueven primero.",
+   "r": "Entendido: las blancas mueven primero siempre.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "La dama es la pieza más poderosa, porque puede moverse en cualquier dirección.",
+   "r": "Entendido: la dama es una pieza; la dama es muy poderosa.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "La torre se mueve en línea recta.",
+   "r": "Entendido: la torre se mueve en línea recta.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El alfil se mueve en diagonal.",
+   "r": "Entendido: el alfil se mueve en diagonal.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El caballo es la única pieza que puede saltar sobre las demás.",
+   "r": "Entendido: el caballo es una pieza; el caballo puede saltar sobre las demás.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El peón es la pieza menos valiosa, pero si llega al otro lado del tablero se convierte en dama.",
+   "r": "Entendido: el peón es una pieza.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El rey solo puede moverse una casilla.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El rey solo puede moverse una casilla».",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "El objetivo del juego es atrapar al rey del rival.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El objetivo del juego es atrapar al rey del rival».",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Cuando el rey está amenazado se dice que está en jaque.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Si el rey no puede escapar, es jaque mate y la partida termina.",
+   "r": "Entendido: si el rey no puede escapar, es jaque maté y la partida termina. Lo tendré en cuenta.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Cuando ningún jugador puede ganar, la partida acaba en tablas.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "Los jugadores profesionales usan un reloj para medir el tiempo.",
+   "r": "Entendido: los jugadores profesionales son jugadores; los jugadores profesionales usan un reloj para medir el tiempo.",
+   "v": null,
+   "k": 16
+  },
+  {
+   "tema": "ajedrez",
+   "t": "-",
+   "q": "A los mejores jugadores del mundo se les llama grandes maestros.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 17
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿con cuántas piezas comienza cada jugador?",
+   "crit": "dieciseis|16",
+   "r": "Sí: el texto dice «Cada jugador empieza con dieciséis piezas». Entiendo «comenzar» como «empezar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿qué pieza se desplaza en diagonal?",
+   "crit": "alfil",
+   "r": "En el texto pone: «El alfil se mueve en diagonal». Entiendo «desplazar» como «mover».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿qué emplean los jugadores profesionales para medir el tiempo?",
+   "crit": "reloj",
+   "r": "En el texto pone: «Los jugadores profesionales usan un reloj para medir el tiempo».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿cuándo finaliza la partida?",
+   "crit": "jaque mate|escapar",
+   "r": "En el texto pone, hablando del objetivo del juego: «Cuando ningún jugador puede ganar, la partida acaba en tablas».",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "P",
+   "q": "¿en qué se transforma el peón?",
+   "crit": "dama",
+   "r": "En el texto pone: «El peón es la pieza menos valiosa, pero si llega al otro lado del tablero se convierte en dama». Entiendo «transformar» como «convertir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿quién inventó el ajedrez?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «inventar»; si es otra forma de decir algo, dímelo («inventar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "ajedrez",
+   "t": "N",
+   "q": "¿cuánto cuesta un tablero?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Los murciélagos son los únicos mamíferos que pueden volar.",
+   "r": "Entendido: los murciélagos son mamiferos; los murciélagos pueden volar.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Sus alas son en realidad manos con dedos muy largos, unidos por una piel fina.",
+   "r": "Entendido: las alas de los murciélagos son unidas y manos en realidad con dedos muy largos por una piel fina.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Duermen de día, colgados boca abajo en cuevas y árboles huecos.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Duermen de día, colgados boca abajo en cuevas y árboles huecos».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Salen a cazar por la noche.",
+   "r": "Entendido: los murciélagos salen a cazar por la noche.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "La mayoría de los murciélagos comen insectos, pero algunos comen fruta.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Un solo murciélago puede comer mil mosquitos en una noche.",
+   "r": "Entendido: los murciélagos pueden comer mil mosquitos en una noche.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Para orientarse en la oscuridad emiten sonidos muy agudos y escuchan su eco.",
+   "r": "Entendido: los murciélagos escuchan su eco.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Este sistema se llama ecolocalización.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Las personas no podemos oír esos sonidos.",
+   "r": "Entendido: las personas no pueden oír esos sonidos.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "En invierno, cuando no hay insectos, muchos murciélagos hibernan.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «No hay insectos. Muchos murciélagos hibernan en invierno cuando».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Las crías nacen en primavera y se agarran a su madre durante las primeras semanas.",
+   "r": "Entendido: las crías nacen en primavera; las crías se agarran a su madre durante las primeras semanas.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Un grupo de murciélagos se llama colonia.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "El zorro volador es el murciélago más grande del mundo.",
+   "r": "Entendido: el zorro volador es un murciélago; el zorro volador es muy grande.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Sus alas abiertas miden más de un metro y medio.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Sus alas abiertas miden más de un metro y medio».",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "El vampiro es un murciélago de América que se alimenta de sangre.",
+   "r": "Entendido: el vampiro es un murciélago de América; el vampiro se alimenta de sangre.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Los murciélagos son muy útiles, porque se comen los insectos que dañan las cosechas.",
+   "r": "Entendido: los murciélagos son muy útiles.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Las personas que estudian los murciélagos se llaman quiropterólogos.",
+   "r": "Entendido: los quiropterólogos son personas; los quiropterólogos estudian los murciélagos.",
+   "v": null,
+   "k": 16
+  },
+  {
+   "tema": "murciélagos",
+   "t": "-",
+   "q": "Algunos murciélagos viven más de treinta años.",
+   "r": "Entendido: Algunos murciélagos viven más de treinta años.",
+   "v": null,
+   "k": 17
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿qué ingieren los murciélagos?",
+   "crit": "insectos|fruta",
+   "r": "En el texto pone: «La mayoría de los murciélagos comen insectos, pero algunos comen fruta». Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿cuándo descansan los murciélagos?",
+   "crit": "dia",
+   "r": "En el texto pone, hablando de los murciélagos: «Duermen de día, colgados boca abajo en cuevas y árboles huecos». Entiendo «descansar» como «dormir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿quiénes investigan los murciélagos?",
+   "crit": "quiropterologo*",
+   "r": "Los quiropterólogos estudian los murciélagos. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "P",
+   "q": "¿cuándo salen a capturar?",
+   "crit": "noche",
+   "r": "En el texto pone, hablando de los murciélagos: «Salen a cazar por la noche». Entiendo «capturar» como «cazar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿quién pinta a los murciélagos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «pintar»; si es otra forma de decir algo, dímelo («pintar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "murciélagos",
+   "t": "N",
+   "q": "¿qué beben los murciélagos?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "El café se hace con las semillas de una planta llamada cafeto.",
+   "r": "Entendido: el café se hace con las semillas de una planta.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "El cafeto es un arbusto que crece en países cálidos y lluviosos.",
+   "r": "Entendido: el cafeto es un arbusto; el cafeto crece en países cálidos y lluviosos.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Sus frutos son rojos y se llaman cerezas de café.",
+   "r": "Entendido: los frutos del cafeto son rojos.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Dentro de cada cereza hay dos semillas, que son los granos de café.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Dentro de cada cereza hay dos semillas, que son los granos de café».",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Los granos se secan al sol durante varias semanas.",
+   "r": "Entendido: los granos se secan al sol durante varias semanas.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Después se tuestan en un horno, y entonces toman su color marrón y su olor.",
+   "r": "Entendido: los granos se tuestan en un horno después; los granos toman su color marrón y su olor.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Los granos tostados se muelen hasta convertirlos en polvo.",
+   "r": "Entendido: los granos tostados son granos; los granos tostados se mcen hasta convertir en polvo.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Para preparar la bebida se hace pasar agua caliente por el café molido.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Para preparar la bebida se hace pasar agua caliente por el café molido».",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "El café contiene cafeína, una sustancia que quita el sueño.",
+   "r": "Entendido: el café contene cafeína; la cafeína es una sustancia.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Por eso mucha gente lo toma por la mañana.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "El café sin cafeína se llama descafeinado.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Un café solo no lleva leche.",
+   "r": "Entendido: el café no lleva leche.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "El cortado lleva un poco de leche y el café con leche lleva mucha.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El cortado lleva un poco de leche y el café con leche lleva mucha».",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Brasil es el país que más café produce.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Brasil es el país que más café produce».",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Las personas que preparan café en las cafeterías se llaman baristas.",
+   "r": "Entendido: las baristas son personas; las baristas preparan café en las cafeterías.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Un buen barista sabe dibujar figuras con la espuma de la leche.",
+   "r": "Entendido: las baristas saben dibujar figuras con la espuma de la leche.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "café",
+   "t": "-",
+   "q": "Los médicos recomiendan no tomar más de cuatro tazas al día.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Los médicos recomiendan no tomar más de cuatro tazas al día».",
+   "v": null,
+   "k": 16
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿dónde se tuestan los granos?",
+   "crit": "horno",
+   "r": "Los granos se tuestan en un horno después.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿qué país fabrica más café?",
+   "crit": "brasil",
+   "r": "En el texto pone: «Brasil es el país que más café produce».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿qué sustancia tiene el café?",
+   "crit": "cafeina",
+   "r": "En el texto pone: «El café contiene cafeína, una sustancia que quita el sueño».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿quiénes elaboran café en las cafeterías?",
+   "crit": "barista*",
+   "r": "Las baristas preparan café en las cafeterías. Entiendo «elaborar» como «preparar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿cuándo lo bebe mucha gente?",
+   "crit": "manana",
+   "r": "En el texto pone, hablando del café contiene cafeína,: «Por eso mucha gente lo toma por la mañana». Entiendo «beber» como «tomar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "P",
+   "q": "¿los granos tostados se trituran?",
+   "crit": "^si|polvo|muelen",
+   "r": "Sí: el texto dice «Los granos tostados se muelen hasta convertirlos en polvo». Entiendo «triturar» como «moler».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿quién descubrió el café?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "café",
+   "t": "N",
+   "q": "¿cuánto cuesta un café?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Un faro es una torre alta con una luz muy potente en la parte de arriba.",
+   "r": "Entendido: el faro es una torre alto con una luz muy potente en la parte de arriba.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Los faros se construyen en la costa, cerca de las rocas peligrosas.",
+   "r": "Entendido: los faros se construyen en la costa cerca de las rocas peligrosas.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Sirven para guiar a los barcos durante la noche.",
+   "r": "Entendido: un faro sirve para guiar a los barcos durante la noche.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La luz de un faro gira y se ve desde muy lejos.",
+   "r": "Entendido: la luz de los faros gira desde muy lejos; la luz de los faros se ve desde muy lejos.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Cada faro tiene un ritmo de destellos distinto, y así los marineros saben dónde están.",
+   "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Cuando hay niebla, la luz no se ve y el faro hace sonar una sirena.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Antiguamente los faros funcionaban con fuego y aceite.",
+   "r": "Entendido: los faros funcionaban con fuego y aceite antiguamente.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Hoy casi todos son eléctricos y se encienden solos.",
+   "r": "Entendido: los faros se encienden solos.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La persona que cuidaba un faro se llamaba farero.",
+   "r": "Entendido: el farero es una persona; el farero cuidaba un faro.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "El farero vivía en el faro con su familia y encendía la luz cada tarde.",
+   "r": "Entendido: el farero vivía en el faro con su familia; el farero encendía la luz cada tarde.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Era un trabajo muy solitario.",
+   "r": "Entendido: el farero era un trabajo.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "La Torre de Hércules es el faro más antiguo del mundo que todavía funciona.",
+   "r": "Entendido: la Torre de Hércules es un faro; la Torre de Hércules es muy antiguo.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Está en La Coruña y la construyeron los romanos.",
+   "r": "Entendido: la Torre de Hércules está en La Coruña; No tengo claro de quién hablas. ¿A quién te refieres?.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Algunos faros viejos se han convertido en hoteles y otros en museos.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "faros",
+   "t": "-",
+   "q": "Los faros pintados a rayas se distinguen mejor de día.",
+   "r": "Entendido: los faros pintan a rayas se distinguen mejor de día.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿dónde se edifican los faros?",
+   "crit": "costa",
+   "r": "Los faros se construyen en la costa cerca de las rocas peligrosas. Entiendo «edificar» como «construir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿dónde residía el farero?",
+   "crit": "faro",
+   "r": "El farero vivía en el faro con su familia.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿quiénes edificaron la Torre de Hércules?",
+   "crit": "romanos",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «edificar»; si es otra forma de decir algo, dímelo («edificar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿para qué se utilizan los faros?",
+   "crit": "guiar|barcos",
+   "r": "Un faro sirve para guiar a los barcos durante la noche.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "P",
+   "q": "¿en qué se han transformado algunos faros viejos?",
+   "crit": "hoteles|museos",
+   "r": "En el texto pone, hablando de la construyeron: «Algunos faros viejos se han convertido en hoteles y otros en museos».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién inventó el faro?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "faros",
+   "t": "N",
+   "q": "¿quién derribó la Torre de Hércules?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («derribar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna es el único satélite natural de la Tierra.",
+   "r": "Entendido: Luna es el único satélite natural de la Tierra.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Tarda unos veintisiete días en dar una vuelta alrededor de nuestro planeta.",
+   "r": "Entendido: Luna tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "No tiene luz propia: brilla porque refleja la luz del Sol.",
+   "r": "Entendido: Luna no tiene luz propia brilla.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "En la Luna no hay aire ni agua líquida.",
+   "r": "Entendido: Luna no ha aire ni agua líquida en la.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Por eso allí no puede vivir ningún ser vivo.",
+   "r": "Entendido: Luna no puede vivir ningún ser vivo por eso allí.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Su superficie está cubierta de polvo gris y de cráteres.",
+   "r": "Entendido: la superficie de Luna está cubierta de polvo gris y de cráteres.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Los cráteres son agujeros que dejaron los meteoritos al chocar.",
+   "r": "Entendido: los cráteres son agujeros.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna siempre nos muestra la misma cara.",
+   "r": "Entendido: Luna nos muestra la misma cara siempre; Luna la misma cara muestra la misma cara siempre.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Según cuánta luz recibe, la vemos con formas distintas, llamadas fases.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Según cuánta luz recibe, la vemos con formas distintas, llamadas fases».",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Cuando la vemos entera se llama luna llena.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Cuando no se ve se llama luna nueva.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "La Luna provoca las mareas, que son las subidas y bajadas del mar.",
+   "r": "Entendido: Luna provoca las mareas.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Neil Armstrong fue la primera persona que pisó la Luna.",
+   "r": "Entendido: Neil Armstrong es una persona; Neil Armstrong pisó la Luna.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Llegó en 1969 en la nave Apolo 11.",
+   "r": "Entendido: Neil Armstrong llegó en la nave Apolo 11 en 1969.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "En la Luna las cosas pesan seis veces menos que en la Tierra.",
+   "r": "Entendido: En Luna las cosas pesan menos que en la Tierra seis veces; En la Tierra las cosas pesan menos que en la Tierra seis veces.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "la Luna",
+   "t": "-",
+   "q": "Las personas que viajan al espacio se llaman astronautas.",
+   "r": "Entendido: los astronautas son personas; los astronautas viajan al espacio.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿cuánto demora la Luna en dar una vuelta?",
+   "crit": "veintisiete|27",
+   "r": "Luna tarda unos veintisiete días en dar una vuelta alrededor de vuestro planeta. Entiendo «demorar» como «tardar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿qué causa las mareas?",
+   "crit": "luna",
+   "r": "En el texto pone: «La Luna provoca las mareas, que son las subidas y bajadas del mar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿quién fue la primera persona que caminó sobre la Luna?",
+   "crit": "armstrong",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "P",
+   "q": "¿cuándo arribó Armstrong a la Luna?",
+   "crit": "1969",
+   "r": "En el texto pone, hablando de Neil Armstrong: «Llegó en 1969 en la nave Apolo 11». Entiendo «arribar» como «llegar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿hay vida en Marte?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho nada sobre eso. De Neil Armstrong sé que es una persona y pisó la Luna. En lo que he aprendido no aparece «martir»; si es otra forma de decir algo, dímelo («martir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "la Luna",
+   "t": "N",
+   "q": "¿quién descubrió la Luna?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («descubrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Los pingüinos son aves que no pueden volar.",
+   "r": "Entendido: los pingüinos son aves.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Usan sus alas como aletas para nadar bajo el agua.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Usan sus alas como aletas para nadar bajo el agua».",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Casi todos viven en el hemisferio sur, sobre todo en la Antártida.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Casi todos viven en el hemisferio sur, en la Antártida».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Se alimentan de peces, calamares y pequeños crustáceos.",
+   "r": "Entendido: los pingüinos se alimentan de peces, calamares y pequeños crustáceos.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Una gruesa capa de grasa los protege del frío.",
+   "r": "Entendido: la gruesa capa los protege del frío de grasa.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "En tierra caminan despacio, pero en el agua son muy rápidos.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En tierra caminan despacio, pero en el agua son muy rápidos».",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "El pingüino emperador es el pingüino más grande que existe.",
+   "r": "Entendido: el pingüino emperador es un pingüino; el pingüino emperador es muy grande.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Mide más de un metro y pesa unos cuarenta kilos.",
+   "r": "Entendido: el pingüino emperador pesa unos cuarenta kilos.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "La hembra pone un solo huevo y el macho lo cuida durante dos meses.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La hembra pone un solo huevo y el macho lo cuida durante dos meses».",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Durante ese tiempo el macho no come nada.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Durante ese tiempo el macho no come nada».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Los pingüinos viven en grupos muy grandes llamados colonias.",
+   "r": "Entendido: los pingüinos viven en grupos muy grandes.",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Cuando hace mucho frío, se juntan todos para darse calor.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Las crías nacen cubiertas de un plumón gris.",
+   "r": "Entendido: las crías nacen cubiertas de un plumón gris.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Su peor enemigo en el mar es la foca leopardo.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Su peor enemigo en el mar es la foca leopardo».",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "El pingüino de las Galápagos es el único que vive cerca del ecuador.",
+   "r": "Entendido: el pingüino de la galápago vive cerca del ecuador.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "Las personas que estudian las aves se llaman ornitólogos.",
+   "r": "Entendido: los ornitólogos son personas; los ornitólogos estudian las aves.",
+   "v": null,
+   "k": 15
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué ingieren los pingüinos?",
+   "crit": "peces|calamares|crustaceos",
+   "r": "Los pingüinos se alimentan de peces, calamares y pequeños crustáceos. Entiendo «ingerir» como «comer».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué los resguarda del frío?",
+   "crit": "grasa",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿quiénes investigan las aves?",
+   "crit": "ornitologo*",
+   "r": "Los ornitólogos estudian las aves. Entiendo «investigar» como «estudiar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿quién vigila el huevo?",
+   "crit": "macho",
+   "r": "En el texto pone: «La hembra pone un solo huevo y el macho lo cuida durante dos meses». Entiendo «vigilar» como «cuidar».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿dónde habitan casi todos los pingüinos?",
+   "crit": "sur|antartida",
+   "r": "Los pingüinos viven en grupos muy grandes.",
+   "v": "MAL",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿quién caza a los ornitólogos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «cazar»; si es otra forma de decir algo, dímelo («cazar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿qué beben los pingüinos?",
+   "crit": "ABST",
+   "r": "No lo sé. («beber» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "El pan se hace con harina, agua, sal y levadura.",
+   "r": "Entendido: el pan se hace con harina, agua, sal y levadura.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "La harina es el polvo que se obtiene al moler el trigo.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Primero se mezclan los ingredientes hasta formar una masa.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Primero se mezclan los ingredientes hasta formar una masa».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Después la masa se deja reposar unas horas.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Después la masa se deja reposar unas horas».",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Durante el reposo la levadura produce gas, y por eso la masa crece.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Durante el reposo la levadura produce gas, y por eso la masa crece».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Este proceso se llama fermentación.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Por último la masa se cuece en un horno muy caliente.",
+   "r": "Entendido: el pan se cuece la masa en un horno muy caliente por último.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "La parte de fuera del pan se llama corteza y la de dentro se llama miga.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La parte de fuera del pan se llama corteza y la de dentro se llama miga».",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "La corteza es dura y crujiente, mientras que la miga es blanda.",
+   "r": "Entendido: la corteza es dura; la corteza es crujiente; la miga es blanda.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "El pan integral se hace con el grano entero y tiene más fibra.",
+   "r": "Entendido: el pan integral se hace con el grano entero.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "El pan de molde es blando y se vende cortado en rebanadas.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El pan de molde es blando y se vende cortado en rebanadas».",
+   "v": null,
+   "k": 10
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "La baguette es una barra de pan larga y fina, típica de Francia.",
+   "r": "Entendido: la baguette es una barra de pan larga; la baguette fina típica de Francia.",
+   "v": null,
+   "k": 11
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "El pan duro no se tira: sirve para hacer torrijas y sopas.",
+   "r": "Entendido: la pan duro no se tira sirve para hacer torrijas y sopas.",
+   "v": null,
+   "k": 12
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Las personas que hacen pan se llaman panaderos.",
+   "r": "Entendido: los panaderos son personas; los panaderos hacen pan.",
+   "v": null,
+   "k": 13
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "Un panadero empieza a trabajar de madrugada para que el pan esté listo por la mañana.",
+   "r": "Entendido: los panaderos empiezan para que el pan esté listo por la mañana a trabajar de madrugada.",
+   "v": null,
+   "k": 14
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿con qué se elabora el pan?",
+   "crit": "harina",
+   "r": "El pan hacer con Harina. El pan hacer con agua. El pan hacer con Sal. El pan hacer con Levaduro.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿quiénes elaboran el pan?",
+   "crit": "panadero*",
+   "r": "Los panaderos hacen pan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿cuándo comienza a trabajar un panadero?",
+   "crit": "madrugada",
+   "r": "Los panaderos empiezan para que el pan esté listo por la mañana a trabajar de madrugada.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿dónde se cocina la masa?",
+   "crit": "horno",
+   "r": "El pan se cuece la masa en un horno muy caliente por último.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿qué genera la levadura?",
+   "crit": "gas",
+   "r": "En el texto pone, hablando de primero: «Durante el reposo la levadura produce gas, y por eso la masa crece». Entiendo «generar» como «producir».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿para qué se utiliza el pan duro?",
+   "crit": "torrijas|sopas",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿quién inventó el pan?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuánto cuesta una barra de pan?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

@@ -1404,6 +1404,45 @@ causar: provocar, producir
 necesitar: requerir, precisar
 guardar: almacenar, conservar
 
+# [locuciones]  2.24: un verbo de apoyo con su complemento que dice lo mismo que un verbo solo («dar vueltas» = «girar»). Vale en los dos
+# sentidos. «Xse» = pronominal. Son de la lengua, no del mundo.
+[locuciones]
+dar vueltas: girar
+dar saltos: saltar
+dar gritos: gritar
+dar un paseo: pasear
+dar comienzo: empezar, comenzar
+dar las gracias: agradecer
+dar de comer: alimentar
+dar miedo: asustar
+dar clase: enseñar
+dar a luz: parir
+tener lugar: ocurrir, suceder, celebrarse
+tener miedo de: temer
+tener éxito: triunfar
+hacer reír: divertir
+hacer daño: dañar, lastimar
+hacer uso de: usar, utilizar
+hacer preguntas: preguntar
+llevar a cabo: realizar
+poner fin a: terminar, acabar
+ponerse en marcha: arrancar
+tomar asiento: sentarse
+echar una mano: ayudar
+prestar ayuda: ayudar
+guardar silencio: callar
+perder la vida: morir
+tirar de: arrastrar, remolcar
+ocuparse de: cuidar, atender
+encargarse de: cuidar, atender
+darse cuenta de: notar, advertir
+echar de menos: añorar, extrañar
+ir a pie: caminar, andar
+encontrarse: estar
+hallarse: estar
+situarse: estar
+ubicarse: estar
+
 [equivalencias_nombres]
 comida: alimento
 sitio: lugar

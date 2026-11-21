@@ -1,0 +1,1500 @@
+{
+ "resumen": {
+  "tipos": {
+   "P": {
+    "n": 75,
+    "ok": 59,
+    "falsas": 1,
+    "acierto": 78.7
+   },
+   "TOTAL": {
+    "n": 100,
+    "ok": 83,
+    "falsas": 2,
+    "acierto": 83.0
+   },
+   "L": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "N": {
+    "n": 20,
+    "ok": 19,
+    "falsas": 1,
+    "acierto": 95.0
+   }
+  },
+  "frases_cubiertas": [
+   41,
+   56
+  ]
+ },
+ "filas": [
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "El pan se elabora con harina, agua, sal y levadura.",
+   "r": "Entendido: el pan se elabora con harina, agua, sal y levadura.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "Los panaderos amasan la mezcla durante veinte minutos.",
+   "r": "Entendido: los panaderos amasan la mezcla durante veinte minutos.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "Después dejan reposar la masa en un lugar templado.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Después dejan reposar la masa en un lugar templado».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "La masa crece gracias a la levadura.",
+   "r": "Entendido: la masa crece gracias a la levadura.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "Los panaderos cuecen el pan en un horno de leña.",
+   "r": "Entendido: los panaderos cuecen el pan en un horno de leña.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "El pan recién hecho es crujiente y huele muy bien.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El pan recién hecho es crujiente y huele muy bien».",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "Los panaderos empiezan a trabajar de madrugada.",
+   "r": "Entendido: los panaderos empiezan a trabajar de madrugada.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "La panadería abre a las siete de la mañana.",
+   "r": "Entendido: la panadería abre a las siete de la mañana.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "Los clientes compran el pan temprano.",
+   "r": "Entendido: los clientes compran el pan temprano.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la panadería",
+   "t": "-",
+   "q": "El pan duro se aprovecha para hacer torrijas.",
+   "r": "Entendido: el pan se aprovecha para hacer torrijas.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿con qué se hace el pan?",
+   "crit": "harina",
+   "r": "El pan se elabora con harina, agua, sal y levadura y el pan se aprovecha para hacer torrijas.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿con qué se fabrica el pan?",
+   "crit": "harina",
+   "r": "El pan se elabora con harina, agua, sal y levadura. Entiendo «fabricar» como «elaborar».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la panadería",
+   "t": "L",
+   "q": "¿quiénes amasan la mezcla?",
+   "crit": "panadero*",
+   "r": "Los panaderos amasan la mezcla durante veinte minutos.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿cuánto tiempo trabajan la masa los panaderos?",
+   "crit": "ANY",
+   "r": "No lo sé.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿dónde dejan descansar la masa?",
+   "crit": "templado",
+   "r": "En el texto pone, hablando de los panaderos: «Después dejan reposar la masa en un lugar templado». Entiendo «descansar» como «reposar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿dónde dejan reposar la masa en un sitio templado?",
+   "crit": "ANY",
+   "r": "En el texto pone, hablando de los panaderos: «Después dejan reposar la masa en un lugar templado». Entiendo «sitio» como «lugar».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿gracias a qué aumenta la masa?",
+   "crit": "levadura",
+   "r": "La masa crece gracias a la levadura. Entiendo «aumentar» como «crecer».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿dónde hornean el pan los panaderos?",
+   "crit": "horno",
+   "r": "Los panaderos cuecen el pan en un horno de leña.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿dónde venden el pan los panaderos?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «vender»; si es otra forma de decir algo, dímelo («vender es lo mismo que…»).",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿cómo es el pan recién elaborado?",
+   "crit": "crujiente",
+   "r": "En el texto pone: «El pan recién hecho es crujiente y huele muy bien».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿cuándo comienzan a trabajar los panaderos?",
+   "crit": "madrugada",
+   "r": "En el texto pone: «Los panaderos empiezan a trabajar de madrugada». Entiendo «comenzar» como «empezar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿cuándo terminan de trabajar los panaderos?",
+   "crit": "ABST",
+   "r": "No lo sé. («terminar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿a qué hora cierra la panadería?",
+   "crit": "ABST",
+   "r": "No lo sé. («cerrar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿cuándo adquieren el pan los clientes?",
+   "crit": "temprano",
+   "r": "En el texto pone: «Los clientes compran el pan temprano». Entiendo «adquirir» como «comprar».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿quiénes compran el pan pronto?",
+   "crit": "clientes",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "la panadería",
+   "t": "P",
+   "q": "¿para qué se utiliza el pan duro?",
+   "crit": "torrijas",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "la panadería",
+   "t": "N",
+   "q": "¿para qué se tira el pan duro?",
+   "crit": "ABST",
+   "r": "No he entendido bien la pregunta. ¿Me la dices de otra forma?",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Un faro es una torre alta situada en la costa.",
+   "r": "Entendido: el faro es situado y una torre alto en la costa.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Su luz guía a los barcos durante la noche.",
+   "r": "Entendido: la luz del faro guia a los barcos durante la noche.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "El farero es la persona que cuida el faro.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "El farero enciende la lámpara al anochecer.",
+   "r": "Entendido: el farero enciende la lámpara al anochecer.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "La lámpara gira sin parar.",
+   "r": "Entendido: la lámpara gira sin parar.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Los marineros ven la luz desde muy lejos.",
+   "r": "Entendido: los marineros ven la luz desde muy lejos.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Cuando hay niebla, el faro hace sonar una sirena.",
+   "r": "Entendido, me lo apunto.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Los faros antiguos quemaban aceite.",
+   "r": "Entendido: los faros antiguos son faros; los faros antiguos quemaban aceite.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "Hoy casi todos los faros funcionan con electricidad.",
+   "r": "Entendido: los faros funcionan con electricidad hoy.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el faro",
+   "t": "-",
+   "q": "El farero sube ciento veinte escalones cada día.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «El farero sube ciento veinte escalones cada día».",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿dónde está ubicado un faro?",
+   "crit": "costa",
+   "r": "Los faros son situados y torre altos en la costa.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿dónde se encuentra un faro?",
+   "crit": "costa",
+   "r": "Los faros son situados y torre altos en la costa.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿qué orienta a los barcos durante la noche?",
+   "crit": "luz|faro",
+   "r": "En el texto pone, hablando de un faro: «Su luz guía a los barcos durante la noche».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿a quién guía la luz del faro?",
+   "crit": "barcos",
+   "r": "La luz de los faros guia a los barcos durante la noche.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿quién vigila el faro?",
+   "crit": "farero",
+   "r": "No lo sé seguro. ¿«vigilar» quiere decir aquí lo mismo que «cuidar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿quién se ocupa del faro?",
+   "crit": "farero",
+   "r": "En el texto pone: «El farero es la persona que cuida el faro».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿cuándo prende la lámpara el farero?",
+   "crit": "anochecer",
+   "r": "El farero enciende la lámpara al anochecer. Entiendo «prender» como «encender».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el faro",
+   "t": "N",
+   "q": "¿cuándo apaga la lámpara el farero?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «apagar»; si es otra forma de decir algo, dímelo («apagar es lo mismo que…»).",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿qué da vueltas sin parar?",
+   "crit": "lampara",
+   "r": "En el texto pone: «La lámpara gira sin parar».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿desde dónde divisan la luz los marineros?",
+   "crit": "lejos",
+   "r": "Los marineros ven la luz desde muy lejos.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿quiénes observan la luz desde muy lejos?",
+   "crit": "marineros",
+   "r": "En el texto pone: «Los marineros ven la luz desde muy lejos».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿qué hace sonar el faro cuando hay bruma?",
+   "crit": "sirena",
+   "r": "En el texto pone, hablando de los marineros: «Cuando hay niebla, el faro hace sonar una sirena». Entiendo «bruma» como «niebla».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿qué quemaban los faros viejos?",
+   "crit": "aceite",
+   "r": "En el texto pone: «Los faros antiguos quemaban aceite». Entiendo «viejo» como «antiguo».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el faro",
+   "t": "N",
+   "q": "¿qué quemaban los faros modernos?",
+   "crit": "ABST",
+   "r": "No lo sé.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿con qué marchan hoy casi todos los faros?",
+   "crit": "electricidad",
+   "r": "Los faros funcionan con electricidad hoy. Entiendo «marchar» como «funcionar».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el faro",
+   "t": "P",
+   "q": "¿cuántos peldaños sube el farero cada día?",
+   "crit": "ciento veinte|120",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 9
+  },
+  {
+   "tema": "el faro",
+   "t": "N",
+   "q": "¿cuántos escalones baja el farero cada día?",
+   "crit": "ANY",
+   "r": "No lo sé. («bajar» no aparece en lo que he aprendido.)",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Los granjeros crían vacas, cerdos y gallinas.",
+   "r": "Entendido: los granjeros crian vacas, cerdos y gallinas.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Las vacas dan leche dos veces al día.",
+   "r": "Entendido: las vacas dan leche dos veces al día.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Los granjeros ordeñan las vacas al amanecer.",
+   "r": "Entendido: los granjeros ordeñan las vacas al amanecer.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Las gallinas ponen huevos en el gallinero.",
+   "r": "Entendido: las gallinas ponen huevos en el gallinero.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Los cerdos comen pienso y restos de verduras.",
+   "r": "Entendido: Cerdos comer pensar.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "El granjero guarda el heno en el granero.",
+   "r": "Entendido: los granjeros guardan el heno en el granero.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "El perro vigila el rebaño de ovejas.",
+   "r": "Entendido: el perro vigila el rebaño de ovejas.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "En verano los granjeros recogen el trigo.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «En verano los granjeros recogen el trigo».",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "El tractor arrastra el arado por el campo.",
+   "r": "Entendido: el tractor arrastra el arado por el campo.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la granja",
+   "t": "-",
+   "q": "Los granjeros venden la leche a una fábrica de quesos.",
+   "r": "Entendido: los granjeros venden la leche a una fábrica de quesos.",
+   "v": null,
+   "k": 9
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿qué animales cuidan los granjeros?",
+   "crit": "ANY",
+   "r": "No lo sé seguro. ¿«cuidar» quiere decir aquí lo mismo que «criar»? Si es así, dímelo y te contesto.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la granja",
+   "t": "L",
+   "q": "¿quiénes crían vacas?",
+   "crit": "granjero*",
+   "r": "Los granjeros crian vacas.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿cuántas veces al día producen leche las vacas?",
+   "crit": "dos",
+   "r": "En el texto pone: «Las vacas dan leche dos veces al día».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿cuándo ordeñan las vacas los granjeros?",
+   "crit": "amanecer",
+   "r": "Los granjeros ordeñan las vacas al amanecer.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿cuándo ordeñan las vacas los agricultores?",
+   "crit": "ANY",
+   "r": "Los granjeros ordeñan las vacas al amanecer.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿dónde depositan los huevos las gallinas?",
+   "crit": "gallinero",
+   "r": "Las gallinas ponen huevos en el gallinero.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la granja",
+   "t": "N",
+   "q": "¿dónde comen las gallinas?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «comer»; si es otra forma de decir algo, dímelo («comer es lo mismo que…»).",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿qué ingieren los cerdos?",
+   "crit": "pienso|restos|verduras",
+   "r": "No lo sé. («ingerir» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿de qué se alimentan los cerdos?",
+   "crit": "pienso|restos|verduras",
+   "r": "En el texto pone: «Los granjeros crían vacas, cerdos y gallinas». Entiendo «alimentar» como «criar».",
+   "v": "MAL",
+   "k": 4
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿dónde almacena el heno el granjero?",
+   "crit": "granero",
+   "r": "Los granjeros guardan el heno en el granero.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿dónde conserva el heno el granjero?",
+   "crit": "granero",
+   "r": "Los granjeros guardan el heno en el granero.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿quién cuida el rebaño de ovejas?",
+   "crit": "perro",
+   "r": "El perro vigila el rebaño de ovejas. Entiendo «cuidar» como «vigilar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿quién protege el rebaño de ovejas?",
+   "crit": "perro",
+   "r": "El perro vigila el rebaño de ovejas. Entiendo «proteger» como «vigilar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿cuándo cosechan el trigo los granjeros?",
+   "crit": "verano",
+   "r": "En el texto pone, hablando del perro: «En verano los granjeros recogen el trigo». Entiendo «cosechar» como «recoger».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la granja",
+   "t": "N",
+   "q": "¿cuándo siembran el trigo los granjeros?",
+   "crit": "ABST",
+   "r": "No lo sé. («sembrar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿qué tira del arado?",
+   "crit": "tractor",
+   "r": "En el texto pone: «El tractor arrastra el arado por el campo».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la granja",
+   "t": "P",
+   "q": "¿qué remolca el arado por el campo?",
+   "crit": "tractor",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 8
+  },
+  {
+   "tema": "la granja",
+   "t": "N",
+   "q": "¿a quién compran la leche los granjeros?",
+   "crit": "ABST",
+   "r": "No lo sé. («comprar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "la granja",
+   "t": "L",
+   "q": "¿a quién venden la leche los granjeros?",
+   "crit": "fabrica",
+   "r": "En el texto pone: «Los granjeros venden la leche a una fábrica de quesos».",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "En el hospital se cura a los enfermos.",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Los médicos examinan a los pacientes cada mañana.",
+   "r": "Entendido: los médicos examinan a los pacientes cada mañana.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Las enfermeras reparten las medicinas.",
+   "r": "Entendido: las enfermeras reparten las medicinas.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Los cirujanos operan en el quirófano.",
+   "r": "Entendido: los cirujanos operan en el quirófano.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Las ambulancias trasladan a los heridos con rapidez.",
+   "r": "Entendido: las ambulancias trasladan a los heridos con rapidez.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Los visitantes esperan en una sala grande.",
+   "r": "Entendido: los visitantes esperan en una sala grande.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "El hospital nunca cierra.",
+   "r": "Entendido: el hospital nunca cierra.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Los celadores empujan las camillas por los pasillos.",
+   "r": "Entendido: los celadores empujan las camillas por los pasillos.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el hospital",
+   "t": "-",
+   "q": "Los recién nacidos duermen en la planta tercera.",
+   "r": "Entendido: los recién nacidos son recienes; los recién nacidos duermen en la planta tercera.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿dónde se sana a los enfermos?",
+   "crit": "hospital",
+   "r": "No lo sé. En lo que he aprendido no aparece «sanar»; si es otra forma de decir algo, dímelo («sanar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿dónde se cura a los pacientes?",
+   "crit": "hospital",
+   "r": "No lo sé. («curar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿cuándo revisan los médicos a los pacientes?",
+   "crit": "manana",
+   "r": "Los médicos examinan a los pacientes cada mañana. Entiendo «revisar» como «examinar».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes examinan a los enfermos cada mañana?",
+   "crit": "medicos",
+   "r": "En el texto pone: «Los médicos examinan a los pacientes cada mañana».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes distribuyen las medicinas?",
+   "crit": "enfermera*",
+   "r": "Las enfermeras reparten las medicinas. Entiendo «distribuir» como «repartir».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes reparten los medicamentos?",
+   "crit": "enfermera*",
+   "r": "Las enfermeras reparten las medicinas.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿quiénes fabrican las medicinas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿dónde intervienen los cirujanos?",
+   "crit": "ANY",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el hospital",
+   "t": "L",
+   "q": "¿dónde operan los cirujanos?",
+   "crit": "quirofano",
+   "r": "Los cirujanos operan en el quirófano.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿qué vehículos transportan a los heridos?",
+   "crit": "ambulancia*",
+   "r": "En el texto pone: «Las ambulancias trasladan a los heridos con rapidez». Entiendo «transportar» como «trasladar».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿cómo llevan las ambulancias a los heridos?",
+   "crit": "rapidez|rapid*",
+   "r": "Las ambulancias trasladan a los heridos con rapidez. Entiendo «llevar» como «trasladar».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes trasladan a los lesionados?",
+   "crit": "ambulancia*",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿dónde aguardan los visitantes?",
+   "crit": "sala",
+   "r": "Los visitantes esperan en una sala grande. Entiendo «aguardar» como «esperar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes esperan en una sala amplia?",
+   "crit": "visitantes",
+   "r": "Los visitantes esperan en una sala grande.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿cuándo abre el hospital?",
+   "crit": "ANY",
+   "r": "No lo sé. («abrir» no aparece en lo que he aprendido.)",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿quiénes mueven las camillas por los pasillos?",
+   "crit": "celadores",
+   "r": "Los celadores empujan las camillas por los pasillos. Entiendo «mover» como «empujar».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿quiénes limpian los pasillos?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («limpiar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el hospital",
+   "t": "P",
+   "q": "¿dónde descansan los recién nacidos?",
+   "crit": "tercera|planta",
+   "r": "Los recién nacidos duermen en la planta tercera. Entiendo «descansar» como «dormir».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el hospital",
+   "t": "N",
+   "q": "¿dónde comen los recién nacidos?",
+   "crit": "ABST",
+   "r": "No lo sé. («comer» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "El río nace en una montaña muy alta.",
+   "r": "Entendido: el río nace en una montaña muy alta.",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "Sus aguas bajan frías y limpias.",
+   "r": "Hay dos cláusulas, pero no puedo asignar sus papeles con seguridad; no he guardado ninguna.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "El río atraviesa tres pueblos.",
+   "r": "Entendido: el río atraviesa tres pueblos.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "Los pescadores atrapan truchas en el río.",
+   "r": "Entendido: los pescadores atrapan truchas en el río.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "Un puente de piedra une las dos orillas.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «Un puente de piedra une las dos orillas».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "En primavera el río crece por el deshielo.",
+   "r": "Entendido: el río crece por el deshielo en primavera.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "Los niños se bañan en una poza tranquila.",
+   "r": "Entendido: los niños se bañan en una poza tranquila.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "El molino usa la fuerza del agua para moler el grano.",
+   "r": "Entendido: el molino usa la fuerza del agua para moler el grano.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el río",
+   "t": "-",
+   "q": "El río termina en el mar.",
+   "r": "Entendido: el río termina en el mar.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿dónde surge el río?",
+   "crit": "montana",
+   "r": "No lo sé seguro. ¿«surgir» quiere decir aquí lo mismo que «nacer»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿dónde nace el río?",
+   "crit": "montana",
+   "r": "El río nace en una montaña muy alta.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el río",
+   "t": "N",
+   "q": "¿dónde muere el río?",
+   "crit": "ANY",
+   "r": "No lo sé. En lo que he aprendido no aparece «morir»; si es otra forma de decir algo, dímelo («morir es lo mismo que…»).",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿cómo descienden las aguas del río?",
+   "crit": "frias|limpias",
+   "r": "No sé nada de la agua del río: no me has hablado de ella. («descender» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿cuántos pueblos cruza el río?",
+   "crit": "tres|3",
+   "r": "El río atraviesa tres pueblos. Entiendo «cruzar» como «atravesar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿cuántas aldeas atraviesa el río?",
+   "crit": "ANY",
+   "r": "El río atraviesa tres pueblos. Entiendo «aldea» como «pueblo».",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué capturan los pescadores en el río?",
+   "crit": "truchas",
+   "r": "Los pescadores atrapan truchas en el río.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué pescan los pescadores en el río?",
+   "crit": "truchas",
+   "r": "En el texto pone: «Los pescadores atrapan truchas en el río».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el río",
+   "t": "N",
+   "q": "¿qué cocinan los pescadores?",
+   "crit": "ABST",
+   "r": "No lo sé. («cocinar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué conecta las dos orillas?",
+   "crit": "puente",
+   "r": "En el texto pone: «Un puente de piedra une las dos orillas». Entiendo «conectar» como «unir».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué junta las dos riberas?",
+   "crit": "puente",
+   "r": "En el texto pone: «Un puente de piedra une las dos orillas». Entiendo «juntar» como «unir» y «ribera» como «orilla».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿cuándo aumenta el río?",
+   "crit": "primavera",
+   "r": "El río crece por el deshielo en primavera (del 21 de marzo de 2027 al 20 de junio de 2027). Entiendo «aumentar» como «crecer».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el río",
+   "t": "N",
+   "q": "¿cuándo se seca el río?",
+   "crit": "ABST",
+   "r": "No lo sé. («secar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿dónde nadan los niños?",
+   "crit": "ANY",
+   "r": "No lo sé. («nadar» no aparece en lo que he aprendido.)",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "el río",
+   "t": "L",
+   "q": "¿dónde se bañan los niños?",
+   "crit": "poza",
+   "r": "Los niños se bañan en una poza tranquila.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿quiénes se bañan en una poza calmada?",
+   "crit": "ninos",
+   "r": "Los niños se bañan en una poza tranquila.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué emplea el molino para moler el grano?",
+   "crit": "fuerza|agua",
+   "r": "En el texto pone: «El molino usa la fuerza del agua para moler el grano».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿qué utiliza el molino para triturar el grano?",
+   "crit": "fuerza|agua",
+   "r": "En el texto pone: «El molino usa la fuerza del agua para moler el grano». Entiendo «utilizar» como «usar» y «triturar» como «moler».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿dónde acaba el río?",
+   "crit": "mar",
+   "r": "El río termina en el mar.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el río",
+   "t": "P",
+   "q": "¿dónde finaliza el río?",
+   "crit": "mar",
+   "r": "El río termina en el mar.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el río",
+   "t": "N",
+   "q": "¿dónde empieza el mar?",
+   "crit": "ABST",
+   "r": "No lo sé. («empezar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "En la escuela de música los alumnos aprenden a tocar instrumentos.",
+   "r": "No tengo claro de quién hablas. ¿A quién te refieres?",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "La profesora enseña solfeo los lunes.",
+   "r": "No lo he entendido del todo, pero me lo apunto tal como lo dices: «La profesora enseña solfeo los lunes».",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "Los alumnos practican dos horas cada tarde.",
+   "r": "Entendido: los alumnos practican dos horas cada tarde.",
+   "v": null,
+   "k": 2
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "El director elige las canciones del concierto.",
+   "r": "Entendido: el director elige las canciones del concierto.",
+   "v": null,
+   "k": 3
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "El concierto se celebra en junio.",
+   "r": "Entendido: el concierto se celebra en junio.",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "Los padres aplauden al final.",
+   "r": "Entendido: los padres aplauden.",
+   "v": null,
+   "k": 5
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "El piano pesa mucho y no se mueve nunca.",
+   "r": "Entendido: el piano pesa mucho; el piano nunca se mueve.",
+   "v": null,
+   "k": 6
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "Los violines se guardan en un armario cerrado.",
+   "r": "Entendido: un violín suele estar en armario cerrado.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "-",
+   "q": "La escuela regala una flauta a los nuevos alumnos.",
+   "r": "Entendido: la escuela regala una flauta a los nuevos alumnos.",
+   "v": null,
+   "k": 8
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿qué aprenden los estudiantes en la escuela de música?",
+   "crit": "tocar|instrumentos",
+   "r": "No lo sé. En lo que he aprendido no aparece «aprender»; si es otra forma de decir algo, dímelo («aprender es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuándo explica solfeo la profesora?",
+   "crit": "ANY",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿qué enseña la maestra los lunes?",
+   "crit": "solfeo",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "N",
+   "q": "¿qué estudia la profesora los lunes?",
+   "crit": "ABST",
+   "r": "No lo sé. («estudiar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuánto ensayan los alumnos cada tarde?",
+   "crit": "dos",
+   "r": "En el texto pone: «Los alumnos practican dos horas cada tarde».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuánto tiempo practican los alumnos cada tarde?",
+   "crit": "dos",
+   "r": "Uno, que yo sepa: dos horas.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿quién escoge las canciones del concierto?",
+   "crit": "director",
+   "r": "El director elige las canciones del concierto. Entiendo «escoger» como «elegir».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿quién selecciona las canciones del concierto?",
+   "crit": "director",
+   "r": "El director elige las canciones del concierto. Entiendo «seleccionar» como «elegir».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "N",
+   "q": "¿quién canta las canciones del concierto?",
+   "crit": "ABST",
+   "r": "Los cantantes cantan canciones.",
+   "v": "ALUCINA",
+   "k": 3
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuándo se festeja el concierto?",
+   "crit": "ANY",
+   "r": "El concierto se celebra en junio (junio de 2027). Entiendo «festejar» como «celebrar».",
+   "v": null,
+   "k": 4
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuándo tiene lugar el concierto?",
+   "crit": "junio",
+   "r": "El concierto se celebra en junio (junio de 2027).",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿cuándo aplauden los papás?",
+   "crit": "final",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "N",
+   "q": "¿cuándo silban los padres?",
+   "crit": "ABST",
+   "r": "No lo sé. («silbar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿qué instrumento no se desplaza nunca?",
+   "crit": "piano",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿dónde se almacenan los violines?",
+   "crit": "armario",
+   "r": "En el texto pone: «Los violines se guardan en un armario cerrado». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "N",
+   "q": "¿dónde se arreglan los violines?",
+   "crit": "ABST",
+   "r": "No lo sé. («arreglar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿qué obsequia la escuela a los nuevos alumnos?",
+   "crit": "flauta",
+   "r": "En el texto pone: «La escuela regala una flauta a los nuevos alumnos».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "P",
+   "q": "¿qué da la escuela a los nuevos alumnos?",
+   "crit": "flauta",
+   "r": "En el texto pone: «La escuela regala una flauta a los nuevos alumnos».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "la escuela de música",
+   "t": "N",
+   "q": "¿qué vende la escuela a los nuevos alumnos?",
+   "crit": "ABST",
+   "r": "No lo sé. («vender» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 8
+  }
+ ]
+}

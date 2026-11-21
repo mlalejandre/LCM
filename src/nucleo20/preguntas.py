@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import os
 import re
 from typing import Optional
 
@@ -3029,6 +3030,13 @@ class Papeles:
                 continue
             if f["v"] != C.v and not (C.v in ("ser", "estar", "haber") or objeto):
                 continue
+            if f["v"] != C.v and objeto and C.v not in ("ser", "estar", "haber") and not os.environ.get("LCM_SIN_ANCLA"):
+                try:                                    # 2.24: con otro verbo, solo si dice lo mismo («¿dónde VENDEN el pan?» no lo contesta «lo CUECEN en un horno»)
+                    from . import sinonimia as _S
+                    if sa(C.v) not in _S._FUNC and sa(f["v"]) not in _S._FUNC and _S.evidencia(sa(C.v), sa(f["v"]))[1] not in ("S", "F"):
+                        continue
+                except Exception:                       # noqa
+                    pass
             if o is not None and sujeto and f["v"] == C.v and not self._coincide_obj(f, o):
                 continue
             for pap, p, e, d, interno in self.papeles_marco(f):

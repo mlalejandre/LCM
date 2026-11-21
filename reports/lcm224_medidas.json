@@ -1,0 +1,199 @@
+{
+ "fecha": "2026-11-21",
+ "campana": "2.24 · diccionario: preguntar con otras palabras",
+ "auditoria": {
+  "parafrasis_temas_conocidos_223": {
+   "n": 109,
+   "ok": 78
+  }
+ },
+ "examen_limpio_dtest_101": {
+  "2.23": {
+   "acierto": 70.3,
+   "falsas": 11,
+   "P": 52,
+   "N": 17
+  },
+  "2.24_medida_unica": {
+   "acierto": 80.2,
+   "falsas": 4,
+   "P": 57,
+   "N": 22,
+   "ganadas": 12,
+   "perdidas": 2
+  },
+  "2.24_final_no_ciego": {
+   "acierto": 82.2,
+   "falsas": 4,
+   "P": 59,
+   "N": 22
+  }
+ },
+ "examen_grande_grande1b_352": {
+  "texto": {
+   "2.23": [
+    87.2,
+    17
+   ],
+   "2.24_medida_unica": [
+    87.5,
+    18
+   ],
+   "2.24_final_no_ciego": [
+    88.4,
+    16
+   ]
+  },
+  "frases": {
+   "2.23": [
+    86.1,
+    18
+   ],
+   "2.24_final": [
+    87.2,
+    17
+   ]
+  },
+  "parafrasis_40": [
+   26,
+   30
+  ],
+  "diagnostico": {
+   "2.23": {
+    "LECTURA": 12,
+    "EXPRESION": 4,
+    "FABRICA": 3,
+    "INTERCONEXION": 5,
+    "RAZONAMIENTO": 6,
+    "DICCIONARIO": 11,
+    "RECUPERACION": 1,
+    "EXAMEN": 1,
+    "CONSULTA": 2
+   },
+   "2.24": {
+    "LECTURA": 12,
+    "EXPRESION": 4,
+    "FABRICA": 3,
+    "INTERCONEXION": 5,
+    "RAZONAMIENTO": 6,
+    "DICCIONARIO": 6,
+    "RECUPERACION": 1,
+    "SIN_ANOTAR": 1,
+    "EXAMEN": 1,
+    "CONSULTA": 2
+   }
+  }
+ },
+ "desarrollo_ddev_100": {
+  "texto": {
+   "2.23": [
+    75.0,
+    7
+   ],
+   "2.24": [
+    89.0,
+    1
+   ]
+  },
+  "frases": {
+   "2.23": [
+    71.0,
+    7
+   ],
+   "2.24": [
+    83.0,
+    2
+   ]
+  }
+ },
+ "temas_conocidos": {
+  "texto": {
+   "n": 959,
+   "2.23": 91.4,
+   "2.24": 92.8,
+   "ganadas": 13,
+   "perdidas": 0
+  },
+  "frases": {
+   "n": 866,
+   "2.23": 89.3,
+   "2.24": 90.5,
+   "ganadas": 11,
+   "perdidas": 0
+  }
+ },
+ "ablacion_texto_ddev_dtest": {
+  "todo": [
+   89.0,
+   82.2
+  ],
+  "una_candidata": [
+   84.0,
+   78.2
+  ],
+  "sin_apoyo": [
+   84.0,
+   77.2
+  ],
+  "sin_ancla": [
+   86.0,
+   78.2
+  ],
+  "sin_locuciones": [
+   86.0,
+   82.2
+  ],
+  "sin_puente1": [
+   87.0,
+   82.2
+  ],
+  "sin_cambio_dentro": [
+   88.0,
+   82.2
+  ]
+ },
+ "controles_223_224": {
+  "autor": [
+   90.18,
+   90.18
+  ],
+  "ciego2": [
+   94.68,
+   95.02
+  ],
+  "ciego6": [
+   82.09,
+   82.09
+  ],
+  "ciego7": [
+   79.07,
+   79.07
+  ],
+  "termometro": [
+   96.59,
+   97.07
+  ],
+  "16b": [
+   96.48,
+   96.48
+  ],
+  "16c": [
+   100,
+   100
+  ],
+  "17b": [
+   99.26,
+   99.26
+  ],
+  "17c": [
+   94.5,
+   94.5
+  ],
+  "conversa17": [
+   99.33,
+   99.33
+  ]
+ },
+ "regresiones": "solo las 4 conocidas; iter224 t01 = 100 % (187 sondas)",
+ "pytest": "938 pasan, 3 fallos de entorno, 1 omitido"
+}

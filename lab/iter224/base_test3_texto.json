@@ -1,0 +1,640 @@
+{
+ "resumen": {
+  "tipos": {
+   "L": {
+    "n": 18,
+    "ok": 17,
+    "falsas": 1,
+    "acierto": 94.4
+   },
+   "TOTAL": {
+    "n": 60,
+    "ok": 57,
+    "falsas": 2,
+    "acierto": 95.0
+   },
+   "V": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "P": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "D": {
+    "n": 5,
+    "ok": 5,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "I": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "H": {
+    "n": 6,
+    "ok": 6,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "M": {
+    "n": 2,
+    "ok": 1,
+    "falsas": 0,
+    "acierto": 50.0
+   },
+   "N": {
+    "n": 6,
+    "ok": 5,
+    "falsas": 1,
+    "acierto": 83.3
+   },
+   "C": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "G": {
+    "n": 4,
+    "ok": 4,
+    "falsas": 0,
+    "acierto": 100.0
+   },
+   "K": {
+    "n": 2,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 100.0
+   }
+  },
+  "frases_cubiertas": [
+   28,
+   29
+  ]
+ },
+ "filas": [
+  {
+   "tema": "pingüinos",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (16 frases). He entendido bien 10; las otras 7 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿los pingüinos pueden volar?",
+   "crit": "^no",
+   "r": "No, los pingüinos no vuelan.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "pingüinos",
+   "t": "V",
+   "q": "¿qué son los pingüinos?",
+   "crit": "ave*",
+   "r": "Un pingüino es un ave. Los pingüinos nadan. Además, según lo que he aprendido, los pingüinos son aves que no pueden volar.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿para qué usan sus alas los pingüinos?",
+   "crit": "nadar",
+   "r": "En el texto pone, hablando de los pingüinos: «Usan sus alas como aletas para nadar bajo el agua».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿dónde viven los pingüinos?",
+   "crit": "sur|antartida",
+   "r": "En el texto pone: «Casi todos viven en el hemisferio sur, sobre todo en la Antártida».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "pingüinos",
+   "t": "P",
+   "q": "¿qué comen los pingüinos?",
+   "crit": "peces|calamares|crustaceos",
+   "r": "Los pingüinos se alimentan de peces, calamares y pequeños crustáceos.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿qué protege a los pingüinos del frío?",
+   "crit": "grasa",
+   "r": "En el texto pone: «Una gruesa capa de grasa los protege del frío».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cómo son los pingüinos en el agua?",
+   "crit": "rapidos",
+   "r": "Los pingüinos son aves.",
+   "v": "MAL",
+   "k": 5
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cuál es el pingüino más grande?",
+   "crit": "emperador",
+   "r": "El pingüino emperador: según lo que he aprendido, es el pingüino más grande que existe.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cuánto pesa el pingüino emperador?",
+   "crit": "cuarenta|40",
+   "r": "El pingüino emperador pesa unos cuarenta kilos.",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿quién cuida el huevo?",
+   "crit": "macho",
+   "r": "En el texto pone: «La hembra pone un solo huevo y el macho lo cuida durante dos meses».",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿cuántos huevos pone la hembra?",
+   "crit": "un|1",
+   "r": "1: Huevo.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "pingüinos",
+   "t": "V",
+   "q": "¿qué es una colonia?",
+   "crit": "grupo*",
+   "r": "Una colonia es un objeto de aseo. Además, según lo que he aprendido, la colonia es pingüinos viven en grupos muy grandes.",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿qué hacen los pingüinos cuando hace mucho frío?",
+   "crit": "juntan|calor",
+   "r": "Según lo que he aprendido: cuando hace mucho frío, Los pingüinos se juntan todos para darse calor.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "pingüinos",
+   "t": "L",
+   "q": "¿de qué color es el plumón de las crías?",
+   "crit": "gris",
+   "r": "Las crías nacen cubiertas de un plumón gris.",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cuál es el peor enemigo de los pingüinos en el mar?",
+   "crit": "foca",
+   "r": "En el texto pone: «Su peor enemigo en el mar es la foca leopardo».",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿qué pingüino vive cerca del ecuador?",
+   "crit": "galapagos",
+   "r": "El pingüino de las Galápagos: según lo que he aprendido, es el único que vive cerca del ecuador.",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "pingüinos",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que estudian las aves?",
+   "crit": "ornitologo*",
+   "r": "Ornitólogos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 15
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿un pingüino es un animal?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, los pingüinos son aves que no pueden volar.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿el pingüino emperador es un ave?",
+   "crit": "^si",
+   "r": "Sí, un pingüino emperador es una ave. Lo deduzco porque el pingüino emperador es un pingüino y los pingüinos son aves.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "H",
+   "q": "¿un pingüino es un pez?",
+   "crit": "^no",
+   "r": "No, un pingüino es un ave, no un pez.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "M",
+   "q": "¿cuánto pesa el pingüino más grande?",
+   "crit": "cuarenta|40",
+   "r": "El pingüino emperador pesa unos cuarenta kilos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "D",
+   "q": "¿el pingüino emperador puede volar?",
+   "crit": "^no",
+   "r": "No, los pingüinos no vuelan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿cuántos pingüinos hay en la Antártida?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿cuánto vive un pingüino?",
+   "crit": "ABST",
+   "r": "Los pingüinos viven en grupos muy grandes.",
+   "v": "ALUCINA",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "N",
+   "q": "¿quién descubrió la Antártida?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «descubrir»; si es otra forma de decir algo, dímelo («descubrir es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "C",
+   "q": "mi hermana es ornitóloga",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu hermana es ornitóloga.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "C",
+   "q": "¿mi hermana estudia las aves?",
+   "crit": "^si|estudia*",
+   "r": "Sí, los ornitólogos estudian las aves. Lo deduzco porque tu hermana es ornitologo y eso vale para los ornitologos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "G",
+   "q": "dime un pingüino",
+   "crit": "emperador|galapagos",
+   "r": "El pingüino emperador. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "G",
+   "q": "descríbeme el pingüino emperador",
+   "crit": "grande|metro|kilos|pingüino|pinguino",
+   "r": "El pingüino emperador es un pingüino. El pingüino emperador es muy grande. El pingüino emperador pesa unos cuarenta kilos. Es el pingüino más grande que existe. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "pingüinos",
+   "t": "K",
+   "q": "los pingüinos pueden volar",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|no pueden",
+   "r": "Entendido: los pingüinos pueden volar. Pero ojo: en lo que leí ponía «Los pingüinos son aves que no pueden volar». Guardo las dos cosas; si una está mal, dímelo.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (15 frases). He entendido bien 12; las otras 5 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿con qué se hace el pan?",
+   "crit": "harina;agua",
+   "r": "El pan se hace con harina, agua, sal y levadura.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es la harina?",
+   "crit": "polvo",
+   "r": "Una harina es un condimento. Además, según lo que he aprendido, la harina es el polvo que se obtiene al moler el trigo.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cuánto se deja reposar la masa?",
+   "crit": "horas",
+   "r": "En el texto pone: «Después la masa se deja reposar unas horas».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el pan",
+   "t": "D",
+   "q": "¿por qué crece la masa?",
+   "crit": "levadura|gas",
+   "r": "Porque Durante el reposo la levadura produce gas. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es la fermentación?",
+   "crit": "levadura|gas|masa|proceso",
+   "r": "Según lo que he aprendido, se llama fermentación a esto: durante el reposo la levadura produce gas, y por eso la masa crece.",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿dónde se cuece la masa?",
+   "crit": "horno",
+   "r": "La masa se cuece en un horno muy caliente.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el pan",
+   "t": "I",
+   "q": "¿cómo se llama la parte de fuera del pan?",
+   "crit": "corteza",
+   "r": "En el texto pone: «La parte de fuera del pan se llama corteza y la de dentro se llama miga».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo es la miga?",
+   "crit": "blanda",
+   "r": "La miga es blanda.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo es la corteza?",
+   "crit": "dura|crujiente",
+   "r": "La corteza es dura y crujiente.",
+   "v": "OK",
+   "k": 8
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿con qué se hace el pan integral?",
+   "crit": "grano",
+   "r": "El pan integral se hace con el grano entero.",
+   "v": "OK",
+   "k": 9
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cómo se vende el pan de molde?",
+   "crit": "rebanadas|cortado",
+   "r": "En el texto pone, hablando del pan de molde: «El pan de molde es blando y se vende cortado en rebanadas».",
+   "v": "OK",
+   "k": 10
+  },
+  {
+   "tema": "el pan",
+   "t": "V",
+   "q": "¿qué es una baguette?",
+   "crit": "barra|pan",
+   "r": "La baguette es una barra de pan larga.",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿de dónde es típica la baguette?",
+   "crit": "francia",
+   "r": "Sí: el texto dice «La baguette es una barra de pan larga y fina, típica de Francia».",
+   "v": "OK",
+   "k": 11
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿para qué sirve el pan duro?",
+   "crit": "torrijas|sopas",
+   "r": "En el texto pone: «El pan duro no se tira: sirve para hacer torrijas y sopas».",
+   "v": "OK",
+   "k": 12
+  },
+  {
+   "tema": "el pan",
+   "t": "I",
+   "q": "¿cómo se llaman las personas que hacen pan?",
+   "crit": "panadero*",
+   "r": "Panaderos. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 13
+  },
+  {
+   "tema": "el pan",
+   "t": "L",
+   "q": "¿cuándo empieza a trabajar un panadero?",
+   "crit": "madrugada",
+   "r": "En el texto pone: «Un panadero empieza a trabajar de madrugada para que el pan esté listo por la mañana».",
+   "v": "OK",
+   "k": 14
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿el pan es un alimento?",
+   "crit": "^si",
+   "r": "Sí, un pan es un alimento.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿la baguette es un pan?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «La baguette es una barra de pan larga y fina, típica de Francia».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "H",
+   "q": "¿un panadero es una persona?",
+   "crit": "^si",
+   "r": "Sí: según lo que he aprendido, un panadero es una persona.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "P",
+   "q": "¿qué elabora un panadero?",
+   "crit": "pan",
+   "r": "Los panaderos hacen pan, los panaderos empiezan para que el pan esté listo por la mañana a trabajar de madrugada y los panaderos hacen el pan.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "D",
+   "q": "¿el pan integral tiene fibra?",
+   "crit": "^si",
+   "r": "Sí: el texto dice «El pan integral se hace con el grano entero y tiene más fibra».",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "M",
+   "q": "¿cómo es la parte de dentro del pan?",
+   "crit": "blanda",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": "ABST_INDEBIDA",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuánto cuesta una barra de pan?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «costar»; si es otra forma de decir algo, dímelo («costar es lo mismo que…»).",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿quién inventó el pan?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («inventar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "N",
+   "q": "¿cuántos panaderos hay en Francia?",
+   "crit": "ABST",
+   "r": "No lo sé: no me has dicho qué hay ahí.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "C",
+   "q": "mi padre era panadero",
+   "crit": "!no lo he entendido;!no he entendido",
+   "r": "Entendido: tu padre era panadero.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "C",
+   "q": "¿mi padre hacía pan?",
+   "crit": "^si|hacia|pan",
+   "r": "Sí, los panaderos hacen pan. Lo deduzco porque tu padre es panadero y eso vale para los panaderos.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "G",
+   "q": "dime dos tipos de pan",
+   "crit": "integral|molde|baguette",
+   "r": "Pan integral y pan duro. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "G",
+   "q": "descríbeme la corteza",
+   "crit": "dura|crujiente|fuera",
+   "r": "La corteza es dura. La corteza es crujiente. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": -1
+  },
+  {
+   "tema": "el pan",
+   "t": "K",
+   "q": "la miga es dura",
+   "crit": "pero|texto|contradic*|segun|no coincide|me habias|leido|lei|aprendi*|blanda",
+   "r": "Antes me dijiste que la miga es blanda. ¿Cuál vale: la anterior o la nueva?",
+   "v": "OK",
+   "k": -1
+  }
+ ]
+}

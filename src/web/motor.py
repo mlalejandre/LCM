@@ -183,6 +183,16 @@ class Motor:
                 return self._salida20(n20, r20, antes, n0, t0)
         out = self._chat_capas(texto, imagen, nombre)
         resp = out.get('respuesta') if isinstance(out, dict) else None
+        if r20 is not None and isinstance(resp, str) and resp.startswith("Eso queda fuera de lo que sé hacer") and r20.get('estado') == 'abst' and '?' in (texto or ''):
+            try:                                   # 2.24: una pregunta sobre lo que se acaba de leer no es «algo del exterior»: vale el «no lo sé» del núcleo
+                from src.nucleo20 import sinonimia as _S20, lectura as _L20
+                _vb, _nm = _S20.vocabulario(n20)
+                if (n20.usuario.get('leido') or []) and any(_S20._entera(w) in _nm for w in _L20._contenido(texto)):
+                    with self.lock:
+                        self._fuente20 = 'nucleo'
+                        return self._salida20(n20, r20, antes, n0, t0)
+            except Exception:                      # noqa
+                pass
         if r20 is not None and (out.get('error') or out.get('fallo') or respuesta_vacia(resp) or es_abstencion(resp)):
             from src.quality.arbitraje20 import abstencion_util
             if not (r20['respuesta'] == 'No lo sé.' and abstencion_util(resp)):

@@ -1,0 +1,1029 @@
+{
+ "resumen": {
+  "tipos": {
+   "P": {
+    "n": 74,
+    "ok": 57,
+    "falsas": 2,
+    "acierto": 77.0
+   },
+   "TOTAL": {
+    "n": 101,
+    "ok": 81,
+    "falsas": 4,
+    "acierto": 80.2
+   },
+   "N": {
+    "n": 24,
+    "ok": 22,
+    "falsas": 2,
+    "acierto": 91.7
+   },
+   "L": {
+    "n": 3,
+    "ok": 2,
+    "falsas": 0,
+    "acierto": 66.7
+   }
+  },
+  "frases_cubiertas": [
+   30,
+   48
+  ]
+ },
+ "filas": [
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿a quién deja libros la biblioteca del barrio?",
+   "crit": "vecinos",
+   "r": "En el texto pone: «La biblioteca del barrio presta libros a los vecinos».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "N",
+   "q": "¿a quién vende libros la biblioteca del barrio?",
+   "crit": "ABST",
+   "r": "En el texto pone: «La bibliotecaria coloca los libros en las estanterías».",
+   "v": "ALUCINA",
+   "k": 0
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿dónde pone los libros la bibliotecaria?",
+   "crit": "estanterias",
+   "r": "Los vecinos devuelven los libros en un buzón.",
+   "v": "MAL",
+   "k": 1
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿quién ordena los libros en las estanterías?",
+   "crit": "bibliotecaria",
+   "r": "La bibliotecaria coloca los libros en las estanterías. Entiendo «ordenar» como «colocar».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿cuándo oyen cuentos los niños?",
+   "crit": "sabados",
+   "r": "Los niños escuchan cuentos los sábados. Entiendo «oir» como «escuchar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿qué escuchan los chicos los sábados?",
+   "crit": "cuentos",
+   "r": "Los niños escuchan cuentos los sábados. Entiendo «chico» como «niño».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "N",
+   "q": "¿cuándo escriben cuentos los niños?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «escribir»; si es otra forma de decir algo, dímelo («escribir es lo mismo que…»).",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿dónde estudian sus apuntes los estudiantes?",
+   "crit": "sala",
+   "r": "En el texto pone: «Los estudiantes repasan sus apuntes en la sala grande».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿quiénes repasan sus notas en la sala grande?",
+   "crit": "estudiantes",
+   "r": "En el texto pone: «Los estudiantes repasan sus apuntes en la sala grande».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿a qué hora cierra la puerta un guardia?",
+   "crit": "nueve|9",
+   "r": "En el texto pone: «Un vigilante cierra la puerta a las nueve». Entiendo «guardia» como «vigilante».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "N",
+   "q": "¿a qué hora abre la puerta un vigilante?",
+   "crit": "ABST",
+   "r": "No lo sé. («abrir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿dónde se arreglan los libros viejos?",
+   "crit": "sotano",
+   "r": "Los libros viejos se reparan en el sótano. Entiendo «arreglar» como «reparar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿dónde se reparan los libros antiguos?",
+   "crit": "sotano",
+   "r": "En el texto pone: «Los libros viejos se reparan en el sótano». Entiendo «antiguo» como «viejo».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿dónde entregan los libros los vecinos?",
+   "crit": "buzon",
+   "r": "Los vecinos devuelven los libros en un buzón.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "N",
+   "q": "¿dónde compran los libros los vecinos?",
+   "crit": "ABST",
+   "r": "No lo sé. («comprar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la biblioteca del barrio",
+   "t": "P",
+   "q": "¿cuánto vale el carné de la biblioteca?",
+   "crit": "dos|2",
+   "r": "El carné de la biblioteca del barrio cuesta dos euros. Entiendo «valer» como «costar».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿quiénes reparan los coches averiados?",
+   "crit": "mecanico*",
+   "r": "Los mecánicos arreglan los coches averiados. Entiendo «reparar» como «arreglar».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿quiénes arreglan los automóviles averiados?",
+   "crit": "mecanico*",
+   "r": "Los mecánicos arreglan los coches averiados.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "N",
+   "q": "¿quiénes conducen los coches averiados?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. En lo que he aprendido no aparece «conducir»; si es otra forma de decir algo, dímelo («conducir es lo mismo que…»).",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿qué lleva al taller los coches que no arrancan?",
+   "crit": "grua",
+   "r": "En el texto pone: «Una grúa trae los coches que no arrancan». Entiendo «llevar» como «traer».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿qué trae los coches que no funcionan?",
+   "crit": "ANY",
+   "r": "No lo sé: eso no lo he leído ni me lo has explicado.",
+   "v": null,
+   "k": 1
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿quién calcula el coste de cada reparación?",
+   "crit": "jefe",
+   "r": "El jefe del taller calcula el precio de cada reparación.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "N",
+   "q": "¿quién paga el precio de cada reparación?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («pagar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿cada cuánto sustituyen el aceite los mecánicos?",
+   "crit": "ano",
+   "r": "Sí: el texto dice «Los mecánicos cambian el aceite cada año». Entiendo «sustituir» como «cambiar».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿qué reemplazan los mecánicos cada año?",
+   "crit": "aceite",
+   "r": "En el texto pone: «Los mecánicos cambian el aceite cada año».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿dónde se echan las ruedas gastadas?",
+   "crit": "contenedor",
+   "r": "No lo sé. («echar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿dónde se tiran los neumáticos gastados?",
+   "crit": "contenedor",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "N",
+   "q": "¿dónde se fabrican las ruedas?",
+   "crit": "ABST",
+   "r": "No lo sé. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿cuándo lava las herramientas el aprendiz?",
+   "crit": "terminar",
+   "r": "En el texto pone: «El aprendiz limpia las herramientas al terminar». Entiendo «lavar» como «limpiar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿quién limpia los utensilios al terminar?",
+   "crit": "aprendiz",
+   "r": "En el texto pone: «El aprendiz limpia las herramientas al terminar». Entiendo «utensilio» como «herramienta».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿dónde esperan los clientes?",
+   "crit": "sala",
+   "r": "Los clientes aguardan en una sala pequeña. Entiendo «esperar» como «aguardar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "N",
+   "q": "¿dónde trabajan los clientes?",
+   "crit": "ABST",
+   "r": "No lo sé. («trabajar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "P",
+   "q": "¿a qué hora empieza a trabajar el taller?",
+   "crit": "ANY",
+   "r": "No lo sé. («empezar» no aparece en lo que he aprendido.)",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "el taller de coches",
+   "t": "L",
+   "q": "¿a qué hora abre el taller?",
+   "crit": "ocho|8",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "la huerta",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). He entendido bien 6; las otras 2 las guardo tal como están escritas. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué plantan los hortelanos?",
+   "crit": "tomates|lechugas",
+   "r": "No lo sé seguro. ¿«plantar» quiere decir aquí lo mismo que «cultivar»? Si es así, dímelo y te contesto.",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "la huerta",
+   "t": "N",
+   "q": "¿qué cocinan los hortelanos?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «cocinar»; si es otra forma de decir algo, dímelo («cocinar es lo mismo que…»).",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿cuándo mojan la huerta los hortelanos?",
+   "crit": "atardecer",
+   "r": "Los hortelanos riegan la huerta al atardecer.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la huerta",
+   "t": "L",
+   "q": "¿cuándo riegan la huerta los hortelanos?",
+   "crit": "atardecer",
+   "r": "Los hortelanos riegan la huerta al atardecer.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué ahuyenta a los pájaros?",
+   "crit": "espantapajaros",
+   "r": "No lo sé. («ahuyentar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 2
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué asusta a las aves?",
+   "crit": "espantapajaros",
+   "r": "En el texto pone: «Un espantapájaros asusta a los pájaros». Entiendo «ave» como «pajaro».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la huerta",
+   "t": "N",
+   "q": "¿qué alimenta a los pájaros?",
+   "crit": "ABST",
+   "r": "No lo sé. («alimentar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la huerta",
+   "t": "N",
+   "q": "¿cuándo se siembran los tomates?",
+   "crit": "ABST",
+   "r": "No lo sé. («sembrar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la huerta",
+   "t": "L",
+   "q": "¿cuándo maduran los tomates?",
+   "crit": "verano",
+   "r": "Los tomates maduran en verano (del 21 de junio de 2027 al 22 de septiembre de 2027).",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿con qué quitan las malas hierbas los hortelanos?",
+   "crit": "azada",
+   "r": "En el texto pone: «Los hortelanos arrancan las malas hierbas con una azada».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿con qué herramienta arrancan las malas hierbas?",
+   "crit": "azada",
+   "r": "En el texto pone: «Los hortelanos arrancan las malas hierbas con una azada».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿dónde se almacena la cosecha?",
+   "crit": "cajas",
+   "r": "En el texto pone: «La cosecha se guarda en cajas de madera». Entiendo «almacenar» como «guardar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿dónde se mete la cosecha?",
+   "crit": "cajas",
+   "r": "En el texto pone: «La cosecha se guarda en cajas de madera». Entiendo «meter» como «guardar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué comen los caracoles?",
+   "crit": "hojas",
+   "r": "Los caracoles devoran las hojas tiernas. Entiendo «comer» como «devorar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿quiénes se comen las hojas tiernas?",
+   "crit": "caracoles",
+   "r": "Los caracoles devoran las hojas tiernas. Entiendo «comer» como «devorar».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué da agua todo el año?",
+   "crit": "pozo",
+   "r": "En el texto pone: «El pozo proporciona agua todo el año».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la huerta",
+   "t": "P",
+   "q": "¿qué suministra agua todo el año?",
+   "crit": "pozo",
+   "r": "En el texto pone: «El pozo proporciona agua todo el año».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la huerta",
+   "t": "N",
+   "q": "¿qué gasta agua todo el año?",
+   "crit": "ABST",
+   "r": "No lo sé. («gastar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "el teatro",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿cuándo practican la obra los actores?",
+   "crit": "tardes",
+   "r": "No lo sé. En lo que he aprendido no aparece «practicar»; si es otra forma de decir algo, dímelo («practicar es lo mismo que…»).",
+   "v": "ABST_INDEBIDA",
+   "k": 0
+  },
+  {
+   "tema": "el teatro",
+   "t": "N",
+   "q": "¿cuándo escriben la obra los actores?",
+   "crit": "ABST",
+   "r": "No lo sé. («escribir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿quién rectifica a los actores?",
+   "crit": "directora",
+   "r": "La directora corrige a los actores. Entiendo «rectificar» como «corregir».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿a quién corrige la directora?",
+   "crit": "actores",
+   "r": "La directora corrige a los actores.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿cuándo aplauden los espectadores?",
+   "crit": "telon",
+   "r": "Cuando cae el telón. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿quién aplaude cuando baja el telón?",
+   "crit": "publico",
+   "r": "En el texto pone: «El público aplaude cuando cae el telón». Entiendo «bajar» como «caer».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿con qué se hacen los decorados?",
+   "crit": "madera|carton",
+   "r": "Los decorados se construyen con madera y cartón.",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿con qué se fabrican los decorados?",
+   "crit": "madera|carton",
+   "r": "Los decorados se construyen con madera y cartón. Entiendo «fabricar» como «construir».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "el teatro",
+   "t": "N",
+   "q": "¿con qué se pintan los decorados?",
+   "crit": "ABST",
+   "r": "Para pintar los decorados sirven, por ejemplo, las brochas, los pinceles y los rotuladores.",
+   "v": "ALUCINA",
+   "k": 3
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿a qué hora empieza la función?",
+   "crit": "ocho|8",
+   "r": "La función comienza a las ocho.",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿a qué hora se inicia la función?",
+   "crit": "ocho|8",
+   "r": "La función comienza a las ocho. Entiendo «iniciar» como «comenzar».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el teatro",
+   "t": "N",
+   "q": "¿a qué hora acaba la función?",
+   "crit": "ABST",
+   "r": "No lo sé. («acabar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿quién murmura el texto a los actores?",
+   "crit": "apuntador",
+   "r": "El apuntador susurra el texto a los actores. Entiendo «murmurar» como «susurrar».",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el teatro",
+   "t": "N",
+   "q": "¿quién grita el texto a los actores?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («gritar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿dónde se compran las entradas?",
+   "crit": "taquilla",
+   "r": "No lo sé. («comprar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿dónde se despachan las entradas?",
+   "crit": "taquilla",
+   "r": "No lo sé. («despachar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 6
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿cómo se confeccionan los trajes?",
+   "crit": "mano",
+   "r": "No lo sé. («confeccionar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "el teatro",
+   "t": "P",
+   "q": "¿cómo se cosen los vestidos?",
+   "crit": "ANY",
+   "r": "No lo sé.",
+   "v": null,
+   "k": 7
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). He entendido bien 7; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿por dónde descienden los esquiadores?",
+   "crit": "pistas",
+   "r": "Los esquiadores bajan por las pistas nevadas. Entiendo «descender» como «bajar».",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "N",
+   "q": "¿por dónde pasean los esquiadores?",
+   "crit": "ABST",
+   "r": "No lo sé. En lo que he aprendido no aparece «pasear»; si es otra forma de decir algo, dímelo («pasear es lo mismo que…»).",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿qué lleva a los esquiadores hasta la cumbre?",
+   "crit": "telesilla",
+   "r": "No lo sé. («llevar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 1
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿hasta dónde sube el telesilla a los esquiadores?",
+   "crit": "cima",
+   "r": "El telesilla sube a los esquiadores hasta la cima.",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿quiénes instruyen a los principiantes?",
+   "crit": "monitores",
+   "r": "Los monitores enseñan a los principiantes. Entiendo «instruir» como «enseñar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿a quiénes enseñan los monitores?",
+   "crit": "principiantes",
+   "r": "Los monitores enseñan a los principiantes.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "N",
+   "q": "¿quiénes examinan a los principiantes?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («examinar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿cuándo aplanan la nieve las máquinas?",
+   "crit": "noche",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 3
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "N",
+   "q": "¿cuándo derriten la nieve las máquinas?",
+   "crit": "ABST",
+   "r": "No lo sé. («derretir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿quiénes ayudan a los heridos?",
+   "crit": "socorristas",
+   "r": "No lo sé: nadie me ha dicho eso. («ayudar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿quiénes socorren a los heridos?",
+   "crit": "socorristas",
+   "r": "En el texto pone: «Los socorristas auxilian a los heridos».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿dónde arriendan las botas los esquiadores?",
+   "crit": "tienda",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "N",
+   "q": "¿dónde venden las botas los esquiadores?",
+   "crit": "ABST",
+   "r": "No lo sé. («vender» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿cuándo cierra la estación?",
+   "crit": "ventisca",
+   "r": "Cuando hay ventisca. Lo he aprendido de lo que leí o me explicaste.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿qué pasa en la estación cuando hay ventisca?",
+   "crit": "cierra",
+   "r": "Según lo que he aprendido: cuando hay ventisca, La estación cierra.",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿qué sirve el refugio?",
+   "crit": "sopa",
+   "r": "En el texto pone: «El refugio ofrece sopa caliente».",
+   "v": "OK",
+   "k": 7
+  },
+  {
+   "tema": "la estación de esquí",
+   "t": "P",
+   "q": "¿qué da el refugio?",
+   "crit": "sopa",
+   "r": "No lo sé.",
+   "v": "ABST_INDEBIDA",
+   "k": 7
+  },
+  {
+   "tema": "la imprenta",
+   "t": "-",
+   "q": "(texto)",
+   "r": "He leído el texto (8 frases). He entendido bien 7; la otra la guardo tal como está escrita. Pregúntame lo que quieras sobre él.",
+   "v": null,
+   "k": -1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿cuándo saca periódicos la imprenta?",
+   "crit": "ANY",
+   "r": "No lo sé. En lo que he aprendido no aparece «sacar»; si es otra forma de decir algo, dímelo («sacar es lo mismo que…»).",
+   "v": null,
+   "k": 0
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué imprime la imprenta cada madrugada?",
+   "crit": "periodicos",
+   "r": "La imprenta imprime periódicos cada madrugada.",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿cuándo reparte periódicos la imprenta?",
+   "crit": "ABST",
+   "r": "No lo sé. («repartir» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 0
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿quiénes controlan las máquinas?",
+   "crit": "operarios",
+   "r": "Los operarios vigilan las máquinas. Entiendo «controlar» como «vigilar».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿quiénes supervisan las máquinas?",
+   "crit": "operarios",
+   "r": "Los operarios vigilan las máquinas. Entiendo «supervisar» como «vigilar».",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿quiénes fabrican las máquinas?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso. («fabricar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 1
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿cómo viene el papel?",
+   "crit": "rollos",
+   "r": "El papel llega en rollos enormes. Entiendo «venir» como «llegar».",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿en qué llega el papel?",
+   "crit": "rollos",
+   "r": "El papel llega en rollos enormes.",
+   "v": "OK",
+   "k": 2
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué recorta las hojas?",
+   "crit": "cuchilla",
+   "r": "En el texto pone: «Una cuchilla corta las hojas». Entiendo «recortar» como «cortar».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué corta las páginas?",
+   "crit": "cuchilla",
+   "r": "En el texto pone: «Una cuchilla corta las hojas». Entiendo «pagina» como un tipo de «hoja».",
+   "v": "OK",
+   "k": 3
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué reparte los periódicos por la ciudad?",
+   "crit": "camiones",
+   "r": "En el texto pone: «Los camiones distribuyen los periódicos por la ciudad». Entiendo «repartir» como «distribuir».",
+   "v": "OK",
+   "k": 4
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué vehículos llevan los periódicos por la ciudad?",
+   "crit": "camiones",
+   "r": "No lo sé. («llevar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 4
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿cuánto tarda en secarse la tinta?",
+   "crit": "segundos",
+   "r": "No lo sé. («tardar» no aparece en lo que he aprendido.)",
+   "v": "ABST_INDEBIDA",
+   "k": 5
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿cuánto cuesta la tinta?",
+   "crit": "ABST",
+   "r": "No lo sé. («costar» no aparece en lo que he aprendido.)",
+   "v": "OK",
+   "k": 5
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿quién comprueba los textos antes de imprimir?",
+   "crit": "corrector",
+   "r": "En el texto pone: «El corrector revisa los textos antes de imprimir».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿quién repasa los textos antes de imprimir?",
+   "crit": "corrector",
+   "r": "En el texto pone: «El corrector revisa los textos antes de imprimir».",
+   "v": "OK",
+   "k": 6
+  },
+  {
+   "tema": "la imprenta",
+   "t": "P",
+   "q": "¿qué se hace con los periódicos sobrantes?",
+   "crit": "recicla*",
+   "r": "La tinta se seca en pocos segundos.",
+   "v": "MAL",
+   "k": 7
+  },
+  {
+   "tema": "la imprenta",
+   "t": "N",
+   "q": "¿quién lee los periódicos sobrantes?",
+   "crit": "ABST",
+   "r": "No lo sé: nadie me ha dicho eso.",
+   "v": "OK",
+   "k": 7
+  }
+ ]
+}

@@ -10,6 +10,7 @@ Al preguntar, primero contesta el núcleo con lo que entendió. Si no puede, bus
 """
 from __future__ import annotations
 
+import os
 import re
 
 from . import conceptos as K
@@ -285,10 +286,40 @@ def _responde(q, f, raices, cubre):
                     pass
         return False
     falta = {r for r in raices if r not in cubre and r not in _GEN_Q and not _por_lema(r)}
+    m_tipo = re.match(r"^\W*(?:y\s+)?(?:que|cual|cuales)\s+([a-zñ]{4,})\s+(?:no\s+|se\s+)*([a-zñ]+)", q)
+    if m_tipo and _raiz(m_tipo.group(1)) in falta and len(raices) >= 3 and not os.environ.get("LCM_SIN_TIPO_QUE"):
+        try:                                             # 2.24: «¿qué VEHÍCULOS trasladan…?»: el nombre tras «qué» dice de qué tipo es lo que se pide; la frase no tiene que repetirlo
+            from . import sinonimia as _S
+            if _S.analiza(m_tipo.group(2)) and not _S.analiza(m_tipo.group(1)):
+                falta = falta - {_raiz(m_tipo.group(1))}
+        except Exception:                                # noqa
+            pass
     if falta and (len(raices) < 4 or len(falta) > 1):
         return False
     if falta and any(r[:1].isdigit() for r in falta):
         return False
+    if falta and not os.environ.get("LCM_SIN_ANCLA"):
+        try:                                             # 2.24: lo único que la frase no trae es el VERBO de la pregunta: solo vale si trae otro que diga lo mismo
+            from . import sinonimia as _S                # («¿qué VENDE la escuela…?» no lo contesta «la escuela REGALA una flauta…»)
+            ws_q = re.findall(r"[a-záéíóúñü]+", q)
+            for k_, w in enumerate(ws_q):
+                if _raiz(w) not in falta or k_ == 0 or w in _S._NO_VERBO or ws_q[k_ - 1] in _S._DETS or _S._solo_yo(w):
+                    continue
+                lq = {sa(a_[0]) for a_ in _S.analiza(w) if len(a_) > 2 and a_[1] in ("pres", "pret", "imp", "fut")} - _S._FUNC
+                try:                                     # un verbo con decenas de sentidos («llevar», «dar», «sacar») no fija la acción: no se le exige
+                    from . import vectores as _V
+                    lq = {x for x in lq if len(_V._grafo()[0].get(x, ())) < 25}
+                except Exception:                        # noqa
+                    pass
+                if not lq:
+                    continue
+                lf = set()
+                for x in re.findall(r"[a-záéíóúñü]+", f.lower()):
+                    lf |= {sa(a_[0]) for a_ in _S.analiza(x)}
+                if not any(_S.evidencia(a_, b_)[1] for a_ in lq for b_ in lf):
+                    return False
+        except Exception:                                # noqa
+            pass
     mq = re.match(r"^\W*(?:y\s+)?(?:con |de |en |a )?cuant[oa]s?\s*([a-zñ]*)", q)
     if mq:
         nom = _raiz(mq.group(1)) if mq.group(1) else ""
